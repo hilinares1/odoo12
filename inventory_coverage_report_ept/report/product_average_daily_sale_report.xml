@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="product_average_daily_sale_report_search_view" model="ir.ui.view">
+            <field name="name">product_average_daily_sale_report_search_view</field>
+            <field name="model">product.average.daily.sale.report</field>
+            <field name="arch" type="xml">
+                <search string="Average Daily Sales Report">
+                    <filter string="Last 1 Month" name="last_1_month"
+                            domain="['&amp;', ('period_start_date', '&gt;=', (context_today() + relativedelta(months=-1)).strftime('%%Y-%%m-01')), ('period_stop_date', '&lt;=', (context_today().strftime('%%Y-%%m-01')))]" />
+                    <filter string="Last 3 Month" name="last_3_month"
+                            domain="['&amp;', ('period_start_date', '&gt;=', (context_today() + relativedelta(months=-3)).strftime('%%Y-%%m-01')), ('period_stop_date', '&lt;=', (context_today().strftime('%%Y-%%m-01')))]" />
+                    <filter string="Last 6 Month" name="last_6_month"
+                            domain="['&amp;', ('period_start_date', '&gt;=', (context_today() + relativedelta(months=-6)).strftime('%%Y-%%m-01')), ('period_stop_date', '&lt;=', (context_today().strftime('%%Y-%%m-01')))]" />
+                    <filter string="Last 1 Year" name="last_1_year"
+                            domain="['&amp;', ('period_start_date', '&gt;=', (context_today() + relativedelta(years=-1)).strftime('%%Y-%%m-01')), ('period_stop_date', '&lt;=', (context_today().strftime('%%Y-%%m-01')))]" />
+                    <filter string="Last 2 Year" name="last_2_year"
+                            domain="['&amp;', ('period_start_date', '&gt;=', (context_today() + relativedelta(years=-2)).strftime('%%Y-%%m-01')), ('period_stop_date', '&lt;=', (context_today().strftime('%%Y-%%m-01')))]" />
+                </search>
+            </field>
+        </record>
+
+
+        <record id="product_average_daily_sale_report_pivot_view_id" model="ir.ui.view">
+            <field name="name">product.average.daily.sale.report.pivot.view.id</field>
+            <field name="model">product.average.daily.sale.report</field>
+            <field name="arch" type="xml">
+                <pivot string="Average Daily Sales Report" disable_linking="True">
+                    <field name="period_id" type="col"/>
+                    <field name="ads" type="measure"/>
+                   <field name="monthly_sale" type="measure"/>
+                    <field name="product_id" type="row" />
+                    <field name="warehouse_code" type="col"/>
+                </pivot>
+            </field>
+        </record>
+    </data>
+</odoo>

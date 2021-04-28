@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="ir_cron_generate_product_average_daily_sale" model="ir.cron">
+            <field name="name">Generate Product Average Daily Sale</field>
+            <field eval="True" name="active"/>
+            <field name="user_id" ref="base.user_root"/>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">-1</field>
+            <field eval="False" name="doall"/>
+            <field eval="ref('inventory_coverage_report_ept.model_product_average_daily_sale')"
+                   name="model_id"/>
+            <field name="state">code</field>
+            <field name="code">model.calculate_average_daily_sales_using_cron()</field>
+
+        </record>
+    </data>
+</odoo>

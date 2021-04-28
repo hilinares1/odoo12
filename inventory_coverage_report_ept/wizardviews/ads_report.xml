@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_form_inventory_ads_report" model="ir.ui.view">
+            <field name="name">view.form.inventory.ads.report</field>
+            <field name="model">ads.quantity.report</field>
+            <field name="arch" type="xml">
+                <form string="Inventory Average Daily Sales Report">
+                    <group>
+                        <field name="warehouse_ids" widget="many2many_tags"/>
+                    </group>
+                    <field name="product_ids"
+                           domain="[('type','=','product'), ('can_be_used_for_coverage_report_ept', '=', True)]"
+                           nolabel="1" colspan="4">
+
+                        <tree>
+                            <field name="default_code"/>
+                            <field name="name"/>
+                        </tree>
+
+                    </field>
+
+                    <footer>
+                        <button name="display_report" string="Display Report"
+                                class="oe_highlight" type="object"/>
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+
+                </form>
+            </field>
+
+        </record>
+
+        <record id="action_inventory_ads_report_ept" model="ir.actions.act_window">
+            <field name="name">Inventory Average Daily Sale Report</field>
+            <field name="res_model">ads.quantity.report</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_form_inventory_ads_report"></field>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem id="menu_ads_inventory_report" action="action_inventory_ads_report_ept"
+                  name="Average Daily Sales Report"
+                  parent="inventory_coverage_report_ept.menu_inventory_coverage_report_root"
+                  sequence="11"/>
+    </data>
+
+</odoo>

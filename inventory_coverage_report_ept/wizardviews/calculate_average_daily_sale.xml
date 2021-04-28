@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_form_ads_calculate" model="ir.ui.view">
+            <field name="name">view.form.ads.calculate</field>
+            <field name="model">calculate.average.daily.sale</field>
+            <field name="arch" type="xml">
+                <form string="Inventory ADS Report">
+                    <div class="alert alert-info" role="alert" style="margin-bottom:0px;">
+                        <bold>
+                            Average daily sale calculate every day through the cron
+                            <br/>
+                            But you can calculate manually from here.
+                        </bold>
+                    </div>
+                    <footer>
+                        <button name="calculate_ads" string="Calculate "
+                                class="oe_highlight" type="object"/>
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_calculate_ads_report" model="ir.actions.act_window">
+            <field name="name">Calculate Average Daily Sale</field>
+            <field name="res_model">calculate.average.daily.sale</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_form_ads_calculate"/>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem id="menu_calculate_ads" action="action_calculate_ads_report"
+                  name="Calculate Average Daily Sale"
+                  parent="inventory_coverage_report_ept.menu_inventory_coverage_report_root"
+                  sequence="12"/>
+    </data>
+</odoo>
