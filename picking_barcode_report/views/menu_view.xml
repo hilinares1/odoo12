@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<odoo>
+    <data>
+
+        <act_window id="act_barcode_labels_picking" name="Picking Product Labels"
+            key2="client_print_multi" res_model="picking.barcode.labels"
+            src_model="stock.picking" view_mode="form" target="new"
+            view_type="form" />
+
+    </data>
+</odoo>

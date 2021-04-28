@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="fal_register_delivery_batch_view" model="ir.ui.view">
+        <field name="name">Register Delivery Batch</field>
+        <field name="model">fal.register.delivery.batch</field>
+        <field name="arch" type="xml">
+            <form string="Put to Box">
+                <p>
+                    Are you sure?
+                </p>
+                <footer>
+                    <button name="register_delivery_batch" string="Register" type="object" class="oe_highlight"/>
+                    <button string="Cancel" class="btn-default" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <act_window
+        id="action_fal_register_delivery_batch"
+        name="Register Delivery Batch"
+        src_model="account.invoice"
+        res_model="fal.register.delivery.batch"
+        view_mode="form"
+        target="new"
+        key2="client_action_multi"/>
+</odoo>

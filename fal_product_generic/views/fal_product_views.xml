@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="fal_product_generic_form">
+            <field name="name">fal.product.generic.form</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_form_view"/>
+            <field name="arch" type="xml">
+                <field name="type" position="after">
+                    <field name="fal_stock_product" attrs="{'invisible':[('type', '!=', 'product')]}"/>
+                </field>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="fal_product_generic_search_view">
+            <field name="name">fal.product.generic.search.view</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_search_view"/>
+            <field name="arch" type="xml">
+                <filter name="consumable" position="after">
+                   <filter name="filter_to_fal_stock_product" string="In Stock Product" domain="[('fal_stock_product', '=', True)]"/>
+                </filter>
+            </field>
+        </record>
+    </data>
+</odoo>

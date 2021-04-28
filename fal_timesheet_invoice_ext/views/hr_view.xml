@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="account_analytic_account_form_form_faltiminext" model="ir.ui.view">
+            <field name="name">account.analytic.account.invoice.form.faltiminext</field>
+            <field name="model">account.analytic.account</field>
+            <field name="inherit_id" ref="analytic.view_account_analytic_account_form"/>
+            <field name="arch" type="xml">
+                <xpath expr='//group[@name="main"]/group/field[@name="partner_id"]' position='after'>
+                    <field name="to_invoice"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="hr_timesheet_line_form_faltiminext" model="ir.ui.view">
+            <field name="name">hr.analytic.timesheet.form.faltiminext</field>
+            <field name="model">account.analytic.line</field>
+            <field name="inherit_id" ref="hr_timesheet.hr_timesheet_line_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form/sheet/group" position="inside">
+                    <group string="Invoicing">
+                        <field name="sale_line_id" invisible="1"/>
+                        <field name="to_invoice" attrs="{'required': [('sale_line_id', '!=', False)]}"/>
+                        <field name="timesheet_invoice_id"/>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="hr_timesheet_line_form_fal_inherit" model="ir.ui.view">
+            <field name="name">hr_timesheet_line_form_fal_inherit</field>
+            <field name="model">account.analytic.line</field>
+            <field name="inherit_id" ref="hr_timesheet.hr_timesheet_line_tree"/>
+            <field name="arch" type="xml">
+                <field name="task_id" position="after">
+                    <field name="sale_line_id" invisible="1"/>
+                    <field name="to_invoice" attrs="{'required': [('sale_line_id', '!=', False)]}"/>
+                    <field name="timesheet_invoice_id"/>
+                </field>
+                <field name="unit_amount" position="after">
+                    <field name="unit_amount_coef" string="Duration with Coef" sum="Total time" widget="float_time"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_account_analytic_line_tree_inherit_faltiminext" model="ir.ui.view">
+            <field name="name">account.analytic.line.tree.to_invoice.faltiminext</field>
+            <field name="model">account.analytic.line</field>
+            <field name="inherit_id" ref="analytic.view_account_analytic_line_tree"/>
+            <field name="arch" type="xml">
+                <field name="amount" position="after">
+                    <field name="sale_line_id" invisible="1"/>
+                    <field name="to_invoice" attrs="{'required': [('sale_line_id', '!=', False)]}"/>
+                    <field name="timesheet_invoice_id"/>
+                </field>
+                <field name="unit_amount" position="after">
+                        <field name="unit_amount_coef" string="Duration with Coef" sum="Total time" widget="float_time"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_account_analytic_line_form_inherit_faltiminext" model="ir.ui.view">
+            <field name="name">account.analytic.line.form.to_invoice.faltiminext</field>
+            <field name="model">account.analytic.line</field>
+            <field name="inherit_id" ref="analytic.view_account_analytic_line_form"/>
+            <field name="arch" type="xml">
+                <field name="amount" position="before">
+                    <field name="sale_line_id" invisible="1"/>
+                    <field name="to_invoice" attrs="{'required': [('sale_line_id', '!=', False)]}"/>
+                    <field name="timesheet_invoice_id"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_hr_timesheet_invoice_factor_search_faltiminext" model="ir.ui.view">
+            <field name="name">hr_timesheet_invoice.factor.search.faltiminext</field>
+            <field name="model">hr_timesheet_invoice.factor</field>
+            <field name="arch" type="xml">
+                <search string="Type of invoicing">
+                    <field name="name" string="Type of invoicing"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="view_hr_timesheet_invoice_factor_form_faltiminext" model="ir.ui.view">
+            <field name="name">hr_timesheet_invoice.factor.form.faltiminext</field>
+            <field name="model">hr_timesheet_invoice.factor</field>
+            <field name="arch" type="xml">
+                <form string="Type of invoicing">
+                    <group col="4">
+                        <field name="name"/>
+                        <field name="customer_name"/>
+                        <field name="factor"/>
+                        <field name="coef"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_hr_timesheet_invoice_factor_tree_faltiminext" model="ir.ui.view">
+            <field name="name">hr_timesheet_invoice.factor.tree.faltiminext</field>
+            <field name="model">hr_timesheet_invoice.factor</field>
+            <field name="arch" type="xml">
+                <tree string="Types of invoicing">
+                    <field name="name"/>
+                    <field name="customer_name"/>
+                    <field name="factor"/>
+                    <field name="coef"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="hr_timesheet_sheet_form_invoice_ext" model="ir.ui.view">
+            <field name="name">hr_timesheet.sheet.form</field>
+            <field name="model">hr_timesheet.sheet</field>
+            <field name="inherit_id" ref="hr_timesheet_sheet.hr_timesheet_sheet_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='timesheet_ids']/tree/field[@name='task_id']" position="after">
+                    <field name="sale_line_id" invisible="1"/>
+                    <field name="to_invoice" attrs="{'required': [('sale_line_id', '!=', False)]}"/>
+                </xpath>
+                <xpath expr="//field[@name='timesheet_ids']/tree/field[@name='unit_amount']" position="after">
+                    <field name="unit_amount_coef" string="Duration with Coef" sum="Total time" widget="float_time"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_task_form2_inherited_invoice_ext" model="ir.ui.view">
+            <field name="name">view_task_form2_inherited_invoice_ext</field>
+            <field name="model">project.task</field>
+            <field name="inherit_id" ref="hr_timesheet.view_task_form2_inherited"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='timesheet_ids']/tree/field[@name='unit_amount']" position="before">
+                    <field name="sale_line_id" invisible="1"/>
+                    <field name="to_invoice" attrs="{'required': [('sale_line_id', '!=', False)]}"/>
+                </xpath>
+                <xpath expr="//field[@name='timesheet_ids']/tree/field[@name='unit_amount']" position="after">
+                    <field name="unit_amount_coef" string="Duration with Coef" sum="Total time" widget="float_time"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="action_hr_timesheet_invoice_factor_form_faltiminext" model="ir.actions.act_window">
+            <field name="name">Types of Invoicing</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">hr_timesheet_invoice.factor</field>
+            <field name="view_type">form</field>
+            <field name="view_id" ref="view_hr_timesheet_invoice_factor_tree_faltiminext"/>
+            <field name="search_view_id" ref="view_hr_timesheet_invoice_factor_search_faltiminext"/>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to add a new type of invoicing.
+              </p><p>
+                Odoo allows you to create default invoicing types. You might
+                have to regularly assign discounts because of a specific
+                contract or agreement with a customer. From this menu, you can
+                create additional types of invoicing to speed up your
+                invoicing.
+              </p>
+            </field>
+        </record>
+
+        <menuitem
+            action="action_hr_timesheet_invoice_factor_form_faltiminext"
+            id="hr_timesheet_invoice_factor_view_faltiminext"
+            parent="account.account_management_menu" sequence="99" groups="account.group_account_manager"/>
+
+    </data>
+</odoo>

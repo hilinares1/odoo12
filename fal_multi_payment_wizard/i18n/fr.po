@@ -1,0 +1,208 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* fal_multi_payment_wizard
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-08-31 03:28+0000\n"
+"PO-Revision-Date: 2018-08-31 10:34+0700\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: en\n"
+"X-Generator: Poedit 2.1.1\n"
+
+#. module: fal_multi_payment_wizard
+#: model:ir.ui.view,arch_db:fal_multi_payment_wizard.fal_multi_payment_wizard
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: fal_multi_payment_wizard
+#: model:ir.actions.act_window,help:fal_multi_payment_wizard.fal_action_my_open_invoice
+msgid "Click to create a customer invoice."
+msgstr "Cliquez pour créer une facture client."
+
+#. module: fal_multi_payment_wizard
+#: model:ir.actions.act_window,help:fal_multi_payment_wizard.fal_action_my_open_bills_tree2
+msgid "Click to record a new vendor bill."
+msgstr "Cliquez pour saisir une nouvelle facture fournisseur."
+
+#. module: fal_multi_payment_wizard
+#: model:ir.model.fields,field_description:fal_multi_payment_wizard.field_fal_multi_payment_wizard_create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: fal_multi_payment_wizard
+#: model:ir.model.fields,field_description:fal_multi_payment_wizard.field_fal_multi_payment_wizard_create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: fal_multi_payment_wizard
+#: model:ir.model.fields,field_description:fal_multi_payment_wizard.field_fal_multi_payment_wizard_display_name
+msgid "Display Name"
+msgstr "Nom à afficher"
+
+#. module: fal_multi_payment_wizard
+#: model:ir.ui.view,arch_db:fal_multi_payment_wizard.view_account_invoice_filter_falmultipaymentwizard
+msgid "Due Within One Week"
+msgstr "Dû à moins d'une semaine"
+
+#. module: fal_multi_payment_wizard
+#: model:ir.model.fields,field_description:fal_multi_payment_wizard.field_fal_multi_payment_wizard_id
+msgid "ID"
+msgstr "ID"
+
+#. module: fal_multi_payment_wizard
+#: code:addons/fal_multi_payment_wizard/wizard/fal_multi_payment_wizard.py:47
+#, python-format
+msgid "In order to pay multiple invoices at once, they must use the same currency."
+msgstr "Pour payer plusieurs factures à la fois, elles doivent utiliser la même devise."
+
+#. module: fal_multi_payment_wizard
+#: model:ir.ui.view,arch_db:fal_multi_payment_wizard.fal_multi_payment_wizard
+msgid "In the contrary with Odoo Register Payment. You can pay each invoice with different amount (Not always full payment) for each."
+msgstr "Au contraire avec Odoo Register Payment. Vous pouvez payer chaque facture avec un montant différent (pas toujours le paiement intégral) pour chacune."
+
+#. module: fal_multi_payment_wizard
+#: model:ir.model,name:fal_multi_payment_wizard.model_account_invoice
+msgid "Invoice"
+msgstr "Facture"
+
+#. module: fal_multi_payment_wizard
+#: model:ir.model.fields,field_description:fal_multi_payment_wizard.field_fal_multi_payment_wizard_journal_id
+#: model:ir.ui.view,arch_db:fal_multi_payment_wizard.fal_multi_payment_wizard
+msgid "Journal Selection"
+msgstr "Journal Selection"
+
+#. module: fal_multi_payment_wizard
+#: model:ir.model.fields,field_description:fal_multi_payment_wizard.field_fal_multi_payment_wizard___last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: fal_multi_payment_wizard
+#: model:ir.model.fields,field_description:fal_multi_payment_wizard.field_fal_multi_payment_wizard_write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: fal_multi_payment_wizard
+#: model:ir.model.fields,field_description:fal_multi_payment_wizard.field_fal_multi_payment_wizard_write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: fal_multi_payment_wizard
+#: model:ir.actions.act_window,name:fal_multi_payment_wizard.fal_action_my_open_invoice
+#: model:ir.ui.menu,name:fal_multi_payment_wizard.menu_action_my_open_invoice
+msgid "My Open Invoices"
+msgstr "Mes factures ouvertes"
+
+#. module: fal_multi_payment_wizard
+#: model:ir.model.fields,field_description:fal_multi_payment_wizard.field_account_register_payments_fal_number
+msgid "Number"
+msgstr "Numéro"
+
+#. module: fal_multi_payment_wizard
+#: model:ir.actions.act_window,help:fal_multi_payment_wizard.fal_action_my_open_invoice
+msgid ""
+"Odoo's electronic invoicing allows to ease and fasten the\n"
+"            collection of customer payments. Your customer receives the\n"
+"            invoice by email and he can pay online and/or import it\n"
+"            in his own system."
+msgstr ""
+"La facturation électronique d’Odoo permet de faciliter et de fixer les\n"
+"            collecte des paiements des clients. Votre client reçoit le\n"
+"            facture par email et il peut payer en ligne et / ou l'importer\n"
+"            dans son propre système."
+
+#. module: fal_multi_payment_wizard
+#: model:ir.actions.act_window,name:fal_multi_payment_wizard.fal_action_my_open_bills_tree2
+#: model:ir.ui.menu,name:fal_multi_payment_wizard.menu_action_my_open_invoice_supplier
+msgid "Open Invoice"
+msgstr "Facture ouverte"
+
+#. module: fal_multi_payment_wizard
+#: model:ir.ui.view,arch_db:fal_multi_payment_wizard.view_account_invoice_filter_falmultipaymentwizard
+msgid "Overdue invoices within one week"
+msgstr "Factures impayées en une semaine"
+
+#. module: fal_multi_payment_wizard
+#: model:ir.model.fields,field_description:fal_multi_payment_wizard.field_fal_multi_payment_wizard_journal_payment_method_id
+msgid "Payment Journal"
+msgstr "Journal des Paiements"
+
+#. module: fal_multi_payment_wizard
+#: model:ir.model.fields,field_description:fal_multi_payment_wizard.field_account_register_payments_fal_multi_payment_wizard_id
+#: model:ir.model.fields,field_description:fal_multi_payment_wizard.field_fal_multi_payment_wizard_payment_wizard_line_ids
+msgid "Payment List"
+msgstr "List de paiement"
+
+#. module: fal_multi_payment_wizard
+#: model:ir.model.fields,field_description:fal_multi_payment_wizard.field_fal_multi_payment_wizard_payment_method_id
+msgid "Payment Type"
+msgstr "Type de paiement"
+
+#. module: fal_multi_payment_wizard
+#: model:ir.ui.view,arch_db:fal_multi_payment_wizard.fal_multi_payment_wizard
+msgid "Payment Wizard Line"
+msgstr "Ligne Assistant de paiement"
+
+#. module: fal_multi_payment_wizard
+#: model:ir.model,name:fal_multi_payment_wizard.model_account_payment
+msgid "Payments"
+msgstr "Paiements"
+
+#. module: fal_multi_payment_wizard
+#: model:ir.model.fields,field_description:fal_multi_payment_wizard.field_account_invoice_fal_multi_payment_number
+#: model:ir.model.fields,field_description:fal_multi_payment_wizard.field_account_payment_fal_multi_payment_number
+#: model:ir.ui.view,arch_db:fal_multi_payment_wizard.view_account_payment_search_falmultipaymentwizard
+msgid "Preparation Payment Number"
+msgstr "Numéro de paiement de la préparation"
+
+#. module: fal_multi_payment_wizard
+#: model:ir.actions.act_window,name:fal_multi_payment_wizard.action_fal_multi_payment_wizard
+#: model:ir.ui.view,arch_db:fal_multi_payment_wizard.fal_multi_payment_wizard
+msgid "Register Multi Payment"
+msgstr "Enregistrement multi-paiement"
+
+#. module: fal_multi_payment_wizard
+#: model:ir.model,name:fal_multi_payment_wizard.model_account_register_payments
+msgid "Register payments on multiple invoices"
+msgstr "Enregistrez des paiements sur plusieurs factures"
+
+#. module: fal_multi_payment_wizard
+#: model:ir.actions.act_window,help:fal_multi_payment_wizard.fal_action_my_open_invoice
+msgid ""
+"The discussions with your customer are automatically displayed at\n"
+"            the bottom of each invoice."
+msgstr ""
+"Les discussions avec votre client sont automatiquement affichées\n"
+"             au bas de chaque facture."
+
+#. module: fal_multi_payment_wizard
+#: model:ir.ui.view,arch_db:fal_multi_payment_wizard.fal_multi_payment_wizard
+msgid "Validate"
+msgstr "Valider"
+
+#. module: fal_multi_payment_wizard
+#: model:ir.actions.act_window,help:fal_multi_payment_wizard.fal_action_my_open_bills_tree2
+msgid ""
+"You can control the invoice from your vendor according to\n"
+"            what you purchased or received."
+msgstr ""
+"Vous pouvez contrôler la facture de votre fournisseur en fonction de\n"
+"            ce que vous avez acheté ou reçu."
+
+#. module: fal_multi_payment_wizard
+#: code:addons/fal_multi_payment_wizard/wizard/fal_multi_payment_wizard.py:52
+#, python-format
+msgid "You can only register payments for open invoices"
+msgstr "Vous ne pouvez enregistrer que des paiements pour des factures ouvertes"
+
+#. module: fal_multi_payment_wizard
+#: model:ir.model,name:fal_multi_payment_wizard.model_fal_multi_payment_wizard
+msgid "fal.multi.payment.wizard"
+msgstr "fal.multi.payment.wizard"

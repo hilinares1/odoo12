@@ -1,0 +1,1256 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* fal_generic_product
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-08-13 04:26+0000\n"
+"PO-Revision-Date: 2018-08-13 14:08+0700\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: en\n"
+"X-Generator: Poedit 2.0.8\n"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_121
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_098
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_098_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_098
+msgid "Abroad - Bus"
+msgstr "Abroad - Bus"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_122
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_099
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_099_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_099
+msgid "Abroad - Car renting"
+msgstr "Abroad - Car renting"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_117
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_095
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_095_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_095
+msgid "Abroad - Drink"
+msgstr "Abroad - Drink"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_123
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_100
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_100_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_100
+msgid "Abroad - Flight"
+msgstr "Abroad - Flight"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_118
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_096
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_096_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_096
+msgid "Abroad - Food"
+msgstr "Abroad - Food"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_124
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_101
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_101_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_101
+msgid "Abroad - Fuel"
+msgstr "Abroad - Fuel"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_119
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_097
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_097_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_097
+msgid "Abroad - Hotel"
+msgstr "Abroad - Hotel"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_125
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_102
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_102_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_102
+msgid "Abroad - Km indemnity"
+msgstr "Abroad - Km indemnity"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_126
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_103
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_103_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_103
+msgid "Abroad - Parking"
+msgstr "Abroad - Parking"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_127
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_106
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_106_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_106
+msgid "Abroad - Taxi"
+msgstr "Abroad - Taxi"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_128
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_104
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_104_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_104
+msgid "Abroad - Tollgate"
+msgstr "Abroad - Tollgate"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_129
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_105
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_105_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_105
+msgid "Abroad - Train"
+msgstr "Abroad - Train"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_116
+msgid "Abroad representation"
+msgstr "Abroad representation"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_120
+msgid "Abroad travelling"
+msgstr "Abroad travelling"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_043
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_034
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_034_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_034
+msgid "Accruals"
+msgstr "Accruals"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_005
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_002
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_003
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_002_product_template
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_003_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_002
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_003
+msgid "Accrues taxes"
+msgstr "Accrues taxes"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_067
+msgid "Advantage in nature"
+msgstr "Advantage in nature"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_product_category_gen_all
+msgid "All"
+msgstr "Tous"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_026
+msgid "Bank charges & interests"
+msgstr "Bank charges & interests"
+
+#. module: fal_generic_product
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_014
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_014_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_014
+msgid "Bank charges interests"
+msgstr "Bank charges interests"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_020
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_018
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_018_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_018
+msgid "Bank fees"
+msgstr "Bank fees"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_070
+msgid "Benefits"
+msgstr "Benefits"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_145
+msgid "Business subscriptions"
+msgstr "Business subscriptions"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_044
+msgid "Business taxes"
+msgstr "Business taxes"
+
+#. module: fal_generic_product
+#: model:ir.model.fields,field_description:fal_generic_product.field_product_product_can_be_expensed
+#: model:ir.model.fields,field_description:fal_generic_product.field_product_template_can_be_expensed
+msgid "Can be Expensed"
+msgstr "Peut être dépensé"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_081
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_061
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_061_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_061
+msgid "Canteen costs"
+msgstr "Canteen costs"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_074
+msgid "Car fleet"
+msgstr "Car fleet"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_092
+msgid "Cleaning services"
+msgstr "Cleaning services"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_001
+msgid "Company"
+msgstr "Company"
+
+#. module: fal_generic_product
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_074
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_074_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_074
+msgid "Company - Accountants"
+msgstr "Company - Accountants"
+
+#. module: fal_generic_product
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_075
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_075_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_075
+msgid "Company - Auditors"
+msgstr "Company - Auditors"
+
+#. module: fal_generic_product
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_051
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_051_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_051
+msgid "Company - Building management fees"
+msgstr "Company - Building management fees"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_037
+msgid "Company - COMPUTER MAINTENANCE & INTERVENTION"
+msgstr "Company - COMPUTER MAINTENANCE & INTERVENTION"
+
+#. module: fal_generic_product
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_028
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_028_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_028
+msgid "Company - COMPUTER MAINTENANCE INTERVENTION"
+msgstr "Company - COMPUTER MAINTENANCE INTERVENTION"
+
+#. module: fal_generic_product
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_082
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_082_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_082
+msgid "Company - Car insurance"
+msgstr "Company - Car insurance"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_036
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_027
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_027_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_027
+msgid "Company - Car maintenance"
+msgstr "Company - Car maintenance"
+
+#. module: fal_generic_product
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_087
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_087_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_087
+msgid "Company - Cleaning"
+msgstr "Company - Cleaning"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_096
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_090
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_090_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_090
+msgid "Company - Commercial team"
+msgstr "Company - Commercial team"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_057
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_045
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_045_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_045
+msgid "Company - Copies"
+msgstr "Company - Copies"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_038
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_029
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_029_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_029
+msgid "Company - Damages"
+msgstr "Company - Damages"
+
+#. module: fal_generic_product
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_094
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_094_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_094
+msgid "Company - Direct tax"
+msgstr "Company - Direct tax"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_052
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_041
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_041_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_041
+msgid "Company - Electricity"
+msgstr "Company - Electricity"
+
+#. module: fal_generic_product
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_052
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_052_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_052
+msgid "Company - Equipment"
+msgstr "Company - Equipment"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_039
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_031
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_031_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_031
+msgid "Company - Equipment maintenance"
+msgstr "Company - Equipment maintenance"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_058
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_046
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_046_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_046
+msgid "Company - Express shipping cost"
+msgstr "Company - Express shipping cost"
+
+#. module: fal_generic_product
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_076
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_076_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_076
+msgid "Company - Finance consultants"
+msgstr "Company - Finance consultants"
+
+#. module: fal_generic_product
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_073
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_073_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_073
+msgid "Company - Finance services"
+msgstr "Company - Finance services"
+
+#. module: fal_generic_product
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_083
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_083_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_083
+msgid "Company - Fire insurance"
+msgstr "Company - Fire insurance"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_059
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_047
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_047_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_047
+msgid "Company - Fixed phone"
+msgstr "Company - Fixed phone"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_040
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_032
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_032_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_032
+msgid "Company - Furniture maintenenace"
+msgstr "Company - Furniture maintenenace"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_053
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_042
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_042_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_042
+msgid "Company - Gaz"
+msgstr "Company - Gaz"
+
+#. module: fal_generic_product
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_080
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_080_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_080
+msgid "Company - Human resources"
+msgstr "Company - Human resources"
+
+#. module: fal_generic_product
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_085
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_085_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_085
+msgid "Company - IT services"
+msgstr "Company - IT services"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_060
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_048
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_048_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_048
+msgid "Company - Internet"
+msgstr "Company - Internet"
+
+#. module: fal_generic_product
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_077
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_077_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_077
+msgid "Company - Legal services"
+msgstr "Company - Legal services"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_097
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_091
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_091_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_091
+msgid "Company - Marketing"
+msgstr "Company - Marketing"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_061
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_049
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_049_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_049
+msgid "Company - Mobile phone"
+msgstr "Company - Mobile phone"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_062
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_050
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_050_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_050
+msgid "Company - Normal shipping cost"
+msgstr "Company - Normal shipping cost"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_003
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_001
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_001_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_001
+msgid "Company - Office stationary"
+msgstr "Company - Office stationary"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_054
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_043
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_043_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_043
+msgid "Company - Oil heating"
+msgstr "Company - Oil heating"
+
+#. module: fal_generic_product
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_086
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_086_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_086
+msgid "Company - Other consultant fees"
+msgstr "Company - Other consultant fees"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_099
+msgid "Company - Other engineering services"
+msgstr "Company - Other engineering services"
+
+#. module: fal_generic_product
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_084
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_084_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_084
+msgid "Company - Other insurance"
+msgstr "Company - Other insurance"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_041
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_033
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_033_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_033
+msgid "Company - Premises maintenance"
+msgstr "Company - Premises maintenance"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_093
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_089
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_089_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_089
+msgid "Company - Reception services"
+msgstr "Company - Reception services"
+
+#. module: fal_generic_product
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_081
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_081_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_081
+msgid "Company - Recruitment services"
+msgstr "Company - Recruitment services"
+
+#. module: fal_generic_product
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_053
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_053_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_053
+msgid "Company - Rent plant"
+msgstr "Company - Rent plant"
+
+#. module: fal_generic_product
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_088
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_088_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_088
+msgid "Company - Security"
+msgstr "Company - Security"
+
+#. module: fal_generic_product
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_079
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_079_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_079
+msgid "Company - Tax consultants"
+msgstr "Company - Tax consultants"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_055
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_044
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_044_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_044
+msgid "Company - Water"
+msgstr "Company - Water"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_064
+msgid "Company Premises Management Fees"
+msgstr "Company Premises Management Fees"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_065
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_054
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_054_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_054
+msgid "Company Premises Rent"
+msgstr "Company Premises Rent"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_075
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_064
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_064_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_064
+msgid "Company car expenses"
+msgstr "Company car expenses"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_076
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_065
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_065_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_065
+msgid "Company car fuel"
+msgstr "Company car fuel"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_077
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_066
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_066_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_066
+msgid "Company car rent leasings"
+msgstr "Company car rent leasings"
+
+#. module: fal_generic_product
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_078
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_078_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_078
+msgid "Company â€“ Lawyers"
+msgstr "Company â€“ Lawyers"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_002
+msgid "Consumable stuff"
+msgstr "Consumable stuff"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_100
+msgid "Control authorities"
+msgstr "Control authorities"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_004
+msgid "Corporate Tax Income & Expense"
+msgstr "Corporate Tax Income & Expense"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_027
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_015
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_015_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_015
+msgid "Credit file expenses"
+msgstr "Credit file expenses"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_146
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_119
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_119_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_119
+msgid "Customer gifts"
+msgstr "Customer gifts"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_021
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_019
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_019_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_019
+msgid "Debt charges"
+msgstr "Debt charges"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_147
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_120
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_120_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_120
+msgid "Decoration"
+msgstr "Decoration"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_009
+msgid "Depreciation"
+msgstr "Depreciation"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_010
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_007
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_007_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_007
+msgid "Depreciation accomodation"
+msgstr "Depreciation accomodation"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_011
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_008
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_008_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_008
+msgid "Depreciation car"
+msgstr "Depreciation car"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_012
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_009
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_009_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_009
+msgid "Depreciation equipment"
+msgstr "Depreciation equipment"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_013
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_010
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_010_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_010
+msgid "Depreciation furnishing"
+msgstr "Depreciation furnishing"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_014
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_011
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_011_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_011
+msgid "Depreciation hardware computer"
+msgstr "Depreciation hardware computer"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_015
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_012
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_012_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_012
+msgid "Depreciation premises"
+msgstr "Depreciation premises"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_016
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_013
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_013_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_013
+msgid "Depreciation software licences"
+msgstr "Depreciation software licences"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_101
+msgid "Designers"
+msgstr "Designers"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_111
+msgid "Direct taxes"
+msgstr "Direct taxes"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_022
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_020
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_020_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_020
+msgid "Disposal current assets"
+msgstr "Disposal current assets"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_045
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_036
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_036_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_036
+msgid "Disposals"
+msgstr "Disposals"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_017
+msgid "Document, Advertisement, etc"
+msgstr "Document, Advertisement, etc"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_082
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_062
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_062_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_062
+msgid "Drink"
+msgstr "Drink"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_078
+msgid "Employee insurance"
+msgstr "Employee insurance"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_071
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_058
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_058_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_058
+msgid "Employees benefits"
+msgstr "Employees benefits"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_072
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_057
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_057_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_057
+msgid "Employees compensation"
+msgstr "Employees compensation"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_098
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_072
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_072_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_072
+msgid "Engineering services"
+msgstr "Engineering services"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_023
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_021
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_021_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_021
+msgid "Exchange diferences"
+msgstr "Exchange diferences"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_103
+msgid "Finance services"
+msgstr "Finance services"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_102
+msgid "Finance, legal and tax services"
+msgstr "Finance, legal and tax services"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_019
+msgid "Financial Income & Expense"
+msgstr "Financial Income & Expense"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_024
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_022
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_022_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_022
+msgid "Financial accruals"
+msgstr "Financial accruals"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_028
+msgid "Financial insurance"
+msgstr "Financial insurance"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_029
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_017
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_017_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_017
+msgid "Financial product - Other"
+msgstr "Financial product - Other"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_025
+msgid "Financial products"
+msgstr "Financial products"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_083
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_063
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_063_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_063
+msgid "Food"
+msgstr "Food"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_080
+msgid "Food & drink"
+msgstr "Food & drink"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_006
+msgid "Foreign taxes"
+msgstr "Foreign taxes"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_073
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_059
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_059_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_059
+msgid "Health insurances"
+msgstr "Health insurances"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_106
+msgid "Human resources services"
+msgstr "Human resources services"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_108
+msgid "IT services"
+msgstr "IT services"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_031
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_024
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_024_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_024
+msgid "Income current assets"
+msgstr "Income current assets"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_032
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_023
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_023_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_023
+msgid "Income financial fixed assets"
+msgstr "Income financial fixed assets"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_084
+msgid "Independent"
+msgstr "Independent"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_085
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_067
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_067_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_067
+msgid "Independent fees"
+msgstr "Independent fees"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_112
+msgid "Indirect taxes "
+msgstr "Indirect taxes "
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_107
+msgid "Insurance"
+msgstr "Insurance"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_034
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_026
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_026_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_026
+msgid "Intercompany"
+msgstr "Intercompany"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_086
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_068
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_068_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_068
+msgid "Kilometric indemnity for independent"
+msgstr "Kilometric indemnity for independent"
+
+#. module: fal_generic_product
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_006
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_006_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_006
+msgid "Legal Formalities"
+msgstr "Legal Formalities"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_018
+msgid "Legal formalities"
+msgstr "Legal formalities"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_104
+msgid "Legal services"
+msgstr "Legal services"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_135
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_110
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_110_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_110
+msgid "Local mission - Bus"
+msgstr "Local mission - Bus"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_136
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_111
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_111_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_111
+msgid "Local mission - Car renting"
+msgstr "Local mission - Car renting"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_131
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_107
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_107_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_107
+msgid "Local mission - Drink"
+msgstr "Local mission - Drink"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_137
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_112
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_112_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_112
+msgid "Local mission - Flight"
+msgstr "Local mission - Flight"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_132
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_108
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_108_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_108
+msgid "Local mission - Food"
+msgstr "Local mission - Food"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_138
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_113
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_113_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_113
+msgid "Local mission - Fuel"
+msgstr "Local mission - Fuel"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_133
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_109
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_109_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_109
+msgid "Local mission - Hotel"
+msgstr "Local mission - Hotel"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_139
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_114
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_114_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_114
+msgid "Local mission - Km indemnity"
+msgstr "Local mission - Km indemnity"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_140
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_115
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_115_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_115
+msgid "Local mission - Parking"
+msgstr "Local mission - Parking"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_141
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_118
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_118_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_118
+msgid "Local mission - Taxi"
+msgstr "Local mission - Taxi"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_142
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_116
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_116_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_116
+msgid "Local mission - Tollgate"
+msgstr "Local mission - Tollgate"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_143
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_117
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_117_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_117
+msgid "Local mission - Train"
+msgstr "Local mission - Train"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_130
+msgid "Local representation"
+msgstr "Local representation"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_134
+msgid "Local travelling"
+msgstr "Local travelling"
+
+#. module: fal_generic_product
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_016
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_016_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_016
+msgid "Long term Finance products"
+msgstr "Long term Finance products"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_030
+msgid "Long term financial products"
+msgstr "Long term financial products"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_035
+msgid "Maintenance"
+msgstr "Maintenance"
+
+#. module: fal_generic_product
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_030
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_030_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_030
+msgid "Maintenance Carbo SIP WELL"
+msgstr "Maintenance Carbo SIP WELL"
+
+#. module: fal_generic_product
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_121
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_121_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_121
+msgid "Membership / Sponsoring"
+msgstr "Membership / Sponsoring"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_148
+msgid "Membership, Sponsoring"
+msgstr "Membership, Sponsoring"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_046
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_037
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_037_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_037
+msgid "Miscellaneous"
+msgstr "Miscellaneous"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_051
+msgid "Non stockable stuff"
+msgstr "Non stockable stuff"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_042
+msgid "Non-operating Income & Expense"
+msgstr "Non-operating Income & Expense"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_047
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_035
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_035_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_035
+msgid "NonOP depreciation"
+msgstr "NonOP depreciation"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_079
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_060
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_060_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_060
+msgid "OTHER Employee INSURANCE"
+msgstr "OTHER Employee INSURANCE"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_113
+msgid "Other indirect taxes"
+msgstr "Other indirect taxes"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_109
+msgid "Other services"
+msgstr "Other services"
+
+#. module: fal_generic_product
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_092
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_092_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_092
+msgid "Other taxes"
+msgstr "Other taxes"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_068
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_055
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_055_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_055
+msgid "Others advantage in nature"
+msgstr "Others advantage in nature"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_087
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_069
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_069_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_069
+msgid "Payroll"
+msgstr "Payroll"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_056
+msgid "Phone, Mail, Internet"
+msgstr "Phone, Mail, Internet"
+
+#. module: fal_generic_product
+#: model:ir.model,name:fal_generic_product.model_product_template
+msgid "Product Template"
+msgstr "Modèle d'article"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_144
+msgid "Public Relationship"
+msgstr "Public Relationship"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_063
+msgid "Renting & Management fees"
+msgstr "Renting & Management fees"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_066
+msgid "Salaries & benefits"
+msgstr "Salaries & benefits"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_095
+msgid "Sales and marketing services"
+msgstr "Sales and marketing services"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_094
+msgid "Security services"
+msgstr "Security services"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_149
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_122
+msgid "Seminars"
+msgstr "Seminars"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_090
+msgid "Services"
+msgstr "Services"
+
+#. module: fal_generic_product
+#: model:ir.model.fields,help:fal_generic_product.field_product_product_can_be_expensed
+#: model:ir.model.fields,help:fal_generic_product.field_product_template_can_be_expensed
+msgid "Specify whether the product can be selected in an HR expense."
+msgstr "Specify whether the product can be selected in an HR expense."
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_069
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_056
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_056_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_056
+msgid "Staff party"
+msgstr "Staff party"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_048
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_038
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_038_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_038
+msgid "Subsidies"
+msgstr "Subsidies"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_105
+msgid "Tax services"
+msgstr "Tax services"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_110
+msgid "Taxes"
+msgstr "Taxes"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_007
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_004
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_004_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_004
+msgid "Taxes on results current year"
+msgstr "Taxes on results current year"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_008
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_005
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_005_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_005
+msgid "Taxes on results previous years"
+msgstr "Taxes on results previous years"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_088
+msgid "Temporary job"
+msgstr "Temporary job"
+
+#. module: fal_generic_product
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_070
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_070_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_070
+msgid "Temporary staff"
+msgstr "Temporary staff"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_089
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_071
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_071_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_071
+msgid "Training"
+msgstr "Training"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_115
+msgid "Travelling, Mission expenses, Public relationship"
+msgstr "Travelling, Mission expenses, Public relationship"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_114
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_093
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_093_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_093
+msgid "VAT"
+msgstr "VAT"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_033
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_025
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_025_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_025
+msgid "Writte off current assets"
+msgstr "Writte off current assets"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_049
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_039
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_039_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_039
+msgid "Writte off trade debtors"
+msgstr "Writte off trade debtors"
+
+#. module: fal_generic_product
+#: model:product.category,name:fal_generic_product.product_category_gen_comp_050
+#: model:product.product,name:fal_generic_product.product_product_gen_comp_040
+#: model:product.template,name:fal_generic_product.product_product_gen_comp_040_product_template
+#: model:product.template,name:fal_generic_product.product_template_gen_comp_040
+msgid "Writte off trade inventories"
+msgstr "Writte off trade inventories"

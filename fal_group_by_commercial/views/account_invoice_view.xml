@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="view_invoice_tree_fal_gc" model="ir.ui.view">
+            <field name="name">account.invoice.tree.fal.gc</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_tree"/>
+            <field name="arch" type="xml">
+                <data>
+                    <field name="currency_id" groups="base.group_multi_currency" position="after">
+                        <field name="commercial_partner_id" invisible="1"/>
+                        <field name="fal_parent_company" invisible="1"/>
+                    </field>
+                </data>
+            </field>
+        </record>
+        <record id="view_account_invoice_filter_fal_gc" model="ir.ui.view">
+            <field name="name">account.invoice.select.fal.gc</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.view_account_invoice_filter"/>
+            <field name="arch" type="xml">
+                <data>
+                    <filter name="salesperson" position="after">
+                        <filter name="commercial_partner" string="Commercial Partner" domain="[]" context="{'group_by':'commercial_partner_id'}" />
+                        <filter name="parent_company" string="Parent Company" domain="[]" context="{'group_by' : 'fal_parent_company'}" />
+                    </filter>
+                </data>
+            </field>
+        </record>
+    </data>
+</odoo>

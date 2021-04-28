@@ -1,0 +1,19 @@
+<odoo>
+    <data>
+        <record id="view_calendar_event_form_fal_ext" model="ir.ui.view">
+            <field name="name">view.calendar.event.form.fal</field>
+            <field name="model">calendar.event</field>
+            <field name="inherit_id" ref="calendar.view_calendar_event_form"/>
+            <field name="arch" type="xml">
+                <field name="alarm_ids" position="after">
+                    <field name="fal_project_id" groups="hr_timesheet.group_timesheet_manager"/>
+                    <field name="fal_task_id" groups="hr_timesheet.group_timesheet_manager" domain="[('project_id', '=', fal_project_id)]"/>
+                </field>
+                <xpath expr="//header" position="inside">
+                    <button name="action_create_timesheet" string="Create Timesheet" type="object" attrs="{'invisible': ['|', ('state', 'in', ['draft','submit']), ('fal_timesheet_created', '=', True)]}" groups="fal_calendar_meeting_ext.group_calendar_user"/>
+                    <field name="fal_timesheet_created" invisible="1"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

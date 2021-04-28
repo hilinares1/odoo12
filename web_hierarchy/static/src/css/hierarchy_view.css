@@ -1,0 +1,58 @@
+span.caret-hierarchy{
+    transition: border 0.5s;
+}
+
+span.caret-hierarchy:hover{
+    border: 1px solid rgba(102,102,102,0.8) !important;
+}
+
+.parentid_primary{
+	background-color: #875A7B;
+	color: white;
+    padding-top: 10px;
+    text-align: center;
+    border: 1px solid white;
+    height: 80px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    animation-name: fadingIn;
+    animation-duration: 1s;
+}
+
+.parentid_primary:hover{
+    background-color: #68465f;
+    cursor: pointer;
+}
+
+.parentid_item{
+    background-color: #00a09d;
+    color: white;
+    padding-top: 10px;
+    text-align: center;
+    border: 1px solid white;
+    height: 80px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    animation-name: fadingIn;
+    animation-duration: 2s;
+}
+
+.parentid_item:hover{
+    background-color: #45818E;
+    cursor: pointer;
+}
+
+@keyframes fadingIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+tbody.hidden{
+    display: none;
+}
+
+tbody.o_group_open > tr.o_group_header.o_group_has_content > th.o_group_name{
+    color: #343a40;
+}

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <report
+            id="report_invoice_vendor_bill"
+            model="account.invoice"
+            string="Invoices with attachment"
+            report_type="qweb-pdf"
+            name="fal_invoice_print_attachment.report_invoice_bill"
+            file="fal_invoice_print_attachment.report_invoice_bill"
+            attachment="(object.state in ('open','paid')) and
+                ('INV'+(object.number or '').replace('/','')+'.pdf')"
+        />
+
+        <template id="report_invoice_bill">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="account.report_invoice_document" t-lang="o.partner_id.lang"/>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>

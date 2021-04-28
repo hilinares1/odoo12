@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="fal_email_template_internal_mom" model="mail.template">
+            <field name="name">Minutes of Meeting</field>
+            <field name="model_id" ref="fal_calendar_meeting_ext.model_calendar_event"/>
+            <field name="subject">MOM (Ref ${object.name or 'n/a' })</field>
+            <field name="email_from">${object.sudo().create_uid.email_formatted | safe}</field>
+            <field name="partner_to">${object.get_partner_ids_internal()}</field>
+            <field name="body_html" type="html">
+                <div style="margin: 0px; padding: 0px;">
+                    <p style="margin: 0px; padding: 0px; font-size: 13px;">
+                        Dear Mr./Mrs.
+                        <br/><br/>
+                        Please read the MOM for <strong>${object.name}</strong>
+                        <br/><br/>
+                        ${object.meeting_mom | safe}
+                        <br/><br/>
+                        Best regards,
+                        <br/><br/>
+                        Company
+                    </p>
+                </div>
+            </field>
+            <field name="report_name">MOM_${(object.name or '').replace('/','_')}</field>
+            <field name="lang">${object.sudo().create_uid.lang}</field>
+            <field name="user_signature" eval="False"/>
+            <field name="fal_allow_external_message" eval="False"/>
+            <field name="auto_delete" eval="False"/>
+        </record>
+
+        <record id="fal_email_template_public_mom" model="mail.template">
+            <field name="name">Minutes of Meeting</field>
+            <field name="model_id" ref="fal_calendar_meeting_ext.model_calendar_event"/>
+            <field name="subject">MOM (Ref ${object.name or 'n/a' })</field>
+            <field name="email_from">${object.sudo().create_uid.email_formatted | safe}</field>
+            <field name="partner_to">${object.get_partner_ids_public()}</field>
+            <field name="body_html" type="html">
+                <div style="margin: 0px; padding: 0px;">
+                    <p style="margin: 0px; padding: 0px; font-size: 13px;">
+                        Dear Mr./Mrs.
+                        <br/><br/>
+                        Please read the MOM for <strong>${object.name}</strong>
+                        <br/><br/>
+                        ${object.fal_public_mom | safe}
+                        <br/><br/>
+                        Best regards,
+                        <br/><br/>
+                        Company
+                    </p>
+                </div>
+            </field>
+            <!-- <field name="report_template" ref="fal_calendar_meeting_ext.calendar_meeting_mom_report"/>  -->
+            <field name="report_name">MOM_${(object.name or '').replace('/','_')}</field>
+            <field name="lang">${object.sudo().create_uid.lang}</field>
+            <field name="user_signature" eval="False"/>
+            <field name="fal_allow_external_message" eval="True"/>
+            <field name="auto_delete" eval="False"/>
+        </record>
+    </data>
+</odoo>

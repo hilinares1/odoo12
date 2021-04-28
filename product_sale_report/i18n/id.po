@@ -1,0 +1,245 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* product_sale_report
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-01-25 10:21+0000\n"
+"PO-Revision-Date: 2020-01-25 10:21+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: product_sale_report
+#: model_terms:ir.ui.view,arch_db:product_sale_report.view_order_product_report_map
+msgid "<span>Confirmation date: </span>"
+msgstr "<span>Tanggal Konfirmasi: </span>"
+
+#. module: product_sale_report
+#: model_terms:ir.ui.view,arch_db:product_sale_report.view_order_product_report_map
+msgid "<span>Order date: </span>"
+msgstr "<span>Tanggal Order: </span>"
+
+#. module: product_sale_report
+#: model_terms:ir.ui.view,arch_db:product_sale_report.view_order_product_report_map
+msgid "<span>Status: </span>"
+msgstr "<span>Status: </span>"
+
+#. module: product_sale_report
+#: model_terms:ir.ui.view,arch_db:product_sale_report.view_order_product_report_map
+msgid "<span>Total: </span>"
+msgstr "<span>Total: </span>"
+
+#. module: product_sale_report
+#: model_terms:ir.ui.view,arch_db:product_sale_report.view_order_product_report_map
+msgid "<span>Untaxed total: </span>"
+msgstr "<span>Total Sebelum Pajak: </span>"
+
+#. module: product_sale_report
+#: selection:product.sale.report,state:0
+msgid "Cancelled"
+msgstr "Batal"
+
+#. module: product_sale_report
+#: model_terms:ir.ui.view,arch_db:product_sale_report.view_product_sale_report_search
+msgid "Confirmation Date"
+msgstr "Tanggal Konfirmasi"
+
+#. module: product_sale_report
+#: model:ir.model.fields,field_description:product_sale_report.field_product_sale_report__confirmation_date
+msgid "Confirmation date"
+msgstr "Tanggal Konfirmasi"
+
+#. module: product_sale_report
+#: model:ir.model.fields,field_description:product_sale_report.field_product_sale_report__partner_id
+#: model_terms:ir.ui.view,arch_db:product_sale_report.view_product_sale_report_search
+msgid "Customer"
+msgstr "Pelanggan"
+
+#. module: product_sale_report
+#: model_terms:ir.ui.view,arch_db:product_sale_report.view_product_sale_report_search
+msgid "Date"
+msgstr "Tanggal"
+
+#. module: product_sale_report
+#: model:ir.model.fields,field_description:product_sale_report.field_product_sale_report__display_name
+msgid "Display Name"
+msgstr "Nama Tampilan"
+
+#. module: product_sale_report
+#: selection:product.sale.report,state:0
+msgid "Draft Quotation"
+msgstr ""
+
+#. module: product_sale_report
+#: model:ir.model.fields,field_description:product_sale_report.field_sale_report__latitude
+msgid "Geo Latitude"
+msgstr "Garis lintang"
+
+#. module: product_sale_report
+#: model:ir.model.fields,field_description:product_sale_report.field_sale_report__longitude
+msgid "Geo Longitude"
+msgstr "Garis bujur"
+
+#. module: product_sale_report
+#: model_terms:ir.ui.view,arch_db:product_sale_report.view_product_sale_report_search
+msgid "Group By"
+msgstr "Kelompokkan Menurut"
+
+#. module: product_sale_report
+#: model:ir.model.fields,field_description:product_sale_report.field_product_sale_report__id
+msgid "ID"
+msgstr ""
+
+#. module: product_sale_report
+#: model:ir.model.fields,field_description:product_sale_report.field_product_sale_report____last_update
+msgid "Last Modified on"
+msgstr "Terakhir Diubah Pada"
+
+#. module: product_sale_report
+#: model:ir.model.fields,field_description:product_sale_report.field_product_sale_report__latitude
+msgid "Latitude"
+msgstr ""
+
+#. module: product_sale_report
+#: model:ir.model.fields,field_description:product_sale_report.field_product_sale_report__longitude
+msgid "Longitude"
+msgstr ""
+
+#. module: product_sale_report
+#: model_terms:ir.ui.view,arch_db:product_sale_report.view_product_sale_report_search
+msgid "Order"
+msgstr ""
+
+#. module: product_sale_report
+#: model:ir.model.fields,field_description:product_sale_report.field_product_sale_report__order_id
+msgid "Order #"
+msgstr ""
+
+#. module: product_sale_report
+#: model_terms:ir.ui.view,arch_db:product_sale_report.view_product_sale_report_search
+msgid "Order Date"
+msgstr "Tanggal Order"
+
+#. module: product_sale_report
+#: model:ir.model.fields,field_description:product_sale_report.field_product_sale_report__date
+msgid "Order date"
+msgstr "Tanggal Order"
+
+#. module: product_sale_report
+#: model:ir.model.fields,field_description:product_sale_report.field_product_sale_report__product_id
+#: model_terms:ir.ui.view,arch_db:product_sale_report.view_product_sale_report_form
+#: model_terms:ir.ui.view,arch_db:product_sale_report.view_product_sale_report_search
+msgid "Product"
+msgstr "Produk"
+
+#. module: product_sale_report
+#: model_terms:ir.ui.view,arch_db:product_sale_report.view_product_sale_report_map
+msgid "Product Analysis"
+msgstr "Analisa Produk"
+
+#. module: product_sale_report
+#: model:ir.model.fields,field_description:product_sale_report.field_product_sale_report__product_category_id
+#: model_terms:ir.ui.view,arch_db:product_sale_report.view_product_sale_report_search
+msgid "Product Category"
+msgstr "Kategori Produk"
+
+#. module: product_sale_report
+#: model_terms:ir.ui.view,arch_db:product_sale_report.view_product_sale_report_graph
+#: model_terms:ir.ui.view,arch_db:product_sale_report.view_product_sale_report_pivot
+msgid "Product Sale Analysis"
+msgstr "Analisa Product Penjualan"
+
+#. module: product_sale_report
+#: model:ir.actions.act_window,name:product_sale_report.action_product_sale_maps
+#: model:ir.ui.menu,name:product_sale_report.menu_product_sale_maps
+#: model_terms:ir.ui.view,arch_db:product_sale_report.view_product_sale_report_tree
+msgid "Products"
+msgstr "Produk"
+
+#. module: product_sale_report
+#: model_terms:ir.ui.view,arch_db:product_sale_report.view_product_sale_report_search
+msgid "Products Analysis"
+msgstr "Analisa Produk"
+
+#. module: product_sale_report
+#: model:ir.model,name:product_sale_report.model_product_sale_report
+msgid "Products Sale Report"
+msgstr "Laporan Penjualan Produk"
+
+#. module: product_sale_report
+#: model:ir.model.fields,field_description:product_sale_report.field_product_sale_report__total_delivery
+msgid "Qty Delivered"
+msgstr "Jml Terkirim"
+
+#. module: product_sale_report
+#: model:ir.model.fields,field_description:product_sale_report.field_product_sale_report__total_invoice
+msgid "Qty Invoiced"
+msgstr "Jml Difakturkan"
+
+#. module: product_sale_report
+#: model:ir.model.fields,field_description:product_sale_report.field_product_sale_report__total_ordered
+msgid "Qty Ordered"
+msgstr "Jml Dipesan"
+
+#. module: product_sale_report
+#: selection:product.sale.report,state:0
+msgid "Quotation Sent"
+msgstr ""
+
+#. module: product_sale_report
+#: model_terms:ir.ui.view,arch_db:product_sale_report.view_product_sale_report_search
+msgid "Quotations"
+msgstr "Penawaran"
+
+#. module: product_sale_report
+#: model_terms:ir.ui.view,arch_db:product_sale_report.view_product_sale_report_search
+msgid "Sales"
+msgstr "Penjualan"
+
+#. module: product_sale_report
+#: model_terms:ir.ui.view,arch_db:product_sale_report.view_order_product_report_map
+msgid "Sales Analysis"
+msgstr "Analisa Penjualan"
+
+#. module: product_sale_report
+#: model:ir.model,name:product_sale_report.model_sale_report
+msgid "Sales Analysis Report"
+msgstr "Laporan Analisa Penjualan"
+
+#. module: product_sale_report
+#: selection:product.sale.report,state:0
+msgid "Sales Done"
+msgstr "Selesai"
+
+#. module: product_sale_report
+#: selection:product.sale.report,state:0
+msgid "Sales Order"
+msgstr "Order Penjualan"
+
+#. module: product_sale_report
+#: model:ir.model.fields,field_description:product_sale_report.field_product_sale_report__state
+#: model_terms:ir.ui.view,arch_db:product_sale_report.view_product_sale_report_search
+msgid "Status"
+msgstr "Status"
+
+#. module: product_sale_report
+#: model_terms:ir.ui.view,arch_db:product_sale_report.view_product_sale_report_tree
+msgid "Total Qty Delivery"
+msgstr "Jumlah terkirim"
+
+#. module: product_sale_report
+#: model_terms:ir.ui.view,arch_db:product_sale_report.view_product_sale_report_tree
+msgid "Total Qty Invoice"
+msgstr "Jumlah tertagih"
+
+#. module: product_sale_report
+#: model_terms:ir.ui.view,arch_db:product_sale_report.view_product_sale_report_tree
+msgid "Total Qty Ordered"
+msgstr "Jumlah dipesan"
+

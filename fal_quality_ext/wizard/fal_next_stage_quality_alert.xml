@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="fal_next_stage_quality_alert_wizard_view_form" model="ir.ui.view">
+            <field name="name">fal_next_stage_quality_alert_wizard_view_form</field>
+            <field name="model">fal.next.stage.quality.alert</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Move to Next Stage">
+                    <sheet>
+                        <p>Are you sure you want to move to next stage?</p>
+                        <footer>
+                            <button string='Validate' name="button_next_stage_quality_alert" type="object" class="btn-primary"/>
+                            <button string="Cancel" class="btn-default" special="cancel"/>
+                        </footer>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

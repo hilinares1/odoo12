@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="fal_project_budget_revision_wizard_form">
+            <field name="name">fal.project.budget.revision.wizard.form</field>
+            <field name="model">fal.project.budget.revision.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Control Revision">
+                    <group>
+                        <label for="" string="Revised the current budget?" colspan="2"/>
+                    </group>
+                    <footer>
+                        <button name="action_project_budget_revision" string="Revised" type="object" class="btn-primary"/>
+                        <button string="Cancel" class="btn-default" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <act_window
+            id="fal_project_budget_revision_wizard_action"
+            name="Control Revision"
+            res_model="fal.project.budget.revision.wizard"
+            src_model="fal.project.budget"
+            view_mode="form"
+            view_id="fal_project_budget_revision_wizard_form"
+            view_type="form"
+            target="new"
+            />
+
+    </data>
+</odoo>

@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_fapiao_tree" model="ir.ui.view">
+            <field name="name">fapiao.tree</field>
+            <field name="model">fapiao</field>
+            <field name="arch" type="xml">
+                <tree string="Fapiao" colors="blue:state == 'Draft'">
+                    <field name="fapiao_date" />
+                    <field name="fapiao_declaration_date" />
+                    <field name="name"/>
+                    <field name="fapiao_number"/>
+                    <field name="partner_id"/>
+                    <field name="total_tax_amount"/>
+                    <field name="amount_with_taxes" />
+                    <field name="state" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_fapiao_form" model="ir.ui.view">
+            <field name="name">fapiao.line.form</field>
+            <field name="model">fapiao</field>
+            <field name="arch" type="xml">
+                <form string="Fapiao Line" version="7.0">
+                    <header>
+                        <button name="action_validated" states="Draft" string="Validated" type="object" class="oe_highlight" />
+                        <button name="action_cancel_fapiao" states="Posted" string="Unreconcile" type="object" />
+                        <field name="state" widget="statusbar" statusbar_visible="Draft,Posted"/>
+                    </header>
+                    <sheet string="Customer Fapiao">
+                        <div>
+                            <label for="name" string="Fapiao" attrs="{'invisible': [('state','=','Draft')]}" />
+                            <h1><field name="name" class="oe_inline" readonly="1" attrs="{'invisible': [('state','=','Draft')]}" /></h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="fapiao_number" attrs="{'readonly': [('state','!=','Draft')]}"/>
+                                <field name="partner_id" attrs="{'readonly': [('state','!=','Draft')]}" domain="[('customer', '!=', False)]"/>
+                                <field name="tag_ids" widget="many2many_tags" placeholder="Tags..." attrs="{'readonly': [('state','!=','Draft')]}"/>
+                                <field name="fapiao_type" invisible="1" />
+                                <field name="company_id" groups="base.group_multi_company"/>
+                            </group>
+                            <group>
+                                <field name="fapiao_date" attrs="{'readonly': [('state','!=','Draft')]}"/>
+                                <field name="fapiao_declaration_date" attrs="{'readonly': [('state','!=','Draft')]}"/>
+                                <field name="tax_id" attrs="{'readonly': [('state','!=','Draft')]}"/>
+                                <field name="total_tax_amount" />
+                                <field name="amount_with_taxes" />
+                            </group>
+                        </group>
+                        <button name="onclick_reconcile_all_fapiao" string="Reconcile/Unreconcile All Fapiao" type="object" states="Draft" />
+                        <field name="fapiao_line_ids" context="{'partner_id' :partner_id}" attrs="{'readonly': [('state','!=','Draft')]}">
+                            <tree string="Fapiao Line" editable="top">
+                                <field name="invoice_id" domain="[('partner_id', '=', context.get('partner_id')),'|',('state','=','open'),('state','=','draft')]"/>
+                                <button name="open_invoice" string="View Invoice" type="object" icon="gtk-justify-fill" attrs="{'invisible': [('invoice_id','=',False)]}"/>
+                                <field name="invoice_date" readonly="1"/>
+                                <field name="invoice_amount_total" readonly="1"/>
+                                <field name="invoice_state" readonly="1"/>
+                                <field name="open_balance_temp" />
+                                <field name="not_fapiao" />
+                                <field name="open_balance" invisible="1"/>
+                                <field name="full_reconcile"/>
+                                <field name="allocated_ammount" sum="Allocated Amount Total with Tax"/>
+                            </tree>
+                        </field>
+                        <field name="notes" placeholder="Add a note in here..."/>
+                    </sheet>
+                    <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_fapiao_supplier_form" model="ir.ui.view">
+            <field name="name">fapiao.line.supplier.form</field>
+            <field name="model">fapiao</field>
+            <field name="arch" type="xml">
+                <form string="Fapiao Line" version="7.0">
+                    <header>
+                        <button name="action_validated" states="Draft" string="Validated" type="object" class="oe_highlight" />
+                        <button name="action_cancel_fapiao" states="Posted" string="Unreconcile" type="object" />
+                        <field name="state" widget="statusbar" statusbar_visible="Draft,Posted"/>
+                    </header>
+                    <sheet string="Supplier Fapiao">
+                        <div>
+                            <label for="name" string="Fapiao" attrs="{'invisible': [('state','=','Draft')]}" />
+                            <h1><field name="name" class="oe_inline" readonly="1" attrs="{'invisible': [('state','=','Draft')]}" /></h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="fapiao_number" attrs="{'readonly': [('state','!=','Draft')]}"/>
+                                <field name="partner_id" attrs="{'readonly': [('state','!=','Draft')]}" domain="[('supplier', '!=', False)]"/>
+                                <field name="tag_ids" widget="many2many_tags" placeholder="Tags..." attrs="{'readonly': [('state','!=','Draft')]}"/>
+                                <field name="fapiao_type" invisible="1" />
+                                <field name="company_id" groups="base.group_multi_company"/>
+                            </group>
+                            <group>
+                                <field name="fapiao_date" attrs="{'readonly': [('state','!=','Draft')]}"/>
+                                <field name="fapiao_declaration_date" attrs="{'readonly': [('state','!=','Draft')]}"/>
+                                <field name="tax_id" attrs="{'readonly': [('state','!=','Draft')]}"/>
+                                <field name="total_tax_amount" />
+                                <field name="amount_with_taxes" />
+                            </group>
+                        </group>
+                        <button name="onclick_reconcile_all_fapiao" string="Reconcile/Unreconcile All Fapiao" type="object" states="Draft" />
+                        <field name="fapiao_line_ids" context="{'partner_id' :partner_id}">
+                            <tree string="Fapiao Line" editable="top">
+                                <field name="invoice_id" domain="[('partner_id', '=', context.get('partner_id')),'|',('state','=','open'),('state','=','draft')]"/>
+                                <button name="open_invoice" string="View Invoice" type="object" icon="gtk-justify-fill" attrs="{'invisible': [('invoice_id','=',False)]}"/>
+                                <field name="invoice_date" readonly="1"/>
+                                <field name="invoice_amount_total" readonly="1"/>
+                                <field name="invoice_state" readonly="1"/>
+                                <field name="open_balance_temp" />
+                                <field name="not_fapiao" />
+                                <field name="open_balance" invisible="1" />
+                                <field name="full_reconcile"/>
+                                <field name="allocated_ammount" sum="Allocated Amount Total with Tax"/>
+                            </tree>
+                        </field>
+                        <field name="notes" placeholder="Add a note in here..."/>
+                    </sheet>
+                    <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_fapiao_filter" model="ir.ui.view">
+            <field name="name">fapiao.select</field>
+            <field name="model">fapiao</field>
+            <field name="arch" type="xml">
+                <search string="Search Fapiao">
+                    <field name="fapiao_number" />
+                    <field name="partner_id" string="Fapiao" filter_domain="[('partner_id', 'child_of', self)]"/>
+                    <field name="fapiao_date" />
+                    <field name="fapiao_declaration_date" />
+                    <field name="tag_ids" />
+                    <separator/>
+
+                    <group expand="0" string="Group By...">
+                        <filter name="Partner" string="Partner" icon="terp-partner" domain="[]" context="{'group_by':'partner_id'}"/>
+                        <filter name="Fapiao_Date" string="Fapiao Date" icon="terp-go-month" domain="[]"  context="{'group_by':'fapiao_date'}"/>
+                        <filter name="Declaration_Date" string="Declaration Date" icon="terp-go-month" domain="[]"  context="{'group_by':'fapiao_declaration_date'}"/>
+                        <filter name="Fapiao_Number" string="Fapiao Number" icon="" domain="[]"  context="{'group_by':'fapiao_number'}"/>
+                    </group>
+               </search>
+            </field>
+        </record>
+
+        <record id="invoice_form" model="ir.ui.view">
+            <field name="name">account.invoice.form</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//notebook" position="inside">
+                    <page string="Fapiao Info">
+                        <field name="fapiao_line_ids_display" readonly="1">
+                            <tree string="Fapiao Line">
+                                <field name="fapiao_id"/>
+                                <field name="fapiao_number" />
+                                <field name="fapiao_date"/>
+                                <field name="open_balance_temp" />
+                                <field name="full_reconcile" />
+                                <field name="allocated_ammount" />
+                                <field name="fapiao_state" />
+                            </tree>
+                        </field>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="fapiao_invoice_supplier_form" model="ir.ui.view">
+            <field name="name">fapiao.account.invoice.supplier.form</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_supplier_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//notebook" position="inside">
+                    <page string="Fapiao Info">
+                        <field name="fapiao_line_ids_display" readonly="1">
+                            <tree string="Fapiao Line">
+                                <field name="fapiao_id"/>
+                                <field name="fapiao_number" />
+                                <field name="fapiao_date"/>
+                                <field name="open_balance_temp" />
+                                <field name="full_reconcile" />
+                                <field name="allocated_ammount" />
+                                <field name="fapiao_state" />
+                            </tree>
+                        </field>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+       <record id="action_fapiao_tree" model="ir.actions.act_window">
+            <field name="name">Customer Fapiao</field>
+            <field name="res_model">fapiao</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="view_fapiao_tree" />
+            <field name="search_view_id" ref="view_fapiao_filter" />
+            <field name="domain">[('fapiao_type', '=', 'customer')]</field>
+            <field name="context">{'default_fapiao_type':'customer'}</field>
+        </record>
+
+        <record id="action_fapiao_form" model="ir.actions.act_window.view">
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_fapiao_tree"/>
+            <field name="act_window_id" ref="action_fapiao_tree"/>
+        </record>
+
+        <record id="action_fapiao_tree_1" model="ir.actions.act_window.view">
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_fapiao_form"/>
+            <field name="act_window_id" ref="action_fapiao_tree"/>
+        </record>
+
+       <record id="action_fapiao_supplier_tree" model="ir.actions.act_window">
+            <field name="name">Supplier Fapiao</field>
+            <field name="res_model">fapiao</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="view_fapiao_tree" />
+            <field name="search_view_id" ref="view_fapiao_filter" />
+            <field name="domain">[('fapiao_type', '=', 'supplier')]</field>
+            <field name="context">{'default_fapiao_type':'supplier'}</field>
+        </record>
+
+        <record id="action_fapiao_tree_2" model="ir.actions.act_window.view">
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_fapiao_tree"/>
+            <field name="act_window_id" ref="action_fapiao_supplier_tree"/>
+        </record>
+
+        <record id="action_fapiao_supplier_form" model="ir.actions.act_window.view">
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_fapiao_supplier_form"/>
+            <field name="act_window_id" ref="action_fapiao_supplier_tree"/>
+        </record>
+
+        <menuitem id="menu_fapiao" name="Fapiao" parent="account.menu_finance" sequence="3"/>
+        <menuitem action="action_fapiao_tree" id="fapiao_tree_lines"
+            parent="menu_fapiao"/>
+        <menuitem action="action_fapiao_supplier_tree" id="fapiao_supplier_tree_lines"
+            parent="menu_fapiao"/>
+    </data>
+</odoo>

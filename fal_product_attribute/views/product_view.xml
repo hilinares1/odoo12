@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="product_selector_view_form" model="ir.ui.view">
+	        <field name="name">product.selector.view.form</field>
+	        <field name="model">product.selector</field>
+	        <field name="arch" type="xml">
+	            <form class="PA_form" js_class="product_attribute_form">
+	                <group class="PA_group">
+	                    <field name="product_ids" class="PA_product_ids" widget="many2many" mode="kanban" readonly="1">
+	                    	<kanban create="false" options="{'initial_mode': 'view'}">
+	                            <field name="id"/>
+			                    <field name="image_small"/>
+			                    <field name="lst_price"/>
+			                    <templates>
+			                        <t t-name="kanban-box">
+			                            <div class="oe_kanban_global">
+			                                <div class="o_kanban_image">
+			                                    <img t-att-src="kanban_image('product.product', 'image_small', record.id.raw_value)" alt="Product"/>
+			                                </div>
+			                                <div class="oe_kanban_details">
+			                                    <strong class="o_kanban_record_title"><field name="name"/></strong>
+			                                    <div class="o_kanban_tags_section">
+			                                        <field name="attribute_value_ids" groups="product.group_product_variant"/>
+			                                    </div>
+			                                    <ul>
+			                                        <li><strong>Price: <field name="lst_price"/></strong></li>
+			                                    </ul>
+			                                    <div name="tags"/>
+			                                </div>
+			                                <button string="Apply" class="btn btn-primary" type="object" name="actionadd">Select</button>
+			                            </div>
+			                        </t>
+			                    </templates>
+	                        </kanban>
+	                    </field>
+	                </group>
+	                <footer>
+	                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+	                </footer>
+	            </form>
+	        </field>
+	    </record>
+
+    </data>
+</odoo>

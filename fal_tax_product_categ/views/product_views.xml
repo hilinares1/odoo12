@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+    	<record id="fal_product_category_form_view_ext" model="ir.ui.view">
+            <field name="name">product.category.form</field>
+            <field name="model">product.category</field>
+            <field name="inherit_id" ref="product.product_category_form_view"/>
+            <field name="arch" type="xml">
+                <group name="first" position="after">
+                    <group string="Taxes">
+                        <group>
+                            <field name="fal_taxes_id" widget="many2many_tags" options="{'no_create': True}"/>
+                            <field name="fal_supplier_taxes_id" widget="many2many_tags" options="{'no_create': True}"/>
+                        </group>
+                    </group>
+                </group>
+            </field>
+        </record>
+    </data>
+</odoo>

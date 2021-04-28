@@ -1,0 +1,15 @@
+<odoo>
+    <data>
+        <record id="fal_view_group_company_currency_form2" model="ir.ui.view">
+            <field name="name">fal_timesheet_invoice.view_group_currency</field>
+            <field name="model">res.company</field>
+            <field name="inherit_id" ref="base.view_company_form"/>
+            <field name="arch" type="xml">
+                <field name="fal_company_late_payment_statement" position="after">
+                    <field name="fal_use_late_payment_statement"/>
+                </field>
+               
+            </field>
+        </record>
+    </data>
+</odoo>

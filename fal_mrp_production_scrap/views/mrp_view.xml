@@ -1,0 +1,47 @@
+<odoo>
+    <record id="mrp_production_form_view_fal_scrap" model="ir.ui.view">
+        <field name="name">mrp_production_form_view_fal_scrap</field>
+        <field name="model">mrp.production</field>
+        <field name="type">form</field>
+        <field name="inherit_id" ref="mrp.mrp_production_form_view"/>
+        <field name="arch" type="xml">
+            <field name="bom_id" position="after">
+                <label for="fal_scrap_percentage"/>
+                <div>
+                    <field name="fal_scrap_percentage" attrs="{'readonly': [('has_moves', '=', True)]}" class="oe_inline"/>%
+                </div>
+            </field>
+        </field>
+    </record>
+
+    <record id="mrp_bom_form_view_fal_scrap" model="ir.ui.view">
+        <field name="name">mrp_bom_form_view_fal_scrap</field>
+        <field name="model">mrp.bom</field>
+        <field name="type">form</field>
+        <field name="inherit_id" ref="mrp.mrp_bom_form_view"/>
+        <field name="arch" type="xml">
+            <field name="routing_id" position="before">
+                <label for="fal_scrap_percentage"/>
+                <div>
+                    <field name="fal_scrap_percentage" class="oe_inline"/>%
+                </div>
+            </field>
+        </field>
+    </record>
+
+    <record id="fal_production_order_form_view_fal_scrap" model="ir.ui.view">
+        <field name="name">fal_production_order_form_view_fal_scrap</field>
+        <field name="model">fal.production.order</field>
+        <field name="type">form</field>
+        <field name="inherit_id" ref="fal_mrp_production_order.fal_production_order_form_view"/>
+        <field name="arch" type="xml">
+            <label for="qty_to_produce" position="before">
+                <label for="scrap_percentage"/>
+                <div>
+                    <field name="scrap_percentage" class="oe_inline"/>%
+                </div>
+                <field name="qty_to_transfer"/>
+            </label>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,37 @@
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <h2 class="oe_slogan" style="color:#875A7B;">add the feature of leveled view to odoo</h2>
+
+        * after install this module make action in the xml like:<br />
+        - for account.analytic.account:
+        <pre class="prettyprint">
+                    <code class="language-xml">
+                        &lt;record id="hr_action_hierarchical_chart" model="ir.actions.client"&gt;
+                            &lt;field name="name"&gt;Hierarchical Chart Of Analytic Account&lt;/field&gt;
+                            &lt;field name="tag"&gt;hierarchical_view&lt;/field&gt;
+                            &lt;field name="context"&gt;{'model': 'account.analytic.account'}&lt;/field&gt;
+                        &lt;/record&gt;
+                    </code>
+            </pre>
+
+        - and in the python add a hierarchical_chart_details method to your model here it is
+        account.analytic.account (and you have to specify the parent_id)
+        <pre class="prettyprint ">
+                <code class="language-python">
+                @api.model
+                def hierarchical_chart_details(self):
+                    accounts = self.sudo().search([])
+                    accounts = accounts.read([])
+
+                    return ['code', 'name', 'partner_id', 'debit',
+                    'credit', 'balance'], accounts
+            </code>
+
+            </pre>
+
+
+    </div>
+</section>
+
+<section class="oe_container oe_separator">
+</section>

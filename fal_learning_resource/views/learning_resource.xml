@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!-- window action -->
+        <record model="ir.actions.act_window" id="learning_resource_list_action">
+            <field name="name">Learning Material</field>
+            <field name="res_model">fal.learning.resource</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Create the Learning Material
+                </p>
+            </field>
+        </record>
+
+        <!-- top level menu: no parent -->
+        <menuitem id="main_learning_resource" name="Learning Center" web_icon="fal_learning_resource,static/description/icon.png"/>
+
+        <menuitem id="resource_menu" name="Learning Material" parent="main_learning_resource"
+                  action="learning_resource_list_action"/>
+
+
+        <record model="ir.ui.view" id="learning_resource_form_view">
+            <field name="name">fal.learning.resource.form</field>
+            <field name="model">fal.learning.resource</field>
+            <field name="arch" type="xml">
+                <form string="Material">
+                    <sheet>
+                        <h1 class="mt0">
+                            <field name="name"/>
+                        </h1>
+                        <group>
+                            <group>
+                                <field name="fal_number" readonly="1"/>
+                                <field name="fal_responsible"/>
+                                <field name="user_ids" widget="many2many_tags" groups="fal_learning_resource.group_fal_learning_resource_author"/>
+                            </group>
+                            <group>
+                                <field name="fal_tags" widget="many2many_tags"/>
+                                <field name="fal_scope" options="{'no_create': True}"/>
+                                <field name="fal_attachment_ids" widget="many2many_binary"/>
+                            </group>
+                        </group>
+                        <separator string="Content"/>
+                        <field name="fal_description" widget="html" class="oe_read_only"/>
+                        <field name="fal_description_2" widget="html" class="oe_edit_only" />
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="learning_resource_tree_view">
+            <field name="name">fal.learning.resource.tree</field>
+            <field name="model">fal.learning.resource</field>
+            <field name="arch" type="xml">
+                <tree string="Material">
+                    <field name="name"/>
+                    <field name="fal_number"/>
+                    <field name="fal_responsible"/>
+                    <field name="fal_scope"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- views for learning tag -->
+        <record model="ir.ui.view" id="fal_learning_tag_tree">
+            <field name="name">fal.learning.tag.tree</field>
+            <field name="model">fal.learning.tag</field>
+            <field name="arch" type="xml">
+                <tree string="Learning Tags">
+                    <field name="name" />
+                    <field name="code" />
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="fal_learning_tag_form">
+            <field name="name">fal.learning.tag.form</field>
+            <field name="model">fal.learning.tag</field>
+            <field name="arch" type="xml">
+                <form string="Learning Tags">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="code"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window"  id="fal_learning_tag_action">
+            <field name="name">Learning Tag</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">fal.learning.tag</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to create a Learning Tag
+              </p>
+            </field>
+        </record>
+
+        <menuitem id="learning_resource_conf_menu" name="Configuration"
+                  parent="main_learning_resource" groups="fal_learning_resource.group_fal_learning_resource_author"/>
+
+        <menuitem action="fal_learning_tag_action" id="fal_learning_tag_menu"
+            parent="learning_resource_conf_menu"/>
+
+        <!-- views for learning scope -->
+        <record model="ir.ui.view" id="fal_learning_scope_tree">
+            <field name="name">fal.learning.scope.tree</field>
+            <field name="model">fal.learning.scope</field>
+            <field name="arch" type="xml">
+                <tree string="Learning Scope">
+                    <field name="name" />
+                    <field name="code" />
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="fal_learning_scope_form">
+            <field name="name">fal.learning.scope.form</field>
+            <field name="model">fal.learning.scope</field>
+            <field name="arch" type="xml">
+                <form string="Learning Scope">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="code"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window"  id="fal_learning_scope_action">
+            <field name="name">Learning Scope</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">fal.learning.scope</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to create a Learning Scope
+              </p>
+            </field>
+        </record>
+
+        <menuitem action="fal_learning_scope_action" id="fal_learning_scope_menu"
+            parent="learning_resource_conf_menu"/>
+    </data>
+</odoo>

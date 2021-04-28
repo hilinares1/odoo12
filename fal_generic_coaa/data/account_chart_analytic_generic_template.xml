@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+
+        <!-- Generic Analytic Account Template -->
+        <record id="fal_gen_coa_c" model="account.analytic.account">
+            <field name="name">C - Your Company</field>
+            <field name="code">C</field>
+            <field name="account_type">view</field>
+        </record>
+        <record id="fal_gen_coa_cga" model="account.analytic.account">
+            <field name="name">General &amp; Administration</field>
+            <field name="code">GA</field>
+            <field name="account_type">view</field>
+            <field name="parent_id" ref="fal_gen_coa_c" />
+        </record>
+        <record id="fal_gen_coa_cgaass" model="account.analytic.account">
+            <field name="name">Asset</field>
+            <field name="code">ASS</field>
+            <field name="account_type">normal</field>
+            <field name="parent_id" ref="fal_gen_coa_cga" />
+        </record>
+        <record id="fal_gen_coa_cgaemp" model="account.analytic.account">
+            <field name="name">Employee costs</field>
+            <field name="code">EMP</field>
+            <field name="account_type">view</field>
+            <field name="parent_id" ref="fal_gen_coa_cga" />
+        </record>
+        <record id="fal_gen_coa_cgaempfin" model="account.analytic.account">
+            <field name="name">Finance</field>
+            <field name="code">FIN</field>
+            <field name="account_type">normal</field>
+            <field name="parent_id" ref="fal_gen_coa_cgaemp" />
+        </record>
+        <record id="fal_gen_coa_cgaemppur" model="account.analytic.account">
+            <field name="name">Purchase</field>
+            <field name="code">PUR</field>
+            <field name="account_type">normal</field>
+            <field name="parent_id" ref="fal_gen_coa_cgaemp" />
+        </record>
+        <record id="fal_gen_coa_cgaempsas" model="account.analytic.account">
+            <field name="name">SAS - Sales</field>
+            <field name="code">SAS</field>
+            <field name="account_type">normal</field>
+            <field name="parent_id" ref="fal_gen_coa_cgaemp" />
+        </record>
+        <record id="fal_gen_coa_cgaemphra" model="account.analytic.account">
+            <field name="name">Human Resources &amp; Admin</field>
+            <field name="code">HRA</field>
+            <field name="account_type">normal</field>
+            <field name="parent_id" ref="fal_gen_coa_cgaemp" />
+        </record>
+        <record id="fal_gen_coa_cgaovh" model="account.analytic.account">
+            <field name="name">Overhead costs</field>
+            <field name="code">OVH</field>
+            <field name="account_type">normal</field>
+            <field name="parent_id" ref="fal_gen_coa_cga" />
+        </record>
+        <record id="fal_gen_coa_cgamis" model="account.analytic.account">
+            <field name="name">Mission</field>
+            <field name="code">MIS</field>
+            <field name="account_type">normal</field>
+            <field name="parent_id" ref="fal_gen_coa_cga" />
+        </record>
+        <record id="fal_gen_coa_cgadir" model="account.analytic.account">
+            <field name="name">Direction costs</field>
+            <field name="code">DIR</field>
+            <field name="account_type">normal</field>
+            <field name="parent_id" ref="fal_gen_coa_cga" />
+        </record>
+        <record id="fal_gen_coa_cgadel" model="account.analytic.account">
+            <field name="name">Delivery fees</field>
+            <field name="code">DEL</field>
+            <field name="account_type">normal</field>
+            <field name="parent_id" ref="fal_gen_coa_cga" />
+        </record>
+        <record id="fal_gen_coa_ctg" model="account.analytic.account">
+            <field name="name">Trading</field>
+            <field name="code">TG</field>
+            <field name="account_type">view</field>
+            <field name="parent_id" ref="fal_gen_coa_c" />
+        </record>
+        <record id="fal_gen_coa_ctgass" model="account.analytic.account">
+            <field name="name">Asset</field>
+            <field name="code">ASS</field>
+            <field name="account_type">normal</field>
+            <field name="parent_id" ref="fal_gen_coa_ctg" />
+        </record>
+        <record id="fal_gen_coa_ctgemp" model="account.analytic.account">
+            <field name="name">Employee costs</field>
+            <field name="code">EMP</field>
+            <field name="account_type">normal</field>
+            <field name="parent_id" ref="fal_gen_coa_ctg" />
+        </record>
+        <record id="fal_gen_coa_ctgovh" model="account.analytic.account">
+            <field name="name">Overhead costs</field>
+            <field name="code">OVH</field>
+            <field name="account_type">normal</field>
+            <field name="parent_id" ref="fal_gen_coa_ctg" />
+        </record>
+        <record id="fal_gen_coa_ctgmis" model="account.analytic.account">
+            <field name="name">Mission</field>
+            <field name="code">MIS</field>
+            <field name="account_type">normal</field>
+            <field name="parent_id" ref="fal_gen_coa_ctg" />
+        </record>
+        <record id="fal_gen_coa_ctgdel" model="account.analytic.account">
+            <field name="name">Delivery fees</field>
+            <field name="code">DEL</field>
+            <field name="account_type">normal</field>
+            <field name="parent_id" ref="fal_gen_coa_ctg" />
+        </record>
+        <record id="fal_gen_coa_ctgbus" model="account.analytic.account">
+            <field name="name">Business</field>
+            <field name="code">BUS</field>
+            <field name="account_type">view</field>
+            <field name="parent_id" ref="fal_gen_coa_ctg" />
+        </record>
+        <record id="fal_gen_coa_ctgbuscus" model="account.analytic.account">
+            <field name="name">&lt;Customer name X1&gt;</field>
+            <field name="code">CUS</field>
+            <field name="account_type">normal</field>
+            <field name="parent_id" ref="fal_gen_coa_ctgbus" />
+        </record>
+        <record id="fal_gen_coa_ctgbusgod" model="account.analytic.account">
+            <field name="name">&lt;Product Category&gt;</field>
+            <field name="code">GOD</field>
+            <field name="account_type">normal</field>
+            <field name="parent_id" ref="fal_gen_coa_ctgbus" />
+        </record>
+        <record id="fal_gen_coa_cmf" model="account.analytic.account">
+            <field name="name">Manufacturing &amp; Factory</field>
+            <field name="code">MF</field>
+            <field name="account_type">view</field>
+            <field name="parent_id" ref="fal_gen_coa_c" />
+        </record>
+        <record id="fal_gen_coa_cmfass" model="account.analytic.account">
+            <field name="name">Asset</field>
+            <field name="code">ASS</field>
+            <field name="account_type">normal</field>
+            <field name="parent_id" ref="fal_gen_coa_cmf" />
+        </record>
+        <record id="fal_gen_coa_cmfemp" model="account.analytic.account">
+            <field name="name">Employee costs</field>
+            <field name="code">EMP</field>
+            <field name="account_type">view</field>
+            <field name="parent_id" ref="fal_gen_coa_cmf" />
+        </record>
+        <record id="fal_gen_coa_cmfempwor" model="account.analytic.account">
+            <field name="name">Production &amp; Quality management</field>
+            <field name="code">WOR</field>
+            <field name="account_type">normal</field>
+            <field name="parent_id" ref="fal_gen_coa_cmfemp" />
+        </record>
+        <record id="fal_gen_coa_cmfempwor" model="account.analytic.account">
+            <field name="name">Production &amp; Quality management</field>
+            <field name="code">PQM</field>
+            <field name="account_type">normal</field>
+            <field name="parent_id" ref="fal_gen_coa_cmfemp" />
+        </record>
+        <record id="fal_gen_coa_cmfempqua" model="account.analytic.account">
+            <field name="name">Quality</field>
+            <field name="code">QUA</field>
+            <field name="account_type">normal</field>
+            <field name="parent_id" ref="fal_gen_coa_cmfemp" />
+        </record>
+        <record id="fal_gen_coa_cmfempsto" model="account.analytic.account">
+            <field name="name">Stockkeeper</field>
+            <field name="code">STO</field>
+            <field name="account_type">normal</field>
+            <field name="parent_id" ref="fal_gen_coa_cmfemp" />
+        </record>
+        <record id="fal_gen_coa_cmfovh" model="account.analytic.account">
+            <field name="name">Overhead costs</field>
+            <field name="code">OVH</field>
+            <field name="account_type">normal</field>
+            <field name="parent_id" ref="fal_gen_coa_cmf" />
+        </record>
+        <record id="fal_gen_coa_cmfmis" model="account.analytic.account">
+            <field name="name">Mission</field>
+            <field name="code">MIS</field>
+            <field name="account_type">normal</field>
+            <field name="parent_id" ref="fal_gen_coa_cmf" />
+        </record>
+        <record id="fal_gen_coa_cmffyb" model="account.analytic.account">
+            <field name="name">Factory Building</field>
+            <field name="code">FYB</field>
+            <field name="account_type">normal</field>
+            <field name="parent_id" ref="fal_gen_coa_cmf" />
+        </record>
+        <record id="fal_gen_coa_cmfdel" model="account.analytic.account">
+            <field name="name">Delivery fees</field>
+            <field name="code">DEL</field>
+            <field name="account_type">normal</field>
+            <field name="parent_id" ref="fal_gen_coa_cmf" />
+        </record>
+        <record id="fal_gen_coa_cmfbus" model="account.analytic.account">
+            <field name="name">Business</field>
+            <field name="code">BUS</field>
+            <field name="account_type">view</field>
+            <field name="parent_id" ref="fal_gen_coa_cmf" />
+        </record>
+        <record id="fal_gen_coa_cmfbusprd" model="account.analytic.account">
+            <field name="name">&lt;Product Category&gt;</field>
+            <field name="code">PRD</field>
+            <field name="account_type">normal</field>
+            <field name="parent_id" ref="fal_gen_coa_cmfbus" />
+        </record>
+        <record id="fal_gen_coa_cmfbuscus" model="account.analytic.account">
+            <field name="name">&lt;Customer name X2&gt;</field>
+            <field name="code">CUS</field>
+            <field name="account_type">normal</field>
+            <field name="parent_id" ref="fal_gen_coa_cmfbus" />
+        </record>
+        <record id="fal_gen_coa_cpj" model="account.analytic.account">
+            <field name="name">Project</field>
+            <field name="code">PJ</field>
+            <field name="account_type">view</field>
+            <field name="parent_id" ref="fal_gen_coa_c" />
+        </record>
+        <record id="fal_gen_coa_cpjass" model="account.analytic.account">
+            <field name="name">Asset</field>
+            <field name="code">ASS</field>
+            <field name="account_type">normal</field>
+            <field name="parent_id" ref="fal_gen_coa_cpj" />
+        </record>
+        <record id="fal_gen_coa_cpjemp" model="account.analytic.account">
+            <field name="name">Employee costs</field>
+            <field name="code">EMP</field>
+            <field name="account_type">view</field>
+            <field name="parent_id" ref="fal_gen_coa_cpj" />
+        </record>
+        <record id="fal_gen_coa_cpjempwor" model="account.analytic.account">
+            <field name="name">Workers</field>
+            <field name="code">WOR</field>
+            <field name="account_type">normal</field>
+            <field name="parent_id" ref="fal_gen_coa_cpjemp" />
+        </record>
+        <record id="fal_gen_coa_cpjemppqm" model="account.analytic.account">
+            <field name="name">Production &amp; Quality management</field>
+            <field name="code">PQM</field>
+            <field name="account_type">normal</field>
+            <field name="parent_id" ref="fal_gen_coa_cpjemp" />
+        </record>
+        <record id="fal_gen_coa_cpjempqua" model="account.analytic.account">
+            <field name="name">Quality</field>
+            <field name="code">QUA</field>
+            <field name="account_type">normal</field>
+            <field name="parent_id" ref="fal_gen_coa_cpjemp" />
+        </record>
+        <record id="fal_gen_coa_cpjempsto" model="account.analytic.account">
+            <field name="name">Stockkeeper</field>
+            <field name="code">STO</field>
+            <field name="account_type">normal</field>
+            <field name="parent_id" ref="fal_gen_coa_cpjemp" />
+        </record>
+        <record id="fal_gen_coa_cpjovh" model="account.analytic.account">
+            <field name="name">Overhead costs</field>
+            <field name="code">OVH</field>
+            <field name="account_type">normal</field>
+            <field name="parent_id" ref="fal_gen_coa_cpj" />
+        </record>
+        <record id="fal_gen_coa_cpjdel" model="account.analytic.account">
+            <field name="name">Delivery fees</field>
+            <field name="code">DEL</field>
+            <field name="account_type">normal</field>
+            <field name="parent_id" ref="fal_gen_coa_cpj" />
+        </record>
+        <record id="fal_gen_coa_cpjmis" model="account.analytic.account">
+            <field name="name">Mission</field>
+            <field name="code">MIS</field>
+            <field name="account_type">normal</field>
+            <field name="parent_id" ref="fal_gen_coa_cpj"/>
+        </record>
+    </data>
+</odoo>

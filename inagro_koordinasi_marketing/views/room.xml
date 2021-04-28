@@ -1,0 +1,35 @@
+<odoo>
+
+    
+    <!-- Room form -->
+    <record id="view_room_koordinasi_form" model="ir.ui.view">
+        <field name="name">room.marketing.form</field>
+        <field name="model">room.marketing</field>
+        <field name="arch" type="xml">
+            <form string="Room">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="capacity" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <!-- Room Tree -->
+    <record id="view_room_koordinasi_tree" model="ir.ui.view">
+        <field name="name">room.marketing.tree</field>
+        <field name="model">room.marketing</field>
+        <field name="arch" type="xml">
+            <tree string="Room">
+                <field name="name"/>
+                <field name="capacity" />
+            </tree>
+        </field>
+    </record>
+
+    
+
+</odoo>

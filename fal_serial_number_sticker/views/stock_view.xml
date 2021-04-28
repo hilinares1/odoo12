@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_picking_form_serial_ext" model="ir.ui.view">
+            <field name="name">stock.picking</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='move_line_ids_without_package']/tree/field[@name='lot_id']" position="after">
+                    <button name="print_barcode" string="Print Serial Number" type="object" icon="fa-print" />
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_picking_form_fal_serial_number_sticker" model="ir.ui.view">
+            <field name="name">view_picking_form_fal_serial_number_sticker</field>
+            <field name="model">stock.move.line</field>
+            <field name="inherit_id" ref="stock.view_stock_move_line_operation_tree" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='result_package_id']" position="after">
+                    <button name="print_barcode" string="Print Serial Number" type="object" icon="fa-print" />
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

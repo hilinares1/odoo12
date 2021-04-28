@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_fal_function_user,fal.function.user,model_fal_function,base.group_user,1,1,1,1
+access_fal_company_size_user,fal.company.size.user,model_fal_company_size,base.group_user,1,1,1,1
+access_fal_origin,fal.origin.user,model_fal_origin,base.group_user,1,1,1,1

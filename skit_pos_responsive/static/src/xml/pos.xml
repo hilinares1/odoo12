@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+<t t-extend="ProductScreenWidget">
+    <t t-jquery='.product-screen' t-operation='replace'>
+    <div class="product-screen screen">
+            <div class="leftpane">
+                <div class='window'>
+                    <div class='subwindow'>
+                        <div class='subwindow-container'>
+                            <div class='subwindow-container-fix'>
+                                <div class="placeholder-OrderWidget"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class='subwindow collapsed'>
+                        <div class='subwindow-container'>
+                            <div class='subwindow-container-fix pads'>
+                                <div class="control-buttons oe_hidden"></div>
+                                <div class="placeholder-ActionpadWidget"></div>
+                                <div class="placeholder-NumpadWidget"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="rightpane">
+                <table class="layout-table">
+
+                    <tr class="header-row">
+                        <td class="header-cell">
+                            <span class="placeholder-ProductCategoriesWidget" />
+                        </td>
+                    </tr>
+
+                    <tr class="content-row">
+                        <td class="content-cell">
+                            <div class="content-container">
+                                <span class="placeholder-ProductListWidget" />
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            
+        </div>
+    </t>
+</t>
+
+
+
+<t t-extend="ActionpadWidget">
+<t t-jquery=".actionpad" t-operation="replace">
+      		<div class="actionpad">
+            <button t-attf-class='button set-customer #{ ( widget.pos.get_client() and widget.pos.get_client().name.length > 10) ? "decentered" : "" }' >
+                <i class='fa fa-user' role="img" aria-label="Customer" title="Customer"/>
+                <t t-if="widget.pos.get_client()">
+                    <t t-esc="widget.pos.get_client().name" />
+                </t>
+                <t t-if="!widget.pos.get_client()">
+                    <span class="span_cus">Customer</span>
+                </t>
+            </button>
+            <button class='button pay'>
+                <div class='pay-circle'>
+                    <i class='fa fa-chevron-right' role="img" aria-label="Pay" title="Pay"/>
+                </div>
+                <span class="span_pay">Payment</span>
+            </button>
+            <button class='show_numpad'>
+            <div><i class="fa fa-keyboard-o fa-3x"></i></div>
+            </button>
+        </div>
+        <!-- Start code - Added this code for add restaurant button in mobile view -->
+        <div class="restarent_btns">
+        	<div class="inner_restarent_btns">
+	        	<t t-if='widget.pos.config.iface_orderline_notes'>
+		        	<button class="show_res_note">
+		        		<i class="fa fa-tag"></i> <span class="cntrl_btn_txt">Note</span>
+		        	</button>
+		    	</t>
+		    	<t t-if='widget.pos.config.iface_floorplan'>
+			        <button class="show_res_transfer">
+			        	<i class="fa fa-arrow-right"></i> <span class="cntrl_btn_txt">Transfer</span>
+			        </button>
+		        </t>
+		        <t t-if='widget.pos.config.iface_floorplan'>
+		        	<button class="show_res_guest">
+		        		<span class="guests_span"><t t-esc="widget.mbl_guests()" /></span> <span class="cntrl_btn_txt">Guest</span>
+		        	</button>
+	        	</t>
+        	</div>
+        	<div class="inner_restarent_btns">
+	        	<t t-if='widget.pos.config.iface_printbill'>
+		        	<button class="show_res_bill">
+			        	<i class="fa fa-print"></i> <span class="cntrl_btn_txt">Bill</span>
+			        </button>
+		        </t>
+		        <t t-if='widget.pos.config.iface_splitbill'>
+			        <button class="show_res_splitbill">
+			        	<i class="fa fa-files-o"></i> <span class="cntrl_btn_txt">Split</span>
+			        </button>
+		        </t>
+		        <t t-if='widget.pos.printers.length'>
+			        <button class="show_res_submitorder order-submit">
+			        	<i class="fa fa-cutlery"></i> <span class="cntrl_btn_txt">Order</span>
+			        </button>
+		        </t>
+	        </div>
+        </div>
+        <!-- End code -Added this code for add restaurant button in mobile view -->
+    	</t>
+</t>
+
+<t t-extend="NumpadWidget">
+<t t-jquery=".numpad" t-operation="replace">
+<div class="outer_numpad">
+<div>
+<div class="numpad">
+            <button class="input-button number-char">1</button>
+            <button class="input-button number-char">2</button>
+            <button class="input-button number-char">3</button>
+            <button class="mode-button" data-mode='quantity'>Qty</button>
+            <br/>
+            <button class="input-button number-char">4</button>
+            <button class="input-button number-char">5</button>
+            <button class="input-button number-char">6</button>
+            <button class="mode-button" data-mode='discount'>Disc</button>
+            <br/>
+            <button class="input-button number-char">7</button>
+            <button class="input-button number-char">8</button>
+            <button class="input-button number-char">9</button>
+            <button class="mode-button" data-mode='price'>Price</button>
+            <br/>
+            <button class="input-button numpad-minus" >+/-</button>
+            <button class="input-button number-char">0</button>
+            <button class="input-button number-char">.</button>
+            <button class="input-button numpad-backspace">
+                <img style="pointer-events: none;" src="/point_of_sale/static/src/img/backspace.png" width="24" height="21" alt="Backspace"/>
+            </button>
+        </div>
+        </div>
+        </div>
+</t>
+</t>
+
+
+<!-- Start code - ClientListScreen -->
+<t t-extend="ClientListScreenWidget">
+<t t-jquery=".clientlist-screen" t-operation="replace">
+<div class="clientlist-screen screen">
+            <div class="screen-content">
+                <section class="top-content">
+                <div class="clnt_back">
+                    <span class='button back'>
+                        <i class='fa fa-angle-double-left'></i>
+                        <span class="hide_client_cancel">Cancel</span>
+                    </span>
+                 </div>
+                 <div class="clnt_search">
+                    <span class='searchbox'>
+                        <input placeholder='Search Customers' />
+                        <span class='search-clear'></span>
+                    </span>
+                  </div>
+                    <span class='searchbox'></span>
+                  <div class="clnt_new_cust">
+                    <span class='button new-customer' role="img" aria-label="Add a customer" title="Add a customer">
+                        <i class='fa fa-user'></i>
+                        <i class='fa fa-plus'></i>
+                    </span>
+                  </div> 
+                  <div class="clnt_select_cus">
+                    <span class='button next oe_hidden highlight'>
+                        Select Customer
+                        <i class='fa fa-angle-double-right'></i>
+                    </span>
+                  </div>
+                </section>
+                <section class="full-content">
+                    <div class='window'>
+                        <section class='subwindow collapsed'>
+                            <div class='subwindow-container collapsed'>
+                                <div class='subwindow-container-fix client-details-contents'>
+                                </div>
+                            </div>
+                        </section>
+                        <section class='subwindow'>
+                            <div class='subwindow-container'>
+                                <div class='subwindow-container-fix touch-scrollable scrollable-y'>
+                                    <table class='client-list'>
+                                        <thead>
+                                            <tr>
+                                                <th>Name</th>
+                                                <th>Address</th>
+                                                <th>Phone</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class='client-list-contents'>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </section>
+            </div>
+        </div>
+</t>
+</t>
+
+<!-- End code - ClientListScreen -->
+
+<!-- <t t-extend="Chrome">
+    <t t-jquery='.pos-topheader' t-operation='replace'>
+    <div class="pos-topheader">
+                <div class="pos-branding">
+                    <img class="pos-logo" src="/point_of_sale/static/src/img/logo.png" alt="Logo"/>
+                    <span class="placeholder-UsernameWidget"></span>
+                    <span class="pos_top_menu"><i class="fa fa-bars"></i></span>
+                </div>
+                <div class="pos-rightheader">
+                    <span class="placeholder-OrderSelectorWidget"></span>
+                    here goes header buttons
+                </div>
+            </div>
+    </t>
+</t> -->
+
+<!-- Start code for inherit control-buttons part -->
+<t t-extend="OrderlineNoteButton">
+	<t t-jquery=".control-button" t-operation="replace">
+		<div class='control-button'>
+            <i class='fa fa-tag' /> <span class="cntrl_btn_txt">Note</span>
+        </div>
+	</t>
+</t>
+<t t-extend="TransferOrderButton">
+	<t t-jquery=".control-button" t-operation="replace">
+		<div class='control-button'>
+            <i class='fa fa-arrow-right' /> <span class="cntrl_btn_txt">Transfer</span>
+        </div>
+	</t>
+</t>
+<t t-extend="TableGuestsButton">
+	<t t-jquery=".control-button" t-operation="replace">
+		<div class='control-button'>
+            <span class='control-button-number'>
+                <t t-esc="widget.guests()" />
+            </span>
+            <span class="mbl_guest"><i class="fa fa-users"></i></span>
+            <span class="cntrl_btn_txt">Guests</span>
+        </div>
+	</t>
+</t>
+<t t-extend="PrintBillButton">
+	<t t-jquery=".control-button" t-operation="replace">
+		<span class="control-button order-printbill">
+            <i class="fa fa-print"></i>
+            <span class="cntrl_btn_txt">Bill</span>
+        </span>
+	</t>
+	</t>
+	<t t-extend="SplitbillButton">
+		<t t-jquery=".control-button" t-operation="replace">
+			<span class="control-button order-split">
+            	<i class="fa fa-files-o"></i>
+            	<span class="cntrl_btn_txt">Split</span>
+        	</span>
+	</t>
+	</t>
+	<t t-extend="SubmitOrderButton">
+		<t t-jquery=".control-button" t-operation="replace">
+			<span class="control-button order-submit">
+            	<i class="fa fa-cutlery"></i>
+            	<span class="cntrl_btn_txt">Order</span>
+        	</span>
+	</t>
+	</t>
+
+<!-- End code for inherit control-buttons part -->
+
+<!-- Start code for "note" popup inherit -->
+<t t-extend="TextAreaPopupWidget">
+	<t t-jquery="textarea" t-operation="replace">
+		<textarea rows="5" cols="40"><t t-esc="widget.options.value" /></textarea>
+	</t>
+</t>
+<!-- End code for "note" popup inherit -->
+
+<!-- Start code for - added show order button -->
+<t t-extend="OrderSelectorWidget">
+	<t t-jquery='.deleteorder-button' t-operation='after'>
+		<span class="icon order-button square show_ordersbtn" title="Show_Orders">
+			<i class="fa fa-chevron-down"></i>
+		</span>
+	</t>       
+</t>
+<!-- End code for - added show order button -->
+
+</templates>

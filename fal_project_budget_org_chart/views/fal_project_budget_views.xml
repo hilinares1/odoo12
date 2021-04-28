@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="fal_project_budget_view_form_inherit_org_chart" model="ir.ui.view">
+        <field name="name">fal.project.budget.view.form.inherit.org_chart</field>
+        <field name="model">fal.project.budget</field>
+        <field name="inherit_id" ref="fal_project_budget.fal_project_budget_view_form"/>
+        <field name="arch" type="xml">
+            <div id="o_fal_project_budget_main" position="after">
+                <div id="o_fal_project_budget_right">
+                    <h4 class="o_org_chart_title mb16 mt0">Organization Chart</h4>
+                    <field name="child_for_chart_ids" widget="fal_project_budget_org_chart"/>
+                </div>
+            </div>
+        </field>
+    </record>
+</odoo>

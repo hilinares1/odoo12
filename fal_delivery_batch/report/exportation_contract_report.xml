@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="fal_exportation_contract_report">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="web.external_layout">
+                        <div class="page">
+                            <style>
+                                .tbl{
+                                    border: 1px solid black;
+                                    border-collapse: collapse;
+                                    font-size: 14px;
+                                }
+                                    .tbl tr th{
+                                        border: 1px solid black;
+                                        border-collapse: collapse;
+                                        padding: 3px;
+                                    }
+                                    .tbl tr td{
+                                        border: 1px solid black;
+                                        border-collapse: collapse;
+                                        padding: 3px;
+                                    }
+                            </style>
+                            <h3 class="text-center">
+                                <div>CONTRACT</div>
+                            </h3>
+                            <table class="tbl" width="100%">
+                                <tr>
+                                    <td class="text-center" colspan="2">Contract No：<span t-field="o.contract_number"/></td>
+                                </tr>
+                                <tr>
+                                    <td width="50%">
+                                        Sellers： <span t-field="o.company_id"/>
+                                    </td>
+                                    <td width="50%">
+                                        Buyers： <span t-field="o.partner_id"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Address:<br/>
+                                        <span t-field="o.company_id.street"/><br/>
+                                        Telephone： <span t-field="o.company_id.phone"/>
+                                    </td>
+                                    <td>
+                                        Address:<br/>
+                                        <span t-field="o.partner_id.street"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center" colspan="2">Date：<span t-field="o.create_date" t-field-options='{"format": "yyyy-MM-dd"}'/></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center" colspan="2">Signed at：<span t-field="o.company_id.city"/></td>
+                                </tr>
+                            </table>
+                            <p>
+                                <p>This contract is made out by the Sellers and the Buyers as per the following terms and conditions</p>
+                                <p>Mutually <strong>confirmed</strong></p>
+                            </p>
+                            <table class="tbl">
+                                <tr>
+                                    <th width="45%">
+                                        Name of commodity and Specification
+                                    </th>
+                                    <th class="text-center" width="15%">
+                                        Q’ty
+                                    </th>
+                                    <th class="text-center" width="15%">
+                                        Unit Price
+                                    </th>
+                                    <th class="text-center" width="15%">
+                                        Amount
+                                    </th>
+                                </tr>
+                                <t t-set="ttlqty" t-value="0"/>
+                                <t t-foreach="o.batch_line_ids" t-as="l">
+                                    <tr t-if="l.to_print == False">
+                                        <td>
+                                            <t t-if="l.product_id.categ_id.fal_description_packing_list">
+                                                <span t-field="l.product_id.categ_id.fal_description_packing_list"/><br/>
+                                            </t>
+                                            <span t-field="l.name"/>
+                                        </td>
+                                        <td class="text-center"><span t-esc="'{0:,.2f}'.format(l.quantity)"/></td>
+                                        <td class="text-center"><span t-field="l.price_unit" t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/></td>
+                                        <td class="text-center"><span t-field="l.subtotal_vat" t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/></td>
+                                        <t t-set="ttlqty" t-value="ttlqty+l.quantity"/>
+                                    </tr>
+                                </t>
+                                <tr>
+                                    <td class="text-center"><strong>TOTAL</strong></td>
+                                    <td class="text-center"><span t-esc="'{0:,.2f}'.format(ttlqty)"/></td>
+                                    <td class="text-center"></td>
+                                    <td class="text-center"><span t-field="o.amount_total" t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/></td>
+                                </tr>
+                            </table>
+                            <br/>
+                            <div class="text-center">
+                                Total Amount：<strong><span t-field="o.amount_total" t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/></strong>
+                            </div>
+                            <br/>
+                            <br/><p>Total Value in Word: <span t-field="o.total_value_words"/></p>
+                            <p>Packing and shipping Marks: <span t-field="o.packaging_and_shipping"/></p>
+                            <p>Time of Shipment: BEFORE <span t-field="o.create_date" t-field-options='{"format": "MMMM d, yyyy"}'/></p>
+                            <p>Port of Loading: <span t-field="o.port_of_loading"/> - Port of Discharge: <span t-field="o.port_of_discharge"/></p>
+                            <p>Loading Port Destination: From <span t-field="o.port_of_loading.port_name"/> - <span t-field="o.port_of_discharge.port_name"/> with trans-shipment partial shipments allowed.</p>
+                            <p>Terms of Payment:  <span t-field="o.payment_term_id"/></p>
+                            <table style="margin-top: 20px;" width="100%">
+                                <tr>
+                                    <td width="50%">
+                                        THE SELLERS<br/>
+                                        <span t-field="o.company_id"/><br/>
+                                    </td>
+                                    <td width="50%">
+                                        THE BUYERS<br/>
+                                        <span t-field="o.partner_id"/><br/>
+                                    </td>
+                                </tr>
+                            </table>
+                            <br/>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+
+        <report
+            id="report_fal_exportation_contract"
+            string="Exportation Contract"
+            model="fal.delivery.batch"
+            report_type="qweb-pdf"
+            name="fal_delivery_batch.fal_exportation_contract_report"
+            file="fal_delivery_batch.fal_exportation_contract_report"
+            print_report_name="'Exportation Contract - %s' % (object.number).replace('/', '')"/>
+    </data>
+</odoo>

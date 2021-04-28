@@ -1,0 +1,14 @@
+$o-fal-project-budget-org-chart-bg: white !default;
+$o-fal-project-budget-org-chart-border-color: $o-brand-secondary !default;
+
+$o-fal-project-budget-org-chart-entry-v-gap: 6px !default;
+$o-fal-project-budget-org-chart-entry-pic-size: 46px !default;
+$o-fal-project-budget-org-chart-entry-line-w: 1px !default;
+$o-fal-project-budget-org-chart-entry-border-color: darken($o-fal_project_budget-org-chart-bg, 25%) !default;
+
+// MIXINS
+@mixin o-fal-project-budget-org-chart-line {
+    content: '';
+    background-color: $o-fal-project-budget-org-chart-bg;
+    border: 0px solid $o-fal-project-budget-org-chart-entry-border-color;
+}

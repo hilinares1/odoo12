@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+     <template id="product_selector_configure_ext" inherit_id="fal_product_attribute.product_selector_configure">
+        <xpath expr="//span[@class='oe_price product_id mt-3']" position="attributes">
+            <attribute name="t-esc">product_variant.lst_price + added_price</attribute>
+        </xpath>
+        <xpath expr="//button[@name='actionadd']" position="attributes">
+            <attribute name="t-att-price-unit">product_variant.lst_price + added_price</attribute>
+        </xpath>
+    </template>
+</odoo>

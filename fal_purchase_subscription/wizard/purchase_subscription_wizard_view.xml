@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="view_fal_purchase_subscription_wizard" model="ir.ui.view">
+            <field name="name">view.fal.purchase.subscription.wizard</field>
+            <field name="model">fal.purchase.subscription.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Purchase Subscription">
+                    <group>
+                        <field name="name"/>
+                        <field name="interval"></field>
+                        <field name="interval_unit"></field>
+                        <field name="starting_date"></field>
+                        <field name="next_date"></field>
+                    </group>
+                    <footer>
+                        <button name="generate_purchase_subscription" string="Create" type="object" class="oe_highlight"/>
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_fal_purchase_subscription_wizard" model="ir.actions.act_window">
+            <field name="name">Purchase Subscription</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">fal.purchase.subscription.wizard</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_fal_purchase_subscription_wizard"/>
+            <field name="target">new</field>
+        </record>
+
+        <!-- <menuitem
+            action="action_fal_purchase_subscription_wizard"
+            id="menu_purchase_subscription_wizard"
+            parent="account.menu_finance_entries"
+            sequence="99"/> -->
+
+    </data>
+</odoo>

@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<openerp>
+    <data noupdate="1">
+
+        <record model="res.groups" id="group_deliveryfee_purchase_user">
+            <field name="name">Manage Delivery Fee for Purchase</field>
+        </record>
+
+        <record model="res.groups" id="group_deliveryfee_sale_user">
+            <field name="name">Manage Delivery Fee for Sale</field>
+        </record>
+
+        <record model="res.groups" id="group_deliveryfee_invoice_user">
+            <field name="name">Manage Delivery Fee for Invoice</field>
+        </record>
+
+        <record model="res.groups" id="group_manual_delivery_fee">
+            <field name="name">Manage Manual Delivery Fee</field>
+        </record>
+
+    </data>
+</openerp>
+

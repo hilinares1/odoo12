@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+    <!-- batch_line_ids -->
+        <record id="view_fal_delivery_batch_line_tree" model="ir.ui.view">
+            <field name="name">view_fal_delivery_batch_line_tree</field>
+            <field name="model">fal.delivery.batch.line</field>
+            <field name="arch" type="xml">
+                <tree string="Invoice Line" editable="bottom" create="0">
+                    <field name="to_print"/>
+                    <field name="batch_id" invisible="1"/>
+                    <field name="currency_id" invisible="1"/>
+                    <field name="invoice_line_id" invisible="1"/>
+                    <field name="product_id" invisible="1"/>
+                    <field name="name" readonly="1"/>
+                    <field name="quantity" readonly="1"/>
+                    <field name="balanced_quantity"/>
+                    <field name="uom_id" readonly="1"/>
+                    <field name="price_unit" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                    <field name="subtotal_vat" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                    <field name="box_line_ids" widget="many2many_tags" invisible="1"/>
+                </tree>
+            </field>
+        </record>
+        <record id="view_fal_delivery_batch_line_form" model="ir.ui.view">
+            <field name="name">view_fal_delivery_batch_line_form</field>
+            <field name="model">fal.delivery.batch.line</field>
+            <field name="arch" type="xml">
+                <form string="Invoices">
+                    <group>
+                        <group>
+                            <field name="to_print"/>
+                            <field name="batch_id" invisible="1"/>
+                            <field name="invoice_line_id" invisible="1"/>
+                            <field name="product_id" readonly="1"/>
+                            <field name="name" readonly="1"/>
+                        </group>
+                        <group>
+                            <field name="quantity" readonly="1"/>
+                            <field name="balanced_quantity"/>
+                            <field name="uom_id" readonly="1"/>
+                            <field name="price_unit" readonly="1"/>
+                            <field name="subtotal_vat" readonly="1"/>
+                            <field name="box_line_ids" widget="many2many_tags" invisible="1"/>
+                        </group>
+                    </group>
+                </form>
+            </field>
+        </record>
+    <!-- batch_line_ids -->
+
+    <!-- box_line_ids -->
+        <record id="view_fal_delivery_box_line_tree" model="ir.ui.view">
+            <field name="name">view_fal_delivery_box_line_tree</field>
+            <field name="model">fal.delivery.box.line</field>
+            <field name="arch" type="xml">
+                <tree string="Delivery Box Line" create="0">
+                    <field name="batch_id" invisible="1"/>
+                    <field name="batch_line_id" invisible="1"/>
+                    <field name="box_number"/>
+                    <field name="box_type"/>
+                    <field name="box_length"/>
+                    <field name="box_width"/>
+                    <field name="box_height"/>
+                    <field name="product_id"/>
+                    <field name="name"/>
+                    <field name="quantity"/>
+                    <field name="uom_id"/>
+                    <field name="n_weight"/>
+                    <field name="g_weight"/>
+                </tree>
+            </field>
+        </record>
+        <record id="view_fal_delivery_box_line_form" model="ir.ui.view">
+            <field name="name">view_fal_delivery_box_line_form</field>
+            <field name="model">fal.delivery.box.line</field>
+            <field name="arch" type="xml">
+                <form string="Delivery Box Line">
+                    <group>
+                        <group>
+                            <field name="batch_id"/>
+                            <field name="batch_line_id"/>
+                            <field name="box_number"/>
+                            <field name="box_type"/>
+                            <field name="box_length"/>
+                            <field name="box_width"/>
+                            <field name="box_height"/>
+                        </group>
+                        <group>
+                            <field name="product_id"/>
+                            <field name="name"/>
+                            <field name="quantity"/>
+                            <field name="uom_id"/>
+                            <field name="n_weight"/>
+                            <field name="g_weight"/>
+                        </group>
+                    </group>
+                </form>
+            </field>
+        </record>
+    <!-- box_line_ids -->
+
+    <!-- Delivery Batch -->
+        <record id="view_fal_delivery_batch_tree" model="ir.ui.view">
+            <field name="name">view_fal_delivery_batch_tree</field>
+            <field name="model">fal.delivery.batch</field>
+            <field name="arch" type="xml">
+                <tree string="Delivery Batch">
+                    <field name="number"/>
+                    <field name="total_value_words"/>
+                    <field name="port_of_loading"/>
+                    <field name="port_of_discharge"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_fal_delivery_batch_form" model="ir.ui.view">
+            <field name="name">view_fal_delivery_batch_form</field>
+            <field name="model">fal.delivery.batch</field>
+            <field name="arch" type="xml">
+                <form string="Delivery Batch">
+                    <header>
+                        <button name="%(action_fal_put_to_box_wizard)d" string="Put to Box" type="action" class="oe_highlight"/>
+                    </header>
+                    <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="number"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="partner_id"/>
+                            <field name="company_id" invisible="1"/>
+                            <field name="currency_id" options="{'no_create': True, 'no_open': True}" groups="base.group_multi_currency"/>
+                            <field name="contract_number"/>
+                            <field name="invoice_number"/>
+                            <field name="payment_term_id"/>
+                            <field name="create_date"/>
+                        </group>
+                        <group>
+                            <field name="port_of_loading"/>
+                            <field name="port_of_discharge"/>
+                            <field name="packaging_and_shipping"/>
+                            <field name="carrier"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Invoice Line">
+                            <field name="batch_line_ids"/>
+                            <group class="oe_subtotal_footer oe_right">
+                                <div class="oe_subtotal_footer_separator oe_inline">
+                                    <label for="amount_total"/>
+                                </div>
+                                <field name="amount_total" widget="monetary" options="{'currency_field': 'currency_id'}" nolabel="1" class="oe_subtotal_footer_separator"/>
+                            </group>
+                            <field name="total_value_words" placeholder="Amount in Words"/>
+                        </page>
+                        <page string="Delivery Box Line">
+                            <field name="box_line_ids"/>
+                        </page>
+                    </notebook>
+                </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_fal_delivery_batch_search" model="ir.ui.view">
+            <field name="name">fal.delivery.batch.search</field>
+            <field name="model">fal.delivery.batch</field>
+            <field name="arch" type="xml">
+                <search string="Delivery Batch">
+                </search>
+            </field>
+        </record>
+
+        <record id="action_fal_delivery_batch" model="ir.actions.act_window">
+            <field name="name">Delivery Batch</field>
+            <field name="res_model">fal.delivery.batch</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_fal_delivery_batch_search"/>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to add delivery batches.
+              </p><p>
+              </p>
+            </field>
+        </record>
+
+        <menuitem
+            id="menu_fal_delivery_batch"
+            name="Delivery Batch"
+            parent="stock.menu_stock_root"
+            sequence="99" />
+
+        <menuitem
+            id="menu_action_fal_delivery_batch"
+            action="action_fal_delivery_batch"
+            name="Delivery Batch"
+            parent="menu_fal_delivery_batch"
+            sequence="1" />
+    <!-- delivery batch line / invoice line -->
+
+    <!-- port of loading -->
+        <record id="view_fal_port_type_tree" model="ir.ui.view">
+            <field name="name">view_fal_port_type_tree</field>
+            <field name="model">fal.port.type</field>
+            <field name="arch" type="xml">
+                <tree string="Port Type">
+                    <field name="port_name"/>
+                    <field name="is_default_loading"/>
+                    <field name="is_default_discharge"/>
+                </tree>
+            </field>
+        </record>
+        <record id="view_fal_port_type_form" model="ir.ui.view">
+            <field name="name">view_fal_port_type_form</field>
+            <field name="model">fal.port.type</field>
+            <field name="arch" type="xml">
+                <form string="Port Type">
+                    <sheet>
+                        <group>
+                            <field name="port_name"/>
+                            <field name="is_default_loading"/>
+                            <field name="is_default_discharge"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="action_fal_port_type" model="ir.actions.act_window">
+            <field name="name">Port Type</field>
+            <field name="res_model">fal.port.type</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to add new records.
+              </p><p>
+              </p>
+            </field>
+        </record>
+        <menuitem
+            id="menu_action_fal_port_type"
+            action="action_fal_port_type"
+            name="Port Type"
+            parent="menu_fal_delivery_batch"
+            sequence="2" />
+    <!-- port of loading -->
+
+    </data>
+</odoo>

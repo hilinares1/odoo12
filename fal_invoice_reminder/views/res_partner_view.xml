@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="view_partner_form_invrem_fal" model="ir.ui.view">
+            <field name="name">res.partner.form.invrem.fal</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="account.view_partner_property_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group/group[@name='accounting_entries']" position="after">
+                    <group string="Followup">
+                        <field name="automation_followup"/>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

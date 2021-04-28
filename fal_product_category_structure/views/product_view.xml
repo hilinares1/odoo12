@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="view_product_category_form_ext" model="ir.ui.view">
+            <field name="name">product.category.form.fext</field>
+            <field name="model">product.category</field>
+            <field name="inherit_id" ref="product.product_category_form_view"/>
+            <field name="arch" type="xml">
+                <field name="parent_id" position="after">
+                    <field name="fal_type" class="oe_inline"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_product_category_tree_ext" model="ir.ui.view">
+            <field name="name">product.category.tree.fext</field>
+            <field name="model">product.category</field>
+            <field name="inherit_id" ref="product.product_category_list_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//tree" position="inside">
+                    <field name="property_account_income_categ_id" />
+                    <field name="property_account_expense_categ_id" />
+                    <field name="property_stock_valuation_account_id" />
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_category_hierarchy" model="ir.ui.view">
+            <field name="name">product.category.hierarchy</field>
+            <field name="model">product.category</field>
+            <field name="field_parent">children_ids</field>
+            <field name="arch" type="xml">
+                <hierarchy string="Accounts">
+                    <field name="name" invisible="1" />
+                    <field name="display_name"/>
+                    <field name="property_account_income_categ_id" />
+                    <field name="property_account_expense_categ_id" />
+                    <field name="property_stock_valuation_account_id" />
+                    <field name="parent_id" invisible="1" />
+                </hierarchy>
+            </field>
+        </record>
+
+        <record id="product.product_category_action_form" model="ir.actions.act_window">
+            <field name="view_mode">tree,hierarchy,form</field>
+        </record>
+
+        <menuitem action="product.product_category_action_form" id="menu_product_category_structure" parent="sale.product_menu_catalog" sequence="2"/>
+
+    </data>
+</odoo>

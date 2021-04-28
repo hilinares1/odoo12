@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="yee_odoo_studio" name="yee_odoo_studio templates" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+                <link rel="stylesheet" type="text/css" href="/yee_odoo_studio/static/src/css/daterangepicker.css"/>
+                <link rel="stylesheet" type="text/less" href="/yee_odoo_studio/static/src/less/menu_edit.less"/>
+                <link rel="stylesheet" type="text/less" href="/yee_odoo_studio/static/src/less/edit_view_controller.less"/>
+                <link rel="stylesheet" type="text/less" href="/yee_odoo_studio/static/src/less/basic_field.less"/>
+                <link rel="stylesheet" type="text/less" href="/yee_odoo_studio/static/src/less/list_edit.less"/>
+                <link rel="stylesheet" type="text/less" href="/yee_odoo_studio/static/src/less/form_edit.less"/>
+                <link rel="stylesheet" type="text/less" href="/yee_odoo_studio/static/src/less/calendar_edit.less"/>
+                <link rel="stylesheet" type="text/less" href="/yee_odoo_studio/static/src/less/pivot_edit.less"/>
+                <link rel="stylesheet" type="text/less" href="/yee_odoo_studio/static/src/less/kanban_edit.less"/>
+                <link rel="stylesheet" type="text/less" href="/yee_odoo_studio/static/src/less/graph_edit.less"/>
+                <link rel="stylesheet" type="text/less" href="/yee_odoo_studio/static/src/less/search.less"/>
+
+                <script type="text/javascript" src="/yee_odoo_studio/static/src/libs/daterangepicker.js"></script>
+                <script type="text/javascript" src="/yee_odoo_studio/static/src/libs/jquery.stickytableheaders.js"></script>
+                <script type="text/javascript" src="/yee_odoo_studio/static/src/js/views/list/list_renderer.js"></script>
+                <script type="text/javascript" src="/yee_odoo_studio/static/src/js/views/search/search_view.js"></script>
+                <script type="text/javascript" src="/yee_odoo_studio/static/src/js/views/form/form_view.js"></script>
+                <script type="text/javascript" src="/yee_odoo_studio/static/src/js/views/form/form_controller.js"></script>
+                <script type="text/javascript" src="/yee_odoo_studio/static/src/js/chrome/menu.js"></script>
+
+                <script type="text/javascript" src="/yee_odoo_studio/static/src/js/views/edit_views/basic_fields.js"></script>
+                <script type="text/javascript" src="/yee_odoo_studio/static/src/js/views/edit_views/edit_view.js"></script>
+                <script type="text/javascript" src="/yee_odoo_studio/static/src/js/views/edit_views/list/list_edit.js"></script>
+                <script type="text/javascript" src="/yee_odoo_studio/static/src/js/views/edit_views/list/list_content.js"></script>
+                <script type="text/javascript" src="/yee_odoo_studio/static/src/js/views/edit_views/list/list_property.js"></script>
+                <script type="text/javascript" src="/yee_odoo_studio/static/src/js/views/edit_views/form/form_edit.js"></script>
+                <script type="text/javascript" src="/yee_odoo_studio/static/src/js/views/edit_views/form/form_content.js"></script>
+                <script type="text/javascript" src="/yee_odoo_studio/static/src/js/views/edit_views/form/form_property.js"></script>
+                <script type="text/javascript" src="/yee_odoo_studio/static/src/js/views/edit_views/calendar/calendar_edit.js"></script>
+                <script type="text/javascript" src="/yee_odoo_studio/static/src/js/views/edit_views/calendar/calendar_content.js"></script>
+                <script type="text/javascript" src="/yee_odoo_studio/static/src/js/views/edit_views/calendar/calendar_property.js"></script>
+                <script type="text/javascript" src="/yee_odoo_studio/static/src/js/views/edit_views/pivot/pivot_edit.js"></script>
+                <script type="text/javascript" src="/yee_odoo_studio/static/src/js/views/edit_views/pivot/pivot_content.js"></script>
+                <script type="text/javascript" src="/yee_odoo_studio/static/src/js/views/edit_views/pivot/pivot_property.js"></script>
+                <script type="text/javascript" src="/yee_odoo_studio/static/src/js/views/edit_views/graph/graph_edit.js"></script>
+                <script type="text/javascript" src="/yee_odoo_studio/static/src/js/views/edit_views/graph/graph_content.js"></script>
+                <script type="text/javascript" src="/yee_odoo_studio/static/src/js/views/edit_views/graph/graph_property.js"></script>
+                <script type="text/javascript" src="/yee_odoo_studio/static/src/js/views/edit_views/kanban/kanban_edit.js"></script>
+                <script type="text/javascript" src="/yee_odoo_studio/static/src/js/views/edit_views/kanban/kanban_content.js"></script>
+                <script type="text/javascript" src="/yee_odoo_studio/static/src/js/views/edit_views/kanban/kanban_property.js"></script>
+                <script type="text/javascript" src="/yee_odoo_studio/static/src/js/views/abstract_controller.js"></script>
+                <script type="text/javascript" src="/yee_odoo_studio/static/src/js/views/base.js"></script>
+            </xpath>
+        </template>
+    </data>
+</odoo>

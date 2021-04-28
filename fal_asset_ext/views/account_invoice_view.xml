@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="invoice_supplier_form" model="ir.ui.view">
+            <field name="name">account.invoice.supplier.form</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_supplier_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//sheet/div[1]" position="before">
+                    <div class="oe_button_box" name="button_box">
+                        <button class="oe_stat_button" name="open_fal_asset" type="object" icon="fa-pencil">
+                            <field string="Assets" name="fal_asset_count" widget="statinfo" />
+                        </button>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

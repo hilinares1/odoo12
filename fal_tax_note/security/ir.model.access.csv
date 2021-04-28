@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_fal_tax_note,access_fal_tax_note,model_fal_tax_note,base.group_user,1,1,1,1
+access_fal_tax_note_line,access_fal_tax_note_line,model_fal_tax_note_line,base.group_user,1,1,1,1

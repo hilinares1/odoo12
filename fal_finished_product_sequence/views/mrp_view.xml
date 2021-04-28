@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="mrp_production_tree_view_view_fal_fips" model="ir.ui.view">
+            <field name="name">mrp.production.tree.fal.fips</field>
+            <field name="model">mrp.production</field>
+            <field name="inherit_id" ref="mrp.mrp_production_tree_view"/>
+            <field name="arch" type="xml">
+                <data>
+                    <field name="name" position="after">
+                        <field name="fal_prod_order_id" string="PO Number"/>
+                    </field>
+                </data>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="mrp_production_view_fal_fips">
+          <field name="name">mrp.production.form.fal.fips</field>
+          <field name="model">mrp.production</field>
+          <field name="inherit_id" ref="mrp.mrp_production_form_view"/>
+          <field name="arch" type="xml">
+            <data>
+                <field name="origin" position="after">
+                    <field name="fal_of_number" invisible="1"/>
+                </field>
+                <xpath expr="//notebook/page" position="after">
+                    <page string="MO Lines">
+                        <field name="fal_mo_line_ids"/>
+                    </page>
+                </xpath>
+                <field name="availability" position="before">
+                    <field name="fal_parent_mo_id" />
+                </field>
+            </data>
+          </field>
+        </record>
+
+        <record id="product_category_form_view_fal_fips" model="ir.ui.view">
+            <field name="name">product.category.property.form.fal.fips</field>
+            <field name="model">product.category</field>
+            <field name="inherit_id" ref="product.product_category_form_view"/>
+            <field name="arch" type="xml">
+                <data>
+                    <field name="parent_id" position="after">
+                        <field name="isfal_finished_product" />
+                        <field name="isfal_parts_product" />
+                    </field>
+                </data>
+            </field>
+        </record>
+
+        <record id="view_mrp_production_filter_fal_pips" model="ir.ui.view">
+            <field name="name">mrp.production.select.fal.pips</field>
+            <field name="model">mrp.production</field>
+            <field name="inherit_id" ref="mrp.view_mrp_production_filter"/>
+            <field name="arch" type="xml">
+                <data>
+                    <field name="product_id" position="replace">
+                    </field>
+                    <field name="name" position="before">
+                        <field name="fal_of_number" />
+                        <field name="product_id"/>
+                    </field>
+                    <filter name="late" position="after">
+                        <filter name="fal_of_number_filter" domain="[('fal_of_number','!=',False)]" />
+                    </filter>
+                </data>
+            </field>
+        </record>
+
+        <record id="view_move_tree_fal_finpro_inherit" model="ir.ui.view">
+            <field name="name">stock.move.tree.falfinpro.inherit</field>
+            <field name="model">stock.move</field>
+            <field name="inherit_id" ref="stock.view_move_tree"/>
+            <field name="arch" type="xml">
+                <field name="location_id" position="after">
+                    <field name="fal_of_number" />
+                </field>
+            </field>
+        </record>
+
+        <record id="fal_view_move_tree_receipt_picking_inherit" model="ir.ui.view">
+            <field name="name">fal.view.move.tree.receipt.picking.inherit</field>
+            <field name="model">stock.move</field>
+            <field name="inherit_id" ref="stock.view_move_tree_receipt_picking"/>
+            <field name="arch" type="xml">
+                <field name="origin" position="after">
+                    <field name="fal_of_number" />
+                </field>
+            </field>
+        </record>
+
+    </data>
+</odoo>

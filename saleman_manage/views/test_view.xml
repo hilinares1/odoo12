@@ -1,0 +1,139 @@
+<?xml version="1.0"?>
+<odoo>
+
+    <record id="sales_man_new_form" model="ir.ui.view">
+        <field name="name">sales.man.new.form</field>
+        <field name="model">sales.man</field>
+        <field name="arch" type="xml">
+            <form string="Salesman">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name" placeholder="Salesperson" required="1"/>   
+                        </group>
+                        <group>
+                            
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Discounts Periods">
+                            <field name="period_id" required="1">
+                                <tree string="Period" editable='bottom'>
+                                    <field name="saleper_id" invisible="1"/>
+                                    <field name="f_date"/>
+                                    <field name="e_date"/>
+                                    <field name="dis" string="Discounts(%)"/>
+                                    <field name="target" placeholder="Sales Target"/>
+                                    <field name="a_target" readonly="1"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="sales_man_new_tree" model="ir.ui.view">
+        <field name="name">sales.man.new.tree</field>
+        <field name="model">sales.man</field>
+        <field name="arch" type="xml">
+            <tree string="Salesman">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="saleman_period_form" model="ir.ui.view">
+        <field name="name">saleman.period.form</field>
+        <field name="model">saleman.period</field>
+        <field name="arch" type="xml">
+            <form string="Salesman">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="dis" placeholder="Discount" />%% 
+                            <field name="saleper_id"/>
+                            <field name="target" placeholder="Sales Target"/>
+                            <field name="a_target" readonly="1"/>
+                        </group>
+                        <group>
+                            <field name="f_date" placeholder="Begin Date" />
+                            <field name="e_date" placeholder="End Date"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="sales_man_period_tree" model="ir.ui.view">
+        <field name="name">sales.man.period.tree</field>
+        <field name="model">saleman.period</field>
+        <field name="arch" type="xml">
+            <tree string="Period">
+                <field name="saleper_id"/>
+                <field name="f_date"/>
+                <field name="e_date"/>
+                <field name="target" placeholder="Sales Target"/>
+                <field name="a_target" readonly="1"/>
+                <field name="dis"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="sales_person_config_action" model="ir.actions.act_window">
+        <field name="name">Salesman</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">sales.man</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>      
+    </record>
+
+    <!-- <menuitem id="sale.menu_sale_report"
+            name="Reporting"
+            parent="sale.sale_menu_root"
+            sequence="5"
+            groups="sales_team.group_sale_manager,group_sale_top_manager"/> -->
+    <!-- <menuitem id="sale.menu_sale_config"
+            name="Configuration"
+            parent="sale.sale_menu_root"
+            sequence="6"
+            groups="sales_team.group_sale_manager,group_sale_top_manager"/> -->
+    <menuitem id="sales_person_config"
+            name="Salesman"
+            parent="sale.menu_sale_config"
+            action="sales_person_config_action"
+            sequence="10"/>
+
+    <!-- sale approve change in sales -->
+
+    <record id="sale_order_cus_form" model="ir.ui.view">
+        <field name="name">sale.order.cus.form</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='action_confirm']" position="after">
+                <button name="ask_approve" id="ask_approve"
+                        string="Ask for Approve" class="btn-primary" type="object"
+                        attrs="{'invisible': [('state', 'not in', ['sent','draft'])]}"/>
+                <button name="button_approve" type="object" states='approve' string="Approve" class="oe_highlight" groups="saleman_manage.group_sale_top_manager"/>
+                <button name="button_reject" type="object" states='approve' string="Reject" class="oe_highlight" groups="saleman_manage.group_sale_top_manager"/>
+                <button name="button_draft" type="object" states='reject' string="Set to Draft"/>
+            
+            </xpath>
+
+            <xpath expr="//button[@name='action_cancel']" position="replace">
+                <button name="action_cancel" states="draft,sent,approve,sale" type="object" string="Cancel"/>            
+            </xpath>
+            <xpath expr="//field[@name='user_id']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='payment_term_id']" position="after">
+                <field name="saleman" />
+                <field name="dtoday" invisible="1"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

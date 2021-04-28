@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Copyright (C) 2015 DevIntelle Consulting Service Pvt.Ltd (<http://www.devintellecs.com>).
+
+For Module Support : devintelle@gmail.com  or Skype : devintelle
+ -->
+<odoo>
+	<!--Partner Form-->
+	<record id="res_partner_form_whatsapp" model="ir.ui.view">
+		<field name="name">res.partner.form.whatsapp</field>
+		<field name="model">res.partner</field>
+		<field name="inherit_id" ref="base.view_partner_form"/>
+		<field name="arch" type="xml">
+            <!--Name-->
+            
+            <xpath expr="//field[@name='lang']" position='after'>
+                <label for="credit" string='Due Balance'/>
+                <div class="o_row">
+                    <field name="credit"/>
+                    <button type="object"
+                        name="send_due_whatsapp_message_data"
+                        class="btn-xs btn-link mb4 fa fa-globe"
+                        context="{'field_name': 'debit'}" help="Send WhatsApp message via WhatsApp Web"/>
+                    <button type="object"
+                        name="send_due_whatsapp_message_from_mobile"
+                        class="btn-xs btn-link mb4 fa fa-whatsapp"
+                        context="{'field_name': 'debit'}" help="Send WhatsApp message via WhatsApp Mobile App"/>
+                </div>
+            </xpath>
+            
+		</field>
+	</record>
+
+	<!--Partner Watsapp Button-->
+	<record id="res_partner_form_sms_whatsapp" model="ir.ui.view">
+		<field name="name">res.partner.form.sms.whatsapp</field>
+		<field name="model">res.partner</field>
+		<field name="inherit_id" ref="sms.partner_form_send_sms_form_view"/>
+		<field name="arch" type="xml">
+            <xpath expr="//div[2]//button[@type='action']" position="replace">
+                <button type="object"
+                        name="send_whatsapp_message_data"
+                        class="btn-xs btn-link mb4 fa fa-whatsapp"
+                        attrs="{'invisible':[('mobile', '=', False)]}"
+                        context="{'field_name': 'mobile'}" help="Send WhatsApp message via WhatsApp Mobile App"/>
+            </xpath>
+		</field>
+	</record>
+
+
+</odoo>

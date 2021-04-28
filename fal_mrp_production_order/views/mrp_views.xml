@@ -1,0 +1,52 @@
+<odoo>
+    <record id="mrp_view_production_order_fal" model="ir.ui.view">
+        <field name="name">mrp_view_production_order_fal</field>
+        <field name="model">mrp.production</field>
+        <field name="type">form</field>
+        <field name="inherit_id" ref="mrp.mrp_production_form_view"/>
+        <field name="arch" type="xml">
+            <field name="state" position="attributes">
+                <attribute name="statusbar_visible">draft,confirmed,progress,done</attribute>
+            </field>
+            <button name="action_assign" position="before">
+                <button name="button_confirm" string="Confirm" type="object" class="btn-primary" attrs="{'invisible': [('state', 'not in', ['draft'])]}"/>
+            </button>
+            <button name="action_assign" position="attributes">
+                <attribute name="attrs">{'invisible': ['|', ('state', 'in', ['draft']), ('availability', 'in', ('assigned', 'none'))]}</attribute>
+                <attribute name="string">Reserve</attribute>
+            </button>
+            <button name="button_plan" position="attributes">
+                <attribute name="attrs">{'invisible': ['|', ('state', '!=', 'confirmed'), ('routing_id', '=', False)]}</attribute>
+            </button>
+            <xpath expr="//page[2]" position="after">
+                <page name="sub_mo" string="Sub-Manufacturing Orders">
+                    <field name="child_ids" readonly="1"/>
+                </page>
+            </xpath>
+            <field name="routing_id" position="after">
+                <field name="fal_prod_order_id" readonly="1"/>
+            </field>
+            <xpath expr="//field[@name='move_raw_ids']/tree/field[@name='state']" position="before">
+                <field name="fal_on_hands_qty"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="mrp_search_view_production_order_fal" model="ir.ui.view">
+        <field name="name">mrp_search_view_production_order_fal</field>
+        <field name="inherit_id" ref="mrp.view_mrp_production_filter"/>
+        <field name="model">mrp.production</field>
+        <field name="arch" type="xml">
+            <field name="name" position="before">
+                <field name="fal_parent_prod_order_id" string="Production Order"/>
+            </field>
+            <xpath expr="//group[1]/filter[1]" position="before">
+                <filter name="production_order" string="Production Order" domain="[]" context="{'group_by':'fal_parent_or_prod_order_id'}"/>
+                <field name="fal_prod_order_id" string="Production Order"/>
+            </xpath>
+            <filter name="todo" position="attributes">
+                <attribute name="domain">[('state','in',('draft','confirmed','planned','progress'))]</attribute>
+            </filter>
+        </field>
+    </record>
+</odoo>

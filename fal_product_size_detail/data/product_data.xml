@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record forcecreate="True" id="fal_uom_milimeter" model="uom.uom">
+        <field name="category_id" ref="uom.uom_categ_length"/>
+        <field name="name">mm</field>
+        <field name="factor" eval="1000"/>
+        <field name="uom_type">smaller</field>
+    </record>
+
+    <record forcecreate="True" id="fal_decimal_stock_volume" model="decimal.precision">
+        <field name="name">Stock Volume</field>
+        <field name="digits">6</field>
+    </record>
+</odoo>

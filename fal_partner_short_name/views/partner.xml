@@ -1,0 +1,35 @@
+<odoo>
+    <data>
+        <record id="view_partner_form_shortname" model="ir.ui.view">
+            <field name="name">Add shortname</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <data>
+                    <xpath expr="//h1//field[@name='name']/.." position="after">
+                        <div>
+                            <group attrs="{'invisible': [('is_company', '=', False)]}">
+                                <field name="fal_shortname"/>
+                            </group>
+                        </div>
+                    </xpath>
+                </data>
+            </field>
+        </record>
+        <record id="view_res_partner_filter_shortname" model="ir.ui.view">
+            <field name="name">res.partner.select.shortname</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_res_partner_filter"/>
+            <field name="arch" type="xml">
+                <data>
+                    <xpath expr="//field[@name='name']" position="attributes">
+                        <attribute name="filter_domain">['|','|','|',('name','ilike',self),('display_name','ilike',self),('ref','=',self),('email','ilike',self)]</attribute>
+                    </xpath>
+                    <xpath expr="//field[@name='name']" position="after">
+                        <field name="fal_shortname" filter_domain="[('fal_shortname','ilike',self)]"/>
+                    </xpath>
+                </data>
+            </field>
+        </record>
+  </data>
+</odoo>

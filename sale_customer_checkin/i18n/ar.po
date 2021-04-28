@@ -1,0 +1,123 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* tt_sales_lib_ext02
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-02-02 13:13+0000\n"
+"PO-Revision-Date: 2019-02-02 13:13+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: tt_sales_lib_ext02
+#: model:ir.model.fields,field_description:tt_sales_lib_ext02.field_tt_customers_visits__distance
+msgid "Check In Distance"
+msgstr "المسافة"
+
+#. module: tt_sales_lib_ext02
+#: model_terms:ir.ui.view,arch_db:tt_sales_lib_ext02.checkin_partner_inherit_form_view
+msgid "Check-in"
+msgstr "تسجيل الزيارة"
+
+#. module: tt_sales_lib_ext02
+#: model:ir.model,name:tt_sales_lib_ext02.model_res_partner
+msgid "Contact"
+msgstr "جهة الاتصال"
+
+#. module: tt_sales_lib_ext02
+#: model:ir.model.fields,field_description:tt_sales_lib_ext02.field_tt_customers_visits__create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: tt_sales_lib_ext02
+#: model:ir.model.fields,field_description:tt_sales_lib_ext02.field_tt_customers_visits__create_date
+msgid "Created on"
+msgstr "أنشئ في"
+
+#. module: tt_sales_lib_ext02
+#: model:ir.model.fields,field_description:tt_sales_lib_ext02.field_res_partner__customer_visits_ids
+#: model_terms:ir.ui.view,arch_db:tt_sales_lib_ext02.customers_visits_tree
+msgid "Customer Visits"
+msgstr "زيارات العميل"
+
+#. module: tt_sales_lib_ext02
+#: model:ir.actions.act_window,name:tt_sales_lib_ext02.customers_visits_action
+#: model_terms:ir.ui.view,arch_db:tt_sales_lib_ext02.customers_visits_search
+msgid "Customers Visits"
+msgstr "زيارات العملاء"
+
+#. module: tt_sales_lib_ext02
+#: model:ir.model.fields,field_description:tt_sales_lib_ext02.field_tt_customers_visits__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: tt_sales_lib_ext02
+#: model_terms:ir.ui.view,arch_db:tt_sales_lib_ext02.customers_visits_search
+msgid "Group By"
+msgstr "تجميع حسب"
+
+#. module: tt_sales_lib_ext02
+#: model:ir.model.fields,field_description:tt_sales_lib_ext02.field_tt_customers_visits__id
+msgid "ID"
+msgstr "المعرف"
+
+#. module: tt_sales_lib_ext02
+#: model:ir.model.fields,field_description:tt_sales_lib_ext02.field_tt_customers_visits____last_update
+msgid "Last Modified on"
+msgstr "آخر تعديل في"
+
+#. module: tt_sales_lib_ext02
+#: model:ir.model.fields,field_description:tt_sales_lib_ext02.field_tt_customers_visits__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: tt_sales_lib_ext02
+#: model:ir.model.fields,field_description:tt_sales_lib_ext02.field_tt_customers_visits__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: tt_sales_lib_ext02
+#: model:ir.model.fields,field_description:tt_sales_lib_ext02.field_tt_customers_visits__name
+msgid "Name"
+msgstr "الاسم"
+
+#. module: tt_sales_lib_ext02
+#: code:addons/tt_sales_lib_ext02/models/customers_visits.py:9
+#, python-format
+msgid "New"
+msgstr "زيارة"
+
+#. module: tt_sales_lib_ext02
+#: model:ir.model.fields,field_description:tt_sales_lib_ext02.field_tt_customers_visits__partner_id
+#: model_terms:ir.ui.view,arch_db:tt_sales_lib_ext02.customers_visits_search
+msgid "Partner"
+msgstr "الشريك"
+
+#. module: tt_sales_lib_ext02
+#: model:ir.model.fields,field_description:tt_sales_lib_ext02.field_tt_customers_visits__user_id
+#: model_terms:ir.ui.view,arch_db:tt_sales_lib_ext02.customers_visits_search
+msgid "User"
+msgstr "المستخدم"
+
+#. module: tt_sales_lib_ext02
+#: model:ir.model.fields,field_description:tt_sales_lib_ext02.field_tt_customers_visits__visit_date
+msgid "Visit Date"
+msgstr "تاريخ الزيارة"
+
+#. module: tt_sales_lib_ext02
+#: model:ir.ui.menu,name:tt_sales_lib_ext02.customer_visits_menu
+#: model_terms:ir.ui.view,arch_db:tt_sales_lib_ext02.checkin_partner_inherit_form_view
+msgid "Visits"
+msgstr "الزيارات"
+
+#. module: tt_sales_lib_ext02
+#: model:ir.model,name:tt_sales_lib_ext02.model_tt_customers_visits
+msgid "tt.customers.visits"
+msgstr "tt.customers.visits"
+

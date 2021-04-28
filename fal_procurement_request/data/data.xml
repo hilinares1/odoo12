@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+	    <record id="supplier_to_be_defined" model="res.partner">
+	    	<field name="name">SUPPLIER TO BE DEFINED</field>
+	    	<field name="supplier">True</field>
+	    </record>
+   	</data>
+</odoo>

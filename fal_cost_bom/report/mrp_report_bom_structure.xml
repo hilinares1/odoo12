@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="fal_report_mrp_bom" inherit_id="mrp.report_mrp_bom">
+      <xpath expr="//table[@class='o_mrp_bom_expandable']/thead/tr/th[6]" position="after">
+        <th class="o_mrp_bom_cost text-right" title="This is the cost of the scrap.">Cost of Scrap</th>
+      </xpath>
+      <xpath expr="//table[@class='o_mrp_bom_expandable']/tbody/tr/td[6]" position="after">
+        <td class="o_mrp_bom_cost text-right">
+            <span><t t-esc="data['fal_bom_scrap_cost']" t-options='{"widget": "monetary", "display_currency": currency}'/></span>
+        </td>
+      </xpath>
+      <xpath expr="//table[@class='o_mrp_bom_expandable']/tfoot/tr/td[6]" position="after">
+        <td class="o_mrp_bom_cost text-right">
+          <span><t t-esc="data['fal_bom_scrap_cost']/data['bom_qty']" t-options='{"widget": "monetary", "display_currency": currency}'/></span>
+        </td>
+      </xpath>
+    </template>
+</odoo>

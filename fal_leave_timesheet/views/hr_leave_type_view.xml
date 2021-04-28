@@ -1,0 +1,15 @@
+<odoo>
+    <record id="fal_hr_leave_type_groups" model="ir.ui.view">
+        <field name="name">fal_hr_leave_type_groups</field>
+        <field name="model">hr.leave.type</field>
+        <field name="inherit_id" ref="project_timesheet_holidays.hr_holiday_status_view_form_inherit"/>
+        <field name="arch" type="xml">
+            <field name="timesheet_project_id" position="attributes">
+                <attribute name="groups"></attribute>
+            </field>
+            <field name="timesheet_task_id" position="attributes">
+                <attribute name="groups"></attribute>
+            </field>
+        </field>
+    </record>
+</odoo>

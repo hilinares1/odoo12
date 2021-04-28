@@ -1,0 +1,38 @@
+<odoo>
+    <record id="view_partner_tree_fal_partner_code" model="ir.ui.view">
+        <field name="name">res.partner.tree.partner.code</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_tree"/>
+        <field name="arch" type="xml">
+            <field name="display_name" position="after">
+                <field name="ref"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="view_partner_tree_fal_partner_code_move_ref" model="ir.ui.view">
+        <field name="name">res.partner.tree.partner.code</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <field name="ref" position="replace">
+            </field>
+            <field name="category_id" position="after">
+                <field name="ref"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="view_res_partner_filter_code" model="ir.ui.view">
+        <field name="name">res.partner.select.code</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_res_partner_filter"/>
+        <field name="arch" type="xml">
+            <data>
+                <xpath expr="//field[@name='name']" position="attributes">
+                    <attribute name="filter_domain">['|','|',('display_name','ilike',self),('ref','ilike',self),('email','ilike',self)]</attribute>
+                </xpath>
+            </data>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Copyright (C) 2015 DevIntelle Consulting Service Pvt.Ltd (<http://www.devintellecs.com>).
+
+For Module Support : devintelle@gmail.com  or Skype : devintelle
+ -->
+<odoo>
+    
+	<record id="account_payment_whatsapp_form" model="ir.ui.view">
+		<field name="name">account.payment.whatsapp.form</field>
+		<field name="model">account.payment</field>
+		<field name="inherit_id" ref='account.view_account_payment_form'/>
+		<field name="arch" type="xml">
+		    <xpath expr="//header//button[@name='action_draft']" position="after">
+                <button name="send_whatsapp_message_data" type="object" string="Send WhatsApp Web" attrs="{'invisible':[('payment_type','!=','inbound')]}"/>
+                <button name="send_payment_whatsapp_message_from_mobile" type="object" string="Send WhatsApp Mobile" attrs="{'invisible':[('payment_type','!=','inbound')]}"/>
+            </xpath>
+		</field>
+    </record>
+    
+</odoo>

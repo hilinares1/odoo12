@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!-- Copyright 2018-2019 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo>
+<record model="res.partner.id_category" id="partner_identification_bpjs_kesehatan">
+    <field name="name">BPJS Kesehatan</field>
+    <field name="code">bpjs_kes</field>
+</record>
+
+<record model="res.partner.id_category" id="partner_identification_bpjs_ketenagakerjaan">
+    <field name="name">BPJS Ketenagakerjaan</field>
+    <field name="code">bpjs_tnk</field>
+</record>
+</odoo>

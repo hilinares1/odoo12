@@ -1,0 +1,105 @@
+<odoo>
+    <record id="mrp.mrp_production_workorder_form_view_inherit" model="ir.ui.view">
+        <field name="priority">15</field>
+    </record>
+
+    <record id="mrp_workorder_time_tracking_fal" model="ir.ui.view">
+        <field name="name">mrp_workorder_time_tracking_fal</field>
+        <field name="model">mrp.workorder</field>
+        <field name="priority">15</field>
+        <field name="inherit_id" ref="mrp.mrp_production_workorder_form_view_inherit"/>
+        <field name="arch" type="xml">
+            <field name="production_id" position="before">
+                <field name="fal_tracking_type" readonly="1"/>
+            </field>
+            <button name="%(mrp.act_mrp_block_workcenter_wo)d" position="attributes">
+                <attribute name="attrs">{'invisible': ['|', '|', '|', ('working_state', '=', 'blocked'), ('state', 'in', ('done', 'pending', 'ready', 'cancel')), ('is_user_working', '=', False), ('fal_tracking_type', '!=', 'workorder')]}</attribute>
+            </button>
+            <button name="button_unblock" position="attributes">
+                <attribute name="attrs">{'invisible': ['|', ('working_state', '!=', 'blocked'), ('fal_tracking_type', '!=', 'workorder')]}</attribute>
+            </button>
+
+        </field>
+    </record>
+
+    <record id="mrp_form_view_fal_workorder_tracking" model="ir.ui.view">
+        <field name="name">mrp_form_view_fal_workorder_tracking</field>
+        <field name="model">mrp.production</field>
+        <field name="type">form</field>
+        <field name="inherit_id" ref="mrp.mrp_production_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[3]" position="after">
+                <page name="time_tracking" attrs="{'invisible': ['|',('fal_tracking_type', '!=', 'routing')]}" string="Time Tracking">
+                    <button name="time_start" string="START" type="object" class="btn-success" attrs="{'invisible': ['|', ('fal_tracking_state', 'not in', ('draft', 'paused')), ('workorder_count', '=', 0)]}"/>
+                    <button name="time_pause" string="PAUSE" type="object" attrs="{'invisible': ['|', ('fal_tracking_state', 'not in', 'started'), ('workorder_count', '=', 0)]}" class="btn-warning"/>
+                    <button name="time_stop" attrs="{'invisible': ['|', ('fal_tracking_state', 'not in', 'started'), ('workorder_count', '=', 0)]}" string="STOP" type="object" class="btn-info"/>
+                    <button name="time_block" string="BLOCK" attrs="{'invisible': ['|', ('fal_tracking_state', 'not in', 'started'), ('workorder_count', '=', 0)]}" type="object"/>
+                    <button name="time_unblock" string="UNBLOCK" attrs="{'invisible': ['|', ('fal_tracking_state', 'not in', 'blocked'), ('workorder_count', '=', 0)]}" type="object"/>
+                    <field name="fal_tracking_state" invisible="1"/>
+                    <field name="fal_tracking_ids" context="{'default_uom_id': product_uom_id}">
+                        <tree string="Manufacturing Time Tracking" editable="bottom" create="false">
+                            <field name="start_hour"/>
+                            <field name="end_hour"/>
+                            <field name="qty"/>
+                            <field name="uom_id"/>
+                            <field name="remain_qty" readonly="1"/>
+                            <field name="cycle_time"/>
+                        </tree>
+                    </field>
+                </page>
+            </xpath>
+            <field name="routing_id" position="after">
+                <field name="fal_tracking_type"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="oee_loss_form_view_ext" model="ir.ui.view">
+        <field name="name">mrp.workcenter.productivity.loss.form</field>
+        <field name="model">mrp.workcenter.productivity.loss</field>
+        <field name="inherit_id" ref="mrp.oee_loss_form_view"/>
+        <field name="arch" type="xml">
+            <field name="loss_id" position="after">
+                <field name="fal_working_machine"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="view_production_tracking_form" model="ir.ui.view">
+        <field name="name">fal.mrp.production.tracking.form</field>
+        <field name="model">fal.mrp.production.tracking</field>
+        <field name="arch" type="xml">
+            <form string="Production Tracking">
+                <header>
+                </header>
+               <sheet>
+                    <div>
+                        <label for="name" string="Deposit Name"/>
+                        <h1>
+                            <field name="name"/>
+                        </h1>
+                    </div>
+                   <group>
+                        <group>
+                        <field name="qty"/>
+                        <field name="remain_qty"/>
+                        <field name="uom_id"/>
+                        <field name="cycle_time"/>
+                        <field name="start_hour"/>
+                        <field name="end_hour"/>
+                        <field name="mrp_id"/>
+                        </group>
+
+                        <group>
+                        <field name="tracking_ids" widget="many2many_tags"/>
+                        <field name="loss_id"/>
+                        <field name="loss_type"/>
+                        <field name="fal_workshop_id"/>
+                        <field name="notes"/>
+                        </group>
+                   </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

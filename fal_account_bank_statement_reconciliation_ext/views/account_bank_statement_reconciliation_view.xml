@@ -1,0 +1,24 @@
+<odoo>
+    <data>
+
+        <record id="view_bank_statement_form_fal_abs" model="ir.ui.view">
+            <field name="name">account.bank.statement.form.fal.abs</field>
+            <field name="model">account.bank.statement</field>
+            <field name="inherit_id" ref="account.view_bank_statement_form"/>
+            <field name="arch" type="xml">
+                <data>
+                    <xpath expr="//notebook/page/field[@name='line_ids']/tree/field[@name='partner_id']" position="after">
+                        <field name="product_id" />
+                    </xpath>
+                    <xpath expr="//notebook/page/field[@name='line_ids']/tree/field[@name='partner_id']" position="after">
+                        <field name="account_id" options='{"no_open":True}' domain="[('company_id', '=', parent.company_id)]" attrs="{'readonly' : [('journal_entry_ids', '!=', [])] }"/>
+                    </xpath>
+                    <xpath expr="//notebook/page/field[@name='line_ids']/tree/field[@name='ref']" position="attributes">
+                        <attribute name="groups"></attribute>
+                    </xpath>
+                </data>
+            </field>
+        </record>
+
+    </data>
+</odoo>

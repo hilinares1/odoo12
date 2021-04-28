@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="view_employee_form_fal_hr_ext" model="ir.ui.view">
+            <field name="name">hr.employee.form.fal.hr.ext</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form" />
+            <field name="arch" type="xml">
+                <data>
+                    <!-- Title -->
+                    <field name="category_ids" position="before">
+                        <div class="oe_title">
+                            <label for="fal_id_employee"/>
+                            <field name="fal_id_employee" placeholder="Put employee ID in here.." />
+                            <span> - </span>
+                            <label for="fal_reference"/>
+                            <field name="fal_reference" placeholder="Put employee reference in here.." />
+                        </div>
+                    </field>
+
+                    <!-- Firstname Last name -->
+                    <xpath expr="//h1[1]" position="after">
+                        <div class="oe_edit_only">
+                            <group>
+                                <field name="lastname"/>
+                                <field name="firstname"/>
+                            </group>
+                        </div>
+                    </xpath>
+
+                    <!-- Citizenship -->
+                    <field name="bank_account_id" position="after">
+                        <field name="driving_license_number"/>
+                    </field>
+                    <!-- Status -->
+                    <field name="marital" position="after">
+                        <field name="fal_child_ids">
+                            <tree string="Children" editable="bottom">
+                                <field name="name"/>
+                                <field name="address"/>
+                                <field name="phone"/>
+                                <field name="relation"/>
+                            </tree>
+                        </field>
+                    </field>
+                    <!-- Birth -->
+                    <field name="birthday" position="after">
+                        <field name="age"/>
+                        <field name="hukou_place"/>
+                    </field>
+                    <!-- Private Contact -->
+                    <field name="address_home_id" position="attributes">
+                        <attribute name="domain">[('type','=','private')]</attribute>
+                    </field>
+                    <!-- Contact Information -->
+                    <field name="address_home_id" position="after">
+                        <field name="fal_contact_name"/>
+                        <field name="fal_contact_address"/>
+                        <field name="fal_contact_phone"/>
+                        <field name="fal_contact_relation"/>
+                    </field>
+
+                    <!-- Move the status information from HR setting to Work Information -->
+                    <xpath expr="//page[@name='hr_settings']/group/group[@name='active_group']" position="attributes">
+                        <attribute name="invisible">1</attribute>
+                    </xpath>
+                    <xpath expr="//page[@name='hr_settings']/group/group[@name='active_group']/field[@name='company_id']" position="replace">
+                    </xpath>
+                    <xpath expr="//page[@name='hr_settings']/group/group[@name='active_group']/field[@name='user_id']" position="replace">
+                    </xpath>
+                    <xpath expr="//page[@name='hr_settings']/group/group[@name='active_group']" position="attributes">
+                        <attribute name="invisible">1</attribute>
+                    </xpath>
+                    <xpath expr="//notebook/page[1]/group[1]/group[2]" position="after">
+                        <group string="Status" name="active_group">
+                            <field name="company_id" groups="base.group_multi_company"/>
+                            <field name="user_id" string="Related User" context="{'using_partner_name': True}"/>
+                        </group>
+                    </xpath>
+
+                    <!-- Work Period -->
+                    <xpath expr="//page[@name='public']/group" position="inside">
+                        <group string="Works Period">
+                            <field name="fal_arrival_date"/>
+                            <field name="fal_work_exp"/>
+                        </group>
+                    </xpath>
+                </data>
+            </field>
+        </record>
+
+
+    </data>
+</odoo>

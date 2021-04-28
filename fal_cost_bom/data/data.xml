@@ -1,0 +1,6 @@
+<odoo>
+    <record forcecreate="True" id="fal_bom_cost" model="decimal.precision">
+        <field name="name">BoM Cost</field>
+        <field name="digits">5</field>
+    </record>
+</odoo>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<template id="accounting_external_footer_layout">
+		<div class="row small" style="border-top: 1px solid black;">
+			<div class="col-9 text-center">
+				<ul class="list-inline mb4">
+					<li t-if="company.phone">
+						Phone:
+						<span t-field="company.phone" />
+					</li>
+					<li t-if="company.email">
+						Email:
+						<span t-field="company.email" />
+					</li>
+					<li t-if="company.website">
+						Web:
+						<span t-field="company.website" />
+					</li>
+					<li t-if="company.vat">
+					<t t-if="company.country_id.vat_label"><t t-esc="company.country_id.vat_label" />:</t>
+					<t t-if="not company.country_id.vat_label">TIN:</t>
+						<span t-field="company.vat" />
+					</li>
+				</ul>
+	
+				<div name="financial_infos">
+					<span t-field="company.report_footer" />
+				</div>
+			</div>
+			<div class="col-3 text-right">
+				Page:
+				<span class="page" />
+				/
+				<span class="topage" />
+			</div>			
+		</div>		
+	</template>
+</odoo>

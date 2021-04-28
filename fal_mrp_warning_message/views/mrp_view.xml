@@ -1,0 +1,17 @@
+<odoo>
+    <data>
+        <record id="mrp_production_form_view_fal_warning_message" model="ir.ui.view">
+            <field name="name">mrp_production_form_view_fal_warning_message</field>
+            <field name="model">mrp.production</field>
+            <field name="inherit_id" ref="mrp.mrp_production_form_view"/>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <xpath expr="//group/field[@name='location_src_id']/.." position="after">
+                    <group>
+                        <field name="fal_warning_text" nolabel="1"/>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

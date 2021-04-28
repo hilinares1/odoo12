@@ -1,0 +1,103 @@
+<odoo>
+  <data>
+        <!-- Purchase Order Form Inherit -->
+        <record id="purchase_order_view_approval_form_inherit" model="ir.ui.view">
+            <field name="name">purchase.order.form.inherit</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.purchase_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//header/button[@name='button_cancel']" position="replace">
+                    <button name="button_cancel" states="draft,to approve,manager,accountant,director,sent,purchase" string="Cancel" type="object" />
+                </xpath>            
+                <xpath expr="//header/button[@name='button_cancel']" position="before">
+                    <button name="button_manager_approve" type="object" states='manager' string="Manager Approval" class="oe_highlight" groups="purchase.group_purchase_manager"/>
+                    <button name="button_accountant_approve" type="object" states='accountant' string="Accountant Approval" class="oe_highlight" groups="account.group_account_manager"/> 
+                    <button name="button_director_approve" type="object" states='director' string="Director Approval" class="oe_highlight" groups="po_three_approval_levels.group_po_director_approval"/> 
+                </xpath>
+               
+                <xpath expr="//page[@name='purchase_delivery_invoice']" position="after">
+                    <page string='PO Approval Details'>
+                        <group>
+                            <group>
+                                <field name="manager_user_id"/>
+                                <field name="accountant_user_id"/>
+                                <field name="director_user_id"/>
+                            </group>
+                            <group>
+                                <field name="manager_approve_date"/>
+                                <field name="accountant_approve_date"/>
+                                <field name="director_approve_date"/>
+                            </group>
+                            <group/>
+                        </group>                        
+                    </page>
+                </xpath>
+
+            </field>
+        </record>
+
+        <!-- Purchase Order Search View -->
+        <record id="view_purchase_order_filter_to_approve" model="ir.ui.view">
+            <field name="name">purchase.order.approval</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.view_purchase_order_filter"/>
+            <field name="arch" type="xml">
+                <filter name="to_approve" position="after">
+                   <filter name="to_approve_manager" string="Manager Approval" domain="[('state', '=','manager')]"/>
+                   <filter name="to_approve_accountant" string="Accountant Approval" domain="[('state', '=','accountant')]"/>
+                   <filter name="to_approve_director" string="Director Approval" domain="[('state', '=','director')]"/>                                      
+                </filter>
+            </field>
+        </record>
+
+        <!-- Purchase Order Manger Action -->
+        <record id="purchase_manager_form_action" model="ir.actions.act_window">
+            <field name="name">PO Manager Approval</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">purchase.order</field>
+            <field name="view_mode">tree,kanban,form,pivot,graph,calendar,activity</field>
+            <field name="domain">[('state','=','manager')]</field>
+            <field name="search_view_id" ref="purchase.view_purchase_order_filter"/>
+            <field name="context">{"search_default_to_approve_manager": 1}</field>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+              </p>
+            </field>
+        </record>
+        <!-- Purchase Order Manager Menu -->
+        <menuitem action="purchase_manager_form_action" id="menu_purchase_manager_form_action" parent="purchase.menu_procurement_management" groups="purchase.group_purchase_manager" sequence="7"/>
+        <!-- Purchase Order Accountant Action -->
+        <record id="purchase_accountant_form_action" model="ir.actions.act_window">
+            <field name="name">PO Accountant Approval</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">purchase.order</field>
+            <field name="view_mode">tree,kanban,form,pivot,graph,calendar,activity</field>
+            <field name="domain">[('state','=','accountant')]</field>
+            <field name="search_view_id" ref="purchase.view_purchase_order_filter"/>
+            <field name="context">{"search_default_to_approve_accountant": 1}</field>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+              </p>
+            </field>
+        </record>
+        <!-- Purchase Order Accountant Menu -->
+        <menuitem action="purchase_accountant_form_action" id="menu_purchase_accountant_form_action" parent="account.menu_finance_payables" groups="account.group_account_manager" sequence="2"/>
+        <!-- Purchase Order Director Action -->
+        <record id="purchase_director_form_action" model="ir.actions.act_window">
+            <field name="name">PO Director Approval</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">purchase.order</field>
+            <field name="view_mode">tree,kanban,form,pivot,graph,calendar,activity</field>
+            <field name="domain">[('state','=','director')]</field>
+            <field name="search_view_id" ref="purchase.view_purchase_order_filter"/>
+            <field name="context">{"search_default_to_approve_director": 1}</field>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+              </p>
+            </field>
+        </record>
+        <!-- Purchase Order Director Menu -->
+        <menuitem action="purchase_director_form_action" id="menu_purchase_director_form_action" parent="purchase.menu_procurement_management" groups="group_po_director_approval" sequence="8"/>        
+
+  </data>
+</odoo>

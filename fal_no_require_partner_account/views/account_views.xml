@@ -1,0 +1,32 @@
+<odoo>
+    <data>
+
+        <record id="res_config_settings_view_form_fal_ext" model="ir.ui.view">
+            <field name="name">res.config.settings.view.form.inherit.analytic</field>
+            <field name="model">res.config.settings</field>
+            <field name="inherit_id" ref="account.res_config_settings_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@id='analytic']" position="after">
+                    <h2>Account</h2>
+                        <div class="row mt16 o_settings_container" id="account">
+                            <div class="col-12 col-lg-6 o_setting_box" title="These taxes are set in any new product created.">
+                                <div class="o_setting_left_pane"/>
+                                <div class="o_setting_right_pane">
+                                    <div class="content-group">
+                                        <div class="row mt16">
+                                            <label for="property_account_payable_id_setting" class="col-lg-3 o_light_label"/>
+                                            <field name="property_account_payable_id_setting" options="{'no_create': True}"/>
+                                        </div>
+                                        <div class="row">
+                                            <label for="property_account_receivable_id_setting" class="col-lg-3 o_light_label"/>
+                                            <field name="property_account_receivable_id_setting" options="{'no_create': True}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

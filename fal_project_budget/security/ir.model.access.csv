@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_fal_project_budget_tags_user,fal.project.budget.tags.user,model_fal_project_budget_tags,analytic.group_analytic_accounting,1,0,0,0
+access_fal_project_budget_tags_user_tag,fal.project.budget.tags.user,model_fal_project_budget_tags,analytic.group_analytic_tags,1,1,1,1
+access_fal_project_budget_user,fal.project.budget.user,model_fal_project_budget,analytic.group_analytic_accounting,1,1,1,1
+access_fal_project_budget_line_user,fal.project.budget.line.user,model_fal_project_budget_line,analytic.group_analytic_accounting,1,1,1,1

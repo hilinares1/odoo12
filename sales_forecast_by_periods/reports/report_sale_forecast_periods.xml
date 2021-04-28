@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="report_sale_forecast_periods_view_pivot" model="ir.ui.view">
+        <field name="name">report.sale.forecast.periods.pivot</field>
+        <field name="model">report.sale.forecast.periods</field>
+        <field name="arch" type="xml">
+            <pivot string="Sales Forecast"
+                   disable_linking="True"
+            >
+                <field name="date_datetime" type="row"/>
+                <field name="quantity" type="measure"/>
+            </pivot>
+        </field>
+    </record>
+
+    <record id="report_sale_forecast_periods_view_graph" model="ir.ui.view">
+        <field name="name">report.sale.forecast.periods.graph</field>
+        <field name="model">report.sale.forecast.periods</field>
+        <field name="arch" type="xml">
+            <graph string="Sales Forecast" type="line">
+                <field name="date_datetime" type="col"/>
+                <field name="quantity" type="measure"/>
+            </graph>
+        </field>
+    </record>
+
+    <record id="report_sale_forecast_periods_view_search" model="ir.ui.view">
+        <field name="name">vreport.sale.forecast.periods.search</field>
+        <field name="model">report.sale.forecast.periods</field>
+        <field name="arch" type="xml">
+            <search string="Sales Forecast">
+                <field name="date_datetime"/>
+                <filter string="Only forecast"
+                        name="forecast"
+                        domain="[('forecast', '=', True)]"
+                />
+                <filter string="Only real"
+                        name="real"
+                        domain="[('forecast', '!=', True)]"
+                />
+                <group expand="1" string="Group By">
+                    <filter string="Sales Date"
+                            name="day"
+                            context="{'group_by':'date_datetime:day'}"
+                    />
+                    <filter string="Week"
+                            name="week"
+                            context="{'group_by':'date_datetime:week'}"
+                            invisible="1"
+                    />
+                    <filter string="Month"
+                            name="month"
+                            context="{'group_by':'date_datetime:month'}"
+                            invisible="1"
+                    />
+                    <filter string="Quarter"
+                            name="quarter"
+                            context="{'group_by':'date_datetime:quarter'}"
+                            invisible="1"
+                    />
+                    <filter string="Year"
+                            name="year"
+                            context="{'group_by':'date_datetime:year'}"
+                            invisible="1"
+                    />
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="report_sale_forecast_periods_action" model="ir.actions.act_window">
+        <field name="name">Sales Forecast</field>
+        <field name="res_model">report.sale.forecast.periods</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">graph,pivot</field>
+        <field name="search_view_id" ref="report_sale_forecast_periods_view_search"/>
+        <field name="context">{}</field>
+        <field name="view_id" ref="report_sale_forecast_periods_view_pivot"/>
+    </record>
+
+
+</odoo>

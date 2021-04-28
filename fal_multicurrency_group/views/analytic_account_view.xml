@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="view_account_analytic_line_form_inherit_multicurrency_account">
+            <field name="name">fal.multicurrency.analytic.account.line.form</field>
+            <field name="model">account.analytic.line</field>
+            <field name="inherit_id" ref="analytic.view_account_analytic_line_form"/>
+            <field name="arch" type="xml">
+                <data>
+                    <field name="amount" position="replace">
+                        <field name="group_currency_id" invisible="1"/>
+                        <label for="amount" string="Amount" widget="monetary" />
+                        <div>
+                            <field name="amount" widget="monetary" class="oe_inline"/>
+                            <span class="oe_inline"> (</span>
+                            <field name="fal_amount_group_curr" widget="monetary" options="{'currency_field': 'group_currency_id'}" class="oe_inline"/>
+                            <span class="oe_inline">)</span>
+                        </div>
+                    </field>
+                </data>
+            </field>
+        </record>
+    </data>
+</odoo>

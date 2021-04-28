@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="view_account_financial_report_line_form_falcnrep" model="ir.ui.view">
+            <field name="name">account.financial.html.report.line.form.falcnrep</field>
+            <field name="model">account.financial.html.report.line</field>
+            <field name="inherit_id" ref="account_reports.view_account_financial_report_line_form"/>
+            <field name="arch" type="xml">
+                <field name="level" position="after">
+                    <field name="fal_is_page2" />
+                </field>
+            </field>
+        </record>
+
+    </data>
+</odoo>

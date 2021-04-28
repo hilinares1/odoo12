@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+    <!-- Inheritance Views -->
+    <!-- project -> configuration -> stages -> create -->
+    <record id="task_type_edit_fal_pext" model="ir.ui.view">
+        <field name="name">project.task.type.form.fal.pext</field>
+        <field name="model">project.task.type</field>
+        <field name="inherit_id" ref="project.task_type_edit"/>
+        <field name="arch" type="xml">
+            <data>
+                <field name="fold" position="after">
+                    <field name="case_default"/>
+                    <field name="project_opportunities_default"/>
+                </field>
+            </data>
+        </field>
+    </record>
+
+    <!-- Inheritance Views -->
+    <!-- project -> configuration -> project -> create -->
+    <record id="edit_project_ori_inherit_falpext" model="ir.ui.view">
+        <field name="name">project.project.form.inherit.fal.pext</field>
+        <field name="model">project.project</field>
+        <field name="inherit_id" ref="project.edit_project"/>
+        <field name="arch" type="xml">
+            <data>
+                <xpath expr="//notebook/page[@name='settings']/group[@name='misc']/group[@name='configuration']/field[@name='sequence']" position="after">
+                    <label for="project_opportunities"/>
+                    <div class="o_row">
+                        <field name="project_opportunities"/>
+                        <button type="object" name="modify_defauly_stage" string="Modify Default Stage" icon="fa-arrow-right" class="oe_link"/>
+                    </div>
+                </xpath>
+                <field name="partner_id" position="after">
+                    <field name="description" placeholder="Put description in here.."/>
+                    <field name="code"/>
+                </field>
+            </data>
+        </field>
+    </record>
+    
+    <!--  merge from here -->
+    <record model="ir.ui.view" id="fal_view_task_form2_inherited">
+        <field name="name">fal_view_task_form2_inherited</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="project.view_task_form2" />
+        <field name="arch" type="xml">
+            <!-- Header -->
+            <xpath expr="//field[@name='name']" position="before">
+                <field name="id" class="oe_inline"/> -
+            </xpath>
+            <xpath expr="//field[@name='stage_id']" position="attributes">
+                <attribute name="options">{'clickable': 0, 'fold_field': 'fold'}</attribute>
+            </xpath>
+            <xpath expr="//form/header" position="inside">
+                <button name="action_update" string="Update Task" type="object" class="oe_highlight" attrs="{'invisible': ['|', ('active','=',False)]}"/>
+                <button name="action_cancel" string="Cancel Task" type="object" class="oe_highlight" attrs="{'invisible': ['|', ('active','=',False)]}"/>
+            </xpath>
+            <!-- Body -->
+            <field name="partner_id" position="after">
+                <field name="fal_responsible_user_id"/>
+            </field>
+            <field name="date_deadline" position="after">
+                <field name="fal_cust_deadline"/>
+            </field>
+            <field name="user_id" position="after">
+                <field name="task_relation"/>
+                <field name="fal_next_action_user_id"/>
+            </field>
+            <!-- Notebook -->
+            <xpath expr="//notebook/page[@name='description_page']" position="after">
+                <page string="Change History" attrs="{'invisible': [('project_id', '=', False)]}">
+                    <field name="fal_change_ids">
+                        <tree editable="bottom" string="Change History">
+                            <field name="fal_date"/>
+                            <field name="fal_status"/>
+                            <field name="fal_desc"/>
+                            <field name="fal_responsible"/>
+                            <field name="fal_stage_from"/>
+                            <field name="fal_stage_to"/>
+                        </tree>
+                    </field>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="fal_view_task_form2_inherited_manager">
+        <field name="name">fal_view_task_form2_inherited_manager</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="project.view_task_form2" />
+        <field name="groups_id" eval="[(4, ref('project.group_project_manager'))]"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='stage_id']" position="attributes">
+                <attribute name="options">{'clickable': '1', 'fold_field': 'fold'}</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="fal_view_task_kanban_inherited_progress" model="ir.ui.view">
+        <field name="name">fal.project.task.timesheet.kanban.inherited.progress</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="project.view_task_kanban"/>
+        <field name="arch" type="xml">
+            <xpath expr="//templates/t/div/div/div" position="before">
+                <field name="id"/>
+            </xpath>
+            <xpath expr="//kanban" position="attributes">
+                <attribute name="disable_drag_drop_record">true</attribute>
+            </xpath>
+         </field>
+     </record>
+
+     <record id="fal_view_task_kanban_inherited_progress_manager" model="ir.ui.view">
+        <field name="name">fal.project.task.timesheet.kanban.inherited.progress.manager</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="project.view_task_kanban"/>
+        <field name="groups_id" eval="[(4, ref('project.group_project_manager'))]"/>
+        <field name="arch" type="xml">
+            <xpath expr="//kanban" position="attributes">
+                <attribute name="disable_drag_drop_record">false</attribute>
+            </xpath>
+         </field>
+     </record>
+        
+    <!-- views for task level -->
+    <record id="view_task_tree" model="ir.ui.view">
+        <field name="name">Task Tree </field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="project.view_task_tree2"/>
+        <field name="arch" type="xml">
+            <field name="stage_id" position="after">
+                <field name="fal_next_action_user_id"/>
+            </field>
+        </field>
+    </record>
+
+    <!-- views for history change -->
+    <record id="fal_history_change_form" model="ir.ui.view">
+        <field name="name">fal_history_change_form</field>
+        <field name="type">form</field>
+        <field name="model">fal.history.change</field>
+        <field name="arch" type="xml">
+            <form string="Change History">
+                <sheet>
+                    <group>
+                        <field name="fal_date"/>
+                        <field name="fal_desc"/>
+                        <field name="fal_responsible"/>
+                        <field name="fal_stage_from"/>
+                        <field name="fal_stage_to"/>
+                        <field name="fal_date_deadline"/>
+                        <field name="fal_new_deadline"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="fal_history_change_tree" model="ir.ui.view">
+        <field name="name">fal_history_change_tree</field>
+        <field name="type">tree</field>
+        <field name="model">fal.history.change</field>
+        <field name="arch" type="xml">
+            <tree string="Change History">
+                <field name="fal_date"/>
+                <field name="fal_desc"/>
+                <field name="fal_responsible"/>
+                <field name="fal_stage_from"/>
+                <field name="fal_stage_to"/>
+                <field name="fal_date_deadline"/>
+                <field name="fal_new_deadline"/>
+            </tree>
+        </field>
+    </record>
+
+    </data>
+</odoo>

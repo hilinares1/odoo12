@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+        <!-- Top menu item -->
+        <!--
+            This menu item's purpose is to overwrite another one defined in
+            the base module in order to set new groups.
+        -->
+        <menuitem
+            id="srm_menu_root"
+            name="SRM"
+            web_icon="fal_srm,static/description/icon.png"
+            groups="purchase.group_purchase_user,purchase.group_purchase_manager"
+            sequence="24"/>
+
+        <menuitem
+            id="srm_menu_config"
+            name="Configuration"
+            parent="srm_menu_root"
+            sequence="25" groups="purchase.group_purchase_manager"/>
+
+        <menuitem
+            id="menu_srm_config_proposal"
+            name="Pipeline"
+            parent="srm_menu_config"
+            sequence="15"
+            groups="purchase.group_purchase_manager"/>
+
+<!--         <menuitem
+            id="menu_crm_config_opportunity"
+            name="Opportunities"
+            parent="crm_menu_config"
+            sequence="1"
+            groups="sales_team.group_sale_manager"/> -->
+
+        <menuitem id="srm_config_settings_menu"
+            name="Settings"
+            parent="srm_menu_config"
+            action="srm_config_settings_action"
+            groups="base.group_system"
+            sequence="0"/>
+
+        <menuitem id="srm_menu_report"
+            name="Reporting"
+            parent="srm_menu_root"
+            sequence="20"
+            groups="purchase.group_purchase_manager"/>
+
+        <menuitem id="srm_team_config"
+            name="Purchase Teams"
+            parent="srm_menu_config"
+            action="fal_srm.purchases_team_config_action"
+            sequence="5"/>
+</odoo>

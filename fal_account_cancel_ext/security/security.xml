@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<odoo>
+    <data noupdate="1">
+
+        <record id="group_account_cancel_user" model="res.groups">
+            <field name="name">Accountant can cancel</field>
+            <field name="implied_ids" eval="[(4, ref('account.group_account_user'))]"/>
+            <field name="category_id" ref="base.module_category_accounting_and_finance"/>
+        </record>
+
+        <record id="account.group_account_manager" model="res.groups">
+            <field name="name">Advisor</field>
+            <field name="implied_ids" eval="[(4, ref('group_account_cancel_user'))]"/>
+        </record>
+
+    </data>
+</odoo>
+

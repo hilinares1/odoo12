@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+    	<!-- Product Attribute -->
+		<record id="product_attribute_view_form_inherit_fal_product_attribute" model="ir.ui.view">
+	        <field name="name">product_attribute_view_form_inherit_fal_product_attribute</field>
+	        <field name="model">product.attribute</field>
+	        <field name="inherit_id" ref="product.product_attribute_view_form"/>
+	        <field name="arch" type="xml">
+	            <xpath expr="//field[@name='create_variant']" position="after">
+	                <field name="attribute_image"></field>
+	            </xpath>
+	            <xpath expr="//group[@name='values_ids']" position="after">
+	                <group name="fal_config_ids">
+	                    <label for="fal_config_ids" string="Attribute Config"/>
+	                    <field name="fal_config_ids" widget="one2many_list" nolabel="1">
+	                        <tree string="Config" editable="bottom">
+	                        	<field name="sequence" widget="handle"/>
+	                        	<field name="attribute_id" readonly="1" invisible="1"/>
+	                            <field name="attribute_value_id" widget="many2many_tags"/>
+	                        </tree>
+	                    </field>
+	                </group>
+	            </xpath>
+	        </field>
+	    </record>
+
+	    <!-- Product Attribute Value-->
+	    <record id="product_attribute_value_tree_fal_product_attribute" model="ir.ui.view">
+	        <field name="name">product.attribute.value.tree.fal.product.attribute</field>
+	        <field name="model">product.attribute.value</field>
+	        <field name="inherit_id" ref="product.variants_tree_view"/>
+	        <field name="arch" type="xml">
+	            <xpath expr="//tree" position="attributes">
+    				<attribute name="editable"></attribute>
+    			</xpath>
+	        </field>
+	    </record>
+
+	    <record id="product_attribute_value_form_fal_product_attribute" model="ir.ui.view">
+	        <field name="name">product.attribute.value.form.fal.product.attribute</field>
+	        <field name="model">product.attribute.value</field>
+	        <field name="arch" type="xml">
+	            <form>
+	            	<group>
+	            		<group>
+		            		<field name="attribute_id"/>
+		            		<field name="name"/>
+		            	</group>
+		            	<group>
+		            		<field name="sequence"/>
+		            		<field name="attribute_value_image"/>
+		            	</group>
+	            	</group>
+	            	<group>
+		            	<label for="fal_config_ids" string="Attribute Config"/>
+	                    <field name="fal_config_ids" widget="one2many_list" nolabel="1">
+	                        <tree string="Config" editable="bottom">
+	                        	<field name="sequence" widget="handle"/>
+	                        	<field name="value_id" readonly="1" invisible="1"/>
+	                            <field name="attribute_value_id" widget="many2many_tags"/>
+	                        </tree>
+	                    </field>
+	                </group>
+	            </form>
+	        </field>
+	    </record>
+
+	    <record id="product.variants_action" model="ir.actions.act_window">
+	        <field name="view_mode">tree,form</field>
+	    </record>
+
+    </data>
+</odoo>

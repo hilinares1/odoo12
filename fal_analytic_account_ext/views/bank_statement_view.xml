@@ -1,0 +1,19 @@
+<odoo>
+	<record id="view_bank_statement_form_add_analytic_account" model="ir.ui.view">
+        <field name="name">account.bank.statement.form.analytic.account</field>
+        <field name="model">account.bank.statement</field>
+        <field name="inherit_id" ref="account.view_bank_statement_form"/>
+        <field name="arch" type="xml">
+            <field name="company_id" position="after">
+                <label for="fal_analytic_account_id" groups="analytic.group_analytic_accounting"/>
+                <div class="o_row" groups="analytic.group_analytic_accounting">
+                    <field name="fal_analytic_account_id"/>
+                    <button type="object" name="apply_to_line" string="Apply to line" class="oe_link"/>
+                </div>
+            </field>
+            <xpath expr="//notebook/page[@name='statement_line_ids']/field[@name='line_ids']/tree/field[@name='partner_id']" position="after">
+                <field name="analytic_account_id" groups="analytic.group_analytic_accounting" domain="[('company_id', '=', parent.company_id)]"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

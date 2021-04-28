@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+        <record id="fal_utm_campaign_form_inherit" model="ir.ui.view">
+                <field name="name">fal.utm.campaign.form.inherit</field>
+                <field name="model">utm.campaign</field>
+                <field name="inherit_id" ref="utm.utm_campaign_form"/>
+                <field name="arch" type="xml">
+                   <xpath expr="//field[@name='name']" position="after">
+                        <label for="alias_name" string="Email Alias"/>
+                        <div name="alias_def">
+                            <field name="alias_id" class="oe_read_only oe_inline"
+                                string="Email Alias" required="0"/>
+                            <div class="oe_edit_only oe_inline" name="edit_alias" style="display: inline;" >
+                                <field name="alias_name" class="oe_inline"/>@<field name="alias_domain" class="oe_inline" readonly="1"/>
+                            </div>
+                        </div>
+                        <field name="crm_team_id"/>
+                        <field name="alias_contact" class="oe_inline"
+                            groups="base.group_no_one"
+                            string="Accept Emails From"/>
+                   </xpath>
+                </field>
+            </record>
+
+            <!-- New Menu for UTM's -->
+            <menuitem name="UTMs" id="marketing_utm_crm" parent="crm.crm_menu_config" sequence="20"/>
+            <menuitem action="utm.utm_campaign_act" id="menu_utm_campaign_act_crm" sequence="1" parent="marketing_utm_crm"/>
+            <menuitem action="utm.utm_medium_action" id="menu_utm_medium_crm" parent="marketing_utm_crm" sequence="5"/>
+            <menuitem action="utm.utm_source_action" id="menu_utm_source_crm" parent="marketing_utm_crm" sequence="10"/>
+
+</odoo>

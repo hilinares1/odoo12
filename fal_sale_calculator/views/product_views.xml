@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="product_category_form_view_inherit_fal_calculator_ext" model="ir.ui.view">
+            <field name="name">product_category_form_view_inherit_fal_calculator_ext</field>
+            <field name="model">product.category</field>
+            <field name="inherit_id" ref="product.product_category_form_view"/>
+            <field name="arch" type="xml">
+                <field name="parent_id" position="after">
+                    <field name="fal_is_computed_attribute"/>
+                </field>
+            </field>
+        </record>          
+
+        <record id="product_attribute_value_form_view_inherit_fal_calculator" model="ir.ui.view">
+            <field name="name">product_attribute_value_form_view_inherit_fal_calculator</field>
+            <field name="model">product.attribute.value</field>
+            <field name="inherit_id" ref="fal_product_attribute.product_attribute_value_form_fal_product_attribute"/>
+            <field name="arch" type="xml">
+                <field name="sequence" position="after">
+                    <field name="fal_is_computed_attribute"/>
+                </field>
+                <xpath expr="//form/group[2]" position="replace">
+                    <notebook colspan="4">
+                        <page string="Attribute Configuration">
+                            <field name="fal_config_ids" widget="one2many_list" nolabel="1">
+                                <tree string="Config" editable="bottom">
+                                    <field name="sequence" widget="handle"/>
+                                    <field name="value_id" readonly="1" invisible="1"/>
+                                    <field name="attribute_value_id" widget="many2many_tags"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Price Configuration" attrs="{'invisible':[('fal_is_computed_attribute', '=', False)]}">
+                            <group col="4">
+                                <separator colspan="4" string="Computation"/>
+                                <field name="amount_select"/><newline/> 
+                                <field name="amount_percentage_base" attrs="{'invisible':[('amount_select','!=','percentage')], 'required': [('amount_select','=','percentage')]}"/><newline/>
+                                <field name="quantity" attrs="{'invisible':[('amount_select','=','code')], 'required':[('amount_select','!=','code')]}"/><newline/>
+                                <field name="amount_fix" attrs="{'invisible':[('amount_select','!=','fix')], 'required':[('amount_select','=','fix')]}"/><newline/>
+                                <field colspan="4" name="amount_python_compute" attrs="{'invisible':[('amount_select','!=','code')], 'required':[('amount_select','=','code')]}"/>
+                                <field name="amount_percentage" attrs="{'invisible':[('amount_select','!=','percentage')], 'required':[('amount_select','=','percentage')]}"/>
+                            </group>
+                        </page>
+                    </notebook>
+                </xpath>
+            </field>
+        </record>
+	</data>
+</odoo>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- default alias for procurement -->
+        <record id="mail_alias_procurement" model="mail.alias">
+            <field name="alias_name">procurement</field>
+            <field name="alias_model_id" ref="purchase.model_purchase_order"/>
+            <field name="alias_user_id" ref="base.user_admin"/>
+        </record>
+    </data>
+</odoo>

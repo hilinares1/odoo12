@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="view_hr_timesheet_invoice_create_faltiminvext" model="ir.ui.view">
+            <field name="name">hr.timesheet.invoice.create.form.faltiminvext</field>
+            <field name="model">hr.timesheet.invoice.create</field>
+            <field name="arch" type="xml">
+            <form string="Create Invoice">
+                <separator string="Are you sure you want to create the invoices of selected line?" />
+                <footer>
+                    <button name="do_create" string="Create Invoices" type="object" class="oe_highlight"/>
+                    <button string="Cancel" class="oe_link" special="cancel" />
+                </footer>
+            </form>
+            </field>
+        </record>
+
+        <act_window
+            id="hr_timesheet_invoice_create_faltiminvextaction"
+            name="Create Invoice"
+            res_model="hr.timesheet.invoice.create"
+            src_model="account.analytic.line"
+            view_mode="form"
+            view_id="view_hr_timesheet_invoice_create_faltiminvext"
+            target="new"
+            key2="client_action_multi"
+            />
+
+    </data>
+</odoo>

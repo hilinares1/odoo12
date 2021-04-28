@@ -1,0 +1,707 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* account_dynamic_gl
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-06-05 17:14+0000\n"
+"PO-Revision-Date: 2019-06-05 17:14+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: account_dynamic_gl
+#: view:website:account_dynamic_gl.report_generalledger1
+msgid ": General ledger"
+msgstr ": Libro mayor"
+
+#. module: account_dynamic_gl
+#: code:addons/account_dynamic_gl/reports/dynamic_report_xlsx.py:114
+#, python-format
+msgid "Acc Tags"
+msgstr "Acc Tags"
+
+#. module: account_dynamic_gl
+#: model:ir.model,name:account_dynamic_gl.model_account_account
+msgid "Account"
+msgstr "Cuenta"
+
+#. module: account_dynamic_gl
+#: model:ir.model,name:account_dynamic_gl.model_account_account_tag
+msgid "Account Tag"
+msgstr "Etiqueta de la cuenta"
+
+#. module: account_dynamic_gl
+#. openerp-web
+#: code:addons/account_dynamic_gl/static/src/xml/dynamic_gl_report.xml:466
+#, python-format
+msgid "Account tags"
+msgstr "Etiquetas de las cuentas"
+
+#. module: account_dynamic_gl
+#: view:website:account_dynamic_gl.report_generalledger1
+msgid "Account tags:"
+msgstr "Etiquetas de las cuentas:"
+
+#. module: account_dynamic_gl
+#. openerp-web
+#: selection:account.account.tag,applicability:0
+#: code:addons/account_dynamic_gl/reports/dynamic_report_xlsx.py:136
+#: code:addons/account_dynamic_gl/static/src/xml/dynamic_gl_report.xml:447
+#, python-format
+msgid "Accounts"
+msgstr "Cuentas"
+
+#. module: account_dynamic_gl
+#: view:website:account_dynamic_gl.report_generalledger1
+msgid "Accounts:"
+msgstr "Cuentas:"
+
+#. module: account_dynamic_gl
+#: field:account.account.tag,active:0
+msgid "Active"
+msgstr "Activeo"
+
+#. module: account_dynamic_gl
+#. openerp-web
+#: code:addons/account_dynamic_gl/static/src/xml/dynamic_gl_report.xml:282
+#, python-format
+msgid "All"
+msgstr "Todas"
+
+#. module: account_dynamic_gl
+#: view:website:account_dynamic_gl.report_generalledger1
+msgid "All Entries"
+msgstr "Todos los asientos"
+
+#. module: account_dynamic_gl
+#: view:website:account_dynamic_gl.report_generalledger1
+msgid "All Posted Entries"
+msgstr "Todos los asientos asentados"
+
+#. module: account_dynamic_gl
+#: view:website:account_dynamic_gl.report_generalledger1
+msgid "All accounts'"
+msgstr "Todas la cuentas"
+
+#. module: account_dynamic_gl
+#. openerp-web
+#: code:addons/account_dynamic_gl/static/src/xml/dynamic_gl_report.xml:272
+#, python-format
+msgid "All entries"
+msgstr "Todos los asientos"
+
+#. module: account_dynamic_gl
+#. openerp-web
+#: code:addons/account_dynamic_gl/static/src/xml/dynamic_gl_report.xml:283
+#, python-format
+msgid "All movements"
+msgstr "Todos los movimientos"
+
+#. module: account_dynamic_gl
+#. openerp-web
+#: code:addons/account_dynamic_gl/static/src/xml/dynamic_gl_report.xml:271
+#, python-format
+msgid "All posted entries"
+msgstr "Todos los asientos asentados"
+
+#. module: account_dynamic_gl
+#: code:addons/account_dynamic_gl/reports/dynamic_report_xlsx.py:125
+#, python-format
+msgid "Analytic Acc"
+msgstr "Analytic Acc"
+
+#. module: account_dynamic_gl
+#. openerp-web
+#: code:addons/account_dynamic_gl/static/src/xml/dynamic_gl_report.xml:511
+#, python-format
+msgid "Analytic accounts"
+msgstr "Analytic accounts"
+
+#. module: account_dynamic_gl
+#: view:website:account_dynamic_gl.report_generalledger1
+msgid "Analytic accounts:"
+msgstr "Analytic accounts:"
+
+#. module: account_dynamic_gl
+#: field:account.account.tag,applicability:0
+msgid "Applicability"
+msgstr "Applicability"
+
+#. module: account_dynamic_gl
+#. openerp-web
+#: code:addons/account_dynamic_gl/static/src/xml/dynamic_gl_report.xml:172
+#, python-format
+msgid "Apply"
+msgstr "Aplicar"
+
+#. module: account_dynamic_gl
+#. openerp-web
+#: code:addons/account_dynamic_gl/reports/dynamic_report_xlsx.py:169
+#: code:addons/account_dynamic_gl/static/src/xml/dynamic_gl_report.xml:56
+#: view:website:account_dynamic_gl.report_generalledger1
+#, python-format
+msgid "Balance"
+msgstr "Saldo"
+
+#. module: account_dynamic_gl
+#. openerp-web
+#: code:addons/account_dynamic_gl/static/src/xml/dynamic_gl_report.xml:59
+#, python-format
+msgid "Balance Sec. Currency"
+msgstr "Saldo Acum. Mon. Sec."
+
+#. module: account_dynamic_gl
+#: field:account.account.tag,color:0
+msgid "Color Index"
+msgstr "Color Index"
+
+#. module: account_dynamic_gl
+#. openerp-web
+#: code:addons/account_dynamic_gl/static/src/xml/dynamic_gl_report.xml:228
+#, python-format
+msgid "Companies"
+msgstr "Empresas"
+
+#. module: account_dynamic_gl
+#: field:account.account.tag,create_uid:0
+msgid "Created by"
+msgstr "Created by"
+
+#. module: account_dynamic_gl
+#: field:account.account.tag,create_date:0
+msgid "Created on"
+msgstr "Created on"
+
+#. module: account_dynamic_gl
+#. openerp-web
+#: code:addons/account_dynamic_gl/reports/dynamic_report_xlsx.py:167
+#: code:addons/account_dynamic_gl/static/src/xml/dynamic_gl_report.xml:55
+#: view:website:account_dynamic_gl.report_generalledger1
+#, python-format
+msgid "Credit"
+msgstr "Haber"
+
+#. module: account_dynamic_gl
+#. openerp-web
+#: code:addons/account_dynamic_gl/static/src/xml/dynamic_gl_report.xml:58
+#, python-format
+msgid "Credit Sec. Currency"
+msgstr "Haber Mon. Sec."
+
+#. module: account_dynamic_gl
+#: code:addons/account_dynamic_gl/reports/dynamic_report_xlsx.py:173
+#: view:website:account_dynamic_gl.report_generalledger1
+#, python-format
+msgid "Currency"
+msgstr "Divisa"
+
+#. module: account_dynamic_gl
+#. openerp-web
+#: code:addons/account_dynamic_gl/reports/dynamic_report_xlsx.py:151
+#: code:addons/account_dynamic_gl/static/src/xml/dynamic_gl_report.xml:47
+#: code:addons/account_dynamic_gl/static/src/xml/dynamic_gl_report.xml:329
+#: code:addons/account_dynamic_gl/static/src/xml/dynamic_gl_report.xml:366
+#: view:website:account_dynamic_gl.report_generalledger1
+#, python-format
+msgid "Date"
+msgstr "Fecha"
+
+#. module: account_dynamic_gl
+#. openerp-web
+#: code:addons/account_dynamic_gl/static/src/xml/dynamic_gl_report.xml:220
+#, python-format
+msgid "Date filters"
+msgstr "Filtros de fecha"
+
+#. module: account_dynamic_gl
+#: code:addons/account_dynamic_gl/reports/dynamic_report_xlsx.py:40
+#, python-format
+msgid "Date from"
+msgstr "Fecha desde:"
+
+#. module: account_dynamic_gl
+#: view:website:account_dynamic_gl.report_generalledger1
+msgid "Date from :"
+msgstr "Fecha desde:"
+
+#. module: account_dynamic_gl
+#: code:addons/account_dynamic_gl/reports/dynamic_report_xlsx.py:42
+#, python-format
+msgid "Date to"
+msgstr "Fecha hasta:"
+
+#. module: account_dynamic_gl
+#: view:website:account_dynamic_gl.report_generalledger1
+msgid "Date to :"
+msgstr "Fecha hasta:"
+
+#. module: account_dynamic_gl
+#. openerp-web
+#: code:addons/account_dynamic_gl/reports/dynamic_report_xlsx.py:165
+#: code:addons/account_dynamic_gl/static/src/xml/dynamic_gl_report.xml:54
+#: view:website:account_dynamic_gl.report_generalledger1
+#, python-format
+msgid "Debit"
+msgstr "Debe"
+
+#. module: account_dynamic_gl
+#. openerp-web
+#: code:addons/account_dynamic_gl/static/src/xml/dynamic_gl_report.xml:57
+#, python-format
+msgid "Debit Sec. Currency"
+msgstr "Debe Mon. Sec."
+
+#. module: account_dynamic_gl
+#: view:website:account_dynamic_gl.report_generalledger1
+msgid "Display Account"
+msgstr "Mostrar cuenta"
+
+#. module: account_dynamic_gl
+#. openerp-web
+#: code:addons/account_dynamic_gl/reports/dynamic_report_xlsx.py:46
+#: code:addons/account_dynamic_gl/static/src/xml/dynamic_gl_report.xml:277
+#, python-format
+msgid "Display accounts"
+msgstr "Mostrar cuentas"
+
+#. module: account_dynamic_gl
+#: model:ir.actions.client,name:account_dynamic_gl.action_dynamic_gl_report
+#: model:ir.ui.menu,name:account_dynamic_gl.menu_dynamic_gl_report
+msgid "Dynamic GL Report"
+msgstr "Dynamic GL Report"
+
+#. module: account_dynamic_gl
+#. openerp-web
+#: code:addons/account_dynamic_gl/static/src/xml/dynamic_gl_report.xml:203
+#, python-format
+msgid "End date"
+msgstr "Fecha Final"
+
+#. module: account_dynamic_gl
+#: view:website:account_dynamic_gl.report_generalledger1
+msgid "Entry Label"
+msgstr "Etiqueta asiento"
+
+#. module: account_dynamic_gl
+#. openerp-web
+#: code:addons/account_dynamic_gl/static/src/xml/dynamic_gl_report.xml:308
+#, python-format
+msgid "Exchange options to secondary currency"
+msgstr "Opciones de conversión a la monedad secundaria"
+
+#. module: account_dynamic_gl
+#. openerp-web
+#: code:addons/account_dynamic_gl/static/src/xml/dynamic_gl_report.xml:344
+#, python-format
+msgid "Exchange type"
+msgstr "Tipo de cambio"
+
+#. module: account_dynamic_gl
+#. openerp-web
+#: code:addons/account_dynamic_gl/static/src/xml/dynamic_gl_report.xml:318
+#, python-format
+msgid "Exchange type from input date"
+msgstr "Tipo de cambio según fecha dada"
+
+#. module: account_dynamic_gl
+#. openerp-web
+#: code:addons/account_dynamic_gl/static/src/xml/dynamic_gl_report.xml:315
+#, python-format
+msgid "Exchange type from transation date"
+msgstr "Tipo de cambio según fecha de la transacción"
+
+#. module: account_dynamic_gl
+#. openerp-web
+#: code:addons/account_dynamic_gl/static/src/xml/dynamic_gl_report.xml:175
+#, python-format
+msgid "Expand all"
+msgstr "Expandir Todos"
+
+#. module: account_dynamic_gl
+#. openerp-web
+#: code:addons/account_dynamic_gl/static/src/xml/dynamic_gl_report.xml:171
+#, python-format
+msgid "Filter"
+msgstr "Filtros"
+
+#. module: account_dynamic_gl
+#: code:addons/account_dynamic_gl/models/dynamic_gl_report.py:119
+#, python-format
+msgid "Form content is missing, this report cannot be printed."
+msgstr "Form content is missing, this report cannot be printed."
+
+#. module: account_dynamic_gl
+#. openerp-web
+#: code:addons/account_dynamic_gl/static/src/xml/dynamic_gl_report.xml:29
+#: model:ir.actions.report.xml,name:account_dynamic_gl.general_ledger_xlsx
+#, python-format
+msgid "General Ledger"
+msgstr "Libro mayor"
+
+#. module: account_dynamic_gl
+#: field:account.account.tag,id:0
+#: field:report.account.dynamic.report_generalledger,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: account_dynamic_gl
+#. openerp-web
+#: code:addons/account_dynamic_gl/static/src/xml/dynamic_gl_report.xml:372
+#, python-format
+msgid "Include initial balance"
+msgstr "Incluir balance inicial"
+
+#. module: account_dynamic_gl
+#: code:addons/account_dynamic_gl/reports/dynamic_report_xlsx.py:50
+#, python-format
+msgid "Inital balance"
+msgstr "Balance inicial"
+
+#. module: account_dynamic_gl
+#. openerp-web
+#: code:addons/account_dynamic_gl/static/src/xml/dynamic_gl_report.xml:48
+#: view:website:account_dynamic_gl.report_generalledger1
+#, python-format
+msgid "JRNL"
+msgstr "LIBRO"
+
+#. module: account_dynamic_gl
+#: code:addons/account_dynamic_gl/reports/dynamic_report_xlsx.py:153
+#, python-format
+msgid "Journal"
+msgstr "Diario"
+
+#. module: account_dynamic_gl
+#: model:ir.model,name:account_dynamic_gl.model_account_move_line
+msgid "Journal Items"
+msgstr "Apuntes contables"
+
+#. module: account_dynamic_gl
+#. openerp-web
+#: code:addons/account_dynamic_gl/static/src/xml/dynamic_gl_report.xml:367
+#: view:website:account_dynamic_gl.report_generalledger1
+#, python-format
+msgid "Journal and Partner"
+msgstr "Journal and Partner"
+
+#. module: account_dynamic_gl
+#. openerp-web
+#: code:addons/account_dynamic_gl/reports/dynamic_report_xlsx.py:92
+#: code:addons/account_dynamic_gl/static/src/xml/dynamic_gl_report.xml:390
+#, python-format
+msgid "Journals"
+msgstr "Diarios"
+
+#. module: account_dynamic_gl
+#: view:website:account_dynamic_gl.report_generalledger1
+msgid "Journals:"
+msgstr "Diarios:"
+
+#. module: account_dynamic_gl
+#. openerp-web
+#: code:addons/account_dynamic_gl/reports/dynamic_report_xlsx.py:161
+#: code:addons/account_dynamic_gl/static/src/xml/dynamic_gl_report.xml:52
+#, python-format
+msgid "Label"
+msgstr "Label"
+
+#. module: account_dynamic_gl
+#: field:account.account.tag,write_uid:0
+msgid "Last Updated by"
+msgstr "Last Updated by"
+
+#. module: account_dynamic_gl
+#: field:account.account.tag,write_date:0
+msgid "Last Updated on"
+msgstr "Last Updated on"
+
+#. module: account_dynamic_gl
+#. openerp-web
+#: code:addons/account_dynamic_gl/static/src/xml/dynamic_gl_report.xml:250
+#, python-format
+msgid "Last financial year"
+msgstr "Año fiscal pasado"
+
+#. module: account_dynamic_gl
+#. openerp-web
+#: code:addons/account_dynamic_gl/static/src/xml/dynamic_gl_report.xml:248
+#, python-format
+msgid "Last month"
+msgstr "Mes pasado"
+
+#. module: account_dynamic_gl
+#. openerp-web
+#: code:addons/account_dynamic_gl/static/src/xml/dynamic_gl_report.xml:249
+#, python-format
+msgid "Last quarter"
+msgstr "Trimestre pasado"
+
+#. module: account_dynamic_gl
+#. openerp-web
+#: code:addons/account_dynamic_gl/static/src/xml/dynamic_gl_report.xml:247
+#, python-format
+msgid "Last week"
+msgstr "Semana pasada"
+
+#. module: account_dynamic_gl
+#. openerp-web
+#: code:addons/account_dynamic_gl/static/src/xml/dynamic_gl_report.xml:176
+#, python-format
+msgid "Merge all"
+msgstr "Recoger Todos"
+
+#. module: account_dynamic_gl
+#. openerp-web
+#: code:addons/account_dynamic_gl/reports/dynamic_report_xlsx.py:159
+#: code:addons/account_dynamic_gl/static/src/xml/dynamic_gl_report.xml:51
+#: view:website:account_dynamic_gl.report_generalledger1
+#, python-format
+msgid "Move"
+msgstr "Asiento"
+
+#. module: account_dynamic_gl
+#: field:account.account.tag,name:0
+msgid "Name"
+msgstr "Nombre"
+
+#. module: account_dynamic_gl
+#. openerp-web
+#: code:addons/account_dynamic_gl/static/src/xml/dynamic_gl_report.xml:301
+#: code:addons/account_dynamic_gl/static/src/xml/dynamic_gl_report.xml:378
+#, python-format
+msgid "No"
+msgstr "No"
+
+#. module: account_dynamic_gl
+#. openerp-web
+#: code:addons/account_dynamic_gl/static/src/xml/dynamic_gl_report.xml:295
+#, python-format
+msgid "Only abailable for excel"
+msgstr "Solo disponible para Excel"
+
+#. module: account_dynamic_gl
+#. openerp-web
+#: code:addons/account_dynamic_gl/static/src/xml/dynamic_gl_report.xml:428
+#, python-format
+msgid "Operating Units"
+msgstr "Unidades ejecutoras"
+
+#. module: account_dynamic_gl
+#: help:account.account,tag_ids:0
+msgid "Optional tags you may want to assign for custom reporting"
+msgstr "Optional tags you may want to assign for custom reporting"
+
+#. module: account_dynamic_gl
+#. openerp-web
+#: code:addons/account_dynamic_gl/static/src/xml/dynamic_gl_report.xml:321
+#, python-format
+msgid "Other exchange type"
+msgstr "Otro tipo de cambio"
+
+#. module: account_dynamic_gl
+#. openerp-web
+#: code:addons/account_dynamic_gl/static/src/xml/dynamic_gl_report.xml:167
+#, python-format
+msgid "PDF"
+msgstr "PDF"
+
+#. module: account_dynamic_gl
+#. openerp-web
+#: code:addons/account_dynamic_gl/reports/dynamic_report_xlsx.py:155
+#: code:addons/account_dynamic_gl/static/src/xml/dynamic_gl_report.xml:49
+#: view:website:account_dynamic_gl.report_generalledger1
+#, python-format
+msgid "Partner"
+msgstr "Cliente"
+
+#. module: account_dynamic_gl
+#. openerp-web
+#: code:addons/account_dynamic_gl/reports/dynamic_report_xlsx.py:103
+#: code:addons/account_dynamic_gl/static/src/xml/dynamic_gl_report.xml:409
+#, python-format
+msgid "Partners"
+msgstr "Clientes"
+
+#. module: account_dynamic_gl
+#: view:website:account_dynamic_gl.report_generalledger1
+msgid "Partners:"
+msgstr "Clientes:"
+
+#. module: account_dynamic_gl
+#. openerp-web
+#: code:addons/account_dynamic_gl/static/src/xml/dynamic_gl_report.xml:53
+#, python-format
+msgid "Reco"
+msgstr "Reco"
+
+#. module: account_dynamic_gl
+#: code:addons/account_dynamic_gl/reports/dynamic_report_xlsx.py:163
+#, python-format
+msgid "Reconciled"
+msgstr "Reconciled"
+
+#. module: account_dynamic_gl
+#. openerp-web
+#: code:addons/account_dynamic_gl/static/src/xml/dynamic_gl_report.xml:50
+#: view:website:account_dynamic_gl.report_generalledger1
+#, python-format
+msgid "Ref"
+msgstr "Ref."
+
+#. module: account_dynamic_gl
+#: code:addons/account_dynamic_gl/reports/dynamic_report_xlsx.py:157
+#, python-format
+msgid "Reference"
+msgstr "Reference"
+
+#. module: account_dynamic_gl
+#: help:account.account.tag,active:0
+msgid "Set active to false to hide the Account Tag without removing it."
+msgstr "Set active to false to hide the Account Tag without removing it."
+
+#. module: account_dynamic_gl
+#. openerp-web
+#: code:addons/account_dynamic_gl/static/src/xml/dynamic_gl_report.xml:294
+#, python-format
+msgid "Show secundary currency"
+msgstr "Mostrar moneda secundaria"
+
+#. module: account_dynamic_gl
+#. openerp-web
+#: code:addons/account_dynamic_gl/reports/dynamic_report_xlsx.py:48
+#: code:addons/account_dynamic_gl/static/src/xml/dynamic_gl_report.xml:361
+#, python-format
+msgid "Sort by"
+msgstr "Ordenado por"
+
+#. module: account_dynamic_gl
+#: view:website:account_dynamic_gl.report_generalledger1
+msgid "Sorted By:"
+msgstr "Ordenado por:"
+
+#. module: account_dynamic_gl
+#. openerp-web
+#: code:addons/account_dynamic_gl/static/src/xml/dynamic_gl_report.xml:191
+#, python-format
+msgid "Start date"
+msgstr "Fecha de inicio"
+
+#. module: account_dynamic_gl
+#: field:account.account,tag_ids:0
+msgid "Tags"
+msgstr "Etiquetas"
+
+#. module: account_dynamic_gl
+#: view:website:account_dynamic_gl.report_generalledger1
+msgid "Target Moves:"
+msgstr "Movimientos destino"
+
+#. module: account_dynamic_gl
+#. openerp-web
+#: code:addons/account_dynamic_gl/reports/dynamic_report_xlsx.py:44
+#: code:addons/account_dynamic_gl/static/src/xml/dynamic_gl_report.xml:266
+#, python-format
+msgid "Target moves"
+msgstr "Movimientos destino"
+
+#. module: account_dynamic_gl
+#: selection:account.account.tag,applicability:0
+msgid "Taxes"
+msgstr "Impuestos"
+
+#. module: account_dynamic_gl
+#. openerp-web
+#: code:addons/account_dynamic_gl/static/src/xml/dynamic_gl_report.xml:245
+#, python-format
+msgid "This financial year"
+msgstr "Este año fiscal"
+
+#. module: account_dynamic_gl
+#. openerp-web
+#: code:addons/account_dynamic_gl/static/src/xml/dynamic_gl_report.xml:243
+#, python-format
+msgid "This month"
+msgstr "Este mes"
+
+#. module: account_dynamic_gl
+#. openerp-web
+#: code:addons/account_dynamic_gl/static/src/xml/dynamic_gl_report.xml:244
+#, python-format
+msgid "This quarter"
+msgstr "Este trimestre"
+
+#. module: account_dynamic_gl
+#. openerp-web
+#: code:addons/account_dynamic_gl/static/src/xml/dynamic_gl_report.xml:242
+#, python-format
+msgid "This week"
+msgstr "Esta semana"
+
+#. module: account_dynamic_gl
+#. openerp-web
+#: code:addons/account_dynamic_gl/static/src/xml/dynamic_gl_report.xml:241
+#, python-format
+msgid "Today"
+msgstr "Hoy"
+
+#. module: account_dynamic_gl
+#: code:addons/account_dynamic_gl/reports/dynamic_report_xlsx.py:171
+#, python-format
+msgid "Transaction"
+msgstr "Transaction"
+
+#. module: account_dynamic_gl
+#. openerp-web
+#: code:addons/account_dynamic_gl/static/src/xml/dynamic_gl_report.xml:122
+#, python-format
+msgid "View Invoice"
+msgstr "Ver factura"
+
+#. module: account_dynamic_gl
+#. openerp-web
+#: code:addons/account_dynamic_gl/static/src/xml/dynamic_gl_report.xml:114
+#, python-format
+msgid "View Source move"
+msgstr "Ver movimiento origen"
+
+#. module: account_dynamic_gl
+#. openerp-web
+#: code:addons/account_dynamic_gl/static/src/xml/dynamic_gl_report.xml:284
+#: view:website:account_dynamic_gl.report_generalledger1
+#, python-format
+msgid "With balance not equal to zero"
+msgstr "Con saldo distinto a 0"
+
+#. module: account_dynamic_gl
+#: view:website:account_dynamic_gl.report_generalledger1
+msgid "With movements"
+msgstr "Con movimientos"
+
+#. module: account_dynamic_gl
+#. openerp-web
+#: code:addons/account_dynamic_gl/static/src/xml/dynamic_gl_report.xml:168
+#, python-format
+msgid "XLSX"
+msgstr "XLSX"
+
+#. module: account_dynamic_gl
+#. openerp-web
+#: code:addons/account_dynamic_gl/static/src/xml/dynamic_gl_report.xml:300
+#: code:addons/account_dynamic_gl/static/src/xml/dynamic_gl_report.xml:377
+#, python-format
+msgid "Yes"
+msgstr "Si"
+
+#. module: account_dynamic_gl
+#. openerp-web
+#: code:addons/account_dynamic_gl/static/src/xml/dynamic_gl_report.xml:246
+#, python-format
+msgid "Yesterday"
+msgstr "Ayer"
+

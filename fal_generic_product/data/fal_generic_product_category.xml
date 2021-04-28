@@ -1,0 +1,750 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+
+        <record id="product_product_category_gen_all" model="product.category">
+            <field name="name">All</field>
+        </record>
+
+        <record id="product_category_gen_comp_001" model="product.category">
+            <field name="name">Company</field>
+            <field name="parent_id" ref="product_product_category_gen_all" />
+        </record>
+
+        <record id="product_category_gen_comp_002" model="product.category">
+            <field name="name">Consumable stuff</field>
+            <field name="parent_id" ref="product_category_gen_comp_001" />
+        </record>
+
+        <record id="product_category_gen_comp_003" model="product.category">
+            <field name="name">Company - Office stationary</field>
+            <field name="parent_id" ref="product_category_gen_comp_002" />
+        </record>
+
+        <record id="product_category_gen_comp_004" model="product.category">
+            <field name="name">Corporate Tax Income &amp; Expense</field>
+            <field name="parent_id" ref="product_category_gen_comp_001" />
+        </record>
+
+        <record id="product_category_gen_comp_005" model="product.category">
+            <field name="name">Accrues taxes</field>
+            <field name="parent_id" ref="product_category_gen_comp_004" />
+        </record>
+
+        <record id="product_category_gen_comp_006" model="product.category">
+            <field name="name">Foreign taxes</field>
+            <field name="parent_id" ref="product_category_gen_comp_004" />
+        </record>
+
+        <record id="product_category_gen_comp_007" model="product.category">
+            <field name="name">Taxes on results current year</field>
+            <field name="parent_id" ref="product_category_gen_comp_004" />
+        </record>
+
+        <record id="product_category_gen_comp_008" model="product.category">
+            <field name="name">Taxes on results previous years</field>
+            <field name="parent_id" ref="product_category_gen_comp_004" />
+        </record>
+
+        <record id="product_category_gen_comp_017" model="product.category">
+            <field name="name">Document, Advertisement, etc</field>
+            <field name="parent_id" ref="product_category_gen_comp_001" />
+        </record>
+
+        <record id="product_category_gen_comp_018" model="product.category">
+            <field name="name">Legal formalities</field>
+            <field name="parent_id" ref="product_category_gen_comp_017" />
+        </record>
+
+        <record id="product_category_gen_comp_009" model="product.category">
+            <field name="name">Depreciation</field>
+            <field name="parent_id" ref="product_category_gen_comp_001" />
+        </record>
+
+        <record id="product_category_gen_comp_010" model="product.category">
+            <field name="name">Depreciation accomodation</field>
+            <field name="parent_id" ref="product_category_gen_comp_009" />
+        </record>
+
+        <record id="product_category_gen_comp_011" model="product.category">
+            <field name="name">Depreciation car</field>
+            <field name="parent_id" ref="product_category_gen_comp_009" />
+        </record>
+
+        <record id="product_category_gen_comp_012" model="product.category">
+            <field name="name">Depreciation equipment</field>
+            <field name="parent_id" ref="product_category_gen_comp_009" />
+        </record>
+
+        <record id="product_category_gen_comp_013" model="product.category">
+            <field name="name">Depreciation furnishing</field>
+            <field name="parent_id" ref="product_category_gen_comp_009" />
+        </record>
+
+        <record id="product_category_gen_comp_014" model="product.category">
+            <field name="name">Depreciation hardware computer</field>
+            <field name="parent_id" ref="product_category_gen_comp_009" />
+        </record>
+
+        <record id="product_category_gen_comp_015" model="product.category">
+            <field name="name">Depreciation premises</field>
+            <field name="parent_id" ref="product_category_gen_comp_009" />
+        </record>
+
+        <record id="product_category_gen_comp_016" model="product.category">
+            <field name="name">Depreciation software licences</field>
+            <field name="parent_id" ref="product_category_gen_comp_009" />
+        </record>
+
+        <record id="product_category_gen_comp_019" model="product.category">
+            <field name="name">Financial Income &amp; Expense</field>
+            <field name="parent_id" ref="product_category_gen_comp_001" />
+        </record>
+
+        <record id="product_category_gen_comp_025" model="product.category">
+            <field name="name">Financial products</field>
+            <field name="parent_id" ref="product_category_gen_comp_019" />
+        </record>
+
+        <record id="product_category_gen_comp_028" model="product.category">
+            <field name="name">Financial insurance</field>
+            <field name="parent_id" ref="product_category_gen_comp_025" />
+        </record>
+
+        <record id="product_category_gen_comp_026" model="product.category">
+            <field name="name">Bank charges &amp; interests</field>
+            <field name="parent_id" ref="product_category_gen_comp_025" />
+        </record>
+
+        <record id="product_category_gen_comp_027" model="product.category">
+            <field name="name">Credit file expenses</field>
+            <field name="parent_id" ref="product_category_gen_comp_025" />
+        </record>
+
+        <record id="product_category_gen_comp_030" model="product.category">
+            <field name="name">Long term financial products</field>
+            <field name="parent_id" ref="product_category_gen_comp_025" />
+        </record>
+
+        <record id="product_category_gen_comp_029" model="product.category">
+            <field name="name">Financial product - Other</field>
+            <field name="parent_id" ref="product_category_gen_comp_025" />
+        </record>
+
+        <record id="product_category_gen_comp_020" model="product.category">
+            <field name="name">Bank fees</field>
+            <field name="parent_id" ref="product_category_gen_comp_019" />
+        </record>
+
+        <record id="product_category_gen_comp_021" model="product.category">
+            <field name="name">Debt charges</field>
+            <field name="parent_id" ref="product_category_gen_comp_019" />
+        </record>
+
+        <record id="product_category_gen_comp_022" model="product.category">
+            <field name="name">Disposal current assets</field>
+            <field name="parent_id" ref="product_category_gen_comp_019" />
+        </record>
+
+        <record id="product_category_gen_comp_023" model="product.category">
+            <field name="name">Exchange diferences</field>
+            <field name="parent_id" ref="product_category_gen_comp_019" />
+        </record>
+
+        <record id="product_category_gen_comp_024" model="product.category">
+            <field name="name">Financial accruals</field>
+            <field name="parent_id" ref="product_category_gen_comp_019" />
+        </record>
+
+        <record id="product_category_gen_comp_032" model="product.category">
+            <field name="name">Income financial fixed assets</field>
+            <field name="parent_id" ref="product_category_gen_comp_019" />
+        </record>
+
+        <record id="product_category_gen_comp_031" model="product.category">
+            <field name="name">Income current assets</field>
+            <field name="parent_id" ref="product_category_gen_comp_019" />
+        </record>
+
+        <record id="product_category_gen_comp_033" model="product.category">
+            <field name="name">Writte off current assets</field>
+            <field name="parent_id" ref="product_category_gen_comp_019" />
+        </record>
+
+        <record id="product_category_gen_comp_034" model="product.category">
+            <field name="name">Intercompany</field>
+            <field name="parent_id" ref="product_category_gen_comp_001" />
+        </record>
+
+        <record id="product_category_gen_comp_035" model="product.category">
+            <field name="name">Maintenance</field>
+            <field name="parent_id" ref="product_category_gen_comp_001" />
+        </record>
+
+        <record id="product_category_gen_comp_036" model="product.category">
+            <field name="name">Company - Car maintenance</field>
+            <field name="parent_id" ref="product_category_gen_comp_035" />
+        </record>
+
+        <record id="product_category_gen_comp_037" model="product.category">
+            <field name="name">Company - COMPUTER MAINTENANCE &amp; INTERVENTION</field>
+            <field name="parent_id" ref="product_category_gen_comp_035" />
+        </record>
+
+        <record id="product_category_gen_comp_038" model="product.category">
+            <field name="name">Company - Damages</field>
+            <field name="parent_id" ref="product_category_gen_comp_035" />
+        </record>
+
+        <record id="product_category_gen_comp_039" model="product.category">
+            <field name="name">Company - Equipment maintenance</field>
+            <field name="parent_id" ref="product_category_gen_comp_035" />
+        </record>
+
+        <record id="product_category_gen_comp_040" model="product.category">
+            <field name="name">Company - Furniture maintenenace</field>
+            <field name="parent_id" ref="product_category_gen_comp_035" />
+        </record>
+
+        <record id="product_category_gen_comp_041" model="product.category">
+            <field name="name">Company - Premises maintenance</field>
+            <field name="parent_id" ref="product_category_gen_comp_035" />
+        </record>
+
+        <record id="product_category_gen_comp_042" model="product.category">
+            <field name="name">Non-operating Income &amp; Expense</field>
+            <field name="parent_id" ref="product_category_gen_comp_001" />
+        </record>
+
+        <record id="product_category_gen_comp_043" model="product.category">
+            <field name="name">Accruals</field>
+            <field name="parent_id" ref="product_category_gen_comp_042" />
+        </record>
+
+        <record id="product_category_gen_comp_044" model="product.category">
+            <field name="name">Business taxes</field>
+            <field name="parent_id" ref="product_category_gen_comp_042" />
+        </record>
+
+        <record id="product_category_gen_comp_047" model="product.category">
+            <field name="name">NonOP depreciation</field>
+            <field name="parent_id" ref="product_category_gen_comp_042" />
+        </record>
+
+        <record id="product_category_gen_comp_045" model="product.category">
+            <field name="name">Disposals</field>
+            <field name="parent_id" ref="product_category_gen_comp_042" />
+        </record>
+
+        <record id="product_category_gen_comp_046" model="product.category">
+            <field name="name">Miscellaneous</field>
+            <field name="parent_id" ref="product_category_gen_comp_042" />
+        </record>
+
+        <record id="product_category_gen_comp_048" model="product.category">
+            <field name="name">Subsidies</field>
+            <field name="parent_id" ref="product_category_gen_comp_042" />
+        </record>
+
+        <record id="product_category_gen_comp_049" model="product.category">
+            <field name="name">Writte off trade debtors</field>
+            <field name="parent_id" ref="product_category_gen_comp_042" />
+        </record>
+
+        <record id="product_category_gen_comp_050" model="product.category">
+            <field name="name">Writte off trade inventories</field>
+            <field name="parent_id" ref="product_category_gen_comp_042" />
+        </record>
+
+        <record id="product_category_gen_comp_051" model="product.category">
+            <field name="name">Non stockable stuff</field>
+            <field name="parent_id" ref="product_category_gen_comp_001" />
+        </record>
+
+        <record id="product_category_gen_comp_052" model="product.category">
+            <field name="name">Company - Electricity</field>
+            <field name="parent_id" ref="product_category_gen_comp_051" />
+        </record>
+
+        <record id="product_category_gen_comp_053" model="product.category">
+            <field name="name">Company - Gaz</field>
+            <field name="parent_id" ref="product_category_gen_comp_051" />
+        </record>
+
+        <record id="product_category_gen_comp_054" model="product.category">
+            <field name="name">Company - Oil heating</field>
+            <field name="parent_id" ref="product_category_gen_comp_051" />
+        </record>
+
+        <record id="product_category_gen_comp_055" model="product.category">
+            <field name="name">Company - Water</field>
+            <field name="parent_id" ref="product_category_gen_comp_051" />
+        </record>
+
+        <record id="product_category_gen_comp_056" model="product.category">
+            <field name="name">Phone, Mail, Internet</field>
+            <field name="parent_id" ref="product_category_gen_comp_001" />
+        </record>
+
+        <record id="product_category_gen_comp_057" model="product.category">
+            <field name="name">Company - Copies</field>
+            <field name="parent_id" ref="product_category_gen_comp_056" />
+        </record>
+
+        <record id="product_category_gen_comp_058" model="product.category">
+            <field name="name">Company - Express shipping cost</field>
+            <field name="parent_id" ref="product_category_gen_comp_056" />
+        </record>
+
+        <record id="product_category_gen_comp_059" model="product.category">
+            <field name="name">Company - Fixed phone</field>
+            <field name="parent_id" ref="product_category_gen_comp_056" />
+        </record>
+
+        <record id="product_category_gen_comp_060" model="product.category">
+            <field name="name">Company - Internet</field>
+            <field name="parent_id" ref="product_category_gen_comp_056" />
+        </record>
+
+        <record id="product_category_gen_comp_061" model="product.category">
+            <field name="name">Company - Mobile phone</field>
+            <field name="parent_id" ref="product_category_gen_comp_056" />
+        </record>
+
+        <record id="product_category_gen_comp_062" model="product.category">
+            <field name="name">Company - Normal shipping cost</field>
+            <field name="parent_id" ref="product_category_gen_comp_056" />
+        </record>
+
+        <record id="product_category_gen_comp_063" model="product.category">
+            <field name="name">Renting &amp; Management fees</field>
+            <field name="parent_id" ref="product_category_gen_comp_001" />
+        </record>
+
+        <record id="product_category_gen_comp_064" model="product.category">
+            <field name="name">Company Premises Management Fees</field>
+            <field name="parent_id" ref="product_category_gen_comp_063" />
+        </record>
+
+        <record id="product_category_gen_comp_065" model="product.category">
+            <field name="name">Company Premises Rent</field>
+            <field name="parent_id" ref="product_category_gen_comp_063" />
+        </record>
+
+        <record id="product_category_gen_comp_066" model="product.category">
+            <field name="name">Salaries &amp; benefits</field>
+            <field name="parent_id" ref="product_category_gen_comp_001" />
+        </record>
+
+        <record id="product_category_gen_comp_067" model="product.category">
+            <field name="name">Advantage in nature</field>
+            <field name="parent_id" ref="product_category_gen_comp_066" />
+        </record>
+
+        <record id="product_category_gen_comp_068" model="product.category">
+            <field name="name">Others advantage in nature</field>
+            <field name="parent_id" ref="product_category_gen_comp_067" />
+        </record>
+
+        <record id="product_category_gen_comp_069" model="product.category">
+            <field name="name">Staff party</field>
+            <field name="parent_id" ref="product_category_gen_comp_067" />
+        </record>
+
+        <record id="product_category_gen_comp_070" model="product.category">
+            <field name="name">Benefits</field>
+            <field name="parent_id" ref="product_category_gen_comp_066" />
+        </record>
+
+        <record id="product_category_gen_comp_072" model="product.category">
+            <field name="name">Employees compensation</field>
+            <field name="parent_id" ref="product_category_gen_comp_070" />
+        </record>
+
+        <record id="product_category_gen_comp_071" model="product.category">
+            <field name="name">Employees benefits</field>
+            <field name="parent_id" ref="product_category_gen_comp_070" />
+        </record>
+
+        <record id="product_category_gen_comp_073" model="product.category">
+            <field name="name">Health insurances</field>
+            <field name="parent_id" ref="product_category_gen_comp_070" />
+        </record>
+
+        <record id="product_category_gen_comp_078" model="product.category">
+            <field name="name">Employee insurance</field>
+            <field name="parent_id" ref="product_category_gen_comp_066" />
+        </record>
+
+        <record id="product_category_gen_comp_079" model="product.category">
+            <field name="name">OTHER Employee INSURANCE</field>
+            <field name="parent_id" ref="product_category_gen_comp_078" />
+        </record>
+
+        <record id="product_category_gen_comp_080" model="product.category">
+            <field name="name">Food &amp; drink</field>
+            <field name="parent_id" ref="product_category_gen_comp_066" />
+        </record>
+
+        <record id="product_category_gen_comp_081" model="product.category">
+            <field name="name">Canteen costs</field>
+            <field name="parent_id" ref="product_category_gen_comp_080" />
+        </record>
+
+        <record id="product_category_gen_comp_082" model="product.category">
+            <field name="name">Drink</field>
+            <field name="parent_id" ref="product_category_gen_comp_080" />
+        </record>
+
+        <record id="product_category_gen_comp_083" model="product.category">
+            <field name="name">Food</field>
+            <field name="parent_id" ref="product_category_gen_comp_080" />
+        </record>
+
+        <record id="product_category_gen_comp_074" model="product.category">
+            <field name="name">Car fleet</field>
+            <field name="parent_id" ref="product_category_gen_comp_066" />
+        </record>
+
+        <record id="product_category_gen_comp_075" model="product.category">
+            <field name="name">Company car expenses</field>
+            <field name="parent_id" ref="product_category_gen_comp_074" />
+        </record>
+
+        <record id="product_category_gen_comp_076" model="product.category">
+            <field name="name">Company car fuel</field>
+            <field name="parent_id" ref="product_category_gen_comp_074" />
+        </record>
+
+        <record id="product_category_gen_comp_077" model="product.category">
+            <field name="name">Company car rent leasings</field>
+            <field name="parent_id" ref="product_category_gen_comp_074" />
+        </record>
+
+        <record id="product_category_gen_comp_084" model="product.category">
+            <field name="name">Independent</field>
+            <field name="parent_id" ref="product_category_gen_comp_066" />
+        </record>
+
+        <record id="product_category_gen_comp_085" model="product.category">
+            <field name="name">Independent fees</field>
+            <field name="parent_id" ref="product_category_gen_comp_084" />
+        </record>
+
+        <record id="product_category_gen_comp_086" model="product.category">
+            <field name="name">Kilometric indemnity for independent</field>
+            <field name="parent_id" ref="product_category_gen_comp_084" />
+        </record>
+
+        <record id="product_category_gen_comp_087" model="product.category">
+            <field name="name">Payroll</field>
+            <field name="parent_id" ref="product_category_gen_comp_066" />
+        </record>
+
+        <record id="product_category_gen_comp_088" model="product.category">
+            <field name="name">Temporary job</field>
+            <field name="parent_id" ref="product_category_gen_comp_066" />
+        </record>
+
+        <record id="product_category_gen_comp_089" model="product.category">
+            <field name="name">Training</field>
+            <field name="parent_id" ref="product_category_gen_comp_066" />
+        </record>
+
+        <record id="product_category_gen_comp_090" model="product.category">
+            <field name="name">Services</field>
+            <field name="parent_id" ref="product_category_gen_comp_001" />
+        </record>
+
+        <record id="product_category_gen_comp_102" model="product.category">
+            <field name="name">Finance, legal and tax services</field>
+            <field name="parent_id" ref="product_category_gen_comp_090" />
+        </record>
+
+        <record id="product_category_gen_comp_103" model="product.category">
+            <field name="name">Finance services</field>
+            <field name="parent_id" ref="product_category_gen_comp_102" />
+        </record>
+
+        <record id="product_category_gen_comp_104" model="product.category">
+            <field name="name">Legal services</field>
+            <field name="parent_id" ref="product_category_gen_comp_102" />
+        </record>
+
+        <record id="product_category_gen_comp_105" model="product.category">
+            <field name="name">Tax services</field>
+            <field name="parent_id" ref="product_category_gen_comp_102" />
+        </record>
+
+        <record id="product_category_gen_comp_106" model="product.category">
+            <field name="name">Human resources services</field>
+            <field name="parent_id" ref="product_category_gen_comp_090" />
+        </record>
+
+        <record id="product_category_gen_comp_107" model="product.category">
+            <field name="name">Insurance</field>
+            <field name="parent_id" ref="product_category_gen_comp_090" />
+        </record>
+
+        <record id="product_category_gen_comp_108" model="product.category">
+            <field name="name">IT services</field>
+            <field name="parent_id" ref="product_category_gen_comp_090" />
+        </record>
+
+        <record id="product_category_gen_comp_109" model="product.category">
+            <field name="name">Other services</field>
+            <field name="parent_id" ref="product_category_gen_comp_090" />
+        </record>
+
+        <record id="product_category_gen_comp_093" model="product.category">
+            <field name="name">Company - Reception services</field>
+<!--             <field name="parent_id" ref="product_category_gen_comp_091" /> -->
+        </record>
+
+        <record id="product_category_gen_comp_094" model="product.category">
+            <field name="name">Security services</field>
+<!--             <field name="parent_id" ref="product_category_gen_comp_091" /> -->
+        </record>
+
+        <record id="product_category_gen_comp_095" model="product.category">
+            <field name="name">Sales and marketing services</field>
+            <field name="parent_id" ref="product_category_gen_comp_090" />
+        </record>
+
+        <record id="product_category_gen_comp_098" model="product.category">
+            <field name="name">Engineering services</field>
+            <field name="parent_id" ref="product_category_gen_comp_090" />
+        </record>
+
+        <record id="product_category_gen_comp_096" model="product.category">
+            <field name="name">Company - Commercial team</field>
+            <field name="parent_id" ref="product_category_gen_comp_095" />
+        </record>
+
+        <record id="product_category_gen_comp_097" model="product.category">
+            <field name="name">Company - Marketing</field>
+            <field name="parent_id" ref="product_category_gen_comp_095" />
+        </record>
+
+        <record id="product_category_gen_comp_092" model="product.category">
+            <field name="name">Cleaning services</field>
+<!--             <field name="parent_id" ref="product_category_gen_comp_091" /> -->
+        </record>
+
+        <record id="product_category_gen_comp_110" model="product.category">
+            <field name="name">Taxes</field>
+            <field name="parent_id" ref="product_category_gen_comp_001" />
+        </record>
+
+        <record id="product_category_gen_comp_112" model="product.category">
+            <field name="name">Indirect taxes </field>
+            <field name="parent_id" ref="product_category_gen_comp_110" />
+        </record>
+
+        <record id="product_category_gen_comp_113" model="product.category">
+            <field name="name">Other indirect taxes</field>
+            <field name="parent_id" ref="product_category_gen_comp_112" />
+        </record>
+
+        <record id="product_category_gen_comp_114" model="product.category">
+            <field name="name">VAT</field>
+            <field name="parent_id" ref="product_category_gen_comp_112" />
+        </record>
+
+        <record id="product_category_gen_comp_111" model="product.category">
+            <field name="name">Direct taxes</field>
+            <field name="parent_id" ref="product_category_gen_comp_110" />
+        </record>
+
+        <record id="product_category_gen_comp_115" model="product.category">
+            <field name="name">Travelling, Mission expenses, Public relationship</field>
+            <field name="parent_id" ref="product_category_gen_comp_001" />
+        </record>
+
+        <record id="product_category_gen_comp_116" model="product.category">
+            <field name="name">Abroad representation</field>
+            <field name="parent_id" ref="product_category_gen_comp_115" />
+        </record>
+
+        <record id="product_category_gen_comp_117" model="product.category">
+            <field name="name">Abroad - Drink</field>
+            <field name="parent_id" ref="product_category_gen_comp_116" />
+        </record>
+
+        <record id="product_category_gen_comp_118" model="product.category">
+            <field name="name">Abroad - Food</field>
+            <field name="parent_id" ref="product_category_gen_comp_116" />
+        </record>
+
+        <record id="product_category_gen_comp_119" model="product.category">
+            <field name="name">Abroad - Hotel</field>
+            <field name="parent_id" ref="product_category_gen_comp_116" />
+        </record>
+
+        <record id="product_category_gen_comp_120" model="product.category">
+            <field name="name">Abroad travelling</field>
+            <field name="parent_id" ref="product_category_gen_comp_115" />
+        </record>
+
+        <record id="product_category_gen_comp_121" model="product.category">
+            <field name="name">Abroad - Bus</field>
+            <field name="parent_id" ref="product_category_gen_comp_120" />
+        </record>
+
+        <record id="product_category_gen_comp_122" model="product.category">
+            <field name="name">Abroad - Car renting</field>
+            <field name="parent_id" ref="product_category_gen_comp_120" />
+        </record>
+
+        <record id="product_category_gen_comp_123" model="product.category">
+            <field name="name">Abroad - Flight</field>
+            <field name="parent_id" ref="product_category_gen_comp_120" />
+        </record>
+
+        <record id="product_category_gen_comp_124" model="product.category">
+            <field name="name">Abroad - Fuel</field>
+            <field name="parent_id" ref="product_category_gen_comp_120" />
+        </record>
+
+        <record id="product_category_gen_comp_125" model="product.category">
+            <field name="name">Abroad - Km indemnity</field>
+            <field name="parent_id" ref="product_category_gen_comp_120" />
+        </record>
+
+        <record id="product_category_gen_comp_126" model="product.category">
+            <field name="name">Abroad - Parking</field>
+            <field name="parent_id" ref="product_category_gen_comp_120" />
+        </record>
+
+        <record id="product_category_gen_comp_128" model="product.category">
+            <field name="name">Abroad - Tollgate</field>
+            <field name="parent_id" ref="product_category_gen_comp_120" />
+        </record>
+
+        <record id="product_category_gen_comp_129" model="product.category">
+            <field name="name">Abroad - Train</field>
+            <field name="parent_id" ref="product_category_gen_comp_120" />
+        </record>
+
+        <record id="product_category_gen_comp_127" model="product.category">
+            <field name="name">Abroad - Taxi</field>
+            <field name="parent_id" ref="product_category_gen_comp_120" />
+        </record>
+
+        <record id="product_category_gen_comp_130" model="product.category">
+            <field name="name">Local representation</field>
+            <field name="parent_id" ref="product_category_gen_comp_115" />
+        </record>
+
+        <record id="product_category_gen_comp_131" model="product.category">
+            <field name="name">Local mission - Drink</field>
+            <field name="parent_id" ref="product_category_gen_comp_130" />
+        </record>
+
+        <record id="product_category_gen_comp_132" model="product.category">
+            <field name="name">Local mission - Food</field>
+            <field name="parent_id" ref="product_category_gen_comp_130" />
+        </record>
+
+        <record id="product_category_gen_comp_133" model="product.category">
+            <field name="name">Local mission - Hotel</field>
+            <field name="parent_id" ref="product_category_gen_comp_130" />
+        </record>
+
+        <record id="product_category_gen_comp_134" model="product.category">
+            <field name="name">Local travelling</field>
+            <field name="parent_id" ref="product_category_gen_comp_115" />
+        </record>
+
+        <record id="product_category_gen_comp_135" model="product.category">
+            <field name="name">Local mission - Bus</field>
+            <field name="parent_id" ref="product_category_gen_comp_134" />
+        </record>
+
+        <record id="product_category_gen_comp_136" model="product.category">
+            <field name="name">Local mission - Car renting</field>
+            <field name="parent_id" ref="product_category_gen_comp_134" />
+        </record>
+
+        <record id="product_category_gen_comp_137" model="product.category">
+            <field name="name">Local mission - Flight</field>
+            <field name="parent_id" ref="product_category_gen_comp_134" />
+        </record>
+
+        <record id="product_category_gen_comp_138" model="product.category">
+            <field name="name">Local mission - Fuel</field>
+            <field name="parent_id" ref="product_category_gen_comp_134" />
+        </record>
+
+        <record id="product_category_gen_comp_139" model="product.category">
+            <field name="name">Local mission - Km indemnity</field>
+            <field name="parent_id" ref="product_category_gen_comp_134" />
+        </record>
+
+        <record id="product_category_gen_comp_140" model="product.category">
+            <field name="name">Local mission - Parking</field>
+            <field name="parent_id" ref="product_category_gen_comp_134" />
+        </record>
+
+        <record id="product_category_gen_comp_142" model="product.category">
+            <field name="name">Local mission - Tollgate</field>
+            <field name="parent_id" ref="product_category_gen_comp_134" />
+        </record>
+
+        <record id="product_category_gen_comp_143" model="product.category">
+            <field name="name">Local mission - Train</field>
+            <field name="parent_id" ref="product_category_gen_comp_134" />
+        </record>
+
+        <record id="product_category_gen_comp_141" model="product.category">
+            <field name="name">Local mission - Taxi</field>
+            <field name="parent_id" ref="product_category_gen_comp_134" />
+        </record>
+
+        <record id="product_category_gen_comp_144" model="product.category">
+            <field name="name">Public Relationship</field>
+            <field name="parent_id" ref="product_category_gen_comp_115" />
+        </record>
+
+        <record id="product_category_gen_comp_146" model="product.category">
+            <field name="name">Customer gifts</field>
+            <field name="parent_id" ref="product_category_gen_comp_144" />
+        </record>
+
+        <record id="product_category_gen_comp_147" model="product.category">
+            <field name="name">Decoration</field>
+            <field name="parent_id" ref="product_category_gen_comp_144" />
+        </record>
+
+        <record id="product_category_gen_comp_148" model="product.category">
+            <field name="name">Membership, Sponsoring</field>
+            <field name="parent_id" ref="product_category_gen_comp_144" />
+        </record>
+
+        <record id="product_category_gen_comp_149" model="product.category">
+            <field name="name">Seminars</field>
+            <field name="parent_id" ref="product_category_gen_comp_144" />
+        </record>
+
+        <record id="product_category_gen_comp_145" model="product.category">
+            <field name="name">Business subscriptions</field>
+            <field name="parent_id" ref="product_category_gen_comp_144" />
+        </record>
+
+        <record id="product_category_gen_comp_099" model="product.category">
+            <field name="name">Company - Other engineering services</field>
+            <field name="parent_id" ref="product_category_gen_comp_098" />
+        </record>
+
+        <record id="product_category_gen_comp_100" model="product.category">
+            <field name="name">Control authorities</field>
+            <field name="parent_id" ref="product_category_gen_comp_098" />
+        </record>
+
+        <record id="product_category_gen_comp_101" model="product.category">
+            <field name="name">Designers</field>
+            <field name="parent_id" ref="product_category_gen_comp_098" />
+        </record>
+
+    </data>
+</odoo>

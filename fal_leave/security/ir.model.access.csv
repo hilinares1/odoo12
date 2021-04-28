@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+fal_fix_date_all,fal.fix.date.all,model_fal_fix_date,base.group_user,1,1,1,1
+fal_fix_date_line_all,fal.fix.date.line.all,model_fal_fix_date_line,base.group_user,1,1,1,1

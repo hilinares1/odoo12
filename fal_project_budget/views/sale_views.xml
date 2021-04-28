@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="view_order_form_falprofol" model="ir.ui.view">
+            <field name="name">sale.order.form.falprofol</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//notebook/page/field[@name='order_line']/form//label[@for='analytic_tag_ids']" position="before">
+                    <field name="analytic_line_ids" invisible="1"/>
+                    <field name="fal_project_budget_line_id" domain="[('parent_template', '=', False), ('parent_active', '=', True), ('project_id', '=', parent.analytic_account_id), ('fal_budget_tags_ids', '=', %(fal_project_budget.fal_project_budget_tags_sales)d)]"/>
+                </xpath>
+                <xpath expr="//notebook/page/field[@name='order_line']/tree//field[@name='analytic_tag_ids']" position="before">
+                    <field name="analytic_line_ids" invisible="1"/>
+                    <field name="fal_project_budget_line_id" domain="[('parent_template', '=', False), ('parent_active', '=', True), ('project_id', '=', parent.analytic_account_id), ('fal_budget_tags_ids', '=', %(fal_project_budget.fal_project_budget_tags_sales)d)]"/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

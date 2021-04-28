@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_fwa_con_purchase_order_form" model="ir.ui.view">
+            <field name="name">fwa.con.purchase.order.form</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.purchase_order_form"/>
+            <field name="arch" type="xml">
+                <data>
+                    <field name="notes" position="before">
+                        <group>
+                            <group>
+                                <field name="contract_condition_id"/>
+                            </group>
+                            <group>
+                            </group>
+                        </group>
+                    </field>
+                </data>
+            </field>
+        </record>
+
+        <menuitem action="fal_contract_conditions.view_fwa_contract_condition_tree_action" id="fal_menu_contract_condition_purchase"
+            parent="purchase.menu_purchase_config"
+            sequence="1" />
+    </data>
+</odoo>

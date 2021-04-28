@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+
+    <template id="fal_invoice_report" inherit_id="account.report_invoice_document">
+        <xpath expr="//h2/span[@t-field='o.number']" position="after">
+            <br/>
+            <span t-field="o.fal_title"/>
+        </xpath>
+
+        <xpath expr="//div[@class='page']/p[@t-if='o.fiscal_position_id.note']" position="after">
+            <br/>
+            <br/>
+            <div class='row' t-if="o.fal_use_late_payment_statement and o.company_id.fal_use_late_payment_statement">
+                <p>
+                    <i><span style="font-size:10px;" t-field="o.company_id.fal_use_late_payment_statement"/>
+                    </i>
+                </p>
+            </div>
+
+            <div class='row' t-if="o.fal_company_code == 'SZ'">
+                <div class="col-xs-4 pull-right">
+                    <img src="fal_timesheet_invoice_ext/static/src/img/stamp.png" class="img img-responsive"/>
+                </div>
+            </div>
+
+            <div t-if="o.fal_use_annex" style="page-break-before: always;">
+                <!-- edit by murha-->
+                <p style="font-size:120%;"><b><u>DETAILS OF HOURS</u></b></p>
+                <p style="font-size:120%;">INVOICE ANNEX<span t-field="o.fal_sale_id"/></p>
+                <p style="font-size:120%;">CONSULTANT : <span t-field="o.user_id"/></p>
+
+                <br/>
+                <table class="table table-condensed">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>User</th>
+                            <th>Description</th>
+                            <th>Project</th>
+                            <th>Task</th>
+                            <th>Invoiceable</th>
+                            <th>Invoice</th>
+                            <th>Duration</th>
+                            <th>Adjusted Quantity</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr t-foreach="o.fal_timesheet_line_ids" t-as="t">
+                            <td><span t-field="t.date"/></td>
+                            <td><span t-field="t.user_id"/></td>
+                            <td><span t-field="t.name"/></td>
+                            <td><span t-field="t.project_id"/></td>
+                            <td><span t-field="t.task_id"/></td>
+                            <td><span t-field="t.to_invoice"/></td>
+                            <td><span t-field="t.timesheet_invoice_id"/></td>
+                            <td class="text-right">
+                                <span t-esc="'%s:%02.0f' % tuple(int(round(x)) for x in divmod(t.unit_amount*60,60))"/>
+                            </td>
+                            <td class="text-right">
+                                <span t-esc="'%s:%02.0f' % tuple(int(round(x)) for x in divmod(t.unit_amount_coef*60,60))"/>
+                            </td>
+                        </tr>
+                        <tr class="border-black">
+                            <td colspan='6'></td>
+                            <td><strong>Total</strong></td>
+                            <td class="text-right">
+                                <strong t-esc="'%s:%02.0f' % tuple(int(round(x)) for x in divmod(sum(o.fal_timesheet_line_ids.mapped('unit_amount'))*60,60))"/>
+                            </td>
+                            <td class="text-right">
+                                <strong t-esc="'%s:%02.0f' % tuple(int(round(x)) for x in divmod(sum(o.fal_timesheet_line_ids.mapped('unit_amount_coef'))*60,60))"/>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </xpath>
+
+        <xpath expr="//p[@t-if='o.payment_term_id']" position="attributes">
+            <attribute name="t-if">o.payment_term_id and o.fal_company_code != 'FR'</attribute>
+        </xpath>
+    </template>
+
+    <template id="falinwa_invoice_report">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="fal_timesheet_invoice_ext.fal_invoice_report" t-lang="o.lang"/>
+            </t>
+        </t>
+    </template>
+
+  </data>
+</odoo>

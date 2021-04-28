@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+        <!-- Customer Invoices -->
+        <record id="account_invoice_form_inherit_fal_account_netting" model="ir.ui.view">
+            <field name="name">account.invoice.form.inherit.fal.account.netting</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//sheet/notebook/page[2]/group/group[1]/field[@name='account_id']" position="attributes">
+                    <attribute name="domain">[('company_id', '=', company_id), ('internal_type', 'in', ['receivable','payable' ]), ('deprecated', '=', False)]</attribute>
+                </xpath>
+                <xpath expr="//div[@name='button_box']" position="inside">
+                    <button name="action_view_netting_invoice"
+                        type="object"
+                        class="oe_stat_button"
+                        icon="fa-pencil-square-o"
+                        attrs="{'invisible': [('netting_invoice_count', '=', 0)]}">
+                        <field name="netting_invoice_count" widget="statinfo" string="Invoices"/>
+                    </button>
+                </xpath>
+             </field>
+        </record>
+
+        <!-- Vendor Bills -->
+        <record id="account_invoice_suppleir_form_inherit_fal_account_netting" model="ir.ui.view">
+            <field name="name">account.invoice.supplier_form.inherit.fal.account.netting</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_supplier_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//sheet/notebook/page[2]/group/group[1]/field[@name='account_id']" position="attributes">
+                    <attribute name="domain">[('company_id', '=', company_id), ('internal_type', 'in', ['receivable','payable' ]), ('deprecated', '=', False)]</attribute>
+                </xpath>
+
+                <xpath expr="//form/sheet/div" position="before">
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_view_netting_invoice"
+                            type="object"
+                            class="oe_stat_button"
+                            icon="fa-pencil-square-o"
+                            attrs="{'invisible': [('netting_invoice_count', '=', 0)]}">
+                            <field name="netting_invoice_count" widget="statinfo" string="Invoices"/>
+                        </button>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,7 @@
+<odoo>
+    <template id="product_attribute_assets_backend" name="product_attribute_assets" inherit_id="web.assets_backend">
+        <xpath expr="." position="inside">
+            <script type="text/javascript" src="/fal_mrp_product_selector/static/src/js/fal_mrp_product_selector.js"/>
+        </xpath>
+    </template>
+</odoo>

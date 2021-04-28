@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="fal_project_dashboard" model="ir.actions.client">
+        <field name="name">Dashboard</field>
+        <field name="tag">fal.dashboard</field>
+        <field name="res_model">project.project</field>
+        <field name="params" eval="{}"/>
+    </record>
+
+    <record id="fal_project_dashboard_view_kanban_inherit_sale_timesheet" model="ir.ui.view">
+        <field name="name">fal.project.kanban.inherit.sale.timesheet</field>
+        <field name="model">project.project</field>
+        <field name="inherit_id" ref="sale_timesheet.project_project_view_kanban_inherit_sale_timesheet"/>
+        <field name="arch" type="xml">
+            <xpath expr="//a[@t-if='record.allow_timesheets.raw_value']" position="before">
+                <a t-if="record.allow_timesheets.raw_value" name="action_view_project_dashboard" type="object" class="o_project_kanban_box">
+                    <div>
+                        <span class="o_label">Dashboard</span>
+                    </div>
+                </a>
+            </xpath>
+        </field>
+    </record>
+</odoo>

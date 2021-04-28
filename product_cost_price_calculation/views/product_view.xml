@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="product_product_form_view_update_cost">
+            <field name="name">product.product_update_cost</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="product.product_normal_form_view"/>
+            <field name="arch" type="xml">
+                <data>
+                    <header position="inside" >
+                        <button name="update_cost_price" string="Update Cost" type="object"/>
+                    </header>
+                </data>
+            </field>
+        </record>
+    </data>
+</odoo>

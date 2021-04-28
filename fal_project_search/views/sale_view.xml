@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="view_purchase_order_filter_project" model="ir.ui.view">
+            <field name="name">sale.order.list.select.project</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_sales_order_filter"/>
+            <field name="arch" type="xml">
+                <data>
+                    <field name="analytic_account_id" position="after">
+                        <field name="project_id"/>
+                    </field>
+                </data>
+            </field>
+        </record>
+    </data>
+</odoo>

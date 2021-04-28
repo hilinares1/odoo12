@@ -1,0 +1,19 @@
+<odoo>
+    <data>
+        <record id="fal_production_order_form_view_inherit_fal_mrp_sale_link" model="ir.ui.view">
+            <field name="name">fal_production_order_form_view_inherit_fal_mrp_sale_link</field>
+            <field name="model">fal.production.order</field>
+            <field name="inherit_id" ref="fal_mrp_production_order.fal_production_order_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//sheet/notebook" position="inside">
+                    <page name="sale" string="Sales Information" groups="sales_team.group_sale_salesman">
+                        <group>
+                        	<field name="fal_sale_order_id" readonly="True" />
+                        	<field name="fal_sale_order_line_id" readonly="True"/>
+                        </group>
+                    </page>
+				</xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

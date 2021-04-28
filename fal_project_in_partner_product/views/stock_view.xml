@@ -1,0 +1,56 @@
+<odoo>
+    <data>
+        <record id="view_move_picking_tree_proext_fal" model="ir.ui.view">
+            <field name="name">stock.move.tree.proext.fal</field>
+            <field name="model">stock.move</field>
+            <field name="inherit_id" ref="stock.view_move_picking_tree"/>
+            <field name="arch" type="xml">
+                <field name="name" position="after">
+                    <field name="fal_project_id"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_stock_picking_fal_form" model="ir.ui.view">
+            <field name="name">view.stock.picking.fal.form</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_form"/>
+            <field name="arch" type="xml">
+              <field name="company_id" position="after">
+                    <field name="fal_project_numbers"/>
+               </field>
+               <xpath expr="//field[@name='move_ids_without_package']/tree/field[@name='product_id']" position="after">
+                    <field name="fal_project_id"/>
+                </xpath>
+            </field>
+        </record>
+
+
+        <record id="view_picking_tree_fal_procex" model="ir.ui.view">
+            <field name="name">stock.picking.tree_fal_procex</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.vpicktree"/>
+            <field name="arch" type="xml">
+                <field name="origin" position="after">
+                    <field name="fal_project_numbers"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_picking_search_fal_procex" model="ir.ui.view">
+            <field name="name">stock.picking.search.falprocex</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_internal_search"/>
+            <field name="arch" type="xml">
+                <field name="group_id" position="after">
+                    <field name="partner_id"/>
+                    <field name="fal_project_numbers"/>
+                </field>
+                <group expand="0" position="inside">
+                    <filter name="partner" string="Partner" domain="[]" context="{'group_by':'partner_id'}"/>
+                    <filter name="project_numbers" string="Project Numbers" domain="[]" context="{'group_by':'fal_project_numbers'}"/>
+                </group>
+            </field>
+        </record>
+    </data>
+</odoo>

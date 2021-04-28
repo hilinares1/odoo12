@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_fwa_contract_condition_tree" model="ir.ui.view">
+            <field name="name">fwa.contract.condition.tree</field>
+            <field name="model">contract.condition</field>
+            <field name="arch" type="xml">
+                <tree string="Contract Condition">
+                    <field name="name" />
+                    <field name="content" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_fwa_contract_condition_form" model="ir.ui.view">
+            <field name="name">fwa.contract.condition.form</field>
+            <field name="model">contract.condition</field>
+            <field name="arch" type="xml">
+                <form string="Contract Condition">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="content"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_fwa_contract_condition_tree_action" model="ir.actions.act_window">
+            <field name="name">Contract Conditions</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">contract.condition</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to create a Contract Condition.
+              </p><p>
+                This configuration works like a template for your therms and conditions fields.
+              </p>
+            </field>
+        </record>
+
+        <menuitem action="view_fwa_contract_condition_tree_action" id="fal_menu_contract_condition_sale"
+            parent="base.menu_administration"
+            sequence="1" />
+    </data>
+</odoo>

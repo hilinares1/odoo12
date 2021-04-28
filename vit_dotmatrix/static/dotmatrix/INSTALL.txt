@@ -1,0 +1,23 @@
+PRINT PROXY INSTALLATION MANUAL
+
+Install the dot-matrix printer driver from Windows Control Panel, and note the printer name for example "Epson LX-300"
+
+Install XAMPP (we need only apache and PHP version 5.6.28) on client computer connected to the printer.
+
+Copy folder dotmatrix to XAMPP htdocs.
+
+Copy file php_printer.dll into the c:\xampp\php\extension folder.
+
+Edit file c:\xampp\php\php.ini, to enable the printer.dll 
+
+	uncomment this line:
+	#extension=php_printer.dll
+
+	to become this:
+	extension=php_printer.dll
+
+Restart apache
+
+
+Please check the extension is loaded from http://localhost/xampp/phpinfo
+

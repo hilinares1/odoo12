@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Expense sheet view -->
+
+        <record id="fal_view_expenses_sheet_inherits" model="ir.ui.view">
+            <field name="name">fal.view.expense.sheet.inherit</field>
+            <field name="model">hr.expense.sheet</field>
+            <field name="inherit_id" ref="hr_expense.view_hr_expense_sheet_form"/>
+            <field name="arch" type="xml">
+                <data>
+                    <!-- Button -->
+                    <xpath expr="//button[@name='approve_expense_sheets']" position="attributes">
+                         <attribute name="attrs">{'invisible': ['|', ('fal_can_approve', '=', False)]}</attribute>
+                    </xpath>
+                    <xpath expr="//button[@name='%(hr_expense.hr_expense_refuse_wizard_action)d']" position="attributes">
+                         <attribute name="attrs">{'invisible': ['|', ('fal_can_approve', '=', False)]}</attribute>
+                    </xpath>
+
+                    <!-- Header -->
+                    <xpath expr="//div[hasclass('oe_title')]" position="before">
+                        <label for="number"/>
+                        <field name="number"/>
+                    </xpath>
+                    <!-- Main Page Info -->
+                    <field name="employee_id" position="after">
+                        <field name="department_id"/>
+                        <field name="is_all_paid" invisible="1"/>
+                        <field name="fal_can_approve" invisible="1"/>
+                    </field>
+
+                    <!-- Enhance Tree Expense Line -->
+                    <xpath expr="//field[@name='expense_line_ids']/tree" position="attributes">
+                        <attribute name="decoration-danger">fal_is_no_proof or is_refused</attribute>
+                    </xpath>
+                    <xpath expr="//field[@name='expense_line_ids']/tree/field[@name='name']" position="after">
+                        <field name="fal_is_no_proof" invisible="1"/>
+                        <field name="fal_real_currency" invisible="1"/>
+                        <field name="currency_id" invisible="1"/>
+                        <field name="fal_reason"/>
+                        <field name="fal_reason_why" invisible="1"/>
+                    </xpath>
+                    <xpath expr="//field[@name='expense_line_ids']/tree/field[@name='tax_ids']" position="before">
+                        <field name="product_id"/>
+                        <field name="unit_amount" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                        <field name="quantity"/>
+                        <field name="fal_withouttax_price"/>
+                        <field name="fal_withtax_price" invisible="1"/>
+                        <field name="fal_expense_control"/>
+                        <field name="fal_accepted_amount" widget="monetary" options="{'currency_field': 'currency_id'}" invisible="1"/>
+                    </xpath>
+                    <xpath expr="//field[@name='expense_line_ids']" position="after">
+                        <group>
+                            <div>
+                                <separator string="Notes"/>
+                                <field name="note" placeholder="Notes"/>
+                            </div>
+                            <group class="oe_subtotal_footer oe_right">
+                                <field name="notax"/>
+                                <field name="withtax"/>
+                                <field name="accepted"/>
+                            </group>
+                        </group>
+                    </xpath>
+
+                    <!-- Other Info -->
+                    <xpath expr="//field[@name='accounting_date']" position="after">
+                        <field name="date_submit"/>
+                        <field name="date_confirm"/>
+                        <field name="date_valid"/>
+                        <field name="user_valid"/>
+                    </xpath>
+                </data>
+            </field>
+        </record>
+
+        <record id="fal_view_expenses_sheet_tree_inherits" model="ir.ui.view">
+            <field name="name">fal.view.expense.sheet.tree.inherit</field>
+            <field name="model">hr.expense.sheet</field>
+            <field name="inherit_id" ref="hr_expense.view_hr_expense_sheet_tree"/>
+            <field name="arch" type="xml">
+                <data>
+                    <xpath expr="//field[@name='name']" position="before">
+                        <field name="date_submit" string="Submit Date"/>
+                        <field name="number"/>
+                    </xpath>
+                    <xpath expr="//field[@name='total_amount']" position="before">
+                        <field name="notax"/>
+                        <field name="withtax"/>
+                        <field name="accepted" invisible="1"/>
+                    </xpath>
+                </data>
+            </field>
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- level 1 -->
+        <record id="view_move_form_inherit_mrp_ext" model="ir.ui.view">
+            <field name="name">view.move.form.inherit.mrp.ext</field>
+            <field name="model">stock.move</field>
+            <field name="inherit_id" ref="stock.view_move_picking_form"/>
+            <field name="groups_id" eval="[(6, 0, [ref('sales_team.group_sale_salesman')])]"/>
+            <field name="arch" type="xml">
+                <field name="product_tmpl_id" position="after">
+                    <field name="fal_of_number" string="PO Number"/>
+                </field>
+            </field>
+        </record>
+        <!-- level 2 -->
+        <record id="view_move_form_inherit_mrp_ext_level_2" model="ir.ui.view">
+            <field name="name">view.move.form.inherit.mrp.ext.level.2</field>
+            <field name="model">stock.move</field>
+            <field name="inherit_id" ref="fal_mrp_of_number.view_move_form_inherit_mrp_ext"/>
+            <field name="groups_id" eval="[(6, 0, [ref('mrp.group_mrp_user')])]"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='fal_of_number']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <field name="product_tmpl_id" position="after">
+                    <field name="fal_of_number_id" string="PO Number"/>
+                </field>
+            </field>
+        </record>
+        <!-- visible for everyone -->
+        <record id="view_picking_form_inherit_mrp_ext" model="ir.ui.view">
+            <field name="name">view.picking.form.inherit.mrp.ext</field>
+            <field name="model">stock.move</field>
+            <field name="inherit_id" ref="stock.view_move_picking_tree"/>
+            <field name="arch" type="xml">
+                <data>
+                    <field name="name" position="after">
+                        <field name="fal_of_number" string="PO Number"/>
+                    </field>
+                </data>
+            </field>
+        </record>
+    </data>
+</odoo>

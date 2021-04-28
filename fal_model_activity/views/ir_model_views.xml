@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="fal_model_form_view" model="ir.ui.view">
+        <field name="model">ir.model</field>
+        <field name="inherit_id" ref="mail.model_form_view"/>
+        <field name="arch" type="xml">
+            <field name="is_mail_thread" position="after">
+                <field name="fal_is_mail_activity" attrs="{'readonly': [('state','!=', 'manual')]}" groups="base.group_no_one"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="fal_model_search_view" model="ir.ui.view">
+        <field name="model">ir.model</field>
+        <field name="inherit_id" ref="mail.model_search_view"/>
+        <field name="arch" type="xml">
+            <field name="model" position="after">
+                <filter string="Mail Activity" name="fal_is_mail_activity" domain="[('fal_is_mail_activity', '=', True)]"/>
+            </field>
+        </field>
+    </record>
+
+</odoo>

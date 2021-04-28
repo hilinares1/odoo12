@@ -1,0 +1,83 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* fal_invoice_additional_info
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-07-25 03:44+0000\n"
+"PO-Revision-Date: 2018-08-14 09:54+0700\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: en\n"
+"X-Generator: Poedit 2.0.8\n"
+
+#. module: fal_invoice_additional_info
+#: model:ir.model.fields,field_description:fal_invoice_additional_info.field_account_invoice_fal_percentage_invoiced_ordered
+msgid "%invoiced / ordered"
+msgstr "%facturé / commandé"
+
+#. module: fal_invoice_additional_info
+#: model:ir.model.fields,field_description:fal_invoice_additional_info.field_account_invoice_active
+msgid "Active"
+msgstr "Actif/ve"
+
+#. module: fal_invoice_additional_info
+#: model:ir.ui.view,arch_db:fal_invoice_additional_info.view_account_inherit_search
+msgid "Archived"
+msgstr "Archivé/s"
+
+#. module: fal_invoice_additional_info
+#: model:ir.model.fields,field_description:fal_invoice_additional_info.field_account_invoice_fal_attachment_name
+msgid "Attachment name"
+msgstr "Nom fichier joint"
+
+#. module: fal_invoice_additional_info
+#: model:ir.model.fields,field_description:fal_invoice_additional_info.field_account_invoice_fal_partner_contact_person_id
+msgid "Contact Person"
+msgstr "Contact"
+
+#. module: fal_invoice_additional_info
+#: model:ir.model.fields,help:fal_invoice_additional_info.field_account_invoice_active
+msgid "If unchecked, it will allow you to hide        the Invoice without removing it."
+msgstr "Si non coché, cela vous permettra de cacher        la facture sans le retirer."
+
+#. module: fal_invoice_additional_info
+#: model:ir.model,name:fal_invoice_additional_info.model_account_invoice
+msgid "Invoice"
+msgstr "Facture"
+
+#. module: fal_invoice_additional_info
+#: model:ir.model.fields,field_description:fal_invoice_additional_info.field_account_invoice_fal_attachment
+msgid "Supplier Invoice Attachment"
+msgstr "Fichier joint de facture fournisseur"
+
+#. module: fal_invoice_additional_info
+#: model:ir.model.fields,field_description:fal_invoice_additional_info.field_account_invoice_fal_title
+msgid "Title"
+msgstr "Civilité"
+
+#. module: fal_invoice_additional_info
+#: model:ir.model.fields,field_description:fal_invoice_additional_info.field_account_invoice_fal_total_amount_already_invoced
+msgid "Total invoiced amount"
+msgstr "Montant total facturé"
+
+#. module: fal_invoice_additional_info
+#: model:ir.model.fields,field_description:fal_invoice_additional_info.field_account_invoice_fal_total_ordered_amount
+msgid "Total ordered amount"
+msgstr "Montant total commandé"
+
+#. module: fal_invoice_additional_info
+#: model:ir.ui.view,arch_db:fal_invoice_additional_info.view_account_invoice_form_fal_add_title
+msgid "customer invoice attachment"
+msgstr "Fichier joint facture client"
+
+#. module: fal_invoice_additional_info
+#: model:ir.ui.view,arch_db:fal_invoice_additional_info.view_account_invoice_supplier_form_fal_add_title
+msgid "supplier invoice attachment"
+msgstr "fichier joint facture fournisseur"

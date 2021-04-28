@@ -1,0 +1,684 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+    <record id="fal_res_config_settings_view_form_inherit_account" model="ir.ui.view">
+        <field name="name">fal.res.config.settings.view.form.inherit.account</field>
+        <field name="model">res.config.settings</field>
+        <field name="priority" eval="10"/>
+        <field name="inherit_id" ref="account.res_config_settings_view_form" />
+        <field name="arch" type="xml">
+        <xpath expr="//div/div/t[1]" position="after">
+            <h2>New Account Module</h2>
+            <div class="row mt16 o_settings_container">
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_fal_consolidation_multi_currency"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_consolidation_multi_currency"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            Add IFRS option to account report. Warning: Can't manage the changing in book keeping currency
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_fal_contract_conditions_invoice"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_contract_conditions_invoice"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            Module to add Contract Conditions template on invoice
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_fal_contract_conditions_voucher"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_contract_conditions_voucher"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            Module to add Contract Conditions template on account voucher
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_fal_financial_report"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_financial_report"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            Module to add filter account type in account report age receivable
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_fal_account_report_groupby"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_account_report_groupby"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            Module to add groupby on financial report
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_fal_invoice_delivery_fee"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_invoice_delivery_fee"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            Module to add delivery fees on invoice.
+                            Warning: This module can wok only if the VAT rate is the same for all the products.
+                            If no, the computed tax amount will not correspond to the fapiao tax amount.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_fal_invoice_line"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_invoice_line"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            Make A link between Customer Invoice and Vendor Bills
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_fal_invoice_reminder"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_invoice_reminder"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            Module to reminder the invoice due date
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_fal_l10n_fec"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_l10n_fec"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            FEC Accounting for General Country
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_fal_l10n_cn"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_l10n_cn"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            Manage the accounting chart (with hierarchy) for China
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_fal_l10n_cn_fapiao_enterprise"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_l10n_cn_fapiao_enterprise"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            Fapiao menu are not moved to correct accounting module on Enterprise. This module move it.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_fal_l10n_cn_payroll"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_l10n_cn_payroll"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            Module to developed Odoo payroll based on Falinwa standard
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_fal_l10n_cn_report"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_l10n_cn_report"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            Module to developed Falinwa China reporting
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_fal_project_in_account_partner_product"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_project_in_account_partner_product"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            Module to add Analytic Account from partner or product in invoice
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_fal_project_in_partner_product"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_project_in_partner_product"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            Module to define a Analytic Account in product
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_fal_project_in_purchase_partner_product"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_project_in_purchase_partner_product"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            Module to add Analytic Account from partner or product in purchase
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_fal_project_in_sale_partner_product"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_project_in_sale_partner_product"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            Module to add Analytic Account from partner or product in sale
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_fal_tax_product_categ"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_tax_product_categ"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            Add tax configuration on product category
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_l10n_cn_fapiao"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_l10n_cn_fapiao"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            Chinese Fapiao Management and link with OpenERP Invoice
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_terms_conditions"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_terms_conditions"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            Add Terms and Conditions to your documents
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_fal_consolidation_nonintra"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_consolidation_nonintra"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            Module to add non-intra filter in accounting report
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h2>CLuedoo Best Practice</h2>
+            <div class="row mt16 o_settings_container">
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_fal_account_ext"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_account_ext"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            Module to add sequence adjustment feature and standard code on account and analytic account 
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_fal_parent_account"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_parent_account"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            Module to give parent account 
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_fal_parent_account_hierarchy"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_parent_account_hierarchy"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            Module to give parent account hierarchial view
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_fal_journal_entries_message"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_journal_entries_message"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            Module to add messaging in journal entries
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_fal_multi_payment_wizard"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_multi_payment_wizard"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            Module to give additional feature to have multiple register payment
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_fal_no_require_partner_account"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_no_require_partner_account"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            Make receivable and payable accounts aren't required on partner
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_fal_invoice_additional_info"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_invoice_additional_info"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            Module to add additional info in invoice customer / supplier.
+                        </div>
+                    </div>
+                </div> 
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_fal_partner_netting"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_partner_netting"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            Module to pay Customer Invoice with Vendor Bills and vice versa.
+                        </div>
+                    </div>
+                </div> 
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_fal_invoice_print_attachment"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_invoice_print_attachment"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            Module to print invoice with attachment.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h2>Localization</h2>
+            <div class="row mt16 o_settings_container">
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_fal_lang_format_ext_fr"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_lang_format_ext_fr"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            This module gives TIN and IBAN format for France localization.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_indonesian_tax"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_indonesian_tax"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            Add capability for storing NPWP and Faktur Pajak.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </xpath>
+        <xpath expr="//field[@name='module_account_batch_payment']/../.." position="after">
+            <div class="col-xs-12 col-md-6 o_setting_box">
+                <div class="o_setting_left_pane">
+                    <field name="module_fal_payment_bank_provision"/>
+                </div>
+                <div class="o_setting_right_pane">
+                    <label for="module_fal_payment_bank_provision"/>
+                    <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                    <div class="text-muted">
+                        Record and Follow up the Payment using Bank Provision
+                    </div>
+                </div>
+            </div>
+        </xpath>
+        <xpath expr="//div[@id='setup']" position="after">
+            <div class="row mt16 o_settings_container">
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_fal_generic_coa"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_generic_coa"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            Module to install Generic Chart Of Account 
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_fal_account_invoice_sequence"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_account_invoice_sequence"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            Add invoice draft sequence 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </xpath>
+        <xpath expr="//div[@id='accounting_reports']" position="after">
+            <div class="row mt16 o_settings_container">
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_fal_account_periods_lock"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_account_periods_lock"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            Fiscal Year function 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </xpath>
+        <xpath expr="//div[@id='invoicing_settings']" position="after">
+            <div class="row mt16 o_settings_container">
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_fal_invoice_line_account_change"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_invoice_line_account_change"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            Module to give posibility to change account on invoice line even its already confirmed
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_fal_invoice_approval_qualified_partner"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_invoice_approval_qualified_partner"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            Approval for unqualified partner
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </xpath>
+        <xpath expr="//div[@id='bank_cash']/div[2]" position="after">
+            <div class="col-xs-12 col-md-6 o_setting_box">
+                <div class="o_setting_left_pane">
+                    <field name="module_bank_api"/>
+                </div>
+                <div class="o_setting_right_pane">
+                    <label for="module_bank_api"/>
+                    <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                    <div class="text-muted">
+                        Import Bank Statement from API
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-6 o_setting_box">
+                <div class="o_setting_left_pane">
+                    <field name="module_fal_customer_statement"/>
+                </div>
+                <div class="o_setting_right_pane">
+                    <label for="module_fal_customer_statement"/>
+                    <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                    <div class="text-muted">
+                        Follow-up Reports Enhancement.
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-6 o_setting_box">
+                <div class="o_setting_left_pane">
+                    <field name="module_account_bank_statement_reconciliation"/>
+                </div>
+                <div class="o_setting_right_pane">
+                    <label for="module_account_bank_statement_reconciliation"/>
+                    <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                    <div class="text-muted">
+                        Add bank statement menu.
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-6 o_setting_box">
+                <div class="o_setting_left_pane">
+                    <field name="module_fal_account_bank_statement_reconciliation_ext"/>
+                </div>
+                <div class="o_setting_right_pane">
+                    <label for="module_fal_account_bank_statement_reconciliation_ext"/>
+                    <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                    <div class="text-muted">
+                        Module to extend bank statement reconciliation.
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-6 o_setting_box">
+                <div class="o_setting_left_pane">
+                    <field name="module_fal_account_cancel_ext"/>
+                </div>
+                <div class="o_setting_right_pane">
+                    <label for="module_fal_account_cancel_ext"/>
+                    <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                    <div class="text-muted">
+                        Module to Extension the account cancel.
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-6 o_setting_box">
+                <div class="o_setting_left_pane">
+                    <field name="module_fal_bank_statement_sequence"/>
+                </div>
+                <div class="o_setting_right_pane">
+                    <label for="module_fal_bank_statement_sequence"/>
+                    <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                    <div class="text-muted">
+                        Add sequence on bank statement.
+                    </div>
+                </div>
+            </div>
+        </xpath>
+        <xpath expr="//div[@id='eu_service']" position="after">
+            <div class="col-xs-12 col-md-6 o_setting_box">
+                <div class="o_setting_left_pane">
+                    <field name="module_fal_tax_note"/>
+ 
+                </div>
+                <div class="o_setting_right_pane">
+                    <label for="module_fal_tax_note"/>
+                    <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                    <div class="text-muted">
+                        Taxes Management.
+                    </div>
+                </div>
+            </div>
+        </xpath>
+        <xpath expr="//field[@name='module_currency_rate_live']/../.." position="before">
+            <div class="col-xs-12 col-md-6 o_setting_box">
+                <div class="o_setting_left_pane">
+                    <field name="module_fal_multicurrency_group"/>
+                </div>
+                <div class="o_setting_right_pane">
+                    <label for="module_fal_multicurrency_group"/>
+                    <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                    <div class="text-muted">
+                        This module convert all transaction into group company currency.
+                    </div>
+                </div>
+            </div>
+        </xpath>
+        <xpath expr="//div[@id='analytic_account_groups_link']" position="after">
+            <div class="col-xs-12 col-md-12 o_setting_box" attrs="{'invisible': [('group_analytic_accounting', '=', False)]}">
+                <div class="o_setting_left_pane">
+                    <field name="module_fal_invoice_line_analytic_account_change"/>
+                </div>
+                <div class="o_setting_right_pane">
+                    <label for="module_fal_invoice_line_analytic_account_change"/>
+                    <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                    <div class="text-muted">
+                        Module to give posibility to change account on invoice line even its already confirmed.
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-12 o_setting_box" attrs="{'invisible': [('group_analytic_accounting', '=', False)]}">
+                <div class="o_setting_left_pane">
+                    <field name="module_fal_generic_coaa"/>
+                </div>
+                <div class="o_setting_right_pane">
+                    <label for="module_fal_generic_coaa"/>
+                    <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                    <div class="text-muted">
+                        Module to install Generic Chart Of Analytic Account.
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-12 o_setting_box" attrs="{'invisible': [('group_analytic_accounting', '=', False)]}">
+                <div class="o_setting_left_pane">
+                    <field name="module_fal_analytic_account_ext"/>
+                </div>
+                <div class="o_setting_right_pane">
+                    <label for="module_fal_analytic_account_ext"/>
+                    <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                    <div class="text-muted">
+                        Module to give analytic account behaviour based on Falinwa expected 
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-12 o_setting_box" attrs="{'invisible': [('group_analytic_accounting', '=', False)]}">
+                <div class="o_setting_left_pane">
+                    <field name="module_fal_analytic_account_tag"/>
+                </div>
+                <div class="o_setting_right_pane">
+                    <label for="module_fal_analytic_account_tag"/>
+                    <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                    <div class="text-muted">
+                        Module to add analytic tags 
+                    </div>
+                </div>
+            </div>
+        </xpath>
+        <xpath expr="//div[@id='msg_account_asset']" position="before">
+            <div id="cluedoo_account_asset" class="col-xs-12 col-md-12 o_setting_box" attrs="{'invisible': [('module_account_asset', '=', False)]}">
+                <div class="o_setting_left_pane">
+                    <field name="module_fal_asset_ext"/>
+                </div>
+                <div class="o_setting_right_pane">
+                    <label for="module_fal_asset_ext"/>
+                    <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                    <div class="text-muted">
+                        Module to improve Account Asset module.
+                    </div>
+                </div>
+                <div class="o_setting_left_pane">
+                    <field name="module_fal_account_deferred_cost"/>
+                </div>
+                <div class="o_setting_right_pane">
+                    <label for="module_fal_account_deferred_cost"/>
+                    <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                    <div class="text-muted">
+                        Assets on Deferred Cost
+                    </div>
+                </div>
+                <div class="o_setting_left_pane">
+                    <field name="module_fal_account_provision"/>
+                </div>
+                <div class="o_setting_right_pane">
+                    <label for="module_fal_account_provision"/>
+                    <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                    <div class="text-muted">
+                        Assets Provision Engine
+                    </div>
+                </div>
+
+            </div>
+        </xpath>
+        </field>
+    </record>
+    </data>
+</odoo>

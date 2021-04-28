@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+    	
+    	<!-- Province -->
+    	<record id="view_country_state_kabupaten_tree" model="ir.ui.view">
+            <field name="name">res.country.state.tree</field>
+            <field name="model">res.country.state</field>
+			<field name="inherit_id" ref="base.view_country_state_tree" />
+            <field name="arch" type="xml">
+                <field name="country_id" position="after">               
+                    <field name="kabupaten_line"/>                	
+                </field>
+            </field>
+        </record>
+    	<record id="view_country_state_kabupaten_form" model="ir.ui.view">
+            <field name="name">res.country.state.form</field>
+            <field name="model">res.country.state</field>
+			<field name="inherit_id" ref="base.view_country_state_form" />
+            <field name="arch" type="xml">
+                <field name="country_id" position="after">               
+                    <field name="kabupaten_line" widget="many2many">
+                    	<tree string="Kabupaten">
+                    		<field name="name"/>
+                    	</tree>
+                    </field>                	
+                </field>
+            </field>
+        </record>
+    	<record id="base.action_country_state" model="ir.actions.act_window">
+            <field name="name">Province</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.country.state</field>
+            <field name="view_type">form</field>
+            <field name="view_id" ref="base.view_country_state_tree"/>
+            <field name="help">If you are working on the American market, you can manage the different federal states you are working on from here. Each state is attached to one country.</field>
+        </record>
+		<!-- <menuitem action="base.action_country_state" name="Province" id="base.menu_country_state_partner" parent="base.menu_localisation" sequence="4" groups="base.group_no_one"/> -->
+    	<!-- Kabupaten -->
+        <record id="view_kabupaten_tree" model="ir.ui.view">
+            <field name="name">res.kabupaten.tree</field>
+            <field name="model">res.kabupaten</field>
+            <field name="arch" type="xml">
+                <tree string="Kabupaten">              
+                    <field name="name"/>      
+                    <field name="state_id"/>
+                    <field name="kecamatan_line" nolabel="1"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_kabupaten_form" model="ir.ui.view">
+            <field name="name">res.kabupaten.form</field>
+            <field name="model">res.kabupaten</field>
+            <field name="arch" type="xml">
+                <form string="Kabupaten">
+                    <group>
+                        <group>      
+                            <field name="name"/>  
+                            <field name="state_id"/> 
+                        </group>
+                    </group>         
+					<field name="kecamatan_line" widget="many2many" nolabel="1">
+						<tree string="Kecamatan">
+							<field name="name"/>
+						</tree>
+					</field>            
+                </form>
+            </field>
+        </record>
+
+        <record id="action_kabupaten" model="ir.actions.act_window">
+            <field name="name">Kabupaten</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.kabupaten</field>
+            <field name="view_type">form</field>
+            <field name="help">List Kabupaten of Indonesia</field>
+        </record>
+
+        <!-- <menuitem action="action_kabupaten" name="Kabupaten" id="menu_kabupaten_list_view" parent="base.menu_localisation" sequence="5" groups="base.group_no_one"/> -->
+
+       <!-- Kecamatan -->
+        <record id="view_kecamatan_tree" model="ir.ui.view">
+            <field name="name">res.kecamatan.tree</field>
+            <field name="model">res.kecamatan</field>
+            <field name="arch" type="xml">
+                <tree string="Kecamatan">         
+                    <field name="name"/>           
+                    <field name="kabupaten_id"/>
+                    <field name="state_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_kecamatan_form" model="ir.ui.view">
+            <field name="name">res.kecamatan.form</field>
+            <field name="model">res.kecamatan</field>
+            <field name="arch" type="xml">
+                <form string="Kecamatan">
+                    <group>      
+                        <field name="name"/>
+                        <field name="kabupaten_id"/>    
+                        <field name="state_id"/>       
+                    </group>                    
+                </form>
+            </field>
+        </record>
+
+        <record id="action_kecamatan" model="ir.actions.act_window">
+            <field name="name">Kecamatan</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.kecamatan</field>
+            <field name="view_type">form</field>
+            <field name="help">List Kecamatan of Indonesia</field>
+        </record>
+
+        <!-- <menuitem action="action_kecamatan" name="Kecamatan" id="menu_kecamatan_list_view" parent="base.menu_localisation" sequence="6" groups="base.group_no_one"/> -->
+       	<!-- Kelurahan -->
+        <record id="view_kelurahan_search" model="ir.ui.view">
+            <field name="name">res.kelurahan.search</field>
+            <field name="model">res.kelurahan</field>
+            <field name="arch" type="xml">
+                <search string="Kelurahan">                
+                    <field name="name"/>
+                    <field name="zip"/>    
+                    <field name="kecamatan_id"/>
+                    <field name="kabupaten_id"/>  
+                    <field name="state_id"/>
+                </search>
+            </field>
+        </record>
+        <record id="view_kelurahan_tree" model="ir.ui.view">
+            <field name="name">res.kelurahan.tree</field>
+            <field name="model">res.kelurahan</field>
+            <field name="arch" type="xml">
+                <tree string="Kelurahan">                
+                    <field name="name"/>
+                    <field name="zip"/>    
+                    <field name="kecamatan_id"/>
+                    <field name="kabupaten_id"/>  
+                    <field name="state_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_kelurahan_form" model="ir.ui.view">
+            <field name="name">res.kelurahan.form</field>
+            <field name="model">res.kelurahan</field>
+            <field name="arch" type="xml">
+                <form string="Kelurahan">
+                    <group>     
+                        <field name="name"/>         
+                        <field name="zip"/>
+                        <field name="kecamatan_id"/>  
+                        <field name="kabupaten_id"/>  
+                        <field name="state_id"/>          
+                    </group>                    
+                </form>
+            </field>
+        </record>
+
+        <record id="action_kelurahan" model="ir.actions.act_window">
+            <field name="name">Kelurahan</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.kelurahan</field>
+            <field name="view_type">form</field>
+            <field name="help">List Kelurahan of Indonesia</field>
+        </record>
+
+        <!-- <menuitem action="action_kelurahan" name="Kelurahan" id="menu_kelurahan_list_view" parent="base.menu_localisation" sequence="7" groups="base.group_no_one"/> -->
+       
+         <!-- RELIGION -->
+        <record id="view_religion_tree" model="ir.ui.view">
+            <field name="name">res.religion.tree</field>
+            <field name="model">res.religion</field>
+            <field name="arch" type="xml">
+                <tree string="Religion">                    
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_religion_form" model="ir.ui.view">
+            <field name="name">res.religion.form</field>
+            <field name="model">res.religion</field>
+            <field name="arch" type="xml">
+                <form string="Religion">
+                    <group>    
+                        <field name="name"/>
+                    </group>                    
+                </form>
+            </field>
+        </record>
+
+        <record id="action_religion" model="ir.actions.act_window">
+            <field name="name">Religion</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.religion</field>
+            <field name="view_type">form</field>
+            <field name="help">List Religion of Indonesian</field>
+        </record>
+
+        <!-- <menuitem action="action_religion" name="Religion" id="menu_religion_list_view" parent="base.menu_localisation" sequence="9" groups="base.group_no_one"/> -->
+        	
+         <!-- RAS -->
+        <record id="view_race_tree" model="ir.ui.view">
+            <field name="name">res.race.tree</field>
+            <field name="model">res.race</field>
+            <field name="arch" type="xml">
+                <tree string="Race">                    
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_race_form" model="ir.ui.view">
+            <field name="name">res.race.form</field>
+            <field name="model">res.race</field>
+            <field name="arch" type="xml">
+                <form string="Race">
+                    <group>    
+                        <field name="name"/>
+                    </group>                    
+                </form>
+            </field>
+        </record>
+
+        <record id="action_race" model="ir.actions.act_window">
+            <field name="name">Race</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.race</field>
+            <field name="view_type">form</field>
+            <field name="help">List Race of Indonesia</field>
+        </record>
+
+        <!-- <menuitem action="action_race" name="Race" id="menu_race_list_view" parent="base.menu_localisation" sequence="10" groups="base.group_no_one"/> -->
+
+		
+    </data>
+</openerp>

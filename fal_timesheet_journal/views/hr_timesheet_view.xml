@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_employee_form_timesheet_to_journal_fal" model="ir.ui.view">
+            <field name="name">view_employee_form_timesheet_to_journal_fal</field>
+            <field name="model">hr.employee</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="hr_timesheet.hr_employee_view_form_inherit_timesheet"/>
+            <field name="arch" type="xml">
+                <xpath expr="//label[@for='timesheet_cost']" position="before">
+                    <field name="fal_product_id"/>
+                    <field name="fal_timesheet_analytic_account_id" groups="analytic.group_analytic_accounting"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="fal_timesheet_journal_fal_timesheet_sheet_form" model="ir.ui.view">
+            <field name="name">fal_timesheet_journal_fal_timesheet_sheet_form</field>
+            <field name="model">hr_timesheet.sheet</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="hr_timesheet_sheet.hr_timesheet_sheet_form"/>
+            <field name="arch" type="xml">
+                 <xpath expr="//field[@name='state']" position="attributes">
+                    <attribute name="statusbar_visible">draft,confirm,done,post</attribute>
+                </xpath>
+                <button name="action_timesheet_done" position="after">
+                    <button name="action_sheet_move_create" states="done" string="Post Journal Entries" type="object" groups="account.group_account_user" class="oe_highlight"/>
+                    <button name="action_timesheet_draft" string="Set to Draft &amp; Cancel Journal" type="object" attrs="{'invisible':[('state','!=','post')]}" groups="account.group_account_user"/>
+                </button>
+                <group name="dates" position="after">
+                    <group string="Journal" name="journal" groups="account.group_account_user">
+                        <field name="fal_journal_id" groups="account.group_account_user" attrs="{'readonly': [('state', '=', 'done')]}"/>
+                        <field name="fal_move_id" groups="account.group_account_user" readonly="1"/>
+                        <field name="fal_accounting_date" groups="account.group_account_user" readonly="0"/>
+                    </group>
+                </group>
+            </field>
+        </record>
+
+        <record id="fal_journal_item_form_view" model="ir.ui.view">
+            <field name="name">fal_journal_item_form_view</field>
+            <field name="model">account.move.line</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="account.view_move_line_form"/>
+            <field name="arch" type="xml">
+                <field name="partner_id" position="after">
+                    <field name="product_id"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</odoo>

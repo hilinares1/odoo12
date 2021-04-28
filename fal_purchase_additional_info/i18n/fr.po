@@ -1,0 +1,59 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* fal_purchase_additional_info
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-07-24 02:35+0000\n"
+"PO-Revision-Date: 2018-07-24 09:39+0700\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: en\n"
+"X-Generator: Poedit 2.0.8\n"
+
+#. module: fal_purchase_additional_info
+#: model:ir.model.fields,field_description:fal_purchase_additional_info.field_purchase_order_active
+msgid "Active"
+msgstr "Actif/ve"
+
+#. module: fal_purchase_additional_info
+#: model:ir.ui.view,arch_db:fal_purchase_additional_info.view_purchase_order_filter_fal_purcp
+msgid "Archived"
+msgstr "Archivé/s"
+
+#. module: fal_purchase_additional_info
+#: model:ir.model.fields,field_description:fal_purchase_additional_info.field_purchase_order_fal_attachment_name
+msgid "Attachment name"
+msgstr "Nom fichier joint"
+
+#. module: fal_purchase_additional_info
+#: model:ir.model.fields,field_description:fal_purchase_additional_info.field_purchase_order_fal_partner_contact_person_id
+msgid "Contact Person"
+msgstr "Contact"
+
+#. module: fal_purchase_additional_info
+#: model:ir.model.fields,help:fal_purchase_additional_info.field_purchase_order_active
+msgid "If unchecked, it will allow you to hide        the Sale Order without removing it."
+msgstr "Si non coché, cela vous permet de cacher        Bon de Commande sans le retirer."
+
+#. module: fal_purchase_additional_info
+#: model:ir.model,name:fal_purchase_additional_info.model_purchase_order
+msgid "Purchase Order"
+msgstr "Commande fournisseur"
+
+#. module: fal_purchase_additional_info
+#: model:ir.model.fields,field_description:fal_purchase_additional_info.field_purchase_order_fal_attachment
+msgid "Supplier Quotation Attachment"
+msgstr "Fichier joint de devis fournisseur"
+
+#. module: fal_purchase_additional_info
+#: model:ir.model.fields,field_description:fal_purchase_additional_info.field_purchase_order_fal_title
+#: model:ir.ui.view,arch_db:fal_purchase_additional_info.fal_purchase_order_form_add_title
+msgid "Title"
+msgstr "Civilité"

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="fal_account_invoice_line_add_aci_wizard_view" model="ir.ui.view">
+            <field name="name">fal.account.invoice.line.add.aci.wizard.view</field>
+            <field name="model">fal.account.invoice.line.add.aci.wizard</field>
+            <field name="arch" type="xml">
+              <form string="Add Customer Invoice">
+                  <span>You can give customer invoice in this line:</span>
+                  <group>
+                    <field name="fal_customer_account_invoice_id"/>
+                    <field name="fal_customer_account_invoice_line_ids" widget="many2many_tags"/>
+                    <field name="fal_mathching_ok"/>
+                    <field name="fal_no_match_reason" attrs="{'invisible': [('fal_mathching_ok','=', True)]}"/>
+                  </group>
+                  <footer>
+                      <button name="confirm" string="Confirm" type="object" class="oe_highlight"/>
+                      or
+                      <button string="Cancel" class="oe_link" special="cancel" />
+                  </footer>
+            </form>
+            </field>
+        </record>
+
+        <record id="add_aci_wizard_action" model="ir.actions.act_window">
+            <field name="name">Add ACI in Lines</field>
+            <field name="res_model">fal.account.invoice.line.add.aci.wizard</field>
+            <field name="view_type">form</field>
+            <field name="context">{}</field>
+            <field name="view_id" ref="fal_account_invoice_line_add_aci_wizard_view"/>
+            <field name="target">new</field>
+        </record>
+
+    </data>
+</odoo>

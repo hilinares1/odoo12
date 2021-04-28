@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_fal_product_attribute_config_user,fal.product.attribute.config.user,model_fal_product_attribute_config,base.group_user,1,0,0,0
+access_fal_product_attribute_config_admin,fal.product.attribute.config.admin,model_fal_product_attribute_config,base.group_system,1,1,1,1
+access_fal_product_attribute_config_stock,fal.product.attribute.config.stock,model_fal_product_attribute_config,stock.group_stock_manager,1,1,1,1
+access_fal_product_attribute_value_config_user,fal.product.attribute.value.config.user,model_fal_product_attribute_value_config,base.group_user,1,0,0,0
+access_fal_product_attribute_value_config_admin,fal.product.attribute.value.config.admin,model_fal_product_attribute_value_config,base.group_system,1,1,1,1
+access_fal_product_attribute_value_config_stock,fal.product.attribute.value.config.stock,model_fal_product_attribute_value_config,stock.group_stock_manager,1,1,1,1

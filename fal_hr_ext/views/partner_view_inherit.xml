@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="view_contact_employee_inherit" model="ir.ui.view">
+            <field name="name">partner.employee.inherit</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form" />
+            <field name="arch" type="xml">
+                <field name="lang" position="after">
+                    <field name="employee" string="Is Employee"/>
+                </field>
+            </field>
+        </record>
+
+
+        <!-- New Menu in HR for Partner with private address-->
+        <record id="action_contacts_private" model="ir.actions.act_window">
+            <field name="name">Employee Contacts (Private)</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="search_view_id" ref="base.view_res_partner_filter"/>
+            <field name="domain">[('type','=','private')]</field>
+            <field name="context">{'default_type': 'private'}</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to add a private contact in your contacts directory.
+                Private Contact are confidential and will be used as employee partner.
+              </p><p>
+                Odoo helps you easily track all activities related to
+                a customer: discussions, history of business opportunities,
+                documents, etc.
+              </p>
+            </field>
+        </record>
+
+        <menuitem
+            id="hr.menu_open_view_employee_list_my"
+            parent="hr.menu_hr_root"
+            name="Employee"
+            sequence="3"/>
+
+        <menuitem
+            id="menu_open_view_employee_list_my_employee"
+            name="Employees"
+            action="hr.open_view_employee_list_my"
+            parent="hr.menu_open_view_employee_list_my"
+            sequence="0"/>
+
+        <menuitem
+            id="menu_hr_partner_private_contact"
+            name="Employee Contacts"
+            action="action_contacts_private"
+            parent="hr.menu_open_view_employee_list_my"
+            groups="hr.group_hr_manager"
+            sequence="1"/>
+
+    </data>
+</odoo>

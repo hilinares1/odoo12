@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <!-- agreement lost causes -->
+        <record id="lost_reason_1" model="srm.lost.reason">
+            <field name="name">Too expensive</field>
+        </record>
+    </data>
+
+</odoo>

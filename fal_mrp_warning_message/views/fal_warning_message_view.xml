@@ -1,0 +1,62 @@
+<odoo>
+    <data>
+
+        <record id="fal_warning_message_form_view" model="ir.ui.view">
+            <field name="name">fal_warning_message_form_view</field>
+            <field name="model">fal.warning.message</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Warning Message for MRP">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name" required="1"/>
+                                <field name="sequence"/>
+                                <field name="description" required="1"/>
+                            </group>
+                            <group>
+                                <field name="product_ids" widget="many2many_tags"/>
+                                <field name="product_categ_ids" widget="many2many_tags"/>
+                                <field name="cons_product_ids" widget="many2many_tags"/>
+                                <field name="cons_product_categ_ids" widget="many2many_tags"/>
+                                <field name="routing_ids" widget="many2many_tags"/>
+                                <field name="workcenter_ids" widget="many2many_tags"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="fal_warning_message_tree_view" model="ir.ui.view">
+            <field name="name">fal_warning_message_tree_view</field>
+            <field name="model">fal.warning.message</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Warning Message for MRP">
+                    <field name="sequence" widget="handle"/>
+                    <field name="name"/>
+                    <field name="product_ids" widget="many2many_tags"/>
+                    <field name="product_categ_ids" widget="many2many_tags"/>
+                    <field name="routing_ids" widget="many2many_tags"/>
+                    <field name="workcenter_ids" widget="many2many_tags"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="fal_warning_message_action" model="ir.actions.act_window">
+            <field name="name">Warning Message</field>
+            <field name="res_model">fal.warning.message</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to create warning message for MRP.
+              </p>
+            </field>
+        </record>
+
+        <menuitem sequence="999" parent="mrp.menu_mrp_manufacturing" id="menu_fal_warning_message"
+            action="fal_warning_message_action"/>
+    </data>
+</odoo>

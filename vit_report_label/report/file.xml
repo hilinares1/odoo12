@@ -1,0 +1,87 @@
+<odoo>
+    <data>
+        
+        <report
+            id="report_receipt_menu"
+            string="Print label Package"
+            model="stock.picking"
+            report_type="qweb-pdf"
+            paperformat="paperformat_Portrait"
+            file="vit_report_label.file"
+            name="vit_report_label.file_report"
+        />
+
+        <template id="vit_report_label.file_report">
+            <t t-call="web.html_container">
+                <t t-call="vit_report_label.external_layout_label" >
+                    <t t-foreach="docs" t-as="doc">
+                        <t t-call="vit_report_label.file_report_document"/>
+                    </t>
+                </t>
+            </t>
+        </template>
+
+        <template id="vit_report_label.file_report_document">
+            <div class="page">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td><strong><span t-field="doc.product_id.default_code"/></strong></td>
+                            <td></td>
+                            <td style="text-align: left; padding: 1px; width: 60px; height:60px;border: 1px solid black;">
+                                <img t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('QR', doc.product_id.default_code, 56, 56)" style="width:100%;height:100%;"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>011800411</strong></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>
+                                    <span t-field="doc.move_lines.product_id.default_code"/>
+                                    <span t-field="doc.move_lines.product_id.name"/>
+                                </strong>
+                            </td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <t t-if="doc.partner_id.child_ids">
+                                    <span t-field="doc.partner_id.child_ids[0].name" />
+                                </t> 
+                            </td>
+                            <td></td>
+                            <td><strong><span t-field="doc.move_lines.product_uom_qty"/> PCS</strong></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3"><hr /></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td style="text-align: left; padding: 1px; width: 60px; height:60px;border: 1px solid black;">
+                                <img t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('QR', doc.product_id.default_code, 56, 56)" style="width:100%;height:100%;"/>
+                            </td>
+                            <td><strong>Lot/ Box No</strong></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <t t-foreach="doc.move_lines.move_line_ids" t-as="line">
+                                    <strong>
+                                        <span t-field="line.package_id"/>
+                                        <span t-field="line.lot_id"/>
+                                    </strong>
+                                </t>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </template>
+
+    </data>
+</odoo>

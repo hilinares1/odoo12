@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+    	<record id="fal_production_order_form_view_inherit" model="ir.ui.view">
+            <field name="name">fal.production.order.form.view.inherit</field>
+            <field name="model">fal.production.order</field>
+            <field name="inherit_id" ref="fal_mrp_production_order.fal_production_order_form_view"/>
+            <field name="arch" type="xml">
+                <field name="state" position="attributes">
+            		<attribute name="statusbar_visible">draft,confirm,progress,done</attribute>
+        		</field>
+                <xpath expr="//field[@name='bom_id']" position="after">
+                    <field name="is_ready" invisible="True"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="fal_production_order_calendar_view">
+            <field name="name">fal_production_order_calendar_view</field>
+            <field name="model">fal.production.order</field>
+            <field name="inherit_id" ref="fal_mrp_production_order.fl_production_order_calendar_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='company_id']" position="after">
+                    <field name="production_date_fixed" invisible="1"/>
+                    <field name="is_ready" invisible="1"/>
+                </xpath>
+            </field>
+        </record>
+	</data>
+</odoo>

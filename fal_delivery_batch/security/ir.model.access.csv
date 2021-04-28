@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_fal_delivery_batch,access_fal_delivery_batch,model_fal_delivery_batch,base.group_user,1,1,1,1
+access_fal_delivery_batch_line,access_fal_delivery_batch_line,model_fal_delivery_batch_line,base.group_user,1,1,1,1
+access_fal_delivery_box_line,access_fal_delivery_box_line,model_fal_delivery_box_line,base.group_user,1,1,1,1
+access_fal_port_type,access_fal_port_type,model_fal_port_type,base.group_user,1,1,1,1

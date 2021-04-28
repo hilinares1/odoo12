@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<record id="fal_account_fec_view" model="ir.ui.view">
+    <field name="name">fal.account.fec.form.view</field>
+    <field name="model">fal.account.fec</field>
+    <field name="arch" type="xml">
+        <form string="Opening Journal">
+            <notebook>
+                <page string="Options">
+                    <group>
+                        <field name="date_from"/>
+                        <field name="export_type"/>
+                    </group>
+                </page>
+                <page string="Technical Info">
+                    <group>
+                        <div>
+                        The encoding of this text file is UTF-8. The structure of file is CSV separated by pipe '|'.
+                        </div>
+                    </group>
+                    <group>
+                        <table style="width:80%">
+                            <tr>
+                                <th>Technical Name</th>
+                                <th>Column</th>
+                                <th>Comment</th>
+                            </tr>
+                            <tr>
+                                <td>JournalCode</td>
+                                <td># 0</td>
+                            </tr>
+                            <tr>
+                                <td>JournalLabel</td>
+                                <td>
+                                    # 1</td>
+                            </tr>
+                            <tr>
+                                <td>ItemNumber</td>
+                                <td># 2</td>
+                            </tr>
+                            <tr>
+                                <td>ItemDate</td>
+                                <td>
+                                    # 3</td>
+                            </tr>
+                            <tr>
+                                <td>AccountNumber</td>
+                                <td># 4</td>
+                            </tr>
+                            <tr>
+                                <td>AccountLabel</td>
+                                <td># 5</td>
+                            </tr>
+                            <tr>
+                                <td>AuxiliaryAccountNumber</td>
+                                <td># 6</td>
+                                <td>We use partner.id</td>
+                            </tr>
+                            <tr>
+                                <td>AuxiliaryAccountLabel</td>
+                                <td># 7</td>
+                            </tr>
+                            <tr>
+                                <td>EntryRef</td>
+                                <td># 8</td>
+                            </tr>
+                            <tr>
+                                <td>EntryDate</td>
+                                <td># 9</td>
+                            </tr>
+                            <tr>
+                                <td>ItemLabel</td>
+                                <td># 10</td>
+                            </tr>
+                            <tr>
+                                <td>Debit</td>
+                                <td># 11</td>
+                            </tr>
+                            <tr>
+                                <td>Credit</td>
+                                <td># 12</td>
+                            </tr>
+                            <tr>
+                                <td>ReconciliationItem</td>
+                                <td># 13</td>
+                            </tr>
+                            <tr>
+                                <td>ReconciliationDate</td>
+                                <td># 14</td>
+                            </tr>
+                            <tr>
+                                <td>ValidDate</td>
+                                <td># 15</td>
+                            </tr>
+                            <tr>
+                                <td>CurrencyAmount</td>
+                                <td># 16</td>
+                            </tr>
+                            <tr>
+                                <td>Idevise</td>
+                                <td># 17</td>
+                            </tr>
+                        </table>
+                    </group>
+                </page>
+            </notebook>
+            <footer>
+                <button string="Generate" name="generate_fec" type="object"
+                    class="oe_highlight"/>
+                <button string="Cancel" class="btn btn-secondary" special="cancel"/>
+            </footer>
+        </form>
+    </field>
+</record>
+
+<record id="fal_account_fec_action" model="ir.actions.act_window">
+    <field name="name">Opening Journal</field>
+    <field name="res_model">fal.account.fec</field>
+    <field name="view_mode">form</field>
+    <field name="target">new</field>
+</record>
+
+<menuitem id="account_fec_menu"
+        parent="account.menu_finance_entries"
+        action="fal_account_fec_action"
+        sequence="100" />
+</odoo>

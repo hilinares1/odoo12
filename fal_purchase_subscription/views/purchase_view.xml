@@ -1,0 +1,18 @@
+<odoo>
+    <record model="ir.ui.view" id="fal_purchase_subscription.purchase_order_form">
+        <field name="name">fal_purchase_subscription.purchase_order_form</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_form"/>
+        <field name="arch" type="xml">
+            <data>
+                <xpath expr="//page[@name='purchase_delivery_invoice']/group[1]/group" position="inside">
+                    <label for="fal_purchase_subscription_id"/>
+                    <div>
+                        <field name="fal_purchase_subscription_id"/>
+                        <button name="purchase_subscription" string="Make Subscription" type="object" class="btn-link" icon="fa-arrow-right" attrs="{'invisible': [('fal_purchase_subscription_id', '!=', False)]}"/>
+                    </div>
+                </xpath>
+            </data>
+        </field>
+    </record>
+</odoo>

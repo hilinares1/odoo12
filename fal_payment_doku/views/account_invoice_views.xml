@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="fal_doku_account_invoice_form_view" model="ir.ui.view">
+            <field name="name">fal.doku.account.invoice.form.view</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_form" />
+            <field name="arch" type="xml">
+                <xpath  expr="//notebook/page/group/field[@name='amount_total']" position="after">
+                    <field name="doku_difference_amount"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="fal_account_report" model="account.account">
+            <field name="code">999999999</field>
+            <field name="name">Account Reports</field>
+            <field name="reconcile" eval='True'/>
+            <field name="user_type_id" ref="account.data_account_type_other_income"/>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,13 @@
+<odoo>
+    <template id="hierarchy_assets_backend" name="hierarchy_assets" inherit_id="web.assets_backend">
+        <xpath expr="." position="inside">
+            <script type="text/javascript" src="/web_hierarchy/static/src/js/hierarchy_controller.js"/>
+            <script type="text/javascript" src="/web_hierarchy/static/src/js/hierarchy_renderer.js"/>
+            <script type="text/javascript" src="/web_hierarchy/static/src/js/hierarchy_view.js"/>
+
+            <link href="/web_hierarchy/static/src/css/hierarchy_view.css" rel="stylesheet" type="text/css"/>
+        </xpath>
+    </template>
+
+
+</odoo>

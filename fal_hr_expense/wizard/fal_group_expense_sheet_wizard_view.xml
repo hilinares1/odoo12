@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="fal_group_expense_wizard_view_form" model="ir.ui.view">
+            <field name="name">fal.group.expense.sheet.wizard.view.form</field>
+            <field name="model">fal.group.expense.sheet.wizard</field>
+            <field name="arch" type="xml">
+                <form string="group expense sheet">
+                    <group>
+                        <group>
+                            <field name="link_to_existing_expense_sheet" />
+                            <field name="name" attrs="{'invisible': [('link_to_existing_expense_sheet', '=', True)], 'required': [('link_to_existing_expense_sheet', '=', False)]}"/>
+                            <field name="sheet_id" attrs="{'invisible': [('link_to_existing_expense_sheet', '=', False)], 'required': [('link_to_existing_expense_sheet', '=', True)]}"/>
+                        </group>
+                    </group>
+                    <footer>
+                        <button string='Confirm' name="action_group_expense_sheet" type="object" class="oe_highlight"/>
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+               </form>
+            </field>
+        </record>
+
+        <act_window
+            id="fal_group_expense_wizard_view_action"
+            name="Group to Expense sheet"
+            res_model="fal.group.expense.sheet.wizard"
+            src_model="hr.expense"
+            view_mode="form"
+            view_id="fal_group_expense_wizard_view_form"
+            target="new"
+            key2="client_action_multi"
+            />
+
+    </data>
+</odoo>

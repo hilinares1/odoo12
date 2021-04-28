@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="ir_exports_view_form_fal_easy_reporting">
+            <field name="name">ir.exports.form.fal.easyreporting</field>
+            <field name="model">ir.exports</field>
+            <field name="arch" type="xml">
+                <form string='Export Form'>
+                    <sheet>
+                        <group>
+                            <field name="name" />
+                            <field name="model_id" string="Model"/>
+                            <field name="resource" />
+
+                        </group>
+                            <notebook>
+                                <page string="Fields">
+                                    <field name="export_fields" nolabel="1">
+                                        <tree string="Export Fields" editable="bottom">
+                                            <field name="sequence" widget="handle"/>
+                                            <field name="name" />
+                                        </tree>
+                                    </field>
+                                </page>
+                            </notebook>
+                    </sheet>
+                </form>
+          </field>
+        </record>
+
+        <record model="ir.ui.view" id="ir_exports_view_tree_fal_easy_reporting">
+            <field name="name">ir.exports.tree.fal.easyreporting</field>
+            <field name="model">ir.exports</field>
+            <field name="arch" type="xml">
+                <tree string="Export Tree">
+                    <field name="name" />
+                    <field name="resource"/>
+                    <field name="export_fields" widget="many2many_tags"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_export_list_filter_fal_easy_reporting" model="ir.ui.view">
+            <field name="name">export.list.fal.easyreporting</field>
+            <field name="model">ir.exports</field>
+            <field name="arch" type="xml">
+                <search string="Export List">
+                    <field name="name" />
+                    <field name="resource" />
+                    <group expand="0" string="Group By">
+                        <filter name="Resource" string="Resource" icon="terp-partner" domain="[]" context="{'group_by':'resource'}"/> <!-- edited by murha -->
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="action_view_export_list_tree_fal_easy_reporting" model="ir.actions.act_window">
+            <field name="name">Export List</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">ir.exports</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="ir_exports_view_tree_fal_easy_reporting"/>
+            <field name="search_view_id" ref="view_export_list_filter_fal_easy_reporting"/>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to create a new export list
+              </p>
+            </field>
+        </record>
+
+        <menuitem id="sub_menu_export_list_form_fal_easyreporting" name="Export List Form" parent="menu_export_data" sequence="10" action="action_view_export_list_tree_fal_easy_reporting" />
+
+    </data>
+</odoo>

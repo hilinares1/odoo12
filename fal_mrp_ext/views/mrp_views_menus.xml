@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- User can only see Dashboard on MRP, group by manager -->
+        <menuitem id="mrp.menu_mrp_manufacturing"
+            name="Operations"
+            parent="mrp.menu_mrp_root"
+            sequence="10"
+            groups="mrp.group_mrp_manager"/>
+
+        <menuitem id="mrp_workorder.mrp_planning_menu_root"
+            name="Planning"
+            parent="mrp.menu_mrp_root"
+            sequence="15"
+            groups="mrp.group_mrp_manager"/>
+
+        <menuitem id="mrp.menu_mrp_bom"
+            name="Master Data"
+            parent="mrp.menu_mrp_root"
+            sequence="20"
+            groups="mrp.group_mrp_manager"/>
+
+        <menuitem id="mrp.menu_mrp_reporting"
+            name="Reporting"
+            parent="mrp.menu_mrp_root"
+            sequence="25"
+            groups="mrp.group_mrp_manager"/>
+    </data>
+</odoo>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="analytic_analytic_account_form_tt">
+            <field name="name">analytic.analytic.account.form.tt</field>
+            <field name="model">account.analytic.account</field>
+            <field name="inherit_id" ref="analytic.view_account_analytic_account_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='currency_id']" position="after">
+                    <field name="tt_t0_project_budget_id" />
+                    <field name="tt_validated_project_budget_id" />
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

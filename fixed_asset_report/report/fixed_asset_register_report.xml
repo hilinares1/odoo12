@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <report
+            id="report_fixed_asset_register"
+            model="fixed.asset.report.wizard"
+            string="Fixed Asset Register Report"
+            report_type="qweb-html"
+            name="fixed_asset_report.fixed_asset_register_report_template"
+            file="fixed_asset_report.fixed_asset_register_report_template"
+            attachment_use="False"
+            paperformat="fixed_asset_report.paperformat_fixed_assets"
+    />
+
+
+    <template id="fixed_asset_register_report_template">
+        <t t-call="web.html_container">
+            <t t-call="web.internal_layout">
+                <div class="page" style="font-size: 10px;">
+
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <h2 class="text-center"
+                                style="margin-bottom: 30px;">
+                                Fixed Asset Register
+                            </h2>
+                        </div>
+                    </div>
+
+                    <!-- Information Section -->
+                    <div class="row" style="margin-bottom: 30px !important;">
+                        <div t-if="list_data" class="col-xs-12">
+                            <span>Fixed Asset Register for the month of
+                                <b>
+                                    <span t-esc="month_selected"/>
+                                </b>
+                            </span>
+                        </div>
+                         <div t-else="" class="col-xs-12">
+                            <h5 style="font-weight: normal;">
+                                No data available
+                            </h5>
+                        </div>
+                    </div>
+
+                    <!-- Report Content -->
+                    <table t-if="list_data" class="table table-condensed">
+                        <thead>
+                            <tr>
+                                <th>Asset Category</th>
+                                <th>Asset Code</th>
+                                <th>Asset Name</th>
+                                <th>Manufacturer</th>
+                                <th>Serial Number</th>
+                                <th>Model Number</th>
+                                <th>Date of Asset</th>
+                                <th class="text-right">Cost</th>
+                                <th class="text-right">Accumulated
+                                    Depreciation
+                                </th>
+                                <th class="text-right">Net Book</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr t-foreach="list_data" t-as="line">
+                                <td>
+                                    <span t-esc="line['category_id'].display_name"/>
+                                </td>
+                                <td>
+                                    <span t-esc="line['asset_code']"/>
+                                </td>
+                                <td>
+                                    <span t-esc="line['asset_id'].display_name"/>
+                                </td>
+                                <td>
+                                    <span t-esc="line['manufacturer']"/>
+                                </td>
+                                <td>
+                                    <span t-esc="line['serial_number']"/>
+                                </td>
+                                <td>
+                                    <span t-esc="line['model_number']"/>
+                                </td>
+                                <td>
+                                    <span t-esc="line['purchase_date']"/>
+                                </td>
+                                <td class="text-right">
+                                    <span t-esc="line['cost']"
+                                          t-options="{'widget': 'monetary', 'display_currency': company.currency_id}"/>
+                                </td>
+                                <td class="text-right">
+                                    <span t-esc="line['accumulated_depreciation']"
+                                          t-options="{'widget': 'monetary', 'display_currency': company.currency_id}"/>
+                                </td>
+                                <td class="text-right">
+                                    <span t-esc="line['net_book']"
+                                          t-options="{'widget': 'monetary', 'display_currency': company.currency_id}"/>
+                                </td>
+                            </tr>
+                            <tr class="border-black">
+                                <td colspan="7">
+                                    <b>Total</b>
+                                </td>
+                                <td class="text-right">
+                                    <b>
+                                        <span t-esc="sum(l['cost'] for l in list_data)"
+                                              t-options="{'widget': 'monetary', 'display_currency': company.currency_id}"/>
+                                    </b>
+                                </td>
+                                <td class="text-right">
+                                    <b>
+                                        <span t-esc="sum(l['accumulated_depreciation'] for l in list_data)"
+                                              t-options="{'widget': 'monetary', 'display_currency': company.currency_id}"/>
+                                    </b>
+                                </td>
+                                <td class="text-right">
+                                    <b>
+                                        <span t-esc="sum(l['net_book'] for l in list_data)"
+                                              t-options="{'widget': 'monetary', 'display_currency': company.currency_id}"/>
+                                    </b>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="oe_structure"/>
+
+                </div>
+            </t>
+        </t>
+    </template>
+</odoo>
+

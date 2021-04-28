@@ -1,0 +1,67 @@
+<openerp>
+	<data>
+
+		<!-- tree view -->
+		<record id="view_stock_summary_line_tree" model="ir.ui.view">
+		    <field name="name">vit_stock_summary_line_tree</field>
+		    <field name="model">vit.stock_summary_line</field>
+		    <field name="arch" type="xml">
+		    	<tree string="list stock summary detail" create="false" edit="false" delete="false">
+		    		<field name="stock_summary_id"/>
+		    		<field name="product_type" invisible="1"/>
+		            <field name="product_id" />
+					<field name="lot_id" />
+					<field name="expired_date" />
+					<field name="qty_available" />
+					<field name="qty_start" />
+					<field name="qty_in" />		
+					<field name="qty_out" />		
+					<field name="qty_balance" />
+					<field name="hpj" attrs="{'invisible':['|',('is_hpp','!=',2.00),('is_hpp','=',0.00)]}"/>
+					<field name="hpp" attrs="{'invisible':['|',('is_hpp','!=',1.00),('is_hpp','=',0.00)]}"/>
+					<field name="is_hpp" invisible="1"/>    
+					<field name="product_uom_id" />
+					<field name="stock_move_id" invisible="1"/>				            
+		        </tree>    
+		    </field>
+		</record>
+
+		<record id="view_stock_summary_line_filter" model="ir.ui.view">
+		    <field name="name">stock_summary_line.filter</field>
+		    <field name="model">vit.stock_summary_line</field>
+		    <field name="arch" type="xml">
+		        <search string="Search Stock summary Detail">
+					<field name="stock_summary_id"/>
+					<field name="product_type" />
+		            <field name="product_id" />
+					<field name="lot_id" />
+					<field name="expired_date" />
+					<field name="stock_move_id" />
+		            <group expand="1" string="Group By...">
+		            	<filter string="Location" 
+		                    icon="terp-personal" domain="[]" 
+		                	 context="{'group_by':'stock_summary_id'}"/>
+		                <filter string="Product" icon="terp-personal" 
+		                    domain="[]" 
+		                	 context="{'group_by':'product_id'}"/>
+		                <filter string="Expired Date" 
+		                    icon="terp-personal" domain="[]" 
+		                	 context="{'group_by':'expired_date'}"/>
+		                <filter string="Lot" icon="terp-personal" 
+		                    domain="[]"
+		                	 context="{'group_by':'lot_id'}"/>
+		                <filter string="UoM" 
+		                    icon="terp-personal" domain="[]" 
+		                	 context="{'group_by':'product_uom_id'}"/>
+		                <filter string="Move" icon="terp-personal" 
+		                    domain="[]" 
+		                	 context="{'group_by':'stock_move_id'}"/>
+		            </group>                                        
+
+		        </search>
+		    </field>
+		</record>
+
+
+	</data>
+</openerp>

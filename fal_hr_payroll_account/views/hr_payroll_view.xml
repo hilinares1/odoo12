@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_hr_payslip_tree_falpayroll" model="ir.ui.view">
+            <field name="name">hr.payslip.tree.falpayroll</field>
+            <field name="model">hr.payslip</field>
+            <field name="inherit_id" ref="hr_payroll.view_hr_payslip_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//tree" position="replace">
+                    <tree string="Payslips" decoration-info="state == 'draft'" decoration-muted="state == 'cancel'">
+                        <field name="number"/>
+                        <field name="employee_id"/>
+                        <field name="name"/>
+                        <field name="date_from"/>
+                        <field name="date_to"/>
+                        <field name="state"/>
+                        <field name="company_id" groups="base.group_multi_company" options="{'no_create': True}"/>
+                        <field name="payslip_run_id" invisible="1"/>
+                    </tree>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_compute_payslip" model="ir.ui.view">
+            <field name="name">hr.payslip.form.computebutton</field>
+            <field name="model">hr.payslip</field>
+            <field name="inherit_id" ref="hr_payroll.view_hr_payslip_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='contract_id']" position="replace">
+                    <label for="contract_id" string="Contract"/>
+                    <div>
+                        <field name="contract_id" domain="[('employee_id','=',employee_id),('date_start','&lt;=',date_to),'|',('date_end','&gt;=',date_from),('date_end','=',False)]" context="{'default_employee_id': employee_id}" class="oe_inline"/>
+                        <button name="compute_payslip_button" string="Add Payroll Component" type="object" class="oe_inline btn-link" icon="fa-arrow-right" attrs="{'invisible': ['|',('contract_id', '=', False),('state', '!=', 'draft')]}"/>
+                    </div>
+                </xpath>
+                <xpath expr="//header/button[@name='compute_sheet']" position="attributes">
+                    <attribute name="string">Refresh And Compute</attribute>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

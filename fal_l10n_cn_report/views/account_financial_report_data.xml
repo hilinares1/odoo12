@@ -1,0 +1,1166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!--
+            Financial Reports
+        -->
+        <menuitem id="fal_account_reports_legal_statements_menu" name="Falinwa Legal Statements" parent="account.menu_finance_reports" sequence="1" groups="account.group_account_user"/>
+
+        <!-- PROFIT AND LOSS -->
+
+        <record id="fal_account_financial_report_profitandloss0" model="account.financial.html.report">
+            <field name="name">Profit &amp; Loss</field>
+            <field name="debit_credit" eval="False"/>
+            <field name="report_type">date_range</field>
+            <field name='parent_id' ref='fal_account_reports_legal_statements_menu'/>
+        </record>
+
+        <record id="fal_account_financial_report_income0" model="account.financial.html.report.line">
+            <field name="name">Income</field>
+            <field name="code">C_INC</field>
+            <field name="formulas">balance = sum.balance</field>
+            <field name="financial_report_id" ref="fal_account_financial_report_profitandloss0"/>
+            <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('fal_l10n_cn.fal_data_account_tag_revenue')])]" />
+            <field name="groupby">account_id</field>
+            <field name="sequence" eval="1"/>
+            <field name="level" eval="0" />
+        </record>
+        <record id="fal_account_financial_report_operation_cost0" model="account.financial.html.report.line">
+            <field name="name">Operation Costs</field>
+            <field name="code">C_OPC</field>
+            <field name="formulas">balance = sum.balance</field>
+            <field name="financial_report_id" ref="fal_account_financial_report_profitandloss0"/>
+            <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('fal_l10n_cn.fal_data_account_tag_operation_cost')])]" />
+            <field name="groupby">account_id</field>
+            <field name="sequence" eval="10"/>
+            <field name="level" eval="0" />
+        </record>
+        <record id="fal_account_financial_report_operation_tax_addons0" model="account.financial.html.report.line">
+            <field name="name">Operation tax and add-ons</field>
+            <field name="code">C_OPTAD</field>
+            <field name="formulas">balance = sum.balance</field>
+            <field name="financial_report_id" ref="fal_account_financial_report_profitandloss0"/>
+            <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('fal_l10n_cn.fal_data_account_tag_operation_tax_addons')])]" />
+            <field name="groupby">account_id</field>
+            <field name="sequence" eval="20"/>
+            <field name="level" eval="0" />
+        </record>
+        <record id="fal_account_financial_report_sales_expense0" model="account.financial.html.report.line">
+            <field name="name">Sales Expenses</field>
+            <field name="code">C_SEXP</field>
+            <field name="formulas">balance = sum.balance</field>
+            <field name="financial_report_id" ref="fal_account_financial_report_profitandloss0"/>
+            <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('fal_l10n_cn.fal_data_account_tag_sales_expenses')])]" />
+            <field name="groupby">account_id</field>
+            <field name="sequence" eval="30"/>
+            <field name="level" eval="0" />
+        </record>
+        <record id="fal_account_financial_report_overheard_expense0" model="account.financial.html.report.line">
+            <field name="name">Overheard Expenses</field>
+            <field name="code">C_OEXP</field>
+            <field name="formulas">balance = sum.balance</field>
+            <field name="financial_report_id" ref="fal_account_financial_report_profitandloss0"/>
+            <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('fal_l10n_cn.fal_data_account_tag_overhead_expenses')])]" />
+            <field name="groupby">account_id</field>
+            <field name="sequence" eval="40"/>
+            <field name="level" eval="0" />
+        </record>
+        <record id="fal_account_financial_report_financial_expense0" model="account.financial.html.report.line">
+            <field name="name">Financial Expenses</field>
+            <field name="code">C_FEXP</field>
+            <field name="formulas">balance = sum.balance</field>
+            <field name="financial_report_id" ref="fal_account_financial_report_profitandloss0"/>
+            <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('fal_l10n_cn.fal_data_account_tag_financial_expenses')])]" />
+            <field name="groupby">account_id</field>
+            <field name="sequence" eval="50"/>
+            <field name="level" eval="0" />
+        </record>
+        <record id="fal_account_financial_report_devaluation_lost_asset0" model="account.financial.html.report.line">
+            <field name="name">Devaluation Lost of Assets</field>
+            <field name="code">C_DEP</field>
+            <field name="formulas">balance = sum.balance</field>
+            <field name="financial_report_id" ref="fal_account_financial_report_profitandloss0"/>
+            <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('fal_l10n_cn.fal_data_account_tag_devaluation_lost_assets')])]" />
+            <field name="groupby">account_id</field>
+            <field name="sequence" eval="60"/>
+            <field name="level" eval="0" />
+        </record>
+        <record id="fal_account_financial_report_devaluation_lost_asset0" model="account.financial.html.report.line">
+            <field name="name">Net changes in fair value(loss of "-")</field>
+            <field name="code">C_NCFV</field>
+            <field name="formulas">balance = sum.balance</field>
+            <field name="financial_report_id" ref="fal_account_financial_report_profitandloss0"/>
+            <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('fal_l10n_cn.fal_data_account_tag_net_changes_in_fair_value')])]" />
+            <field name="groupby">account_id</field>
+            <field name="sequence" eval="70"/>
+            <field name="level" eval="0" />
+        </record>
+        <record id="fal_account_financial_report_net_investment_income0" model="account.financial.html.report.line">
+            <field name="name">Net investment income(loss of "-")</field>
+            <field name="code">C_NINVINC</field>
+            <field name="formulas">balance = sum.balance</field>
+            <field name="financial_report_id" ref="fal_account_financial_report_profitandloss0"/>
+            <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('fal_l10n_cn.fal_data_account_tag_net_investment_income')])]" />
+            <field name="groupby">account_id</field>
+            <field name="sequence" eval="80"/>
+            <field name="level" eval="0" />
+        </record>
+        <record id="fal_account_financial_report_prior_icome_adjustment0" model="account.financial.html.report.line">
+            <field name="name">Prior year income adjustment</field>
+            <field name="code">C_PYINCAD</field>
+            <field name="formulas">balance = sum.balance</field>
+            <field name="financial_report_id" ref="fal_account_financial_report_profitandloss0"/>
+            <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('fal_l10n_cn.fal_data_account_tag_prior_year_income_adjustment')])]" />
+            <field name="groupby">account_id</field>
+            <field name="sequence" eval="90"/>
+            <field name="level" eval="0" />
+        </record>
+        <record id="fal_account_financial_report_operation_profit0" model="account.financial.html.report.line">
+            <field name="name">Operation profit(loss of "-")</field>
+            <field name="code">C_OPROF</field>
+            <field name="formulas">balance = C_INC.balance + C_NCFV.balance + C_NINVINC.balance - C_OPC.balance - C_SEXP.balance - C_OEXP.balance - C_FEXP.balance - C_DEP.balance</field>
+            <field name="financial_report_id" ref="fal_account_financial_report_profitandloss0"/>
+            <field name="sequence" eval="100"/>
+            <field name="level" eval="0" />
+        </record>
+        <record id="fal_account_financial_report_nonoperation_income0" model="account.financial.html.report.line">
+            <field name="name">Non-operation Income</field>
+            <field name="code">C_NONOPINC</field>
+            <field name="formulas">balance = sum.balance</field>
+            <field name="financial_report_id" ref="fal_account_financial_report_profitandloss0"/>
+            <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('fal_l10n_cn.fal_data_account_tag_non_operation_income')])]" />
+            <field name="groupby">account_id</field>
+            <field name="sequence" eval="110"/>
+            <field name="level" eval="0" />
+        </record>
+        <record id="fal_account_financial_report_nonoperation_expenses0" model="account.financial.html.report.line">
+            <field name="name">Non-operation Expenses</field>
+            <field name="code">C_NONOPEXP</field>
+            <field name="formulas">balance = sum.balance</field>
+            <field name="financial_report_id" ref="fal_account_financial_report_profitandloss0"/>
+            <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('fal_l10n_cn.fal_data_account_tag_non_operation_expenses')])]" />
+            <field name="groupby">account_id</field>
+            <field name="sequence" eval="120"/>
+            <field name="level" eval="0" />
+        </record>
+        <record id="fal_account_financial_report_total_profit0" model="account.financial.html.report.line">
+            <field name="name">Total profit (loss of "-")</field>
+            <field name="code">C_TOPRO</field>
+            <field name="financial_report_id" ref="fal_account_financial_report_profitandloss0"/>
+            <field name="formulas">balance = C_OPROF.balance + C_NONOPINC.balance - C_NONOPEXP.balance</field>
+            <field name="sequence" eval="130"/>
+            <field name="level" eval="0" />
+        </record>
+        <record id="fal_account_financial_report_profit_tax_expenses0" model="account.financial.html.report.line">
+            <field name="name">Profit tax expenses</field>
+            <field name="code">C_PROTAXEX</field>
+            <field name="financial_report_id" ref="fal_account_financial_report_profitandloss0"/>
+            <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('fal_l10n_cn.fal_data_account_tag_profit_tax_expenses')])]" />
+            <field name="groupby">account_id</field>
+            <field name="formulas">balance = sum.balance</field>
+            <field name="sequence" eval="140"/>
+            <field name="level" eval="0" />
+        </record>
+        <record id="fal_account_financial_report_net_profit0" model="account.financial.html.report.line">
+            <field name="name">NET PROFIT</field>
+            <field name="code">C_NEP</field>
+            <field name="financial_report_id" ref="fal_account_financial_report_profitandloss0"/>
+            <field name="formulas">balance = C_TOPRO.balance - C_PROTAXEX.balance</field>
+            <field name="sequence" eval="150"/>
+            <field name="level" eval="0" />
+        </record>
+
+        <!-- BALANCE SHEET -->
+
+        <record id="fal_account_financial_report_balancesheet0" model="account.financial.html.report">
+            <field name="name">Balance Sheet</field>
+            <field name="debit_credit" eval="False"/>
+            <field name="report_type">no_date_range</field>
+            <field name='parent_id' ref='fal_account_reports_legal_statements_menu'/>
+        </record>
+        <record id="fal_account_financial_report_total_assets0" model="account.financial.html.report.line">
+            <field name="name">ASSETS</field>
+            <field name="code">C_TA</field>
+            <field name="financial_report_id" ref="fal_account_financial_report_balancesheet0"/>
+            <field name="formulas">balance = C_CA.balance + C_PNCAV.balance</field>
+            <field name="sequence" eval="1"/>
+            <field name="level" eval="0" />
+        </record>
+        <record id="fal_account_financial_report_current_assets_view0" model="account.financial.html.report.line">
+            <field name="name">Current Assets</field>
+            <field name="code">C_CA</field>
+            <field name="parent_id" ref='fal_account_financial_report_total_assets0'/>
+            <field name="formulas">balance = C_BA.balance + C_TFA.balance + C_NREC.balance + C_REC.balance + C_PRE.balance + C_INTREC.balance + C_DIVREC.balance + C_CAS.balance + C_NONCURASONY.balance + C_OTHCURASS.balance</field>
+            <field name="sequence" eval="1"/>
+            <field name="level" eval="1" />
+        </record>
+        <record id="fal_account_financial_report_bank0" model="account.financial.html.report.line">
+            <field name="name">Cash at bank and on hand</field>
+            <field name="code">C_BA</field>
+            <field name="parent_id" ref='fal_account_financial_report_current_assets_view0'/>
+            <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('fal_l10n_cn.fal_data_account_tag_liquidity')])]" />
+            <field name="groupby">account_id</field>
+            <field name="formulas">balance = sum.balance</field>
+            <field name="sequence" eval="10"/>
+            <field name="level" eval="2" />
+        </record>
+        <record id="fal_account_financial_report_trading_asset0" model="account.financial.html.report.line">
+            <field name="name">Trading financial assets</field>
+            <field name="code">C_TFA</field>
+            <field name="parent_id" ref='fal_account_financial_report_current_assets_view0'/>
+            <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('fal_l10n_cn.fal_data_account_tag_trading_financial_assets')])]" />
+            <field name="groupby">account_id</field>
+            <field name="formulas">balance = sum.balance</field>
+            <field name="sequence" eval="20"/>
+            <field name="level" eval="2" />
+        </record>
+        <record id="fal_account_financial_report_notes_receivable0" model="account.financial.html.report.line">
+            <field name="name">Notes Receivable</field>
+            <field name="code">C_NREC</field>
+            <field name="parent_id" ref='fal_account_financial_report_current_assets_view0'/>
+            <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('fal_l10n_cn.fal_data_account_tag_notes_receivable')])]" />
+            <field name="groupby">account_id</field>
+            <field name="formulas">balance = sum.balance</field>
+            <field name="sequence" eval="30"/>
+            <field name="level" eval="2" />
+        </record>
+        <record id="fal_account_financial_report_receivable_view0" model="account.financial.html.report.line">
+            <field name="name">Accounts Receivable</field>
+            <field name="code">C_REC</field>
+            <field name="parent_id" ref='fal_account_financial_report_current_assets_view0'/>
+            <field name="formulas">balance = C_RECP.balance - C_RECM.balance</field>
+            <field name="sequence" eval="40"/>
+            <field name="level" eval="2" />
+        </record>
+        <record id="fal_account_financial_report_receivable0" model="account.financial.html.report.line">
+            <field name="name">Accounts Receivable Plus</field>
+            <field name="code">C_RECP</field>
+            <field name="parent_id" ref=''/>
+            <field name="parent_id" ref='fal_account_financial_report_receivable_view0'/>
+            <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('fal_l10n_cn.fal_data_account_tag_receivable_plus')])]" />
+            <field name="groupby">account_id</field>
+            <field name="formulas">balance = sum.balance</field>
+            <field name="sequence" eval="10"/>
+            <field name="level" eval="3" />
+        </record>
+        <record id="fal_account_financial_report_receivable_minus0" model="account.financial.html.report.line">
+            <field name="name">Accounts Receivable minus</field>
+            <field name="code">C_RECM</field>
+            <field name="parent_id" ref=''/>
+            <field name="parent_id" ref='fal_account_financial_report_receivable_view0'/>
+            <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('fal_l10n_cn.fal_data_account_tag_receivable_minus')])]" />
+            <field name="groupby">account_id</field>
+            <field name="formulas">balance = sum.balance</field>
+            <field name="sequence" eval="20"/>
+            <field name="level" eval="3" />
+        </record>
+        <record id="fal_account_financial_report_prepayements0" model="account.financial.html.report.line">
+            <field name="name">Supplier Prepayment</field>
+            <field name="code">C_PRE</field>
+            <field name="parent_id" ref='fal_account_financial_report_current_assets_view0'/>
+            <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('fal_l10n_cn.fal_data_account_tag_prepayments')])]" />
+            <field name="groupby">account_id</field>
+            <field name="formulas">balance = sum.balance</field>
+            <field name="sequence" eval="50"/>
+            <field name="level" eval="2" />
+        </record>
+        <record id="fal_account_financial_report_interest_receivable0" model="account.financial.html.report.line">
+            <field name="name">Interest Receivable</field>
+            <field name="code">C_INTREC</field>
+            <field name="parent_id" ref='fal_account_financial_report_current_assets_view0'/>
+            <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('fal_l10n_cn.fal_data_account_tag_interest_receivable')])]" />
+            <field name="groupby">account_id</field>
+            <field name="formulas">balance = sum.balance</field>
+            <field name="sequence" eval="60"/>
+            <field name="level" eval="2" />
+        </record>
+        <record id="fal_account_financial_report_dividend_receivable0" model="account.financial.html.report.line">
+            <field name="name">Dividend Receivable</field>
+            <field name="code">C_DIVREC</field>
+            <field name="parent_id" ref='fal_account_financial_report_current_assets_view0'/>
+            <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('fal_l10n_cn.fal_data_account_tag_dividend_receivable')])]" />
+            <field name="groupby">account_id</field>
+            <field name="formulas">balance = sum.balance</field>
+            <field name="sequence" eval="70"/>
+            <field name="level" eval="2" />
+        </record>
+        <record id="fal_account_financial_report_other_receivable0" model="account.financial.html.report.line">
+            <field name="name">Other Receivable</field>
+            <field name="code">C_OTHREC</field>
+            <field name="parent_id" ref='fal_account_financial_report_current_assets_view0'/>
+            <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('fal_l10n_cn.fal_data_account_tag_other_receivable')])]" />
+            <field name="groupby">account_id</field>
+            <field name="formulas">balance = sum.balance</field>
+            <field name="sequence" eval="80"/>
+            <field name="level" eval="2" />
+        </record>
+        <record id="fal_account_financial_report_inventory_view0" model="account.financial.html.report.line">
+            <field name="name">Inventory</field>
+            <field name="code">C_CAS</field>
+            <field name="parent_id" ref='fal_account_financial_report_current_assets_view0'/>
+            <field name="formulas">balance = C_CASP.balance - C_CASM.balance</field>
+            <field name="sequence" eval="90"/>
+            <field name="level" eval="2" />
+        </record>
+        <record id="fal_account_financial_report_current_assets0" model="account.financial.html.report.line">
+            <field name="name">Inventory Plus</field>
+            <field name="code">C_CASP</field>
+            <field name="parent_id" ref=''/>
+            <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('fal_l10n_cn.fal_data_account_tag_inventory')])]" />
+            <field name="groupby">account_id</field>
+            <field name="formulas">balance = sum.balance</field>
+            <field name="sequence" eval="10"/>
+            <field name="level" eval="3" />
+        </record>
+        <record id="fal_account_financial_report_current_assets_minus0" model="account.financial.html.report.line">
+            <field name="name">Inventory Minus</field>
+            <field name="code">C_CASM</field>
+            <field name="parent_id" ref=''/>
+            <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('fal_l10n_cn.fal_data_account_tag_inventory_minus')])]" />
+            <field name="groupby">account_id</field>
+            <field name="formulas">balance = sum.balance</field>
+            <field name="sequence" eval="20"/>
+            <field name="level" eval="3" />
+        </record>
+        <record id="fal_account_financial_report_noncurrent_assets_one_year_view0" model="account.financial.html.report.line">
+            <field name="name">Non-Current Assets in one year</field>
+            <field name="code">C_NONCURASONY</field>
+            <field name="parent_id" ref='fal_account_financial_report_current_assets_view0'/>
+            <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('fal_l10n_cn.fal_data_account_tag_non_current_assets_one_year')])]" />
+            <field name="groupby">account_id</field>
+            <field name="formulas">balance = sum.balance</field>
+            <field name="sequence" eval="100"/>
+            <field name="level" eval="2" />
+        </record>
+        <record id="fal_account_financial_report_other_current_assets0" model="account.financial.html.report.line">
+            <field name="name">Other Current Assets</field>
+            <field name="code">C_OTHCURASS</field>
+            <field name="parent_id" ref='fal_account_financial_report_current_assets_view0'/>
+            <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('fal_l10n_cn.fal_data_account_tag_other_current_assets')])]" />
+            <field name="groupby">account_id</field>
+            <field name="formulas">balance = sum.balance</field>
+            <field name="sequence" eval="110"/>
+            <field name="level" eval="2" />
+        </record>
+        <record id="fal_account_financial_report_non_current_assets_view0" model="account.financial.html.report.line">
+            <field name="name">Non-current Assets</field>
+            <field name="code">C_PNCAV</field>
+            <field name="parent_id" ref='fal_account_financial_report_total_assets0'/>
+            <field name="formulas">balance = C_PNCA.balance + C_ASFINASS.balance + C_HMINV.balance + C_LTREC.balance + C_LTEQINV.balance + C_TGASS.balance + C_CWIP.balance + C_PRMAT.balance + C_DIFIASS.balance + C_PRBIOASS.balance + C_OGASS.balance + C_INTSS.balance + C_DEVEXP.balance + C_GWIL.balance + C_DEFASS.balance + C_DEFINCTAXASS.balance + C_OTHNCURASS.balance</field>
+            <field name="sequence" eval="10"/>
+            <field name="level" eval="1" />
+        </record>
+        <record id="fal_account_financial_report_non_current_assets0" model="account.financial.html.report.line">
+            <field name="name">Non-current Assets</field>
+            <field name="code">C_PNCA</field>
+            <field name="parent_id" ref='fal_account_financial_report_non_current_assets_view0'/>
+            <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('fal_l10n_cn.fal_data_account_tag_non_current_assets')])]" />
+            <field name="groupby">account_id</field>
+            <field name="formulas">balance = sum.balance</field>
+            <field name="sequence" eval="10"/>
+            <field name="level" eval="2" />
+        </record>
+        <record id="fal_account_financial_report_available_safe_finan_asset_view0" model="account.financial.html.report.line">
+            <field name="name">Available for sale financial assets</field>
+            <field name="code">C_ASFINASS</field>
+            <field name="parent_id" ref='fal_account_financial_report_non_current_assets_view0'/>
+            <field name="formulas">balance = C_ASFINASSP.balance - C_ASFINASSM.balance</field>
+            <field name="sequence" eval="20"/>
+            <field name="level" eval="2" />
+        </record>
+        <record id="fal_account_financial_report_available_safe_finan_asset0" model="account.financial.html.report.line">
+            <field name="name">Available for sale financial assets Plus</field>
+            <field name="code">C_ASFINASSP</field>
+            <field name="parent_id" ref=''/>
+            <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('fal_l10n_cn.fal_data_account_tag_available_sale_financial_assets')])]" />
+            <field name="groupby">account_id</field>
+            <field name="formulas">balance = sum.balance</field>
+            <field name="sequence" eval="10"/>
+            <field name="level" eval="3" />
+        </record>
+        <record id="fal_account_financial_report_available_safe_finan_asset_minus0" model="account.financial.html.report.line">
+            <field name="name">Available for sale financial assets Minus</field>
+            <field name="code">C_ASFINASSM</field>
+            <field name="parent_id" ref=''/>
+            <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('fal_l10n_cn.fal_data_account_tag_available_sale_financial_assets_minus')])]" />
+            <field name="groupby">account_id</field>
+            <field name="formulas">balance = sum.balance</field>
+            <field name="sequence" eval="20"/>
+            <field name="level" eval="3" />
+        </record>
+        <record id="fal_account_financial_report_held_maturity_investment_view0" model="account.financial.html.report.line">
+            <field name="name">Held to manturity investments</field>
+            <field name="code">C_HMINV</field>
+            <field name="parent_id" ref='fal_account_financial_report_non_current_assets_view0'/>
+            <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('fal_l10n_cn.fal_data_account_tag_held_maturity_investments')])]" />
+            <field name="groupby">account_id</field>
+            <field name="formulas">balance = sum.balance</field>
+            <field name="sequence" eval="30"/>
+            <field name="level" eval="2" />
+        </record>
+        <record id="fal_account_financial_report_held_maturity_investment0" model="account.financial.html.report.line">
+            <field name="name">Held to manturity investments Plus</field>
+            <field name="code">C_HMINVP</field>
+            <field name="parent_id" ref=''/>
+            <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('fal_l10n_cn.fal_data_account_tag_held_maturity_investments')])]" />
+            <field name="groupby">account_id</field>
+            <field name="formulas">balance = sum.balance</field>
+            <field name="sequence" eval="10"/>
+            <field name="level" eval="3" />
+        </record>
+        <record id="fal_account_financial_report_held_maturity_investment_minus0" model="account.financial.html.report.line">
+            <field name="name">Held to manturity investments Minus</field>
+            <field name="code">C_HMINVM</field>
+            <field name="parent_id" ref=''/>
+            <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('fal_l10n_cn.fal_data_account_tag_held_maturity_investments_minus')])]" />
+            <field name="groupby">account_id</field>
+            <field name="formulas">balance = sum.balance</field>
+            <field name="sequence" eval="20"/>
+            <field name="level" eval="3" />
+        </record>
+        <record id="fal_account_financial_report_long_term_rec_view0" model="account.financial.html.report.line">
+            <field name="name">Long-term Receivable</field>
+            <field name="code">C_LTREC</field>
+            <field name="parent_id" ref='fal_account_financial_report_non_current_assets_view0'/>
+            <field name="formulas">balance = C_LTRECP.balance - C_LTRECM.balance</field>
+            <field name="sequence" eval="40"/>
+            <field name="level" eval="2" />
+        </record>
+        <record id="fal_account_financial_report_long_term_rec0" model="account.financial.html.report.line">
+            <field name="name">Long-term Receivable Plus</field>
+            <field name="code">C_LTRECP</field>
+            <field name="parent_id" ref=''/>
+            <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('fal_l10n_cn.fal_data_account_tag_long_term_receivable')])]" />
+            <field name="groupby">account_id</field>
+            <field name="formulas">balance = sum.balance</field>
+            <field name="sequence" eval="10"/>
+            <field name="level" eval="3" />
+        </record>
+        <record id="fal_account_financial_report_long_term_rec_minus0" model="account.financial.html.report.line">
+            <field name="name">Long-term Receivable Minus</field>
+            <field name="code">C_LTRECM</field>
+            <field name="parent_id" ref=''/>
+            <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('fal_l10n_cn.fal_data_account_tag_long_term_receivable_minus')])]" />
+            <field name="groupby">account_id</field>
+            <field name="formulas">balance = sum.balance</field>
+            <field name="sequence" eval="20"/>
+            <field name="level" eval="3" />
+        </record>
+        <record id="fal_account_financial_report_long_term_eq_inv0" model="account.financial.html.report.line">
+            <field name="name">Long-term equity investments</field>
+            <field name="code">C_LTEQINV</field>
+            <field name="parent_id" ref='fal_account_financial_report_non_current_assets_view0'/>
+            <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('fal_l10n_cn.fal_data_account_tag_long_term_equity_investments')])]" />
+            <field name="groupby">account_id</field>
+            <field name="formulas">balance = sum.balance</field>
+            <field name="sequence" eval="50"/>
+            <field name="level" eval="2" />
+        </record>
+        <record id="fal_account_financial_report_tangible_assets_view0" model="account.financial.html.report.line">
+            <field name="name">Tangible Assets</field>
+            <field name="code">C_TGASS</field>
+            <field name="parent_id" ref='fal_account_financial_report_non_current_assets_view0'/>
+            <field name="formulas">balance = C_TGASSP.balance - C_TGASSM.balance</field>
+            <field name="sequence" eval="60"/>
+            <field name="level" eval="2" />
+        </record>
+        <record id="fal_account_financial_report_tangible_assets0" model="account.financial.html.report.line">
+            <field name="name">Tangible Assets Plus</field>
+            <field name="code">C_TGASSP</field>
+            <field name="parent_id" ref=''/>
+            <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('fal_l10n_cn.fal_data_account_tag_tangible_assets')])]" />
+            <field name="groupby">account_id</field>
+            <field name="formulas">balance = sum.balance</field>
+            <field name="sequence" eval="10"/>
+            <field name="level" eval="3" />
+        </record>
+        <record id="fal_account_financial_report_tangible_assets_minus0" model="account.financial.html.report.line">
+            <field name="name">Tangible Assets Minus</field>
+            <field name="code">C_TGASSM</field>
+            <field name="parent_id" ref=''/>
+            <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('fal_l10n_cn.fal_data_account_tag_tangible_assets_minus')])]" />
+            <field name="groupby">account_id</field>
+            <field name="formulas">balance = sum.balance</field>
+            <field name="sequence" eval="20"/>
+            <field name="level" eval="3" />
+        </record>
+        <record id="fal_account_financial_report_construction_work_process0" model="account.financial.html.report.line">
+            <field name="name">Construction in work in process</field>
+            <field name="code">C_CWIP</field>
+            <field name="parent_id" ref='fal_account_financial_report_non_current_assets_view0'/>
+            <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('fal_l10n_cn.fal_data_account_tag_construction_work_process')])]" />
+            <field name="groupby">account_id</field>
+            <field name="formulas">balance = sum.balance</field>
+            <field name="sequence" eval="70"/>
+            <field name="level" eval="2" />
+        </record>
+        <record id="fal_account_financial_report_project_material0" model="account.financial.html.report.line">
+            <field name="name">Project Material</field>
+            <field name="code">C_PRMAT</field>
+            <field name="parent_id" ref='fal_account_financial_report_non_current_assets_view0'/>
+            <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('fal_l10n_cn.fal_data_account_tag_project_material')])]" />
+            <field name="groupby">account_id</field>
+            <field name="formulas">balance = sum.balance</field>
+            <field name="sequence" eval="80"/>
+            <field name="level" eval="2" />
+        </record>
+        <record id="fal_account_financial_report_disposal_fix_assets0" model="account.financial.html.report.line">
+            <field name="name">Disposal of Fixed Assets</field>
+            <field name="code">C_DIFIASS</field>
+            <field name="parent_id" ref='fal_account_financial_report_non_current_assets_view0'/>
+            <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('fal_l10n_cn.fal_data_account_tag_disposal_fix_assets')])]" />
+            <field name="groupby">account_id</field>
+            <field name="formulas">balance = sum.balance</field>
+            <field name="sequence" eval="90"/>
+            <field name="level" eval="2" />
+        </record>
+        <record id="fal_account_financial_report_production_biological_assets0" model="account.financial.html.report.line">
+            <field name="name">Production of biological Assets</field>
+            <field name="code">C_PRBIOASS</field>
+            <field name="parent_id" ref='fal_account_financial_report_non_current_assets_view0'/>
+            <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('fal_l10n_cn.fal_data_account_tag_production_biological_assets')])]" />
+            <field name="groupby">account_id</field>
+            <field name="formulas">balance = sum.balance</field>
+            <field name="sequence" eval="100"/>
+            <field name="level" eval="2" />
+        </record>
+        <record id="fal_account_financial_report_oil_gas_assets0" model="account.financial.html.report.line">
+            <field name="name">Oil and gas Assets</field>
+            <field name="code">C_OGASS</field>
+            <field name="parent_id" ref='fal_account_financial_report_non_current_assets_view0'/>
+            <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('fal_l10n_cn.fal_data_account_tag_oil_gas_assets')])]" />
+            <field name="groupby">account_id</field>
+            <field name="formulas">balance = sum.balance</field>
+            <field name="sequence" eval="110"/>
+            <field name="level" eval="2" />
+        </record>
+        <record id="fal_account_financial_report_intangible_assets_view0" model="account.financial.html.report.line">
+            <field name="name">Intangible Assets</field>
+            <field name="code">C_INTSS</field>
+            <field name="parent_id" ref='fal_account_financial_report_non_current_assets_view0'/>
+            <field name="formulas">balance = C_INTSSP.balance - C_INTSSM.balance</field>
+            <field name="sequence" eval="120"/>
+            <field name="level" eval="2" />
+        </record>
+        <record id="fal_account_financial_report_intangible_assets0" model="account.financial.html.report.line">
+            <field name="name">Intangible Assets Plus</field>
+            <field name="code">C_INTSSP</field>
+            <field name="parent_id" ref=''/>
+            <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('fal_l10n_cn.fal_data_account_tag_intangible_assets')])]" />
+            <field name="groupby">account_id</field>
+            <field name="formulas">balance = sum.balance</field>
+            <field name="sequence" eval="10"/>
+            <field name="level" eval="3" />
+        </record>
+        <record id="fal_account_financial_report_intangible_assets_minus0" model="account.financial.html.report.line">
+            <field name="name">Intangible Assets Minus</field>
+            <field name="code">C_INTSSM</field>
+            <field name="parent_id" ref=''/>
+            <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('fal_l10n_cn.fal_data_account_tag_intangible_assets_minus')])]" />
+            <field name="groupby">account_id</field>
+            <field name="formulas">balance = sum.balance</field>
+            <field name="sequence" eval="20"/>
+            <field name="level" eval="3" />
+        </record>
+        <record id="fal_account_financial_report_development_expenditure0" model="account.financial.html.report.line">
+            <field name="name">Development Expenditure</field>
+            <field name="code">C_DEVEXP</field>
+            <field name="parent_id" ref='fal_account_financial_report_non_current_assets_view0'/>
+            <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('fal_l10n_cn.fal_data_account_tag_development_expenditure')])]" />
+            <field name="groupby">account_id</field>
+            <field name="formulas">balance = sum.balance</field>
+            <field name="sequence" eval="130"/>
+            <field name="level" eval="2" />
+        </record>
+        <record id="fal_account_financial_report_good_will0" model="account.financial.html.report.line">
+            <field name="name">Good Will</field>
+            <field name="code">C_GWIL</field>
+            <field name="parent_id" ref='fal_account_financial_report_non_current_assets_view0'/>
+            <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('fal_l10n_cn.fal_data_account_tag_goodwill')])]" />
+            <field name="groupby">account_id</field>
+            <field name="formulas">balance = sum.balance</field>
+            <field name="sequence" eval="140"/>
+            <field name="level" eval="2" />
+        </record>
+        <record id="fal_account_financial_report_deffered_assets0" model="account.financial.html.report.line">
+            <field name="name">Deffered Assets</field>
+            <field name="code">C_DEFASS</field>
+            <field name="parent_id" ref='fal_account_financial_report_non_current_assets_view0'/>
+            <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('fal_l10n_cn.fal_data_account_tag_deffered_assets')])]" />
+            <field name="groupby">account_id</field>
+            <field name="formulas">balance = sum.balance</field>
+            <field name="sequence" eval="150"/>
+            <field name="level" eval="2" />
+        </record>
+        <record id="fal_account_financial_report_deffered_income_tax_assets0" model="account.financial.html.report.line">
+            <field name="name">Deffered Income Tax Assets</field>
+            <field name="code">C_DEFINCTAXASS</field>
+            <field name="parent_id" ref='fal_account_financial_report_non_current_assets_view0'/>
+            <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('fal_l10n_cn.fal_data_account_tag_deffered_income_tax_assets')])]" />
+            <field name="groupby">account_id</field>
+            <field name="formulas">balance = sum.balance</field>
+            <field name="sequence" eval="160"/>
+            <field name="level" eval="2" />
+        </record>
+        <record id="fal_account_financial_report_other_non_current_assets0" model="account.financial.html.report.line">
+            <field name="name">Other Non-Current Assets</field>
+            <field name="code">C_OTHNCURASS</field>
+            <field name="parent_id" ref='fal_account_financial_report_non_current_assets_view0'/>
+            <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('fal_l10n_cn.fal_data_account_tag_non_current_assets')])]" />
+            <field name="groupby">account_id</field>
+            <field name="formulas">balance = sum.balance</field>
+            <field name="sequence" eval="170"/>
+            <field name="level" eval="2" />
+        </record>
+
+        <record id="fal_account_financial_report_liabilities_and_equities_view0" model="account.financial.html.report.line">
+            <field name="name">LIABILITIES &amp; EQUITIES</field>
+            <field name="code">C_LE</field>
+            <field name="financial_report_id" ref="fal_account_financial_report_balancesheet0"/>
+            <field name="groupby">account_id</field>
+            <field name="formulas">balance = C_LIAB.balance + C_EQ.balance</field>
+            <field name="sequence" eval="2"/>
+            <field name="green_on_positive" eval="False"/>
+            <field name="level" eval="0" />
+            <field name="fal_is_page2" eval="1" />
+        </record>
+        <record id="fal_account_financial_report_liabilities_view0" model="account.financial.html.report.line">
+            <field name="name">Liabilities</field>
+            <field name="code">C_LIAB</field>
+            <field name="parent_id" ref="fal_account_financial_report_liabilities_and_equities_view0"/>
+            <field name="groupby">account_id</field>
+            <field name="formulas">balance = C_CL.balance + C_NL.balance</field>
+            <field name="sequence" eval="10"/>
+            <field name="green_on_positive" eval="False"/>
+            <field name="level" eval="1" />
+            <field name="fal_is_page2" eval="1" />
+        </record>
+        <record id="fal_account_financial_report_current_liabilities_view0" model="account.financial.html.report.line">
+            <field name="name">Current Liabilities</field>
+            <field name="code">C_CL</field>
+            <field name="parent_id" ref='fal_account_financial_report_liabilities_view0'/>
+            <field name="formulas">balance = C_STLO.balance + C_TRFILI.balance + C_NPBLE.balance + C_ACPBLE.balance + C_CUSDEP.balance + C_STPAY.balance + C_TAPAY.balance + C_INTPAY.balance + C_DIVPAY.balance + C_OTHPAY.balance + C_NONCURLIAONYR.balance + C_OTHCURLIAB.balance</field>
+            <field name="sequence" eval="1"/>
+            <field name="green_on_positive" eval="False"/>
+            <field name="level" eval="2" />
+            <field name="fal_is_page2" eval="1" />
+        </record>
+        <record id="fal_account_financial_report_short_term_loan0" model="account.financial.html.report.line">
+            <field name="name">Short-term Loan</field>
+            <field name="code">C_STLO</field>
+            <field name="parent_id" ref='fal_account_financial_report_current_liabilities_view0'/>
+            <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('fal_l10n_cn.fal_data_account_tag_short_term_loan')])]"/>
+            <field name="groupby">account_id</field>
+            <field name="formulas">balance = -sum.balance</field>
+            <field name="sequence" eval="1"/>
+            <field name="level" eval="3" />
+            <field name="fal_is_page2" eval="1" />
+        </record>
+        <record id="fal_account_financial_report_trading_financial_liabilities0" model="account.financial.html.report.line">
+            <field name="name">Trading financial liabilities</field>
+            <field name="code">C_TRFILI</field>
+            <field name="parent_id" ref='fal_account_financial_report_current_liabilities_view0'/>
+            <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('fal_l10n_cn.fal_data_account_tag_trading_financial_liabilities')])]"/>
+            <field name="groupby">account_id</field>
+            <field name="formulas">balance = -sum.balance</field>
+            <field name="sequence" eval="10"/>
+            <field name="level" eval="3" />
+            <field name="fal_is_page2" eval="1" />
+        </record>
+        <record id="fal_account_financial_report_notes_payable0" model="account.financial.html.report.line">
+            <field name="name">Notes Payable</field>
+            <field name="code">C_NPBLE</field>
+            <field name="parent_id" ref='fal_account_financial_report_current_liabilities_view0'/>
+            <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('fal_l10n_cn.fal_data_account_tag_notes_payable')])]"/>
+            <field name="groupby">account_id</field>
+            <field name="formulas">balance = -sum.balance</field>
+            <field name="sequence" eval="20"/>
+            <field name="level" eval="3" />
+            <field name="fal_is_page2" eval="1" />
+        </record>
+        <record id="fal_account_financial_report_account_payable0" model="account.financial.html.report.line">
+            <field name="name">Accounts Payable</field>
+            <field name="code">C_ACPBLE</field>
+            <field name="parent_id" ref='fal_account_financial_report_current_liabilities_view0'/>
+            <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('fal_l10n_cn.fal_data_account_tag_payable')])]"/>
+            <field name="groupby">account_id</field>
+            <field name="formulas">balance = -sum.balance</field>
+            <field name="sequence" eval="30"/>
+            <field name="level" eval="3" />
+            <field name="fal_is_page2" eval="1" />
+        </record>
+        <record id="fal_account_financial_report_customer_deposit0" model="account.financial.html.report.line">
+            <field name="name">Customer Deposit</field>
+            <field name="code">C_CUSDEP</field>
+            <field name="parent_id" ref='fal_account_financial_report_current_liabilities_view0'/>
+            <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('fal_l10n_cn.fal_data_account_tag_customer_deposit')])]"/>
+            <field name="groupby">account_id</field>
+            <field name="formulas">balance = -sum.balance</field>
+            <field name="sequence" eval="40"/>
+            <field name="level" eval="3" />
+            <field name="fal_is_page2" eval="1" />
+        </record>
+        <record id="fal_account_financial_report_staff_payable0" model="account.financial.html.report.line">
+            <field name="name">Staff Payable</field>
+            <field name="code">C_STPAY</field>
+            <field name="parent_id" ref='fal_account_financial_report_current_liabilities_view0'/>
+            <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('fal_l10n_cn.fal_data_account_tag_staff_payable')])]"/>
+            <field name="groupby">account_id</field>
+            <field name="formulas">balance = -sum.balance</field>
+            <field name="sequence" eval="50"/>
+            <field name="level" eval="3" />
+            <field name="fal_is_page2" eval="1" />
+        </record>
+        <record id="fal_account_financial_report_tax_payable0" model="account.financial.html.report.line">
+            <field name="name">Tax Payable</field>
+            <field name="code">C_TAPAY</field>
+            <field name="parent_id" ref='fal_account_financial_report_current_liabilities_view0'/>
+            <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('fal_l10n_cn.fal_data_account_tag_tax_payable')])]"/>
+            <field name="groupby">account_id</field>
+            <field name="formulas">balance = -sum.balance</field>
+            <field name="sequence" eval="60"/>
+            <field name="level" eval="3" />
+            <field name="fal_is_page2" eval="1" />
+        </record>
+        <record id="fal_account_financial_report_interest_payable0" model="account.financial.html.report.line">
+            <field name="name">Interest Payable</field>
+            <field name="code">C_INTPAY</field>
+            <field name="parent_id" ref='fal_account_financial_report_current_liabilities_view0'/>
+            <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('fal_l10n_cn.fal_data_account_tag_interest_payable')])]"/>
+            <field name="groupby">account_id</field>
+            <field name="formulas">balance = -sum.balance</field>
+            <field name="sequence" eval="70"/>
+            <field name="level" eval="3" />
+            <field name="fal_is_page2" eval="1" />
+        </record>
+        <record id="fal_account_financial_report_divident_payable0" model="account.financial.html.report.line">
+            <field name="name">Divident Payable</field>
+            <field name="code">C_DIVPAY</field>
+            <field name="parent_id" ref='fal_account_financial_report_current_liabilities_view0'/>
+            <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('fal_l10n_cn.fal_data_account_tag_dividend_payable')])]"/>
+            <field name="groupby">account_id</field>
+            <field name="formulas">balance = -sum.balance</field>
+            <field name="sequence" eval="80"/>
+            <field name="level" eval="3" />
+            <field name="fal_is_page2" eval="1" />
+        </record>
+        <record id="fal_account_financial_report_other_payable0" model="account.financial.html.report.line">
+            <field name="name">Other Payable</field>
+            <field name="code">C_OTHPAY</field>
+            <field name="parent_id" ref='fal_account_financial_report_current_liabilities_view0'/>
+            <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('fal_l10n_cn.fal_data_account_tag_other_payable')])]"/>
+            <field name="groupby">account_id</field>
+            <field name="formulas">balance = -sum.balance</field>
+            <field name="sequence" eval="90"/>
+            <field name="level" eval="3" />
+            <field name="fal_is_page2" eval="1" />
+        </record>
+        <record id="fal_account_financial_report_non_current_liabilities_one_year0" model="account.financial.html.report.line">
+            <field name="name">Non-Current Liabilities in one year</field>
+            <field name="code">C_NONCURLIAONYR</field>
+            <field name="parent_id" ref='fal_account_financial_report_current_liabilities_view0'/>
+            <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('fal_l10n_cn.fal_data_account_tag_non_current_liabilities')])]"/>
+            <field name="groupby">account_id</field>
+            <field name="formulas">balance = -sum.balance</field>
+            <field name="sequence" eval="100"/>
+            <field name="level" eval="3" />
+            <field name="fal_is_page2" eval="1" />
+        </record>
+        <record id="fal_account_financial_report_other_current_liabilities0" model="account.financial.html.report.line">
+            <field name="name">Other Current Liabilities</field>
+            <field name="code">C_OTHCURLIAB</field>
+            <field name="parent_id" ref='fal_account_financial_report_current_liabilities_view0'/>
+            <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('fal_l10n_cn.fal_data_account_tag_current_liabilities')])]"/>
+            <field name="groupby">account_id</field>
+            <field name="formulas">balance = -sum.balance</field>
+            <field name="sequence" eval="110"/>
+            <field name="level" eval="3" />
+            <field name="fal_is_page2" eval="1" />
+        </record>
+        <record id="fal_account_financial_report_non_current_liabilities_view0" model="account.financial.html.report.line">
+            <field name="name">Non-current Liabilities</field>
+            <field name="code">C_NL</field>
+            <field name="parent_id" ref='fal_account_financial_report_liabilities_view0'/>
+            <field name="formulas">balance = C_LTLO.balance + C_BOPAY.balance + C_LTACP.balance + C_SPACP.balance + C_ACCLI.balance + C_DEFTACRE.balance + C_OTHNONLI.balance</field>
+            <field name="sequence" eval="20"/>
+            <field name="green_on_positive" eval="False"/>
+            <field name="level" eval="2" />
+            <field name="fal_is_page2" eval="1" />
+        </record>
+        <record id="fal_account_financial_report_long_term_loan0" model="account.financial.html.report.line">
+            <field name="name">Long-term Loan</field>
+            <field name="code">C_LTLO</field>
+            <field name="parent_id" ref='fal_account_financial_report_non_current_liabilities_view0'/>
+            <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('fal_l10n_cn.fal_data_account_tag_longterm_loan')])]" />
+            <field name="groupby">account_id</field>
+            <field name="formulas">balance = -sum.balance</field>
+            <field name="sequence" eval="10"/>
+            <field name="green_on_positive" eval="False"/>
+            <field name="level" eval="3" />
+            <field name="fal_is_page2" eval="1" />
+        </record>
+        <record id="fal_account_financial_report_bonds_payable0" model="account.financial.html.report.line">
+            <field name="name">Bonds Payable</field>
+            <field name="code">C_BOPAY</field>
+            <field name="parent_id" ref='fal_account_financial_report_non_current_liabilities_view0'/>
+            <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('fal_l10n_cn.fal_data_account_tag_bonds_payable')])]" />
+            <field name="groupby">account_id</field>
+            <field name="formulas">balance = -sum.balance</field>
+            <field name="sequence" eval="20"/>
+            <field name="green_on_positive" eval="False"/>
+            <field name="level" eval="3" />
+            <field name="fal_is_page2" eval="1" />
+        </record>
+        <record id="fal_account_financial_report_long_term_account_payable_view0" model="account.financial.html.report.line">
+            <field name="name">Long-term Accounts Payable</field>
+            <field name="code">C_LTACP</field>
+            <field name="parent_id" ref='fal_account_financial_report_non_current_liabilities_view0'/>
+            <field name="formulas">balance = C_LTACPP.balance - C_LTACPM.balance</field>
+            <field name="sequence" eval="30"/>
+            <field name="level" eval="3" />
+            <field name="fal_is_page2" eval="1" />
+        </record>
+        <record id="fal_account_financial_report_long_term_account_payable0" model="account.financial.html.report.line">
+            <field name="name">Long-term Accounts Payable Plus</field>
+            <field name="code">C_LTACPP</field>
+            <field name="parent_id" ref=''/>
+            <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('fal_l10n_cn.fal_data_account_tag_longterm_account_payable')])]" />
+            <field name="groupby">account_id</field>
+            <field name="formulas">balance = -sum.balance</field>
+            <field name="sequence" eval="10"/>
+            <field name="level" eval="4" />
+            <field name="fal_is_page2" eval="1" />
+        </record>
+        <record id="fal_account_financial_report_long_term_account_payable_minus0" model="account.financial.html.report.line">
+            <field name="name">Long-term Accounts Payable Minus</field>
+            <field name="code">C_LTACPM</field>
+            <field name="parent_id" ref=''/>
+            <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('fal_l10n_cn.fal_data_account_tag_longterm_account_payable_minus')])]" />
+            <field name="groupby">account_id</field>
+            <field name="formulas">balance = -sum.balance</field>
+            <field name="sequence" eval="20"/>
+            <field name="level" eval="4" />
+            <field name="fal_is_page2" eval="1" />
+        </record>
+        <record id="fal_account_financial_report_special_account_payable0" model="account.financial.html.report.line">
+            <field name="name">Special Accounts Payable</field>
+            <field name="code">C_SPACP</field>
+            <field name="parent_id" ref='fal_account_financial_report_non_current_liabilities_view0'/>
+            <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('fal_l10n_cn.fal_data_account_tag_special_accounts_payable')])]" />
+            <field name="groupby">account_id</field>
+            <field name="formulas">balance = -sum.balance</field>
+            <field name="sequence" eval="40"/>
+            <field name="level" eval="3" />
+            <field name="fal_is_page2" eval="1" />
+        </record>
+        <record id="fal_account_financial_report_accrued_liabilities0" model="account.financial.html.report.line">
+            <field name="name">Accrued Liabilities</field>
+            <field name="code">C_ACCLI</field>
+            <field name="parent_id" ref='fal_account_financial_report_non_current_liabilities_view0'/>
+            <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('fal_l10n_cn.fal_data_account_tag_accrued_liabilities')])]" />
+            <field name="groupby">account_id</field>
+            <field name="formulas">balance = -sum.balance</field>
+            <field name="sequence" eval="50"/>
+            <field name="level" eval="3" />
+            <field name="fal_is_page2" eval="1" />
+        </record>
+        <record id="fal_account_financial_report_deffered_taxation_credit0" model="account.financial.html.report.line">
+            <field name="name">Deffered taxation credit</field>
+            <field name="code">C_DEFTACRE</field>
+            <field name="parent_id" ref='fal_account_financial_report_non_current_liabilities_view0'/>
+            <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('fal_l10n_cn.fal_data_account_tag_deffered_taxation_credit')])]" />
+            <field name="groupby">account_id</field>
+            <field name="formulas">balance = -sum.balance</field>
+            <field name="sequence" eval="60"/>
+            <field name="level" eval="3" />
+            <field name="fal_is_page2" eval="1" />
+        </record>
+        <record id="fal_account_financial_report_other_non_current_liabilities0" model="account.financial.html.report.line">
+            <field name="name">Other Non-Current Liabilities</field>
+            <field name="code">C_OTHNONLI</field>
+            <field name="parent_id" ref='fal_account_financial_report_non_current_liabilities_view0'/>
+            <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('fal_l10n_cn.fal_data_account_tag_other_non_current_liabilities')])]" />
+            <field name="groupby">account_id</field>
+            <field name="formulas">balance = -sum.balance</field>
+            <field name="sequence" eval="70"/>
+            <field name="level" eval="3" />
+            <field name="fal_is_page2" eval="1" />
+        </record>
+        <record id="fal_account_financial_report_net_assets0" model="account.financial.html.report.line">
+            <field name="name">NET ASSETS</field>
+            <field name="code">C_NA</field>
+            <field name="formulas">balance = TA.balance - L.balance</field>
+            <field name="sequence" eval="3"/>
+            <field name="level" eval="0" />
+            <field name="fal_is_page2" eval="1" />
+        </record>
+        <record id="fal_account_financial_report_equity_view0" model="account.financial.html.report.line">
+            <field name="name">Equities</field>
+            <field name="code">C_EQ</field>
+            <field name="formulas">balance = C_SHCAP.balance + C_CAPRES.balance + C_LETREST.balance + C_SURRES.balance + C_UNPRO.balance</field>
+            <field name="sequence" eval="30"/>
+            <field name="parent_id" ref="fal_account_financial_report_liabilities_and_equities_view0"/>
+            <field name="level" eval="1" />
+            <field name="fal_is_page2" eval="1" />
+        </record>
+        <record id="fal_account_financial_report_share_capital0" model="account.financial.html.report.line">
+            <field name="name">Share Capital</field>
+            <field name="code">C_SHCAP</field>
+            <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('fal_l10n_cn.fal_data_account_tag_share_capital')])]" />
+            <field name="groupby">account_id</field>
+            <field name="formulas">balance = -sum.balance</field>
+            <field name="sequence" eval="1"/>
+            <field name="parent_id" ref="fal_account_financial_report_equity_view0"/>
+            <field name="level" eval="2" />
+            <field name="fal_is_page2" eval="1" />
+        </record>
+        <record id="fal_account_financial_report_capital_reserves0" model="account.financial.html.report.line">
+            <field name="name">Capital Reserves</field>
+            <field name="code">C_CAPRES</field>
+            <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('fal_l10n_cn.fal_data_account_tag_capital_reserves')])]" />
+            <field name="groupby">account_id</field>
+            <field name="formulas">balance = -sum.balance</field>
+            <field name="sequence" eval="10"/>
+            <field name="parent_id" ref="fal_account_financial_report_equity_view0"/>
+            <field name="level" eval="2" />
+            <field name="fal_is_page2" eval="1" />
+        </record>
+        <record id="fal_account_financial_report_less_treasury_stock0" model="account.financial.html.report.line">
+            <field name="name">Less: Treasury Stock</field>
+            <field name="code">C_LETREST</field>
+            <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('fal_l10n_cn.fal_data_account_tag_less_treasury_stock')])]" />
+            <field name="groupby">account_id</field>
+            <field name="formulas">balance = -sum.balance</field>
+            <field name="sequence" eval="20"/>
+            <field name="parent_id" ref="fal_account_financial_report_equity_view0"/>
+            <field name="level" eval="2" />
+            <field name="fal_is_page2" eval="1" />
+        </record>
+        <record id="fal_account_financial_report_surplus_reserves0" model="account.financial.html.report.line">
+            <field name="name">Surplus Reserves</field>
+            <field name="code">C_SURRES</field>
+            <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('fal_l10n_cn.fal_data_account_tag_surplus_reserves')])]" />
+            <field name="groupby">account_id</field>
+            <field name="formulas">balance = -sum.balance</field>
+            <field name="sequence" eval="30"/>
+            <field name="parent_id" ref="fal_account_financial_report_equity_view0"/>
+            <field name="level" eval="2" />
+            <field name="fal_is_page2" eval="1" />
+        </record>
+        <record id="fal_account_financial_report_undivided_profits0" model="account.financial.html.report.line">
+            <field name="name">Undivided Profits</field>
+            <field name="code">C_UNPRO</field>
+            <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('fal_l10n_cn.fal_data_account_tag_undivided_profits')])]" />
+            <field name="groupby">account_id</field>
+            <field name="formulas">balance = -sum.balance</field>
+            <field name="sequence" eval="40"/>
+            <field name="parent_id" ref="fal_account_financial_report_equity_view0"/>
+            <field name="level" eval="2" />
+            <field name="fal_is_page2" eval="1" />
+        </record>
+
+        <report
+            id="action_journal_entry_report"
+            model="account.move"
+            string="Print Journal Entry"
+            report_type="qweb-pdf"
+            name="fal_l10n_cn_report.fal_journal_entry_report"
+            file="fal_l10n_cn_report.fal_journal_entry_report"
+            />
+
+        <template id="fal_journal_entry_report" >
+            <t t-name="fal_l10n_cn_report.fal_journal_entry_report">
+                <t t-call="report.html_container">
+                    <t t-set="data_report_margin_top" t-value="12"/>
+                    <t t-set="data_report_header_spacing" t-value="9"/>
+                    <t t-set="data_report_dpi" t-value="110"/>
+                    <t t-set="page_number" t-value="0"/>
+                    <t t-foreach="docs" t-as="o">
+                        <div class="page">
+                            <t t-set="page_number" t-value="page_number + 1"/>
+                            <t t-set="number_of_section" t-value="int(round(len(o.line_ids)/5+0.5))" />
+                            <t t-set="number_of_last_section" t-value="len(o.line_ids)%5" />
+                            <t t-set="number_of_limit_last_page" t-value="len(o.line_ids)-number_of_last_section" />
+                            <t t-set="number_of_current_line" t-value="0" />
+                            <t t-foreach="range(number_of_section)" t-as="sec">
+                                <t t-set="number_of_last_current_line" t-value="number_of_current_line" />
+                                <t t-if="number_of_limit_last_page &gt; number_of_current_line">
+                                    <div style="page-break-inside:avoid;">
+                                        <h2 style="text-align: center;" t-field="o.company_id"/>
+                                        <h2 style="text-align: center;">Journal Entry</h2>
+                                        <table class="table table-condensed table-bordered">
+                                            <tr>
+                                                <td><strong>Reference:</strong></td>
+                                                <td><span t-field="o.ref"/></td>
+                                                <td><strong>Date:</strong></td>
+                                                <td><span t-field="o.date"/></td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>No:</strong></td>
+                                                <td><span t-field="o.name"/></td>
+                                                <td><strong>Period:</strong></td>
+                                                <td><span t-esc="time.strftime('%Y-%m', time.strptime(o.date,'%Y-%m-%d'))"/></td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Voucher No:</strong></td>
+                                                <td><t t-esc="page_number"/> (<t t-esc="sec + 1"/>/<t t-esc="number_of_section"/>)</td>
+                                                <td><strong></strong></td>
+                                                <td></td>
+                                            </tr>
+                                        </table>
+                                        <table class="table table-condensed table-bordered" style="margin: 1px;">
+                                            <thead>
+                                                <tr>
+                                                    <th>Description</th>
+                                                    <th>Account Name</th>
+                                                    <th>Debit</th>
+                                                    <th>Credit</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr t-foreach="o.line_ids[number_of_last_current_line:number_of_current_line+5]" t-as="move_line">
+                                                    <td t-att-style="td_style"><span t-field="move_line.name" /></td>
+                                                    <td t-att-style="td_style"><span t-field="move_line.account_id" /></td>
+                                                    <td t-att-style="td_style"><span t-field="move_line.debit" /></td>
+                                                    <td t-att-style="td_style"><span t-field="move_line.credit" /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="4"><strong>Continue to next section</strong></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <table class="table table-condensed">
+                                            <tr>
+                                                <td><strong>Operation:</strong></td>
+                                                <td></td>
+                                                <td><strong>Validation:</strong></td>
+                                                <td></td>
+                                                <td><strong>Post:</strong></td>
+                                                <td></td>
+                                                <td><strong>Cashier:</strong></td>
+                                                <td></td>
+                                                <td><strong>Preparation:</strong></td>
+                                                <td></td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                </t>
+                                <t t-if="number_of_limit_last_page &lt;= number_of_current_line">
+                                    <div style="page-break-inside:avoid;">
+                                            <h2 style="text-align: center;" t-field="o.company_id"/>
+                                            <h2 style="text-align: center;">Journal Entry</h2>
+                                            <table class="table table-condensed table-bordered">
+                                                <tr>
+                                                    <td><strong>Reference:</strong></td>
+                                                    <td><span t-field="o.ref"/></td>
+                                                    <td><strong>Date:</strong></td>
+                                                    <td><span t-field="o.date"/></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><strong>No:</strong></td>
+                                                    <td><span t-field="o.name"/></td>
+                                                    <td><strong>Period:</strong></td>
+                                                    <td><span t-esc="time.strftime('%Y-%m', time.strptime(o.date,'%Y-%m-%d'))"/></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><strong>Voucher No:</strong></td>
+                                                    <td><t t-esc="page_number"/> (<t t-esc="sec + 1"/>/<t t-esc="number_of_section"/>)</td>
+                                                    <td><strong></strong></td>
+                                                    <td></td>
+                                                </tr>
+                                            </table>
+                                            <table class="table table-condensed table-bordered" style="margin: 1px;">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Description</th>
+                                                        <th>Account Name</th>
+                                                        <th>Debit</th>
+                                                        <th>Credit</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr t-foreach="o.line_ids[number_of_last_current_line:]" t-as="move_line">
+                                                        <td t-att-style="td_style"><span t-field="move_line.name" /></td>
+                                                        <td t-att-style="td_style"><span t-field="move_line.account_id" /></td>
+                                                        <td t-att-style="td_style"><span t-field="move_line.debit" /></td>
+                                                        <td t-att-style="td_style"><span t-field="move_line.credit" /></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="2"><strong>Total</strong></td>
+                                                        <td><span t-field="o.amount"/></td>
+                                                        <td><span t-field="o.amount"/></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <table class="table table-condensed">
+                                                <tr>
+                                                    <td><strong>Operation:</strong></td>
+                                                    <td></td>
+                                                    <td><strong>Validation:</strong></td>
+                                                    <td></td>
+                                                    <td><strong>Post:</strong></td>
+                                                    <td></td>
+                                                    <td><strong>Cashier:</strong></td>
+                                                    <td></td>
+                                                    <td><strong>Preparation:</strong></td>
+                                                    <td></td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </t>
+                                <t t-set="number_of_current_line" t-value="number_of_current_line + 5" />
+                            </t>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+
+       <!-- <template id="fal_report_financial_body" inherit_id="account_reports.report_financial_body">
+            <xpath expr="//div/table" position="replace">
+                <table width="100%" t-att-class="' '.join(['o_account_reports_table', report.get_report_type() == 'date_range_extended' and 'table-striped' or ''])">
+                    <thead>
+                        <tr>
+                            <th/>
+                            <t t-set="column" t-value="0"/>
+                            <t t-foreach="context.get_columns_names()" t-as="column_name">
+                                <t t-set="column" t-value="column + 1"/>
+                                <th t-att-class="context.get_columns_types()[column - 1] == 'number' and 'text-right' or context.get_columns_types()[column - 1] == 'text' and  'text-left' or 'text-center'" t-raw="column_name" t-att-width="context.get_columns_types()[column - 1] == 'number' and '1%' or ''" style="padding-left: 15px;"/>
+                            </t>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <t t-foreach="filter(lambda r: not r.get('fal_is_page2',False) ,lines)" t-as="a">
+                            <t t-call="account_reports.report_financial_line" />
+                        </t>
+                    </tbody>
+                </table>
+                <t t-if="filter(lambda r: r.get('fal_is_page2',False) ,lines) != []">
+                    <table width="100%" t-att-class="' '.join(['o_account_reports_table', report.get_report_type() == 'date_range_extended' and 'table-striped' or ''])" style="page-break-before: always;">
+                        <thead>
+                            <tr>
+                                <th/>
+                                <t t-set="column" t-value="0"/>
+                                <t t-foreach="context.get_columns_names()" t-as="column_name">
+                                    <t t-set="column" t-value="column + 1"/>
+                                    <th t-att-class="context.get_columns_types()[column - 1] == 'number' and 'text-right' or context.get_columns_types()[column - 1] == 'text' and  'text-left' or 'text-center'" t-raw="column_name" t-att-width="context.get_columns_types()[column - 1] == 'number' and '1%' or ''" style="padding-left: 15px;"/>
+                                </t>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-foreach="filter(lambda r: r.get('fal_is_page2',False) ,lines)" t-as="a">
+                                <t t-call="account_reports.report_financial_line" />
+                            </t>
+                        </tbody>
+                    </table>
+                </t>
+            </xpath>
+        </template> -->
+
+
+    </data>
+</odoo>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="fal_invoice_line_account_change_wizard" model="ir.ui.view">
+            <field name="name">fal.invoice.line.account.change.wizard</field>
+            <field name="model">fal.invoice.line.account.change</field>
+            <field name="arch" type="xml">
+                <form string="Edit Account">
+                    <group>
+                        <h2>Are you sure you want to change the Account ?</h2>
+                    </group>
+                    <group>
+                        <group>
+                            <field name="account_id_from" string="From Account :" readonly="1"/>
+                            <field name="account_id" string="To Account :"/>
+                        </group>
+                    </group>
+                    <footer>
+                        <button name="changeAccount" string="Confirm" type="object"
+                            class="btn-primary"/>
+                        <button string="Cancel" class="btn-default" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+        <record id="action_fal_invoice_line_account_change_wizard" model="ir.actions.act_window">
+            <field name="name">Change Account Invoice Line</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">fal.invoice.line.account.change</field>
+            <field name="view_type">form</field>
+            <field name="view_id" ref="fal_invoice_line_account_change_wizard"/>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+    </data>
+</odoo>

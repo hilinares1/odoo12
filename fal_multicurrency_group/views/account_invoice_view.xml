@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_invoice_form_fal_currency_group" model="ir.ui.view">
+        <field name="name">account.invoice.form.fal.currency_group</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet/notebook/page[2]/group/group[1]/field[@name='company_id']" position="after">
+                <field name="group_currency_id" invisible="1"/>
+            </xpath>
+            <xpath expr="//sheet/notebook/page[1]/group" position="after">
+                <group class="oe_subtotal_footer oe_right">
+                        <field name="untaxed_amount_group_curr" widget="monetary"/>
+                        <field name="amount_tax_group_curr" widget="monetary"/>
+                        <field name="amount_total_group_curr" class="oe_subtotal_footer_separator" widget="monetary"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+   <record id="view_invoice_tree_fal_usd" model="ir.ui.view">
+        <field name="name">account.invoice.tree.fal.usd</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_tree"/>
+        <field name="arch" type="xml">
+            <data>
+                <field name="currency_id" groups="base.group_multi_currency" position="after">
+                    <field name="group_currency_id" invisible="1"/>
+                    <field name="company_currency_id" invisible="1"/>
+                    <field name="amount_total_company_signed" sum="Total Company Curr"/>
+                    <field name="amount_total_group_curr" sum="Total Group Curr"/>
+                    <field name="amount_ballance_group_curr" sum="Balance Group Curr"/>
+                </field>
+            </data>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_invoice_graph_fal_usd">
+        <field name="name">account.invoice.graph.fal.usd</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.view_invoice_graph"/>
+        <field name="arch" type="xml">
+            <data>
+                <field name="amount_total_signed" type="measure" position="replace">
+                    <field name="amount_total_group_curr" type="measure" />
+                </field>
+            </data>
+        </field>
+    </record>
+
+
+    <record id="view_invoice_supplier_form_fal_currency_group" model="ir.ui.view">
+        <field name="name">account.invoice.supplier.form.fal.currency_group</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_supplier_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet/notebook/page[@name='other_info']/group/group[2]/field[@name='company_id']" position="after">
+                <field name="group_currency_id" invisible="1"/>
+            </xpath>
+            <xpath expr="//sheet/notebook/page[1]/group/group[2]" position="after">
+                <group class="oe_subtotal_footer oe_right">
+                    <field name="untaxed_amount_group_curr" widget="monetary" options="{'currency_field': 'group_currency_id'}"/>
+                    <field name="amount_tax_group_curr" widget="monetary" options="{'currency_field': 'group_currency_id'}"/>
+                    <field name="amount_total_group_curr" class="oe_subtotal_footer_separator" widget="monetary" options="{'currency_field': 'group_currency_id'}"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+
+    <record id="view_invoice_supplier_tree_fal_usd" model="ir.ui.view">
+        <field name="name">account.invoice.supplier.tree.fal.usd</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_supplier_tree"/>
+        <field name="arch" type="xml">
+            <data>
+                <field name="currency_id" position="after">
+                    <field name="group_currency_id" invisible="1"/>
+                    <field name="company_currency_id" invisible="1"/>
+                    <field name="amount_total_company_signed" sum="Total Company Curr"/>
+                    <field name="amount_total_group_curr" sum="Total Group Curr"/>
+                    <field name="amount_ballance_group_curr" sum="Balance Group Curr"/>
+                </field>
+            </data>
+        </field>
+    </record>
+</odoo>

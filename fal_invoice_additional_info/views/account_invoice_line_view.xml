@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="view_account_invoice_line_filter_falline" model="ir.ui.view">
+            <field name="name">account.invoice.line.select.falline</field>
+            <field name="model">account.invoice.line</field>
+            <field name="arch" type="xml">
+                <search string="Search Invoice">
+                    <field name="name"/>
+                    <field name="product_id"/>
+                    <field name="account_analytic_id" />
+                    <field name="fal_status" />
+                    <group expand="0" string="Group By...">
+                        <filter string="Invoice" name="invoice" domain="[]" context="{'group_by':'invoice_id'}"/>
+                        <filter string="Project" name="project" domain="[]" context="{'group_by':'account_analytic_id'}"/>
+                        <filter string="Product" name="product" domain="[]" context="{'group_by':'product_id'}"/>
+                        <filter string="State" domain="[]" name="state" context="{'group_by':'fal_status'}"/>
+                    </group>
+               </search>
+            </field>
+        </record>
+
+       <record id="fal_view_invoice_line_tree" model="ir.ui.view">
+            <field name="name">account.invoice.line.tree</field>
+            <field name="model">account.invoice.line</field>
+            <field name="arch" type="xml">
+                <tree string="Invoice Line" create="false">
+                    <field name="invoice_id" />
+                    <field name="product_id" />
+                    <field name="name"/>
+                    <field name="account_analytic_id"/>
+                    <field name="account_id" groups="account.group_account_user"/>
+                    <field name="quantity"/>
+                    <field name="uom_id" groups="product.group_uom"/>
+                    <field name="price_unit"/>
+                    <field name="discount" groups="base.group_no_one"/>
+                    <field name="price_subtotal"/>
+                    <field name="fal_status" />
+                    <field name="currency_id" invisible="1"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_cus_invoice_line_tree_fal_line" model="ir.actions.act_window">
+            <field name="name">Customer Invoices Lines</field>
+            <field name="res_model">account.invoice.line</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,graph</field>
+            <field eval="False" name="view_id"/>
+            <field name="domain">[('invoice_id.type','=','out_invoice')]</field>
+            <field name="context">{'default_type': 'out_invoice', 'type': 'out_invoice', 'journal_type': 'sale', 'tree_view_ref': 'view_invoice_line_tree'}</field>
+            <field name="search_view_id" ref="view_account_invoice_line_filter_falline"/>
+            <field name="view_id" ref="fal_view_invoice_line_tree"/>
+            <field name="help" type="html">
+              <p>
+                Click to record a new costumer invoice line.
+              </p><p>
+                You can control the invoice line from your costumer according to
+                what you Sale. Odoo can also generate
+                draft invoices automatically from Sale or receipts.
+              </p>
+            </field>
+        </record>
+
+        <record id="action_sup_invoice_line_tree_fal_line" model="ir.actions.act_window">
+            <field name="name">Supplier Invoices Lines</field>
+            <field name="res_model">account.invoice.line</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,graph</field>
+            <field eval="False" name="view_id"/>
+            <field name="domain">[('invoice_id.type','=','in_invoice')]</field>
+            <field name="context">{'default_type': 'in_invoice', 'type': 'in_invoice', 'journal_type': 'purchase'}</field>
+            <field name="search_view_id" ref="view_account_invoice_line_filter_falline"/>
+            <field name="view_id" ref="fal_view_invoice_line_tree"/>
+            <field name="help" type="html">
+              <p>
+                Click to record a new supplier invoice line.
+              </p><p>
+                You can control the invoice line from your supplier according to
+                what you purchased or received. Odoo can also generate
+                draft invoices automatically from purchase orders or receipts.
+              </p>
+            </field>
+        </record>
+
+        <menuitem action="action_cus_invoice_line_tree_fal_line" id="menu_cus_invoice_line" parent="account.menu_finance_receivables" sequence="20"/>
+        <menuitem action="action_sup_invoice_line_tree_fal_line" id="menu_sup_invoice_line" parent="account.menu_finance_payables" sequence="20"/>
+    </data>
+</odoo>

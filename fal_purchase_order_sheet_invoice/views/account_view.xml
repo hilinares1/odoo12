@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="view_invoice_supplier_form_fal_ordersheet" model="ir.ui.view">
+            <field name="name">account.invoice.supplier.form.fal.ordersheet</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_supplier_form"/>
+            <field name="arch" type="xml">
+                <data>
+                    <xpath expr="//page[2]" position="after">
+                        <page string="Purchase Order">
+                            <field name="purchase_ids"/>
+                        </page>
+                    </xpath>
+                </data>
+            </field>
+        </record>
+    </data>
+</odoo>

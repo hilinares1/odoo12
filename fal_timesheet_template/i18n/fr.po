@@ -1,0 +1,308 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* fal_timesheet_template
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-08-15 04:18+0000\n"
+"PO-Revision-Date: 2018-08-15 11:21+0700\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: fr\n"
+"X-Generator: Poedit 2.1.1\n"
+
+#. module: fal_timesheet_template
+#: model:ir.actions.act_window,name:fal_timesheet_template.fal_timesheet_sheet_action
+#: model:ir.ui.menu,name:fal_timesheet_template.menu_fal_timesheet_sheet
+msgid "All Timesheet"
+msgstr "All Timesheet"
+
+#. module: fal_timesheet_template
+#: model:ir.ui.view,arch_db:fal_timesheet_template.fal_timesheet_sheet_form_faltimtemp
+msgid "Approve"
+msgstr "Approuver"
+
+#. module: fal_timesheet_template
+#: model:ir.ui.view,arch_db:fal_timesheet_template.view_fal_timesheet_sheet_filter_fal_timesheet_ext
+msgid "Business Unit"
+msgstr "Business Unit"
+
+#. module: fal_timesheet_template
+#: code:addons/fal_timesheet_template/models/hr_timesheet.py:157
+#, python-format
+msgid "Can not approve your own timesheet.                         Ask your manager first."
+msgstr "Can not approve your own timesheet.                         Ask your manager first."
+
+#. module: fal_timesheet_template
+#: code:addons/fal_timesheet_template/models/hr_timesheet.py:107
+#, python-format
+msgid "Can not set your own timesheet to draft.                         Ask your manager first."
+msgstr "Can not set your own timesheet to draft.                         Ask your manager first."
+
+#. module: fal_timesheet_template
+#: model:ir.model.fields,field_description:fal_timesheet_template.field_fal_timesheet_template_create_uid
+#: model:ir.model.fields,field_description:fal_timesheet_template.field_fal_timesheet_template_line_create_uid
+#: model:ir.model.fields,field_description:fal_timesheet_template.field_fal_timesheet_template_weekly_line_create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: fal_timesheet_template
+#: model:ir.model.fields,field_description:fal_timesheet_template.field_fal_timesheet_template_create_date
+#: model:ir.model.fields,field_description:fal_timesheet_template.field_fal_timesheet_template_line_create_date
+#: model:ir.model.fields,field_description:fal_timesheet_template.field_fal_timesheet_template_weekly_line_create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: fal_timesheet_template
+#: model:ir.model.fields,field_description:fal_timesheet_template.field_fal_timesheet_template_weekly_line_day
+msgid "Day"
+msgstr "Jour"
+
+#. module: fal_timesheet_template
+#: model:ir.ui.view,arch_db:fal_timesheet_template.fal_timesheet_template_form
+msgid "Day Assignation"
+msgstr "Jour d'Attribution"
+
+#. module: fal_timesheet_template
+#: model:ir.model.fields,field_description:fal_timesheet_template.field_fal_timesheet_template_line_week_id
+msgid "Day ID"
+msgstr "Jour ID"
+
+#. module: fal_timesheet_template
+#: selection:fal.timesheet.template,template_type:0
+msgid "Day by Day"
+msgstr "Par Jour"
+
+#. module: fal_timesheet_template
+#: model:ir.model.fields,field_description:fal_timesheet_template.field_fal_timesheet_template_display_name
+#: model:ir.model.fields,field_description:fal_timesheet_template.field_fal_timesheet_template_line_display_name
+#: model:ir.model.fields,field_description:fal_timesheet_template.field_fal_timesheet_template_weekly_line_display_name
+msgid "Display Name"
+msgstr "Nom à afficher"
+
+#. module: fal_timesheet_template
+#: model:ir.model.fields,field_description:fal_timesheet_template.field_fal_timesheet_template_employee_id
+msgid "Employee"
+msgstr "Employé"
+
+#. module: fal_timesheet_template
+#: selection:fal.timesheet.template.weekly.line,day:0
+msgid "Friday"
+msgstr "Vendredi"
+
+#. module: fal_timesheet_template
+#: model:ir.model.fields,field_description:fal_timesheet_template.field_fal_timesheet_template_id
+#: model:ir.model.fields,field_description:fal_timesheet_template.field_fal_timesheet_template_line_id
+#: model:ir.model.fields,field_description:fal_timesheet_template.field_fal_timesheet_template_weekly_line_id
+msgid "ID"
+msgstr "ID"
+
+#. module: fal_timesheet_template
+#: model:ir.model.fields,field_description:fal_timesheet_template.field_fal_timesheet_template___last_update
+#: model:ir.model.fields,field_description:fal_timesheet_template.field_fal_timesheet_template_line___last_update
+#: model:ir.model.fields,field_description:fal_timesheet_template.field_fal_timesheet_template_weekly_line___last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: fal_timesheet_template
+#: model:ir.model.fields,field_description:fal_timesheet_template.field_fal_timesheet_template_line_write_uid
+#: model:ir.model.fields,field_description:fal_timesheet_template.field_fal_timesheet_template_weekly_line_write_uid
+#: model:ir.model.fields,field_description:fal_timesheet_template.field_fal_timesheet_template_write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: fal_timesheet_template
+#: model:ir.model.fields,field_description:fal_timesheet_template.field_fal_timesheet_template_line_write_date
+#: model:ir.model.fields,field_description:fal_timesheet_template.field_fal_timesheet_template_weekly_line_write_date
+#: model:ir.model.fields,field_description:fal_timesheet_template.field_fal_timesheet_template_write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: fal_timesheet_template
+#: model:ir.ui.view,arch_db:fal_timesheet_template.fal_timesheet_template_form
+msgid "Line"
+msgstr "Ligne"
+
+#. module: fal_timesheet_template
+#: selection:fal.timesheet.template.weekly.line,day:0
+msgid "Monday"
+msgstr "Lundi"
+
+#. module: fal_timesheet_template
+#: model:ir.ui.view,arch_db:fal_timesheet_template.view_fal_timesheet_sheet_filter_fal_timesheet_ext
+msgid "My Tiimesheet"
+msgstr "Ma feuille de temps"
+
+#. module: fal_timesheet_template
+#: model:ir.actions.act_window,name:fal_timesheet_template.act_fal_my_timesheet
+msgid "My Timesheet"
+msgstr "Ma feuille de temps"
+
+#. module: fal_timesheet_template
+#: model:ir.ui.view,arch_db:fal_timesheet_template.view_fal_timesheet_sheet_filter_fal_timesheet_ext
+msgid "My Timesheets"
+msgstr "Mes feuilles de temps"
+
+#. module: fal_timesheet_template
+#: model:ir.model.fields,field_description:fal_timesheet_template.field_fal_timesheet_template_name
+msgid "Name"
+msgstr "Nom"
+
+#. module: fal_timesheet_template
+#: model:ir.actions.act_window,help:fal_timesheet_template.act_fal_my_timesheet
+msgid "New timesheet."
+msgstr "Nouvelle feuille de temps."
+
+#. module: fal_timesheet_template
+#: model:ir.model.fields,field_description:fal_timesheet_template.field_fal_timesheet_template_line_project_id
+msgid "Project"
+msgstr "Projet"
+
+#. module: fal_timesheet_template
+#: model:ir.model.fields,field_description:fal_timesheet_template.field_fal_timesheet_template_line_unit_amount
+msgid "Quantity"
+msgstr "Quantité"
+
+#. module: fal_timesheet_template
+#: selection:fal.timesheet.template.weekly.line,day:0
+msgid "Saturday"
+msgstr "Samedi"
+
+#. module: fal_timesheet_template
+#: model:ir.ui.view,arch_db:fal_timesheet_template.view_fal_timesheet_sheet_filter_fal_timesheet_ext
+msgid "Status"
+msgstr "État"
+
+#. module: fal_timesheet_template
+#: selection:fal.timesheet.template.weekly.line,day:0
+msgid "Sunday"
+msgstr "Dimanche"
+
+#. module: fal_timesheet_template
+#: model:ir.model.fields,field_description:fal_timesheet_template.field_fal_timesheet_template_line_task_id
+msgid "Task"
+msgstr "Tâche"
+
+#. module: fal_timesheet_template
+#: model:ir.model.fields,field_description:fal_timesheet_template.field_fal_timesheet_template_weekly_line_template_id
+msgid "Template"
+msgstr "Modèle"
+
+#. module: fal_timesheet_template
+#: model:ir.model.fields,field_description:fal_timesheet_template.field_fal_timesheet_template_weekly_line_template_line_ids
+#: model:ir.model.fields,field_description:fal_timesheet_template.field_fal_timesheet_template_weekly_line_template_line_name
+msgid "Template Line"
+msgstr "Ligne de Modèle"
+
+#. module: fal_timesheet_template
+#: selection:fal.timesheet.template.weekly.line,day:0
+msgid "Thursday"
+msgstr "Jeudi"
+
+#. module: fal_timesheet_template
+#: model:ir.ui.view,arch_db:fal_timesheet_template.fal_timesheet_template_form
+msgid "Timesheet Line Template"
+msgstr "Modèle de Ligne de Feuille de temps"
+
+#. module: fal_timesheet_template
+#: model:ir.model,name:fal_timesheet_template.model_hr_timesheet_sheet
+msgid "Timesheet Sheet"
+msgstr "Timesheet Sheet"
+
+#. module: fal_timesheet_template
+#: model:ir.actions.act_window,name:fal_timesheet_template.fal_timesheet_template_action
+#: model:ir.model.fields,field_description:fal_timesheet_template.field_fal_timesheet_template_line_fal_timesheet_template_id
+#: model:ir.model.fields,field_description:fal_timesheet_template.field_hr_timesheet_sheet_fal_timesheet_template_id
+#: model:ir.ui.menu,name:fal_timesheet_template.menu_fal_timesheet_template
+#: model:ir.ui.view,arch_db:fal_timesheet_template.fal_timesheet_template_form
+#: model:ir.ui.view,arch_db:fal_timesheet_template.fal_timesheet_template_tree
+msgid "Timesheet Template"
+msgstr "Modèle Feuille de temps"
+
+#. module: fal_timesheet_template
+#: model:ir.model.fields,field_description:fal_timesheet_template.field_fal_timesheet_template_fal_timesheet_template_line_ids
+msgid "Timesheet Template Line"
+msgstr "Ligne de Modèle Feuille de temps"
+
+#. module: fal_timesheet_template
+#: model:ir.actions.act_window,help:fal_timesheet_template.act_fal_my_timesheet
+msgid ""
+"Timesheets can also be invoiced to customers, depending on the\n"
+"                configuration of each project's related contract."
+msgstr ""
+"Les feuilles de temps peuvent être facturées au client, en fonction\n"
+"de la configuration de chaque projet / contrat."
+
+#. module: fal_timesheet_template
+#: selection:fal.timesheet.template.weekly.line,day:0
+msgid "Tuesday"
+msgstr "Mardi"
+
+#. module: fal_timesheet_template
+#: model:ir.model.fields,field_description:fal_timesheet_template.field_fal_timesheet_template_template_type
+msgid "Type"
+msgstr "Type"
+
+#. module: fal_timesheet_template
+#: selection:fal.timesheet.template.weekly.line,day:0
+msgid "Wednesday"
+msgstr "Mercredi"
+
+#. module: fal_timesheet_template
+#: code:addons/fal_timesheet_template/models/hr_timesheet.py:83
+#, python-format
+msgid "Week "
+msgstr "Semaine "
+
+#. module: fal_timesheet_template
+#: model:ir.model.fields,field_description:fal_timesheet_template.field_fal_timesheet_template_week_line_ids
+msgid "Weekly Line"
+msgstr "Ligne hebdomadaire"
+
+#. module: fal_timesheet_template
+#: selection:fal.timesheet.template,template_type:0
+msgid "Whole Week"
+msgstr "Semaine entière"
+
+#. module: fal_timesheet_template
+#: code:addons/fal_timesheet_template/models/hr_timesheet.py:75
+#, python-format
+msgid "You do not have any timesheet template.                 Please contact your HR manager."
+msgstr "Vous n'avez pas de modèle de feuille de temps.                 Veuillez contacter votre manager RH."
+
+#. module: fal_timesheet_template
+#: model:ir.actions.act_window,help:fal_timesheet_template.act_fal_my_timesheet
+msgid ""
+"You must record timesheets every day and confirm at the end\n"
+"                of the week. Once the timesheet is confirmed, it should be\n"
+"                validated by a manager."
+msgstr ""
+"Vous devez remplir votre feuille de temps chaque jour, et les confirmer\n"
+"à la fin de la semaine. Une fois la feuille confirmée, elle doit être\n"
+"validée par un gestionnaire."
+
+#. module: fal_timesheet_template
+#: model:ir.model,name:fal_timesheet_template.model_fal_timesheet_template
+msgid "fal.timesheet.template"
+msgstr "fal.timesheet.template"
+
+#. module: fal_timesheet_template
+#: model:ir.model,name:fal_timesheet_template.model_fal_timesheet_template_line
+msgid "fal.timesheet.template.line"
+msgstr "fal.timesheet.template.line"
+
+#. module: fal_timesheet_template
+#: model:ir.model,name:fal_timesheet_template.model_fal_timesheet_template_weekly_line
+msgid "fal.timesheet.template.weekly.line"
+msgstr "fal.timesheet.template.weekly.line"
+
+#. module: fal_timesheet_template
+#: model:ir.ui.menu,name:fal_timesheet_template.menu_hr_working_hours
+msgid "menu_hr_working_hours"
+msgstr "menu_hr_working_hours"

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- Sale Order/ Quotation form view -->
+    	<record id="view_order_form_inherit_fal_sale_archive" model="ir.ui.view">
+            <field name="name">view.order.form.inherit.fal.sale.archive</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <data>
+                    <xpath expr="//field[@name='order_line']/form/field[@name='state']" position="before">
+                        <!-- remove invisible if needed -->
+                        <label for="fal_comment_line_ids" string="Comment(s)" invisible="1"/>
+                        <field name="fal_comment_line_ids" invisible="1">
+                            <tree editable="bottom" string="Comments">
+                                <field name="fal_comment_template_id"/>
+                                <field name="value"/>
+                            </tree>
+                        </field>
+                    </xpath>
+                    <xpath expr="//field[@name='order_line']/tree" position="attributes">
+                        <attribute name="editable"></attribute>
+                    </xpath>
+                </data>
+            </field>
+        </record>
+    </data>
+</odoo>

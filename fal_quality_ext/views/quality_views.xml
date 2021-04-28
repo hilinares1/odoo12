@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<record id="quality_alert_view_kanban_inherit_hps_quality_ext" model="ir.ui.view">
+        <field name="name">quality_alert_view_kanban_inherit_hps_quality_ext</field>
+        <field name="model">quality.alert</field>
+        <field name="inherit_id" ref="quality_control.quality_alert_view_kanban"/>
+        <field name="arch" type="xml">
+        	<!-- Display value of fields short description and QA creation date on the kanban view of the quality alert -->
+            <xpath expr="//t[@t-name='kanban-box']/div/div[3]" position="after">
+            	<div>
+               		<field name="create_date"/>
+            	</div>
+            	<div>
+            		<field name="fal_short_description"/>
+            	</div>
+            </xpath>
+            <!-- make it appear on kanban view too. -->
+            <xpath expr="//t[@t-name='kanban-box']/div/div[@class='oe_kanban_bottom_right']/img" position="after">
+                <div class="pull-right" groups="base.group_user" style="padding-right: 5px">
+                    <field name="fal_kanban_state" widget="kanban_state_selection"/>
+                </div>
+            </xpath>
+        </field>
+    </record>
+    <!-- disable drag n drop kanban -->
+    <template id="quality_alert_kanban_no_drag" name="quality_alert_kanban_no_drag" inherit_id="web.assets_backend">
+        <xpath expr="." position="inside">
+            <script type="text/javascript" src="/fal_quality_ext/static/src/js/quality_alert_kanban_no_drag.js"/>
+        </xpath>
+    </template>
+</odoo>

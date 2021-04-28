@@ -1,0 +1,363 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* fixed_asset_report
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0+e-20190827\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-24 13:20+0000\n"
+"PO-Revision-Date: 2019-09-24 15:55+0200\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: aa\n"
+"X-Generator: Poedit 2.2.3\n"
+
+#. module: fixed_asset_report
+#: model_terms:ir.ui.view,arch_db:fixed_asset_report.fixed_asset_register_report_template
+#: model_terms:ir.ui.view,arch_db:fixed_asset_report.fixed_asset_schedule_report_template
+msgid "<b>Total</b>"
+msgstr "<b>اﻹجمالي</b>"
+
+#. module: fixed_asset_report
+#: model_terms:ir.ui.view,arch_db:fixed_asset_report.fixed_asset_register_report_template
+msgid ""
+"Accumulated\n"
+"                                    Depreciation"
+msgstr "مجمع الاهلاك"
+
+#. module: fixed_asset_report
+#: model_terms:ir.ui.view,arch_db:fixed_asset_report.fixed_asset_schedule_report_template
+msgid "Accumulated Depreciation"
+msgstr "مجمع الاهلاك"
+
+#. module: fixed_asset_report
+#: model_terms:ir.ui.view,arch_db:fixed_asset_report.fixed_asset_schedule_report_template
+msgid ""
+"Addition\n"
+"                                    during the Period"
+msgstr "إضافات الفترة"
+
+#. module: fixed_asset_report
+#: model_terms:ir.ui.view,arch_db:fixed_asset_report.action_fixed_asset_report_wizard_form
+msgid "Apply"
+msgstr "تطبيق"
+
+#. module: fixed_asset_report
+#: selection:fixed.asset.report.wizard,month:0
+msgid "April"
+msgstr "إبريل"
+
+#. module: fixed_asset_report
+#: model_terms:ir.ui.view,arch_db:fixed_asset_report.fixed_asset_register_report_template
+#: model_terms:ir.ui.view,arch_db:fixed_asset_report.fixed_asset_schedule_report_template
+msgid "Asset Category"
+msgstr "فئة الأصل"
+
+#. module: fixed_asset_report
+#: model:ir.model.fields,field_description:fixed_asset_report.field_account_asset_asset__asset_code
+#: model_terms:ir.ui.view,arch_db:fixed_asset_report.fixed_asset_register_report_template
+msgid "Asset Code"
+msgstr "كود الاصل"
+
+#. module: fixed_asset_report
+#: model_terms:ir.ui.view,arch_db:fixed_asset_report.fixed_asset_register_report_template
+msgid "Asset Name"
+msgstr "إسم اﻷصل"
+
+#. module: fixed_asset_report
+#: model:ir.model,name:fixed_asset_report.model_account_asset_asset
+msgid "Asset/Revenue Recognition"
+msgstr "إثبات الأصل/الربح"
+
+#. module: fixed_asset_report
+#: selection:fixed.asset.report.wizard,month:0
+msgid "August"
+msgstr "أغسطس"
+
+#. module: fixed_asset_report
+#: model_terms:ir.ui.view,arch_db:fixed_asset_report.action_fixed_asset_report_wizard_form
+msgid "Cancel"
+msgstr "إلغاء"
+
+#. module: fixed_asset_report
+#: model:ir.model.fields,field_description:fixed_asset_report.field_fixed_asset_report_wizard__category_ids
+msgid "Category(s)"
+msgstr "الفئات"
+
+#. module: fixed_asset_report
+#: model:ir.model.fields,field_description:fixed_asset_report.field_fixed_asset_report_wizard__radio_selection
+msgid "Chose Report Type"
+msgstr "أختر نوع التقرير"
+
+#. module: fixed_asset_report
+#: model_terms:ir.ui.view,arch_db:fixed_asset_report.fixed_asset_schedule_report_template
+msgid "Closing Balance"
+msgstr "رصيد الفترة"
+
+#. module: fixed_asset_report
+#: model_terms:ir.ui.view,arch_db:fixed_asset_report.fixed_asset_register_report_template
+#: model_terms:ir.ui.view,arch_db:fixed_asset_report.fixed_asset_schedule_report_template
+msgid "Cost"
+msgstr "التكلفة"
+
+#. module: fixed_asset_report
+#: model:ir.model.fields,field_description:fixed_asset_report.field_fixed_asset_report_wizard__create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: fixed_asset_report
+#: model:ir.model.fields,field_description:fixed_asset_report.field_fixed_asset_report_wizard__create_date
+msgid "Created on"
+msgstr "أنشئ في"
+
+#. module: fixed_asset_report
+#: model_terms:ir.ui.view,arch_db:fixed_asset_report.fixed_asset_register_report_template
+msgid "Date of Asset"
+msgstr "تاريخ الاصل"
+
+#. module: fixed_asset_report
+#: selection:fixed.asset.report.wizard,month:0
+msgid "December"
+msgstr "ديسمبر"
+
+#. module: fixed_asset_report
+#: model_terms:ir.ui.view,arch_db:fixed_asset_report.fixed_asset_schedule_report_template
+msgid ""
+"Depreciation Charged during the\n"
+"                                    Period"
+msgstr "إهلاكات الفترة"
+
+#. module: fixed_asset_report
+#: model:ir.model.fields,field_description:fixed_asset_report.field_fixed_asset_report_wizard__display_name
+#: model:ir.model.fields,field_description:fixed_asset_report.field_report_fixed_asset_report_fixed_asset_register_report_template__display_name
+#: model:ir.model.fields,field_description:fixed_asset_report.field_report_fixed_asset_report_fixed_asset_schedule_report_template__display_name
+msgid "Display Name"
+msgstr "الاسم المعروض"
+
+#. module: fixed_asset_report
+#: model_terms:ir.ui.view,arch_db:fixed_asset_report.fixed_asset_schedule_report_template
+msgid ""
+"Disposal\n"
+"                                    during the Period"
+msgstr "المستبعد من اﻹهلاك عن الفترة"
+
+#. module: fixed_asset_report
+#: selection:fixed.asset.report.wizard,month:0
+msgid "February"
+msgstr "فبراير"
+
+#. module: fixed_asset_report
+#: model_terms:ir.ui.view,arch_db:fixed_asset_report.fixed_asset_schedule_report_template
+msgid ""
+"Fixed Asset\n"
+"                                Schedule"
+msgstr "ملخص إهلاك الاصول"
+
+#. module: fixed_asset_report
+#: model_terms:ir.ui.view,arch_db:fixed_asset_report.fixed_asset_schedule_report_template
+msgid ""
+"Fixed Asset\n"
+"                                Schedule for the period from"
+msgstr "من تاريخ"
+
+#. module: fixed_asset_report
+#: model_terms:ir.ui.view,arch_db:fixed_asset_report.fixed_asset_register_report_template
+msgid "Fixed Asset Register"
+msgstr "بنود الاصول الثابتة"
+
+#. module: fixed_asset_report
+#: model:ir.actions.report,name:fixed_asset_report.report_fixed_asset_register
+msgid "Fixed Asset Register Report"
+msgstr "تقرير بنود الاصول الثابتة"
+
+#. module: fixed_asset_report
+#: model_terms:ir.ui.view,arch_db:fixed_asset_report.fixed_asset_register_report_template
+msgid "Fixed Asset Register for the month of"
+msgstr "لشهر"
+
+#. module: fixed_asset_report
+#: model:ir.actions.act_window,name:fixed_asset_report.action_fixed_asset_report_wizard
+#: model:ir.ui.menu,name:fixed_asset_report.menu_action_fixed_asset_report
+#: model_terms:ir.ui.view,arch_db:fixed_asset_report.action_fixed_asset_report_wizard_form
+msgid "Fixed Asset Report"
+msgstr "تقرير الاصول الثابتة"
+
+#. module: fixed_asset_report
+#: model:ir.actions.report,name:fixed_asset_report.report_fixed_asset_schedule
+msgid "Fixed Asset Schedule Report"
+msgstr "ملخص فئات إهلاكات الاصول"
+
+#. module: fixed_asset_report
+#: model:ir.model.fields,field_description:fixed_asset_report.field_fixed_asset_report_wizard__from_date
+msgid "From"
+msgstr "من"
+
+#. module: fixed_asset_report
+#: model:ir.model.fields,field_description:fixed_asset_report.field_fixed_asset_report_wizard__id
+#: model:ir.model.fields,field_description:fixed_asset_report.field_report_fixed_asset_report_fixed_asset_register_report_template__id
+#: model:ir.model.fields,field_description:fixed_asset_report.field_report_fixed_asset_report_fixed_asset_schedule_report_template__id
+msgid "ID"
+msgstr "المعرف"
+
+#. module: fixed_asset_report
+#: model_terms:ir.ui.view,arch_db:fixed_asset_report.action_fixed_asset_report_wizard_form
+msgid ""
+"If no category is selected, this report will be applied to\n"
+"                    all asset categories."
+msgstr "سوف يتم عرض جميع فئات الاصول اذا لم يتم اختيار فئة محددة."
+
+#. module: fixed_asset_report
+#: selection:fixed.asset.report.wizard,month:0
+msgid "January"
+msgstr "يناير"
+
+#. module: fixed_asset_report
+#: selection:fixed.asset.report.wizard,month:0
+msgid "July"
+msgstr "يوليو"
+
+#. module: fixed_asset_report
+#: selection:fixed.asset.report.wizard,month:0
+msgid "June"
+msgstr "يونيو"
+
+#. module: fixed_asset_report
+#: model:ir.model.fields,field_description:fixed_asset_report.field_fixed_asset_report_wizard____last_update
+#: model:ir.model.fields,field_description:fixed_asset_report.field_report_fixed_asset_report_fixed_asset_register_report_template____last_update
+#: model:ir.model.fields,field_description:fixed_asset_report.field_report_fixed_asset_report_fixed_asset_schedule_report_template____last_update
+msgid "Last Modified on"
+msgstr "آخر تعديل في"
+
+#. module: fixed_asset_report
+#: model:ir.model.fields,field_description:fixed_asset_report.field_fixed_asset_report_wizard__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: fixed_asset_report
+#: model:ir.model.fields,field_description:fixed_asset_report.field_fixed_asset_report_wizard__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: fixed_asset_report
+#: model:ir.model.fields,field_description:fixed_asset_report.field_account_asset_asset__manufacturer
+#: model_terms:ir.ui.view,arch_db:fixed_asset_report.fixed_asset_register_report_template
+msgid "Manufacturer"
+msgstr "المصنع"
+
+#. module: fixed_asset_report
+#: selection:fixed.asset.report.wizard,month:0
+msgid "March"
+msgstr "مارس"
+
+#. module: fixed_asset_report
+#: selection:fixed.asset.report.wizard,month:0
+msgid "May"
+msgstr "مايو"
+
+#. module: fixed_asset_report
+#: model:ir.model.fields,field_description:fixed_asset_report.field_account_asset_asset__model_number
+#: model_terms:ir.ui.view,arch_db:fixed_asset_report.fixed_asset_register_report_template
+msgid "Model Number"
+msgstr "رقم الموديل"
+
+#. module: fixed_asset_report
+#: model_terms:ir.ui.view,arch_db:fixed_asset_report.fixed_asset_schedule_report_template
+msgid ""
+"Net\n"
+"                                    Book"
+msgstr "صافي القيمة الدفترية"
+
+#. module: fixed_asset_report
+#: model_terms:ir.ui.view,arch_db:fixed_asset_report.fixed_asset_register_report_template
+msgid "Net Book"
+msgstr "صافي القيمة الدفترية"
+
+#. module: fixed_asset_report
+#: selection:fixed.asset.report.wizard,month:0
+msgid "November"
+msgstr "نوفمبر"
+
+#. module: fixed_asset_report
+#: selection:fixed.asset.report.wizard,month:0
+msgid "October"
+msgstr "اكتوبر"
+
+#. module: fixed_asset_report
+#: model_terms:ir.ui.view,arch_db:fixed_asset_report.fixed_asset_schedule_report_template
+msgid ""
+"Opening\n"
+"                                    Balance"
+msgstr "قيمة اول المدة"
+
+#. module: fixed_asset_report
+#: model_terms:ir.ui.view,arch_db:fixed_asset_report.fixed_asset_schedule_report_template
+msgid "Opening Addition"
+msgstr "قيمة الاضافات اول المدة"
+
+#. module: fixed_asset_report
+#: model_terms:ir.ui.view,arch_db:fixed_asset_report.fixed_asset_schedule_report_template
+msgid "Opening Disposal"
+msgstr "قيمة المستبعد اول المدة"
+
+#. module: fixed_asset_report
+#: selection:fixed.asset.report.wizard,radio_selection:0
+msgid "Register"
+msgstr "تفاصيل بنود الاصول"
+
+#. module: fixed_asset_report
+#: selection:fixed.asset.report.wizard,radio_selection:0
+msgid "Schedule"
+msgstr "فئة الاصول"
+
+#. module: fixed_asset_report
+#: model:ir.model.fields,field_description:fixed_asset_report.field_fixed_asset_report_wizard__month
+msgid "Select Month"
+msgstr "الشهر"
+
+#. module: fixed_asset_report
+#: code:addons/fixed_asset_report/wizard/fixed_asset_report_wizard.py:68
+#: code:addons/fixed_asset_report/wizard/fixed_asset_report_wizard.py:72
+#, python-format
+msgid "Select Month."
+msgstr "برجاء اختيار الشهر."
+
+#. module: fixed_asset_report
+#: selection:fixed.asset.report.wizard,month:0
+msgid "September"
+msgstr "سبتمبر"
+
+#. module: fixed_asset_report
+#: model:ir.model.fields,field_description:fixed_asset_report.field_account_asset_asset__serial_number
+#: model_terms:ir.ui.view,arch_db:fixed_asset_report.fixed_asset_register_report_template
+msgid "Serial Number"
+msgstr "رقم المسلسل"
+
+#. module: fixed_asset_report
+#: model:ir.model.fields,field_description:fixed_asset_report.field_fixed_asset_report_wizard__to_date
+msgid "To"
+msgstr "إلى"
+
+#. module: fixed_asset_report
+#: model:ir.model,name:fixed_asset_report.model_report_fixed_asset_report_fixed_asset_register_report_template
+msgid "fixed_asset_register_report_template Report"
+msgstr "تقرير بنود الاصول الثابتة"
+
+#. module: fixed_asset_report
+#: model:ir.model,name:fixed_asset_report.model_fixed_asset_report_wizard
+msgid "fixed_asset_report_wizard"
+msgstr "معالج تقرير الاصول الثابتة"
+
+#. module: fixed_asset_report
+#: model:ir.model,name:fixed_asset_report.model_report_fixed_asset_report_fixed_asset_schedule_report_template
+msgid "fixed_asset_schedule_report_template Report"
+msgstr "تقرير فئات الاصول الثابتة"
+
+#. module: fixed_asset_report
+#: model_terms:ir.ui.view,arch_db:fixed_asset_report.fixed_asset_schedule_report_template
+msgid "to"
+msgstr "إلى"

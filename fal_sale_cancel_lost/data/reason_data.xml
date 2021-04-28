@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Lost Reason -->
+        <record id="lost_reason1" model="fal.lost.reason">
+            <field name="name">Too expensive</field>
+        </record>
+        <record id="lost_reason2" model="fal.lost.reason">
+            <field name="name">Choose other brand</field>
+        </record>
+        <record id="lost_reason3" model="fal.lost.reason">
+            <field name="name">Their customer cancelled the order</field>
+        </record>
+        <record id="lost_reason4" model="fal.lost.reason">
+            <field name="name">Project cancelled</field>
+        </record>
+        <record id="lost_reason5" model="fal.lost.reason">
+            <field name="name">Bought directly from other HPS branch</field>
+        </record>
+        <record id="lost_reason6" model="fal.lost.reason">
+            <field name="name">Other reason</field>
+        </record>
+
+        <!-- Cancel Reason -->
+         <record id="cancel_reason1" model="fal.cancel.reason">
+            <field name="name">Repeated quotation</field>
+        </record>
+         <record id="cancel_reason2" model="fal.cancel.reason">
+            <field name="name">Duplicate Quotation</field>
+        </record>
+         <record id="cancel_reason3" model="fal.cancel.reason">
+            <field name="name">Other reason</field>
+        </record>
+
+    </data>
+</odoo>

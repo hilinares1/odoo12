@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+    <record id="checkin_partner_inherit_form_view" model="ir.ui.view">
+        <field name="name">checkin.partner.inherit.form.view</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet" position="before">
+                <header>
+                    <button type="object"  name="location_checkin_dummy" custom="getlocation" string="Check-in"
+                            class="oe_highlight" attrs="{'invisible':[('customer','=',False)]}"/>
+                </header>
+            </xpath>
+            <xpath expr="//notebook[last()]" position="inside">
+                <page string="Visits" attrs="{'invisible':[('customer','=',False)]}">
+                    <field name="customer_visits_ids">
+                        <tree edit="0" create="0" delete="0"
+                              decoration-success="(distance &lt; 500)" decoration-warning="(distance &gt;=500) and (distance&lt;=1500)" decoration-danger="(distance &gt; 1500)"
+                              editable="buttom">
+                            <!--<field name="name"/>-->
+                            <field name="visit_date"/>
+                            <field name="user_id"/>
+                            <field name="distance"/>
+                            <field name="partner_id" invisible="1"/>
+                        </tree>
+                    </field>
+                </page>
+
+            </xpath>
+
+        </field>
+    </record>
+
+
+
+</odoo>

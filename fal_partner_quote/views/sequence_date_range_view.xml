@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="fal_ir_sequence_date_range_tree_view" model="ir.ui.view">
+            <field name="name">fal_ir_sequence_date_range_tree_view</field>
+            <field name="model">ir.sequence.date_range</field>
+            <field name="arch" type="xml">
+                <tree string="Date Range">
+                    <field name="date_from"/>
+                    <field name="date_to"/>
+                    <field name="number_next_actual"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="fal_ir_sequence_date_range_form_view" model="ir.ui.view">
+            <field name="name">fal_ir_sequence_date_range_form_view</field>
+            <field name="model">ir.sequence.date_range</field>
+            <field name="arch" type="xml">
+                <form string="Date Range">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="date_from"/>
+                                <field name="date_to"/>
+                                <field name="number_next_actual"/>
+                            </group>
+                            <group>
+                                <field name="sequence_id"/>
+                                <field name="number_next"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="fal_ir_sequence_date_range_action_view" model="ir.actions.act_window">
+            <field name="name">Sequence Date Range</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">ir.sequence.date_range</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to create Sequence Date Range.
+              </p>
+            </field>
+        </record>
+
+        <menuitem
+            action="fal_ir_sequence_date_range_action_view"
+            id="fal_ir_sequence_date_range_menuitem"
+            parent="base.next_id_5"
+            sequence="22"/>
+    </data>
+</odoo>

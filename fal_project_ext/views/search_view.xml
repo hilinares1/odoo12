@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+    	<record id="view_task_search_form_falpext" model="ir.ui.view">
+            <field name="name">project.task.search.form.falpext</field>
+            <field name="model">project.task</field>
+            <field name="inherit_id" ref="project.view_task_search_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="before">
+                    <field name="id" string="Tasks ID"/>
+                </xpath>
+                <xpath expr="//filter[@name='activities_overdue']" position="before">
+                    <filter name="Deadlines" string="Deadlines" context="{'deadline_visible': False}" domain="[('date_deadline','&lt;&gt;',False)]" help="Show only tasks having a deadline"/>
+                </xpath>
+                <xpath expr="//filter[@name='my_tasks']" position="after">
+                    <filter name="My project" string="My Project" domain="[('project_id.user_id','=',uid)]" help="My Projects"/>
+                </xpath>
+                <xpath expr="//filter[@name='company']" position="after">
+                    <filter string="Users" name="group_user_id" domain="[]"  context="{'group_by':'user_id'}"/>
+                    <filter string="Final Customer" name="Final Customer" domain="[]"  context="{'group_by':'project_id_partner_id'}"/>
+                    <separator/>
+                    <filter string="Deadline" name="Deadline" domain="[]" context="{'group_by':'date_deadline'}"/>
+                    <filter string="Start Date" name="Start Date" domain="[]" context="{'group_by':'date_start'}" groups="base.group_no_one"/>
+                    <filter string="End Date" name="End Date" domain="[]" context="{'group_by':'date_end'}" groups="base.group_no_one"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_project_project_filter_falpext" model="ir.ui.view">
+            <field name="name">project.project.select.fal.pext</field>
+            <field name="model">project.project</field>
+            <field name="inherit_id" ref="project.view_project_project_filter" />
+            <field name="arch" type="xml">
+                <xpath expr="//filter[@name='followed_by_me']" position="after">
+                    <filter string="Member" name="Member" domain="['|',('user_id', '=', uid),('favorite_user_ids', '=', uid)]" help="Projects in which I am a member."/>
+                    <filter string="Project(s) Manager" name="Project(s) Manager" domain="[('user_id','=',uid)]" help="Projects in which I am a manager"/>
+                </xpath>
+                <xpath expr="//field[@name='partner_id']" position="after">
+                    <separator/>
+                    <filter name="message_unread" string="Unread Messages" domain="[('message_unread','=',True)]"/>
+                </xpath>
+                <field name="name" position="attributes">
+                    <attribute name="filter_domain">['|',('name','ilike',self), ('code','ilike',self)]</attribute>
+                </field>
+            </field>
+        </record>
+    </data>
+</odoo>

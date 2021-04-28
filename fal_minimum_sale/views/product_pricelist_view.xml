@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- On product form view -->
+        <record id="view_product_template_common_min_price_form" model="ir.ui.view">
+            <field name="name">product.template.common.min_price.form</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='item_ids']/tree/field[@name='fixed_price']" position="before">
+                    <field name="fal_salesman_max_reduce" string="Salesman -%"/>
+                    <field name="fal_salesman_max_increase" string="Salesman +%"/>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- On pricelist view -->
+        <record id="view_product_pricelist_min_price_form" model="ir.ui.view">
+            <field name="name">product.pricelist.min_price.form</field>
+            <field name="model">product.pricelist</field>
+            <field name="inherit_id" ref="product.product_pricelist_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='item_ids']/tree/field[@name='price']" position="after">
+                    <field name="fal_salesman_max_reduce" string="Salesman -%"/>
+                    <field name="fal_salesman_max_increase" string="Salesman +%"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="product_pricelist_item_min_price_form_view" model="ir.ui.view">
+            <field name="name">product.pricelist.item.min.priceform</field>
+            <field name="model">product.pricelist.item</field>
+            <field name="inherit_id" ref="product.product_pricelist_item_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form" position="inside">
+                    <group string="Minimum Sales Price">
+                        <label for="fal_salesman_max_reduce" string="Salesman Maximum Price Reduction"/>
+                        <div>
+                            <field name="fal_salesman_max_reduce" nolabel="1" class="oe_inline"/>%
+                        </div>
+                        <label for="fal_salesman_max_increase" string="Salesman Maximum Price Increment"/>
+                        <div>
+                            <field name="fal_salesman_max_increase" nolabel="1" class="oe_inline"/>%
+                        </div>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

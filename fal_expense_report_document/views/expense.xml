@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="fal_expense_report_document" inherit_id="hr_expense.report_expense_sheet">
+            <xpath expr="//div[@class='page']" position="after">
+                <p style="page-break-after:always;"></p>
+                <t t-foreach="_get_line_temp" t-as="x">
+                	<t t-foreach="x['attachment']" t-as="attachment">
+		                <p style="page-break-after:always;"></p>
+                		<p><strong><span t-esc="attachment.res_name"/></strong></p>
+                		<img t-att-src="image_data_uri(attachment.datas)"  width="850px" height="850px"/>
+                	</t>
+                </t>
+            </xpath>
+        </template>
+    </data>
+
+    <report
+        string="Expense Report Document"
+        id="fal_expense_report_document_menu"
+        model="hr.expense.sheet"
+        report_type="qweb-pdf"
+        name="fal_expense_report_document.fal_expense_report_document"
+        file="fal_expense_report_document.fal_expense_report_document"/>
+</odoo>

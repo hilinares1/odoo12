@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<!-- Public api: layout to t-call from reports -->
+
+	<template id="accounting_external_layout_standard">
+		<!-- Multicompany -->
+		<t t-if="not o and doc">
+			<t t-set="o" t-value="doc" />
+		</t>
+
+		<t t-if="o and 'company_id' in o">
+			<t t-set="company" t-value="o.company_id.sudo()" />
+		</t>
+		<t t-if="not o or not 'company_id' in o">
+			<t t-set="company" t-value="res_company" />
+		</t>
+
+		<div class="header">
+			<div class="row small">
+				<t
+					t-call="to_l10n_vn_qweb_layout.accounting_external_header_left_layout">
+					<t t-raw="0" />
+				</t>
+			</div>
+		</div>
+		<div class="article o_report_layout_standard">
+			<t t-raw="0" />
+		</div>
+
+		<div class="footer">
+			<t
+				t-call="to_l10n_vn_qweb_layout.accounting_external_footer_layout">
+				<t t-raw="0" />
+			</t>
+		</div>
+	</template>
+
+	<!-- Customize the company form view by adding paperformat field as well 
+		as demo reports -->
+	<!-- Demo reports definition -->
+
+	<template id="preview_accounting_externalreport_standard">
+		<t t-call="web.html_container">
+			<t
+				t-call="to_l10n_vn_qweb_layout.accounting_external_layout_standard">
+				<div class="page">
+					<p>This is a sample of a Vietnamese Accounting External Report.</p>
+				</div>
+			</t>
+		</t>
+	</template>
+
+	<report id="action_report_accounting_externalpreview"
+		model="res.company"
+		name="to_l10n_vn_qweb_layout.preview_accounting_externalreport_standard"
+		file="to_l10n_vn_qweb_layout.preview_accounting_externalreport_standard"
+		string="Preview Standard Vietnam Accounting External Report"
+		report_type="qweb-pdf" />
+</odoo>

@@ -1,0 +1,97 @@
+<odoo>
+    <record id="view_account_journal_form_falprodashboard" model="ir.ui.view">
+        <field name="name">account.journal.form.falprodashboard</field>
+        <field name="model">account.journal</field>
+        <field name="inherit_id" ref="account.view_account_journal_form" />
+        <field name="arch" type="xml">
+            <field name="loss_account_id" position="after">
+                <field name="fal_is_timesheet_journal" />
+                <field name="fal_is_mission_expense_journal" />
+            </field>
+        </field>
+    </record>
+
+    <record id="view_project_account_analytic_account_kanban" model="ir.ui.view">
+        <field name="name">account.analytic.account.kanban</field>
+        <field name="model">account.analytic.account</field>
+        <field name="arch" type="xml">
+           <kanban class="o_kanban_mobile">
+               <field name="display_name"/>
+               <field name="account_type"/>
+               <field name="balance"/>
+               <field name="currency_id"/>
+               <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_global_click">
+                            <div class="row">
+                                <div class="col-10">
+                                    <div>
+                                        <strong><span><field name="display_name"/></span></strong>
+                                    </div>
+                                    <div class="text-muted">
+                                        <span>
+                                            <strong><span><field name="code"/></span></strong>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                                <hr class="mt4 mb4"/>
+                                <span attrs="{'invisible': [('account_type','=', 'view')]}">
+                                     <strong>Balance: <field name="balance" widget="monetary"/></strong>
+                                </span>
+                                 <span class="float-right">
+                                    <a name="action_view_project_dashboard" type="object" class="o_project_kanban_box">
+                                        <span class="o_label">Dashboard</span>
+                                    </a>
+                                </span>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="view_account_analytic_account_search" model="ir.ui.view">
+        <field name="name">account.analytic.account.search</field>
+        <field name="model">account.analytic.account</field>
+        <field name="inherit_id" ref="analytic.view_account_analytic_account_search"/>
+        <field name="arch" type="xml">
+            <field name="name" position="after">
+                <field name="display_name" filter_domain="[('name','=',self)]" string="Display Name"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="view_account_analytic_account_tree_ext" model="ir.ui.view">
+        <field name="name">account.analytic.account.tree</field>
+        <field name="model">account.analytic.account</field>
+        <field name="inherit_id" ref="analytic.view_account_analytic_account_list"/>
+        <field name="arch" type="xml">
+            <field name="balance" position="after">
+                <field name="fal_turnover"/>
+                <field name="fal_variable_cost_margin"/>
+                <field name="fal_gross_value"/>
+                <field name="fal_net_value"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="view_fal_project_analytic_action" model="ir.actions.act_window">
+        <field name="name">Control Dashboard</field>
+        <field name="res_model">account.analytic.account</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">kanban,form</field>
+        <field name="view_ids" eval="[(5, 0, 0),
+            (0, 0, {'view_mode': 'kanban', 'view_id': ref('view_project_account_analytic_account_kanban')}),
+            ]"/>
+        <field name="search_view_id" ref="analytic.view_account_analytic_account_search"/>
+        <field name="context">{'search_default_active':1,}</field>
+        <field name="help" type="html">
+          <p class="o_view_nocontent_smiling_face">
+            Add a new analytic account
+          </p>
+        </field>
+    </record>
+
+    <menuitem action="view_fal_project_analytic_action" id="menu_fal_project_analytic_account" parent="fal_project_budget.menu_fal_project_budget_parent" sequence="10"/>
+</odoo>

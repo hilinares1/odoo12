@@ -1,0 +1,17 @@
+<odoo>
+    <record id="quality_alert_view_form_inherit_fal_quality_alert_5y" model="ir.ui.view">
+        <field name="name">quality.alert.view.form.inherit.fal.quality.alert.5y</field>
+        <field name="model">quality.alert</field>
+        <field name="inherit_id" ref="quality_control.quality_alert_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//header" position="inside">
+                <button name="action_create_fal_qa_5y" type="object" string="Create a 5Y" confirm="Are you sure want to create 5Y?" groups="quality.group_quality_user"/>
+            </xpath>
+            <xpath expr="//div[@class='oe_button_box']" position="inside">
+                <button name="action_open_alert_5y" type="object"  attrs="{'invisible': [('fal_qa_5y_count', '=', False)]}" class="oe_stat_button" icon="fa-tasks">
+                    <field name="fal_qa_5y_count" string="Quality 5Y" widget="statinfo"/>
+                </button>
+            </xpath>
+        </field>
+    </record>
+</odoo>

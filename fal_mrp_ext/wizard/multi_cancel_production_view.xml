@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_multi_cancel_production_wizard" model="ir.ui.view">
+            <field name="name">view.multi.cancel.production.wizard</field>
+            <field name="model">multi.cancel.production.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Cancel Wizard">
+                    <p class="oe_grey">
+                        This process will cancel all selected production orders.
+                    </p>
+                    <footer>
+                        <button name="action_cancel" string="Confirm" type="object" class="oe_highlight"/>
+                        <button string="Cancel" class="btn-secondary" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <act_window name="Cancel MRP"
+            res_model="multi.cancel.production.wizard"
+            src_model="mrp.production"
+            view_mode="form"
+            target="new"
+            multi="True"
+            key2="client_action_multi"
+            id="action_cancel_mrp_production1"/>
+    </data>
+</odoo>

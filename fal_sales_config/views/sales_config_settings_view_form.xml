@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+    <record id="fal_sales_config_settings_view_form_inherit_sales" model="ir.ui.view">
+        <field name="name">fal.res.config.settings.view.form.inherit.sales
+        </field>
+        <field name="model">res.config.settings</field>
+        <field name="priority" eval="1"/>
+        <field name="inherit_id" ref="sale.res_config_settings_view_form" />
+        <field name="arch" type="xml">
+        <xpath expr="//div[@data-string='Sales']/h2[1]" position="before">
+            <h2>Setup</h2>
+            <div class="row mt16 o_settings_container">
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_fal_contract_conditions_sale"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_contract_conditions_sale"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            Module to add Contract Conditions template on sale order
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_fal_group_by_commercial"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_group_by_commercial"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            Module to define group by Commercial Partner on Sale/Purchase(Quotation,Order), Invoice/Payment(Supplier,Customer)
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_fal_sale_modify_project"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_sale_modify_project"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            Module to modify analytic account on sales
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_fal_sale_product_selector"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_sale_product_selector"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            Advanced Product Attribute Management on Sale Order
+                        </div>
+                    </div>
+                </div>
+                 <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_fal_sale_calculator"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_sale_calculator"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            Advanced Management on Sale Order to calculate price from product attributes
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_fal_sale_sequence"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_sale_sequence"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            Add Quotation sequence
+                        </div>
+                    </div>
+                </div>
+                 <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_fal_quotation_revision"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_quotation_revision"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            This module allows you to keep track of Revised Quotation History
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_fal_sale_subscription_ext"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_sale_subscription_ext"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            This module allows you to extend sale susbcriptions
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_fal_sale_target_price"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_sale_target_price"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            Module to add target price on sales
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h2>CLuedoo Best Practice</h2>
+            <div class="row mt16 o_settings_container">
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_fal_sale_additional_info"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_sale_additional_info"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            Module to add additional info to sale
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_fal_sale_line_no_onchange"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_sale_line_no_onchange"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            this module is to prevent onchange on product for description
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_fal_sale_production_of_number"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_sale_production_of_number"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            module to add PO number on sales
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </xpath>
+        <xpath expr="//div[@id='sales_settings_invoicing_policy']" position="after">
+            <div class="col-xs-12 col-md-6 o_setting_box">
+                <div class="o_setting_left_pane">
+                    <field name="module_fal_invoice_sheet_info"/>
+                </div>
+                <div class="o_setting_right_pane">
+                    <label for="module_fal_invoice_sheet_info"/>
+                    <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                    <div class="text-muted">
+                        Module to add invoice sheet on Order form
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-6 o_setting_box">
+                <div class="o_setting_left_pane">
+                    <field name="module_fal_invoice_milestone"/>
+                </div>
+                <div class="o_setting_right_pane">
+                    <label for="module_fal_invoice_milestone"/>
+                    <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                    <div class="text-muted">
+                        Module to add invoice milestone
+                    </div>
+                </div>
+            </div>
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_fal_sale_order_sheet_invoice"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_sale_order_sheet_invoice"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            Module to add sale order sheet on Invoice form
+                        </div>
+                    </div>
+                </div>
+        </xpath>
+        <xpath expr="//div[@id='sales_settings_invoicing_policy']/.." position="after">
+            <h2>Security</h2>
+            <div class="row mt16 o_settings_container">
+                <group string="Sales Restriction">
+                    <div class="col-xs-12 col-md-6 o_setting_box">
+                        <div class="o_setting_left_pane">
+                            <field name="module_fal_sale_approval"/>
+                        </div>
+                        <div class="o_setting_right_pane">
+                            <label for="module_fal_sale_approval"/>
+                            <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                            <div class="text-muted">
+                                Add Waiting Approval stages on sales order, salesman can go through proposal stage, or directly to sales order
+                            </div>
+                            <br/>
+                            <div class="o_row">
+                                <field name="fal_is_proposal" class="oe_inline"/>
+                                <label for="fal_is_proposal" class="oe_inline"/>
+                                <div class="text-muted oe_inline">
+                                    Salesman always restricted to go via proposal
+                                </div>
+                            </div>
+                            <p> Or if you want salesman to be restricted by (Deselect 'Via Proposal' First): </p>
+                            <br/>
+                            <div class="o_row" attrs="{'invisible': [('fal_is_proposal', '!=', False)]}">
+                                <field name="module_fal_partner_credit_limit" class="oe_inline"/>
+                                <label for="module_fal_partner_credit_limit" class="oe_inline"/>
+                                <div class="text-muted oe_inline">
+                                    Give credit limit feature on partner
+                                </div>
+                            </div>
+                            <div class="o_row" attrs="{'invisible': [('module_fal_partner_credit_limit', '=', False)]}">
+                                <field name="module_fal_credit_limit_formula" class="oe_inline"/>
+                                <label for="module_fal_credit_limit_formula" class="oe_inline"/>
+                                <div class="text-muted oe_inline">
+                                    Based on SO/PO amount.
+                                </div>
+                            </div>
+
+                            <br/>
+                            <div class="o_row" attrs="{'invisible': [('fal_is_proposal', '!=', False)]}">
+                                <field name="module_fal_minimum_sale" class="oe_inline"/>
+                                <label for="module_fal_minimum_sale" class="oe_inline"/>
+                                <div class="text-muted oe_inline">
+                                    give minimum sales price in sales order
+                                </div>
+                            </div>
+
+                            <br/>
+                            <div class="o_row" attrs="{'invisible': [('fal_is_proposal', '!=', False)]}">
+                                <field name="module_fal_sale_approval_qualified_partner" class="oe_inline"/>
+                                <label for="module_fal_sale_approval_qualified_partner" class="oe_inline" string="Qualified Partner"/>
+                                <div class="text-muted oe_inline">
+                                    give approval on sale, for unqualified partner
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </group>
+            </div>  
+        </xpath>
+        </field>
+    </record>
+    </data>
+</odoo>

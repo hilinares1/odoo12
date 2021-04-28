@@ -1,0 +1,151 @@
+<?xml version="1.0"?>
+<odoo>
+    <!-- Create custom form view -->
+    <record model="ir.ui.view" id="visits_crm_form_view">
+        <field name="name">visits.crm.form</field>
+        <field name="model">crm.visits</field>
+        <field name="arch" type="xml">
+            <form string="Visits Form">
+        <!--    For buttons and status bar  -->
+                <header>
+                    <button name="action_check_in" type="object" string="Check-in" class="oe_highlight"
+                            attrs="{'invisible':['|','|', '|',('id' , '=' , False),('state', '=', 'check-out'),
+                            ('state', '=', 'complete'),('state', '=', 'cancelled')]}"/>
+                    <button name="action_check_out" type="object" string="Check-out" class="oe_highlight"
+                            attrs="{'invisible': [('state', '!=', 'check-out')]}"/>
+                    <button name="action_cancel" type="object" string="Cancel" class="oe_highlight"
+                            attrs="{'invisible':['|','|', ('id','=', False) ,('state', '=' , 'cancelled'),
+                            ('state', '=', 'complete')]}"/>
+                    <field name="state" widget="statusbar" statusbar_visible="check-in,check-out,complete"
+                           attrs="{'invisible': [('id', '=', False)]}"/>
+                </header>
+                <sheet>
+                <!--     web-ribbon for complete and cancelled    -->
+                    <widget name="web_ribbon" title="Complete" attrs="{'invisible': [('state', '!=', 'complete')]}"/>
+                    <widget name="web_ribbon" title="Cancelled" bg_color="bg-danger"
+                            attrs="{'invisible': [('state', '!=', 'cancelled')]}"/>
+
+                    <div class="oe_title">
+                        <label for="itinerary" class="oe_edit_only"/>
+                        <h1><field name="itinerary" placeholder="e.g Sample Project"
+                                   attrs="{'readonly': ['|', ('state', '=', 'complete'),
+                                   ('state', '=', 'cancelled')]}" context="{'default_itinerary': 'active_id'}"
+                                   options="{'no_create':True}"/></h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="start_date_time" attrs="{'readonly': [('id', '>', 0)]}"/>
+                            <field name="end_date_time" attrs="{'readonly': [('state', '=', 'complete')]}"/>
+                        </group>
+                        <group>
+                            <field name="customer" attrs="{'invisible':[('customer','=',False)]}"/>
+                            <field name="shope_type" attrs="{'readonly': ['|', ('state', '=', 'complete'),
+                            ('state', '=', 'cancelled')]}"/>
+                            <field name="salesman" options="{'no_create': True}"
+                                   attrs="{'readonly': ['|', ('state', '=', 'complete'),
+                                   ('state', '=', 'cancelled')]}"/>
+                        </group>
+                        <group string="Check-In" attrs="{'invisible': [('id', '=', False)]}">
+                            <field name="check_in_date_time" string="Date/Time" />
+                            <field name="check_in_latitude" string="Latitiude" />
+                            <field name="check_in_longitude" string="Longitude" />
+                        </group>
+                        <group string="Check-Out" attrs="{'invisible': [('id', '=', False)]}">
+                            <field name="check_out_date_time" string="Date/Time" />
+                            <field name="check_out_latitude" string="Latitude" />
+                            <field name="check_out_longitude" string="Longitude" />
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Objectives">
+                            <group>
+                                <group>
+                                    <field name="key_objective_1"/>
+                                    <field name="key_objective_2"/>
+                                 </group>
+                                 <group>
+                                    <field name="key_objective_3"/>
+                                    <field name="key_objective_4"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Internal Notes">
+                            <field name="internal_note" placeholder="Add a description..."/>
+                        </page>
+                    </notebook>
+                </sheet>
+            <!--  Create chatter for tracking changes  -->
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <!-- Create custom tree view   -->
+    <record model="ir.ui.view" id="crm_visits_tree_view">
+        <field name="name">crm.visits.tree</field>
+        <field name="model">crm.visits</field>
+        <field name="arch" type="xml">
+            <tree string="Visits Tree">
+                <field name="itinerary"/>
+                <field name="status"/>
+                <field name="start_date_time" string="Created On"/>
+                <field name="salesman" string="Owner"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Create abstract form and tree view   -->
+    <record model="ir.actions.act_window" id="visits_view">
+        <field name="name">Visits</field>
+        <field name="res_model">crm.visits</field>
+        <field name="view_mode">tree,form</field>
+<!--        <field name="context">{"search_default_my_visit":1}</field> &lt;!&ndash; define default search&ndash;&gt;-->
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Create Visit
+            </p>
+        </field>
+    </record>
+
+    <!--    Defined search view   -->
+    <record model="ir.ui.view" id="crm_visits_search_view">
+        <field name="name">crm.visits.search.view</field>
+        <field name="model">crm.visits</field>
+        <field name="arch" type="xml">
+            <search string="My Visits">
+                <field name="itinerary" filter_domain="['|','|',('itinerary','ilike',self),
+                ('salesman' , 'ilike' ,self) , ('status' , 'ilike' , self)]"/>
+                <field name="itinerary"/>
+                <field name="salesman"/>
+                <separator/>
+<!--                <filter string="My Visits" name="my_visit" domain="[('salesman','=',uid)]"/>-->
+            </search>
+        </field>
+    </record>
+
+    <!-- Create menu for visits inside CRM root  -->
+    <menuitem id="visits_menu"
+              name="Visits"
+              action="visits_view"
+              parent="crm.crm_menu_root"
+              groups="sales_team.group_sale_manager"
+              sequence="6"/>
+
+    <!--    Insert smart-button for visits inside crm.lead form -->
+    <record id="crm_lead_smart_button" model="ir.ui.view">
+        <field name="name">crm.lead.smart.button</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+        <field name="arch" type="xml">
+            <div name="button_box" position="inside">
+                <button name="crm_visits_smart_button" type="object" class="oe_stat_button"
+                        icon="fa-briefcase">
+                <field name="visit_count" string="Visits" widget="statinfo"/>
+                </button>
+            </div>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="po_product_attribute_assets_backend" name="po_product_attribute_assets" inherit_id="web.assets_backend">
+        <xpath expr="." position="inside">
+            <script type="text/javascript" src="/fal_production_order_product_selector/static/src/js/fal_production_order_product_selector.js"/>
+        </xpath>
+    </template>
+</odoo>

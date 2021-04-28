@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_partner_qualified_wizard" model="ir.ui.view">
+            <field name="name">fal.partner.qualified.wizard</field>
+            <field name="model">fal.partner.qualified.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Approve">
+                    <p>Please fill the information below to set qualified the partner</p>
+                    <group>
+                        <group>
+                            <field name="is_company" invisible="1"/>
+                            <field name="fal_company_title" widget="selection" attrs="{'invisible': [('is_company', '=', False)]}"/>
+                            <field name="fal_partner_tags" widget="many2many_tags" placeholder="Partner Tags..."/>
+                            <field name="fal_number_employee" attrs="{'invisible': [('is_company', '=', False)]}"/>
+                            <field name="fal_year_founded" attrs="{'invisible': [('is_company', '=', False)]}"/>
+                        </group>
+                    </group>
+                    <footer>
+                        <button name="qualified" string="Set Qualified" type="object" class="oe_highlight"/>
+                        <button string="Cancel" class="btn-default" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

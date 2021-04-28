@@ -1,0 +1,239 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* fal_hr_ext
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-08-31 03:00+0000\n"
+"PO-Revision-Date: 2018-08-31 10:11+0700\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: en\n"
+"X-Generator: Poedit 2.1.1\n"
+
+#. module: fal_hr_ext
+#: model:ir.model.fields,field_description:fal_hr_ext.field_hr_employee_child_address
+msgid "Address"
+msgstr "Adresse"
+
+#. module: fal_hr_ext
+#: model:ir.model.fields,field_description:fal_hr_ext.field_hr_employee_age
+msgid "Age"
+msgstr "Age"
+
+#. module: fal_hr_ext
+#: model:ir.model.fields,field_description:fal_hr_ext.field_hr_employee_fal_contact_address
+msgid "Alternative Contact Address"
+msgstr "Adresse de contact alternative"
+
+#. module: fal_hr_ext
+#: model:ir.model.fields,field_description:fal_hr_ext.field_hr_employee_fal_contact_name
+msgid "Alternative Contact Name"
+msgstr "Nom du contact alternatif"
+
+#. module: fal_hr_ext
+#: model:ir.model.fields,field_description:fal_hr_ext.field_hr_employee_fal_contact_phone
+msgid "Alternative Contact Phone"
+msgstr "Téléphone de contact alternatif"
+
+#. module: fal_hr_ext
+#: model:ir.model.fields,field_description:fal_hr_ext.field_hr_employee_fal_contact_relation
+msgid "Alternative Contact Relation"
+msgstr "Relation de contact alternative"
+
+#. module: fal_hr_ext
+#: model:ir.model.fields,field_description:fal_hr_ext.field_hr_employee_fal_arrival_date
+msgid "Arrival Date"
+msgstr "Date d'arrivée"
+
+#. module: fal_hr_ext
+#: model:ir.ui.view,arch_db:fal_hr_ext.view_employee_form_fal_hr_ext
+msgid "Children"
+msgstr "Enfants"
+
+#. module: fal_hr_ext
+#: model:ir.actions.act_window,help:fal_hr_ext.action_contacts_private
+msgid ""
+"Click to add a private contact in your contacts directory.\n"
+"                Private Contact are confidential and will be used as employee partner."
+msgstr ""
+"Cliquez pour ajouter un contact privé dans votre répertoire de contacts.\n"
+"                Les contacts privés sont confidentiels et seront utilisés comme partenaires des employés."
+
+#. module: fal_hr_ext
+#: sql_constraint:hr.employee:0
+msgid "Contacts require a name."
+msgstr "Les contacts nécessitent un nom."
+
+#. module: fal_hr_ext
+#: model:ir.model.fields,field_description:fal_hr_ext.field_hr_employee_child_create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: fal_hr_ext
+#: model:ir.model.fields,field_description:fal_hr_ext.field_hr_employee_child_create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: fal_hr_ext
+#: model:ir.model.fields,help:fal_hr_ext.field_hr_employee_fal_arrival_date
+msgid "Date when employee start working"
+msgstr "Date à laquelle l'employé commence à travailler"
+
+#. module: fal_hr_ext
+#: model:ir.model.fields,field_description:fal_hr_ext.field_hr_employee_child_display_name
+msgid "Display Name"
+msgstr "Nom à afficher"
+
+#. module: fal_hr_ext
+#: model:ir.model.fields,field_description:fal_hr_ext.field_hr_employee_driving_license_number
+msgid "Driving License Number"
+msgstr "Numéro de permis de conduire"
+
+#. module: fal_hr_ext
+#: model:ir.model,name:fal_hr_ext.model_hr_employee
+#: model:ir.model.fields,field_description:fal_hr_ext.field_hr_employee_child_employee_id
+msgid "Employee"
+msgstr "Employé"
+
+#. module: fal_hr_ext
+#: model:ir.ui.menu,name:fal_hr_ext.menu_hr_partner_private_contact
+msgid "Employee Contacts"
+msgstr "Contacts d'employés"
+
+#. module: fal_hr_ext
+#: model:ir.actions.act_window,name:fal_hr_ext.action_contacts_private
+msgid "Employee Contacts (Private)"
+msgstr "Contacts d'employés (Privés)"
+
+#. module: fal_hr_ext
+#: model:ir.ui.menu,name:fal_hr_ext.menu_open_view_employee_list_my_employee
+msgid "Employees"
+msgstr "Employés"
+
+#. module: fal_hr_ext
+#: model:ir.model.fields,field_description:fal_hr_ext.field_hr_employee_hukou_place
+msgid "Ethnic"
+msgstr "Ethnique"
+
+#. module: fal_hr_ext
+#: model:ir.model.fields,field_description:fal_hr_ext.field_hr_employee_fal_child_ids
+msgid "Family Member"
+msgstr "Membre de famille"
+
+#. module: fal_hr_ext
+#: model:ir.model.fields,field_description:fal_hr_ext.field_hr_employee_firstname
+msgid "First name"
+msgstr "Prénom"
+
+#. module: fal_hr_ext
+#: model:ir.model.fields,field_description:fal_hr_ext.field_hr_employee_child_id
+msgid "ID"
+msgstr "ID"
+
+#. module: fal_hr_ext
+#: model:ir.model.fields,field_description:fal_hr_ext.field_hr_employee_fal_id_employee
+msgid "ID Employee"
+msgstr "ID Employee"
+
+#. module: fal_hr_ext
+#: model:ir.ui.view,arch_db:fal_hr_ext.view_contact_employee_inherit
+msgid "Is Employee"
+msgstr "Est employé"
+
+#. module: fal_hr_ext
+#: model:ir.model.fields,field_description:fal_hr_ext.field_hr_employee_child___last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: fal_hr_ext
+#: model:ir.model.fields,field_description:fal_hr_ext.field_hr_employee_child_write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: fal_hr_ext
+#: model:ir.model.fields,field_description:fal_hr_ext.field_hr_employee_child_write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: fal_hr_ext
+#: model:ir.model.fields,field_description:fal_hr_ext.field_hr_employee_lastname
+msgid "Last name"
+msgstr "Nom"
+
+#. module: fal_hr_ext
+#: model:ir.model.fields,help:fal_hr_ext.field_hr_employee_fal_work_exp
+msgid "Length of employee working"
+msgstr "Durée du travail de l'employé"
+
+#. module: fal_hr_ext
+#: model:ir.model.fields,field_description:fal_hr_ext.field_hr_employee_child_name
+msgid "Name"
+msgstr "Nom"
+
+#. module: fal_hr_ext
+#: model:ir.actions.act_window,help:fal_hr_ext.action_contacts_private
+msgid ""
+"Odoo helps you easily track all activities related to\n"
+"                a customer: discussions, history of business opportunities,\n"
+"                documents, etc."
+msgstr ""
+"Odoo vous aide à suivre toutes les activités liées à un client :\n"
+"discussions et historique, historique des opportunités d'affaires, \n"
+"documents, etc."
+
+#. module: fal_hr_ext
+#: model:ir.model.fields,field_description:fal_hr_ext.field_hr_employee_child_phone
+msgid "Phone"
+msgstr "Téléphone"
+
+#. module: fal_hr_ext
+#: model:ir.ui.view,arch_db:fal_hr_ext.view_employee_form_fal_hr_ext
+msgid "Put employee ID in here.."
+msgstr "Mettez l'ID d'employé ici .."
+
+#. module: fal_hr_ext
+#: model:ir.ui.view,arch_db:fal_hr_ext.view_employee_form_fal_hr_ext
+msgid "Put employee reference in here.."
+msgstr "Mettez la référence des employés ici .."
+
+#. module: fal_hr_ext
+#: model:ir.model.fields,field_description:fal_hr_ext.field_hr_employee_fal_reference
+msgid "Reference"
+msgstr "Référence"
+
+#. module: fal_hr_ext
+#: model:ir.ui.view,arch_db:fal_hr_ext.view_employee_form_fal_hr_ext
+msgid "Related User"
+msgstr "Utilisateur lié"
+
+#. module: fal_hr_ext
+#: model:ir.model.fields,field_description:fal_hr_ext.field_hr_employee_child_relation
+msgid "Relation"
+msgstr "Relation"
+
+#. module: fal_hr_ext
+#: model:ir.ui.view,arch_db:fal_hr_ext.view_employee_form_fal_hr_ext
+msgid "Status"
+msgstr "État"
+
+#. module: fal_hr_ext
+#: model:ir.model.fields,field_description:fal_hr_ext.field_hr_employee_fal_work_exp
+msgid "Working Experience"
+msgstr "Expérience professionnelle"
+
+#. module: fal_hr_ext
+#: model:ir.ui.view,arch_db:fal_hr_ext.view_employee_form_fal_hr_ext
+msgid "Works Period"
+msgstr "Période de travail"
+
+#. module: fal_hr_ext
+#: model:ir.model,name:fal_hr_ext.model_hr_employee_child
+msgid "hr.employee.child"
+msgstr "hr.employee.child"

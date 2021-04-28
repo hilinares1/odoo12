@@ -1,0 +1,2291 @@
+﻿<?xml version="1.0"?>
+<odoo>
+    <data noupdate="0">
+    
+        <!-- Category -->
+        <record id="hr_payroll_BASIC" model="hr.salary.rule.category">
+            <field name="name">基本工资/Basic</field>
+            <field name="code">BASIC</field>
+        </record>
+         <record id="hr_payroll_SAL" model="hr.salary.rule.category">
+             <field name="name">工资/Salary</field>
+             <field name="code">SAL</field>
+        </record>
+        <record id="hr_payroll_ALW" model="hr.salary.rule.category">
+            <field name="name">奖金/Allowance</field>
+            <field name="code">ALW</field>
+        </record>
+        <record id="hr_payroll_OT" model="hr.salary.rule.category">
+            <field name="name">奖金/Over Time</field>
+            <field name="code">OT</field>
+        </record>
+        <record id="hr_payroll_BNS" model="hr.salary.rule.category">
+            <field name="name">奖金/Bonus</field>
+            <field name="code">BNS</field>
+        </record>
+        <record id="hr_payroll_ANBNS" model="hr.salary.rule.category">
+            <field name="name">年终奖 / Annual Bonus</field>
+            <field name="code">ANBNS</field>
+        </record>
+        <record id="hr_payroll_ANBTX" model="hr.salary.rule.category">
+            <field name="name">年终奖个税/IIT Tax for Bonus</field>
+            <field name="code">ANBTX</field>
+        </record>
+        <record id="hr_payroll_SBTC" model="hr.salary.rule.category">
+            <field name="name">税前工资 / Salary before tax compute</field>
+            <field name="code">SBTC</field>
+        </record>
+        <record id="hr_payroll_TBNS" model="hr.salary.rule.category">
+            <field name="name">奖金总计/Total Bonus</field>
+            <field name="code">TBNS</field>
+        </record>
+        <record id="hr_payroll_TOT" model="hr.salary.rule.category">
+            <field name="name">加班总计/Total Over Time</field>
+            <field name="code">TOT</field>
+        </record>
+        <record id="hr_payroll_COMPS" model="hr.salary.rule.category">
+            <field name="name">补偿/Compensation</field>
+            <field name="code">COMPS</field>
+        </record>
+        <record id="hr_payroll_GROSS" model="hr.salary.rule.category">
+            <field name="name">应付工资/Gross</field>
+            <field name="code">GROSS</field>
+        </record>
+        <record id="hr_payroll_DED" model="hr.salary.rule.category">
+            <field name="name">扣款/Deduction</field>
+            <field name="code">DED</field>
+        </record>
+        <record id="hr_payroll_NET" model="hr.salary.rule.category">
+            <field name="name">实发工资/Net</field>
+            <field name="code">NET</field>
+        </record>
+        <record id="hr_payroll_SBT" model="hr.salary.rule.category">
+            <field name="name">税前工资/Salary before tax</field>
+            <field name="code">SBT</field>
+        </record>
+        <record id="hr_payroll_ICC" model="hr.salary.rule.category">
+            <field name="name">公司承担社保/Insurance Company Contribution</field>
+            <field name="code">ICC</field>
+        </record>
+        <record id="hr_payroll_IEC" model="hr.salary.rule.category">
+            <field name="name">个人承担社保/Insurance Employee Contribution</field>
+            <field name="code">IEC</field>
+        </record>
+        <record id="hr_payroll_IPBC" model="hr.salary.rule.category">
+            <field name="name">社保总计/Total Insurance Company Cost</field>
+            <field name="code">IPBC</field>
+        </record>
+        <record id="hr_payroll_ST" model="hr.salary.rule.category">
+            <field name="name">个人所得税/Total Tax</field>
+            <field name="code">TT</field>
+        </record>
+        <record id="hr_payroll_TIPBE" model="hr.salary.rule.category">
+            <field name="name">个人社保总计/Total Insurance Employee Cost</field>
+            <field name="code">TIPBE</field>
+        </record>
+        <record id="hr_payroll_HAFC" model="hr.salary.rule.category">
+            <field name="name">住房公积金公司部分/Fund For Housing Company Cost</field>
+            <field name="code">HAFC</field>
+        </record>
+        <record id="hr_payroll_TFFHP" model="hr.salary.rule.category">
+            <field name="name">住房公积金总计(公司)/Total Fund For Housing Company Cost</field>
+            <field name="code">TFFHP</field>
+        </record>
+        <record id="hr_payroll_TFFHE" model="hr.salary.rule.category">
+            <field name="name">住房公积金总计(个人)/Total Fund For Housing Employee Cost</field>
+            <field name="code">TFFHE</field>
+        </record>
+        <record id="hr_payroll_HAFE" model="hr.salary.rule.category">
+            <field name="name">住房公积金个人部分/Fund For Housing Employee Cost</field>
+            <field name="code">HAFE</field>
+        </record>
+        <record id="hr_payroll_INVI" model="hr.salary.rule.category">
+            <field name="name">社保视图/Insurance View</field>
+            <field name="code">INVI</field>
+        </record>
+        <!-- New Categories 2019 -->
+        <record id="hr_payroll_ACCITT" model="hr.salary.rule.category">
+            <field name="name">累计已交个人所得税/Accumulate Paid Individual Income Tax</field>
+            <field name="code">ACCITT</field>
+        </record>
+        <record id="hr_payroll_ACCSBTC" model="hr.salary.rule.category">
+            <field name="name">累计工资(不含年终奖)/Accumulate Salary not include annual bonus</field>
+            <field name="code">ACCSBTC</field>
+        </record>
+        <record id="hr_payroll_ACCTA" model="hr.salary.rule.category">
+            <field name="name">累计减除费用/Accumulate Tax Allowance</field>
+            <field name="code">ACCTA</field>
+        </record>
+        <record id="hr_payroll_ACCTEX" model="hr.salary.rule.category">
+            <field name="name">累计专项扣除/Accumulate TEX</field>
+            <field name="code">ACCTEX</field>
+        </record>
+        <record id="hr_payroll_ITT" model="hr.salary.rule.category">
+            <field name="name">个人所得税/Individual Income Tax</field>
+            <field name="code">ITT</field>
+        </record>
+        <record id="hr_payroll_OITT" model="hr.salary.rule.category">
+            <field name="name">个人所得税/Individual Income Tax</field>
+            <field name="code">OITT</field>
+        </record>
+        <record id="hr_payroll_NETITT" model="hr.salary.rule.category">
+            <field name="name">应交个人所得税/Individual Income Tax Payable</field>
+            <field name="code">NETITT</field>
+        </record>
+        <record id="hr_payroll_OACCITT" model="hr.salary.rule.category">
+            <field name="name">外地累计已交个人所得税/Outland Accumulate Paid Individual Income Tax</field>
+            <field name="code">OACCITT</field>
+        </record>
+        <record id="hr_payroll_ONETITT" model="hr.salary.rule.category">
+            <field name="name">外地应交个人所得税/Outland Individual Income Tax Payable</field>
+            <field name="code">ONETITT</field>
+        </record>
+        <record id="hr_payroll_ONETITT2" model="hr.salary.rule.category">
+            <field name="name">外地个人所得税/Outland Individual Income Tax</field>
+            <field name="code">ONETITT</field>
+        </record>
+        <record id="hr_payroll_TA" model="hr.salary.rule.category">
+            <field name="name">减除费用/Tax Allowance</field>
+            <field name="code">TA</field>
+        </record>
+        <record id="hr_payroll_ONET" model="hr.salary.rule.category">
+            <field name="name">外地实发工资/Outland Net</field>
+            <field name="code">ONET</field>
+        </record>
+        <record id="hr_payroll_OTH" model="hr.salary.rule.category">
+            <field name="name">Other Not Inculde in IIT</field>
+            <field name="code">OTH</field>
+        </record>
+        <record id="hr_payroll_HSALW" model="hr.salary.rule.category">
+            <field name="name">House Allowance</field>
+            <field name="code">HSALW</field>
+        </record>
+        <record id="hr_payroll_GSBBE" model="hr.salary.rule.category">
+            <field name="name">Gross salary before Bonus and Extra hours</field>
+            <field name="code">GSBBE</field>
+        </record>
+        <record id="hr_payroll_TEX" model="hr.salary.rule.category">
+            <field name="name">免税所得额/Tax exemption</field>
+            <field name="code">TEX</field>
+        </record>
+        <!-- New Categories 2019 -->
+
+        <!-- Basic Salary Rule -->
+        <record id="hr_payroll_hr_rule_basic" model="hr.salary.rule">
+            <field name="name">基本工资/Basic</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+result = contract.wage
+result_rate = 100</field>
+            <field name="code">BASIC</field>
+            <field name="sequence">1</field>
+            <field name="condition_select">none</field>
+            <field name="category_id" ref="hr_payroll_BASIC" />
+            <field name="fal_highlight_on_payslip" eval="True" />
+        </record>
+        <record id="hr_payroll_hr_rule_sal" model="hr.salary.rule">
+            <field name="name">工资/Salary</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+result = categories.BASIC + categories.ALW + categories.DED + categories.COMPS
+result_rate = 100</field>
+            <field name="code">SAL</field>
+            <field name="sequence">49</field>
+            <field name="condition_select">none</field>
+            <field name="appears_on_payslip" eval="False" />
+            <field name="category_id" ref="hr_payroll_SAL" />
+        </record>  
+        <record id="hr_payroll_hr_rule_tbns" model="hr.salary.rule">
+            <field name="name">奖金总计/Total Bonus</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+result =categories.BNS
+result_rate = 100</field>
+            <field name="code">TBNS</field>
+            <field name="sequence">48</field>
+            <field name="condition_select">none</field>
+            <field name="appears_on_payslip" eval="False" />
+            <field name="category_id" ref="hr_payroll_TBNS" />
+        </record>  
+        <record id="hr_payroll_hr_rule_tot" model="hr.salary.rule">
+            <field name="name">加班总计/Total Over Time</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+result =categories.OT
+result_rate = 100</field>
+            <field name="code">TOT</field>
+            <field name="sequence">47</field>
+            <field name="condition_select">none</field>
+            <field name="appears_on_payslip" eval="False" />
+            <field name="category_id" ref="hr_payroll_TOT" />
+        </record>  
+        <record id="hr_payroll_hr_rule_taxable" model="hr.salary.rule">
+            <field name="name">应付工资 /Gross</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+result = categories.BASIC + categories.ALW + categories.DED + categories.BNS + categories.ANBNS + categories.COMPS + categories.OT
+result_rate = 100</field>
+            <field name="code">GROSS</field>
+            <field name="sequence">50</field>
+            <field name="condition_select">none</field>
+            <field name="category_id" ref="hr_payroll_GROSS" />
+            <field name="fal_highlight_on_payslip" eval="True" />
+        </record>
+        <record id="hr_salary_rule_NET" model="hr.salary.rule">
+            <field name="name">实发工资/Net</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+if categories.ITT - categories.ACCITT > 0:
+    NETITT = 0.00
+else:
+    NETITT = categories.ITT - categories.ACCITT
+
+result = categories.SBT + NETITT + categories.ANBTX
+result_rate = 100</field>
+            <field name="code">NET</field>
+            <field name="sequence">108</field>
+            <field name="condition_select">none</field>
+            <field name="category_id" ref="hr_payroll_NET" />
+            <field name="fal_highlight_on_payslip" eval="True" />
+        </record>
+        
+        <!-- Additional Sallary rule -->
+        <!-- Over Time -->
+        <record id="hr_salary_rule_OT1" model="hr.salary.rule">
+            <field name="name">加班平时/Hours in Overtime 1(weekday)</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+result = inputs.OT1 and inputs.OT1.amount
+result_rate = 100</field>
+            <field name="code">OT1</field>
+            <field name="sequence">2</field>
+            <field name="condition_select">none</field>
+            <field name="category_id" ref="hr_payroll_OT" />
+        </record>        
+        <record id="hr_rule_input_OT1" model="hr.rule.input">
+            <field name="name">加班平时/Hours in Overtime 1(weekday)</field>
+            <field name="code">OT1</field>
+            <field name="input_id" ref="hr_salary_rule_OT1"/>
+        </record>
+        
+        <record id="hr_salary_rule_OT1_5" model="hr.salary.rule">
+            <field name="name">加班平时/Hours in Overtime 1.5(weekday)</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+result = inputs.OT1_5 and inputs.OT1_5.amount
+result_rate = 100</field>
+            <field name="code">OT1_5</field>
+            <field name="sequence">3</field>
+            <field name="condition_select">none</field>
+            <field name="category_id" ref="hr_payroll_OT" />
+        </record>        
+        <record id="hr_rule_input_OT1_5" model="hr.rule.input">
+            <field name="name">加班平时/Hours in Overtime 1.5(weekday)</field>
+            <field name="code">OT1_5</field>
+            <field name="input_id" ref="hr_salary_rule_OT1_5"/>
+        </record>
+        
+        <record id="hr_salary_rule_OT2" model="hr.salary.rule">
+            <field name="name">加班周末/Hours in Overtime 2(weekend)</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+result = inputs.OT2 and inputs.OT2.amount
+result_rate = 100</field>
+            <field name="code">OT2</field>
+            <field name="sequence">4</field>
+            <field name="condition_select">none</field>
+            <field name="category_id" ref="hr_payroll_OT" />
+        </record>        
+        <record id="hr_rule_input_OT2" model="hr.rule.input">
+            <field name="name">加班周末/Hours in Overtime 2(weekend)</field>
+            <field name="code">OT2</field>
+            <field name="input_id" ref="hr_salary_rule_OT2"/>
+        </record>
+        
+        <record id="hr_salary_rule_OT3" model="hr.salary.rule">
+            <field name="name">加班节假日/Hours in Overtime 3(holiday)</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+result = inputs.OT3 and inputs.OT3.amount
+result_rate = 100</field>
+            <field name="code">OT3</field>
+            <field name="sequence">5</field>
+            <field name="condition_select">none</field>
+            <field name="category_id" ref="hr_payroll_OT" />
+        </record>        
+        <record id="hr_rule_input_OT3" model="hr.rule.input">
+            <field name="name">加班节假日/Hours in Overtime 3(holiday)</field>
+            <field name="code">OT3</field>
+            <field name="input_id" ref="hr_salary_rule_OT3"/>
+        </record>
+        
+        <record id="hr_salary_rule_NGHT" model="hr.salary.rule">
+            <field name="name">加班夜间/Night Hours</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+result = inputs.NGHT and inputs.NGHT.amount
+result_rate = 100</field>
+            <field name="code">NGHT</field>
+            <field name="sequence">6</field>
+            <field name="condition_select">none</field>
+            <field name="category_id" ref="hr_payroll_OT" />
+        </record>        
+        <record id="hr_rule_input_NGHT" model="hr.rule.input">
+            <field name="name">加班夜间/Night Hours</field>
+            <field name="code">NGHT</field>
+            <field name="input_id" ref="hr_salary_rule_NGHT"/>
+        </record>
+        
+        <!-- Deduction -->
+        <record id="hr_salary_rule_AD" model="hr.salary.rule">
+            <field name="name">请假扣款/Absence Deduction</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+result = inputs.AD and inputs.AD.amount
+result_rate = 100</field>
+            <field name="code">AD</field>
+            <field name="sequence">7</field>
+            <field name="condition_select">none</field>
+            <field name="category_id" ref="hr_payroll_DED" />
+        </record>        
+        <record id="hr_rule_input_AD" model="hr.rule.input">
+            <field name="name">请假扣款/Absence Deduction</field>
+            <field name="code">AD</field>
+            <field name="input_id" ref="hr_salary_rule_AD"/>
+        </record>
+
+        <record id="hr_salary_rule_DED" model="hr.salary.rule">
+            <field name="name">扣款/Deduction</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+result = inputs.DED and inputs.DED.amount
+result_rate = 100</field>
+            <field name="code">DED</field>
+            <field name="sequence">8</field>
+            <field name="condition_select">none</field>
+            <field name="category_id" ref="hr_payroll_DED" />
+        </record>        
+        <record id="hr_rule_input_DED" model="hr.rule.input">
+            <field name="name">扣款/Deduction</field>
+            <field name="code">DED</field>
+            <field name="input_id" ref="hr_salary_rule_DED"/>
+        </record>
+        
+        <!-- bonus -->
+        <record id="hr_salary_rule_ADVCOM" model="hr.salary.rule">
+            <field name="name">预支奖金/Advanced Commission</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+result = inputs.ADVCOM and inputs.ADVCOM.amount
+result_rate = 100</field>
+            <field name="code">ADVCOM</field>
+            <field name="sequence">9</field>
+            <field name="condition_select">none</field>
+            <field name="category_id" ref="hr_payroll_BNS" />
+        </record>        
+        <record id="hr_rule_input_ADVCOM" model="hr.rule.input">
+            <field name="name">预支奖金/Advance Commission</field>
+            <field name="code">ADVCOM</field>
+            <field name="input_id" ref="hr_salary_rule_ADVCOM"/>
+        </record>
+        <record id="hr_salary_rule_BNS" model="hr.salary.rule">
+            <field name="name">奖金/Bonus</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+result = inputs.BNS and inputs.BNS.amount
+result_rate = 100</field>
+            <field name="code">BNS</field>
+            <field name="sequence">10</field>
+            <field name="condition_select">none</field>
+            <field name="category_id" ref="hr_payroll_BNS" />
+        </record>        
+        <record id="hr_rule_input_BNS" model="hr.rule.input">
+            <field name="name">奖金/Bonus</field>
+            <field name="code">BNS</field>
+            <field name="input_id" ref="hr_salary_rule_BNS"/>
+        </record>
+        
+        <record id="hr_salary_rule_ANBNS" model="hr.salary.rule">
+            <field name="name">年终奖/Annual Bonus</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+result = inputs.ANBNS and inputs.ANBNS.amount
+result_rate = 100</field>
+            <field name="code">ANBNS</field>
+            <field name="sequence">11</field>
+            <field name="condition_select">none</field>
+            <field name="category_id" ref="hr_payroll_ANBNS" />
+        </record>        
+        <record id="hr_rule_input_ANBNS" model="hr.rule.input">
+            <field name="name">年终奖/Annual Bonus</field>
+            <field name="code">ANBNS</field>
+            <field name="input_id" ref="hr_salary_rule_ANBNS"/>
+        </record>
+        
+        <record id="hr_salary_rule_COMPS" model="hr.salary.rule">
+            <field name="name">补偿/Compensation</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+result = inputs.COMPS and inputs.COMPS.amount
+result_rate = 100</field>
+            <field name="code">COMPS</field>
+            <field name="sequence">12</field>
+            <field name="condition_select">none</field>
+            <field name="category_id" ref="hr_payroll_COMPS" />
+        </record>        
+        <record id="hr_rule_input_COMPS" model="hr.rule.input">
+            <field name="name">补偿/Compensation</field>
+            <field name="code">COMPS</field>
+            <field name="input_id" ref="hr_salary_rule_COMPS"/>
+        </record>
+        
+        <!-- allowance -->        
+        <record id="hr_salary_rule_HSALW" model="hr.salary.rule">
+            <field name="name">House Allowance</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = contract.fal_house_allowance</field>
+            <field name="code">HSALW</field>
+            <field name="sequence">13</field>
+            <field name="condition_select">none</field>
+            <field name="category_id" ref="hr_payroll_ALW" />
+        </record>
+        
+        <record id="hr_salary_rule_ALW" model="hr.salary.rule">
+            <field name="name">岗位津贴/Job Allowance</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = contract.fal_fixed_allowance</field>
+            <field name="code">ALW</field>
+            <field name="sequence">13</field>
+            <field name="condition_select">none</field>
+            <field name="category_id" ref="hr_payroll_ALW" />
+        </record>
+        
+        <record id="hr_salary_rule_HALW" model="hr.salary.rule">
+            <field name="name">高温补偿/High temp allowance</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+result = inputs.HALW and inputs.HALW.amount
+result_rate = 100</field>
+            <field name="code">HALW</field>
+            <field name="sequence">14</field>
+            <field name="condition_select">none</field>
+            <field name="category_id" ref="hr_payroll_ALW" />
+        </record>
+        <record id="hr_rule_input_HALW" model="hr.rule.input">
+            <field name="name">高温补偿/High temp allowance</field>
+            <field name="code">HALW</field>
+            <field name="input_id" ref="hr_salary_rule_HALW"/>
+        </record>
+        
+        
+        <record id="hr_salary_rule_SBT" model="hr.salary.rule">
+            <field name="name">税前工资/Salary before tax</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+result = categories.GROSS + categories.IEC + categories.HAFE
+result_rate = 100</field>
+            <field name="code">SBT</field>
+            <field name="sequence">900</field>
+            <field name="condition_select">none</field>
+            <field name="category_id" ref="hr_payroll_SBT" />
+            <field name="fal_highlight_on_payslip" eval="True" />
+        </record>
+        
+        <record id="hr_salary_rule_SBTC" model="hr.salary.rule">
+            <field name="name">工资(不含年终奖)/Salary not include annual bonus</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+result = categories.GROSS - categories.ANBNS + categories.IEC + categories.HAFE
+result_rate = 100</field>
+            <field name="code">SBTC</field>
+            <field name="sequence">900</field>
+            <field name="condition_select">none</field>
+            <field name="appears_on_payslip" eval="False" />
+            <field name="category_id" ref="hr_payroll_SBTC" />
+        </record>
+        
+        <record id="hr_salary_rule_ST" model="hr.salary.rule">
+            <field name="name">个人所得税/Individual Income Tax</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+a = 0.00 
+if categories.SBTC  &lt;= 3500:     
+    a = 0.00 
+elif employee.country_id.name == 'China':     
+    a = categories.SBTC  - 3500 
+elif categories.SBTC  - 4800 &lt;= 0: 
+    a = 0.00
+else :     
+    a = categories.SBTC  - 4800 
+if a &lt;= 1500:     
+    result = a * 0.03 
+elif a &gt; 1500 and a &lt;= 4500:     
+    result = (a * 0.10) - 105 
+elif a &gt; 4500 and a &lt;= 9000:     
+    result = (a * 0.20) - 555 
+elif a &gt; 9000 and a &lt;= 35000:     
+    result = (a * 0.25) - 1005 
+elif a &gt; 35000 and a &lt;= 55000:     
+    result = (a * 0.30) - 2755 
+elif a &gt; 55000 and a &lt;= 80000:     
+    result = (a * 0.35) - 5505 
+else:     
+    result = (a * 0.45) - 13505
+result_rate = 100
+result = -result + categories.ANBTX</field>
+            <field name="code">TT</field>
+            <field name="sequence">910</field>
+            <field name="condition_select">none</field>
+            <field name="category_id" ref="hr_payroll_ST" />
+        </record>
+
+        <record id="hr_salary_rule_ANBTX" model="hr.salary.rule">
+            <field name="name">年终奖个税/Annual Bonus Tax</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+a = 0.00
+if inputs.ANBNS and inputs.ANBNS.amount:
+    a = inputs.ANBNS.amount / 12
+
+if a &lt;= 1500:     
+    result = inputs.ANBNS.amount * 0.03 
+elif a &gt; 1500 and a &lt;= 4500:     
+    result = (inputs.ANBNS.amount * 0.10) - 105 
+elif a &gt; 4500 and a &lt;= 9000:     
+    result = (inputs.ANBNS.amount * 0.20) - 555 
+elif a &gt; 9000 and a &lt;= 35000:     
+    result = (inputs.ANBNS.amount * 0.25) - 1005 
+elif a &gt; 35000 and a &lt;= 55000:     
+    result = (inputs.ANBNS.amount * 0.30) - 2755 
+elif a &gt; 55000 and a &lt;= 80000:     
+    result = (inputs.ANBNS.amount * 0.35) - 5505 
+else:     
+    result = (inputs.ANBNS.amount * 0.45) - 13505
+result_rate = 100
+result = -result</field>
+            <field name="code">ANBTX</field>
+            <field name="sequence">107</field>
+            <field name="condition_select">none</field>
+            <field name="appears_on_payslip" eval="False" />
+            <field name="category_id" ref="hr_payroll_ANBTX" />
+        </record>
+        
+        <record id="hr_salary_rule_TFFHPC" model="hr.salary.rule">
+            <field name="name">住房公积金(公司)/Total Fund For Housing Company Cost</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+result = categories.HAFC
+result_rate = 100</field>
+            <field name="code">TFFHPC</field>
+            <field name="sequence">906</field>
+            <field name="condition_select">none</field>
+            <field name="appears_on_payslip" eval="False" />
+            <field name="category_id" ref="hr_payroll_TFFHP" />
+        </record>
+        
+        <record id="hr_salary_rule_TFFHPE" model="hr.salary.rule">
+            <field name="name">住房公积金(个人)/Total Fund For Housing Employee Cost</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+result = categories.HAFE
+result_rate = 100</field>
+            <field name="code">TFFHPE</field>
+            <field name="sequence">907</field>
+            <field name="condition_select">none</field>
+            <field name="appears_on_payslip" eval="False" />
+            <field name="category_id" ref="hr_payroll_TFFHE" />
+        </record>
+        
+        <record id="hr_salary_rule_TIPBC" model="hr.salary.rule">
+            <field name="name">社保(公司)/Total Insurance Company Cost</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+result = categories.ICC
+result_rate = 100</field>
+            <field name="code">TIPBC</field>
+            <field name="sequence">901</field>
+            <field name="condition_select">none</field>
+            <field name="appears_on_payslip" eval="False" />
+            <field name="category_id" ref="hr_payroll_IPBC" />
+        </record> 
+        
+        <record id="hr_salary_rule_TIPBE" model="hr.salary.rule">
+            <field name="name">社保(个人)/Total Insurance Employee Cost</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+result = categories.IEC
+result_rate = 100</field>
+            <field name="code">TIPBE</field>
+            <field name="sequence">905</field>
+            <field name="condition_select">none</field>
+            <field name="appears_on_payslip" eval="False" />
+            <field name="category_id" ref="hr_payroll_TIPBE" />
+        </record> 
+        
+        
+        <!-- General Salary Rule -->
+        <!-- Salary Insurance Rule-->
+        <record id="hr_salary_rule_CSEI" model="hr.salary.rule">
+            <field name="name">深户养老(公司)_C_SZ Endowment insurance</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+if contract.fal_si_base == 0.00:
+    result = 0
+elif contract.fal_si_base &gt;= 1808 and contract.fal_si_base &lt;= 15654: 
+    result = contract.fal_si_base 
+elif contract.fal_si_base &lt; 1808 : 
+    result = 1808 
+else: 
+    result = 15654
+result_rate = 14</field>
+            <field name="code">CSEI</field>
+            <field name="sequence">101</field>
+            <field name="condition_select">none</field>
+            <field name="appears_on_payslip" eval="False" />
+            <field name="category_id" ref="hr_payroll_ICC" />
+        </record> 
+        
+        <record id="hr_salary_rule_CNSEI" model="hr.salary.rule">
+            <field name="name">非深户养老(公司)_C_Non-SZ Endowment insurance</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+if contract.fal_si_base == 0.00:
+    result = 0
+elif contract.fal_si_base &gt;= 1808 and contract.fal_si_base &lt;= 15654: 
+    result = contract.fal_si_base 
+elif contract.fal_si_base &lt; 1808 : 
+    result = 1808 
+else: 
+    result = 15654 
+result_rate = 13</field>
+            <field name="code">CNSEI</field>
+            <field name="sequence">101</field>
+            <field name="condition_select">none</field>
+            <field name="appears_on_payslip" eval="False" />
+            <field name="category_id" ref="hr_payroll_ICC" />
+        </record>
+        
+        <record id="hr_salary_rule_EEI" model="hr.salary.rule">
+            <field name="name">养老保险(个人)_E_Endowment insurance</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+if contract.fal_si_base == 0.00:
+    result = 0
+elif contract.fal_si_base &gt;= 1808 and contract.fal_si_base &lt;= 15654:     
+    result = contract.fal_si_base
+elif contract.fal_si_base &lt; 1808 :     
+    result = 1808
+else:     
+    result = 15654
+result_rate = -8</field>
+            <field name="code">EEI</field>
+            <field name="sequence">60</field>
+            <field name="condition_select">none</field>
+            <field name="appears_on_payslip" eval="False" />
+            <field name="category_id" ref="hr_payroll_IEC" />
+        </record>
+        
+        <record id="hr_salary_rule_C1MI" model="hr.salary.rule">
+            <field name="name">医疗保险(公司)_C_Level 1 Medicare insurance</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+if contract.fal_si_base == 0.00:
+    result = 0
+elif contract.fal_si_base &gt;= 3131 and contract.fal_si_base &lt;= 15654:     
+    result = contract.fal_si_base
+elif contract.fal_si_base &lt; 3131 :     
+    result = 3131
+else:     
+    result = 15654
+result_rate = 6.2</field>
+            <field name="code">C1MI</field>
+            <field name="sequence">102</field>
+            <field name="condition_select">none</field>
+            <field name="appears_on_payslip" eval="False" />
+            <field name="category_id" ref="hr_payroll_ICC" />
+        </record>
+        
+        <record id="hr_salary_rule_E1MI" model="hr.salary.rule">
+            <field name="name">医疗保险(个人)_E_Level 1 Medicare insurance</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+if contract.fal_si_base == 0.00:
+    result = 0
+elif contract.fal_si_base &gt;= 3131 and contract.fal_si_base &lt;= 15654:     
+    result = contract.fal_si_base
+elif contract.fal_si_base &lt; 3131 :     
+    result = 3131
+else:     
+    result = 15654
+result_rate = -2</field>
+            <field name="code">E1MI</field>
+            <field name="sequence">61</field>
+            <field name="condition_select">none</field>
+            <field name="appears_on_payslip" eval="False" />
+            <field name="category_id" ref="hr_payroll_IEC" />
+        </record>        
+
+        <record id="hr_salary_rule_C2MI" model="hr.salary.rule">
+            <field name="name">医疗保险(公司)_C_Level 2 Medicare insurance</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+if contract.fal_si_base == 0.00:
+    result = 0
+else:
+    result = 5218
+result_rate = 0.6</field>
+            <field name="code">C2MI</field>
+            <field name="sequence">103</field>
+            <field name="condition_select">none</field>
+            <field name="appears_on_payslip" eval="False" />
+            <field name="category_id" ref="hr_payroll_ICC" />
+        </record>
+
+        <record id="hr_salary_rule_E2MI" model="hr.salary.rule">
+            <field name="name">医疗保险(个人)_E_Level 2 Medicare insurance</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+if contract.fal_si_base == 0.00:
+    result = 0
+else:
+    result = 5218
+result_rate = -0.2</field>
+            <field name="code">E2MI</field>
+            <field name="sequence">62</field>
+            <field name="condition_select">none</field>
+            <field name="appears_on_payslip" eval="False" />
+            <field name="category_id" ref="hr_payroll_IEC" />
+        </record> 
+
+        <record id="hr_salary_rule_C3MI" model="hr.salary.rule">
+            <field name="name">医疗保险(公司)_C_Level 3 Medicare insurance</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+if contract.fal_si_base == 0.00:
+    result = 0
+else:
+    result = 5218
+result_rate = 0.45</field>
+            <field name="code">C3MI</field>
+            <field name="sequence">104</field>
+            <field name="condition_select">none</field>
+            <field name="appears_on_payslip" eval="False" />
+            <field name="category_id" ref="hr_payroll_ICC" />
+        </record>
+
+        <record id="hr_salary_rule_E3MI" model="hr.salary.rule">
+            <field name="name">医疗保险(个人)_E_Level 3 Medicare insurance</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+if contract.fal_si_base == 0.00:
+    result = 0
+else:
+    result = 5218
+result_rate = -0.1</field>
+            <field name="code">E3MI</field>
+            <field name="sequence">63</field>
+            <field name="condition_select">none</field>
+            <field name="appears_on_payslip" eval="False" />
+            <field name="category_id" ref="hr_payroll_IEC" />
+        </record> 
+
+        <record id="hr_salary_rule_C1MMI" model="hr.salary.rule">
+            <field name="name">生育保险(公司)_C_Level 1 Maternal medicare insurance</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+if contract.fal_si_base == 0.00:
+    result = 0
+elif contract.fal_si_base &gt;= 3131 and contract.fal_si_base &lt;= 15654:     
+    result = contract.fal_si_base
+elif contract.fal_si_base &lt; 3131 :     
+    result = 3131
+else:     
+    result = 15654
+result_rate = 0.5</field>
+            <field name="code">C1MMI</field>
+            <field name="sequence">105</field>
+            <field name="condition_select">none</field>
+            <field name="appears_on_payslip" eval="False" />
+            <field name="category_id" ref="hr_payroll_ICC" />
+        </record>
+        
+        <record id="hr_salary_rule_C2MMI" model="hr.salary.rule">
+            <field name="name">生育保险(公司)_C_Level 2 Maternal medicare insurance</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">   
+if contract.fal_si_base == 0.00:
+    result = 0
+else:
+    result = 5218
+result_rate = 0.2</field>
+            <field name="code">C2MMI</field>
+            <field name="sequence">106</field>
+            <field name="condition_select">none</field>
+            <field name="appears_on_payslip" eval="False" />
+            <field name="category_id" ref="hr_payroll_ICC" />
+        </record>
+
+        <record id="hr_salary_rule_E1MMI" model="hr.salary.rule">
+            <field name="name">生育保险(个人)_E_Level 1 Maternal medicare insurance</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+result = 0
+result_rate = 0</field>
+            <field name="code">E1MMI</field>
+            <field name="sequence">64</field>
+            <field name="condition_select">none</field>
+            <field name="appears_on_payslip" eval="False" />
+            <field name="category_id" ref="hr_payroll_IEC" />
+        </record>
+        
+        <record id="hr_salary_rule_E2MMI" model="hr.salary.rule">
+            <field name="name">生育保险(个人)_E_Level 2 Maternal medicare insurance</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">   
+result = 0
+result_rate = 0</field>
+            <field name="code">E2MMI</field>
+            <field name="sequence">65</field>
+            <field name="condition_select">none</field>
+            <field name="appears_on_payslip" eval="False" />
+            <field name="category_id" ref="hr_payroll_IEC" />
+        </record>
+
+        <record id="hr_salary_rule_CWII" model="hr.salary.rule">
+            <field name="name">工伤保险(公司)_C_Work-related injury insurance</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+if contract.fal_si_base == 0.00:
+    result = 0
+elif contract.fal_si_base &gt;= 1808 and contract.fal_si_base &lt;= 15654:     
+    result = contract.fal_si_base
+elif contract.fal_si_base &lt; 1808 :     
+    result = 1808
+else:     
+    result = 15654
+result_rate = 0.4</field>
+            <field name="code">CWII</field>
+            <field name="sequence">108</field>
+            <field name="condition_select">none</field>
+            <field name="appears_on_payslip" eval="False" />
+            <field name="category_id" ref="hr_payroll_ICC" />
+        </record>
+        <record id="hr_salary_rule_EWII" model="hr.salary.rule">
+            <field name="name">工伤保险(个人)_E_Work-related injury insurance</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+result = 0
+result_rate = 0</field>
+            <field name="code">EWII</field>
+            <field name="sequence">37</field>
+            <field name="condition_select">none</field>
+            <field name="appears_on_payslip" eval="False" />
+            <field name="category_id" ref="hr_payroll_IEC" />
+        </record>
+        
+        <record id="hr_salary_rule_CUI" model="hr.salary.rule">
+            <field name="name">失业保险(公司)_C_Unemployment insurance</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+if contract.fal_si_base == 0.00:
+    result = 0
+else:   
+    result = 1808
+result_rate = 1.6</field>
+            <field name="code">CUI</field>
+            <field name="sequence">108</field>
+            <field name="condition_select">none</field>
+            <field name="appears_on_payslip" eval="False" />
+            <field name="category_id" ref="hr_payroll_ICC" />
+        </record>
+        
+        <record id="hr_salary_rule_EUI" model="hr.salary.rule">
+            <field name="name">失业保险(个人)_E_Unemployment insurance</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">   
+if contract.fal_si_base == 0.00:
+    result = 0
+else:
+    result = 1808
+result_rate = -1</field>
+            <field name="code">EUI</field>
+            <field name="sequence">67</field>
+            <field name="condition_select">none</field>
+            <field name="appears_on_payslip" eval="False" />
+            <field name="category_id" ref="hr_payroll_IEC" />
+        </record>
+        
+        
+        <!-- Salary housefund rule -->
+        <record id="hr_salary_rule_GCAFFH" model="hr.salary.rule">
+            <field name="name">住房公积金(公司)_G_C_Accumulation fund for housing</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">   
+if contract.fal_haf_base == 0.00:
+    result = 0
+elif contract.fal_haf_base &gt;= 1808 and contract.fal_haf_base &lt;= 26090:
+    result =  contract.fal_haf_base
+elif contract.fal_haf_base &lt; 1808 :     
+    result =  1808
+else:     
+    result =  26090
+result_rate = 5</field>
+            <field name="code">GCAFFH</field>
+            <field name="sequence">107</field>
+            <field name="condition_select">none</field>
+            <field name="appears_on_payslip" eval="False" />
+            <field name="category_id" ref="hr_payroll_HAFC" />
+        </record> 
+        
+        <record id="hr_salary_rule_GEFFH" model="hr.salary.rule">
+            <field name="name">住房公积金(个人)_G_E_Accumulation fund for housing</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">   
+if contract.fal_haf_base == 0.00:
+    result = 0
+elif contract.fal_haf_base &gt;= 1808 and contract.fal_haf_base &lt;= 26090 :
+    result = contract.fal_haf_base
+elif contract.fal_haf_base &lt; 1808 :     
+    result = 1808
+else:     
+    result = 26090
+result_rate = -5</field>
+            <field name="code">GEFFH</field>
+            <field name="sequence">66</field>
+            <field name="condition_select">none</field>
+            <field name="appears_on_payslip" eval="False" />
+            <field name="category_id" ref="hr_payroll_HAFE" />
+        </record>
+
+        <!-- New Salary Rules 2019 -->
+        <record id="hr_salary_rule_ACCSBTC" model="hr.salary.rule">
+            <field name="name">累计工资(不含年终奖)/Accumulate Salary not include annual bonus</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+value = 0
+payslip_ids = employee.get_employeecurrentyear_payslip()
+
+for slip in payslip_ids:
+    for line in slip.line_ids.filtered(lambda line: line.code == 'SBTC'):
+        value += line.amount
+
+if inputs.ANBNS:
+    result = categories.GROSS + categories.IEC + categories.HAFE + value - inputs.ANBNS.amount
+else:
+    result = categories.GROSS + categories.IEC + categories.HAFE + value
+result_rate = 100</field>
+            <field name="code">ACCSBTC</field>
+            <field name="sequence">100</field>
+            <field name="condition_select">none</field>
+            <field name="appears_on_payslip" eval="True" />
+            <field name="category_id" ref="hr_payroll_ACCSBTC" />
+        </record>
+
+        <record id="hr_salary_rule_ACCTEX" model="hr.salary.rule">
+            <field name="name">累计专项扣除/Accumulate TEX</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+value = 0
+payslip_ids = employee.get_employeecurrentyear_payslip()
+
+for slip in payslip_ids:
+    for line in slip.line_ids.filtered(lambda line: line.code == 'TEX'):
+        value += line.amount
+
+result = inputs.TEX and inputs.TEX.amount + value
+result_rate = 100</field>
+            <field name="code">ACCTEX</field>
+            <field name="sequence">101</field>
+            <field name="condition_select">none</field>
+            <field name="appears_on_payslip" eval="True" />
+            <field name="category_id" ref="hr_payroll_ACCTEX" />
+        </record>
+
+        <record id="hr_salary_rule_TA" model="hr.salary.rule">
+            <field name="name">减除费用/Tax Allowance</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+result = 5000
+result_rate = 100</field>
+            <field name="code">TA</field>
+            <field name="sequence">42</field>
+            <field name="condition_select">none</field>
+            <field name="appears_on_payslip" eval="True" />
+            <field name="category_id" ref="hr_payroll_TA" />
+        </record>
+
+        <record id="hr_salary_rule_ACCTA" model="hr.salary.rule">
+            <field name="name">累计减除费用/Accumulate Tax Allowance</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+value = 0
+payslip_ids = employee.get_employeecurrentyear_payslip()
+
+for slip in payslip_ids:
+    for line in slip.line_ids.filtered(lambda line: line.code == 'TA'):
+        value += line.amount
+
+result = value + categories.TA
+result_rate = 100</field>
+            <field name="code">ACCTA</field>
+            <field name="sequence">102</field>
+            <field name="condition_select">none</field>
+            <field name="appears_on_payslip" eval="True" />
+            <field name="category_id" ref="hr_payroll_ACCTA" />
+        </record>
+
+        <record id="hr_salary_rule_ITT" model="hr.salary.rule">
+            <field name="name">个人所得税/Individual Income Tax (New)</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+a = 0
+
+if categories.ACCSBTC - categories.ACCTA  - categories.ACCTEX &lt;= 0:
+    a = 0.00
+elif categories.ACCSBTC - categories.ACCTA  - categories.ACCTEX > 0:
+    a = categories.ACCSBTC - categories.ACCTA  - categories.ACCTEX
+else:
+    a = categories.ACCSBTC - categories.ACCTA  - categories.ACCTEX
+
+if a &lt;= 36000:
+    result = a * 0.03
+elif a > 36000 and a &lt;= 144000:
+    result = (a * 0.10) - 2520
+elif a > 144000 and a &lt;= 300000:
+    result = (a * 0.20) - 16920
+elif a > 300000 and a &lt;= 420000:
+    result = (a * 0.25) - 31920
+elif a > 420000 and a &lt;= 660000:
+    result = (a * 0.30) - 52920
+elif a > 660000 and a &lt;= 9600000:
+    result = (a * 0.35) - 85920
+else:
+    result = (a * 0.45) - 181920
+result = -result
+result_rate = 100</field>
+            <field name="code">ITT</field>
+            <field name="sequence">103</field>
+            <field name="condition_select">none</field>
+            <field name="appears_on_payslip" eval="True" />
+            <field name="category_id" ref="hr_payroll_ITT" />
+        </record>
+
+        <record id="hr_salary_rule_OITT" model="hr.salary.rule">
+            <field name="name">外地个人所得税/Outland Individual Income Tax (New)</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+a = 0
+
+if categories.ACCSBTC - categories.ACCTA  - categories.ACCTEX &lt;= 0:
+    a = 0.00
+elif categories.ACCSBTC - categories.ACCTA  - categories.ACCTEX > 0:
+    a = categories.ACCSBTC - categories.ACCTA  - categories.ACCTEX
+else:
+    a = categories.ACCSBTC - categories.ACCTA  - categories.ACCTEX
+
+if a &lt;= 36000:
+    result = a * 0.03
+elif a > 36000 and a &lt;= 144000:
+    result = (a * 0.10) - 2520
+elif a > 144000 and a &lt;= 300000:
+    result = (a * 0.20) - 16920
+elif a > 300000 and a &lt;= 420000:
+    result = (a * 0.25) - 31920
+elif a > 420000 and a &lt;= 660000:
+    result = (a * 0.30) - 52920
+elif a > 660000 and a &lt;= 9600000:
+    result = (a * 0.35) - 85920
+else:
+    result = (a * 0.45) - 181920
+result = -result
+result_rate = 100</field>
+            <field name="code">OITT</field>
+            <field name="sequence">109</field>
+            <field name="condition_select">none</field>
+            <field name="appears_on_payslip" eval="True" />
+            <field name="category_id" ref="hr_payroll_OITT" />
+        </record>
+
+        <record id="hr_salary_rule_ACCITT" model="hr.salary.rule">
+            <field name="name">累计已交个人所得税/Accumulate Paid Individual Income Tax</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+value = 0
+payslip_ids = employee.get_employeecurrentyear_payslip()
+
+for slip in payslip_ids:
+    for line in slip.line_ids.filtered(lambda line: line.code == 'NETITT'):
+        value += line.amount
+
+result = value + categories.NETITT
+result_rate = 100</field>
+            <field name="code">ACCITT</field>
+            <field name="sequence">105</field>
+            <field name="condition_select">none</field>
+            <field name="appears_on_payslip" eval="True" />
+            <field name="category_id" ref="hr_payroll_ACCITT" />
+        </record>
+
+        <record id="hr_salary_rule_OACCITT" model="hr.salary.rule">
+            <field name="name">外地累计已交个人所得税/Outland Accumulate Paid Individual Income Tax</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+value = 0
+payslip_ids = employee.get_employeecurrentyear_payslip()
+
+for slip in payslip_ids:
+    for line in slip.line_ids.filtered(lambda line: line.code == 'NETITT'):
+        value += line.amount
+
+result = value + categories.NETITT
+result_rate = 100</field>
+            <field name="code">OACCITT</field>
+            <field name="sequence">111</field>
+            <field name="condition_select">none</field>
+            <field name="appears_on_payslip" eval="True" />
+            <field name="category_id" ref="hr_payroll_OACCITT" />
+        </record>
+
+        <record id="hr_salary_rule_NETITT" model="hr.salary.rule">
+            <field name="name">应交个人所得税/Individual Income Tax Payable</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+if categories.ITT - categories.ACCITT >0:
+    result = 0.00
+else:
+    result = categories.ITT - categories.ACCITT</field>
+            <field name="code">NETITT</field>
+            <field name="sequence">106</field>
+            <field name="condition_select">none</field>
+            <field name="appears_on_payslip" eval="True" />
+            <field name="category_id" ref="hr_payroll_NETITT" />
+        </record>
+
+        <record id="hr_salary_rule_ONETITT" model="hr.salary.rule">
+            <field name="name">外地应交个人所得税/Outland Individual Income Tax Payable</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+if categories.ITT - categories.ACCITT >0:
+    result = 0.00
+else:
+    result = categories.ITT - categories.ACCITT</field>
+            <field name="code">ONETITT</field>
+            <field name="sequence">110</field>
+            <field name="condition_select">none</field>
+            <field name="appears_on_payslip" eval="True" />
+            <field name="category_id" ref="hr_payroll_ONETITT" />
+        </record>
+
+        <record id="hr_salary_rule_ONET" model="hr.salary.rule">
+            <field name="name">实发工资/Outland Net</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+if categories.ITT - categories.ACCITT > 0:
+    NETITT = 0.00
+else:
+    NETITT = categories.ITT - categories.ACCITT
+
+result = categories.SBT + NETITT + categories.ANBTX
+result_rate = 100</field>
+            <field name="code">ONET</field>
+            <field name="sequence">110</field>
+            <field name="condition_select">none</field>
+            <field name="category_id" ref="hr_payroll_ONET" />
+            <field name="fal_highlight_on_payslip" eval="True" />
+        </record>
+        
+        
+        <!-- View for insurance -->
+        <record id="hr_salary_rule_VIEWSEI" model="hr.salary.rule">
+            <field name="name">养老保险深户/SZ Endowment insurance</field>
+            <field name="amount_select">fix</field>
+            <field name="code">VSEI</field>
+            <field name="sequence">101</field>
+            <field name="condition_select">none</field>
+            <field name="fal_is_insurance" eval="True" />
+            <field name="fal_rule_child_employee_id" ref="hr_salary_rule_EEI" />
+            <field name="fal_rule_child_employeer_id" ref="hr_salary_rule_CSEI" />
+            <field name="category_id" ref="hr_payroll_INVI" />
+        </record> 
+        <record id="hr_salary_rule_VIEWNSEI" model="hr.salary.rule">
+            <field name="name">养老保险非深户/Non-SZ Endowment insurance</field>
+            <field name="amount_select">fix</field>
+            <field name="code">VNSEI</field>
+            <field name="sequence">101</field>
+            <field name="condition_select">none</field>
+            <field name="fal_is_insurance" eval="True" />
+            <field name="fal_rule_child_employee_id" ref="hr_salary_rule_EEI" />
+            <field name="fal_rule_child_employeer_id" ref="hr_salary_rule_CNSEI" />
+            <field name="category_id" ref="hr_payroll_INVI" />
+        </record>
+        
+        <record id="hr_salary_rule_VIEW1MI" model="hr.salary.rule">
+            <field name="name">医疗保险(一档)/Level 1 Medicare insurance</field>
+            <field name="amount_select">fix</field>
+            <field name="code">V1MI</field>
+            <field name="sequence">102</field>
+            <field name="condition_select">none</field>
+            <field name="fal_is_insurance" eval="True" />
+            <field name="fal_rule_child_employee_id" ref="hr_salary_rule_E1MI" />
+            <field name="fal_rule_child_employeer_id" ref="hr_salary_rule_C1MI" />
+            <field name="category_id" ref="hr_payroll_INVI" />
+        </record> 
+        <record id="hr_salary_rule_VIEW2MI" model="hr.salary.rule">
+            <field name="name">医疗保险(二档)/Level 2 Medicare insurance</field>
+            <field name="amount_select">fix</field>
+            <field name="code">V2MI</field>
+            <field name="sequence">103</field>
+            <field name="condition_select">none</field>
+            <field name="fal_is_insurance" eval="True" />
+            <field name="fal_rule_child_employee_id" ref="hr_salary_rule_E2MI" />
+            <field name="fal_rule_child_employeer_id" ref="hr_salary_rule_C2MI" />
+            <field name="category_id" ref="hr_payroll_INVI" />
+        </record>
+        <record id="hr_salary_rule_VIEW3MI" model="hr.salary.rule">
+            <field name="name">医疗保险(三档)/Level 3 Medicare insurance</field>
+            <field name="amount_select">fix</field>
+            <field name="code">V3MI</field>
+            <field name="sequence">104</field>
+            <field name="condition_select">none</field>
+            <field name="fal_is_insurance" eval="True" />
+            <field name="fal_rule_child_employee_id" ref="hr_salary_rule_E3MI" />
+            <field name="fal_rule_child_employeer_id" ref="hr_salary_rule_C3MI" />
+            <field name="category_id" ref="hr_payroll_INVI" />
+        </record>
+        <record id="hr_salary_rule_VIEW1MMI" model="hr.salary.rule">
+            <field name="name">生育保险(一档)/Level 1 Maternal Medicare insurance</field>
+            <field name="amount_select">fix</field>
+            <field name="code">V1MMI</field>
+            <field name="sequence">105</field>
+            <field name="condition_select">none</field>
+            <field name="fal_is_insurance" eval="True" />
+            <field name="fal_rule_child_employee_id" ref="hr_salary_rule_E1MMI" />
+            <field name="fal_rule_child_employeer_id" ref="hr_salary_rule_C1MMI" />
+            <field name="category_id" ref="hr_payroll_INVI" />
+        </record>
+        <record id="hr_salary_rule_VIEW2MMI" model="hr.salary.rule">
+            <field name="name">生育保险(二档)/Level 2 Maternal Medicare insurance</field>
+            <field name="amount_select">fix</field>
+            <field name="code">V2MMI</field>
+            <field name="sequence">106</field>
+            <field name="condition_select">none</field>
+            <field name="fal_is_insurance" eval="True" />
+            <field name="fal_rule_child_employee_id" ref="hr_salary_rule_E2MMI" />
+            <field name="fal_rule_child_employeer_id" ref="hr_salary_rule_C2MMI" />
+            <field name="category_id" ref="hr_payroll_INVI" />
+        </record>
+        <record id="hr_salary_rule_VIEWWII" model="hr.salary.rule">
+            <field name="name">工伤保险/Work-related injury insurance</field>
+            <field name="amount_select">fix</field>
+            <field name="code">VWII</field>
+            <field name="sequence">107</field>
+            <field name="condition_select">none</field>
+            <field name="fal_is_insurance" eval="True" />
+            <field name="fal_rule_child_employee_id" ref="hr_salary_rule_EWII" />
+            <field name="fal_rule_child_employeer_id" ref="hr_salary_rule_CWII" />
+            <field name="category_id" ref="hr_payroll_INVI" />
+        </record>
+        <record id="hr_salary_rule_VIEWUI" model="hr.salary.rule">
+            <field name="name">失业保险/Unemployment insurance</field>
+            <field name="amount_select">fix</field>
+            <field name="code">VUI</field>
+            <field name="sequence">108</field>
+            <field name="condition_select">none</field>
+            <field name="fal_is_insurance" eval="True" />
+            <field name="fal_rule_child_employee_id" ref="hr_salary_rule_EUI" />
+            <field name="fal_rule_child_employeer_id" ref="hr_salary_rule_CUI" />
+            <field name="category_id" ref="hr_payroll_INVI" />
+        </record>
+        <record id="hr_salary_rule_VIEWFFH" model="hr.salary.rule">
+            <field name="name">住房公积金/Accumulation fund for housing</field>
+            <field name="amount_select">fix</field>
+            <field name="code">VFFH</field>
+            <field name="sequence">109</field>
+            <field name="condition_select">none</field>
+            <field name="fal_is_insurance" eval="True" />
+            <field name="fal_rule_child_employee_id" ref="hr_salary_rule_GEFFH" />
+            <field name="fal_rule_child_employeer_id" ref="hr_salary_rule_GCAFFH" />
+            <field name="category_id" ref="hr_payroll_INVI" />
+        </record>
+        
+        <!-- New Salary Rule 2019 -->
+        <record id="hr_salary_rule_OTHIS" model="hr.salary.rule">
+            <field name="name">Other Insurance</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+result = inputs.OTHIS and inputs.OTHIS.amount
+result_rate = 100</field>
+            <field name="code">OTHIS</field>
+            <field name="sequence">17</field>
+            <field name="condition_select">none</field>
+            <field name="appears_on_payslip" eval="True" />
+            <field name="category_id" ref="hr_payroll_OTH" />
+        </record>
+        <record id="hr_rule_input_OTHIS" model="hr.rule.input">
+            <field name="name">Other Insurance</field>
+            <field name="code">OTHIS</field>
+            <field name="input_id" ref="hr_salary_rule_OTHIS"/>
+        </record>
+
+        <record id="hr_salary_rule_GSBBE" model="hr.salary.rule">
+            <field name="name">Gross salary before Bonus and Extra hours</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+result = categories.BASIC + categories.ALW
+result_rate = 100</field>
+            <field name="code">GSBBE</field>
+            <field name="sequence">3</field>
+            <field name="condition_select">none</field>
+            <field name="appears_on_payslip" eval="True" />
+            <field name="category_id" ref="hr_payroll_GSBBE" />
+            <field name="fal_highlight_on_payslip" eval="True" />
+        </record>
+
+        <record id="hr_salary_rule_SHEEI" model="hr.salary.rule">
+            <field name="name">上海养老保险(个人)_E_SH Endowment insurance</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+result = contract.fal_si_base
+result_rate = -8</field>
+            <field name="code">SHEEI</field>
+            <field name="sequence">24</field>
+            <field name="condition_select">none</field>
+            <field name="appears_on_payslip" eval="False" />
+            <field name="category_id" ref="hr_payroll_IEC" />
+        </record>
+
+        <record id="hr_salary_rule_SHCSEI" model="hr.salary.rule">
+            <field name="name">上海养老保险(公司)_C_SH Endowment insurance</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+result = contract.fal_si_base
+result_rate = 16</field>
+            <field name="code">SHCSEI</field>
+            <field name="sequence">44</field>
+            <field name="condition_select">none</field>
+            <field name="appears_on_payslip" eval="False" />
+            <field name="category_id" ref="hr_payroll_ICC" />
+        </record>
+
+        <record id="hr_salary_rule_SHCMI" model="hr.salary.rule">
+            <field name="name">上海医疗保险(公司)_C_SH Medicare insurance</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+result = contract.fal_si_base
+result_rate = 9.5</field>
+            <field name="code">SHCMI</field>
+            <field name="sequence">51</field>
+            <field name="condition_select">none</field>
+            <field name="appears_on_payslip" eval="False" />
+            <field name="category_id" ref="hr_payroll_ICC" />
+        </record>
+
+        <record id="hr_salary_rule_SHMMI" model="hr.salary.rule">
+            <field name="name">上海生育保险(公司)_C_SH Maternal medicare insurance</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+result = contract.fal_si_base
+result_rate = 1</field>
+            <field name="code">SHMMI</field>
+            <field name="sequence">62</field>
+            <field name="condition_select">none</field>
+            <field name="appears_on_payslip" eval="False" />
+            <field name="category_id" ref="hr_payroll_ICC" />
+        </record>
+
+        <record id="hr_salary_rule_SHCUI" model="hr.salary.rule">
+            <field name="name">上海失业保险(公司)_C_SH Unemployment insurance</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+result = contract.fal_si_base
+result_rate = 0.5</field>
+            <field name="code">SHCUI</field>
+            <field name="sequence">79</field>
+            <field name="condition_select">none</field>
+            <field name="appears_on_payslip" eval="False" />
+            <field name="category_id" ref="hr_payroll_ICC" />
+        </record>
+
+        <record id="hr_salary_rule_SHCWII" model="hr.salary.rule">
+            <field name="name">上海工伤保险(公司)_C_SH Work-related injury insurance</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+result = contract.fal_si_base
+result_rate = 0.256</field>
+            <field name="code">SHCWII</field>
+            <field name="sequence">80</field>
+            <field name="condition_select">none</field>
+            <field name="appears_on_payslip" eval="False" />
+            <field name="category_id" ref="hr_payroll_ICC" />
+        </record>
+
+        <record id="hr_salary_rule_SHCDEF" model="hr.salary.rule">
+            <field name="name">上海残疾人就业保障金（公司）_C_Disability Employment Fund</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+if contract.fal_si_base >= 16422:
+    result = 16422
+else:     
+    result = contract.fal_si_base
+result_rate =1.5</field>
+            <field name="code">SHCDEF</field>
+            <field name="sequence">78</field>
+            <field name="condition_select">none</field>
+            <field name="appears_on_payslip" eval="False" />
+            <field name="category_id" ref="hr_payroll_ICC" />
+        </record>
+        <record id="hr_rule_input_SHCDEF" model="hr.rule.input">
+            <field name="name">残疾人就业保障金</field>
+            <field name="code">SHCDEF</field>
+            <field name="input_id" ref="hr_salary_rule_SHCDEF"/>
+        </record>
+
+        <record id="hr_salary_rule_SHGCAFFH" model="hr.salary.rule">
+            <field name="name">上海住房公积金(公司)_G_C_SH Accumulation fund for housing</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+result =  contract.fal_haf_base
+result_rate = 7</field>
+            <field name="code">SHGCAFFH</field>
+            <field name="sequence">71</field>
+            <field name="condition_select">none</field>
+            <field name="appears_on_payslip" eval="False" />
+            <field name="category_id" ref="hr_payroll_HAFC" />
+        </record>
+
+        <record id="hr_salary_rule_SHGEFFH" model="hr.salary.rule">
+            <field name="name">上海住房公积金(个人)_G_E_SH Accumulation fund for housing</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+result = contract.fal_haf_base
+result_rate = -7</field>
+            <field name="code">SHGEFFH</field>
+            <field name="sequence">34</field>
+            <field name="condition_select">none</field>
+            <field name="appears_on_payslip" eval="False" />
+            <field name="category_id" ref="hr_payroll_HAFE" />
+        </record>
+
+        <record id="hr_salary_rule_SHEMI" model="hr.salary.rule">
+            <field name="name">上海医疗保险(个人)_E_SH Medicare insurance</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+result = contract.fal_si_base
+result_rate = -2</field>
+            <field name="code">SHEMI</field>
+            <field name="sequence">27</field>
+            <field name="condition_select">none</field>
+            <field name="appears_on_payslip" eval="False" />
+            <field name="category_id" ref="hr_payroll_IEC" />
+        </record>
+
+        <record id="hr_salary_rule_SHEUI" model="hr.salary.rule">
+            <field name="name">上海失业保险(个人)_E_SH Unemployment insurance</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+result = contract.fal_si_base
+result_rate = -0.5</field>
+            <field name="code">SHEUI</field>
+            <field name="sequence">38</field>
+            <field name="condition_select">none</field>
+            <field name="appears_on_payslip" eval="False" />
+            <field name="category_id" ref="hr_payroll_IEC" />
+        </record>
+
+        <record id="hr_salary_rule_SHEDEF" model="hr.salary.rule">
+            <field name="name">上海残疾人就业保障金（个人）_E_Disability Employment Fund</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+result = 0
+result_rate = 0</field>
+            <field name="code">SHEDEF</field>
+            <field name="sequence">81</field>
+            <field name="condition_select">none</field>
+            <field name="appears_on_payslip" eval="False" />
+            <field name="category_id" ref="hr_payroll_IEC" />
+        </record>
+
+        <record id="hr_salary_rule_VSHDEF" model="hr.salary.rule">
+            <field name="name">上海残疾人就业保障金/Disability Employment Fund</field>
+            <field name="amount_select">fix</field>
+            <field name="code">VSHDEF</field>
+            <field name="sequence">90</field>
+            <field name="condition_select">none</field>
+            <field name="fal_is_insurance" eval="True" />
+            <field name="fal_rule_child_employee_id" ref="hr_salary_rule_SHEDEF" />
+            <field name="fal_rule_child_employeer_id" ref="hr_salary_rule_SHCDEF" />
+            <field name="category_id" ref="hr_payroll_INVI" />
+        </record>
+
+        <record id="hr_salary_rule_SHEMMI" model="hr.salary.rule">
+            <field name="name">上海生育保险(个人)_E_SH Maternal medicare insurance</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+result = 0
+result_rate = 0</field>
+            <field name="code">SHEMMI</field>
+            <field name="sequence">61</field>
+            <field name="condition_select">none</field>
+            <field name="appears_on_payslip" eval="False" />
+            <field name="category_id" ref="hr_payroll_IEC" />
+        </record>
+
+        <record id="hr_salary_rule_VSHWII" model="hr.salary.rule">
+            <field name="name">上海工伤保险/SH Work-related injury insurance</field>
+            <field name="amount_select">fix</field>
+            <field name="code">VSHWII</field>
+            <field name="sequence">72</field>
+            <field name="condition_select">none</field>
+            <field name="fal_is_insurance" eval="True" />
+            <field name="fal_rule_child_employee_id" ref="hr_salary_rule_EWII" />
+            <field name="fal_rule_child_employeer_id" ref="hr_salary_rule_SHCWII" />
+            <field name="category_id" ref="hr_payroll_INVI" />
+        </record>
+
+        <record id="hr_salary_rule_SHEWII" model="hr.salary.rule">
+            <field name="name">上海工伤保险(个人)_E_SH Work-related injury insurance</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+result = 0
+result_rate = 0</field>
+            <field name="code">SHEWII</field>
+            <field name="sequence">39</field>
+            <field name="condition_select">none</field>
+            <field name="appears_on_payslip" eval="False" />
+            <field name="category_id" ref="hr_payroll_IEC" />
+        </record>
+
+        <record id="hr_salary_rule_VSHSEI" model="hr.salary.rule">
+            <field name="name">上海养老保险/SH Endowment insurance</field>
+            <field name="amount_select">fix</field>
+            <field name="code">VSHSEI</field>
+            <field name="sequence">47</field>
+            <field name="condition_select">none</field>
+            <field name="fal_is_insurance" eval="True" />
+            <field name="fal_rule_child_employee_id" ref="hr_salary_rule_SHEEI" />
+            <field name="fal_rule_child_employeer_id" ref="hr_salary_rule_SHCSEI" />
+            <field name="category_id" ref="hr_payroll_INVI" />
+        </record>
+
+        <record id="hr_salary_rule_VSHMI" model="hr.salary.rule">
+            <field name="name">上海医疗保险/SH Medicare insurance</field>
+            <field name="amount_select">fix</field>
+            <field name="code">VSHMI</field>
+            <field name="sequence">53</field>
+            <field name="condition_select">none</field>
+            <field name="fal_is_insurance" eval="True" />
+            <field name="fal_rule_child_employee_id" ref="hr_salary_rule_SHEMI" />
+            <field name="fal_rule_child_employeer_id" ref="hr_salary_rule_SHCMI" />
+            <field name="category_id" ref="hr_payroll_INVI" />
+        </record>
+
+        <record id="hr_salary_rule_VSHMMI" model="hr.salary.rule">
+            <field name="name">上海医疗保险/SH Medicare insurance</field>
+            <field name="amount_select">fix</field>
+            <field name="code">VSHMMI</field>
+            <field name="sequence">64</field>
+            <field name="condition_select">none</field>
+            <field name="fal_is_insurance" eval="True" />
+            <field name="fal_rule_child_employee_id" ref="hr_salary_rule_SHEMMI" />
+            <field name="fal_rule_child_employeer_id" ref="hr_salary_rule_SHMMI" />
+            <field name="category_id" ref="hr_payroll_INVI" />
+        </record>
+
+        <record id="hr_salary_rule_VSHUI" model="hr.salary.rule">
+            <field name="name">上海失业保险/SH Unemployment insurance</field>
+            <field name="amount_select">fix</field>
+            <field name="code">VSHUI</field>
+            <field name="sequence">82</field>
+            <field name="condition_select">none</field>
+            <field name="fal_is_insurance" eval="True" />
+            <field name="fal_rule_child_employee_id" ref="hr_salary_rule_SHEUI" />
+            <field name="fal_rule_child_employeer_id" ref="hr_salary_rule_SHCUI" />
+            <field name="category_id" ref="hr_payroll_INVI" />
+        </record>
+
+        <record id="hr_salary_rule_VSHFFH" model="hr.salary.rule">
+            <field name="name">上海住房公积金/SH Accumulation fund for housing</field>
+            <field name="amount_select">fix</field>
+            <field name="code">VSHFFH</field>
+            <field name="sequence">88</field>
+            <field name="condition_select">none</field>
+            <field name="fal_is_insurance" eval="True" />
+            <field name="fal_rule_child_employee_id" ref="hr_salary_rule_SHGEFFH" />
+            <field name="fal_rule_child_employeer_id" ref="hr_salary_rule_SHGCAFFH" />
+            <field name="category_id" ref="hr_payroll_INVI" />
+        </record>
+
+        <record id="hr_salary_rule_OANBTX" model="hr.salary.rule">
+            <field name="name">外地年终奖个税/Outland IIT Tax for Bonus</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+a = 0.00
+if inputs.ANBNS and inputs.ANBNS.amount:
+    a = inputs.ANBNS.amount / 12
+
+if a &lt;= 3000:
+    result = inputs.ANBNS.amount * 0.03 
+elif a > 3000 and a &lt;= 12000: 
+    result = (inputs.ANBNS.amount * 0.10) - 210 
+elif a > 12000 and a &lt;= 25000:     
+    result = (inputs.ANBNS.amount * 0.20) - 1410 
+elif a > 25000 and a &lt;= 35000:     
+    result = (inputs.ANBNS.amount * 0.25) - 2660 
+elif a > 35000 and a &lt;= 55000:     
+    result = (inputs.ANBNS.amount * 0.30) - 4410 
+elif a > 55000 and a &lt;= 80000:     
+    result = (inputs.ANBNS.amount * 0.35) - 7160 
+else:     
+    result = (inputs.ANBNS.amount * 0.45) - 15160
+result_rate = 100
+result = -result</field>
+            <field name="code">OANBTX</field>
+            <field name="sequence">108</field>
+            <field name="condition_select">none</field>
+            <field name="category_id" ref="hr_payroll_ANBTX" />
+        </record>
+
+        <record id="hr_salary_rule_TOIPBC" model="hr.salary.rule">
+            <field name="name">外地社保(公司)/Total Outland Insurance Company Cost</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+result = categories.ICC
+result_rate = 100</field>
+            <field name="code">TOIPBC</field>
+            <field name="sequence">94</field>
+            <field name="condition_select">none</field>
+            <field name="appears_on_payslip" eval="False" />
+            <field name="category_id" ref="hr_payroll_IPBC" />
+        </record>
+
+        <record id="hr_salary_rule_TOIPBE" model="hr.salary.rule">
+            <field name="name">外地社保(个人)/Total Outland Insurance Employee Cost</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+result = categories.IEC
+result_rate = 100</field>
+            <field name="code">TOIPBE</field>
+            <field name="sequence">96</field>
+            <field name="condition_select">none</field>
+            <field name="appears_on_payslip" eval="False" />
+            <field name="category_id" ref="hr_payroll_TIPBE" />
+        </record>
+
+        <record id="hr_salary_rule_TOFFHPC" model="hr.salary.rule">
+            <field name="name">外地住房公积金(公司)/Total OutlandFund For Housing Company Cost</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+result = categories.HAFC
+result_rate = 100</field>
+            <field name="code">TOFFHPC</field>
+            <field name="sequence">98</field>
+            <field name="condition_select">none</field>
+            <field name="appears_on_payslip" eval="False" />
+            <field name="category_id" ref="hr_payroll_TFFHP" />
+        </record>
+
+        <record id="hr_salary_rule_TOFFHPE" model="hr.salary.rule">
+            <field name="name">外地住房公积金(个人)/Total Outland Fund For Housing Employee Cost</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+result = categories.HAFE
+result_rate = 100</field>
+            <field name="code">TOFFHPE</field>
+            <field name="sequence">99</field>
+            <field name="condition_select">none</field>
+            <field name="appears_on_payslip" eval="False" />
+            <field name="category_id" ref="hr_payroll_TFFHE" />
+        </record>
+
+        <record id="hr_salary_rule_ONETITT2" model="hr.salary.rule">
+            <field name="name">外地个人所得税/Outland Individual Income Tax</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+if categories.ITT - categories.ACCITT >0:
+    result = 0.00
+else:
+    result = categories.ITT - categories.ACCITT</field>
+            <field name="code">ONETITT</field>
+            <field name="sequence">104</field>
+            <field name="condition_select">none</field>
+            <field name="appears_on_payslip" eval="True" />
+            <field name="category_id" ref="hr_payroll_ONETITT2" />
+        </record>
+
+        <record id="hr_salary_rule_ONET" model="hr.salary.rule">
+            <field name="name">外地实发工资/Outland Net</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+if categories.ITT - categories.OACCITT > 0:
+    NETITT = 0.00
+else:
+    NETITT = categories.ITT - categories.OACCITT
+
+result = categories.SBTC + ONETITT + categories.ANBTX
+result_rate = 100</field>
+            <field name="code">ONET</field>
+            <field name="sequence">115</field>
+            <field name="condition_select">none</field>
+            <field name="appears_on_payslip" eval="True" />
+            <field name="category_id" ref="hr_payroll_NET" />
+            <field name="fal_highlight_on_payslip" eval="True" />
+        </record>
+
+        <record id="hr_salary_rule_WHEEI" model="hr.salary.rule">
+            <field name="name">武汉养老保险(个人)_E_WH Endowment insurance</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+result = contract.fal_si_base
+result_rate = -8</field>
+            <field name="code">WHEEI</field>
+            <field name="sequence">25</field>
+            <field name="condition_select">none</field>
+            <field name="appears_on_payslip" eval="False" />
+            <field name="category_id" ref="hr_payroll_IEC" />
+        </record>
+
+        <record id="hr_salary_rule_WHCSEI" model="hr.salary.rule">
+            <field name="name">武汉养老保险(公司)_C_WH Endowment insurance</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+result = contract.fal_si_base
+result_rate = 19</field>
+            <field name="code">WHCSEI</field>
+            <field name="sequence">49</field>
+            <field name="condition_select">none</field>
+            <field name="appears_on_payslip" eval="False" />
+            <field name="category_id" ref="hr_payroll_ICC" />
+        </record>
+
+        <record id="hr_salary_rule_WHCMI" model="hr.salary.rule">
+            <field name="name">武汉医疗保险(公司)_C_WH Medicare insurance</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+result = contract.fal_si_base
+result_rate = 8</field>
+            <field name="code">WHCMI</field>
+            <field name="sequence">55</field>
+            <field name="condition_select">none</field>
+            <field name="appears_on_payslip" eval="False" />
+            <field name="category_id" ref="hr_payroll_ICC" />
+        </record>
+
+        <record id="hr_salary_rule_WHCMI0" model="hr.salary.rule">
+            <field name="name">武汉医疗保险(公司)_C_WH Medicare insurance 0</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+result = 0
+result_rate = 0</field>
+            <field name="code">WHCMI</field>
+            <field name="sequence">55</field>
+            <field name="condition_select">none</field>
+            <field name="appears_on_payslip" eval="False" />
+            <field name="category_id" ref="hr_payroll_ICC" />
+        </record>
+
+        <record id="hr_salary_rule_WHEMI" model="hr.salary.rule">
+            <field name="name">武汉医疗保险(个人)_E_WH Medicare insurance</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+result= (contract.fal_si_base * 0.02) + 7
+result_rate = -100</field>
+            <field name="code">WHEMI</field>
+            <field name="sequence">55</field>
+            <field name="condition_select">none</field>
+            <field name="appears_on_payslip" eval="True" />
+            <field name="category_id" ref="hr_payroll_IEC" />
+        </record>
+
+        <record id="hr_salary_rule_WHEMI0" model="hr.salary.rule">
+            <field name="name">武汉医疗保险(个人)_E_WH Medicare insurance 0</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+result= 0
+result_rate = 0</field>
+            <field name="code">WHEMI0</field>
+            <field name="sequence">29</field>
+            <field name="condition_select">none</field>
+            <field name="appears_on_payslip" eval="False" />
+            <field name="category_id" ref="hr_payroll_IEC" />
+        </record>
+
+        <record id="hr_salary_rule_VWHMIE" model="hr.salary.rule">
+            <field name="name">武汉医疗保险/WH Medicare insurance E</field>
+            <field name="amount_select">fix</field>
+            <field name="code">VWHMIE</field>
+            <field name="sequence">54</field>
+            <field name="condition_select">none</field>
+            <field name="fal_is_insurance" eval="True" />
+            <field name="fal_rule_child_employee_id" ref="hr_salary_rule_WHEMI" />
+            <field name="fal_rule_child_employeer_id" ref="hr_salary_rule_WHCMI0" />
+            <field name="category_id" ref="hr_payroll_INVI" />
+        </record>
+
+        <record id="hr_salary_rule_WHMMI" model="hr.salary.rule">
+            <field name="name">武汉生育保险(公司)_C_WH Maternal medicare insurance</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+result = contract.fal_si_base
+result_rate = 0.7</field>
+            <field name="code">WHMMI</field>
+            <field name="sequence">67</field>
+            <field name="condition_select">none</field>
+            <field name="appears_on_payslip" eval="False" />
+            <field name="category_id" ref="hr_payroll_ICC" />
+        </record>
+
+        <record id="hr_salary_rule_WHEMMI" model="hr.salary.rule">
+            <field name="name">武汉生育保险(个人)_E_WH Maternal medicare insurance</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+result = 0
+result_rate = 0</field>
+            <field name="code">WHEMMI</field>
+            <field name="sequence">66</field>
+            <field name="condition_select">none</field>
+            <field name="appears_on_payslip" eval="False" />
+            <field name="category_id" ref="hr_payroll_ICC" />
+        </record>
+
+        <record id="hr_salary_rule_VWHMMI" model="hr.salary.rule">
+            <field name="name">武汉医疗保险/WH Medicare insurance E</field>
+            <field name="amount_select">fix</field>
+            <field name="code">VWHMMI</field>
+            <field name="sequence">65</field>
+            <field name="condition_select">none</field>
+            <field name="fal_is_insurance" eval="True" />
+            <field name="fal_rule_child_employee_id" ref="hr_salary_rule_WHEMMI" />
+            <field name="fal_rule_child_employeer_id" ref="hr_salary_rule_WHMMI" />
+            <field name="category_id" ref="hr_payroll_INVI" />
+        </record>
+
+        <record id="hr_salary_rule_WHCUI" model="hr.salary.rule">
+            <field name="name">武汉失业保险(公司)_C_WH Unemployment insurance</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+result = contract.fal_si_base
+result_rate = 0.7</field>
+            <field name="code">WHCUI</field>
+            <field name="sequence">85</field>
+            <field name="condition_select">none</field>
+            <field name="appears_on_payslip" eval="False" />
+            <field name="category_id" ref="hr_payroll_ICC" />
+        </record>
+
+        <record id="hr_salary_rule_WHEUI" model="hr.salary.rule">
+            <field name="name">武汉失业保险(个人)_E_WH Unemployment insurance</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+result = contract.fal_si_base
+result_rate = -0.3</field>
+            <field name="code">WHEUI</field>
+            <field name="sequence">40</field>
+            <field name="condition_select">none</field>
+            <field name="appears_on_payslip" eval="False" />
+            <field name="category_id" ref="hr_payroll_IEC" />
+        </record>
+
+        <record id="hr_salary_rule_VWHUI" model="hr.salary.rule">
+            <field name="name">武汉失业保险/WH Unemployment insurance</field>
+            <field name="amount_select">fix</field>
+            <field name="code">VWHUI</field>
+            <field name="sequence">84</field>
+            <field name="condition_select">none</field>
+            <field name="fal_is_insurance" eval="True" />
+            <field name="fal_rule_child_employee_id" ref="hr_salary_rule_WHEUI" />
+            <field name="fal_rule_child_employeer_id" ref="hr_salary_rule_WHCUI" />
+            <field name="category_id" ref="hr_payroll_INVI" />
+        </record>
+
+        <record id="hr_salary_rule_WHEWII" model="hr.salary.rule">
+            <field name="name">武汉工伤保险(个人)_E_WH Work-related injury insurance</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+result = 0
+result_rate = 0</field>
+            <field name="code">WHEWII</field>
+            <field name="sequence">41</field>
+            <field name="condition_select">none</field>
+            <field name="appears_on_payslip" eval="False" />
+            <field name="category_id" ref="hr_payroll_IEC" />
+        </record>
+
+        <record id="hr_salary_rule_WHCWII" model="hr.salary.rule">
+            <field name="name">武汉工伤保险(公司)_C_WH Work-related injury insurance</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+result = contract.fal_si_base
+result_rate = 0.48</field>
+            <field name="code">WHCWII</field>
+            <field name="sequence">86</field>
+            <field name="condition_select">none</field>
+            <field name="appears_on_payslip" eval="False" />
+            <field name="category_id" ref="hr_payroll_ICC" />
+        </record>
+
+        <record id="hr_salary_rule_VWHWII" model="hr.salary.rule">
+            <field name="name">武汉工伤保险/WH Work-related injury insurance</field>
+            <field name="amount_select">fix</field>
+            <field name="code">VWHWII</field>
+            <field name="sequence">73</field>
+            <field name="condition_select">none</field>
+            <field name="fal_is_insurance" eval="True" />
+            <field name="fal_rule_child_employee_id" ref="hr_salary_rule_WHEWII" />
+            <field name="fal_rule_child_employeer_id" ref="hr_salary_rule_WHCWII" />
+            <field name="category_id" ref="hr_payroll_INVI" />
+        </record>
+
+        <record id="hr_salary_rule_WHGCAFFH" model="hr.salary.rule">
+            <field name="name">武汉住房公积金(公司)_G_C_WH Accumulation fund for housing</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+result =  contract.fal_haf_base
+result_rate = 8</field>
+            <field name="code">WHGCAFFH</field>
+            <field name="sequence">75</field>
+            <field name="condition_select">none</field>
+            <field name="appears_on_payslip" eval="False" />
+            <field name="category_id" ref="hr_payroll_HAFC" />
+        </record>
+
+        <record id="hr_salary_rule_WHGEFFH" model="hr.salary.rule">
+            <field name="name">武汉住房公积金(个人)_G_E_WH Accumulation fund for housing</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+result = contract.fal_haf_base
+result_rate = -8</field>
+            <field name="code">WHGEFFH</field>
+            <field name="sequence">35</field>
+            <field name="condition_select">none</field>
+            <field name="appears_on_payslip" eval="False" />
+            <field name="category_id" ref="hr_payroll_HAFE" />
+        </record>
+
+        <record id="hr_salary_rule_VWHFFH" model="hr.salary.rule">
+            <field name="name">武汉住房公积金/WH Accumulation fund for housing</field>
+            <field name="amount_select">fix</field>
+            <field name="code">VWHFFH</field>
+            <field name="sequence">89</field>
+            <field name="condition_select">none</field>
+            <field name="fal_is_insurance" eval="True" />
+            <field name="fal_rule_child_employee_id" ref="hr_salary_rule_WHGEFFH" />
+            <field name="fal_rule_child_employeer_id" ref="hr_salary_rule_WHGCAFFH" />
+            <field name="category_id" ref="hr_payroll_INVI" />
+        </record>
+
+        <record id="hr_salary_rule_OTBNS" model="hr.salary.rule">
+            <field name="name">外地奖金总计/Outland Total Bonus</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+result =categories.BNS
+result_rate = 100</field>
+            <field name="code">OTBNS</field>
+            <field name="sequence">19</field>
+            <field name="condition_select">none</field>
+            <field name="appears_on_payslip" eval="False" />
+            <field name="category_id" ref="hr_payroll_TBNS" />
+        </record>
+
+        <record id="hr_salary_rule_VWHSEI" model="hr.salary.rule">
+            <field name="name">武汉养老保险/WH Endowment insurance</field>
+            <field name="amount_select">fix</field>
+            <field name="code">VWHSEI</field>
+            <field name="sequence">48</field>
+            <field name="condition_select">none</field>
+            <field name="fal_is_insurance" eval="True" />
+            <field name="fal_rule_child_employee_id" ref="hr_salary_rule_WHEEI" />
+            <field name="fal_rule_child_employeer_id" ref="hr_salary_rule_WHCSEI" />
+            <field name="category_id" ref="hr_payroll_INVI" />
+        </record>
+
+        <record id="hr_salary_rule_VWHMIC" model="hr.salary.rule">
+            <field name="name">武汉医疗保险/WH Medicare insurance C</field>
+            <field name="amount_select">fix</field>
+            <field name="code">VWHMIC</field>
+            <field name="sequence">54</field>
+            <field name="condition_select">none</field>
+            <field name="fal_is_insurance" eval="True" />
+            <field name="fal_rule_child_employee_id" ref="hr_salary_rule_WHEMI0" />
+            <field name="fal_rule_child_employeer_id" ref="hr_salary_rule_WHCMI" />
+            <field name="category_id" ref="hr_payroll_INVI" />
+        </record>
+
+        <record id="hr_salary_rule_OTC" model="hr.salary.rule">
+            <field name="name">经济补偿金/Other Compensation</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+result = inputs.OTC and inputs.OTC.amount
+result_rate = 100</field>
+            <field name="code">OTC</field>
+            <field name="sequence">17</field>
+            <field name="condition_select">none</field>
+            <field name="appears_on_payslip" eval="True" />
+            <field name="category_id" ref="hr_payroll_OTH" />
+        </record>
+        <record id="hr_rule_input_OTC" model="hr.rule.input">
+            <field name="name">工资补贴/Other Compensation</field>
+            <field name="code">OTC</field>
+            <field name="input_id" ref="hr_salary_rule_OTC"/>
+        </record>
+
+        <record id="hr_salary_rule_TEX" model="hr.salary.rule">
+            <field name="name">专项扣除/Tax exemption</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+result = contract.x_tax_exemption
+result_rate = 100</field>
+            <field name="code">TEX</field>
+            <field name="sequence">42</field>
+            <field name="condition_select">none</field>
+            <field name="appears_on_payslip" eval="True" />
+            <field name="category_id" ref="hr_payroll_TEX" />
+        </record>
+
+        <!-- New Salary Rule 2019 -->
+
+        <!-- Salary Structure -->
+        <record id="hr_salary_structure_BASE" model="hr.payroll.structure">
+            <field name="name">Based for salary structure</field>
+            <field name="code">BASE</field>
+            <field name="rule_ids" eval="[
+                (4, ref('hr_payroll_hr_rule_basic')),
+                (4, ref('hr_payroll_hr_rule_sal')),
+                (4, ref('hr_salary_rule_OT1')), 
+                (4, ref('hr_salary_rule_OT1_5')), 
+                (4, ref('hr_salary_rule_OT2')),
+                (4, ref('hr_salary_rule_OT3')),
+                (4, ref('hr_salary_rule_NGHT')),
+                (4, ref('hr_salary_rule_AD')),
+                (4, ref('hr_salary_rule_DED')),
+                (4, ref('hr_salary_rule_ADVCOM')),
+                (4, ref('hr_salary_rule_BNS')),
+                (4, ref('hr_payroll_hr_rule_tbns')),
+                (4, ref('hr_payroll_hr_rule_tot')),
+                (4, ref('hr_salary_rule_ANBNS')),
+                (4, ref('hr_salary_rule_ANBTX')),
+                (4, ref('hr_salary_rule_COMPS')),
+                (4, ref('hr_salary_rule_ALW')),
+                (4, ref('hr_salary_rule_HSALW')),
+                (4, ref('hr_salary_rule_HALW')),
+                (4, ref('hr_payroll_hr_rule_taxable')),
+                (4, ref('hr_salary_rule_SBT')),
+                (4, ref('hr_salary_rule_SBTC')),
+                (4, ref('hr_salary_rule_ST')),
+                (4, ref('hr_salary_rule_TFFHPE')),
+                (4, ref('hr_salary_rule_TFFHPC')),
+                (4, ref('hr_salary_rule_TIPBE')),
+                (4, ref('hr_salary_rule_TIPBC')),
+                (4, ref('hr_salary_rule_NET')),
+                ]"/>
+        </record>
+    </data>    
+    <data noupdate="0">        
+        <record id="hr_salary_rule_SZ_1" model="hr.payroll.structure">
+            <field name="name">深户一档/SZ Level 1</field>
+            <field name="code">深户一档/SZ Level 1</field>
+            <field name="parent_id" ref="hr_salary_structure_BASE" />
+            <field name="rule_ids" eval="[ 
+                (4, ref('hr_salary_rule_EEI')), 
+                (4, ref('hr_salary_rule_CSEI')), 
+                (4, ref('hr_salary_rule_E1MI')),
+                (4, ref('hr_salary_rule_C1MI')),
+                (4, ref('hr_salary_rule_E1MMI')),
+                (4, ref('hr_salary_rule_C1MMI')),
+                (4, ref('hr_salary_rule_EWII')),
+                (4, ref('hr_salary_rule_CWII')),
+                (4, ref('hr_salary_rule_EUI')),
+                (4, ref('hr_salary_rule_CUI')),
+                (4, ref('hr_salary_rule_GEFFH')),
+                (4, ref('hr_salary_rule_GCAFFH')),
+                (4, ref('hr_salary_rule_VIEWSEI')),
+                (4, ref('hr_salary_rule_VIEW1MI')),
+                (4, ref('hr_salary_rule_VIEW1MMI')),
+                (4, ref('hr_salary_rule_VIEWWII')),
+                (4, ref('hr_salary_rule_VIEWUI')),
+                (4, ref('hr_salary_rule_VIEWFFH')),
+                (4, ref('hr_salary_rule_TEX')),
+                ]"/>
+        </record>
+        <record id="hr_salary_rule_NONSZ_1" model="hr.payroll.structure">
+            <field name="name">非深户一档/Non-SZ Level 1</field>
+            <field name="code">非深户一档/Non-SZ Level 1</field>
+            <field name="parent_id" ref="hr_salary_structure_BASE" />
+            <field name="rule_ids" eval="[ 
+                (4, ref('hr_salary_rule_EEI')),
+                (4, ref('hr_salary_rule_CNSEI')),
+                (4, ref('hr_salary_rule_E1MI')),
+                (4, ref('hr_salary_rule_C1MI')),
+                (4, ref('hr_salary_rule_E1MMI')),
+                (4, ref('hr_salary_rule_C1MMI')),
+                (4, ref('hr_salary_rule_EWII')),
+                (4, ref('hr_salary_rule_CWII')),
+                (4, ref('hr_salary_rule_EUI')),
+                (4, ref('hr_salary_rule_CUI')),
+                (4, ref('hr_salary_rule_GEFFH')),
+                (4, ref('hr_salary_rule_GCAFFH')),
+                (4, ref('hr_salary_rule_VIEWNSEI')),
+                (4, ref('hr_salary_rule_VIEW1MI')),
+                (4, ref('hr_salary_rule_VIEW1MMI')),
+                (4, ref('hr_salary_rule_VIEWWII')),
+                (4, ref('hr_salary_rule_VIEWUI')),
+                (4, ref('hr_salary_rule_VIEWFFH')),
+                (4, ref('hr_salary_rule_TEX')),
+                ]"/>
+        </record>
+        
+        <record id="hr_salary_rule_NONSZ_2" model="hr.payroll.structure">
+            <field name="name">非深户二档/Non-SZ Level 2</field>
+            <field name="code">非深户二档/Non-SZ Level 2</field>
+            <field name="parent_id" ref="hr_salary_structure_BASE" />
+            <field name="rule_ids" eval="[ 
+                (4, ref('hr_salary_rule_EEI')), 
+                (4, ref('hr_salary_rule_CNSEI')), 
+                (4, ref('hr_salary_rule_E2MI')),
+                (4, ref('hr_salary_rule_C2MI')),
+                (4, ref('hr_salary_rule_E2MMI')),
+                (4, ref('hr_salary_rule_C2MMI')),
+                (4, ref('hr_salary_rule_EWII')),
+                (4, ref('hr_salary_rule_CWII')),
+                (4, ref('hr_salary_rule_EUI')),
+                (4, ref('hr_salary_rule_CUI')),
+                (4, ref('hr_salary_rule_GEFFH')),
+                (4, ref('hr_salary_rule_GCAFFH')),
+                (4, ref('hr_salary_rule_VIEWNSEI')),
+                (4, ref('hr_salary_rule_VIEW2MI')),
+                (4, ref('hr_salary_rule_VIEW2MMI')),
+                (4, ref('hr_salary_rule_VIEWWII')),
+                (4, ref('hr_salary_rule_VIEWUI')),
+                (4, ref('hr_salary_rule_VIEWFFH')),
+                (4, ref('hr_salary_rule_TEX')),
+                ]"/>
+        </record>
+        
+        <record id="hr_salary_rule_NONSZ_3" model="hr.payroll.structure">
+            <field name="name">非深户三档/Non-SZ Level 3</field>
+            <field name="code">非深户三档/Non-SZ Level 3</field>
+            <field name="parent_id" ref="hr_salary_structure_BASE" />
+            <field name="rule_ids" eval="[ 
+                (4, ref('hr_salary_rule_TFFHPC')), 
+                (4, ref('hr_salary_rule_TFFHPE')),
+                (4, ref('hr_salary_rule_EEI')), 
+                (4, ref('hr_salary_rule_CNSEI')),
+                (4, ref('hr_salary_rule_E3MI')),
+                (4, ref('hr_salary_rule_C3MI')),
+                (4, ref('hr_salary_rule_E2MMI')),
+                (4, ref('hr_salary_rule_C2MMI')),
+                (4, ref('hr_salary_rule_EWII')),
+                (4, ref('hr_salary_rule_CWII')),
+                (4, ref('hr_salary_rule_EUI')),
+                (4, ref('hr_salary_rule_CUI')),
+                (4, ref('hr_salary_rule_VIEWNSEI')),
+                (4, ref('hr_salary_rule_VIEW3MI')),
+                (4, ref('hr_salary_rule_VIEWWII')),
+                (4, ref('hr_salary_rule_VIEWUI')),
+                (4, ref('hr_salary_rule_TEX')),
+                ]"/>
+        </record>
+
+
+        <!-- New Salary Structure HPS 2019-->
+        <record id="hr_salary_structure_BASE_O" model="hr.payroll.structure">
+            <field name="name">Based for salary structure for Outland</field>
+            <field name="code">Based for salary structure for Outland</field>
+            <field name="rule_ids" eval="[ 
+                (4, ref('hr_payroll_hr_rule_basic')), 
+                (4, ref('hr_payroll_hr_rule_sal')),
+                (4, ref('hr_payroll_hr_rule_tot')),
+                (4, ref('hr_payroll_hr_rule_taxable')),
+                (4, ref('hr_salary_rule_OT1')),
+                (4, ref('hr_salary_rule_OT1_5')),
+                (4, ref('hr_salary_rule_OT2')),
+                (4, ref('hr_salary_rule_OT3')),
+                (4, ref('hr_salary_rule_NGHT')),
+                (4, ref('hr_salary_rule_AD')),
+                (4, ref('hr_salary_rule_DED')),
+                (4, ref('hr_salary_rule_ADVCOM')),
+                (4, ref('hr_salary_rule_BNS')),
+                (4, ref('hr_salary_rule_ANBNS')),
+                (4, ref('hr_salary_rule_COMPS')),
+                (4, ref('hr_salary_rule_ALW')),
+                (4, ref('hr_salary_rule_HALW')),
+                (4, ref('hr_salary_rule_SBT')),
+                (4, ref('hr_salary_rule_OTHIS')),
+                (4, ref('hr_salary_rule_SBTC')),
+                (4, ref('hr_salary_rule_HSALW')),
+                (4, ref('hr_salary_rule_GSBBE')),
+                (4, ref('hr_salary_rule_OANBTX')),
+                (4, ref('hr_salary_rule_TOIPBC')),
+                (4, ref('hr_salary_rule_TOIPBE')),
+                (4, ref('hr_salary_rule_TOFFHPC')),
+                (4, ref('hr_salary_rule_TOFFHPE')),
+                (4, ref('hr_salary_rule_ONET')),
+                (4, ref('hr_salary_rule_OTBNS')),
+                (4, ref('hr_salary_rule_TEX')),
+                (4, ref('hr_salary_rule_ACCSBTC')),
+                (4, ref('hr_salary_rule_ACCTEX')),
+                (4, ref('hr_salary_rule_TA')),
+                (4, ref('hr_salary_rule_ACCTA')),
+                (4, ref('hr_salary_rule_OACCITT')),
+                (4, ref('hr_salary_rule_ONETITT')),
+                (4, ref('hr_salary_rule_ITT')),
+                ]"/>
+        </record>
+
+        <record id="hr_salary_structure_SH" model="hr.payroll.structure">
+            <field name="name">上海 / ShangHai</field>
+            <field name="code">上海 / ShangHai</field>
+            <field name="parent_id" ref="hr_salary_structure_BASE_O" />
+            <field name="rule_ids" eval="[ 
+                (4, ref('hr_salary_rule_SHEWII')), 
+                (4, ref('hr_salary_rule_SHEEI')),
+                (4, ref('hr_salary_rule_SHCSEI')),
+                (4, ref('hr_salary_rule_SHCMI')),
+                (4, ref('hr_salary_rule_SHMMI')),
+                (4, ref('hr_salary_rule_SHCUI')),
+                (4, ref('hr_salary_rule_SHCWII')),
+                (4, ref('hr_salary_rule_SHCDEF')),
+                (4, ref('hr_salary_rule_SHGCAFFH')),
+                (4, ref('hr_salary_rule_SHGEFFH')),
+                (4, ref('hr_salary_rule_SHEMI')),
+                (4, ref('hr_salary_rule_SHEUI')),
+                (4, ref('hr_salary_rule_VSHDEF')),
+                (4, ref('hr_salary_rule_SHEDEF')),
+                (4, ref('hr_salary_rule_SHEMMI')),
+                (4, ref('hr_salary_rule_VSHWII')),
+                (4, ref('hr_salary_rule_VSHSEI')),
+                (4, ref('hr_salary_rule_VSHMI')),
+                (4, ref('hr_salary_rule_VSHMMI')),
+                (4, ref('hr_salary_rule_VSHUI')),
+                (4, ref('hr_salary_rule_VSHFFH')),
+                ]"/>
+        </record>
+
+        <record id="hr_salary_structure_WH" model="hr.payroll.structure">
+            <field name="name">武汉 / Wuhan</field>
+            <field name="code">武汉 / Wuhan</field>
+            <field name="parent_id" ref="hr_salary_structure_BASE_O" />
+            <field name="rule_ids" eval="[ 
+                (4, ref('hr_salary_rule_WHEEI')), 
+                (4, ref('hr_salary_rule_WHCSEI')),
+                (4, ref('hr_salary_rule_WHCMI')),
+                (4, ref('hr_salary_rule_WHEMI')),
+                (4, ref('hr_salary_rule_WHMMI')),
+                (4, ref('hr_salary_rule_WHEMMI')),
+                (4, ref('hr_salary_rule_VWHMMI')),
+                (4, ref('hr_salary_rule_WHCUI')),
+                (4, ref('hr_salary_rule_WHEUI')),
+                (4, ref('hr_salary_rule_VWHUI')),
+                (4, ref('hr_salary_rule_WHEWII')),
+                (4, ref('hr_salary_rule_WHCWII')),
+                (4, ref('hr_salary_rule_VSHWII')),
+                (4, ref('hr_salary_rule_WHGCAFFH')),
+                (4, ref('hr_salary_rule_WHGEFFH')),
+                (4, ref('hr_salary_rule_VWHFFH')),
+                (4, ref('hr_salary_rule_VWHSEI')),
+                (4, ref('hr_salary_rule_VWHMIC')),
+                (4, ref('hr_salary_rule_WHEMI0')),
+                ]"/>
+        </record>
+
+    </data>
+</odoo>

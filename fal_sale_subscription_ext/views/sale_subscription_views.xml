@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="sale_subscription_view_inherit" model="ir.ui.view">
+            <field name="name">sale_subscription_view_inherit</field>
+            <field name="model">sale.subscription</field>
+            <field name="inherit_id" ref="sale_subscription.sale_subscription_view_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//div[@name='button_box']" position="after">
+                    <field name="fal_title"/>
+                </xpath>
+                <field name="code" position="after">
+                    <field name="fal_attachment_name" invisible='1'/>
+                    <field name="fal_attachment" filename='fal_attachment_name'/>
+                </field>
+            </field>
+        </record>
+
+        <record id="sale_subscription_view_list_inherit" model="ir.ui.view">
+            <field name="name">sale_subscription_view_list_inherit</field>
+            <field name="model">sale.subscription</field>
+            <field name="inherit_id" ref="sale_subscription.sale_subscription_view_list" />
+            <field name="arch" type="xml">
+                <field name="code" position="before">
+                    <field name="fal_title"/>
+                </field>
+            </field>
+        </record>
+
+         <!--Inherit subscription search view-->
+        <record id="sale_subscription_view_search_inherit" model="ir.ui.view">
+          <field name="name">sale_subscription_view_search_inherit</field>
+          <field name="model">sale.subscription</field>
+          <field name="inherit_id" ref="sale_subscription.sale_subscription_view_search"/>
+          <field name="arch" type="xml">
+            <xpath expr="//search" position="inside">
+              <!-- This field will show up on the quick search -->
+              <field name="fal_title"/>
+            </xpath>
+          </field>
+        </record>
+
+    </data>
+</odoo>

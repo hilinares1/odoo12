@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_res_kabupaten,res.kabupaten,model_res_kabupaten,,1,1,1,0
+access_res_kecamatan,res.kecamatan,model_res_kecamatan,,1,1,1,0
+access_res_kelurahan,res.kelurahan,model_res_kelurahan,,1,1,1,0
+access_res_religion,res.religion,model_res_religion,,1,1,1,0
+access_res_race,res.race,model_res_race,,1,1,1,0

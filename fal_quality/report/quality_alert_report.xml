@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+    <template id="quality_alert_document">
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+               <t t-foreach="docs" t-as="doc">
+                    <div class="page">
+                        <div class="oe_structure"/>
+                        <h2 class="text-center">
+                            <span style="border-bottom:1px solid black">Quality Alert Report</span>
+                        </h2>
+                        <p class="text-center"><strong>Created Date: </strong><span t-field="doc.create_date" t-field-options='{"widget":"date"}'/></p>
+                        <br/>
+                        <div class="row">
+                            <div class="col-6">
+                                <h2>
+                                    <span t-field="doc.name"/>
+                                </h2>
+                            </div>
+                            <div class="col-6 text-right">
+                                <strong>Stage:</strong> <span t-field="doc.stage_id"/>
+                            </div>
+                        </div>
+                        <br/>
+
+                        <div class="row mt32 mb32" id="informations">
+                            <div class="col-5">
+                                <strong>Product:</strong>
+                                <p t-field="doc.product_tmpl_id"/>
+                            </div>
+                            <div class="col-2">
+                                <strong>Lot:</strong>
+                                <p t-field="doc.lot_id"/>
+                            </div>
+                            <div class="col-2">
+                                <strong>Work Center:</strong>
+                                <p t-field="doc.workcenter_id"/>
+                            </div>
+                        </div>
+
+                        <table class="table table-condensed">
+                            <thead>
+                                <tr>
+                                    <th><strong>Team</strong></th>
+                                    <th><strong>Responsible</strong></th>
+                                    <th><strong>Tags</strong></th>
+                                    <th><strong>Root Cause</strong></th>
+                                    <th><strong>Priority</strong></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <span t-field="doc.team_id"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="doc.user_id"/>
+                                    </td>
+                                    <td>
+                                        <t t-if="doc.tag_ids">
+                                            <span t-field="doc.tag_ids"/>
+                                        </t>
+                                    </td>
+                                    <td>
+                                        <span t-field="doc.reason_id"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="doc.priority"/>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="row mt32 mb32" id="descriptions">
+                            <div class="col-6">
+                                <strong>Description:</strong>
+                                <p t-field="doc.description"/>
+                            </div>
+                            <div class="col-6 text-center">
+                                <strong>Miscelaneous:</strong>
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th class="text-center">Vendor:</th>
+                                            <th class="text-center">Date Assigned:</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center">
+                                                <span t-field="doc.partner_id"/>
+                                            </td>
+                                            <td class="text-center">
+                                                <span t-field="doc.date_assign" t-field-options='{"widget":"date"}'/>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="row mt32 mb32" id="actions">
+                            <div class="col-6">
+                                <strong>Corrective Actions:</strong>
+                                <p t-field="doc.action_corrective"/>
+                            </div>
+                            <div class="col-6">
+                                <strong>Preventive Actions:</strong>
+                                <p t-field="doc.action_preventive"/>
+                            </div>
+                        </div>
+                        <table class="table table-condensed mt48">
+                            <thead style="text-transform:uppercase;background-color: #EEF0F0;">
+                                <tr>
+                                    <th width="55%" style="padding-bottom: 13px; padding-left: 30px;">Test Type</th>
+                                    <th class="text-center" width="7%">Total Ok</th>
+                                    <th class="text-center" width="10%">Total Not Ok</th>
+                                    <th class="text-center" width="10%">Total Not Applicable</th>
+                                    <th class="text-center" width="18%" style="padding-bottom: 13px;">Notes</th>
+                                </tr>
+                           </thead>
+                           <tbody class="sale_tbody" style="text-size:10px">
+                                <t t-foreach="doc.fal_quality_check_ids" t-as="l">
+                                    <tr>
+                                        <td>
+                                           <span t-field="l.name"/>
+                                        </td>
+                                        <td class="text-center">
+                                           <span t-field="l.total_check_ok"/>
+                                        </td>
+                                        <td class="text-center">
+                                            <span t-field="l.total_check_no_ok"/>
+                                        </td>
+                                        <td class="text-center">
+                                            <span t-field="l.total_check_no_applicable"/>
+                                        </td>
+                                        <td class="text-center">
+                                            <span t-field="l.notes"/>
+                                        </td>
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
+
+                        <br/>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+    <report
+        id="quality_alert_report"
+        string="Quality Alert"
+        model="quality.alert"
+        report_type="qweb-pdf"
+        name="fal_quality.quality_alert_document"
+        file="fal_quality.quality_alert_document"/>
+
+    </data>
+</odoo>

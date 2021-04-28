@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="product_template_form_view_falprocobom" model="ir.ui.view">
+            <field name="name">product.template.form.view.falprocobom</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@name='button_box']" position="inside">
+                    <button class="oe_inline oe_stat_button" name="action_copy_with_bom" type="object" string="Duplicate with BoM" confirm="Are you sure you want to duplicate this product with its BoM?" icon="fa-clone"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

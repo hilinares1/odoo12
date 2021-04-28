@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="fal_internal_ref_sequence" model="ir.sequence">
+            <field name="name">Fal Internal Ref</field>
+            <field name="code">fal.internal.ref.sequence</field>
+            <field name="prefix">00</field>
+            <field name="padding">4</field>
+            <field name="company_id" eval="False"/>
+        </record>
+    </data>
+</odoo>

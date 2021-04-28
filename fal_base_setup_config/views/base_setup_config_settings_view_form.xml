@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+    <record id="fal_base_setup_config_settings_view_form_inherit_base_setup" model="ir.ui.view">
+        <field name="name">fal.base.setup.config.settings.view.form.inherit.base.setup</field>
+        <field name="model">res.config.settings</field>
+        <field name="priority" eval="10"/>
+        <field name="inherit_id" ref="base_setup.res_config_settings_view_form" />
+        <field name="arch" type="xml">
+        <xpath expr="//div[@id='business_documents']" position="before">
+            <h2>Setup</h2>
+            <div class="row mt16 o_settings_container">
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_fal_business_type"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_business_type"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            Module to add Business Unit/Type
+                        </div>
+                        <div class="content-group" attrs="{'invisible': [('module_fal_business_type','=',False)]}">
+                            <div id="business_type_ext">
+                                <field name="module_fal_business_type_crm_ext" class="oe_inline"/>
+                                <label string="CRM" class="o_light_label" for="module_fal_business_type_crm_ext"/>
+                                <field name="module_fal_business_type_sale_ext" class="oe_inline"/>
+                                <label string="Sales" class="o_light_label" for="module_fal_business_type_sale_ext"/>
+                                <field name="module_fal_comment_template"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_comment_template"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            Module to add Comment Template
+                        </div>
+                        <div class="content-group" attrs="{'invisible': [('module_fal_comment_template','=',False)]}">
+                            <div id="comment_template_sale">
+                                <field name="module_fal_sale_line_comment" class="oe_inline"/>
+                                <label string="Comment Sale Line" class="o_light_label" for="module_fal_sale_line_comment"/>
+                            </div>
+                            <div id="comment_template_tax">
+                                <field name="module_fal_tax_comment" class="oe_inline"/>
+                                <label string="Comment Tax" class="o_light_label" for="module_fal_tax_comment"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_fal_global_object"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_global_object"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            Module Global Object
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_fal_comment_template"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_comment_template"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            Module to add Comment Template
+                        </div>
+                        <div class="content-group" attrs="{'invisible': [('module_fal_comment_template','=',False)]}">
+                            <div id="comment_template_sale">
+                                <field name="module_fal_sale_line_comment" class="oe_inline"/>
+                                <label string="Comment Sale Line" class="o_light_label" for="module_fal_sale_line_comment"/>
+                            </div>
+                            <div id="comment_template_tax">
+                                <field name="module_fal_tax_comment" class="oe_inline"/>
+                                <label string="Comment Tax" class="o_light_label" for="module_fal_tax_comment"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_fal_contract_conditions"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_contract_conditions"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            Module to add Contract Conditions template
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_fal_easy_reporting"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_easy_reporting"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            Module to easily export records without loading any records from tree
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_fal_learning_resource"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_learning_resource"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            Module to add Learning Resource
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_kanban_draggable"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_kanban_draggable"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            Disable DragDrop/Sorting In Specific Kanban View
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_stoneware_customize"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_stoneware_customize"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            Theme Stoneware models
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_theme_stoneware"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_theme_stoneware"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            Theme Stoneware is a Odoo theme with advanced ecommerce feature, extremely customizable and fully responsive
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_web_tree_image"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_web_tree_image"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            Show images in tree views
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_validation_process"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_validation_process"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            General validation
+                            <field name="module_fal_internal_message"/>
+                        </div>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_internal_message"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            Provide internal message feature
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_fal_document_relation"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_document_relation"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            Module to Add Relatin from Document to Record
+                        </div>
+
+                        <div class="content-group" attrs="{'invisible': [('module_fal_internal_message','=',False)]}">
+                            <div id="fal_hide_external_message">
+                                <field name="module_fal_hide_external_message" class="oe_inline"/>
+                                <label string="Hide Odoo Send Message Button" class="o_light_label" for="module_fal_hide_external_message"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_fal_model_activity"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_model_activity"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            Add Activity Widget in New Object
+                        </div>
+                    </div>
+                </div>  
+            </div>
+            <h2>Mails</h2>
+            <div class="row mt16 o_settings_container">
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_fal_internal_email"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_internal_email"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            Add filter to send email to internal contact
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_fal_message_body_in_subtype"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_message_body_in_subtype"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            Add mail template in message subtype
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_fal_block_automatic_email"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_block_automatic_email"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            Module to Block Automatic Email
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_fal_mail_debrand"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_mail_debrand"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            Module to remove Odoo branding in sent emails
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h2>CLuedoo Best Practice</h2>
+            <div class="row mt16 o_settings_container">
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_partner_firstname"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_partner_firstname"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            Split first name and last name for non company partners
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_web_hierarchy"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_web_hierarchy"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            Provide dynamic leveled data items on table tress.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h2>Partner</h2>
+            <div class="row mt16 o_settings_container">
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_fal_partner_additional_info"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_partner_additional_info"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            Module to add additional info in partner
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_fal_partner_quote"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_partner_quote"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            This module extends base module. Add Sequence for Internal Reference in Customer. Add menu for date sequence
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_fal_partner_code"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_partner_code"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            module to have different code for customer and supplier partner.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_fal_partner_private_address"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_partner_private_address"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            Module to give private contact.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_fal_partner_qualification"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_partner_qualification"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            module to give qualification to partner
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-12 o_setting_box" attrs="{'invisible': [('module_fal_partner_qualification', '=', False)]}">
+                        <div class="o_setting_left_pane">
+                            <field name="module_fal_dynamic_qualification"/>
+                        </div>
+                        <div class="o_setting_right_pane">
+                            <label for="module_fal_dynamic_qualification"/>
+                            <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                            <div class="text-muted">
+                                module to create dynamic mandatory fields
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_fal_group_by_commercial"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_group_by_commercial"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            <label for="" string="Module to define group by Commercial Partner on Sale/Purchase(Quotation,Order), Invoice/Payment(Supplier,Customer)." style="font-weight: normal;"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_fal_partner_short_name"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_partner_short_name"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            give short name to partner and company.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_fal_partner_user_creation"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_partner_user_creation"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            module to fill field parent_id on partner when create user.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_fal_change_background_company"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_change_background_company"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            Add feature to change company background image.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </xpath>
+        <xpath expr="//div[@id='user_default_rights']" position="inside">
+            <div class="col-xs-12 col-md-6 o_setting_box">
+                <div class="o_setting_left_pane">
+                    <field name="module_fal_add_message_in_user"/>
+                </div>
+                <div class="o_setting_right_pane">
+                    <label for="module_fal_add_message_in_user"/>
+                    <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                    <div class="text-muted">
+                        Module to add message view in users form
+                    </div>
+                </div>
+            </div>  
+            <div class="col-xs-12 col-md-6 o_setting_box">
+                <div class="o_setting_left_pane">
+                    <field name="module_create_and_edit_many2one"/>
+                </div>
+                <div class="o_setting_right_pane">
+                    <label for="module_create_and_edit_many2one"/>
+                    <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                    <div class="text-muted">
+                        Create and Edit Many2one Feature Restriction
+                    </div>
+                </div>
+            </div>  
+        </xpath>
+        </field>
+    </record>
+    </data>
+</odoo>
+                

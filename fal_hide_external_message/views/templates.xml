@@ -1,0 +1,7 @@
+<odoo>
+    <template id="internal_message_assets_backend" name="internal_message_assets" inherit_id="web.assets_backend">
+        <xpath expr="." position="inside">
+            <link rel="stylesheet" type="text/scss" href="/fal_hide_external_message/static/src/css/external_button_message.css"/>
+        </xpath>
+    </template>
+</odoo>

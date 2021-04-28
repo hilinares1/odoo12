@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- IFRS -->
+        <!-- P&L -->
+
+        <record id="account_reports.account_financial_report_profitandloss0" model="account.financial.html.report">
+            <field name="ifrs_basis" eval="True"/>
+        </record>
+
+        <!-- BALANCE SHEET -->
+
+        <record id="account_reports.account_financial_report_balancesheet0" model="account.financial.html.report">
+            <field name="ifrs_basis" eval="True"/>
+        </record>
+
+        <!-- CASH SUMMARY -->
+
+        <record id="account_reports.account_financial_report_cashsummary0" model="account.financial.html.report">
+            <field name="ifrs_basis" eval="True"/>
+        </record>
+        
+        <!--
+            EXECUTIVE SUMMARY
+        -->
+
+        <record id="account_reports.account_financial_report_executivesummary0" model="account.financial.html.report">
+            <field name="ifrs_basis" eval="True"/>
+        </record>
+
+    </data>
+</odoo>

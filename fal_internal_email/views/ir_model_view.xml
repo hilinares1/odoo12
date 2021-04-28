@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+    
+        <record model="ir.ui.view" id="fal_ir_model_ext">
+            <field name="name">fal.ir.model.ext</field>
+            <field name="model">ir.model</field>
+            <field name="inherit_id" ref="base.view_model_form" />
+            <field name="arch" type="xml">
+                <field name="is_mail_thread" position="after">
+                    <field name="fal_allow_external_message" />
+                </field>
+            </field>
+        </record>
+    
+    </data>
+</odoo>

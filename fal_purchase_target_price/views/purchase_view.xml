@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="tpfal_purchase_order_line_form">
+            <field name="name">purchase.order.line.tree.tpfal.view.form</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.purchase_order_form"/>
+            <field name="arch" type="xml">
+                <data>
+                    <xpath expr="//field[@name='order_line']/tree//field[@name='price_subtotal']" position="after">
+                        <field name="supplier_target_unit_price" groups="fal_purchase_target_price.group_purchase_targetprice_user"/>
+                        <field name="supplier_target_subtotal" groups="fal_purchase_target_price.group_purchase_targetprice_user"/>
+                        <field name="gross_margin" groups="fal_purchase_target_price.group_purchase_targetprice_user"/>
+                        <field name="mark_up" groups="fal_purchase_target_price.group_purchase_targetprice_user"/>
+                    </xpath>
+                    <xpath expr="//group[@class='oe_subtotal_footer oe_right']" position="before">
+                        <group class="oe_subtotal_footer oe_left" colspan="2" name="purchase_target_price">
+                            <field name="total_supplier_target_price" groups="fal_purchase_target_price.group_purchase_targetprice_user"/>
+                            <field name="total_gross_margin" groups="fal_purchase_target_price.group_purchase_targetprice_user"/>
+                            <field name="total_markup" groups="fal_purchase_target_price.group_purchase_targetprice_user"/>
+                        </group>
+                    </xpath>
+                </data>
+            </field>
+        </record>
+    </data>
+</odoo>

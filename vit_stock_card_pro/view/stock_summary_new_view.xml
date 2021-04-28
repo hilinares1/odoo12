@@ -1,0 +1,310 @@
+<odoo>
+    <data>
+		
+    	<record id="stock_summary_new_search_view" model="ir.ui.view">
+            <field name="name">stock.summary.new.search</field>
+            <field name="model">stock.summary.new</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search string="Search Stock Summary">
+		            <field name="name"/>
+		        	<field name="location_id"/>
+		        	<field name="inventory_id"/>
+		            <field name="date_start"/>
+		            <field name="date_end"/>
+		            <field name="user_id"/>
+		            <field name="state"/>
+		            <filter name="state_open" string="Open" domain="[('state','=','open')]"/>
+		            <filter name="group_user" string="Creator" context="{'group_by':'user_id'}"/>
+                </search>
+            </field>
+        </record>
+
+		<record id="stock_summary_new_tree_view" model="ir.ui.view">
+		    <field name="name">stock.summary.new.tree</field>
+		    <field name="model">stock.summary.new</field>
+		    <field name="type">tree</field>
+		    <field name="arch" type="xml">
+		        <tree string="Stock Summary">
+		            <field name="name"/>
+		        	<field name="location_id"/>
+		        	<field name="inventory_id"/>
+		            <field name="date_start"/>
+		            <field name="date_end"/>
+		            <field name="user_id"/>
+		            <field name="state"/>
+		        </tree>
+		     </field>
+		</record>
+		
+        <record model="ir.ui.view" id="stock_summary_new_form_view">
+		    <field name="name">stock.summary.new.form</field>
+		    <field name="model">stock.summary.new</field>
+		    <field name="type">form</field>
+		    <field name="arch" type="xml">
+		    	
+		    	<form string="Stock Summary">
+		    		<header>
+		    			<button name="action_calculate" string="Calculate" type="object" icon="fa-history" class="oe_highlight" />
+		    			<button name="action_open" string="Confirm" type="object" class="oe_highlight" icon="fa-check" states="draft"/>
+		    			<button name="action_set_to_draft" string="Cancel" type="object" icon="fa-minus-square" attrs="{'invisible': [('state', 'not in', ('open'))]}"/>
+		    			<button name="delete_lines" string="Delete Details" type="object" icon="fa-trash-o"/>
+		    			<button name="view_qty_in" string="QTY IN" type="object" states="open"/>
+		    			<button name="view_qty_out" string="QTY OUT" type="object" states="open"/>
+		    			<button name="action_export" string="Export" type="object" states="open"/>
+		    			<field name="state" widget="statusbar" statusbar_visible="draft,open"/>
+		    		</header>
+		    		<sheet>
+		    			<div class="oe_title">
+		       				<h1>
+					 			<field name="location_id" options="{'no_create':True}" class="oe_inline" placeholder="Input location" attrs="{'readonly': [('state','!=','draft')]}"/>
+		    			    </h1>
+	                    </div>
+	                    <group col="4">
+		        			<field name="inventory_id" options="{'no_create':True}" required="1" domain="[('state','=','done'),('saldo_awal','=',True),('company_id','=',company_id)]" attrs="{'readonly': [('state','!=','draft')]}"/>
+		        			<field name="company_id" readonly="1"/>
+	                    	<field name="date_start" readonly="1"/>
+	                    	<field name="date_end" attrs="{'readonly': [('state','!=','draft')]}"/>
+	                    	<!-- <field name="date_adj" attrs="{'readonly': [('state','!=','draft')]}"/> -->
+                            <field name="user_id" attrs="{'readonly': [('state','!=','draft')]}" options="{'no_create':True}"/>
+                            <field name="name" attrs="{'readonly': [('state','!=','draft')]}"/>
+                            <field name="last_update"/>
+							<field name="emails" widget="email" attrs="{'readonly': [('state','!=','draft')]}" placeholde="Separated by comma"/>
+	                    </group>
+						<notebook>
+							<page string="Details">
+								<field name="summary_line" attrs="{'readonly': [('state','!=','draft')]}">
+									<tree string="Stock Summary Line" editable="bottom" create="false">
+										<field name="product_id" options="{'no_create':True}"/>
+										<field name="qty_available"/>
+										<field name="qty_start"/>
+										<field name="qty_in"/>
+										<field name="qty_out"/>
+										<field name="qty_balance"/>
+										<field name="hpp"/>
+										<field name="hpj"/>
+									</tree>
+									<form string="Stock Summary Line" editable="bottom" create="false">
+										<group>
+											<group>
+												<field name="product_id" options="{'no_create':True}"/>
+												<field name="qty_available"/>
+												<field name="qty_start"/>
+												<field name="qty_in"/>
+											</group>
+											<group>
+												<field name="qty_out"/>
+												<field name="qty_balance"/>
+												<field name="hpp"/>
+												<field name="hpj"/>
+											</group>
+										</group>
+										<notebook>
+											<page string="History IN">
+												<field name="history_in_ids"/>
+											</page>
+											<page string="History OUT">
+												<field name="history_out_ids"/>
+											</page>
+										</notebook>
+									</form>
+								</field>
+							</page>
+							<page string="SOH">
+								<group>
+									<group>
+										<field name="date_end_soh"/>
+									</group>
+									<group>
+										<button name="action_calculate_soh" string="Calculate SOH" type="object" icon="fa-history" />
+										<button string="Print" name="action_print_soh" type="object" default_focus="1" class="btn-primary" icon="fa-print"/>
+									</group>
+								</group>
+
+								<field name="summary_line_soh" attrs="{'readonly': [('state','!=','draft')]}">
+									<tree string="Stock Summary Line SOH" editable="bottom" create="false">
+										<field name="product_id" options="{'no_create':True}"/>
+										<field name="qty_available"/>
+										<field name="qty_start"/>
+										<field name="qty_in"/>
+										<field name="qty_out"/>
+										<field name="qty_balance"/>
+										<field name="hpp"/>
+										<field name="hpj"/>
+									</tree>
+									<form string="Stock Summary Line" editable="bottom" create="false">
+										<group>
+											<group>
+												<field name="product_id" options="{'no_create':True}"/>
+												<field name="qty_available"/>
+												<field name="qty_start"/>
+												<field name="qty_in"/>
+											</group>
+											<group>
+												<field name="qty_out"/>
+												<field name="qty_balance"/>
+												<field name="hpp"/>
+												<field name="hpj"/>
+											</group>
+										</group>
+									</form>
+								</field>
+							</page>
+						</notebook>
+		    		</sheet>
+		    	</form>
+		    	
+			</field>
+		</record>
+        
+		<record id="stock_summary_new_action" model="ir.actions.act_window">
+            <field name="name">Stock Summary</field>
+            <field name="res_model">stock.summary.new</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree</field>
+            <field name="context">{}</field>
+            <field name="domain">[]</field>
+        </record>
+        
+        <record id="stock_summary_new_action_tree" model="ir.actions.act_window.view">
+            <field name="sequence" eval="1"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="stock_summary_new_tree_view"/>
+            <field name="act_window_id" ref="stock_summary_new_action"/>
+        </record>
+        
+        <record id="stock_summary_new_action_form" model="ir.actions.act_window.view">
+            <field name="sequence" eval="2"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="stock_summary_new_form_view"/>
+            <field name="act_window_id" ref="stock_summary_new_action"/>
+        </record>
+
+
+        <record id="view_stock_summary_line_new_tree" model="ir.ui.view">
+		    <field name="name">vit_stock_summary_line_new_tree</field>
+		    <field name="model">stock.summary.line.new</field>
+		    <field name="arch" type="xml">
+		    	<tree string="list stock summary detail" create="false" edit="false" delete="false">
+		    		<field name="summary_id"/>
+		    		<field name="location_id"/>
+		            <field name="product_id"/>
+					<field name="qty_available" />
+					<field name="qty_start" />
+					<field name="qty_in" />		
+					<field name="qty_out" />		
+					<field name="qty_balance" />
+					<field name="hpp" />
+					<field name="hpj" />
+		        </tree>    
+		    </field>
+		</record>
+
+		<record id="view_stock_summary_line_new_filter" model="ir.ui.view">
+		    <field name="name">stock_summary_line_new.filter</field>
+		    <field name="model">stock.summary.line.new</field>
+		    <field name="arch" type="xml">
+		        <search string="Search Stock Summary Detail">
+					<field name="summary_id"/>
+					<field name="location_id"/>
+		            <field name="product_id"/>
+		            <field name="date_start"/>
+		            <field name="date_end"/>
+		            <group expand="1" string="Group By...">
+		            	<filter string="Location" 
+		                    icon="terp-personal" domain="[]" 
+		                	 context="{'group_by':'location_id'}"/>
+		               	<filter string="Summary" 
+		                    icon="terp-personal" domain="[]" 
+		                	 context="{'group_by':'summary_id'}"/>
+		                <filter string="Product" icon="terp-personal" 
+		                    domain="[]" 
+		                	 context="{'group_by':'product_id'}"/>
+		            </group>                                        
+
+		        </search>
+		    </field>
+		</record>
+
+		<record model="ir.ui.view" id="stock_summary_location_form_view">
+		    <field name="name">stock.summary.location.form</field>
+		    <field name="model">stock.location</field>
+		    <field name="inherit_id" ref="stock.view_location_form"/>
+		    <field name="type">form</field>
+		    <field name="arch" type="xml">
+		    	
+		    	<xpath expr="//form" position="inside">
+                	<notebook>
+						<page string="Child Locations">
+							<field name="location_ids" readonly="1">
+								<tree string="Child Locations" editable="bottom" create="false">
+									<field name="complete_name" string="Location"/>
+									<field name="company_id"/>
+									<field name="usage"/>
+									<field name="location_ids" string="Child Locations"/>
+								</tree>
+							</field>
+						</page>
+					</notebook>
+                </xpath>
+		    	
+			</field>
+		</record>
+
+		<record id="stock_summary_line_new_history_search_view" model="ir.ui.view">
+            <field name="name">stock.summary.line.new.history.search</field>
+            <field name="model">stock.summary.line.new.history</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search string="Search History Stock Summary">
+		            <field name="name"/>
+		        	<field name="date"/>
+		        	<field name="product_code"/>
+		            <field name="qty"/>
+		            <field name="price"/>
+		            <field name="total"/>
+		            <field name="type"/>
+		            <field name="source"/>
+		            <filter name="source_move" string="Stock Move" domain="[('source','=','move')]"/>
+		            <filter name="source_operation" string="Operations" domain="[('source','=','operation')]"/>
+		            <filter name="group_summary" string="Summary" context="{'group_by':'summary_id'}"/>
+		            <filter name="group_summary_line" string="Product" context="{'group_by':'summary_line_id'}"/>
+		            <filter name="group_source" string="Source" context="{'group_by':'source'}"/>
+                </search>
+            </field>
+        </record>
+
+		<record id="stock_summary_line_new_history_tree_view" model="ir.ui.view">
+		    <field name="name">stock.summary.line.new.history.tree</field>
+		    <field name="model">stock.summary.line.new.history</field>
+		    <field name="type">tree</field>
+		    <field name="arch" type="xml">
+		        <tree string="History Stock Summary" create="false" edit="false" delete="false">
+		            <field name="name"/>
+		        	<field name="date"/>
+		        	<field name="product_code"/>
+		            <field name="qty"/>
+		            <field name="price"/>
+		            <field name="total"/>
+		        </tree>
+		     </field>
+		</record>
+
+		<record id="stock_summary_line_new_history_action" model="ir.actions.act_window">
+            <field name="name">History Stock Summary</field>
+            <field name="res_model">stock.summary.line.new.history</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree</field>
+            <field name="context">{}</field>
+            <field name="domain">[]</field>
+        </record>
+        
+        <record id="stock_summary_line_new_history_action_tree" model="ir.actions.act_window.view">
+            <field name="sequence" eval="1"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="stock_summary_line_new_history_tree_view"/>
+            <field name="act_window_id" ref="stock_summary_line_new_history_action"/>
+        </record>
+    	
+    </data>
+</odoo>

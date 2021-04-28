@@ -1,0 +1,23 @@
+<odoo>
+    <record id="fal_account_journal_form" model="ir.ui.view">
+        <field name="name">fal_account_journal_form</field>
+        <field name="model">account.journal</field>
+        <field name="inherit_id" ref="account.view_account_journal_form"/>
+        <field name="arch" type="xml">
+            <field name="code" position="after">
+                <field name="fal_is_tax_journal" attrs="{'invisible': [('type', '!=', 'general')]}"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="fal_view_move_line_form" model="ir.ui.view">
+        <field name="name">fal_view_move_line_form</field>
+        <field name="model">account.move.line</field>
+        <field name="inherit_id" ref="account.view_move_line_form"/>
+        <field name="arch" type="xml">
+            <field name="tax_ids" position="after">
+                <field name="fal_reported"/>
+            </field>
+        </field>
+    </record>
+</odoo>

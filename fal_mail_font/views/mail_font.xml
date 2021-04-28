@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <template id="summernote" name="My summernote assets" inherit_id="web_editor.assets_editor">
+            <xpath expr="//script[last()]" position="after">
+                <script type="text/javascript" src="/fal_mail_font/static/src/js/summernote_overrides.js"></script>
+            </xpath>
+        </template>
+        
+    </data>
+</odoo>

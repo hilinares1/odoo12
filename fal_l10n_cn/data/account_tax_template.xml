@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+
+    <data noupdate="1">
+        <!-- edited murha -->
+        <!-- General Business Account Tax Template -->
+        <record id="gen_vats13" model="account.tax.template">
+            <field name="chart_template_id" ref="l10n_gen_chart_china"/>
+            <field name="name">增值税13%销项税 || Sale Tax 13%</field>
+            <field eval="13" name="amount"/>
+            <!-- <field name="type">percent</field> -->
+            <!-- <field name="account_collected_id" ref="gen_chart2221_01_5"/> -->
+            <!-- <field name="account_paid_id" ref="gen_chart2221_01_5"/> -->
+            <field name="type_tax_use">sale</field>
+            <field name="sequence">2</field>
+        </record>
+        <record id="gen_vatp13" model="account.tax.template">
+            <field name="chart_template_id" ref="l10n_gen_chart_china"/>
+            <field name="name">增值税13%进项税 || Purchase Tax 13%</field>
+            <field eval="13" name="amount"/>
+            <!-- <field name="type">percent</field> -->
+            <!-- <field name="account_collected_id" ref="gen_chart2221_01_1"/> -->
+            <!-- <field name="account_paid_id" ref="gen_chart2221_01_1"/> -->
+            <field name="type_tax_use">purchase</field>
+            <field name="sequence">2</field>
+        </record>
+
+        <record id="gen_vats9" model="account.tax.template">
+            <field name="chart_template_id" ref="l10n_gen_chart_china"/>
+            <field name="name">增值税9%销项税 || Sale Tax 9%</field>
+            <field eval="9" name="amount"/>
+            <!-- <field name="type">percent</field> -->
+            <!-- <field name="account_collected_id" ref="gen_chart2221_01_5"/> -->
+            <!-- <field name="account_paid_id" ref="gen_chart2221_01_5"/> -->
+            <field name="type_tax_use">sale</field>
+            <field name="sequence">3</field>
+        </record>
+        <record id="gen_vatp9" model="account.tax.template">
+            <field name="chart_template_id" ref="l10n_gen_chart_china"/>
+            <field name="name">增值税9%进项税 || Purchase Tax 9%</field>
+            <field eval="9" name="amount"/>
+            <!-- <field name="type">percent</field> -->
+            <!-- <field name="account_collected_id" ref="gen_chart2221_01_1"/> -->
+            <!-- <field name="account_paid_id" ref="gen_chart2221_01_1"/> -->
+            <field name="type_tax_use">purchase</field>
+            <field name="sequence">3</field>
+        </record>
+
+        <record id="gen_vats6" model="account.tax.template">
+            <field name="chart_template_id" ref="l10n_gen_chart_china"/>
+            <field name="name">增值税6%销项税 || Sale Tax 6%</field>
+            <field eval="6" name="amount"/>
+            <!-- <field name="type">percent</field> -->
+            <!-- <field name="account_collected_id" ref="gen_chart2221_01_5"/> -->
+            <!-- <field name="account_paid_id" ref="gen_chart2221_01_5"/> -->
+            <field name="type_tax_use">sale</field>
+            <field name="sequence">4</field>
+        </record>
+        <record id="gen_vatp6" model="account.tax.template">
+            <field name="chart_template_id" ref="l10n_gen_chart_china"/>
+            <field name="name">增值税6%进项税 || Purchase Tax 6%</field>
+            <field eval="6" name="amount"/>
+            <!-- <field name="type">percent</field> -->
+            <!-- <field name="account_collected_id" ref="gen_chart2221_01_1"/> -->
+            <!-- <field name="account_paid_id" ref="gen_chart2221_01_1"/> -->
+            <field name="type_tax_use">purchase</field>
+            <field name="sequence">4</field>
+        </record>
+
+        <record id="gen_vats3" model="account.tax.template">
+            <field name="chart_template_id" ref="l10n_gen_chart_china"/>
+            <field name="name">增值税3%销项税 || Sale Tax 3%</field>
+            <field eval="3" name="amount"/>
+            <!-- <field name="type">percent</field> -->
+            <!-- <field name="account_collected_id" ref="gen_chart2221_01_5"/> -->
+            <!-- <field name="account_paid_id" ref="gen_chart2221_01_5"/> -->
+            <field name="type_tax_use">sale</field>
+            <field name="sequence">5</field>
+        </record>
+        <record id="gen_vatp3" model="account.tax.template">
+            <field name="chart_template_id" ref="l10n_gen_chart_china"/>
+            <field name="name">增值税3%进项税 || Purchase Tax 3%</field>
+            <field eval="3" name="amount"/>
+            <!-- <field name="type">percent</field> -->
+            <!-- <field name="account_collected_id" ref="gen_chart2221_01_1"/> -->
+            <!-- <field name="account_paid_id" ref="gen_chart2221_01_1"/> -->
+            <field name="type_tax_use">purchase</field>
+            <field name="sequence">5</field>
+        </record>
+    </data>
+</openerp>

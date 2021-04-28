@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+        <report
+           id="fal_hr_payroll"
+           model="hr.payslip"
+           string="Employee Payslip"
+           report_type="qweb-pdf"
+           name="fal_l10n_cn_payroll.fal_hr_payslip"
+           file="fal_l10n_cn_payroll.fal_hr_payslip"
+           header="False"
+        />        
+    </data>
+</odoo>

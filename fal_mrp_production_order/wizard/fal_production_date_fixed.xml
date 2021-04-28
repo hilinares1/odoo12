@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_fal_fill_production_date_fixed_wizard" model="ir.ui.view">
+            <field name="name">fal.fill.production.date.fixed.wizard</field>
+            <field name="model">fal.fill.production.date.fixed</field>
+            <field name="arch" type="xml">
+                <form string="Fill Production Date Fixed">
+                    <span>This process will set production fixed date all selected production orders!</span>
+                    <footer>
+                        <button name="button_assign_production_date_fixed" string="Assign Production Fixed Date" type="object" class="oe_highlight"/>
+                        <button string="Cancel" class="btn-default" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <act_window id="fill_production_wizard"
+            name="Fill Production Date Fixed"
+            src_model="fal.production.order"
+            res_model="fal.fill.production.date.fixed"
+            view_mode="form"
+            target="new"
+            key2="client_action_multi"/>
+    </data>
+</odoo>

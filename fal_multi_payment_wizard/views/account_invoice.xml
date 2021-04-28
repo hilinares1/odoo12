@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+        <record id="view_account_invoice_filter_falmultipaymentwizard" model="ir.ui.view">
+            <field name="name">account.invoice.select.falmultipaymentwizard</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.view_account_invoice_filter" />
+            <field name="arch" type="xml">
+                <filter name="unpaid" position="before">
+                    <filter name="due_within_one_week" string="Due Within One Week" domain="['|',('date_due', '&lt;', (context_today() + datetime.timedelta(days=7)).strftime('%%Y-%%m-%%d')), ('date_due','=',False), ('state', '=', 'open')]" help="Overdue invoices within one week"/>
+                </filter>
+                <field name="number" position="after">
+                    <field name="fal_multi_payment_number" />
+                </field>
+            </field>
+        </record>
+
+        <record id="view_account_payment_tree_falmultipaymentwizard" model="ir.ui.view">
+            <field name="name">account.payment.tree.falmultipaymentwizard</field>
+            <field name="model">account.payment</field>
+            <field name="inherit_id" ref="account.view_account_payment_tree" />
+            <field name="arch" type="xml">
+                <field name="partner_type" position="after">
+                    <field name="fal_multi_payment_number" />
+                </field>
+            </field>
+        </record>
+
+        <record id="view_account_supplier_payment_tree_falmultipaymentwizard" model="ir.ui.view">
+            <field name="name">account.supplier.payment.tree.falmultipaymentwizard</field>
+            <field name="model">account.payment</field>
+            <field name="inherit_id" ref="account.view_account_supplier_payment_tree" />
+            <field name="arch" type="xml">
+                <field name="partner_type" position="after">
+                    <field name="fal_multi_payment_number" />
+                </field>
+            </field>
+        </record>
+
+        <record id="view_account_payment_search_falmultipaymentwizard" model="ir.ui.view">
+            <field name="name">account.payment.search.falmultipaymentwizard</field>
+            <field name="model">account.payment</field>
+            <field name="inherit_id" ref="account.view_account_payment_search" />
+            <field name="arch" type="xml">
+                <field name="partner_id" position="after">
+                    <field name="fal_multi_payment_number" />
+                </field>
+                <xpath expr="//separator[3]" position="after">
+                    <filter string="Preparation Payment Number" name="multi_payment_number" domain="[]" context="{'group_by': 'fal_multi_payment_number'}"/>
+                </xpath>
+            </field>
+        </record>
+</odoo>

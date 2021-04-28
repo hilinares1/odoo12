@@ -1,0 +1,5 @@
+<odoo>
+    <function model="fal.account.periods.lock" name="remove_line">
+        <value eval="[ref('fal_account_periods_lock.falacc001')]"/>
+    </function>
+</odoo>

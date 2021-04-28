@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="assets_backend_tt" name="web_calendar assets tt" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+                <script type="text/javascript" src="/fal_account_bank_statement_reconciliation_ext/static/js/reconciliation_renderer.js"></script>
+                <!-- <script type="text/javascript" src="/fal_account_bank_statement_reconciliation_ext/static/js/reconciliation_model.js"></script> -->
+            </xpath>
+        </template>
+    </data>
+</odoo>
+
+

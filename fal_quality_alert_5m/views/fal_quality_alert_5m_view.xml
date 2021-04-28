@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_fal_qa_5m_form" model="ir.ui.view">
+            <field name="name">fal.qa.5m.form</field>
+            <field name="model">fal.qa.5m</field>
+            <field name="arch" type="xml">
+                <form string="Quality Alerts 5M">
+                    <sheet>
+                        <div class="oe_button_box">
+                            <button name="action_see_alert" type="object" attrs="{'invisible': [('quality_alert_id', '=', 0)]}" class="oe_stat_button" icon="fa-bell">
+                                <div class="o_form_field o_stat_info">
+                                    <span class="o_stat_value"><field name="quality_alert_id" readonly="1"/></span>
+                                    <span class="o_stat_text">Quality Alerts</span>
+                                </div>
+                            </button>
+                        </div>
+                        <div class="oe_title"><h1><field name="name"/></h1></div>
+                        <group>
+                            <group>
+                                <field name="short_description"/>
+                                <field name="date"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Mother Nature">
+                                <field name="fal_qa_5m_mother_nature_ids" context="{'default_fal_type': 'mother_nature'}"/>
+                            </page>
+                            <page string="Man">
+                                <field name="fal_qa_5m_man_ids" context="{'default_fal_type': 'man'}"/>
+                            </page>
+                            <page string="Material">
+                                <field name="fal_qa_5m_material_ids" context="{'default_fal_type': 'material'}"/>
+                            </page>
+                            <page string="Machine">
+                                <field name="fal_qa_5m_machine_ids" context="{'default_fal_type': 'machine'}"/>
+                            </page>
+                            <page string="Method">
+                                <field name="fal_qa_5m_method_ids" context="{'default_fal_type': 'method'}"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_fal_qa_5m_tree" model="ir.ui.view">
+            <field name="name">fal.qa.5m.tree</field>
+            <field name="model">fal.qa.5m</field>
+            <field name="arch" type="xml">
+                <tree string="Quality Alerts 5M">
+                    <field name="quality_alert_id"/>
+                    <field name="name"/>
+                    <field name="date"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_fal_qa_5m_search" model="ir.ui.view">
+            <field name="name">view.fal.qa.5m.search</field>
+            <field name="model">fal.qa.5m</field>
+            <field name="arch" type="xml">
+                <search string="Quality Alerts 5M">
+                    <field name="quality_alert_id"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="action_fal_qa_5m" model="ir.actions.act_window">
+            <field name="name">Quality Alerts 5M</field>
+            <field name="res_model">fal.qa.5m</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                List of Quality Alerts 5M
+              </p>
+            </field>
+        </record>
+
+         <record id="view_fal_qa_5m_line_form" model="ir.ui.view">
+            <field name="name">view.fal.qa.5m.line.form</field>
+            <field name="model">fal.qa.5m.line</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <group>
+                            <field name="number"/>
+                            <field name="fal_type" invisible="1"/>
+                        </group>
+                        <group>
+                            <field name="fal_qa_5m_id" invisible="1"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="description"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+        <record id="view_fal_qa_5m_line_tree" model="ir.ui.view">
+            <field name="name">view.fal.qa.5m.line.tree</field>
+            <field name="model">fal.qa.5m.line</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="fal_qa_5m_id" invisible="1"/>
+                    <field name="fal_type" invisible="1"/>
+                    <field name="number"/>
+                    <field name="description"/>
+                </tree>
+            </field>
+        </record>
+
+        <menuitem
+            name="Quality Alerts 5M"
+            action="action_fal_qa_5m"
+            id="menu_action_fal_qa_5m"
+            parent="quality_control.menu_quality_control"
+            sequence="21"/>
+    </data>
+</odoo>

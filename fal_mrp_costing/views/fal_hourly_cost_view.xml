@@ -1,0 +1,119 @@
+<odoo>
+     <!-- hourly cost -->
+        <record id="view_houry_cost_form" model="ir.ui.view">
+            <field name="name">fal.hourly.cost.form</field>
+            <field name="model">fal.hourly.cost</field>
+            <field name="arch" type="xml">
+                <form string="Hourly Cost Type">
+                   <sheet>
+                        <div>
+                            <label for="name" string="Name"/>
+                            <h1>
+                                <field name="name" required="1"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="description"/>
+                            </group>
+                            <group>
+                                <field name="default"/>
+                                <field name="currency_id" invisible="1"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Hourly Cost Component">
+                                <field name="hourly_cost_type_ids">
+                                    <tree editable="buttom">
+                                        <field name="hourly_cost_component_id"/>
+                                        <field name="currency_id" invisible="1"/>
+                                        <field name="amount" widget='monetary' options="{'currency_field': 'currency_id'}"/>
+                                    </tree>
+                                </field>
+                            <group class="oe_subtotal_footer oe_right" colspan="2" name="sale_total">
+                                <field name="amount_total" widget='monetary' options="{'currency_field': 'currency_id'}"/>
+                            </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_houry_cost_tree" model="ir.ui.view">
+            <field name="name">fal.hourly.cost.tree</field>
+            <field name="model">fal.hourly.cost</field>
+            <field name="arch" type="xml">
+                <tree string="Hourly Cost Type">
+                    <field name="name"/>
+                    <field name="description"/>
+                    <field name="currency_id" invisible="1"/>
+                    <field name="amount_total" widget='monetary' options="{'currency_field': 'currency_id'}"/>
+                    <field name="default"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_hourly_cost_action" model="ir.actions.act_window">
+            <field name="name">Hourly Cost</field>
+            <field name="res_model">fal.hourly.cost</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field eval="False" name="view_id"/>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to record a new horly cost
+              </p>
+            </field>
+        </record>
+
+        <menuitem action="view_hourly_cost_action" id="menu_action_hourly_cost" parent="mrp.menu_mrp_configuration" sequence="1"/>
+
+        <!-- hourly cost component-->
+        <record id="view_houry_cost_component_form" model="ir.ui.view">
+            <field name="name">fal.hourly.cost.component</field>
+            <field name="model">fal.hourly.cost.component</field>
+            <field name="arch" type="xml">
+                <form string="Hourly Cost component">
+                   <sheet>
+                        <div>
+                            <label for="name" string="Name"/>
+                            <h1>
+                                <field name="name" required="1"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="description"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_houry_cost_component_tree" model="ir.ui.view">
+            <field name="name">fal.hourly.cost.component</field>
+            <field name="model">fal.hourly.cost.component</field>
+            <field name="arch" type="xml">
+                <tree string="Hourly Cost Component">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_hourly_cost_component_action" model="ir.actions.act_window">
+            <field name="name">Hourly Cost Component</field>
+            <field name="res_model">fal.hourly.cost.component</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field eval="False" name="view_id"/>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to record a new horly cost component
+              </p>
+            </field>
+        </record>
+
+        <menuitem action="view_hourly_cost_component_action" id="menu_action_hourly_cost_component" parent="mrp.menu_mrp_configuration" sequence="1"/>
+</odoo>

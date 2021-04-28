@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo noupdate="1">
+    <record model="ir.sequence" id="account_asset_asset_code_sequence">
+        <field name="name">Account Asset Asset Code Sequence Entries</field>
+        <field name="code">account.asset.asset</field>
+        <field name="implementation">standard</field>
+        <field name="active">TRUE</field>
+        <field name="prefix">ASC/</field>
+        <field name="padding">5</field>
+        <field name="number_increment">1</field>
+        <field name="number_next_actual">0</field>
+    </record>
+</odoo>

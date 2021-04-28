@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+    <template id="search_template_extra_options_ifrs" inherit_id="account_reports.search_template_extra_options">
+    	<!-- Add Option IFRS -->
+        <xpath expr="//div[@class='dropdown-menu o_filters_menu']/a[@data-filter='cash_basis']" position="after">
+            <a role="menuitem" class="dropdown-item js_account_report_bool_filter" t-if="(options.get('ifrs') != None and options.get('cash_basis') == False) or (options.get('ifrs') != None and options.get('cash_basis') == None)" title="Ifrs" data-filter="ifrs">I.F.R.S Basis Method</a>
+        </xpath>
+        <!-- Block to make IFRS + Cash Basis -->
+        <xpath expr="//div[@class='dropdown-menu o_filters_menu']/a[@data-filter='cash_basis']" position="attributes">
+            <attribute name="t-if">(options.get('cash_basis') != None and options.get('ifrs') == False) or (options.get('ifrs') == None and options.get('cash_basis') != None)</attribute>
+        </xpath>
+        <!-- IFRS in Option Cosmetic -->
+        <xpath expr="//a[@data-toggle='dropdown']/t[1]" position="replace">
+            <t t-if="options.get('cash_basis') != None or options.get('ifrs') != None">
+                <t t-if="options['cash_basis']">Cash Basis</t>
+                <t t-if="options['ifrs']">I.F.R.S Basis</t>
+                <t t-if="not options['cash_basis'] and not options['ifrs']">Accrual Basis</t>
+            </t>
+        </xpath>
+    </template>
+
+    </data>
+</odoo>

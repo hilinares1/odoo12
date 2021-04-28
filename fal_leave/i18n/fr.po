@@ -1,0 +1,704 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* fal_leave
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-15 12:31+0000\n"
+"PO-Revision-Date: 2017-03-15 12:31+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: fal_leave
+#: model:mail.template,body_html:fal_leave.email_template_leave_refused_or_accepted
+msgid "\n"
+"                    <div style=\"font-family: 'Lucica Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; \">\n"
+"                        <p style=\"margin:0px 0px 9px 0px;font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;\">Summary of your vacation requestttttttt :</p>\n"
+"                        <p style=\"margin:0px 0px 9px 0px;font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;border-left: 1px solid #8e0000; margin-left: 30px;\">\n"
+"                            </p><ul style=\"margin:0px 0 9px 0;\">\n"
+"                                <li>Start Date: ${object.get_interval_date_from()}</li>\n"
+"                                <li>End Date: ${object.get_interval_date_to()}</li>\n"
+"                                %if object.state == 'validate':\n"
+"                                <li>Status: <b style=\"font-weight:bold;color:green\">Approved</b> </li>\n"
+"                                %endif\n"
+"                                %if object.state == 'refuse':\n"
+"                                <li>Status: <b style=\"font-weight:bold;color:red\">Refused</b> </li>\n"
+"                                %endif\n"
+"                                %if object.state != 'refuse' and object.state != 'validate':\n"
+"                                <li>Status: ${object.state} </li>\n"
+"                                %endif\n"
+"                            </ul>\n"
+"                        <p style=\"margin:0px 0px 9px 0px;font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;\"></p>\n"
+"                        <p style=\"margin:0px 0px 9px 0px;font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;\">\n"
+"                            Mail automatically generated from the platform \n"
+"                        </p>\n"
+"                    </div>\n"
+"                \n"
+"            "
+msgstr "\n"
+"                    <div style=\"font-family: 'Lucica Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; \">\n"
+"                        <p>Résumé de votre demande de congés :</p>\n"
+"                        <p style=\"border-left: 1px solid #8e0000; margin-left: 30px;\">\n"
+"                            <ul>\n"
+"                                <li>Date de départ: ${object.get_interval_date_from()}</li>\n"
+"                                <li>Date de fin: ${object.get_interval_date_to()}</li>\n"
+"                                %if object.state == 'validate':\n"
+"                                <li>Statut: <b style=\"color:green\">Validé</b> </li>\n"
+"                                %endif\n"
+"                                %if object.state == 'refuse':\n"
+"                                <li>Statut: <b style=\"color:red\">Refusé</b> </li>\n"
+"                                %endif\n"
+"                                %if object.state != 'refuse' and object.state != 'validate':\n"
+"                                <li>Statut: ${object.state} </li>\n"
+"                                %endif\n"
+"                            </ul>\n"
+"                        </p>\n"
+"                        <p>\n"
+"                            Mail généré automatiquement par la plateforme Odoo de CAM/Gleize\n"
+"                        </p>\n"
+"                    </div>\n"
+"                \n"
+"            "
+
+#. module: fal_leave
+#: model:mail.template,body_html:fal_leave.email_template_leave_refused_or_accepted_allocation
+msgid "\n"
+"                    <div style=\"font-family: 'Lucica Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; \">\n"
+"                        <p>Summary of your vacation allocation :</p>\n"
+"                        <p style=\"border-left: 1px solid #8e0000; margin-left: 30px;\">\n"
+"                            <ul>\n"
+"                                <li>Duration: ${object.number_of_days_temp}</li>\n"
+"                                %if object.state == 'validate':\n"
+"                                <li>Status: <b style=\"color:green\">Approved</b> </li>\n"
+"                                %endif\n"
+"                                %if object.state == 'refuse':\n"
+"                                <li>Status: <b style=\"color:red\">Refused</b> </li>\n"
+"                                %endif\n"
+"                                %if object.state != 'refuse' and object.state != 'validate':\n"
+"                                <li>Status: ${object.state} </li>\n"
+"                                %endif\n"
+"                            </ul>\n"
+"                        </p>\n"
+"                        <p>\n"
+"                            Mail automatically generated from the platform \n"
+"                        </p>\n"
+"                    </div>\n"
+"                \n"
+"            "
+msgstr "<p style=\"margin:0px 0px 9px 0px;font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;\">\n"
+"                    </p><div style=\"font-family: 'Lucica Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; \">\n"
+"                        <p style=\"margin:0px 0px 9px 0px;font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;\">Summary of your vacation allocation :</p>\n"
+"                        <p style=\"margin:0px 0px 9px 0px;font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;border-left: 1px solid #8e0000; margin-left: 30px;\">\n"
+"                            </p><ul style=\"margin:0px 0 9px 0;\">\n"
+"                                <li>Duration: ${object.number_of_days_temp}</li>\n"
+"                                %if object.state == 'validate':\n"
+"                                <li>Status: <b style=\"font-weight:700;color:green\">Approved</b> </li>\n"
+"                                %endif\n"
+"                                %if object.state == 'refuse':\n"
+"                                <li>Status: <b style=\"font-weight:700;color:red\">Refused</b> </li>\n"
+"                                %endif\n"
+"                                %if object.state != 'refuse' and object.state != 'validate':\n"
+"                                <li>Status: ${object.state} </li>\n"
+"                                %endif\n"
+"                            </ul>\n"
+"                        <p style=\"margin:0px 0px 9px 0px;font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;\"></p>\n"
+"                        <p style=\"margin:0px 0px 9px 0px;font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;\">\n"
+"                            Mail automatically generated from the platform \n"
+"                        </p>\n"
+"                    </div>\n"
+"                \n"
+"            <p style=\"margin:0px 0px 9px 0px;font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;\"></p>"
+
+#. module: fal_leave
+#: model:mail.template,body_html:fal_leave.email_template_leave_refused_or_accepted_spesial
+msgid "\n"
+"                    <div style=\"font-family: 'Lucica Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; \">\n"
+"                        <p>Summary of your vacation spesial removal :</p>\n"
+"                        <p style=\"border-left: 1px solid #8e0000; margin-left: 30px;\">\n"
+"                            <ul>\n"
+"                                <li>Duration: ${object.number_of_days_temp}</li>\n"
+"                                %if object.state == 'validate':\n"
+"                                <li>Status: <b style=\"color:green\">Approved</b> </li>\n"
+"                                %endif\n"
+"                                %if object.state == 'refuse':\n"
+"                                <li>Status: <b style=\"color:red\">Refused</b> </li>\n"
+"                                %endif\n"
+"                                %if object.state != 'refuse' and object.state != 'validate':\n"
+"                                <li>Status: ${object.state} </li>\n"
+"                                %endif\n"
+"                            </ul>\n"
+"                        </p>\n"
+"                        <p>\n"
+"                            Mail automatically generated from the platform \n"
+"                        </p>\n"
+"                    </div>\n"
+"                \n"
+"            "
+msgstr "\n"
+"                    <div style=\"font-family: 'Lucica Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; \">\n"
+"                        <p>Summary of your vacation spesial removal :</p>\n"
+"                        <p style=\"border-left: 1px solid #8e0000; margin-left: 30px;\">\n"
+"                            <ul>\n"
+"                                <li>Duration: ${object.number_of_days_temp}</li>\n"
+"                                %if object.state == 'validate':\n"
+"                                <li>Status: <b style=\"color:green\">Approved</b> </li>\n"
+"                                %endif\n"
+"                                %if object.state == 'refuse':\n"
+"                                <li>Status: <b style=\"color:red\">Refused</b> </li>\n"
+"                                %endif\n"
+"                                %if object.state != 'refuse' and object.state != 'validate':\n"
+"                                <li>Status: ${object.state} </li>\n"
+"                                %endif\n"
+"                            </ul>\n"
+"                        </p>\n"
+"                        <p>\n"
+"                            Mail automatically generated from the platform \n"
+"                        </p>\n"
+"                    </div>\n"
+"                \n"
+"            "
+
+#. module: fal_leave
+#: model:ir.ui.view,arch_db:fal_leave.view_hr_holidays_filter_fal_dashboard
+msgid "Active Leaves and Allocations"
+msgstr "Congés et Allocations Actifs"
+
+#. module: fal_leave
+#: model:ir.ui.view,arch_db:fal_leave.view_hr_holidays_filter_fal_dashboard
+msgid "Active Types"
+msgstr "Types Actifs"
+
+#. module: fal_leave
+#: selection:hr.holidays,date_from_time_selection:0
+#: selection:hr.holidays,date_to_time_selection:0
+msgid "Afternoon"
+msgstr "Après-midi"
+
+#. module: fal_leave
+#: model:ir.ui.view,arch_db:fal_leave.view_holiday_request_tree_fal
+msgid "Allocated Days"
+msgstr "Jours attribués"
+
+#. module: fal_leave
+#: model:ir.ui.view,arch_db:fal_leave.view_hr_holidays_filter_fal_dashboard
+msgid "Allocations"
+msgstr "Allocations"
+
+#. module: fal_leave
+#: model:ir.model.fields,field_description:fal_leave.field_hr_holidays_fal_leave_timesheet_analytic_account_d2_id
+#: model:ir.ui.view,arch_db:fal_leave.view_hr_holidays_filter_fal
+#: model:ir.ui.view,arch_db:fal_leave.view_hr_holidays_filter_fal_dashboard
+msgid "Analytic Account D2"
+msgstr "Secteur Géographique"
+
+#. module: fal_leave
+#: model:ir.ui.view,arch_db:fal_leave.view_hr_holidays_filter_fal_dashboard
+msgid "Approved Leaves"
+msgstr "Congés approuvés"
+
+#. module: fal_leave
+#: model:ir.ui.view,arch_db:fal_leave.view_hr_holidays_multiple_validation_wizard
+msgid "Are you sure to Validate this holiday?"
+msgstr "Etes-vous sûr de valider ces congés?"
+
+#. module: fal_leave
+#: model:ir.ui.view,arch_db:fal_leave.edit_holiday_new_fal
+msgid "BTP Validate"
+msgstr "A valider à la caisse BTP"
+
+#. module: fal_leave
+#: model:ir.model.fields,field_description:fal_leave.field_hr_holidays_fal_btp_validated
+msgid "BTP Validated"
+msgstr "Validé à la caisse BTP"
+
+#. module: fal_leave
+#: model:ir.model.fields,field_description:fal_leave.field_hr_holidays_business_unit_id
+#: model:ir.ui.view,arch_db:fal_leave.view_hr_holidays_filter_fal
+#: model:ir.ui.view,arch_db:fal_leave.view_hr_holidays_filter_fal_dashboard
+msgid "Business Unit"
+msgstr "Business Unit"
+
+#. module: fal_leave
+#: model:hr.holidays.status,name:fal_leave.fal_hr_holidays_status_2
+msgid "CES - Lost Leave - PY"
+msgstr "CES.CPU.PY - Congés perdus - PY"
+
+#. module: fal_leave
+#: model:hr.holidays.status,name:fal_leave.fal_hr_holidays_status_1
+msgid "CES Lost Leave - PU"
+msgstr "GES.CPU.PU - Congés perdus - PU"
+
+#. module: fal_leave
+#: model:ir.model.fields,field_description:fal_leave.field_hr_holidays_fal_can_approve
+msgid "Can Approve"
+msgstr "Peut approuver"
+
+#. module: fal_leave
+#: model:ir.model.fields,field_description:fal_leave.field_hr_holidays_fal_can_refuse
+msgid "Can Refuse"
+msgstr "Peut refuser"
+
+#. module: fal_leave
+#: model:ir.ui.view,arch_db:fal_leave.edit_holiday_new_fal
+msgid "Can Reset"
+msgstr "Peut réinitialiser"
+
+#. module: fal_leave
+#: model:ir.ui.view,arch_db:fal_leave.edit_holiday_new_fal
+#: model:ir.ui.view,arch_db:fal_leave.view_hr_holidays_multiple_validation_wizard
+#: model:ir.ui.view,arch_db:fal_leave.view_hr_holidays_postpone_wizard
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: fal_leave
+#: model:ir.ui.view,arch_db:fal_leave.edit_holiday_new_fal
+msgid "Cancel BTP Validate"
+msgstr "Annuler la validation à la caisse BTP"
+
+#. module: fal_leave
+#: code:addons/fal_leave/wizard/hr_holidays_multiple_validation_wizard.py:18
+#, python-format
+msgid "Cannot Validate Leave not in First Validate or Confirm! ( %s )"
+msgstr "Ne peut pas valider des congés qui ne sont pas en status A valider ou A confirmer! ( %s )"
+
+#. module: fal_leave
+#: model:ir.ui.view,arch_db:fal_leave.view_hr_holidays_filter_fal_dashboard
+msgid "Category"
+msgstr "Catégorie"
+
+#. module: fal_leave
+#: model:ir.model.fields,field_description:fal_leave.field_hr_holidays_status_child_ids
+msgid "Child"
+msgstr "Enfant"
+
+#. module: fal_leave
+#: model:ir.model.fields,field_description:fal_leave.field_hr_holidays_fal_company_id
+msgid "Company"
+msgstr "Société"
+
+#. module: fal_leave
+#: model:ir.model.fields,field_description:fal_leave.field_hr_holidays_multiple_validation_wizard_create_uid
+#: model:ir.model.fields,field_description:fal_leave.field_hr_holidays_postpone_wizard_create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: fal_leave
+#: model:ir.model.fields,field_description:fal_leave.field_hr_holidays_multiple_validation_wizard_create_date
+#: model:ir.model.fields,field_description:fal_leave.field_hr_holidays_postpone_wizard_create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: fal_leave
+#: model:ir.ui.view,arch_db:fal_leave.view_hr_holidays_filter_fal_dashboard
+msgid "Current"
+msgstr "Actuel"
+
+#. module: fal_leave
+#: model:ir.model.fields,field_description:fal_leave.field_hr_holidays_postpone_wizard_department_id
+#: model:ir.ui.view,arch_db:fal_leave.view_hr_holidays_filter_fal
+msgid "Department"
+msgstr "Secteur"
+
+#. module: fal_leave
+#: model:ir.ui.view,arch_db:fal_leave.view_holiday_request_tree_fal
+msgid "Department Leaves Allocation"
+msgstr "Allocation des congés du département"
+
+#. module: fal_leave
+#: model:ir.model.fields,field_description:fal_leave.field_hr_holidays_postpone_wizard_description
+#: model:ir.ui.view,arch_db:fal_leave.view_hr_holidays_filter_fal_dashboard
+msgid "Description"
+msgstr "Description"
+
+#. module: fal_leave
+#: model:ir.model.fields,field_description:fal_leave.field_hr_holidays_multiple_validation_wizard_display_name
+#: model:ir.model.fields,field_description:fal_leave.field_hr_holidays_postpone_wizard_display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: fal_leave
+#: model:ir.model.fields,field_description:fal_leave.field_hr_holidays_fal_number_of_days_temp
+#: model:ir.model.fields,field_description:fal_leave.field_hr_holidays_postpone_wizard_duration
+msgid "Duration"
+msgstr "Durée"
+
+#. module: fal_leave
+#: model:ir.model.fields,field_description:fal_leave.field_hr_holidays_postpone_wizard_employee_id
+#: model:ir.ui.view,arch_db:fal_leave.view_hr_holidays_filter_fal_dashboard
+msgid "Employee"
+msgstr "Employé"
+
+#. module: fal_leave
+#: model:ir.model.fields,field_description:fal_leave.field_hr_holidays_status_fal_employee_visible
+msgid "Employee Visible"
+msgstr "Employee Visible"
+
+#. module: fal_leave
+#: model:ir.ui.view,arch_db:fal_leave.view_hr_holidays_filter_fal_dashboard
+msgid "Filters only on allocations and requests that belong to an holiday type that is 'active' (active field is True)"
+msgstr "Filtrer uniquement les demandes et les attributions qui ont un type de congés 'actif' (champ actif est vrai)"
+
+#. module: fal_leave
+#: model:ir.model.fields,field_description:fal_leave.field_hr_holidays_is_fixed
+msgid "Fixed Holidays"
+msgstr "Congés fixes"
+
+#. module: fal_leave
+#: model:ir.model.fields,field_description:fal_leave.field_hr_holidays_fal_fix_holiday_line_id
+msgid "From Fix Date"
+msgstr "A partir de la date fixée"
+
+#. module: fal_leave
+#: model:ir.model.fields,help:fal_leave.field_hr_holidays_payslip_status_next_month
+msgid "Green this button when the leave has been taken into account in the payslip."
+msgstr "Faites passer ce bouton au vert lorsqu'un congé a été pris en compte dans la paye."
+
+#. module: fal_leave
+#: model:ir.ui.view,arch_db:fal_leave.view_hr_holidays_filter_fal_dashboard
+msgid "Group By"
+msgstr "Regrouper par"
+
+#. module: fal_leave
+#: model:ir.model.fields,field_description:fal_leave.field_hr_holidays_multiple_validation_wizard_id
+#: model:ir.model.fields,field_description:fal_leave.field_hr_holidays_postpone_wizard_id
+msgid "ID"
+msgstr "ID"
+
+#. module: fal_leave
+#: model:ir.model.fields,help:fal_leave.field_hr_holidays_is_fixed
+msgid "If checked, It will not checked for overlapped holiday constraints"
+msgstr "Si coché, la contrainte de chevauchement de congés ne sera pas vérifiée."
+
+#. module: fal_leave
+#: model:ir.ui.view,arch_db:fal_leave.view_hr_holidays_filter_fal
+#: model:ir.ui.view,arch_db:fal_leave.view_hr_holidays_filter_fal_dashboard
+msgid "Is Not Cancelled"
+msgstr "N'est pas Annulé"
+
+#. module: fal_leave
+#: model:ir.ui.view,arch_db:fal_leave.view_hr_holidays_filter_fal
+#: model:ir.ui.view,arch_db:fal_leave.view_hr_holidays_filter_fal_dashboard
+msgid "Is Not Refused"
+msgstr "N'est pas Refusé"
+
+#. module: fal_leave
+#: model:ir.model.fields,field_description:fal_leave.field_hr_holidays_multiple_validation_wizard___last_update
+#: model:ir.model.fields,field_description:fal_leave.field_hr_holidays_postpone_wizard___last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: fal_leave
+#: model:ir.model.fields,field_description:fal_leave.field_hr_holidays_multiple_validation_wizard_write_uid
+#: model:ir.model.fields,field_description:fal_leave.field_hr_holidays_postpone_wizard_write_uid
+msgid "Last Updated by"
+msgstr "Mis à jour par"
+
+#. module: fal_leave
+#: model:ir.model.fields,field_description:fal_leave.field_hr_holidays_multiple_validation_wizard_write_date
+#: model:ir.model.fields,field_description:fal_leave.field_hr_holidays_postpone_wizard_write_date
+msgid "Last Updated on"
+msgstr "Mis à jour le"
+
+#. module: fal_leave
+#: model:ir.model,name:fal_leave.model_hr_holidays
+msgid "Leave"
+msgstr "Congé"
+
+#. module: fal_leave
+#: model:ir.model,name:fal_leave.model_hr_holidays_status
+#: model:ir.model.fields,field_description:fal_leave.field_hr_holidays_postpone_wizard_holidays_status_id
+msgid "Leave Type"
+msgstr "Type de congés"
+
+#. module: fal_leave
+#: selection:hr.holidays.status,fal_type:0
+msgid "Leave Type View"
+msgstr "Vue Type de Congés"
+
+#. module: fal_leave
+#: model:ir.ui.view,arch_db:fal_leave.view_hr_holidays_filter_fal_dashboard
+msgid "Leaves"
+msgstr "Congés"
+
+#. module: fal_leave
+#: model:ir.ui.view,arch_db:fal_leave.view_hr_holidays_filter_fal_dashboard
+msgid "Leaves of Your Team Member"
+msgstr "Congés des membres de votre équipe"
+
+#. module: fal_leave
+#: model:ir.model.fields,field_description:fal_leave.field_hr_holidays_postpone_wizard_lost_days_reason
+msgid "Lost Days Reason"
+msgstr "Raison de la perte de congés"
+
+#. module: fal_leave
+#: selection:hr.holidays.postpone.wizard,lost_days_reason:0
+msgid "Lost Leave - PU"
+msgstr "Congé perdu - PU"
+
+#. module: fal_leave
+#: selection:hr.holidays.postpone.wizard,lost_days_reason:0
+msgid "Lost Leave - PY"
+msgstr "Congé perdu - PY"
+
+#. module: fal_leave
+#: model:ir.model.fields,field_description:fal_leave.field_hr_holidays_fal_employee_manager_id
+#: model:ir.ui.view,arch_db:fal_leave.view_hr_holidays_filter_fal_dashboard
+msgid "Manager"
+msgstr "Responsable"
+
+#. module: fal_leave
+#: selection:hr.holidays,date_from_time_selection:0
+#: selection:hr.holidays,date_to_time_selection:0
+msgid "Morning"
+msgstr "Matin"
+
+#. module: fal_leave
+#: model:ir.ui.view,arch_db:fal_leave.view_hr_holidays_multiple_validation_wizard
+msgid "Multiple Holidays Validation"
+msgstr "Validation multiple des Congés"
+
+#. module: fal_leave
+#: model:ir.actions.act_window,name:fal_leave.open_view_holiday_status_gleize
+#: model:ir.ui.menu,name:fal_leave.menu_hr_holidays_my_dashboard_gleize
+msgid "My Dashboard"
+msgstr "Mon tableau de bord"
+
+#. module: fal_leave
+#: model:ir.ui.view,arch_db:fal_leave.view_hr_holidays_filter_fal_dashboard
+msgid "My Department Leaves"
+msgstr "Les congés de mon département"
+
+#. module: fal_leave
+#: model:ir.ui.view,arch_db:fal_leave.view_hr_holidays_filter_fal_dashboard
+msgid "My Requests"
+msgstr "Mes demandes"
+
+#. module: fal_leave
+#: model:ir.ui.view,arch_db:fal_leave.view_hr_holidays_filter_fal_dashboard
+msgid "My Team Leaves"
+msgstr "Congés de mon équipe"
+
+#. module: fal_leave
+#: selection:hr.holidays.status,fal_type:0
+#: model:ir.ui.view,arch_db:fal_leave.view_hr_holidays_status_search_fal
+msgid "Normal"
+msgstr "Normal"
+
+#. module: fal_leave
+#: model:ir.model.fields,field_description:fal_leave.field_hr_holidays_status_parent_id
+msgid "Parent"
+msgstr "Parent"
+
+#. module: fal_leave
+#: model:ir.ui.view,arch_db:fal_leave.view_hr_holidays_status_search_fal
+msgid "Parent Category"
+msgstr "Parent Category"
+
+#. module: fal_leave
+#: model:ir.ui.view,arch_db:fal_leave.edit_holiday_status_form_fal
+msgid "Period IN"
+msgstr "Période d'acquisition"
+
+#. module: fal_leave
+#: model:ir.model.fields,field_description:fal_leave.field_hr_holidays_status_fal_period_in_departure_date
+msgid "Period In Departure Date"
+msgstr "Date de départ de la période d'acquisition"
+
+#. module: fal_leave
+#: model:ir.model.fields,field_description:fal_leave.field_hr_holidays_status_fal_period_in_ending_date
+msgid "Period In Ending Date"
+msgstr "Date de fin de la période d'acquisition"
+
+#. module: fal_leave
+#: model:ir.ui.view,arch_db:fal_leave.edit_holiday_status_form_fal
+msgid "Period OUT"
+msgstr "Période de prise"
+
+#. module: fal_leave
+#: model:ir.model.fields,field_description:fal_leave.field_hr_holidays_status_fal_period_out_departure_date
+msgid "Period Out Departure Date"
+msgstr "Date de départ de la période de prise"
+
+#. module: fal_leave
+#: model:ir.model.fields,field_description:fal_leave.field_hr_holidays_status_fal_period_out_ending_date
+msgid "Period Out Ending Date"
+msgstr "Date de fin de la période de prise"
+
+#. module: fal_leave
+#: model:ir.ui.view,arch_db:fal_leave.view_hr_holidays_postpone_wizard
+msgid "Postpone Holidays"
+msgstr "Congés reportés"
+
+#. module: fal_leave
+#: model:ir.actions.act_window,name:fal_leave.he_holidays_postpone_action
+msgid "Postpone remaining holidays"
+msgstr "Reporter les congés restants"
+
+#. module: fal_leave
+#: model:ir.ui.view,arch_db:fal_leave.view_holiday_request_tree_fal
+msgid "Remaining Days"
+msgstr "Jours restants"
+
+#. module: fal_leave
+#: model:ir.model.fields,field_description:fal_leave.field_hr_holidays_payslip_status_next_month
+msgid "Reported in next payslips"
+msgstr "Reporté sur les prochaines fiches de paie"
+
+#. module: fal_leave
+#: code:addons/fal_leave/models/hr_holidays.py:432
+#, python-format
+msgid "Request"
+msgstr "Demande"
+
+#. module: fal_leave
+#: model:ir.ui.view,arch_db:fal_leave.edit_holiday_new_fal
+msgid "Reset to Draft"
+msgstr "Revenir à l'état \"Brouillon\""
+
+#. module: fal_leave
+#: model:ir.ui.view,arch_db:fal_leave.view_hr_holidays_filter_fal_dashboard
+msgid "Search Leave"
+msgstr "Recherche de congé"
+
+#. module: fal_leave
+#: model:ir.model.fields,field_description:fal_leave.field_hr_holidays_status_fal_sequence
+msgid "Sequence"
+msgstr "Séquence"
+
+#. module: fal_leave
+#: model:ir.model.fields,field_description:fal_leave.field_hr_holidays_fal_spesial_remove
+msgid "Spesial Remove"
+msgstr "Suppression Spéciale"
+
+#. module: fal_leave
+#: model:ir.ui.view,arch_db:fal_leave.view_hr_holidays_filter_fal_dashboard
+msgid "Start Month"
+msgstr "Mois de départ"
+
+#. module: fal_leave
+#: model:ir.ui.view,arch_db:fal_leave.view_hr_holidays_filter_fal
+msgid "Start Year"
+msgstr "Année de Démarrage"
+
+#. module: fal_leave
+#: model:ir.ui.view,arch_db:fal_leave.view_hr_holidays_filter_fal
+#: model:ir.ui.view,arch_db:fal_leave.view_hr_holidays_filter_fal_dashboard
+msgid "Status"
+msgstr "Statut"
+
+#. module: fal_leave
+#: model:ir.ui.view,arch_db:fal_leave.edit_holiday_new_fal
+msgid "Submit to Manager"
+msgstr "Soumettre au responsable"
+
+#. module: fal_leave
+#: code:addons/fal_leave/models/hr_holidays.py:252
+#: code:addons/fal_leave/models/hr_holidays.py:292
+#: code:addons/fal_leave/models/hr_holidays.py:309
+#: code:addons/fal_leave/models/hr_holidays.py:499
+#: constraint:hr.holidays:0
+#, python-format
+msgid "The start date must be anterior to the end date."
+msgstr "La date de départ doit être antérieure à la date de fin"
+
+#. module: fal_leave
+#: code:addons/fal_leave/wizard/hr_holidays_postpone_wizard.py:35
+#, python-format
+msgid "This Employee Doesn't have Sufficient Holidays to Postpone!"
+msgstr "Cet employé n'a pas suffisamment de jours à reporter!"
+
+#. module: fal_leave
+#: model:ir.model.fields,field_description:fal_leave.field_hr_holidays_date_from_time_selection
+#: model:ir.model.fields,field_description:fal_leave.field_hr_holidays_date_to_time_selection
+msgid "Time"
+msgstr "Heure"
+
+#. module: fal_leave
+#: model:ir.ui.view,arch_db:fal_leave.view_hr_holidays_filter_fal_dashboard
+msgid "To Approve"
+msgstr "À approuver"
+
+#. module: fal_leave
+#: model:ir.ui.view,arch_db:fal_leave.view_hr_holidays_filter_fal_dashboard
+msgid "To Do"
+msgstr "À faire"
+
+#. module: fal_leave
+#: model:ir.ui.view,arch_db:fal_leave.view_hr_holidays_filter_fal_dashboard
+msgid "To Report in Payslip"
+msgstr "A rapporter dans la paye"
+
+#. module: fal_leave
+#: model:ir.model.fields,field_description:fal_leave.field_hr_holidays_status_fal_type
+#: model:ir.ui.view,arch_db:fal_leave.view_hr_holidays_filter_fal_dashboard
+msgid "Type"
+msgstr "Type"
+
+#. module: fal_leave
+#: model:ir.ui.view,arch_db:fal_leave.view_hr_holidays_filter_fal_dashboard
+msgid "Unread Messages"
+msgstr "Messages non lus"
+
+#. module: fal_leave
+#: model:ir.ui.view,arch_db:fal_leave.view_hr_holidays_multiple_validation_wizard
+msgid "Validate Holidays"
+msgstr "Valider les Congés"
+
+#. module: fal_leave
+#: model:ir.actions.act_window,name:fal_leave.hr_holidays_multiple_validation_action
+msgid "Validate Multiple Holidays"
+msgstr "Valider plusieurs Congés"
+
+#. module: fal_leave
+#: model:ir.model.fields,field_description:fal_leave.field_hr_holidays_status_fal_year
+msgid "Year"
+msgstr "Année"
+
+#. module: fal_leave
+#: code:addons/fal_leave/models/hr_holidays.py:514
+#, python-format
+msgid "Year Must Contain Only Number!"
+msgstr "Le champ Année doit uniquement contenir des chiffres!"
+
+#. module: fal_leave
+#: constraint:hr.holidays:0
+msgid "You can not have 2 leaves that overlaps on same day!"
+msgstr "Vous ne pouvez pas avoir 2 demandes de congés qui se chevauchent dans la même journée."
+
+#. module: fal_leave
+#: model:mail.template,subject:fal_leave.email_template_leave_refused_or_accepted_allocation
+msgid "Your Vacation Allocation"
+msgstr "Votre Attribution de Congés"
+
+#. module: fal_leave
+#: model:mail.template,subject:fal_leave.email_template_leave_refused_or_accepted
+msgid "Your Vacation Request ${object.get_interval_date_from()} to ${object.get_interval_date_to()}"
+msgstr "Your Vacation Request ${object.get_interval_date_from()} to ${object.get_interval_date_to()}"
+
+#. module: fal_leave
+#: model:mail.template,subject:fal_leave.email_template_leave_refused_or_accepted_spesial
+msgid "Your Vacation Spesial Removal"
+msgstr "Votre Annulation Spéciale de Congés"
+
+#. module: fal_leave
+#: model:ir.model,name:fal_leave.model_hr_holidays_multiple_validation_wizard
+msgid "hr.holidays.multiple.validation.wizard"
+msgstr "hr.holidays.multiple.validation.wizard"
+
+#. module: fal_leave
+#: model:ir.model,name:fal_leave.model_hr_holidays_postpone_wizard
+msgid "hr.holidays.postpone.wizard"
+msgstr "hr.holidays.postpone.wizard"
+
+#. module: fal_leave
+#: model:ir.ui.view,arch_db:fal_leave.view_hr_holidays_multiple_validation_wizard
+#: model:ir.ui.view,arch_db:fal_leave.view_hr_holidays_postpone_wizard
+msgid "or"
+msgstr "ou"
+

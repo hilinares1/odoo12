@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_crm_lead_lost_and_partner_binding" model="ir.ui.view">
+            <field name="name">fal.crm.lead.lost.and.partner.binding.wizard</field>
+            <field name="model">crm.lead.lost.and.partner.binding</field>
+            <field name="arch" type="xml">
+                <form string="Lost Lead">
+                    <group name="action" string="Customers" col="1">
+                        <field name="action" nolabel="1" widget="radio"/>
+                        <group col="2">
+                            <field name="partner_id" widget="res_partner_many2one" domain="[('customer', '=', True)]" context="{'search_default_customer': 1, 'show_vat': True}" attrs="{'required': [('action', '=', 'exist')], 'invisible':[('action','!=','exist')]}"/>
+                        </group>
+                    </group>
+                    <footer>
+                        <button name="action_lost_and_create_partner" string="Submit" type="object" class="btn-primary"/>
+                        <button string="Cancel" class="btn-secondary" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_crm_opportunity_lost_and_partner_binding" model="ir.ui.view">
+            <field name="name">fal.crm.opportunity.lost.and.partner.binding.wizard</field>
+            <field name="model">crm.lead.lost.and.partner.binding</field>
+            <field name="arch" type="xml">
+                <form string="Lost Lead">
+                    <group class="oe_title">
+                        <field name="lost_reason_id"/>
+                    </group>
+                    <group name="action" string="Customers" col="1">
+                        <field name="action" nolabel="1" widget="radio"/>
+                        <group col="2">
+                            <field name="partner_id" widget="res_partner_many2one" domain="[('customer', '=', True)]" context="{'search_default_customer': 1, 'show_vat': True}" attrs="{'required': [('action', '=', 'exist')], 'invisible':[('action','!=','exist')]}"/>
+                        </group>
+                    </group>
+                    <footer>
+                        <button name="action_lost_and_create_partner" string="Submit" type="object" class="btn-primary"/>
+                        <button string="Cancel" class="btn-secondary" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="crm_lead_lost_and_link_partner_action" model="ir.actions.act_window">
+            <field name="name">Lost Reason and Link Partner</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">crm.lead.lost.and.partner.binding</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_crm_opportunity_lost_and_partner_binding"/>
+            <field name="target">new</field>
+        </record>
+    </data>
+</odoo>

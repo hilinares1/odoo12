@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="fal_company_title_fields" model="fal.dynamic.mandatory.fields">
+            <field name="name">Company Title</field>
+        </record>
+        <record id="fal_partner_tags_fields" model="fal.dynamic.mandatory.fields">
+            <field name="name">Partner Tags</field>
+        </record>
+        <record id="fal_number_employee_fields" model="fal.dynamic.mandatory.fields">
+            <field name="name">Number Of Employe</field>
+        </record>
+        <record id="fal_year_founded_fields" model="fal.dynamic.mandatory.fields">
+            <field name="name">Year Founded</field>
+        </record>
+        <record id="fal_phone_fields" model="fal.dynamic.mandatory.fields">
+            <field name="name">Phone</field>
+        </record>
+        <record id="fal_email_fields" model="fal.dynamic.mandatory.fields">
+            <field name="name">Email</field>
+        </record>
+    </data>
+</odoo>

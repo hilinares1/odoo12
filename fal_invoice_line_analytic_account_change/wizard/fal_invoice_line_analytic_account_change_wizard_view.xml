@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="fal_invoice_line_analytic_account_change_wizard" model="ir.ui.view">
+            <field name="name">fal.invoice.line.analytic.account.change.wizard</field>
+            <field name="model">fal.invoice.line.analytic.account.change</field>
+            <field name="arch" type="xml">
+                <form string="Edit Analytic Account">
+                    <group>
+                        <group>
+                            <field name="account_analytic_id" />
+                        </group>
+                    </group>
+                    <footer>
+                        <button name="changeAnalayticAccount" string="Confirm" type="object"
+                            class="btn-primary"/>
+                        <button string="Cancel" class="btn-default" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_fal_invoice_line_analytic_account_change_wizard" model="ir.actions.act_window">
+            <field name="name">Change Analytic Account Invoice Line</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">fal.invoice.line.analytic.account.change</field>
+            <field name="view_type">form</field>
+            <field name="view_id" ref="fal_invoice_line_analytic_account_change_wizard"/>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+    </data>
+</odoo>

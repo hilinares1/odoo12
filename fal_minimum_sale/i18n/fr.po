@@ -1,0 +1,103 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* fal_minimum_sale
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-07-09 03:17+0000\n"
+"PO-Revision-Date: 2018-07-12 11:01+0700\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: en\n"
+"X-Generator: Poedit 2.0.8\n"
+
+#. module: fal_minimum_sale
+#: code:addons/fal_minimum_sale/models/sale_order.py:49
+#, python-format
+msgid ") Is Below Minimum Price ("
+msgstr ") est inférieur au prix minum ("
+
+#. module: fal_minimum_sale
+#: model:ir.model.fields,field_description:fal_minimum_sale.field_fal_sale_proposal_wizard_is_below_minimum
+#: model:ir.model.fields,field_description:fal_minimum_sale.field_sale_order_line_is_below_minimum
+msgid "Below Minimum Price"
+msgstr "Inférieur du prix minimum"
+
+#. module: fal_minimum_sale
+#: code:addons/fal_minimum_sale/models/sale_order.py:51
+#, python-format
+msgid "Below Minimum Price!"
+msgstr "Inférieur du prix minimum!"
+
+#. module: fal_minimum_sale
+#: model:ir.ui.view,arch_db:fal_minimum_sale.view_fal_sale_proposal_wizard_minimum_sale
+msgid "Check the minimum sale price of this Sales order"
+msgstr "Vérifiez le prix de vente minimum de ce bon de commande"
+
+#. module: fal_minimum_sale
+#: model:ir.ui.view,arch_db:fal_minimum_sale.view_order_min_price_form
+msgid "Manager Confirm Sale"
+msgstr "Manager confirme la vente"
+
+#. module: fal_minimum_sale
+#: model:ir.model.fields,help:fal_minimum_sale.field_product_pricelist_item_fal_salesman_max_reduce
+msgid "Maximum Price reduction in percentage for Salesman. Salesman cannot sell this product with price under (Computed Pricelist Price - this percentage)"
+msgstr "Réduction du prix maximum en pourcentage pour le vendeur. Le vendeur ne peut pas vendre ce produit avec un prix inférieur à (Prix du prix calculé - ce pourcentage)"
+
+#. module: fal_minimum_sale
+#: model:ir.ui.view,arch_db:fal_minimum_sale.product_pricelist_item_min_price_form_view
+msgid "Minimum Sales Price"
+msgstr "Prix de vente minimum"
+
+#. module: fal_minimum_sale
+#: model:ir.model,name:fal_minimum_sale.model_product_pricelist_item
+msgid "Pricelist item"
+msgstr "Élément de la liste de prix"
+
+#. module: fal_minimum_sale
+#: model:ir.model,name:fal_minimum_sale.model_sale_order
+msgid "Quotation"
+msgstr "Devis"
+
+#. module: fal_minimum_sale
+#: model:ir.model,name:fal_minimum_sale.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "Ligne de bons de commande"
+
+#. module: fal_minimum_sale
+#: model:ir.ui.view,arch_db:fal_minimum_sale.view_product_pricelist_min_price_form
+#: model:ir.ui.view,arch_db:fal_minimum_sale.view_product_template_common_min_price_form
+msgid "Salesman -%"
+msgstr "Vendeur -%"
+
+#. module: fal_minimum_sale
+#: model:ir.model.fields,field_description:fal_minimum_sale.field_product_pricelist_item_fal_salesman_max_reduce
+msgid "Salesman Max Reduce"
+msgstr "Réduction maximum du vendeur"
+
+#. module: fal_minimum_sale
+#: model:ir.ui.view,arch_db:fal_minimum_sale.product_pricelist_item_min_price_form_view
+msgid "Salesman Maximum Price Reduction"
+msgstr "Réduction maximum du prix du vendeur"
+
+#. module: fal_minimum_sale
+#: code:addons/fal_minimum_sale/models/sale_order.py:49
+#, python-format
+msgid "Unit Price of Product "
+msgstr "Prix unitaire d'article "
+
+#. module: fal_minimum_sale
+#: model:ir.ui.view,arch_db:fal_minimum_sale.sale_order_view_search_min_price
+msgid "Waiting Approval"
+msgstr "En attente d'approbation"
+
+#. module: fal_minimum_sale
+#: model:ir.model,name:fal_minimum_sale.model_fal_sale_proposal_wizard
+msgid "fal.sale.proposal.wizard"
+msgstr "fal.sale.proposal.wizard"

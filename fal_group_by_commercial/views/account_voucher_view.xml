@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="view_voucher_tree_fal_gc" model="ir.ui.view">
+            <field name="name">fwa.account.voucher.tree.fal.gc</field>
+            <field name="model">account.voucher</field>
+            <field name="inherit_id" ref="account_voucher.view_voucher_tree"/>
+            <field name="arch" type="xml">
+                <data>
+                    <field name="amount" position="before">
+                        <field name="commercial_partner_id" invisible="1"/>
+                        <field name="fal_parent_company" invisible="1"/>
+                    </field>
+                </data>
+            </field>
+        </record>
+        <record id="view_voucher_filter_customer_pay_fal_gc" model="ir.ui.view">
+            <field name="name">account.voucher.customer.pay.select.fal.gc</field>
+            <field name="model">account.voucher</field>
+            <field name="inherit_id" ref="account_voucher.view_voucher_filter_sale"/>
+            <field name="arch" type="xml">
+                <data>
+                    <filter name="customer" position="after">
+                        <filter name="commercial_partner" string="Commercial Partner" domain="[]" context="{'group_by':'commercial_partner_id'}" />
+                        <filter name="parent_company" string="Parent Company" domain="[]" context="{'group_by' : 'fal_parent_company'}" />
+                    </filter>
+                </data>
+            </field>
+        </record>
+        <record id="view_voucher_filter_vendor_pay_fal_gc" model="ir.ui.view">
+            <field name="name">account.voucher.customer.pay.select.fal.gc</field>
+            <field name="model">account.voucher</field>
+            <field name="inherit_id" ref="account_voucher.view_voucher_filter_vendor"/>
+            <field name="arch" type="xml">
+                <data>
+                    <filter name="vendor" position="after">
+                        <filter name="commercial_partner" string="Commercial Partner" domain="[]" context="{'group_by':'commercial_partner_id'}" />
+                        <filter name="parent_company" string="Parent Company" domain="[]" context="{'group_by' : 'fal_parent_company'}" />
+                    </filter>
+                </data>
+            </field>
+        </record>
+    </data>
+</odoo>

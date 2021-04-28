@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Account Reports Configuration -->
+        <record id="view_account_financial_report_form_ifrs" model="ir.ui.view">
+            <field name="name">account.financial.html.report.form.ifrs</field>
+            <field name="model">account.financial.html.report</field>
+            <field name="inherit_id" ref="account_reports.view_account_financial_report_form"/>
+            <field name="arch" type="xml">
+                <data>
+                    <xpath expr="//field[@name='cash_basis']" position="after">
+                        <field name="ifrs_basis"/>
+                    </xpath>
+                </data>
+            </field>
+        </record>
+
+    </data>
+</odoo>

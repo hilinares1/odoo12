@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_multi_cancel_picking_wizard" model="ir.ui.view">
+            <field name="name">view.multi.cancel.picking.wizard</field>
+            <field name="model">multi.cancel.picking.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Cancel Wizard">
+                    <p class="oe_grey">
+                        This process will cancel all selected pickings.
+                    </p>
+                    <footer>
+                        <button name="action_cancel" string="Confirm" type="object" class="oe_highlight"/>
+                        <button string="Cancel" class="btn-secondary" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <act_window name="Cancel Picking"
+            res_model="multi.cancel.picking.wizard"
+            src_model="stock.picking"
+            view_mode="form"
+            target="new"
+            multi="True"
+            key2="client_action_multi"
+            id="action_cancel1"/>
+    </data>
+</odoo>

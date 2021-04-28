@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_employee_appraisal_form_ifi_inherit" model="ir.ui.view">
+        <field name="name">view_employee_appraisal_form_ifi_inherit</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='hr_settings']" position="after">
+                <page name="appraisal_settings" string="Appraisal Settings" groups="hr.group_hr_user,performance_appraisal.group_performance_appraisal_manager,ifi_employee.group_hr_department_manager,ifi_employee.group_hr_department_vice">
+                    <field name="appraisal_strategy_ids" string="Appraisal Reviewers">
+                        <tree editable="top">
+                            <field name="employee_id" context="{'default_employee_id': active_id}" invisible="1"/>
+                            <field name="strategy_id"/>
+                            <field name="reviewer_ids" widget="many2many_tags" options="{'no_create':True}"/>
+                        </tree>
+                    </field>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

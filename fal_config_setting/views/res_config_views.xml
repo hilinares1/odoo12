@@ -1,0 +1,1066 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+    <record id="fal_res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">fal.res.config.settings.view.form.inherit.sale</field>
+        <field name="model">res.config.settings</field>
+        <field name="priority" eval="10"/>
+        <field name="inherit_id" ref="base.res_config_settings_view_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//div[hasclass('settings')]" position="inside">
+                <div class="app_settings_block" data-string="Falinwa Standard Settings" string="Falinwa Standard Settings" data-key="fal_config_setting" sequence="99">
+                    <div id="falinwa_standard">
+                        <h2>Accounting</h2>
+                        <div class="row mt16 o_settings_container">
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_left_pane">
+                                    <field name="module_bank_api"/>
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label for="module_bank_api"/>
+                                    <div class="text-muted">
+                                        Import Bank Statement from API
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_left_pane">
+                                    <field name="module_fal_account_ext"/>
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label for="module_fal_account_ext"/>
+                                    <div class="text-muted">
+                                        Module to add sequence adjustment feature and standard code on account and analytic account
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_left_pane">
+                                    <field name="module_fal_account_periods_lock"/>
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label for="module_fal_account_periods_lock"/>
+                                    <div class="text-muted">
+                                        Fiscal Year function
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_left_pane">
+                                    <field name="module_fal_analytic_account_ext"/>
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label for="module_fal_analytic_account_ext"/>
+                                    <div class="text-muted">
+                                        Module to give analytic account behaviour based on Falinwa expected.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_left_pane">
+                                    <field name="module_fal_crm_multicurrency_group"/>
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label for="module_fal_crm_multicurrency_group"/>
+                                    <div class="text-muted">
+                                        Multi Currency Group on CRM
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_left_pane">
+                                    <field name="module_fal_customer_statement"/>
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label for="module_fal_customer_statement"/>
+                                    <div class="text-muted">
+                                        Follow-up Reports Enhancement
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_left_pane">
+                                    <field name="module_fal_generic_coa"/>
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label for="module_fal_generic_coa"/>
+                                    <div class="text-muted">
+                                        Module to install Generic Chart Of Account
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_left_pane">
+                                    <field name="module_fal_generic_coaa"/>
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label for="module_fal_generic_coaa"/>
+                                    <div class="text-muted">
+                                        Module to install Generic Chart Of Analytic Account
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_left_pane">
+                                    <field name="module_fal_invoice_approval_qualified_partner"/>
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label for="module_fal_invoice_approval_qualified_partner"/>
+                                    <div class="text-muted">
+                                        Approval for unqualified partner
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_left_pane">
+                                    <field name="module_fal_invoice_line_account_change"/>
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label for="module_fal_invoice_line_account_change"/>
+                                    <div class="text-muted">
+                                        Module to give posibility to change account on
+                                        invoice line even its already confirmed
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_left_pane">
+                                    <field name="module_fal_invoice_line_analytic_account_change"/>
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label for="module_fal_invoice_line_analytic_account_change"/>
+                                    <div class="text-muted">
+                                        Module to give posibility to change analytic account on
+                                        invoice line even its already confirmed
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_left_pane">
+                                    <field name="module_fal_journal_entries_message"/>
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label for="module_fal_journal_entries_message"/>
+                                    <div class="text-muted">
+                                        Module to add messaging in journal entries
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_left_pane">
+                                    <field name="module_fal_multi_payment_wizard"/>
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label for="module_fal_multi_payment_wizard"/>
+                                    <div class="text-muted">
+                                        Module to give additional feature to have multiple register payment
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_left_pane">
+                                    <field name="module_fal_multicurrency_group"/>
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label for="module_fal_multicurrency_group"/>
+                                    <div class="text-muted">
+                                        This module convert all transaction into group company currency
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_left_pane">
+                                    <field name="module_fal_no_require_partner_account"/>
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label for="module_fal_no_require_partner_account"/>
+                                    <div class="text-muted">
+                                        Make receivable and payable accounts aren't required on partner
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_left_pane">
+                                    <field name="module_fal_parent_account"/>
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label for="module_fal_parent_account"/>
+                                    <div class="text-muted">
+                                        Module to give parent account
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_left_pane">
+                                    <field name="module_fal_parent_account_hierarchy"/>
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label for="module_fal_parent_account_hierarchy"/>
+                                    <div class="text-muted">
+                                        Module to give parent account hierarchial view
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_left_pane">
+                                    <field name="module_fal_payment_bank_provision"/>
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label for="module_fal_payment_bank_provision"/>
+                                    <div class="text-muted">
+                                        Record and Follow up the Payment using Bank Provision
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_left_pane">
+                                    <field name="module_fal_payment_doku"/>
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label for="module_fal_payment_doku"/>
+                                    <div class="text-muted">
+                                        Payment Acquirer: Doku Implementation
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_left_pane">
+                                    <field name="module_fal_product_category_structure"/>
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label for="module_fal_product_category_structure"/>
+                                    <div class="text-muted">
+                                        Module to give additional feature of product category structure.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_left_pane">
+                                    <field name="module_fal_project_budget"/>
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label for="module_fal_project_budget"/>
+                                    <div class="text-muted">
+                                        Controlling Budget.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_left_pane">
+                                    <field name="module_fal_project_dashboard"/>
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label for="module_fal_project_dashboard"/>
+                                    <div class="text-muted">
+                                        Controlling Dashboard.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_left_pane">
+                                    <field name="module_fal_tax_comment"/>
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label for="module_fal_tax_comment"/>
+                                    <div class="text-muted">
+                                        Module to give Tax comment
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_left_pane">
+                                    <field name="module_fal_tax_note"/>
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label for="module_fal_tax_note"/>
+                                    <div class="text-muted">
+                                        Taxes Management
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_left_pane">
+                                    <field name="module_fal_timesheet_journal"/>
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label for="module_fal_timesheet_journal"/>
+                                    <div class="text-muted">
+                                        this module will create journal entries based on timesheet.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h2>Extra Tools</h2>
+                        <div class="row mt16 o_settings_container">
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_left_pane">
+                                    <field name="module_fal_calendar_meeting_ext"/>
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label for="module_fal_calendar_meeting_ext"/>
+                                    <div class="text-muted">
+                                        Module to improve meeting function
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h2>General</h2>
+                        <div class="row mt16 o_settings_container">
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_left_pane">
+                                    <field name="module_fal_add_message_in_user"/>
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label for="module_fal_add_message_in_user"/>
+                                    <div class="text-muted">
+                                        Module to add message view in users form
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_left_pane">
+                                    <field name="module_fal_message_body_in_subtype"/>
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label for="module_fal_message_body_in_subtype"/>
+                                    <div class="text-muted">
+                                        Add mail template in message subtype
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_left_pane">
+                                    <field name="module_fal_block_automatic_email"/>
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label for="module_fal_block_automatic_email"/>
+                                    <div class="text-muted">
+                                        Module to Block Automatic Email
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h2>Human Resource</h2>
+                        <div class="row mt16 o_settings_container">
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_left_pane">
+                                    <field name="module_fal_hr_contract_template"/>
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label for="module_fal_hr_contract_template"/>
+                                    <div class="text-muted">
+                                        Module to add feature employee contract template.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_left_pane">
+                                    <field name="module_fal_hr_ext"/>
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label for="module_fal_hr_ext"/>
+                                    <div class="text-muted">
+                                        Module to add extention functional in Human Resource
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_left_pane">
+                                    <field name="module_fal_hr_expense"/>
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label for="module_fal_hr_expense"/>
+                                    <div class="text-muted">
+                                        Create more manageable employee expenses
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_left_pane">
+                                    <field name="module_fal_leave"/>
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label for="module_fal_leave"/>
+                                    <div class="text-muted">
+                                        Module to extends Leave Module according Custom
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_left_pane">
+                                    <field name="module_partner_firstname"/>
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label for="module_partner_firstname"/>
+                                    <div class="text-muted">
+                                        Split first name and last name for non company partners
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_left_pane">
+                                    <field name="module_fal_period_lock_hr"/>
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label for="module_fal_period_lock_hr"/>
+                                    <div class="text-muted">
+                                        Lock employee and manager expense and timesheet
+                                    </div>
+                                </div>
+                            </div>
+
+                            <group string="Timesheet">
+                                <div class="col-xs-12 col-md-6 o_setting_box">
+                                    <div class="o_setting_left_pane">
+                                        <field name="module_fal_meeting_timesheet"/>
+                                    </div>
+                                    <div class="o_setting_right_pane">
+                                        <label for="module_fal_meeting_timesheet"/>
+                                        <div class="text-muted">
+                                            Create Timesheet From meeting
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-md-6 o_setting_box">
+                                    <div class="o_setting_left_pane">
+                                        <field name="module_fal_leave_timesheet"/>
+                                    </div>
+                                    <div class="o_setting_right_pane">
+                                        <label for="module_fal_leave_timesheet"/>
+                                        <div class="text-muted">
+                                            Create Timesheet From Leave
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-md-6 o_setting_box">
+                                    <div class="o_setting_left_pane">
+                                        <field name="module_fal_timesheet_ext"/>
+                                    </div>
+                                    <div class="o_setting_right_pane">
+                                        <label for="module_fal_timesheet_ext"/>
+                                        <div class="text-muted">
+                                            Add User Group for N+1 for Timesheet Officer
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-md-6 o_setting_box">
+                                    <div class="o_setting_left_pane">
+                                        <field name="module_fal_timesheet_invoice_ext"/>
+                                    </div>
+                                    <div class="o_setting_right_pane">
+                                        <label for="module_fal_timesheet_invoice_ext"/>
+                                        <div class="text-muted">
+                                            Module to add feature to have timesheet line invoiceable.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-md-6 o_setting_box">
+                                    <div class="o_setting_left_pane">
+                                        <field name="module_fal_timesheet_minimum_hour"/>
+                                    </div>
+                                    <div class="o_setting_right_pane">
+                                        <label for="module_fal_timesheet_minimum_hour"/>
+                                        <div class="text-muted">
+                                            Timesheet Minimum Hour
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-md-6 o_setting_box">
+                                    <div class="o_setting_left_pane">
+                                        <field name="module_fal_timesheet_template"/>
+                                    </div>
+                                    <div class="o_setting_right_pane">
+                                        <label for="module_fal_timesheet_template"/>
+                                        <div class="text-muted">
+                                            Module to add feature to have timesheet template.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-md-6 o_setting_box">
+                                    <div class="o_setting_left_pane">
+                                        <field name="module_hr_timesheet_sheet"/>
+                                    </div>
+                                    <div class="o_setting_right_pane">
+                                        <label for="module_hr_timesheet_sheet"/>
+                                        <div class="text-muted">
+                                            Timesheet Sheets, Activities
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-md-6 o_setting_box">
+                                    <div class="o_setting_left_pane">
+                                        <field name="module_fal_timesheet_sheet_menu"/>
+                                    </div>
+                                    <div class="o_setting_right_pane">
+                                        <label for="module_fal_timesheet_sheet_menu"/>
+                                        <div class="text-muted">
+                                            Add menu all timesheet sheet
+                                        </div>
+                                    </div>
+                                </div>
+                            </group>
+                        </div>
+
+                        <h2>Invoicing Management</h2>
+                        <div class="row mt16 o_settings_container">
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_left_pane">
+                                    <field name="module_fal_invoice_additional_info"/>
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label for="module_fal_invoice_additional_info"/>
+                                    <div class="text-muted">
+                                        Module to add additional info in invoice customer / supplier
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_left_pane">
+                                    <field name="module_fal_invoice_milestone"/>
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label for="module_fal_invoice_milestone"/>
+                                    <div class="text-muted">
+                                        Module to add invoice milestone
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_left_pane">
+                                    <field name="module_fal_invoice_sheet_info"/>
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label for="module_fal_invoice_sheet_info"/>
+                                    <div class="text-muted">
+                                        Module to add invoice sheet on Order form
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h2>Localization</h2>
+                        <div class="row mt16 o_settings_container">
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_left_pane">
+                                    <field name="module_fal_l10n_fr"/>
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label for="module_fal_l10n_fr"/>
+                                    <div class="text-muted">
+                                        Manage the accounting chart (with hierarchy) for France
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_left_pane">
+                                    <field name="module_fal_l10n_id"/>
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label for="module_fal_l10n_id"/>
+                                    <div class="text-muted">
+                                        Manage the accounting chart (with hierarchy) for Indonesian
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_left_pane">
+                                    <field name="module_fal_lang_format_ext_fr"/>
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label for="module_fal_lang_format_ext_fr"/>
+                                    <div class="text-muted">
+                                        This module gives TIN and IBAN format for France localization
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_left_pane">
+                                    <field name="module_indonesian_tax"/>
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label for="module_indonesian_tax"/>
+                                    <div class="text-muted">
+                                        Add capability for storing NPWP and Faktur Pajak
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h2>Manufacturing</h2>
+                        <div class="row mt16 o_settings_container">
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_left_pane">
+                                    <field name="module_fal_cost_bom"/>
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label for="module_fal_cost_bom"/>
+                                    <div class="text-muted">
+                                        Compute Cost of Bill of materials
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_left_pane">
+                                    <field name="module_fal_mo_qty"/>
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label for="module_fal_mo_qty"/>
+                                    <div class="text-muted">
+                                        Show To Produce Quantity and Produced Quantity
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_left_pane">
+                                    <field name="module_fal_mrp_costing"/>
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label for="module_fal_mrp_costing"/>
+                                    <div class="text-muted">
+                                        make the calculation of hourly cost and working cost per minute for every manufacturing process
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_left_pane">
+                                    <field name="module_fal_mrp_phantom_routing_operation"/>
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label for="module_fal_mrp_phantom_routing_operation"/>
+                                    <div class="text-muted">
+                                        Creating manufacturing orders without work orders
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_left_pane">
+                                    <field name="module_fal_mrp_production_order"/>
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label for="module_fal_mrp_production_order"/>
+                                    <div class="text-muted">
+                                        Create Production Order on Manufacturing
+                                    </div>
+                                </div>
+                            </div>                           
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_left_pane">
+                                    <field name="module_fal_mrp_production_scrap"/>
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label for="module_fal_mrp_production_scrap"/>
+                                    <div class="text-muted">
+                                        Scrap Percentage in Production Order
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_left_pane">
+                                    <field name="module_fal_mrp_sale_link"/>
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label for="module_fal_mrp_sale_link"/>
+                                    <div class="text-muted">
+                                        Create link between Sale Order and Production Order
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_left_pane">
+                                    <field name="module_fal_mrp_work_route"/>
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label for="module_fal_mrp_work_route"/>
+                                    <div class="text-muted">
+                                        Notion of Routing Work Center and Workshop Machine.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_left_pane">
+                                    <field name="module_fal_mrp_workorder_tracking"/>
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label for="module_fal_mrp_workorder_tracking"/>
+                                    <div class="text-muted">
+                                        Module to add manufacturing time tracking feature.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_left_pane">
+                                    <field name="module_fal_product_copy_bom"/>
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label for="module_fal_product_copy_bom"/>
+                                    <div class="text-muted">
+                                        this module gives you an easy way to duplicate product also its BoM
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h2>Partner Management</h2>
+                        <div class="row mt16 o_settings_container">
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_left_pane">
+                                    <field name="module_fal_employee_private_contact"/>
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label for="module_fal_employee_private_contact"/>
+                                    <div class="text-muted">
+                                        module to create private contact when create employee
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_left_pane">
+                                    <field name="module_fal_dynamic_qualification"/>
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label for="module_fal_dynamic_qualification"/>
+                                    <div class="text-muted">
+                                        module to create dynamic mandatory fields
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_left_pane">
+                                    <field name="module_fal_partner_code"/>
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label for="module_fal_partner_code"/>
+                                    <div class="text-muted">
+                                        module to have different code for customer and supplier partner
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_left_pane">
+                                    <field name="module_fal_partner_private_address"/>
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label for="module_fal_partner_private_address"/>
+                                    <div class="text-muted">
+                                        Module to give private contact
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_left_pane">
+                                    <field name="module_fal_partner_qualification"/>
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label for="module_fal_partner_qualification"/>
+                                    <div class="text-muted">
+                                        module to give qualification to partner
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_left_pane">
+                                    <field name="module_fal_partner_short_name"/>
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label for="module_fal_partner_short_name"/>
+                                    <div class="text-muted">
+                                        give short name to partner and company
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_left_pane">
+                                    <field name="module_fal_partner_user_creation"/>
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label for="module_fal_partner_user_creation"/>
+                                    <div class="text-muted">
+                                        module to fill field parent_id on partner when create user
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h2>Product</h2>
+                        <div class="row mt16 o_settings_container">
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_left_pane">
+                                    <field name="module_fal_generic_product"/>
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label for="module_fal_generic_product"/>
+                                    <div class="text-muted">
+                                        Module to install Generic Falinwa Product Category
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_left_pane">
+                                    <field name="module_fal_product_generic"/>
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label for="module_fal_product_generic"/>
+                                    <div class="text-muted">
+                                        add field is stock product in product template,
+                                        can copy account income  and account outcome.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h2>Project</h2>
+                        <div class="row mt16 o_settings_container">
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_left_pane">
+                                    <field name="module_fal_project_parent_account"/>
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label for="module_fal_project_parent_account"/>
+                                    <div class="text-muted">
+                                        Account Hierarchial Structure
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h2>Purchases</h2>
+                        <div class="row mt16 o_settings_container">
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_left_pane">
+                                    <field name="module_fal_product_supplierinfo_discount"/>
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label for="module_fal_product_supplierinfo_discount"/>
+                                    <div class="text-muted">
+                                        Discounts in product supplier info
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_left_pane">
+                                    <field name="module_fal_procurement_request"/>
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label for="module_fal_procurement_request"/>
+                                    <div class="text-muted">
+                                        Module to add additional state Procurement Request
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_left_pane">
+                                    <field name="module_fal_purchase_additional_info"/>
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label for="module_fal_purchase_additional_info"/>
+                                    <div class="text-muted">
+                                        Module to add additional info in purchase
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_left_pane">
+                                    <field name="module_fal_purchase_approval_qualified_partner"/>
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label for="module_fal_purchase_approval_qualified_partner"/>
+                                    <div class="text-muted">
+                                        Add Approval for unqualfied partner on purchase
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_left_pane">
+                                    <field name="module_fal_purchase_discount"/>
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label for="module_fal_purchase_discount"/>
+                                    <div class="text-muted">
+                                        Purchase order lines with discounts
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_left_pane">
+                                    <field name="module_fal_purchase_downpayment"/>
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label for="module_fal_purchase_downpayment"/>
+                                    <div class="text-muted">
+                                        add downpayment on purchase
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_left_pane">
+                                    <field name="module_fal_purchase_invoice_no_zero_qty"/>
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label for="module_fal_purchase_invoice_no_zero_qty"/>
+                                    <div class="text-muted">
+                                        module to create invoice with no zero Quantity
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_left_pane">
+                                    <field name="module_fal_purchase_merge"/>
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label for="module_fal_purchase_merge"/>
+                                    <div class="text-muted">
+                                        Combine multiple RFQ or Purchase Orders
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_left_pane">
+                                    <field name="module_fal_purchase_subscription"/>
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label for="module_fal_purchase_subscription"/>
+                                    <div class="text-muted">
+                                        module to Recurring Purchase Orders
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h2>Sales</h2>
+                        <div class="row mt16 o_settings_container">
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_left_pane">
+                                    <field name="module_fal_comment_template"/>
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label for="module_fal_comment_template"/>
+                                    <div class="text-muted">
+                                        Add Comment Template in Sale order Line
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_left_pane">
+                                    <field name="module_fal_sale_additional_info"/>
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label for="module_fal_sale_additional_info"/>
+                                    <div class="text-muted">
+                                        Module to add additional info to sale
+                                    </div>
+                                </div>
+                            </div>
+                            <group string="Sales Restriction">
+                                <div class="col-xs-12 col-md-6 o_setting_box">
+                                    <div class="o_setting_left_pane">
+                                        <field name="module_fal_sale_approval"/>
+                                    </div>
+                                    <div class="o_setting_right_pane">
+                                        <label for="module_fal_sale_approval"/>
+                                        <div class="text-muted">
+                                            Add Waiting Approval stages on sales order, salesman can go through proposal stage, or directly to sales order
+                                        </div>
+                                        <br/>
+                                        <div class="o_row">
+                                            <field name="fal_is_proposal" class="oe_inline"/>
+                                            <label for="fal_is_proposal" class="oe_inline"/>
+                                            <div class="text-muted oe_inline">
+                                                Salesman always restricted to go via proposal
+                                            </div>
+                                        </div>
+                                        <p> Or if you want salesman to be restricted by (Deselect 'Via Proposal' First): </p>
+                                        <br/>
+                                        <div class="o_row" attrs="{'invisible': [('fal_is_proposal', '!=', False)]}">
+                                            <field name="module_fal_partner_credit_limit" class="oe_inline"/>
+                                            <label for="module_fal_partner_credit_limit" class="oe_inline"/>
+                                            <div class="text-muted oe_inline">
+                                                give Credit Limit feature on partner
+                                            </div>
+                                        </div>
+
+                                        <br/>
+                                        <div class="o_row" attrs="{'invisible': [('fal_is_proposal', '!=', False)]}">
+                                            <field name="module_fal_minimum_sale" class="oe_inline"/>
+                                            <label for="module_fal_minimum_sale" class="oe_inline"/>
+                                            <div class="text-muted oe_inline">
+                                                give minimum sales price in sales order
+                                            </div>
+                                        </div>
+
+                                        <br/>
+                                        <div class="o_row" attrs="{'invisible': [('fal_is_proposal', '!=', False)]}">
+                                            <field name="module_fal_sale_approval_qualified_partner" class="oe_inline"/>
+                                            <label for="module_fal_sale_approval_qualified_partner" class="oe_inline" string="Qualified Partner"/>
+                                            <div class="text-muted oe_inline">
+                                                give approval on sale, for unqualified partner
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </group>
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_left_pane">
+                                    <field name="module_fal_sale_line_no_onchange"/>
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label for="module_fal_sale_line_no_onchange"/>
+                                    <div class="text-muted">
+                                        this module is to prevent onchange on product for description
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h2>Warehouse</h2>
+                        <div class="row mt16 o_settings_container">
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_left_pane">
+                                    <field name="module_fal_stock_adjusment"/>
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label for="module_fal_stock_adjusment"/>
+                                    <div class="text-muted">
+                                        modul to update Theoritical Qty even the inventory adjustment is not validated
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_left_pane">
+                                    <field name="module_fal_stock_card"/>
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label for="module_fal_stock_card"/>
+                                    <div class="text-muted">
+                                        displays stock card per item per warehouse and stock card summary
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h2>Other</h2>
+                        <div class="row mt16 o_settings_container">
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_left_pane">
+                                    <field name="module_web_hierarchy"/>
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label for="module_web_hierarchy"/>
+                                    <div class="text-muted">
+                                        Provide dynamic leveled data items on table tress
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+    </data>
+</odoo>

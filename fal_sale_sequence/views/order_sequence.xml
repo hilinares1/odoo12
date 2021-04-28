@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="fal_quotation_number_seq" model="ir.sequence">
+            <field name="name">Sale Quotation Sequence</field>
+            <field name="code">fal.sale.quotation.number</field>
+            <field name="prefix">CQ.%(y)s-</field>
+            <field name="padding">4</field>
+            <field name="company_id" eval="False"/>
+        </record>
+    </data>
+</odoo>

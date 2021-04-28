@@ -1,0 +1,270 @@
+<odoo>
+  <data>
+        <!-- To make sure That the filter is working (Domain state, make sure that on all basic view of res.partner contain this field "state") -->
+        <record id="view_partner_form_fal_partner_qualification" model="ir.ui.view">
+            <field name="name">res.partner.form.fal_partner_qualification</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//sheet" position="before">
+                    <header>
+                        <button name="action_set_to_qualified" type="object" string="Set Qualified" attrs="{'invisible': [('state','in',['qualified'])]}" class="oe_highlight" groups="fal_partner_qualification.group_contact_qualificator_user"/>
+                        <button name="action_set_to_unqualified" type="object" string="Set Unqualified" attrs="{'invisible': [('state','in',['unqualified'])]}" class="oe_highlight" groups="fal_partner_qualification.group_contact_qualificator_user" />
+                        <field name="state" widget="statusbar" statusbar_visible="to_qualify"/>
+                    </header>
+                </xpath>
+                <xpath expr="//field[@name='child_ids']/form/sheet/group/group/field[@name='name']" position="after">
+                    <field name="state" invisible="1"/>
+                </xpath>
+                 <xpath expr="//field[@name='child_ids']/form/sheet/group/group/field[@name='name']" position="attributes">
+                    <attribute name="attrs">{'required' : [('type', '=', 'contact')], 'readonly': [('state', '=', 'qualified')]}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='name']" position="attributes">
+                    <attribute name="attrs">{'required' : [('type', '=', 'contact')], 'readonly': [('state', '=', 'qualified')]}</attribute>
+                </xpath>
+                <xpath expr="//form/sheet/notebook" position="inside">
+                    <page string="Partner Profile">
+                        <group>
+                            <group>
+                                <field name="fal_company_title" attrs="{'invisible': [('is_company','=', False)]}"/>
+                                <field name="fal_partner_tags" widget="many2many_tags" placeholder="Partner Tags..." options="{'no_create_edit': True}"/>
+                            </group>
+                            <group>
+                                <field name="fal_number_employee" attrs="{'invisible': [('is_company','=', False)]}"/>
+                                <field name="fal_year_founded" attrs="{'invisible': [('is_company','=', False)]}"/>
+                            </group>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- Tree -->
+        <record id="view_partner_tree_fal_partner_qualification" model="ir.ui.view">
+            <field name="name">res.partner.tree.fal_partner_qualification</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//tree" position="inside">
+                    <field name="state" />
+                </xpath>
+            </field>
+        </record>
+
+        <!-- Short Form -->
+        <record id="view_partner_short_form_fal_partner_qualification" model="ir.ui.view">
+            <field name="name">res.partner.short.form.fal_partner_qualification</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_short_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//sheet" position="inside">
+                    <field name="state" invisible="0"/>
+                </xpath>
+                <xpath expr="//field[@name='name']" position="attributes">
+                    <attribute name="attrs">{'required' : [('type', '=', 'contact')], 'readonly': [('state', '=', 'qualified')]}</attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- Simple Form -->
+        <record id="view_partner_simple_form_fal_partner_qualification" model="ir.ui.view">
+            <field name="name">res.partner.simple.form.fal_partner_qualification</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_simple_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form" position="inside">
+                    <field name="state" invisible="1"/>
+                </xpath>
+                <xpath expr="//field[@name='name']" position="attributes">
+                    <attribute name="attrs">{'required' : [('type', '=', 'contact')], 'readonly': [('state', '=', 'qualified')]}</attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- Address Form -->
+        <record id="view_partner_address_form_fal_partner_qualification" model="ir.ui.view">
+            <field name="name">res.partner.address.form.fal_partner_qualification</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_address_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form/field[@name='image']" position="before">
+                    <header>
+                        <field name="state" widget="statusbar" statusbar_visible="to_qualify"/>
+                    </header>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- Private Form -->
+        <record id="view_partner_private_form_fal_partner_qualification" model="ir.ui.view">
+            <field name="name">res.partner.private.form.fal_partner_qualification</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.res_partner_view_form_private"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form/sheet" position="inside">
+                    <field name="state" invisible="1"/>
+                </xpath>
+                <xpath expr="//field[@name='name']" position="attributes">
+                    <attribute name="attrs">{'required' : [('type', '=', 'contact')], 'readonly': [('state', '=', 'qualified')]}</attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- Kanban -->
+        <record model="ir.ui.view" id="res_partner_kanban_view_gleize_ext">
+            <field name="name">res.partner.kanban</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.res_partner_kanban_view"/>
+            <field name="arch" type="xml">
+                <field name="type" position="after">
+                    <field name="state"/>
+                </field>
+                <xpath expr="//div[hasclass('oe_kanban_details')]" position="after">
+                    <div name="qualify_button" style="position:absolute; right:1%; bottom:10%;">
+                        <a type="button">
+                            <button name="action_set_to_qualified" type="object" string="Set Qualified" attrs="{'invisible': [('state','in',['qualified'])]}" class="oe_highlight btn btn-sm btn-primary" groups="fal_partner_qualification.group_contact_qualificator_user">
+                                <span><i class="fa fa-check" aria-label="check" title="check"></i></span>
+                            </button>
+                        </a>
+                        <a type="button">
+                            <button name="action_set_to_unqualified" type="object" string="Set Unqualified" attrs="{'invisible': [('state','in',['unqualified'])]}" class="oe_highlight btn btn-sm btn-primary" groups="fal_partner_qualification.group_contact_qualificator_user">
+                                <span><i class="fa fa-times" aria-label="times" title="times"></i></span>
+                            </button>
+                        </a>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_res_partner_filter_fal_partner_qualification" model="ir.ui.view">
+            <field name="name">res.partner.select.fal_partner_qualification</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_res_partner_filter"/>
+            <field name="arch" type="xml">
+                <group name="group_by" position="inside">
+                    <filter name="group_state" string="Qualification State" context="{'group_by': 'state'}"/>
+                </group>
+            </field>
+        </record>
+
+        <!-- Additional Field and object form module fal_res_partner_ext -->
+        <record id="view_partner_tree_falresparext" model="ir.ui.view">
+            <field name="name">res.partner.tree.falresparext</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_tree"/>
+            <field name="arch" type="xml">
+                <field name="function" position="after">
+                    <field name="fal_department_id"/>
+                    <field name="fal_function_id"/>
+                    <field name="fal_company_size_id"/>
+                    <field name="fal_origin_id"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_partner_simple_form_falresparext" model="ir.ui.view">
+            <field name="name">res.partner.simplified.form.falresparext</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_simple_form" />
+            <field name="arch" type="xml">
+                <field name="function" position="before">
+                    <field name="fal_department_id" attrs="{'invisible': [('is_company','=', True)]}"/>
+                    <field name="fal_function_id" attrs="{'invisible': [('is_company','=', True)]}"/>
+                    <field name="fal_company_size_id" attrs="{'invisible': [('is_company','=', False)]}"/>
+                    <field name="fal_origin_id" />
+                </field>
+            </field>
+        </record>
+
+        <record id="view_partner_form_falresparext" model="ir.ui.view">
+            <field name="name">res.partner.form.falresparext</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//group/field[@name='function']" position="before">
+                    <field name="fal_department_id" attrs="{'invisible': [('is_company','=', True)]}"/>
+                    <field name="fal_function_id" attrs="{'invisible': [('is_company','=', True)]}"/>
+                    <field name="fal_company_size_id" attrs="{'invisible': [('is_company','=', False)]}"/>
+                    <field name="fal_origin_id" />
+                </xpath>
+                <xpath expr="//field[@name='child_ids']/form/sheet/group/group[2]/field[@name='function']" position="before">
+                    <field name="fal_department_id" />
+                    <field name="fal_function_id" />
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_res_partner_filter_falresparext" model="ir.ui.view">
+            <field name="name">res.partner.select.falresparext</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_res_partner_filter" />
+            <field name="arch" type="xml">
+                <filter name="salesperson" position="after">
+                    <filter string="Department" name="department" context="{'group_by' : 'fal_department_id'}" />
+                    <filter string="Function" name="function" context="{'group_by' : 'fal_function_id'}" />
+                    <filter string="Company Size" name="company_size" context="{'group_by' : 'fal_company_size_id'}" />
+                    <filter string="Origin" name="origin" context="{'group_by' : 'fal_origin_id'}" />
+                </filter>
+            </field>
+        </record>
+
+        <record id="view_fal_function_action" model="ir.actions.act_window">
+            <field name="name">Function</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">fal.function</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record id="view_fal_company_size_action" model="ir.actions.act_window">
+            <field name="name">Company Size</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">fal.company.size</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record id="view_fal_origin_action" model="ir.actions.act_window">
+            <field name="name">Origin</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">fal.origin</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record id="fal_open_module_tree_department_change_name" model="ir.actions.act_window">
+            <field name="name">Department</field>
+            <field name="res_model">hr.department</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="search_view_id" ref="hr.view_department_filter"/>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                Create a new department
+              </p><p>
+                Odoo's department structure is used to manage all documents
+                related to employees by departments: expenses, timesheets,
+                leaves, recruitments, etc.
+              </p>
+            </field>
+        </record>
+
+        <menuitem id="fal_submenu_department"
+            action="fal_open_module_tree_department_change_name"
+            parent="contacts.res_partner_menu_config"
+            sequence="12"/>
+
+        <menuitem id="fal_submenu_function"
+            action="view_fal_function_action"
+            parent="contacts.res_partner_menu_config"
+            sequence="13"/>
+
+        <menuitem id="fal_submenu_company_size"
+            action="view_fal_company_size_action"
+            parent="contacts.res_partner_menu_config"
+            sequence="14"/>
+
+        <menuitem id="fal_submenu_origin"
+            action="view_fal_origin_action"
+            parent="contacts.res_partner_menu_config"
+            sequence="15"/>
+
+  </data>
+</odoo>

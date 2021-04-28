@@ -1,0 +1,13 @@
+<odoo>
+	<record id="email_subject_fal_customer_statement" model="mail.template">
+            <field name="name">Customer Statement Subject</field>
+            <field name="model_id" ref="account_reports.model_account_followup_report"/>
+            <field name="subject">Payment Remainder</field>
+    </record>
+
+    <template id="account_reports_followup_send_mail" inherit_id="web.assets_backend" active="True">
+        <xpath expr="." position="inside">
+            <script type="text/javascript" src="/fal_customer_statement/static/src/js/account_reports_followup.js"></script>
+        </xpath>
+    </template>
+</odoo>

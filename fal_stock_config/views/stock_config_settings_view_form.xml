@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+    <record id="fal_stock_config_settings_view_form_inherit_stock" model="ir.ui.view">
+        <field name="name">fal.stock.config.settings.view.form.inherit.stock</field>
+        <field name="model">res.config.settings</field>
+        <field name="priority" eval="10"/>
+        <field name="inherit_id" ref="stock.res_config_settings_view_form" />
+        <field name="arch" type="xml">
+        <xpath expr="//div[@data-string='Inventory']/h2[1]" position="before">
+            <h2>New Module Stock</h2>
+            <div class="row mt16 o_settings_container">
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_fal_chinese_delivery_batch"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_chinese_delivery_batch"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            Module to add delivery batches with fapiao vat
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_fal_delivery_batch"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_delivery_batch"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            Module to add delivery batches
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_fal_inventory_ext"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_inventory_ext"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            Module to extends Inventory. Allows multiple cancel
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_fal_print_sticker"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_print_sticker"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            Module to print sticker on inventory
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_fal_product_attribute"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_product_attribute"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            Advanced Product Attribute Management
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_fal_product_qty_by_lot"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_product_qty_by_lot"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            Advanced method of LoT management in Odoo
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_fal_product_size_detail"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_product_size_detail"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            Add details on product. New UoM milimeter
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_fal_serial_number_sticker"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_serial_number_sticker"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            Module to print serial number sticker
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_fal_stock_menu"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_stock_menu"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            Module to add additional picking menu in warehouse module
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_fix_quantity_reordering_rules"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fix_quantity_reordering_rules"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            Module to add additional option rule Order Fix Quantity
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_product_label_report"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_product_label_report"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            Module to create product label report
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h2>Setup</h2>
+            <div class="row mt16 o_settings_container">
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_fal_adjustment_inventory_ext"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_adjustment_inventory_ext"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            Add more filter feature on inventory adjustment
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h2>CLuedoo Best Practice</h2>
+            <div class="row mt16 o_settings_container">
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_fal_generic_product"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_generic_product"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            Module to install Generic Falinwa Product Category
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_fal_product_generic"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_product_generic"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            add field is stock product in product template, can copy account income and account outcome.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_fal_stock_adjusment"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_stock_adjusment"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            modul to update Theoritical Qty even the inventory adjustment is not validated
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </xpath>
+        <xpath expr="//div[@id='production_lot_info']/div[4]" position="after">
+            <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_fal_stock_card"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_stock_card"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            displays stock card per item per warehouse and stock card summary
+                        </div>
+                    </div>
+                </div>
+        </xpath>
+        <xpath expr="//div[@id='production_lot_info']/../h2[4]" position="after">
+            <div class="row mt16 o_settings_container">
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_fal_product_category_structure"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_product_category_structure"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            Module to give additional feature of product category structure.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </xpath>
+        </field>
+    </record>
+    </data>
+</odoo>
+                

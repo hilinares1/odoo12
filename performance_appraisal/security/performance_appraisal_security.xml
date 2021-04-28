@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <record model="ir.module.category" id="module_category_hr_appraisal">
+            <field name="name">Performance Appraisal</field>
+            <field name="description">Helps you manage employee monthly performance appraisals.</field>
+            <field name="sequence">2</field>
+        </record>
+
+        <record id="group_performance_appraisal_user" model="res.groups">
+            <field name="name">User</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+            <field name="category_id" ref="performance_appraisal.module_category_hr_appraisal"/>
+        </record>
+
+        <record id="group_performance_appraisal_manager" model="res.groups">
+            <field name="name">Manager</field>
+            <field name="category_id" ref="performance_appraisal.module_category_hr_appraisal"/>
+            <field name="implied_ids" eval="[(4, ref('performance_appraisal.group_performance_appraisal_user'))]"/>
+            <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
+        </record>
+
+        <record id="group_performance_appraisal_readall" model="res.groups">
+            <field name="name">Read All</field>
+            <field name="category_id" ref="performance_appraisal.module_category_hr_appraisal"/>
+        </record>
+
+        <record model="ir.rule" id="appraisal_comp_rule">
+            <field name="name">Appraisal: multi-company</field>
+            <field name="model_id" ref="model_employee_performance_appraisal"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">['|',
+                                            ('company_id', '=', False),
+                                            ('company_id', 'child_of', [user.company_id.id]),
+                                        ]</field>
+        </record>
+
+        <record model="ir.rule" id="appraisal_manager_rule">
+            <field name="name">Appraisal 360: manager: see all</field>
+            <field name="model_id" ref="model_employee_performance_appraisal"/>
+            <field name="domain_force">[(1, '=', 1)]</field>
+            <field name="groups" eval="[(4,ref('performance_appraisal.group_performance_appraisal_manager')),
+            (4,ref('performance_appraisal.group_performance_appraisal_user'))]"/>
+        </record>
+
+        <record model="ir.rule" id="appraisal_summary_manager_rule">
+            <field name="name">Appraisal: manager: see all</field>
+            <field name="model_id" ref="model_employee_appraisal_summary"/>
+            <field name="domain_force">[(1, '=', 1)]</field>
+            <field name="groups" eval="[(4,ref('performance_appraisal.group_performance_appraisal_manager')),
+            (4,ref('performance_appraisal.group_performance_appraisal_user'))]"/>
+        </record>
+
+        <record model="ir.rule" id="appraisal_detail_manager_rule">
+            <field name="name">Performance Indicator: manager: see all</field>
+            <field name="model_id" ref="model_employee_performance_appraisal_details"/>
+            <field name="domain_force">[(1, '=', 1)]</field>
+            <field name="groups" eval="[(4,ref('performance_appraisal.group_performance_appraisal_manager')),
+            (4,ref('performance_appraisal.group_performance_appraisal_user'))]"/>
+        </record>
+
+        <record model="ir.rule" id="appraisal_readall_rule">
+            <field name="name">Appraisal 360: read all</field>
+            <field name="model_id" ref="model_employee_performance_appraisal"/>
+            <field name="domain_force">[(1, '=', 1)]</field>
+            <field name="groups" eval="[(4,ref('performance_appraisal.group_performance_appraisal_readall'))]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_unlink" eval="False"/>
+        </record>
+
+        <record model="ir.rule" id="appraisal_summary_readall_rule">
+            <field name="name">Appraisal: read all</field>
+            <field name="model_id" ref="model_employee_appraisal_summary"/>
+            <field name="domain_force">[(1, '=', 1)]</field>
+            <field name="groups" eval="[(4,ref('performance_appraisal.group_performance_appraisal_readall'))]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_unlink" eval="False"/>
+        </record>
+
+        <record model="ir.rule" id="appraisal_detail_readall_rule">
+            <field name="name">Performance Indicator: read all</field>
+            <field name="model_id" ref="model_employee_performance_appraisal_details"/>
+            <field name="domain_force">[(1, '=', 1)]</field>
+            <field name="groups" eval="[(4,ref('performance_appraisal.group_performance_appraisal_readall'))]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_unlink" eval="False"/>
+        </record>
+
+        <record model="ir.rule" id="appraisal_summary_members_rule">
+            <field name="name">Appraisal: Employees: see own</field>
+            <field name="model_id" ref="model_employee_appraisal_summary"/>
+            <field name="domain_force">['|', ('employee_id', 'in', user.employee_ids.ids), ('employee_id.parent_id', 'in', user.employee_ids.ids)]</field>
+            <field name="groups" eval="[(4, ref('base.group_user'))]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_unlink" eval="False"/>
+        </record>
+
+        <record model="ir.rule" id="appraisal_members_rule">
+            <field name="name">Appraisal 360: Employees: see own</field>
+            <field name="model_id" ref="model_employee_performance_appraisal"/>
+            <field name="domain_force">['|', '|',('employee_id', 'in', user.employee_ids.ids),
+                ('reviewer_id', 'in', user.employee_ids.ids),
+                ('employee_id.parent_id', 'in', user.employee_ids.ids)
+                                        ]</field>
+            <field name="groups" eval="[(4, ref('base.group_user'))]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_unlink" eval="False"/>
+        </record>
+
+        <record model="ir.rule" id="appraisal_detail_members_rule">
+            <field name="name">Performance Indicator: employees: see own</field>
+            <field name="model_id" ref="model_employee_performance_appraisal_details"/>
+            <field name="domain_force">['|', '|', ('employee_id', 'in', user.employee_ids.ids),
+                ('reviewer_id', 'in', user.employee_ids.ids),
+                ('employee_id.parent_id', 'in', user.employee_ids.ids)
+                                        ]</field>
+            <field name="groups" eval="[(4, ref('base.group_user'))]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_unlink" eval="False"/>
+        </record>
+
+        <record model="ir.rule" id="appraisal_summary_dm_rule">
+            <field name="name">Appraisal: Department: see own</field>
+            <field name="model_id" ref="model_employee_appraisal_summary"/>
+            <field name="domain_force">[('department_id', 'in', [r.department_id.id for r in user.employee_ids])]</field>
+            <field name="groups" eval="[(4, ref('ifi_employee.group_hr_department_manager')), (4, ref('ifi_employee.group_hr_department_vice'))]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_unlink" eval="False"/>
+        </record>
+
+        <record model="ir.rule" id="appraisal_dm_rule">
+            <field name="name">Appraisal 360: dDepartmnent: see own</field>
+            <field name="model_id" ref="model_employee_performance_appraisal"/>
+            <field name="domain_force">[('department_id', 'in', [r.department_id.id for r in user.employee_ids])]</field>
+            <field name="groups" eval="[(4, ref('ifi_employee.group_hr_department_manager')), (4, ref('ifi_employee.group_hr_department_vice'))]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_unlink" eval="False"/>
+        </record>
+
+        <record model="ir.rule" id="appraisal_detail_dm_rule">
+            <field name="name">Performance Indicator: Departmnent: see own</field>
+            <field name="model_id" ref="model_employee_performance_appraisal_details"/>
+            <field name="domain_force">[('department_id', 'in', [r.department_id.id for r in user.employee_ids])]</field>
+            <field name="groups" eval="[(4, ref('ifi_employee.group_hr_department_manager')), (4, ref('ifi_employee.group_hr_department_vice'))]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_unlink" eval="False"/>
+        </record>
+
+    </data>
+</odoo>

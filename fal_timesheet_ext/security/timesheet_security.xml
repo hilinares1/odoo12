@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- We make record rule for timesheet user, so it can only access timesheet of it's own employee -->
+    <data>
+
+        <record id="hr_timesheet.group_hr_timesheet_user" model="res.groups">
+            <field name="name">Employee User(N+1)</field>
+        </record>
+
+        <record id="group_hr_timesheet_user_responsible" model="res.groups">
+            <field name="name">User</field>
+            <field name="category_id" ref="base.module_category_hr_timesheet"/>
+            <field name="implied_ids" eval="[(4, ref('hr_timesheet.group_hr_timesheet_user'))]"/>
+        </record>
+
+        <record id="hr_timesheet.group_timesheet_manager" model="res.groups">
+            <field name="implied_ids" eval="[(4, ref('hr_timesheet.group_hr_timesheet_user')), (4, ref('hr.group_hr_user')), (4, ref('group_hr_timesheet_user_responsible'))]"/>
+        </record>
+
+    </data>
+
+</odoo>

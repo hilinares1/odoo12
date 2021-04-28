@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<odoo>
+    <data>
+        <!-- HR Employee -->
+        <record id="view_hr_employee_fal" model="ir.ui.view">
+            <field name="name">hr.employee.fal</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form"/>
+            <field name="arch" type="xml">
+                <field name="resource_calendar_id" position="replace">
+                    <label for="resource_calendar_id" string="Working Hours"/>
+                    <div>
+                        <field name="resource_calendar_id"/>
+                        <button name="change_fix_leave" string="Update Fix Leave" type="object" class="oe_link" icon="fa-arrow-right" attrs="{'invisible':['|',('fal_is_prev_calendar_calendar_same', '=', True), ('fal_previous_calendar', '=', False)]}"/>
+                    </div>
+                    <field name="fal_previous_calendar" invisible="1"/>
+                    <field name="fal_is_prev_calendar_calendar_same" invisible="1"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_hr_contract_fal" model="ir.ui.view">
+            <field name="name">hr.contract.fal</field>
+            <field name="model">hr.contract</field>
+            <field name="inherit_id" ref="hr_contract.hr_contract_view_form"/>
+            <field name="arch" type="xml">
+                <field name="resource_calendar_id" position="replace">
+                    <label for="resource_calendar_id" string="Working Hours"/>
+                    <div>
+                        <field name="resource_calendar_id"/>
+                        <button name="change_fix_leave" string="Update Fix Leave" type="object" class="oe_link" icon="fa-arrow-right" attrs="{'invisible':[('fal_is_prev_calendar_same', '=', True)]}"/>
+                    </div>
+                    <field name="fal_is_prev_calendar_same" invisible="1"/>
+                </field>
+            </field>
+        </record>       
+    </data>
+</odoo>

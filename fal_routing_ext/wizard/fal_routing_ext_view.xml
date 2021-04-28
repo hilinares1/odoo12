@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="view_fal_routing_ext" model="ir.ui.view">
+            <field name="name">view_fal_routing_ext</field>
+            <field name="model">fal.routing.ext</field>
+            <field name="arch" type="xml">
+                <form string="Finish Manufacture Order">
+                    <group>
+                         <group>
+                            <field name="is_product_tracked" invisible="1"/>
+                            <field name="product_id" invisible="1"/>
+                            <field name="next_wo_id" invisible="1"/>
+                            <field name="date_end"/>
+                            <field name="final_lot_id" context="{'default_product_id': product_id}" domain="['|', '&amp;', ('product_id', '=', product_id), ('product_id.tracking', '!=', 'serial'), ('use_next_on_work_order_id', '=', next_wo_id)]" attrs="{'invisible' : [('is_product_tracked', '=', False)]}"/>
+                            <field name="active_move_line_ids">
+                                <tree editable="bottom" create="0" delete="0">
+                                    <field name="workorder_id" readonly="1"/>
+                                    <field name="product_id" readonly="1"/>
+                                    <field name="product_uom_qty" readonly="1" invisible="1" string="To Consume"/>
+                                    <field name="lot_id" context="{'default_product_id': product_id}" domain="[('product_id', '=', product_id), ('product_id.tracking', '!=', 'serial')]"/>
+                                    <field name="qty_done" readonly="1"/>
+                                    <field name="product_uom_id"/>
+                                    <field name="location_id" invisible="1"/>
+                                    <field name="location_dest_id" invisible="1"/>
+                                    <field name="move_id" invisible="1"/>
+                                    <field name="done_wo" invisible="1"/>
+                                </tree>
+                            </field>
+                            <field name="workorder_ids">
+                                <tree string="Work Orders" delete="0" create="0" decoration-success="date_planned_start&gt;=current_date and state == 'ready'" decoration-muted="state in ('done','cancel')" decoration-danger="date_planned_start&lt;current_date and state in ('ready')">
+                                    <field name="name" />
+                                    <field name="date_planned_start"/>
+                                    <field name="workcenter_id" widget="selection"/>
+                                    <field name="production_id"/>
+                                    <field name="product_id"/>
+                                    <field name="qty_production"/>
+                                    <field name="product_uom_id"/>
+                                    <field name="state"/>
+                                </tree>
+                            </field>
+                        </group>
+                    </group>
+                    <footer>
+                        <button string='Mark as done and close manufacture orders' name="button_finish_mo" type="object" class="btn-primary"/>
+                        <button string="Cancel" class="btn-secondary" special="cancel"/>
+                    </footer>
+               </form>
+            </field>
+        </record>
+
+        <record id="action_fal_routing_ext" model="ir.actions.act_window">
+            <field name="name">Finish Manufacturing Order</field>
+            <field name="res_model">fal.routing.ext</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+           <field name="view_id" ref="view_fal_routing_ext"/>
+           <field name="target">new</field>
+        </record>
+    </data>
+</odoo>

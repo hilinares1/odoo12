@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <report 
+            string="Production Order (Product not Reserved)`" 
+            id="fa_action_report_po_reserved" 
+            model="mrp.production" 
+            name="fal_mrp_ext.fal_report_mrporder_reserverd"
+            file="fal_mrp_ext.report.mrp_po_reserved_templates" 
+            report_type="qweb-pdf"
+            print_report_name="'Prooduction Order (Product not Reserved) - %s' % object.name"
+        />
+    </data>
+</odoo>

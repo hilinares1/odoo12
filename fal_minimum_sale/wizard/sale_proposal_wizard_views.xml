@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_fal_sale_proposal_wizard_minimum_sale" model="ir.ui.view">
+            <field name="name">fal.sale.proposal.wizard.form.minimum.sale</field>
+            <field name="model">fal.sale.proposal.wizard</field>
+            <field name="inherit_id" ref="fal_sale_approval.view_fal_sale_proposal_wizard"></field>
+            <field name="arch" type="xml">
+                <xpath expr="//p/ul" position="inside" >
+                    <field name="is_below_minimum" invisible="1"/>
+                    <li attrs="{'invisible': [('is_below_minimum', '=', False)]}">
+                        Check the minimum sale price of this Sales order
+                    </li>
+                    <field name="is_above_maximum" invisible="1"/>
+                    <li attrs="{'invisible': [('is_above_maximum', '=', False)]}">
+                        Check the maximum sale price of this Sales order
+                    </li>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

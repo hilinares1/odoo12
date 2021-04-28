@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- <record model="ir.ui.view" id="view_account_invoice_deferred_cost_form">
+        <field name="name">account.invoice.line.form</field>
+        <field name="model">account.invoice.line</field>
+        <field name="inherit_id" ref="account.view_invoice_line_form"/>
+        <field name="arch" type="xml">
+            <field name="account_id" position="after">
+                <field name="asset_category_id" domain="[('type','=','cost')]" string="Deferred Cost Type"/>
+            </field>
+        </field>
+    </record> -->
+
+    <!-- Add "Deferred Cost" to Vendor Bills -->
+    <record model="ir.ui.view" id="view_invoice_cost_recognition_category">
+        <field name="name">account.invoice.form</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_supplier_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='asset_category_id']" position="attributes">
+                <attribute name="string">Asset/Deferred Cost Category</attribute>
+                <attribute name="domain">['|',('type','=','purchase'),('type','=','cost')]</attribute>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

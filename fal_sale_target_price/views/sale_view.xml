@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="tpfal_sale_order_line_form">
+            <field name="name">sale.order.line.tree.tpfal.view.form</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <data>
+                    <xpath expr="//field[@name='order_line']/form//div[@name='discount']" position="after">
+                        <field name="supplier_target_unit_price" groups="fal_sale_target_price.group_sale_targetprice_user"/>
+                    </xpath>
+                    <xpath expr="//field[@name='order_line']/tree//field[@name='price_subtotal']" position="after">
+                        <field name="supplier_target_unit_price" groups="fal_sale_target_price.group_sale_targetprice_user"/>
+                        <field name="supplier_target_subtotal" groups="fal_sale_target_price.group_sale_targetprice_user"/>
+                        <field name="gross_margin" groups="fal_sale_target_price.group_sale_targetprice_user"/>
+                        <field name="mark_up" groups="fal_sale_target_price.group_sale_targetprice_user"/>
+                    </xpath>
+                    <xpath expr="//group[@name='sale_total']" position="before">
+                        <group class="oe_subtotal_footer oe_left" colspan="2" name="sale_target_price">
+                            <field name="total_supplier_target_price" groups="fal_sale_target_price.group_sale_targetprice_user"/>
+                            <field name="total_gross_margin" groups="fal_sale_target_price.group_sale_targetprice_user"/>
+                            <field name="total_markup" groups="fal_sale_target_price.group_sale_targetprice_user"/>
+                        </group>
+                    </xpath>
+                </data>
+            </field>
+        </record>
+    </data>
+</odoo>

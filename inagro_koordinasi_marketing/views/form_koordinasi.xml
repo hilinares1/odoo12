@@ -1,0 +1,113 @@
+<odoo>
+
+    
+    <!-- Room form -->
+    <record id="view_form_koordinasi_form" model="ir.ui.view">
+        <field name="name">koordinasi.marketing.form</field>
+        <field name="model">koordinasi.marketing</field>
+        <field name="arch" type="xml">
+            <form string="Form Discuss">
+                <header>
+                    <button string="Confirm" states="draft" name="confirm_request" type="object" confirm="Are you sure you want to confirm?" groups="inagro_koordinasi_marketing.ga_koordinasi_marketing" icon="fa-check" class="oe_highlight"
+                        />
+                    <button string="Set To Draft" states="confirm" name="draft_request" type="object" confirm="Are you sure you want to draft?" groups="inagro_koordinasi_marketing.ga_koordinasi_marketing" icon="fa-check" class="oe_highlight"
+                        />
+                    <field name="state" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <h2>
+                        <field name="name"/>
+                    </h2>    
+                    <group>
+                        <group string='Customer'>
+                            <field name="date" attrs="{'readonly': [('flag_readonly','=', 1)]}"/>
+                            <field name="partner_id" attrs="{'readonly': [('flag_readonly','=', 1)]}"/>
+                            <field name="customer_pic" attrs="{'readonly': [('flag_readonly','=', 1)]}"/>
+                            <field name="customer_contact" attrs="{'readonly': [('flag_readonly','=', 1)]}"/>
+                        </group>
+                        <group string='Qty'>
+                            <field name="qty_participant" attrs="{'readonly': [('flag_readonly','=', 1)]}"/>
+                            <field name="qty_teacher" attrs="{'readonly': [('flag_readonly','=', 1)]}"/>
+                            <field name="qty_add_participant" attrs="{'readonly': [('flag_readonly','=', 1)]}"/>
+                            <field name="total" attrs="{'readonly': [('flag_readonly','=', 1)]}"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group id='internal' string='Internal'>
+                            <field name="user_id" readonly="1"/> 
+                            <field name="department_id" readonly="1"/>
+                            <field name="flag_readonly" invisible="1"/>
+                        </group>
+                    </group>
+
+                    <notebook>
+                        <page string="Facilities">
+                            <field name="facilities_ids" attrs="{'readonly': [('flag_readonly','=', 1)]}">
+                                <tree editable="bottom">
+                                    <field name="name"/>
+                                    <field name="qty"/>
+                                    <field name="start"/>
+                                    <field name="end"/>
+                                    <field name="info"/>
+                                    <field name="state" invisible="1"/>
+                                    <field name="date_request" invisible="1"/>
+                                </tree>
+                                
+                            </field>
+                        </page>
+                        <page string="Activities">
+                            <field name="activities_ids" attrs="{'readonly': [('flag_readonly','=', 1)]}">
+                                <tree editable="bottom">
+                                    <field name="name"/>
+                                    <field name="qty"/>
+                                    <field name="start"/>
+                                    <field name="end"/>
+                                    <field name="tkhl"/>
+                                    <field name="state" invisible="1"/>
+                                    <field name="date_request" invisible="1"/>
+                                </tree>
+                                
+                            </field>
+                        </page>
+                        
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+
+    <!-- Room Tree -->
+    <record id="view_form_koordinasi_tree" model="ir.ui.view">
+        <field name="name">koordinasi.marketing.tree</field>
+        <field name="model">koordinasi.marketing</field>
+        <field name="arch" type="xml">
+            <tree string="Form Discuss">
+                <field name="name"/>
+                <field name="date" />
+                <field name="partner_id" />
+                <field name="total" />
+                <field name="department_id" />
+                <field name="state" />
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_form_koordinasi_pivot">
+        <field name="name">koordinasi.marketing.pivot</field>
+        <field name="model">koordinasi.marketing</field>
+        <field name="arch" type="xml">
+            <pivot string="Form Discuss" display_quantity="True">
+                <field name="name"/>
+                <field name="date" />
+            </pivot>
+        </field>
+    </record>
+
+    
+
+</odoo>

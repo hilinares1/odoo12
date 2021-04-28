@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+    	<!-- On Sale Order form view -->
+        <record id="view_order_min_price_form" model="ir.ui.view">
+            <field name="name">sale.order.min_price.form</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//control" position="inside">
+                    <create string="Advanced Product Selector" context="{'open_product_selector': True}" groups="product.group_product_variant"/>
+                </xpath>
+                <xpath expr="//field[@name='order_line']/tree//field[@name='product_no_variant_attribute_value_ids']" position="attributes">
+                    <attribute name="invisible">0</attribute>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

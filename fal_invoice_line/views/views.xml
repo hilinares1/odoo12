@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+
+    <!-- Invoice Customer -->
+    <record model="ir.ui.view" id="view_account_invoice_customer_form_fal_invoice_line">
+        <field name="name">account.invoice.customer.form.fal.invoice.line</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_form"/>
+        <field name="arch" type="xml">
+            <data>
+                <xpath expr="//notebook/page[1]/field[@name='invoice_line_ids']/tree/field[@name='quantity']" position="before">
+                    <field name="fal_supplier_account_invoice_line_ids_display"/>
+                    <field name="fal_mathching_ok" />
+                    <field name="fal_no_match_reason" />
+                </xpath>
+            </data>
+        </field>
+    </record>
+
+    <!-- Vendor Bill -->
+    <record model="ir.ui.view" id="view_account_invoice_supplier_form_fal_invoice_line">
+        <field name="name">account.invoice.supplier.form.fal.invoice.line</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_supplier_form"/>
+        <field name="arch" type="xml">
+            <data>
+                <xpath expr="//notebook/page[1]/field[@name='invoice_line_ids']/tree/field[@name='quantity']" position="before">
+
+                    <field name="fal_customer_account_invoice_id"/>
+                    <field name="fal_customer_account_invoice_line_ids" widget="many2many_tags"/>
+                    <field name="fal_invoice_id_state" invisible="1"/>
+                    <field name="fal_mathching_ok"/>
+                    <field name="fal_no_match_reason"/>
+                    <button name="%(add_aci_wizard_action)d" string="Add ACIL" type="action" attrs="{'invisible': [('fal_invoice_id_state','=', 'draft')]}"/>
+                </xpath>
+            </data>
+        </field>
+    </record>
+
+    <!-- Invoice Line -->
+    <record model="ir.ui.view" id="view_invoice_line_form_fal_invoice_line">
+        <field name="name">account.invoice.line.form.fal.invoice.line</field>
+        <field name="model">account.invoice.line</field>
+        <field name="inherit_id" ref="account.view_invoice_line_form"/>
+        <field name="arch" type="xml">
+            <data>
+                <xpath expr="//field[@name='analytic_tag_ids']" position="after">
+                    <!-- Supplier Invoice -->
+                    <label for="fal_customer_account_invoice_id" string="ACI" attrs="{'invisible': [('fal_account_invoice_type','!=', 'in_invoice')]}"/>
+                    <div>
+                        <field name="fal_customer_account_invoice_id" attrs="{'invisible': [('fal_account_invoice_type','!=', 'in_invoice')]}" />
+                        <button name="%(add_aci_wizard_action)d" string="Add ACIL" type="action" attrs="{'invisible': ['|', ('fal_invoice_id_state', '=', 'draft'), ('fal_account_invoice_type', '!=', 'in_invoice')]}" class="oe_link" icon="fa-arrow-right"/>
+                    </div>
+                    <field name="fal_customer_account_invoice_line_ids" widget="many2many_tags" attrs="{'invisible': [('fal_account_invoice_type','!=', 'in_invoice')]}"/>
+                    <field name="fal_invoice_id_state" invisible="1"/>
+                    <field name="fal_account_invoice_type" invisible="1"/>
+                    <!-- Customer Invoice -->
+                    <field name="fal_supplier_account_invoice_line_ids_display" attrs="{'invisible': [('fal_account_invoice_type','!=', 'out_invoice')]}"/>
+                    <!-- All -->
+                    <field name="fal_mathching_ok" />
+                    <field name="fal_no_match_reason" />
+                </xpath>
+            </data>
+        </field>
+    </record>
+
+    <!-- Accounting Menu -->
+    <record id="view_invoice_line_tree_customer_menu_fal" model="ir.ui.view">
+        <field name="name">account.invoice.line.tree.customer.menu.fal</field>
+        <field name="model">account.invoice.line</field>
+        <field name="arch" type="xml">
+            <tree string="Customer Invoice Line" editable="bottom" create="false">
+                <field name="fal_account_invoice_type" invisible="1" />
+                <field name="fal_invoice_id_date_invoice" attrs="{'readonly': True}"/>
+                <field name="invoice_id" attrs="{'readonly': True}"/>
+                <field name="product_id" attrs="{'readonly': [('fal_invoice_id_state','!=', 'draft')]}" invisible="1"/>
+                <field name="name" attrs="{'readonly': [('fal_invoice_id_state','!=', 'draft')]}"/>
+                <field name="account_analytic_id" attrs="{'readonly': [('fal_invoice_id_state','!=', 'draft')]}"/>
+                <field name="account_id" attrs="{'readonly': [('fal_invoice_id_state','!=', 'draft')]}" groups="account.group_account_user" invisible="1"/>
+                <field name="quantity" attrs="{'readonly': [('fal_invoice_id_state','!=', 'draft')]}"/>
+                <field name="price_unit" attrs="{'readonly': [('fal_invoice_id_state','!=', 'draft')]}"/>
+                <field name="discount" attrs="{'readonly': [('fal_invoice_id_state','!=', 'draft')]}" groups="sale.group_discount_per_so_line"/>
+                <field name="price_subtotal" attrs="{'readonly': [('fal_invoice_id_state','!=', 'draft')]}"/>
+                <field name="fal_asi_amount"/>
+                <field name="fal_asi_qty"/>
+                <field name="fal_margin"/>
+                <field name="fal_no_match_reason"/>
+                <field name="fal_mathching_ok"/>
+                <field name="fal_supplier_account_invoice_line_ids_display" attrs="{'readonly': True}"/>
+                <field name="fal_supplier_account_invoice_ids" widget="one2many"/>
+                <field name="fal_invoice_id_state" invisible="1"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_invoice_line_tree_supplier_menu_fal" model="ir.ui.view">
+        <field name="name">account.invoice.line.tree.supplier.menu.fal</field>
+        <field name="model">account.invoice.line</field>
+        <field name="arch" type="xml">
+            <tree string="Supplier Invoice Line" editable="bottom" create="false">
+                <field name="fal_account_invoice_type" invisible="1"/>
+                <field name="fal_invoice_id_date_invoice" attrs="{'readonly': True}"/>
+                <field name="invoice_id" attrs="{'readonly': True}"/>
+                <field name="product_id" attrs="{'readonly': [('fal_invoice_id_state','!=', 'draft')]}"/>
+                <field name="name" attrs="{'readonly': [('fal_invoice_id_state','!=', 'draft')]}"/>
+                <field name="account_analytic_id" attrs="{'readonly': [('fal_invoice_id_state','!=', 'draft')]}"/>
+                <field name="account_id" attrs="{'readonly': [('fal_invoice_id_state','!=', 'draft')]}" groups="account.group_account_user"/>
+                <field name="quantity" attrs="{'readonly': [('fal_invoice_id_state','!=', 'draft')]}"/>
+                <field name="price_unit" attrs="{'readonly': [('fal_invoice_id_state','!=', 'draft')]}"/>
+                <field name="discount" attrs="{'readonly': [('fal_invoice_id_state','!=', 'draft')]}" groups="sale.group_discount_per_so_line"/>
+                <field name="price_subtotal" attrs="{'readonly': [('fal_invoice_id_state','!=', 'draft')]}"/>
+                <field name="fal_no_match_reason"/>
+                <field name="fal_mathching_ok"/>
+                <field name="fal_customer_account_invoice_id" />
+                <field name="fal_customer_account_invoice_line_ids" widget="many2many_tags"/>
+                <field name="fal_invoice_id_state" invisible="1"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="action_customer_invoice_line_fal" model="ir.actions.act_window">
+        <field name="name">Customer Invoice Lines</field>
+        <field name="res_model">account.invoice.line</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree</field>
+        <field name="limit">80</field>
+        <field ref="view_invoice_line_tree_customer_menu_fal" name="view_id"/>
+        <field name="domain">[('fal_account_invoice_type','=','out_invoice')]</field>
+        <field name="context">{'default_fal_account_invoice_type':'out_invoice', 'fal_account_invoice_type':'out_invoice'}</field>
+        <field name="help" type="html">
+          <p class="oe_view_nocontent_create">
+            There is no Customer Invoice Line!
+          </p>
+        </field>
+    </record>
+
+    <record id="action_supplier_invoice_line_fal" model="ir.actions.act_window">
+        <field name="name">Supplier Invoice Lines</field>
+        <field name="res_model">account.invoice.line</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree</field>
+        <field name="limit">80</field>
+        <field ref="view_invoice_line_tree_supplier_menu_fal" name="view_id"/>
+        <field name="domain">[('fal_account_invoice_type','=','in_invoice')]</field>
+        <field name="context">{'default_fal_account_invoice_type':'in_invoice', 'fal_account_invoice_type':'in_invoice'}</field>
+        <field name="help" type="html">
+          <p class="oe_view_nocontent_create">
+            There is no Supplier Invoice Line!
+          </p>
+        </field>
+    </record>
+
+    <menuitem
+        sequence="99"
+        parent="account.menu_finance_entries" name="Lines"
+        id="menu_invoice_line"/>
+    <menuitem
+        sequence="1"
+        parent="fal_invoice_line.menu_invoice_line"
+        id="menu_customer_invoice_line" action="action_customer_invoice_line_fal"/>
+    <menuitem
+        sequence="2"
+        parent="fal_invoice_line.menu_invoice_line"
+        id="menu_supplier_invoice_line" action="action_supplier_invoice_line_fal"/>
+
+
+  </data>
+</odoo>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_multi_check_stock_mrp_wizard" model="ir.ui.view">
+            <field name="name">multi.check.stock.mrp.wizard</field>
+            <field name="model">multi.check.stock.mrp.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Check Stock Wizard">
+                    <span>
+                        This process will check availability all selected manufacture order
+                    </span>
+                    <footer>
+                        <button name="action_check" string="Check Availability" type="object" class="oe_highlight"/>
+                        <button string="Cancel" class="btn-secondary" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <act_window id="action_fal_mrp_checking_stock"
+            name="Check Availability"
+            res_model="multi.check.stock.mrp.wizard"
+            src_model="mrp.production"
+            view_mode="form"
+            target="new"
+            multi="True"
+            key2="client_action_multi"
+            />
+    </data>
+</odoo>

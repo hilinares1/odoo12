@@ -1,0 +1,146 @@
+<odoo>
+
+        <!-- HR HOLIDAYS -->
+        <record model="ir.ui.view" id="edit_holiday_new_fal">
+            <field name="name">edit.holiday.new.fal</field>
+            <field name="model">hr.leave</field>
+            <field name="inherit_id" ref="hr_holidays.hr_leave_view_form"/>
+            <field name="arch" type="xml">
+                <!-- Button Management -->
+                <button name="action_confirm" position="attributes">
+                    <attribute name="string">Submit to Manager</attribute>
+                </button>
+                <!-- Show double validation step -->
+                <field name="state" position="attributes">
+                    <attribute name="statusbar_visible">draft,confirm,validate1,validate</attribute>
+                </field>
+                <field name="holiday_status_id" position="after">
+                    <field name="fal_fix_holiday_line_id" attrs="{'invisible':[('fal_fix_holiday_line_id', '=', False)]}"/>
+                    <field name="can_reset" string="Can Reset" invisible="1"/>
+                    <field name="company_id" invisible="1"/>
+                </field>
+                <field name="department_id" position="after">
+                    <field name="payslip_status_next_month" groups="account.group_account_manager" widget="toggle_button"/>
+                </field>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="fal_hr_leave_view_form_manager">
+            <field name="name">fal.hr.leave.view.form.manager</field>
+            <field name="model">hr.leave</field>
+            <field name="inherit_id" ref="hr_holidays.hr_leave_view_form_manager"/>
+            <field name="arch" type="xml">
+                <field name="department_id" position="after">
+                    <field name="working_hour_id" attrs="{'required': [('holiday_type', '=', 'working_hour')], 'invisible': [('holiday_type', '!=', 'working_hour')]}"/>
+                </field>
+            </field>
+        </record>
+
+        <!-- HR Holidays Allocation -->
+        <record model="ir.ui.view" id="edit_holiday_new_fal_allocation">
+            <field name="name">edit.holiday.new.fal</field>
+            <field name="model">hr.leave.allocation</field>
+            <field name="inherit_id" ref="hr_holidays.hr_leave_allocation_view_form"/>
+            <field name="arch" type="xml">
+                <!-- Show double validation step -->
+                <field name="state" position="attributes">
+                    <attribute name="statusbar_visible">draft,confirm,validate1,validate</attribute>
+                </field>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="edit_holiday_new_fal_allocation_manager">
+            <field name="name">edit.holiday.new.fal.manager</field>
+            <field name="model">hr.leave.allocation</field>
+            <field name="inherit_id" ref="hr_holidays.hr_leave_allocation_view_form_manager"/>
+            <field name="arch" type="xml">
+                <!-- Button Management -->
+                <button name="action_confirm" position="attributes">
+                    <attribute name="string">Submit to Manager</attribute>
+                </button>
+                <field name="department_id" position="after">
+                    <field name="working_hour_id" attrs="{'required': [('holiday_type', '=', 'working_hour')], 'invisible': [('holiday_type', '!=', 'working_hour')]}"/>
+                    <field name="fal_fix_holiday_line_id" attrs="{'invisible':[('fal_fix_holiday_line_id', '=', False)]}"/>
+                    <field name="can_reset" string="Can Reset" invisible="1"/>
+                </field>
+            </field>
+        </record>
+
+        <!-- Add Remaining Leave on Kanban -->
+        <record id="hr_holiday_status_view_kanban_fal" model="ir.ui.view">
+            <field name="name">hr.leave.types.kanban.fal</field>
+            <field name="model">hr.leave.type</field>
+            <field name="inherit_id" ref="hr_holidays.hr_holiday_status_view_kanban"/>
+            <field name="arch" type="xml">
+                <xpath expr="//templates/t/div/div[2]" position="replace">
+                    <span>Max Leaves: <field name="max_leaves"/></span>
+                    <br/>
+                    <span>Remaining Leaves: <field name="remaining_leaves"/></span>
+                    <br/>
+                    <span>Leaves Taken: <field name="leaves_taken"/></span>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- Holidays status -->
+        <record id="view_holidays_status_filter_fal" model="ir.ui.view">
+            <field name="name">hr.leave.type.filter.fal</field>
+            <field name="model">hr.leave.type</field>
+            <field name="inherit_id" ref="hr_holidays.view_holidays_status_filter"/>
+            <field name="arch" type="xml">
+                <field name="categ_id" position="after">
+                    <field name="fal_year"/>
+                </field>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="edit_holiday_status_form_fal">
+            <field name="name">hr.leave.type.form.fal</field>
+            <field name="model">hr.leave.type</field>
+            <field name="inherit_id" ref="hr_holidays.edit_holiday_status_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form/sheet/div" position="replace">
+                </xpath>
+                <group name="description" position="inside">
+                    <field name="fal_year"/>
+                    <field name="fal_employee_visible"/>
+                </group>
+                <field name="color_name" position="after">
+                    <field name="active"/>
+                </field>
+                <xpath expr="//form/sheet/group" position="inside">
+                    <group string="Allocation Period">
+                        <field name="fal_period_in_departure_date"/>
+                        <field name="fal_period_in_ending_date"/>
+                    </group>
+                    <group string="Request Period">
+                        <field name="fal_period_out_departure_date"/>
+                        <field name="fal_period_out_ending_date"/>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_holiday_status_normal_tree_fal">
+            <field name="name">hr.leave.type.normal.tree.fal</field>
+            <field name="model">hr.leave.type</field>
+            <field name="inherit_id" ref="hr_holidays.view_holiday_status_normal_tree"/>
+            <field name="priority">35</field>
+            <field name="arch" type="xml">
+                <field name="allocation_type" position="before">
+                    <field name="fal_year"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_hr_holidays_status_search_fal" model="ir.ui.view">
+            <field name="name">hr.leave.type.search.fal</field>
+            <field name="model">hr.leave.type</field>
+            <field name="inherit_id" ref="hr_holidays.view_holidays_status_filter"/>
+            <field name="arch" type="xml">
+                <field name="name" position="after">
+                    <field name="fal_year"/>
+                </field>
+            </field>
+        </record>
+</odoo>

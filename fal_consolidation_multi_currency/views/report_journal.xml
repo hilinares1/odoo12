@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<template id="report_journal_ifrs" name="report_journal" inherit_id="account.report_journal">
+        <!-- Main Table IFRS -->
+        <xpath expr="//table[@class='table table-sm']/thead/tr/th[7]" position="after">
+            <th>IFRS Rate</th>
+            <th>Debit IFRS</th>
+            <th>Credit IFRS</th>
+        </xpath>
+        <xpath expr="//table[@class='table table-sm']/tbody/tr/td[7]" position="after">
+        	<td><span t-field="aml.fal_move_date_currency_rate"/></td>
+            <td><span t-field="aml.fal_debit_group_curr" t-options="{'widget': 'monetary', 'display_currency': res_company.group_currency_id}"/></td>
+            <td><span t-field="aml.fal_credit_group_curr" t-options="{'widget': 'monetary', 'display_currency': res_company.group_currency_id}"/></td>
+        </xpath>
+        <!-- Total Table IFRS -->
+        <xpath expr="//div[@class='row justify-content-end']/div" position="attributes">
+        	<attribute name="class">col-6</attribute>
+        </xpath>
+        <xpath expr="//table[@class='table table-sm']/tr" position="inside">
+        	<td><strong>Total IFRS</strong></td>
+            <td><span t-esc="sum_debit_ifrs(data, o)" t-options="{'widget': 'monetary', 'display_currency': res_company.group_currency_id}"/></td>
+            <td><span t-esc="sum_credit_ifrs(data, o)" t-options="{'widget': 'monetary', 'display_currency': res_company.group_currency_id}"/></td>
+        </xpath>
+        <!-- Tax Table IFRS -->
+        <xpath expr="//div//thead/tr[2]" position="inside">
+            <th>Tax Amount IFRS</th>
+        </xpath>
+        <xpath expr="//tr[@t-foreach='taxes']" position="inside">
+            <td><span t-esc="taxes[tax]['tax_amount_ifrs']" t-options="{'widget': 'monetary', 'display_currency': res_company.group_currency_id}"/></td>
+        </xpath>
+    </template>
+</odoo>

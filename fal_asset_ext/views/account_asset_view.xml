@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="view_account_asset_category_form_ttext">
+            <field name="name">account.asset.category.form.ttext</field>
+            <field name="model">account.asset.category</field>
+            <field name="inherit_id" ref="account_asset.view_account_asset_category_form" />
+            <field name="arch" type="xml">
+                <field name="type" position="after">
+                    <field name="fal_type" />
+                    <field name="parent_id" />
+                </field>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_account_asset_asset_purchase_tree_falsbext">
+            <field name="name">account.asset.asset.purchase.tree.falsbext</field>
+            <field name="model">account.asset.asset</field>
+            <field name="inherit_id" ref="account_asset.view_account_asset_asset_purchase_tree" />
+            <field name="arch" type="xml">
+                <field name="name" position="before">
+                    <field name="fal_asset_number"/>
+                </field>
+                <field name="value_residual" position="after">
+                    <field name="method_number" />
+                    <field name="fal_closing_date" />
+                </field>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_account_asset_asset_form_ttext">
+            <field name="name">account.asset.asset.form.ttext</field>
+            <field name="model">account.asset.asset</field>
+            <field name="inherit_id" ref="account_asset.view_account_asset_asset_form" />
+            <field name="arch" type="xml">
+                <!-- Add some field -->
+                <field name="name" position="before">
+                    <field name="fal_asset_number" class="oe_inline" readonly="1"/> - 
+                </field>
+                <field name="first_depreciation_manual_date" position="after">
+                    <field name="fal_second_depreciation_date" attrs="{'invisible': [('date_first_depreciation', '!=', 'manual')]}"/>
+                </field>
+                <field name="value" position="before">
+                    <field name="fal_original_purchase_value" widget="monetary" options="{'currency_field': 'currency_id'}" help="Original Purchase value of asset" attrs="{'required': [('fal_use_purchase_value', '!=', False)]}"/>
+                </field>
+                <xpath expr="//field[@name='prorata']" position='after'>
+                    <field name="fal_use_purchase_value"/>
+                </xpath>
+                <xpath expr="//notebook" position='inside'>
+                    <page string="Other Information" name="other">
+                        <group>
+                            <group string="Closing">
+                                <field name="fal_closing_date" />
+                            </group>
+                            <group string="Origin">
+                                <field name="fal_purchase_date" />
+                            </group>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_account_asset_search_ttext" model="ir.ui.view">
+            <field name="name">account.asset.asset.search.ttext</field>
+            <field name="model">account.asset.asset</field>
+            <field name="inherit_id" ref="account_asset.view_account_asset_search" />
+            <field name="arch" type="xml">
+                <field name="name" position="before">
+                    <field name="fal_asset_number" />
+                    <field name="invoice_id" />
+                </field>
+            </field>
+        </record>
+    </data>
+</odoo>

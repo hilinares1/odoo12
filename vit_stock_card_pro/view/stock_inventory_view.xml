@@ -1,0 +1,33 @@
+<odoo>
+	<data>
+		
+		<record id="vit_stock_inventory_form_view" model="ir.ui.view">
+		    <field name="name">vit.stock.inventory.form</field>
+		    <field name="model">stock.inventory</field>
+		    <field name="type">form</field>
+		    <field name="inherit_id" ref="stock.view_inventory_form"/>
+		    <field name="arch" type="xml">
+		        
+		    	<field name="exhausted" position="after">
+		    		<field name="saldo_awal"/>
+		    	</field>
+		    	
+		     </field>
+		</record>
+
+		<record id="vit_stock_inventory_search_view" model="ir.ui.view">
+		    <field name="name">vit.stock.inventory.search</field>
+		    <field name="model">stock.inventory</field>
+		    <field name="type">form</field>
+		    <field name="inherit_id" ref="stock.view_inventory_filter"/>
+		    <field name="arch" type="xml">
+		        
+		    	<field name="name" position="after">
+		    		<filter name="saldo_awal" string="Saldo Awal" domain="[('saldo_awal','=',True)]"/>
+		    	</field>
+		    	
+		     </field>
+		</record>
+        
+	</data>
+</odoo>

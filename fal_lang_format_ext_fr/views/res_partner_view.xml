@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_partner_form_hidevat" model="ir.ui.view">
+            <field name="name">res.partner.form.hidevat</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <field name="vat" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_partner_short_form_fallangfor" model="ir.ui.view">
+            <field name="name">res.partner.vat.short.inherit.fallangfor</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_short_form"/>
+            <field name="arch" type="xml">
+                <field name="vat" position="replace">
+                    <label for="vat" string="VAT TES"/>
+                    <div>
+                        <field name="vat" class="oe_inline oe_edit_only"/>
+                        <field name="fal_tin_display"/>
+                    </div>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_company_form_fallangfor" model="ir.ui.view">
+            <field name="name">res.company.form.fallangfor</field>
+            <field name="model">res.company</field>
+            <field name="inherit_id" ref="base.view_company_form"/>
+            <field name="arch" type="xml">
+                <field name="vat" position="replace">
+                    <label for="vat" string="TIN Display"/>
+                    <div>
+                        <field name="vat" class="oe_inline oe_edit_only"/>
+                        <field name="fal_tin_display"/>
+                    </div>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_partner_bank_form_fallangfor" model="ir.ui.view">
+            <field name="name">res.partner.bank.form.fallangfor</field>
+            <field name="model">res.partner.bank</field>
+            <field name="inherit_id" ref="base.view_partner_bank_form"/>
+            <field name="arch" type="xml">
+                <field name="acc_number" position="after">
+                    <field name="fal_iban_display" />
+                </field>
+            </field>
+        </record>
+
+        <record id="view_partner_bank_tree_fallangfor" model="ir.ui.view">
+            <field name="name">res.partner.bank.tree.fallangfor</field>
+            <field name="model">res.partner.bank</field>
+            <field name="inherit_id" ref="base.view_partner_bank_tree"/>
+            <field name="arch" type="xml">
+                <field name="acc_number" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </field>
+                <field name="acc_number" position="before">
+                    <field name="fal_iban_display" />
+                </field>
+            </field>
+        </record>
+
+        <record id="view_partner_form_fallangfor" model="ir.ui.view">
+            <field name="name">res.partner.form.fallangfor</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="account.view_partner_property_form"/>
+            <field name="arch" type="xml">
+                <field name="property_account_position_id" position="after">
+                    <label for="vat" string="TIN"/>
+                    <div>
+                        <field name="vat" class="oe_inline oe_edit_only" nolabel="1"/>
+                        <field name="fal_tin_display" nolabel="1"/>
+                    </div>
+                </field>
+            </field>
+        </record>
+
+        <record id="res_lang_form_fallangfor" model="ir.ui.view">
+            <field name="name">res.lang.form.fallangfor</field>
+            <field name="model">res.lang</field>
+            <field name="inherit_id" ref="base.res_lang_form"/>
+            <field name="arch" type="xml">
+                <field name="translatable" position="after">
+                    <newline/>
+                    <field name="vat_format" />
+                    <field name="vat_sep" />
+                    <field name="iban_format" />
+                    <field name="iban_sep" />
+                </field>
+            </field>
+        </record>
+
+    </data>
+</odoo>

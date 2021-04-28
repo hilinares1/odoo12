@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="view_order_form_fal_group_curr" model="ir.ui.view">
+            <field name="name">sale.order.tree.fal.group.curr</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='fiscal_position_id']" position="after">
+                    <field name="group_currency_id" invisible="1"/>
+                    <field name="company_currency_id" invisible="1"/>
+                </xpath>
+                <xpath expr="//group[@name='sale_total']" position="after">
+                    <group class="oe_subtotal_footer oe_right">
+                        <field name="untaxed_amount_group_curr" widget="monetary" options="{'currency_field': 'group_currency_id'}"/>
+                        <field name="taxed_amount_group_curr" widget="monetary" options="{'currency_field': 'group_currency_id'}"/>
+                        <div class="oe_subtotal_footer_separator oe_inline o_td_label">
+                            <label for="amount_total_group_curr"/>
+                        </div>
+                        <field name="amount_total_group_curr" nolabel="1" class="oe_subtotal_footer_separator" widget="monetary" options="{'currency_field': 'group_currency_id'}"/>
+                    </group>
+                    <group class="oe_subtotal_footer oe_right">
+                        <field name="untaxed_amount_comp_curr" widget="monetary" options="{'currency_field': 'company_currency_id'}"/>
+                        <field name="taxed_amount_comp_curr" widget="monetary" options="{'currency_field': 'company_currency_id'}"/>
+                        <div class="oe_subtotal_footer_separator oe_inline o_td_label">
+                            <label for="amount_total_comp_curr"/>
+                        </div>
+                        <field name="amount_total_comp_curr" nolabel="1" class="oe_subtotal_footer_separator" widget="monetary" options="{'currency_field': 'company_currency_id'}"/>
+                    </group>
+                </xpath>
+
+            </field>
+        </record>
+        <record id="view_order_tree_fal_usd" model="ir.ui.view">
+            <field name="name">sale.order.tree.fal.usd</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_tree"/>
+            <field name="arch" type="xml">
+                <data>
+                    <field name="amount_total" position="before">
+                        <field name="currency_id" string="Order Currency" invisible="1"/>
+                        <field name="group_currency_id" string="IFRS Currency" invisible="1"/>
+                        <field name="company_currency_id" invisible="1"/>
+                    </field>
+                    <field name="amount_total" position="after">
+                        <field name="amount_total_comp_curr" sum="Total in Company Curr"/>
+                        <field name="amount_total_group_curr" sum="Total in IFRS Curr"/>
+                        <field name="total_uninvoice" sum="Total uninvoice"/>
+                        <field name="total_uninvoice_comp_curr" sum="Company Total uninvoice"/>
+                        <field name="total_uninvoice_group_curr" sum="IFRS Total Uninvoice"/>
+                    </field>
+                </data>
+            </field>
+        </record>
+
+        <record id="view_quotation_tree_fal_usd" model="ir.ui.view">
+            <field name="name">quotation.order.tree.fal.usd</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_quotation_tree"/>
+            <field name="arch" type="xml">
+                <data>
+                    <field name="amount_total" position="before">
+                        <field name="currency_id" string="Order Currency" invisible="1"/>
+                        <field name="group_currency_id" string="IFRS Currency" invisible="1"/>
+                        <field name="company_currency_id" invisible="1"/>
+                    </field>
+                    <field name="amount_total" position="after">
+                        <field name="amount_total_comp_curr" sum="Total in Company Curr"/>
+                        <field name="amount_total_group_curr" sum="Subtotal in Group Curr"/>
+                    </field>
+                </data>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_sale_order_graph_fal_usd">
+            <field name="name">sale.order.graph.fal.usd</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_sale_order_graph"/>
+            <field name="arch" type="xml">
+                <data>
+                    <field name="amount_total" operator="+" position="replace">
+                        <field name="amount_total_group_curr" operator="+" />
+                    </field>
+                </data>
+            </field>
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="product_normal_form_view_fal_cbom" model="ir.ui.view">
+            <field name="name">product.normal.form.fal.cbom</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_only_form_view"/>
+            <field name="arch" type="xml">
+                <data>
+                    <button name="toggle_active" position="before">
+                        <!-- %(mrp.action_report_mrp_bom)d -->
+                        <button class="oe_stat_button" name="action_report_mrp_bom" type="object" attrs="{'invisible':[('type', 'not in', ['product', 'consu'])]}" icon="fa-bars" string="BOM Structure &amp; Cost"/>
+                    </button>
+                    <xpath expr="//page[@name='general_information']/group[1]" position="inside">
+                        <group string="Detail Cost">
+                            <label string="Cost of BoM" for="fal_bom_costs" groups="base.group_user" attrs="{'invisible':[('bom_ids','=',[])]}"/>
+                            <div groups="base.group_user" name="fal_bom" attrs="{'invisible':[('bom_ids','=',[])]}">
+                                <field name="fal_bom_costs" attrs="{'invisible':[('bom_ids','=',[])]}" class="oe_inline" widget='monetary' options="{'currency_field': 'currency_id', 'field_digits': True}"/>
+                            </div>
+                            <field name="bom_ids" invisible="1"/>
+
+                            <label string="Cost of Scrap" for="fal_bom_cost_scrap" groups="base.group_user" attrs="{'invisible':[('bom_ids','=',[])]}"/>
+                            <div groups="base.group_user" name="fal_bom_cost_scrap" attrs="{'invisible':[('bom_ids','=',[])]}">
+                                <field name="fal_bom_cost_scrap" attrs="{'invisible':[('bom_ids','=',[])]}" class="oe_inline" widget='monetary' options="{'currency_field': 'currency_id', 'field_digits': True}"/>
+                            </div>
+
+                            <label string="Operation" for="fal_operation_cost" groups="base.group_user" attrs="{'invisible':[('bom_ids','=',[])]}"/>
+                            <div groups="base.group_user" name="fal_operation_cost" attrs="{'invisible':[('bom_ids','=',[])]}">
+                                <field name="fal_operation_cost" attrs="{'invisible':[('bom_ids','=',[])]}" class="oe_inline" widget='monetary' options="{'currency_field': 'currency_id', 'field_digits': True}"/>
+                            </div>
+
+                            <label string="Operation + BOM" for="fal_bom_operation_cost" groups="base.group_user" attrs="{'invisible':[('bom_ids','=',[])]}"/>
+                            <div groups="base.group_user" name="fal_bom_operation_cost" attrs="{'invisible':[('bom_ids','=',[])]}">
+                                <field name="fal_bom_operation_cost" attrs="{'invisible':[('bom_ids','=',[])]}" class="oe_inline" widget='monetary' options="{'currency_field': 'currency_id', 'field_digits': True}"/>
+                            </div>
+
+                            <label string="Sale Price - Cost" for="fal_margin_cost_sale_price" groups="base.group_user" attrs="{'invisible':[('bom_ids','=',[])]}"/>
+                            <div groups="base.group_user" name="fal_margin_cost_sale_price" attrs="{'invisible':[('bom_ids','=',[])]}">
+                                <field name="fal_margin_cost_sale_price" attrs="{'invisible':[('bom_ids','=',[])]}" class="oe_inline" widget='monetary' options="{'currency_field': 'currency_id', 'field_digits': True}"/>
+                            </div>
+
+                            <label string="Sale Price - BOM Cost" for="fal_margin_bom_sale_price" groups="base.group_user" attrs="{'invisible':[('bom_ids','=',[])]}"/>
+                            <div groups="base.group_user" name="fal_margin_bom_sale_price" attrs="{'invisible':[('bom_ids','=',[])]}">
+                                <field name="fal_margin_bom_sale_price" title="Margin of sale price &amp; BOM cost" attrs="{'invisible':[('bom_ids','=',[])]}" class="oe_inline" widget='monetary' options="{'currency_field': 'currency_id', 'field_digits': True}"/>
+                            </div>
+                        </group>
+                    </xpath>
+                </data>
+            </field>
+        </record>
+
+        <record id="product_template_tree_view_fal_cbom" model="ir.ui.view">
+            <field name="name">product.template.tree.fal.cbom</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_tree_view"/>
+            <field name="arch" type="xml">
+                <data>
+                    <field name="standard_price" position="after">
+                        <field name="fal_bom_costs" string="Cost of BoM"/>
+                    </field>
+                </data>
+            </field>
+        </record>
+
+        <record id="product_variant_normal_form_view_fal_cbom" model="ir.ui.view">
+            <field name="name">product.variant.normal.form.fal.cbom</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="product.product_normal_form_view"/>
+            <field name="arch" type="xml">
+                <data>
+                    <button name="toggle_active" position="before">
+                        <!-- %(mrp.action_report_mrp_bom)d -->
+                        <button class="oe_stat_button" name="action_report_mrp_bom" type="object" attrs="{'invisible':[('type', 'not in', ['product', 'consu'])]}" icon="fa-bars" string="BOM Structure &amp; Cost"/>
+                    </button>
+                    <xpath expr="//page[@name='general_information']/group[1]" position="inside">
+                        <group string="Detail Cost">
+                            <label string="Cost of BoM" for="fal_bom_costs" groups="base.group_user" attrs="{'invisible':[('bom_ids','=',[])]}"/>
+                            <div groups="base.group_user" name="fal_bom" attrs="{'invisible':[('bom_ids','=',[])]}">
+                                <field name="fal_bom_costs" attrs="{'invisible':[('bom_ids','=',[])]}" class="oe_inline" widget='monetary' options="{'currency_field': 'currency_id', 'field_digits': True}"/>
+                            </div>
+                            <field name="bom_ids" invisible="1"/>
+
+                            <label string="Cost of Scrap" for="fal_bom_cost_scrap" groups="base.group_user" attrs="{'invisible':[('bom_ids','=',[])]}"/>
+                            <div groups="base.group_user" name="fal_bom_cost_scrap" attrs="{'invisible':[('bom_ids','=',[])]}">
+                                <field name="fal_bom_cost_scrap" attrs="{'invisible':[('bom_ids','=',[])]}" class="oe_inline" widget='monetary' options="{'currency_field': 'currency_id', 'field_digits': True}"/>
+                            </div>
+
+                            <label string="Operation" for="fal_operation_cost" groups="base.group_user" attrs="{'invisible':[('bom_ids','=',[])]}"/>
+                            <div groups="base.group_user" name="fal_operation_cost" attrs="{'invisible':[('bom_ids','=',[])]}">
+                                <field name="fal_operation_cost" attrs="{'invisible':[('bom_ids','=',[])]}" class="oe_inline" widget='monetary' options="{'currency_field': 'currency_id', 'field_digits': True}"/>
+                            </div>
+
+                            <label string="Operation + BOM" for="fal_bom_operation_cost" groups="base.group_user" attrs="{'invisible':[('bom_ids','=',[])]}"/>
+                            <div groups="base.group_user" name="fal_bom_operation_cost" attrs="{'invisible':[('bom_ids','=',[])]}">
+                                <field name="fal_bom_operation_cost" attrs="{'invisible':[('bom_ids','=',[])]}" class="oe_inline" widget='monetary' options="{'currency_field': 'currency_id', 'field_digits': True}"/>
+                            </div>
+
+                            <label string="Sale Price - Cost" for="fal_margin_cost_sale_price" groups="base.group_user" attrs="{'invisible':[('bom_ids','=',[])]}"/>
+                            <div groups="base.group_user" name="fal_margin_cost_sale_price" attrs="{'invisible':[('bom_ids','=',[])]}">
+                                <field name="fal_margin_cost_sale_price" attrs="{'invisible':[('bom_ids','=',[])]}" class="oe_inline" widget='monetary' options="{'currency_field': 'currency_id', 'field_digits': True}"/>
+                            </div>
+
+                            <label string="Sale Price - BOM Cost" for="fal_margin_bom_sale_price" groups="base.group_user" attrs="{'invisible':[('bom_ids','=',[])]}"/>
+                            <div groups="base.group_user" name="fal_margin_bom_sale_price" attrs="{'invisible':[('bom_ids','=',[])]}">
+                                <field name="fal_margin_bom_sale_price" title="Margin of sale price &amp; BOM cost" attrs="{'invisible':[('bom_ids','=',[])]}" class="oe_inline" widget='monetary' options="{'currency_field': 'currency_id', 'field_digits': True}"/>
+                            </div>
+                        </group>
+                    </xpath>
+                </data>
+            </field>
+        </record>
+
+        <record id="product_product_tree_view_fal_cbom" model="ir.ui.view">
+            <field name="name">product.product.tree.fal.cbom</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="product.product_product_tree_view"/>
+            <field name="arch" type="xml">
+                <data>
+                    <field name="standard_price" position="after">
+                        <field name="fal_bom_costs" string="Cost of BoM"/>
+                    </field>
+                </data>
+            </field>
+        </record>
+    </data>
+</odoo>

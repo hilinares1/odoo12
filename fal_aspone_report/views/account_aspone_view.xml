@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="view_account_aspone_form">
+            <field name="name">account.aspone.form</field>
+            <field name="model">account.aspone</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="ASPONE Report">
+                    <header>
+                        <button string="Compute" name="compute" type="object" class="btn-default"/>
+                    </header>
+                    <sheet>
+                        <label for="name" class="oe_edit_only"/>
+                        <h1><field name="name"/></h1>
+                        <label for="date_start" string="Date" class="oe_edit_only"/>
+                        <h3><field name="date_start"/> - <field name="date_end"/></h3>
+                        <field name="currency_id" invisible="1"/>
+                        <field name="aspone_line_ids">
+                            <form>
+                                <group>
+                                    <field name="currency_id" invisible="1"/>
+                                    <field name="xml_name"/>
+                                    <field name="report_table"/>
+                                    <field name="report_row"/>
+                                    <field name="formula"/>
+                                    <field name="result"/>
+                                    <field name="formula_parameter_ids">
+                                        <tree>
+                                            <field name="code"/>
+                                            <field name="tax_id"/>
+                                        </tree>
+                                        <form>
+                                            <group>
+                                                <field name="code"/>
+                                                <field name="tax_id"/>
+                                            </group>
+                                        </form>
+                                    </field>
+                                </group>
+                            </form>
+                            <tree>
+                                <field name="currency_id" invisible="1"/>
+                                <field name="xml_name"/>
+                                <field name="report_table"/>
+                                <field name="report_row"/>
+                                <field name="formula"/>
+                                <field name="result"/>
+                            </tree>
+                        </field>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_account_aspone_tree">
+            <field name="name">account.aspone.tree</field>
+            <field name="model">account.aspone</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="ASPONE Report">
+                    <field name="name"/>
+                    <field name="date_start"/>
+                    <field name="date_end"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_account_aspone" model="ir.actions.act_window">
+            <field name="name">ASPONE Report</field>
+            <field name="res_model">account.aspone</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem name="ASPONE Report" action="action_account_aspone" id="menu_account_aspone" parent="l10n_fr.account_reports_fr_statements_menu"/>
+
+    </data>
+</odoo>

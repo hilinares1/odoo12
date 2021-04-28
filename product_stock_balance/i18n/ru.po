@@ -1,0 +1,111 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* product_stock_location
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-02-28 17:06+0000\n"
+"PO-Revision-Date: 2016-02-28 20:09+0300\n"
+"Last-Translator: Baranov Denis <baranov@itlibertas.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+
+#. module: product_stock_balance
+#: model:ir.ui.view,arch_db:product_stock_balance.product_product_form_view
+#: model:ir.ui.view,arch_db:product_stock_balance.product_template_form_view
+msgid "Forecast"
+msgstr "Доступно"
+
+#. module: product_stock_balance
+#: model:ir.ui.view,arch_db:product_stock_balance.product_product_form_view
+#: model:ir.ui.view,arch_db:product_stock_balance.product_template_form_view
+msgid "Incom"
+msgstr "Входящие"
+
+#. module: product_stock_balance
+#: model:ir.model,name:product_stock_balance.model_stock_location
+msgid "Inventory Locations"
+msgstr "Места Хранения"
+
+#. module: product_stock_balance
+#: model:ir.ui.view,arch_db:product_stock_balance.product_product_form_view
+#: model:ir.ui.view,arch_db:product_stock_balance.product_template_form_view
+msgid "On hand"
+msgstr "На руках"
+
+#. module: product_stock_balance
+#: model:ir.ui.view,arch_db:product_stock_balance.product_product_form_view
+#: model:ir.ui.view,arch_db:product_stock_balance.product_template_form_view
+msgid "Out"
+msgstr "Исходящие"
+
+#. module: product_stock_balance
+#: model:ir.model,name:product_stock_balance.model_product_template
+msgid "Product Template"
+msgstr "Шаблон продукции"
+
+#. module: product_stock_balance
+#: model:ir.model.fields,field_description:product_stock_balance.field_stock_location_virtual_available
+msgid "Forecast Quantity"
+msgstr "Прогнозируемое количество продукта"
+
+#. module: product_stock_balance
+#: model:ir.model.fields,help:product_stock_balance.field_stock_location_virtual_available
+msgid "Forecast Quantity for product specified on the context"
+msgstr "Прогнозируемое количество продукта, указанного в контексте"
+
+#. module: product_stock_balance
+#: model:ir.model.fields,field_description:product_stock_balance.field_stock_location_incoming_qty
+msgid "Incoming"
+msgstr "Приход продукта"
+
+#. module: product_stock_balance
+#: model:ir.model.fields,help:product_stock_balance.field_stock_location_incoming_qty
+msgid "Incoming for product specified on the context"
+msgstr "Приход продукта, указанного в контексте"
+
+#. module: product_stock_balance
+#: model:ir.model.fields,field_description:product_stock_balance.field_product_product_location_ids
+#: model:ir.model.fields,field_description:product_stock_balance.field_product_template_location_ids
+msgid "Locations"
+msgstr "Места хранения"
+
+#. module: product_stock_balance
+#: model:ir.model.fields,field_description:product_stock_balance.field_stock_location_outgoing_qty
+msgid "Outgoing"
+msgstr "Отгрузки продукта"
+
+#. module: product_stock_balance
+#: model:ir.model.fields,help:product_stock_balance.field_stock_location_outgoing_qty
+msgid "Outgoing for product specified on the context"
+msgstr "Отгрузки продукта, указанного в контексте"
+
+#. module: product_stock_balance
+#: model:ir.model.fields,field_description:product_stock_balance.field_stock_location_qty_available
+msgid "Quantity On Hand"
+msgstr "Количество продукта на руках"
+
+#. module: product_stock_balance
+#: model:ir.model.fields,help:product_stock_balance.field_stock_location_qty_available
+msgid "Quantity On Hand for product specified on the context"
+msgstr "Количество продукта, указанного в контексте, на руках"
+
+#. module: product_stock_balance
+#: model:ir.ui.view,arch_db:product_stock_balance.product_template_form_view
+msgid "Stock balance by locations"
+msgstr "Баланс продукта по местам хранения"
+
+#. module: product_stock_balance
+#: model:ir.ui.view,arch_db:product_stock_balance.product_product_form_view
+msgid "Stocks balance by locations"
+msgstr "Баланс продукта по местам хранения"
+
+#. module: product_stock_balance
+#: model:ir.model,name:product_stock_balance.model_product_template
+msgid "Product Template"
+msgstr "Шаблон продукта"

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	
+	<!-- Sale order form view -->
+	<record id="sh_inherit_view_order_form" model="ir.ui.view">
+		<field name="name">sh.inherit.view.order.form</field>
+		<field name="model">sale.order</field>
+		<field name="inherit_id" ref="sale.view_order_form"/>
+		<field name="arch" type="xml">
+			<xpath expr="//field[@name='validity_date']" position="before">
+				<field name="sh_partially_delivered"/>
+				<field name="sh_fully_delivered"/>
+				<field name="sh_partially_paid"/>
+				<field name="sh_fully_paid"/>
+				<field name="sh_hidden_compute_field" invisible="1"/>
+			</xpath>
+		
+		</field>
+	</record>	
+	
+	
+	<!-- Sale Orders Tree View -->
+	<record id="sh_view_order_tree" model="ir.ui.view">
+		<field name="name">sh.view.order.tree</field>
+		<field name="model">sale.order</field>
+		<field name="inherit_id" ref="sale.view_order_tree"/>
+		<field name="arch" type="xml">
+			<xpath expr="//tree" position="inside">
+				<field name="sh_partially_delivered"/>
+				<field name="sh_fully_delivered"/>
+				<field name="sh_partially_paid"/>
+				<field name="sh_fully_paid"/>
+				<field name="sh_hidden_compute_field" invisible="1"/>
+			</xpath>
+		</field>
+	</record>
+	
+	<!-- sale order filters 	-->	
+	<record id="sh_inherit_view_sales_order_filter" model="ir.ui.view">
+		<field name="name">sh.inherit.view.sales.order.filter</field>
+		<field name="model">sale.order</field>
+		<field name="inherit_id" ref="sale.view_sales_order_filter"/>
+		<field name="arch" type="xml">
+			<xpath expr="//search/filter" position="before">
+                 
+                    <filter string="Partially Delivered" name="sh_partially_delivered"
+                        domain="[('sh_partially_delivered', '=', True)]"/>			
+                 
+                    <filter string="Delivered" name="sh_fully_delivered"
+                        domain="[('sh_fully_delivered', '=', True)]"/>		
+                 
+                    <filter string="Partially Paid" name="sh_partially_paid"
+                        domain="[('sh_partially_paid', '=', True)]"/>		
+                                                                        
+                    <filter string="Paid" name="sh_fully_paid"
+                        domain="[('sh_fully_paid', '=', True)]"/>		                                                                        
+                        
+                        	
+			</xpath>
+		</field>
+	</record>
+
+	
+	
+</odoo>

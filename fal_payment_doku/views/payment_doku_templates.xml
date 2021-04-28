@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <template id="doku_form">
+            <div>
+                <input type="hidden" name="data_set" t-att-data-action-url="tx_url" data-remove-me=""/>
+                <input name="MALLID" type="hidden" t-att-value="MALLID"/>
+                <input name="BASKET" type="hidden" t-att-value="BASKET"/>
+                <input name="CHAINMERCHANT" type="hidden" t-att-value="CHAINMERCHANT"/>
+                <input name="AMOUNT" type="hidden" t-att-value="AMOUNT"/>
+                <input name="PURCHASEAMOUNT" type="hidden" t-att-value="PURCHASEAMOUNT"/>
+                <input name="TRANSIDMERCHANT" type="hidden" t-att-value="TRANSIDMERCHANT"/>
+                <input name="WORDS" type="hidden" t-att-value="WORDS"/>
+                <input name="CURRENCY" type="hidden" t-att-value="CURRENCY"/>
+                <input name="PURCHASECURRENCY" type="hidden" t-att-value="PURCHASECURRENCY"/>
+                <input name="COUNTRY" type="hidden" t-att-value="COUNTRY"/>
+                <input name="STATE" type="hidden" t-att-value="STATE"/>
+                <input name="SESSIONID" type="hidden" t-att-value="SESSIONID"/>
+                <input name="REQUESTDATETIME" type="hidden" t-att-value="REQUESTDATETIME"/>
+                <input name="NAME" type="hidden" t-att-value="NAME"/>
+                <input name="EMAIL" type="hidden" t-att-value="EMAIL"/>
+                <input name="PAYMENTCHANNEL" type="hidden" t-att-value="PAYMENTCHANNEL"/>
+                <input name="ADDRESS" type="hidden" t-att-value="ADDRESS"/>
+                <input name="CITY" type="hidden" t-att-value="CITY"/>
+                <input name="ZIPCODE" type="hidden" t-att-value="ZIPCODE"/>
+                <input name="MOBILEPHONE" type="hidden" t-att-value="MOBILEPHONE"/>
+                <input t-if="redirect_url" type='hidden' name='redirect_url' t-att-value="redirect_url"/>
+                <input t-if="notify_url" type='hidden' name='notify_url' t-att-value="notify_url"/>
+                <input t-if="identify_url" type='hidden' name='identify_url' t-att-value="identify_url"/>
+                <input t-if="review_url" type='hidden' name='review_url' t-att-value="review_url"/>
+            </div>
+        </template>
+    </data>
+</odoo>

@@ -1,0 +1,214 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* fal_mrp_production_order
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0+e-20170110\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-05-16 09:15+0000\n"
+"PO-Revision-Date: 2017-05-23 17:47+0700\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fr\n"
+"X-Generator: Poedit 2.0.1\n"
+
+#. module: fal_mrp_production_order
+#: code:addons/fal_mrp_production_order/models/mrp.py:50
+#, python-format
+msgid "Can not confirmed MO without available raw materails!"
+msgstr "Impossible de confirmer MO sans matières premières disponibles"
+
+#. module: fal_mrp_production_order
+#: model:ir.actions.act_window,help:fal_mrp_production_order.fal_production_order_action
+msgid "Click to create a production order."
+msgstr "Cliquez pour créer un ordre de production."
+
+#. module: fal_mrp_production_order
+#: model:ir.ui.view,arch_db:fal_mrp_production_order.fal_production_order_form_view
+#: model:ir.ui.view,arch_db:fal_mrp_production_order.mrp_view_production_order_fal
+msgid "Confirm"
+msgstr "Confirmer"
+
+#. module: fal_mrp_production_order
+#: selection:fal.production.order,state:0
+msgid "Confirmed"
+msgstr "Confirmé"
+
+#. module: fal_mrp_production_order
+#: model:ir.model.fields,field_description:fal_mrp_production_order.field_fal_production_order_create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: fal_mrp_production_order
+#: model:ir.model.fields,field_description:fal_mrp_production_order.field_fal_production_order_create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: fal_mrp_production_order
+#: model:ir.model.fields,field_description:fal_mrp_production_order.field_fal_production_order_delivery_planned_date
+msgid "Delivery Date"
+msgstr "Date de livraison"
+
+#. module: fal_mrp_production_order
+#: model:ir.model.fields,field_description:fal_mrp_production_order.field_fal_production_order_display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: fal_mrp_production_order
+#: selection:fal.production.order,state:0
+msgid "Done"
+msgstr "Terminé"
+
+#. module: fal_mrp_production_order
+#: selection:fal.production.order,state:0
+msgid "Draft"
+msgstr "Brouillon"
+
+#. module: fal_mrp_production_order
+#: model:ir.ui.view,arch_db:fal_mrp_production_order.view_mrp_production_work_order_search_production_order_fal
+msgid "Group By"
+msgstr "Regrouper par"
+
+#. module: fal_mrp_production_order
+#: model:ir.model.fields,field_description:fal_mrp_production_order.field_fal_production_order_id
+msgid "ID"
+msgstr "ID"
+
+#. module: fal_mrp_production_order
+#: selection:fal.production.order,state:0
+msgid "In Progress"
+msgstr "En cours"
+
+#. module: fal_mrp_production_order
+#: model:ir.model.fields,field_description:fal_mrp_production_order.field_fal_production_order___last_update
+msgid "Last Modified on"
+msgstr "Dernière Modification le"
+
+#. module: fal_mrp_production_order
+#: model:ir.model.fields,field_description:fal_mrp_production_order.field_fal_production_order_write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: fal_mrp_production_order
+#: model:ir.model.fields,field_description:fal_mrp_production_order.field_fal_production_order_write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: fal_mrp_production_order
+#: model:ir.ui.view,arch_db:fal_mrp_production_order.fal_production_order_form_view
+#: model:ir.ui.view,arch_db:fal_mrp_production_order.fl_production_order_tree_view
+msgid "MRP Production Order"
+msgstr "MRP Ordre de Production"
+
+#. module: fal_mrp_production_order
+#: model:ir.model,name:fal_mrp_production_order.model_mrp_production
+msgid "Manufacturing Order"
+msgstr "Ordre de fabrication"
+
+#. module: fal_mrp_production_order
+#: model:ir.model.fields,field_description:fal_mrp_production_order.field_fal_production_order_mrp_ids
+#: model:ir.ui.view,arch_db:fal_mrp_production_order.fal_production_order_form_view
+msgid "Manufacturing Orders"
+msgstr "Ordres de fabrication"
+
+#. module: fal_mrp_production_order
+#: model:ir.model.fields,field_description:fal_mrp_production_order.field_fal_production_order_name
+msgid "Number"
+msgstr "Numéro"
+
+#. module: fal_mrp_production_order
+#: model:ir.model.fields,field_description:fal_mrp_production_order.field_mrp_production_parent_id
+#: model:ir.model.fields,field_description:fal_mrp_production_order.field_procurement_order_fal_parent_mo_id
+msgid "Parent MO"
+msgstr "MO Parent"
+
+#. module: fal_mrp_production_order
+#: model:ir.ui.view,arch_db:fal_mrp_production_order.fal_production_order_form_view
+msgid "Plan"
+msgstr "Plan"
+
+#. module: fal_mrp_production_order
+#: selection:fal.production.order,state:0
+msgid "Planned"
+msgstr "Planifié"
+
+#. module: fal_mrp_production_order
+#: model:ir.model,name:fal_mrp_production_order.model_procurement_order
+msgid "Procurement"
+msgstr "Approvisionnement"
+
+#. module: fal_mrp_production_order
+#: model:ir.actions.act_window,name:fal_mrp_production_order.fal_production_order_action
+#: model:ir.model.fields,field_description:fal_mrp_production_order.field_mrp_production_fal_prod_order_id
+#: model:ir.model.fields,field_description:fal_mrp_production_order.field_mrp_workorder_fal_prod_order_id
+#: model:ir.ui.menu,name:fal_mrp_production_order.fal_production_order_menu
+#: model:ir.ui.view,arch_db:fal_mrp_production_order.mrp_search_view_production_order_fal
+#: model:ir.ui.view,arch_db:fal_mrp_production_order.view_mrp_production_work_order_search_production_order_fal
+#: model:ir.ui.view,arch_db:fal_mrp_production_order.view_mrp_production_workcenter_form_view_filter_production_order_fal
+msgid "Production Order"
+msgstr "Ordre de Production"
+
+#. module: fal_mrp_production_order
+#: model:ir.model.fields,field_description:fal_mrp_production_order.field_fal_production_order_production_date_planned
+msgid "Production Planned Date"
+msgstr "Date Planifiée de Production"
+
+#. module: fal_mrp_production_order
+#: model:ir.actions.act_window,help:fal_mrp_production_order.fal_production_order_action
+msgid "Production order is used to make manufactuting order at once."
+msgstr "L'ordre de production est utilisé pour mettre l'ordre de fabrication à la fois."
+
+#. module: fal_mrp_production_order
+#: model:ir.model.fields,field_description:fal_mrp_production_order.field_fal_production_order_origin
+msgid "Source Document"
+msgstr "Document d'origine"
+
+#. module: fal_mrp_production_order
+#: model:ir.model.fields,field_description:fal_mrp_production_order.field_fal_production_order_state
+msgid "Status"
+msgstr "Statut"
+
+#. module: fal_mrp_production_order
+#: model:ir.model,name:fal_mrp_production_order.model_stock_move
+msgid "Stock Move"
+msgstr "Mouvement de Stock"
+
+#. module: fal_mrp_production_order
+#: model:ir.model.fields,field_description:fal_mrp_production_order.field_mrp_production_child_ids
+msgid "Sub Manufacturing Order"
+msgstr "Sous-Ordre de Fabrication"
+
+#. module: fal_mrp_production_order
+#: model:ir.ui.view,arch_db:fal_mrp_production_order.mrp_view_production_order_fal
+msgid "Sub-Manufacturing Orders"
+msgstr "Sous-Ordres de Fabrication"
+
+#. module: fal_mrp_production_order
+#: model:ir.ui.view,arch_db:fal_mrp_production_order.fal_production_order_form_view
+msgid "Unplan"
+msgstr "Déprogrammer"
+
+#. module: fal_mrp_production_order
+#: model:ir.model,name:fal_mrp_production_order.model_mrp_workorder
+msgid "Work Order"
+msgstr "Ordre de Travail"
+
+#. module: fal_mrp_production_order
+#: model:ir.model.fields,field_description:fal_mrp_production_order.field_fal_production_order_workorder_ids
+#: model:ir.ui.view,arch_db:fal_mrp_production_order.fal_production_order_form_view
+msgid "Work Orders"
+msgstr "Ordres de Travaux"
+
+#. module: fal_mrp_production_order
+#: model:ir.model.fields,field_description:fal_mrp_production_order.field_fal_production_order_wo_planned
+msgid "Work Orders Planned"
+msgstr "Ordres de Travaux Planifiés"
+
+#. module: fal_mrp_production_order
+#: model:ir.model,name:fal_mrp_production_order.model_fal_production_order
+msgid "fal.production.order"
+msgstr "fal.production.order"

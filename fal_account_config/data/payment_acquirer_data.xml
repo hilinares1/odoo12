@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+
+    <template id="default_acquirer_button">
+        <input type="hidden" name="data_set" t-att-data-action-url="tx_url"/>
+        <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+        <t t-if="return_url">
+            <input type="hidden" name="return_url" t-att-value="return_url"/>
+        </t>
+        <input type="hidden" name="reference" t-att-value="reference"/>
+        <input type="hidden" name="amount" t-att-value="amount"/>
+        <input type="hidden" name="currency" t-att-value="currency.name"/>
+    </template>
+
+    <record id="payment_acquirer_doku" model="payment.acquirer">
+        <field name="name">Doku</field>
+        <field name="sequence">1</field>
+        <field name="view_template_id" ref="default_acquirer_button"/>
+        <field name="image" type="base64" file="fal_account_config/static/src/img/doku_icon.png"/>
+        <field name="module_id" ref="base.module_fal_payment_doku"/>
+        <field name="environment">test</field>
+        <field name="description" type="html">
+            <p>
+                Doku Payment Service supports Credit Cards, Doku Wallet, and Indonesia Convenience Store.
+            </p>
+        </field>
+        <!-- https://www.paypal.com/us/selfhelp/article/Which-credit-cards-can-I-accept-with-PayPal-Merchant-Services-FAQ1525#business -->
+        <field name="payment_icon_ids" eval='[(6, 0, [ref("payment.payment_icon_cc_maestro"),
+                                                        ref("payment.payment_icon_cc_mastercard"),
+                                                        ref("payment.payment_icon_cc_discover"),
+                                                        ref("payment.payment_icon_cc_diners_club_intl"),
+                                                        ref("payment.payment_icon_cc_jcb"),
+                                                        ref("payment.payment_icon_cc_american_express"),
+                                                        ref("payment.payment_icon_cc_unionpay"),
+                                                        ref("payment.payment_icon_cc_visa")])]'/>
+    </record>
+</odoo>

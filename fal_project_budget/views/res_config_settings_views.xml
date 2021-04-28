@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.hr</field>
+        <field name="model">res.config.settings</field>
+        <field name="priority" eval="88"/>
+        <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[hasclass('settings')]" position="inside">
+                <div class="app_settings_block" data-string="Controlling" string="Controlling" data-key="fal_project_budget">
+                    <h2>Project Budget Organization Chart</h2>
+                    <div class="row mt16 o_settings_container">
+                        <div class="col-12 col-lg-6 o_setting_box" title="Show organizational chart on project budget form">
+                            <div class="o_setting_left_pane">
+                                <field name="module_fal_project_budget_org_chart"/>
+                            </div>
+                            <div class="o_setting_right_pane">
+                                <label for="module_fal_project_budget_org_chart"/>
+                                <div class="text-muted">
+                                    Show organizational chart on project budget form.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h2>Controlling Dashboard</h2>
+                    <div class="row mt16 o_settings_container">
+                        <div class="col-12 col-lg-6 o_setting_box" title="Show organizational chart on project budget form">
+                            <div class="o_setting_left_pane">
+                                <field name="module_fal_project_dashboard"/>
+                            </div>
+                            <div class="o_setting_right_pane">
+                                <label for="module_fal_project_dashboard"/>
+                                <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                                <div class="text-muted">
+                                    Controlling Dashboard.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="fal_project_budget_config_settings_action" model="ir.actions.act_window">
+        <field name="name">Settings</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">res.config.settings</field>
+        <field name="view_mode">form</field>
+        <field name="target">inline</field>
+        <field name="context">{'module' : 'fal_project_budget'}</field>
+    </record>
+
+    <menuitem id="fal_project_budget_menu_configuration"
+        name="Settings"
+        parent="fal_project_budget.menu_fal_project_budget_configuration"
+        sequence="0"
+        action="fal_project_budget_config_settings_action"
+        groups="base.group_system"/>
+</odoo>

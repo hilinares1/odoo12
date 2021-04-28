@@ -1,0 +1,218 @@
+<odoo>
+    <record id="fal_opportunity_in_wishlist" model="ir.ui.view">
+        <field name="name">fal_opportunity_in_wishlist</field>
+        <field name="model">crm.lead</field>
+        <field name="type">form</field>
+        <field name="inherit_id" ref="crm.crm_case_form_view_leads"/>
+        <field name="arch" type="xml">
+            <page name="extra" position="after">
+                <page name="fal_product" string="Wishlist">
+                    <field name="fal_lead_ids" mode="tree">
+                        <kanban>
+                            <field name="product_id"/>
+                            <field name="name"/>
+                            <field name="fal_length"/>
+                            <field name="fal_width"/>
+                            <field name="fal_height"/>
+                            <field name="wishlist_price_ids"/>
+                            <field name="image"/>
+                            <!-- <field name="fal_old_ref"/> -->
+                            <field name="currency_id"/>
+                            <templates>
+                                <t t-name="kanban-box">
+                                    <div class="oe_kanban_global_click">
+                                        <a t-if="!read_only_mode" type="delete" class="fa fa-times pull-right"/>
+                                        <div class="o_kanban_image">
+<!--                                             <img t-att-src="kanban_image('fal.crm.lead.line', 'image', record.id.value)"/> -->
+                                        </div>
+                                        <div class="oe_kanban_details">
+                                            <field name="product_id"/>
+                                            <div t-if="record.name.raw_value"><field name="name"/></div>
+                                            <div t-if="record.fal_length.raw_value and record.fal_width.raw_value and record.fal_height.raw_value"><field name="fal_length"/> x <field name="fal_width"/> x <field name="fal_height"/></div>
+<!--                                             <div t-if="record.fal_old_ref.raw_value">Old Ref: <field name="fal_old_ref"/></div> -->
+                                            <!-- <div t-if="record.packaging_attr_id.raw_value"><field name="packaging_attr_id"/></div> -->
+                                            <!-- <div t-if="record.color_attr_id.raw_value"><field name="color_attr_id"/></div> -->
+                                            <!-- <div t-if="record.material_attr_id.raw_value"><field name="material_attr_id"/></div> -->
+                                            <!-- <div t-if="record.wishlist_price_ids.raw_value.length == 0">0 pcs - 0 <field name="currency_id"/></div>
+                                            <span t-if="record.wishlist_price_ids.raw_value.length gt 0">
+                                                <t t-foreach="record.wishlist_price_ids.raw_value" t-as="wish">
+                                                    <div>
+                                                    <t t-esc="wish.min_qty"/> pcs - <t t-esc="wish.price"/> <t t-esc="wish.currency_id"/>
+                                                    </div>
+                                                </t>
+                                            </span> -->
+                                        </div>
+                                    </div>
+                                </t>
+                            </templates>
+                        </kanban>
+                        <tree string="Lead Lines">
+                            <field name="product_id"/>
+                            <field name="name"/>
+                            <!-- <field name="fal_length"/>
+                            <field name="fal_length_uom_id"/>
+                            <field name="fal_width"/>
+                            <field name="fal_width_uom_id"/>
+                            <field name="fal_height"/>
+                            <field name="fal_height_uom_id"/> -->
+                            <!-- <field name="fal_old_ref"/> -->
+                        </tree>
+                        <form string="Lead Line">
+                            <group>
+                                <group>
+                                    <field name="product_id"/>
+                                    <field name="name"/>
+                                    <label for="fal_length"/>
+                                    <div class="o_row">
+                                        <field name="fal_length" readonly="1"/>
+                                        <field name="fal_length_uom_id" readonly="1"/>
+                                    </div>
+                                    <label for="fal_width"/>
+                                    <div class="o_row">
+                                        <field name="fal_width" readonly="1"/>
+                                        <field name="fal_width_uom_id" readonly="1"/>
+                                    </div>
+                                    <label for="fal_height"/>
+                                    <div class="o_row">
+                                        <field name="fal_height" readonly="1"/>
+                                        <field name="fal_height_uom_id" readonly="1"/>
+                                    </div>
+                                    <!-- <field name="fal_old_ref" readonly="1"/> -->
+                                    <field name="packaging_attr_id"/>
+                                    <field name="color_attr_id"/>
+                                    <field name="material_attr_id"/>
+                                </group>
+                                <group>
+                                    <field name="image" widget="image" class="oe_avatar" nolabel="1"/>
+                                </group>
+                                <field name="wishlist_price_ids">
+                                    <tree string="Price List Items">
+                                        <field name="min_qty"/>
+                                        <field name="product_uom_id"/>
+                                        <field name="currency_id"/>
+                                        <field name="price"/>
+                                    </tree>
+                                </field>
+                            </group>
+                        </form>
+                    </field>
+                </page>
+            </page>
+        </field>
+    </record>
+
+    <record id="fal_opportunity_in_wishlist_pipeline" model="ir.ui.view">
+        <field name="name">fal_opportunity_in_wishlist_pipeline</field>
+        <field name="model">crm.lead</field>
+        <field name="type">form</field>
+        <field name="inherit_id" ref="crm.crm_case_form_view_oppor"/>
+        <field name="arch" type="xml">
+            <page name="lead" position="after">
+                <page name="fal_product" string="Wishlist">
+                    <field name="fal_lead_ids" mode="tree">
+                        <kanban>
+                            <field name="product_id"/>
+                            <field name="name"/>
+                            <field name="fal_length"/>
+                            <field name="fal_width"/>
+                            <field name="fal_height"/>
+                            <field name="wishlist_price_ids"/>
+                            <field name="image"/>
+                            <!-- <field name="fal_old_ref"/> -->
+                            <field name="currency_id"/>
+                            <templates>
+                                <t t-name="kanban-box">
+                                    <div class="oe_kanban_global_click">
+                                        <a t-if="!read_only_mode" type="delete" class="fa fa-times pull-right"/>
+                                        <div class="o_kanban_image">
+                                            <!-- <img t-att-src="kanban_image('fal.crm.lead.line', 'image', record.id.value)"/> -->
+                                        </div>
+                                        <div class="oe_kanban_details">
+                                            <div t-if="record.name.raw_value"><field name="name"/></div>
+                                            <div t-if="record.fal_length.raw_value and record.fal_width.raw_value and record.fal_height.raw_value"><field name="fal_length"/> x <field name="fal_width"/> x <field name="fal_height"/></div>
+<!--                                             <div t-if="record.fal_old_ref.raw_value">Old Ref: <field name="fal_old_ref"/></div> -->
+                                            <!-- <b><div t-if="record.packaging_attr_id.raw_value"><field name="packaging_attr_id"/></div></b> -->
+                                            <!-- <div t-if="record.color_attr_id.raw_value"><field name="color_attr_id"/></div> -->
+                                            <!-- <div t-if="record.material_attr_id.raw_value"><field name="material_attr_id"/></div> -->
+                                            <!-- <div t-if="record.wishlist_price_ids.raw_value.length == 0">0 pcs - 0 <field name="currency_id"/></div>
+                                            <span t-if="record.wishlist_price_ids.raw_value.length gt 0">
+                                                <t t-foreach="record.wishlist_price_ids.raw_value" t-as="wish">
+                                                    <div>
+                                                    <t t-esc="wish.min_qty"/> pcs - <t t-esc="wish.price"/> <t t-esc="wish.currency_id"/>
+                                                    </div>
+                                                </t>
+                                            </span> -->
+                                        </div>
+                                    </div>
+                                </t>
+                            </templates>
+                        </kanban>
+                        <tree string="Lead Lines">
+                            <field name="product_id"/>
+                            <field name="name"/>
+                            <!-- <field name="fal_length"/>
+                            <field name="fal_length_uom_id"/>
+                            <field name="fal_width"/>
+                            <field name="fal_width_uom_id"/>
+                            <field name="fal_height"/>
+                            <field name="fal_height_uom_id"/> -->
+                            <!-- <field name="fal_old_ref"/> -->
+                        </tree>
+                        <form string="Lead Line">
+                            <group>
+                                <group>
+                                    <field name="product_id"/>
+                                    <field name="name"/>
+                                    <label for="fal_length"/>
+                                    <div class="o_row">
+                                        <field name="fal_length" readonly="1"/>
+                                        <field name="fal_length_uom_id" readonly="1"/>
+                                    </div>
+                                    <label for="fal_width"/>
+                                    <div class="o_row">
+                                        <field name="fal_width" readonly="1"/>
+                                        <field name="fal_width_uom_id" readonly="1"/>
+                                    </div>
+                                    <label for="fal_height"/>
+                                    <div class="o_row">
+                                        <field name="fal_height" readonly="1"/>
+                                        <field name="fal_height_uom_id" readonly="1"/>
+                                    </div>
+                                    <!-- <field name="fal_old_ref" readonly="1"/> -->
+                                    <field name="packaging_attr_id"/>
+                                    <field name="color_attr_id"/>
+                                    <field name="material_attr_id"/>
+                                    <field name="remark_attr_id"/>
+                                </group>
+                                <group>
+                                    <field name="image" widget="image" class="oe_avatar" nolabel="1"/>
+                                </group>
+                                <field name="wishlist_price_ids">
+                                    <tree string="Price List Items">
+                                        <field name="min_qty"/>
+                                        <field name="product_uom_id"/>
+                                        <field name="currency_id"/>
+                                        <field name="price"/>
+                                    </tree>
+                                </field>
+                            </group>
+                        </form>
+                    </field>
+                </page>
+            </page>
+        </field>
+    </record>
+
+    <!-- wishlist number -->
+    <record id="fal_opportunity_in_wishlist_number" model="ir.ui.view">
+        <field name="name">fal_opportunity_in_wishlist_number</field>
+        <field name="model">crm.lead</field>
+        <field name="type">form</field>
+        <field name="inherit_id" ref="crm.crm_case_form_view_oppor"/>
+        <field name="arch" type="xml">
+            <field name="partner_id" position="before">
+                <field name="fal_wishlist_number" placeholder="...wishlist number"/>
+            </field>
+        </field>
+    </record>
+</odoo>

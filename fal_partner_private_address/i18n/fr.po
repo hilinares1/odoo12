@@ -1,0 +1,56 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* fal_partner_private_address
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-07-11 09:42+0000\n"
+"PO-Revision-Date: 2018-08-07 14:11+0700\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Language: fr\n"
+"X-Generator: Poedit 2.0.8\n"
+
+#. module: fal_partner_private_address
+#: model:ir.ui.view,arch_db:fal_partner_private_address.view_partner_form_fal_private_address
+msgid ""
+"<span style=\"color:red;\">Warning: You are creating a private contact partner. </span>\n"
+"                        <br/>\n"
+"                        <span style=\"color:red;\">Private contacts will only showed in private contacts menu (Group Access Private Address)</span>"
+msgstr ""
+"<span style=\"color:red;\">Avertissement: Vous créez un contact privé de partenaire. </span>\n"
+"                        <br/>\n"
+"                        <span style=\"color:red;\">Contacts privés seront montrés dans le menu de contacts privés (Groupe d'acces Adresse privée)</span>"
+
+#. module: fal_partner_private_address
+#: model:ir.actions.act_window,help:fal_partner_private_address.action_partner_private_contact_form
+msgid "Click to add a contact in your address book."
+msgstr "Cliquer pour ajouter un contact dans le carnet d'adresses."
+
+#. module: fal_partner_private_address
+#: model:ir.ui.menu,name:fal_partner_private_address.fal_res_partner_menu_contacts
+msgid "Contacts"
+msgstr "Contacts"
+
+#. module: fal_partner_private_address
+#: model:ir.actions.act_window,help:fal_partner_private_address.action_partner_private_contact_form
+msgid ""
+"Odoo helps you easily track all activities related to\n"
+"                a customer: discussions, history of business opportunities,\n"
+"                documents, etc."
+msgstr ""
+"Odoo vous aide à suivre toutes les activités liées à un client :\n"
+"discussions et historique, historique des opportunités d'affaires, \n"
+"documents, etc."
+
+#. module: fal_partner_private_address
+#: model:ir.actions.act_window,name:fal_partner_private_address.action_partner_private_contact_form
+#: model:ir.ui.menu,name:fal_partner_private_address.fal_menu_private_contacts
+msgid "Private Contacts"
+msgstr "Contacts privés"

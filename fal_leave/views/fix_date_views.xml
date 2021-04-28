@@ -1,0 +1,75 @@
+<odoo>
+	<record id="fal_fix_date_form" model="ir.ui.view">
+        <field name="name">fal.fix.date.form</field>
+        <field name="model">fal.fix.date</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="leave_auto_create"  string="Validate / Create Leave" type='object' attrs="{'invisible': [('state','=','validate')]}"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,validate"/>
+                </header>
+                <group>
+                    <group>
+                        <field name="name"/>
+                        <field name="fal_days"/>
+                        <field name="resource_calendar_id"/>
+                        <field name="holiday_status_id"/>
+                    </group>
+                </group>
+                <notebook>
+                    <page string="Detail Fix Date">
+                        <field name="fal_fix_date_line_ids">
+                            <form>
+                                <group>
+                                    <label for="fal_date_from" string="Duration"/>
+                                    <div>
+                                        <field name="fal_date_from" class="oe_inline" required="1"/> -
+                                        <field name="fal_date_to" class="oe_inline" required="1"/>
+                                        <field name="fal_opening_date" invisible="1"/>
+                                        <field name="fal_ending_date" invisible="1"/>
+                                    </div>
+                                </group>
+                            </form>
+                            <tree>
+                                <field name="fal_date_from"/>
+                                <field name="fal_date_to"/>
+                                <field name="fal_opening_date" invisible="1"/>
+                                <field name="fal_ending_date" invisible="1"/>
+                            </tree>
+                        </field>
+                    </page>
+                </notebook>
+            </form>
+        </field>
+    </record>
+
+    <record id="fal_fix_date_tree" model="ir.ui.view">
+        <field name="name">fal.fix.date.tree</field>
+        <field name="model">fal.fix.date</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="resource_calendar_id"/>
+                <field name="holiday_status_id"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_fal_fix_date" model="ir.actions.act_window">
+        <field name="name">Fix Date</field>
+        <field name="res_model">fal.fix.date</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+          <p class="oe_view_nocontent_create">
+            Click to create an fixed date leave.
+          </p>
+        </field>
+    </record>
+
+    <menuitem action="action_fal_fix_date" id="menu_fal_fix_date"
+        parent="hr.menu_human_resources_configuration" sequence="11"/>
+    <menuitem id="menu_hr_holidays_fix_date_fal" name="Fix Date" parent="hr_holidays.menu_hr_holidays_configuration"
+        sequence="100" groups="hr.group_hr_manager" action="action_fal_fix_date"/>
+</odoo>

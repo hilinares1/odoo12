@@ -1,0 +1,26 @@
+<odoo>
+    <template id="search_template_groupby">
+        <a t-if="options.get('groupby')" type="button" class="dropdown-toggle account_groupby" data-toggle="dropdown">
+            <span class="fa fa-folder-open"/> Group By
+        </a>
+        <div class="dropdown-menu o_filters_menu" role="menu">
+            <div t-if="options.get('groupby_ids') != None" class="o_account_report_search" role="menuitem">
+                <b>Group By</b><br />
+                <select class="js_account_groupby_auto_complete o_account_report_select" data-filter="move_line_fields" >
+                    <t t-foreach="move_line_fields" t-as="a">
+                        <option t-att-value="a[0]"><t t-esc="a[1]" /></option>
+                    </t>
+                </select>
+            </div>
+            <div class="dropdown-divider" role="separator"></div>
+        </div>
+    </template>
+
+    <template id="search_groupby" inherit_id="account_reports.search_template">
+        <xpath expr="." position="inside">
+            <div class="btn-group o_dropdown" t-if="options.get('groupby')">
+            <t t-call="fal_account_report_groupby.search_template_groupby"/>
+        </div>
+        </xpath>
+    </template>
+</odoo>

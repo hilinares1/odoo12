@@ -1,0 +1,656 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* fal_project_budget
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-04-03 10:08+0000\n"
+"PO-Revision-Date: 2018-04-03 17:46+0700\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: fr\n"
+"X-Generator: Poedit 2.0.6\n"
+
+#. module: fal_project_budget
+#: model:ir.model.fields,field_description:fal_project_budget.field_fal_project_budget_line_percentage
+msgid "Achievement"
+msgstr "Avancement"
+
+#. module: fal_project_budget
+#: model:ir.model.fields,field_description:fal_project_budget.field_fal_project_budget_active
+msgid "Active"
+msgstr "Actif/ve"
+
+#. module: fal_project_budget
+#: model:ir.model,name:fal_project_budget.model_account_analytic_account
+#: model:ir.model.fields,field_description:fal_project_budget.field_fal_project_budget_project_id
+msgid "Analytic Account"
+msgstr "Compte analytique"
+
+#. module: fal_project_budget
+#: model:ir.ui.view,arch_db:fal_project_budget.view_account_analytic_account_tree_falparac
+msgid "Analytic account"
+msgstr "Compte analytique"
+
+#. module: fal_project_budget
+#: model:ir.ui.view,arch_db:fal_project_budget.fal_project_budget_view_form
+msgid "Approve"
+msgstr "Approuver"
+
+#. module: fal_project_budget
+#: model:ir.ui.view,arch_db:fal_project_budget.fal_project_budget_fill_t0_wizard_form
+msgid "Are you sure to Fill T0 Value?"
+msgstr "Are you sure to Fill T0 Value?"
+
+#. module: fal_project_budget
+#: model:ir.ui.view,arch_db:fal_project_budget.view_fal_project_budget_search
+msgid "Budget"
+msgstr "Budget"
+
+#. module: fal_project_budget
+#: model:ir.ui.view,arch_db:fal_project_budget.fal_project_budget_view_form
+msgid "Budget Lines"
+msgstr "Lignes de budget"
+
+#. module: fal_project_budget
+#: model:ir.model.fields,field_description:fal_project_budget.field_fal_project_budget_line_general_budget_id
+msgid "Budgetary Position"
+msgstr "Poste budgétaire"
+
+#. module: fal_project_budget
+#: model:ir.model.fields,field_description:fal_project_budget.field_fal_project_budget_line_account_id
+msgid "Account"
+msgstr "Compte"
+
+#. module: fal_project_budget
+#: model:ir.ui.view,arch_db:fal_project_budget.fal_project_budget_fill_t0_wizard_form
+#: model:ir.ui.view,arch_db:fal_project_budget.fal_project_budget_revision_wizard_form
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: fal_project_budget
+#: model:ir.ui.view,arch_db:fal_project_budget.fal_project_budget_view_form
+msgid "Cancel Budget"
+msgstr "Annuler le budget"
+
+#. module: fal_project_budget
+#: selection:fal.project.budget,state:0
+msgid "Cancelled"
+msgstr "Annulé"
+
+#. module: fal_project_budget
+#: model:ir.actions.act_window,name:fal_project_budget.action_account_analytic_account_tree2
+msgid "Chart of Analytic Accounts"
+msgstr "Plan comptable analytiques"
+
+#. module: fal_project_budget
+#: model:ir.model.fields,field_description:fal_project_budget.field_fal_project_budget_child_ids
+msgid "Child Project Budget"
+msgstr "Budget projet enfant"
+
+#. module: fal_project_budget
+#: model:ir.model.fields,field_description:fal_project_budget.field_fal_project_budget_tags_child_ids
+msgid "Child Project Budget Tags"
+msgstr "Tag budget projet enfant"
+
+#. module: fal_project_budget
+#: model:ir.actions.act_window,help:fal_project_budget.action_account_analytic_account_tree2
+msgid "Click to add a new analytic account."
+msgstr "Click to add a new analytic account."
+
+#. module: fal_project_budget
+#: model:ir.model.fields,field_description:fal_project_budget.field_fal_project_budget_company_id
+#: model:ir.model.fields,field_description:fal_project_budget.field_fal_project_budget_line_company_id
+msgid "Company"
+msgstr "Société"
+
+#. module: fal_project_budget
+#: model:ir.ui.view,arch_db:fal_project_budget.fal_project_budget_view_form
+msgid "Confirm"
+msgstr "Confirmer"
+
+#. module: fal_project_budget
+#: selection:fal.project.budget,state:0
+msgid "Confirmed"
+msgstr "Confirmé"
+
+#. module: fal_project_budget
+#: model:ir.model.fields,field_description:fal_project_budget.field_fal_project_budget_create_uid
+#: model:ir.model.fields,field_description:fal_project_budget.field_fal_project_budget_fill_t0_wizard_create_uid
+#: model:ir.model.fields,field_description:fal_project_budget.field_fal_project_budget_line_create_uid
+#: model:ir.model.fields,field_description:fal_project_budget.field_fal_project_budget_revision_wizard_create_uid
+#: model:ir.model.fields,field_description:fal_project_budget.field_fal_project_budget_tags_create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: fal_project_budget
+#: model:ir.model.fields,field_description:fal_project_budget.field_fal_project_budget_create_date
+#: model:ir.model.fields,field_description:fal_project_budget.field_fal_project_budget_fill_t0_wizard_create_date
+#: model:ir.model.fields,field_description:fal_project_budget.field_fal_project_budget_line_create_date
+#: model:ir.model.fields,field_description:fal_project_budget.field_fal_project_budget_revision_wizard_create_date
+#: model:ir.model.fields,field_description:fal_project_budget.field_fal_project_budget_tags_create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: fal_project_budget
+#: model:ir.model.fields,field_description:fal_project_budget.field_fal_project_budget_line_currency_id
+msgid "Currency"
+msgstr "Devise"
+
+#. module: fal_project_budget
+#: model:ir.model.fields,field_description:fal_project_budget.field_fal_project_budget_project_partner_id
+msgid "Customer"
+msgstr "Client"
+
+#. module: fal_project_budget
+#: model:ir.actions.act_window,help:fal_project_budget.fal_project_budget_tags_action
+msgid "Define Project Budget Tags in here!"
+msgstr "Définir des tags budget projet ici!"
+
+#. module: fal_project_budget
+#: model:ir.actions.act_window,help:fal_project_budget.view_fal_project_budget_action
+msgid "Define Project Budget in here!"
+msgstr "Définir un budget projet ici!"
+
+#. module: fal_project_budget
+#: model:ir.model.fields,field_description:fal_project_budget.field_fal_project_budget_display_name
+#: model:ir.model.fields,field_description:fal_project_budget.field_fal_project_budget_fill_t0_wizard_display_name
+#: model:ir.model.fields,field_description:fal_project_budget.field_fal_project_budget_line_display_name
+#: model:ir.model.fields,field_description:fal_project_budget.field_fal_project_budget_revision_wizard_display_name
+#: model:ir.model.fields,field_description:fal_project_budget.field_fal_project_budget_tags_display_name
+msgid "Display Name"
+msgstr "Nom à afficher"
+
+#. module: fal_project_budget
+#: selection:fal.project.budget,state:0
+msgid "Done"
+msgstr "Terminé"
+
+#. module: fal_project_budget
+#: selection:fal.project.budget,state:0
+#: model:ir.ui.view,arch_db:fal_project_budget.view_fal_project_budget_search
+msgid "Draft"
+msgstr "Brouillon"
+
+#. module: fal_project_budget
+#: model:ir.ui.view,arch_db:fal_project_budget.view_fal_project_budget_search
+msgid "Draft Budgets"
+msgstr "Budgets brouillons"
+
+#. module: fal_project_budget
+#: model:ir.model.fields,field_description:fal_project_budget.field_fal_project_budget_line_employee_id
+msgid "Employee"
+msgstr "Employé"
+
+#. module: fal_project_budget
+#: model:ir.model.fields,field_description:fal_project_budget.field_fal_project_budget_date_to
+#: model:ir.model.fields,field_description:fal_project_budget.field_fal_project_budget_line_date_to
+msgid "End Date"
+msgstr "Date de fin"
+
+#. module: fal_project_budget
+#: code:addons/fal_project_budget/models/fal_project_budget.py:71
+#: constraint:fal.project.budget.tags:0
+#, python-format
+msgid "Error! You cannot create recursive hierarchy"
+msgstr "Erreur! Vous ne pouvez pas créer une hiérarchie récursive. "
+
+#. module: fal_project_budget
+#: model:ir.actions.act_window,name:fal_project_budget.fal_project_budget_fill_t0_wizard_action
+#: model:ir.ui.view,arch_db:fal_project_budget.fal_project_budget_fill_t0_wizard_form
+msgid "Fill T0"
+msgstr "Fill T0"
+
+#. module: fal_project_budget
+#: model:ir.model.fields,field_description:fal_project_budget.field_fal_project_budget_fill_t0_wizard_id
+#: model:ir.model.fields,field_description:fal_project_budget.field_fal_project_budget_id
+#: model:ir.model.fields,field_description:fal_project_budget.field_fal_project_budget_line_id
+#: model:ir.model.fields,field_description:fal_project_budget.field_fal_project_budget_revision_wizard_id
+#: model:ir.model.fields,field_description:fal_project_budget.field_fal_project_budget_tags_id
+msgid "ID"
+msgstr "ID"
+
+#. module: fal_project_budget
+#: model:ir.model.fields,field_description:fal_project_budget.field_fal_project_budget_is_t0
+msgid "Is T0"
+msgstr "Est T0"
+
+#. module: fal_project_budget
+#: model:ir.model.fields,field_description:fal_project_budget.field_fal_project_budget___last_update
+#: model:ir.model.fields,field_description:fal_project_budget.field_fal_project_budget_fill_t0_wizard___last_update
+#: model:ir.model.fields,field_description:fal_project_budget.field_fal_project_budget_line___last_update
+#: model:ir.model.fields,field_description:fal_project_budget.field_fal_project_budget_revision_wizard___last_update
+#: model:ir.model.fields,field_description:fal_project_budget.field_fal_project_budget_tags___last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: fal_project_budget
+#: model:ir.model.fields,field_description:fal_project_budget.field_fal_project_budget_fill_t0_wizard_write_uid
+#: model:ir.model.fields,field_description:fal_project_budget.field_fal_project_budget_line_write_uid
+#: model:ir.model.fields,field_description:fal_project_budget.field_fal_project_budget_revision_wizard_write_uid
+#: model:ir.model.fields,field_description:fal_project_budget.field_fal_project_budget_tags_write_uid
+#: model:ir.model.fields,field_description:fal_project_budget.field_fal_project_budget_write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: fal_project_budget
+#: model:ir.model.fields,field_description:fal_project_budget.field_fal_project_budget_fill_t0_wizard_write_date
+#: model:ir.model.fields,field_description:fal_project_budget.field_fal_project_budget_line_write_date
+#: model:ir.model.fields,field_description:fal_project_budget.field_fal_project_budget_revision_wizard_write_date
+#: model:ir.model.fields,field_description:fal_project_budget.field_fal_project_budget_tags_write_date
+#: model:ir.model.fields,field_description:fal_project_budget.field_fal_project_budget_write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: fal_project_budget
+#: model:ir.model.fields,field_description:fal_project_budget.field_fal_project_budget_project_budget_latest_id
+msgid "Latest Project Budget"
+msgstr "Dernier Budget Projet"
+
+#. module: fal_project_budget
+#: model:ir.actions.act_window,help:fal_project_budget.view_fal_project_budget_revision_action
+msgid "List of Revisioned Project Budget"
+msgstr "Liste de projet budget révisé"
+
+#. module: fal_project_budget
+#: model:ir.ui.view,arch_db:fal_project_budget.fal_project_budget_view_form
+msgid "Lock as T0 budget"
+msgstr "Verrouiller comme budget T0"
+
+#. module: fal_project_budget
+#: model:ir.model.fields,field_description:fal_project_budget.field_fal_project_budget_line_name
+#: model:ir.model.fields,field_description:fal_project_budget.field_fal_project_budget_tags_name
+msgid "Name"
+msgstr "Nom"
+
+#. module: fal_project_budget
+#: model:ir.ui.view,arch_db:fal_project_budget.fal_project_budget_view_form
+msgid "New Budget Version"
+msgstr "Nouvelle version Budget"
+
+#. module: fal_project_budget
+#: model:ir.model.fields,field_description:fal_project_budget.field_fal_project_budget_line_number
+#: model:ir.model.fields,field_description:fal_project_budget.field_fal_project_budget_number
+msgid "Number"
+msgstr "Numéro"
+
+#. module: fal_project_budget
+#: model:ir.model.fields,field_description:fal_project_budget.field_fal_project_budget_line_paid_date
+msgid "Paid Date"
+msgstr "Date de paiement"
+
+#. module: fal_project_budget
+#: model:ir.model.fields,field_description:fal_project_budget.field_fal_project_budget_parent_id
+msgid "Parent Project Budget"
+msgstr "Budget projet parent"
+
+#. module: fal_project_budget
+#: model:ir.model.fields,field_description:fal_project_budget.field_fal_project_budget_tags_parent_id
+msgid "Parent Project Budget Tags"
+msgstr "Tags budget projet parent"
+
+#. module: fal_project_budget
+#: model:ir.model.fields,field_description:fal_project_budget.field_fal_project_budget_line_partner_id
+msgid "Partner"
+msgstr "Partenaire"
+
+#. module: fal_project_budget
+#: model:ir.ui.view,arch_db:fal_project_budget.fal_project_budget_view_form
+msgid "Period"
+msgstr "Période"
+
+#. module: fal_project_budget
+#: model:ir.model.fields,field_description:fal_project_budget.field_fal_project_budget_line_planned_amount
+#: model:ir.ui.view,arch_db:fal_project_budget.fal_project_budget_view_form
+msgid "Planned Amount"
+msgstr "Budget"
+
+#. module: fal_project_budget
+#: model:ir.model.fields,field_description:fal_project_budget.field_fal_project_budget_line_product_id
+msgid "Product"
+msgstr "Article"
+
+#. module: fal_project_budget
+#: model:ir.model.fields,field_description:fal_project_budget.field_fal_project_budget_line_fal_product_category_view1_id
+msgid "Product Category LV1"
+msgstr "Catégorie d'articles LV1"
+
+#. module: fal_project_budget
+#: model:ir.model.fields,field_description:fal_project_budget.field_fal_project_budget_line_fal_product_category_view2_id
+msgid "Product Category LV2"
+msgstr "Catégorie d'articles LV2"
+
+#. module: fal_project_budget
+#: model:ir.model.fields,field_description:fal_project_budget.field_fal_project_budget_line_fal_product_category_id
+msgid "Product Category LV3"
+msgstr "Catégorie d'articles LV3"
+
+#. module: fal_project_budget
+#: model:ir.model.fields,field_description:fal_project_budget.field_fal_project_budget_line_project_id
+msgid "Project"
+msgstr "Projet"
+
+#. module: fal_project_budget
+#: code:addons/fal_project_budget/models/fal_project_budget.py:322
+#: code:addons/fal_project_budget/wizard/fal_project_budget_revision_wizard.py:20
+#: model:ir.model.fields,field_description:fal_project_budget.field_fal_project_budget_line_fal_project_budget_id
+#: model:ir.ui.menu,name:fal_project_budget.menu_fal_project_budget_view
+#: model:ir.ui.view,arch_db:fal_project_budget.fal_project_budget_tree
+#: model:ir.ui.view,arch_db:fal_project_budget.fal_project_budget_view_form
+#: model:ir.ui.view,arch_db:fal_project_budget.view_fal_project_budget_search
+#, python-format
+msgid "Project Budget"
+msgstr "Budget projet"
+
+#. module: fal_project_budget
+#: model:ir.ui.view,arch_db:fal_project_budget.fal_project_budget_fill_t0_wizard_form
+msgid "Project Budget Fill T0"
+msgstr "Project Budget Fill T0"
+
+#. module: fal_project_budget
+#: model:ir.model.fields,field_description:fal_project_budget.field_fal_project_budget_child_complete_ids
+msgid "Project Budget Hierarchy"
+msgstr "Hiérarchie budget projet"
+
+#. module: fal_project_budget
+#: model:ir.model.fields,field_description:fal_project_budget.field_fal_project_budget_project_budget_history_ids
+#: model:ir.ui.view,arch_db:fal_project_budget.fal_project_budget_view_form
+msgid "Project Budget History"
+msgstr "Historique budget projet"
+
+#. module: fal_project_budget
+#: model:ir.ui.menu,name:fal_project_budget.menu_act_fal_project_budget_lines_view_project_menu
+msgid "Project Budget Line"
+msgstr "Ligne budget projet"
+
+#. module: fal_project_budget
+#: model:ir.model.fields,field_description:fal_project_budget.field_fal_project_budget_fal_project_budget_line_ids
+#: model:ir.ui.view,arch_db:fal_project_budget.fal_project_budget_view_form
+#: model:ir.ui.view,arch_db:fal_project_budget.view_fal_project_budget_line_form
+#: model:ir.ui.view,arch_db:fal_project_budget.view_fal_project_budget_line_search
+#: model:ir.ui.view,arch_db:fal_project_budget.view_fal_project_budget_line_tree
+msgid "Project Budget Lines"
+msgstr "Lignes budget projet"
+
+#. module: fal_project_budget
+#: model:ir.model.fields,field_description:fal_project_budget.field_fal_project_budget_name
+#: model:ir.ui.view,arch_db:fal_project_budget.fal_project_budget_view_form
+msgid "Project Budget Name"
+msgstr "Nom budget projet"
+
+#. module: fal_project_budget
+#: model:ir.actions.act_window,name:fal_project_budget.fal_project_budget_revision_wizard_action
+#: model:ir.ui.menu,name:fal_project_budget.menu_project_budget_revision
+#: model:ir.ui.view,arch_db:fal_project_budget.fal_project_budget_revision_wizard_form
+msgid "Project Budget Revision"
+msgstr "Révision budget projet"
+
+#. module: fal_project_budget
+#: model:ir.model.fields,field_description:fal_project_budget.field_fal_project_budget_fal_budget_tags_ids
+#: model:ir.model.fields,field_description:fal_project_budget.field_fal_project_budget_line_fal_budget_tags_ids
+#: model:ir.ui.view,arch_db:fal_project_budget.fal_project_budget_tags_view_form
+#: model:ir.ui.view,arch_db:fal_project_budget.fal_project_budget_tags_view_search
+#: model:ir.ui.view,arch_db:fal_project_budget.fal_project_budget_tags_view_tree
+msgid "Project Budget Tags"
+msgstr "Tags budget projet"
+
+#. module: fal_project_budget
+#: model:ir.actions.act_window,name:fal_project_budget.act_fal_project_budget_lines_view
+#: model:ir.actions.act_window,name:fal_project_budget.view_fal_project_budget_action
+#: model:ir.ui.menu,name:fal_project_budget.menu_act_fal_project_budget_lines_view
+#: model:ir.ui.menu,name:fal_project_budget.menu_fal_project_budget_view_project_menu
+msgid "Project Budgets"
+msgstr "Budgets projet"
+
+#. module: fal_project_budget
+#: model:ir.actions.act_window,name:fal_project_budget.view_fal_project_budget_revision_action
+msgid "Project Budgets Revision"
+msgstr "Révision budget projet"
+
+#. module: fal_project_budget
+#: model:ir.actions.act_window,name:fal_project_budget.fal_project_budget_tags_action
+#: model:ir.ui.menu,name:fal_project_budget.menu_fal_project_budget_tags
+msgid "Project Budgets Tags"
+msgstr "Tags budget projet"
+
+#. module: fal_project_budget
+#: model:ir.ui.menu,name:fal_project_budget.menu_projects_budget_fal
+msgid "Project Control"
+msgstr "Contrôle projet"
+
+#. module: fal_project_budget
+#: model:ir.ui.menu,name:fal_project_budget.menu_project_control_configuration
+msgid "Project Control Configuration"
+msgstr "Configuration contrôle projet"
+
+#. module: fal_project_budget
+#: model:ir.ui.menu,name:fal_project_budget.menu_project_template_tags
+msgid "Project Tags"
+msgstr "Tag projet"
+
+#. module: fal_project_budget
+#: model:ir.ui.menu,name:fal_project_budget.menu_project_structure
+msgid "Project structure"
+msgstr "Structure projet"
+
+#. module: fal_project_budget
+#: model:ir.model.fields,field_description:fal_project_budget.field_fal_project_budget_line_product_qty
+msgid "Quantity"
+msgstr "Quantité"
+
+#. module: fal_project_budget
+#: model:ir.model.fields,field_description:fal_project_budget.field_fal_project_budget_line_practical_amount
+#: model:ir.ui.view,arch_db:fal_project_budget.fal_project_budget_view_form
+msgid "Realized Amount"
+msgstr "Réalisé"
+
+#. module: fal_project_budget
+#: model:ir.model.fields,field_description:fal_project_budget.field_fal_project_budget_line_fal_practical_amount_currency
+#: model:ir.ui.view,arch_db:fal_project_budget.fal_project_budget_view_form
+msgid "Realized Amount Currency"
+msgstr "Devise"
+
+#. module: fal_project_budget
+#: model:ir.model.fields,field_description:fal_project_budget.field_fal_project_budget_line_reference
+msgid "Reference"
+msgstr "Référence"
+
+#. module: fal_project_budget
+#: selection:fal.project.budget,type:0 selection:fal.project.budget.tags,type:0
+msgid "Regular"
+msgstr "Régulier"
+
+#. module: fal_project_budget
+#: model:ir.ui.view,arch_db:fal_project_budget.fal_project_budget_view_form
+msgid "Reset to Draft"
+msgstr "Revenir à l'état \"Brouillon\""
+
+#. module: fal_project_budget
+#: model:ir.model.fields,field_description:fal_project_budget.field_fal_project_budget_responsible_id
+msgid "Responsible"
+msgstr "Responsable"
+
+#. module: fal_project_budget
+#: model:ir.ui.view,arch_db:fal_project_budget.fal_project_budget_revision_wizard_form
+msgid "Revised"
+msgstr "Révisé"
+
+#. module: fal_project_budget
+#: model:ir.ui.view,arch_db:fal_project_budget.fal_project_budget_revision_wizard_form
+msgid "Revised the current budget?"
+msgstr "Revisé le budget courant?"
+
+#. module: fal_project_budget
+#: selection:fal.project.budget,type:0
+msgid "Root"
+msgstr "Racine"
+
+#. module: fal_project_budget
+#: model:ir.model.fields,field_description:fal_project_budget.field_fal_project_budget_tags_sequence
+msgid "Sequence"
+msgstr "Séquence"
+
+#. module: fal_project_budget
+#: model:ir.model.fields,field_description:fal_project_budget.field_fal_project_budget_date_from
+#: model:ir.model.fields,field_description:fal_project_budget.field_fal_project_budget_line_date_from
+msgid "Start Date"
+msgstr "Date de début"
+
+#. module: fal_project_budget
+#: model:ir.model.fields,field_description:fal_project_budget.field_fal_project_budget_line_start_date
+msgid "Start Date for Time"
+msgstr "Début heures"
+
+#. module: fal_project_budget
+#: model:ir.model.fields,field_description:fal_project_budget.field_fal_project_budget_state
+msgid "Status"
+msgstr "État"
+
+#. module: fal_project_budget
+#: model:ir.ui.view,arch_db:fal_project_budget.fal_project_budget_view_form
+msgid "Sub Budget"
+msgstr "Sous-budget"
+
+#. module: fal_project_budget
+#: model:ir.model.fields,field_description:fal_project_budget.field_fal_project_budget_line_t0_planned_amount
+#: model:ir.ui.view,arch_db:fal_project_budget.fal_project_budget_view_form
+msgid "T0 Planned Amount"
+msgstr "T0 Montant prévu"
+
+#. module: fal_project_budget
+#: model:ir.model.fields,field_description:fal_project_budget.field_account_analytic_account_tt_t0_project_budget_id
+#: model:ir.model.fields,field_description:fal_project_budget.field_project_project_tt_t0_project_budget_id
+msgid "T0 Project Budget"
+msgstr "T0 Budget projet"
+
+#. module: fal_project_budget
+#: code:addons/fal_project_budget/models/fal_project_budget.py:397
+#, python-format
+msgid "The Budget '%s' has no accounts!"
+msgstr "Le budget '%s' n'a pas de code!"
+
+#. module: fal_project_budget
+#: model:ir.actions.act_window,help:fal_project_budget.action_account_analytic_account_tree2
+msgid ""
+"The normal chart of accounts has a structure defined by the\n"
+"                legal requirement of the country. The analytic chart of\n"
+"                accounts structure should reflect your own business needs in\n"
+"                term of costs/revenues reporting."
+msgstr ""
+"The normal chart of accounts has a structure defined by the\n"
+"                legal requirement of the country. The analytic chart of\n"
+"                accounts structure should reflect your own business needs in\n"
+"                term of costs/revenues reporting."
+
+#. module: fal_project_budget
+#: model:ir.model.fields,field_description:fal_project_budget.field_fal_project_budget_line_theoritical_amount
+#: model:ir.ui.view,arch_db:fal_project_budget.fal_project_budget_view_form
+msgid "Theoretical Amount"
+msgstr "Montant théorique"
+
+#. module: fal_project_budget
+#: model:ir.actions.act_window,help:fal_project_budget.action_account_analytic_account_tree2
+msgid ""
+"They are usually structured by contracts, projects, products or\n"
+"                departements. Most of the Odoo operations (invoices,\n"
+"                timesheets, expenses, etc) generate analytic entries on the\n"
+"                related account."
+msgstr ""
+"They are usually structured by contracts, projects, products or\n"
+"                departements. Most of the Odoo operations (invoices,\n"
+"                timesheets, expenses, etc) generate analytic entries on the\n"
+"                related account."
+
+#. module: fal_project_budget
+#: model:ir.ui.view,arch_db:fal_project_budget.view_fal_project_budget_search
+msgid "To Approve"
+msgstr "À approuver"
+
+#. module: fal_project_budget
+#: model:ir.ui.view,arch_db:fal_project_budget.view_fal_project_budget_search
+msgid "To Approve Budgets"
+msgstr "Budgets à approuver"
+
+#. module: fal_project_budget
+#: model:ir.model.fields,field_description:fal_project_budget.field_fal_project_budget_total_budget
+msgid "Total Budget"
+msgstr "Budget total"
+
+#. module: fal_project_budget
+#: model:ir.model.fields,field_description:fal_project_budget.field_fal_project_budget_total_qty
+msgid "Total Qty"
+msgstr "Qté totale"
+
+#. module: fal_project_budget
+#: model:ir.model.fields,field_description:fal_project_budget.field_fal_project_budget_tags_type
+#: model:ir.model.fields,field_description:fal_project_budget.field_fal_project_budget_type
+msgid "Type"
+msgstr "Type"
+
+#. module: fal_project_budget
+#: model:ir.model.fields,field_description:fal_project_budget.field_fal_project_budget_line_product_unit_price
+msgid "Unit Price"
+msgstr "Prix unitaire"
+
+#. module: fal_project_budget
+#: selection:fal.project.budget,state:0
+msgid "Validated"
+msgstr "Validé"
+
+#. module: fal_project_budget
+#: model:ir.model.fields,field_description:fal_project_budget.field_account_analytic_account_tt_validated_project_budget_id
+#: model:ir.model.fields,field_description:fal_project_budget.field_project_project_tt_validated_project_budget_id
+msgid "Validated Project Budget"
+msgstr "Budget projet validé"
+
+#. module: fal_project_budget
+#: model:ir.model.fields,field_description:fal_project_budget.field_fal_project_budget_version
+msgid "Version"
+msgstr "Version"
+
+#. module: fal_project_budget
+#: selection:fal.project.budget,type:0 selection:fal.project.budget.tags,type:0
+msgid "View"
+msgstr "Vue"
+
+#. module: fal_project_budget
+#: model:ir.model.fields,help:fal_project_budget.field_fal_project_budget_line_name
+msgid ""
+"Will automatically\n"
+"                            filled when you fill all Product,\n"
+"                            Partner and Planned Amount."
+msgstr ""
+"Will automatically\n"
+"                            filled when you fill all Product,\n"
+"                            Partner and Planned Amount."
+
+#. module: fal_project_budget
+#: model:ir.model,name:fal_project_budget.model_fal_project_budget
+msgid "fal.project.budget"
+msgstr "fal.project.budget"
+
+#. module: fal_project_budget
+#: model:ir.model,name:fal_project_budget.model_fal_project_budget_fill_t0_wizard
+msgid "fal.project.budget.fill.t0.wizard"
+msgstr "fal.project.budget.fill.t0.wizard"
+
+#. module: fal_project_budget
+#: model:ir.model,name:fal_project_budget.model_fal_project_budget_line
+msgid "fal.project.budget.line"
+msgstr "fal.project.budget.line"
+
+#. module: fal_project_budget
+#: model:ir.model,name:fal_project_budget.model_fal_project_budget_revision_wizard
+msgid "fal.project.budget.revision.wizard"
+msgstr "fal.project.budget.revision.wizard"
+
+#. module: fal_project_budget
+#: model:ir.model,name:fal_project_budget.model_fal_project_budget_tags
+msgid "fal.project.budget.tags"
+msgstr "fal.project.budget.tags"

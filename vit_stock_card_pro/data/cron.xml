@@ -1,0 +1,60 @@
+<odoo noupdate="1">
+
+        <!-- scheduler : process recalculate -->
+      <!--   <record forcecreate="True" model="ir.cron" id="process_recalculate_stock_card">
+            <field name="name">Recalculate Stock Card</field>
+            <field name="active">True</field>
+            <field name="user_id" ref="base.user_root"/>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="nextcall" eval="(DateTime.now() + timedelta(hours=24)).strftime('%Y-%m-%d 00:00:00')" />
+            <field name="numbercall">-1</field>
+            <field name="doall" eval="False"/>
+            <field name="model" eval="'vit.stock_card'"/>
+            <field name="function" eval="'cron_action_calculate'"/>
+            <field name="args" eval="'()'"/>
+        </record>  
+
+        <record forcecreate="True" model="ir.cron" id="process_recalculate_stock_summary">
+            <field name="name">Recalculate Stock Summary</field>
+            <field name="active">False</field>
+            <field name="user_id" ref="base.user_root"/>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="nextcall" eval="(DateTime.now() + timedelta(hours=24)).strftime('%Y-%m-%d 00:30:00')" />
+            <field name="numbercall">-1</field>
+            <field name="doall" eval="False"/>
+            <field name="model" eval="'vit.stock_summary'"/>
+            <field name="function" eval="'cron_action_calculate'"/>
+            <field name="args" eval="'()'"/>
+        </record>
+
+        <record forcecreate="True" model="ir.cron" id="process_recalculate_stock_summary_new">
+            <field name="name">Recalculate Stock Summary (New)</field>
+            <field name="active">True</field>
+            <field name="user_id" ref="base.user_root"/>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="nextcall" eval="(DateTime.now() + timedelta(hours=24)).strftime('%Y-%m-%d 00:30:00')" />
+            <field name="numbercall">-1</field>
+            <field name="doall" eval="False"/>
+            <field name="model" eval="'stock.summary.new'"/>
+            <field name="function" eval="'auto_calculate'"/>
+            <field name="args" eval="'()'"/>
+        </record>
+
+        <record forcecreate="True" model="ir.cron" id="process_send_email_stock_summary_new">
+            <field name="name">Send Email Stock Summary (New)</field>
+            <field name="active">True</field>
+            <field name="user_id" ref="base.user_root"/>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="nextcall" eval="(DateTime.now() + timedelta(hours=24)).strftime('%Y-%m-%d 00:30:00')" />
+            <field name="numbercall">-1</field>
+            <field name="doall" eval="False"/>
+            <field name="model" eval="'stock.summary.new'"/>
+            <field name="function" eval="'send_stock_summary_mail'"/>
+            <field name="args" eval="'()'"/>
+        </record> -->
+
+</odoo>

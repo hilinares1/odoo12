@@ -1,0 +1,151 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* fal_parent_account
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-08-14 04:03+0000\n"
+"PO-Revision-Date: 2018-08-31 10:38+0700\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: fr\n"
+"X-Generator: Poedit 2.1.1\n"
+
+#. module: fal_parent_account
+#: model:ir.model,name:fal_parent_account.model_account_account
+msgid "Account"
+msgstr "Compte"
+
+#. module: fal_parent_account
+#: selection:account.account,account_type:0
+#: model:ir.actions.act_window,name:fal_parent_account.fal_view_account_consolidation
+#: model:ir.ui.menu,name:fal_parent_account.menu_action_account_hierarchy
+msgid "Account Consolidation"
+msgstr "Consolidation de compte"
+
+#. module: fal_parent_account
+#: model:ir.ui.menu,name:fal_parent_account.menu_action_account_template_form_falparc
+msgid "Account Templates"
+msgstr "Modèles de compte"
+
+#. module: fal_parent_account
+#: selection:account.account,account_type:0
+#: selection:account.account.template,account_type:0
+msgid "Account View"
+msgstr "Account View"
+
+#. module: fal_parent_account
+#: model:ir.actions.act_window,help:fal_parent_account.fal_view_account_consolidation
+msgid ""
+"An account is part of a ledger allowing your company\n"
+"                to register all kinds of debit and credit transactions.\n"
+"                Companies present their annual accounts in two main parts: the\n"
+"                balance sheet and the income statement (profit and loss\n"
+"                account). The annual accounts of a company are required by law\n"
+"                to disclose a certain amount of information."
+msgstr "Un compte fait partie d'un livre permettant à votre société d'enregistrer toute sorte de transaction au débit ou au crédit. Les sociétés présentent leurs comptes annuels en 2 parties principales : le bilan et le compte de résultat (compte de perte et profit). Les comptes annuels d'une société sont requis par la loi afin de publier un certain nombre d'information."
+
+#. module: fal_parent_account
+#: selection:account.analytic.account,account_type:0
+#: model:ir.model,name:fal_parent_account.model_account_analytic_account
+msgid "Analytic Account"
+msgstr "Compte analytique"
+
+#. module: fal_parent_account
+#: selection:account.analytic.account,account_type:0
+msgid "Analytic View"
+msgstr "Vue analytique"
+
+#. module: fal_parent_account
+#: model:ir.model.fields,field_description:fal_parent_account.field_account_account_child_ids
+#: model:ir.model.fields,field_description:fal_parent_account.field_account_analytic_account_child_ids
+msgid "Child Accounts"
+msgstr "Child Accounts"
+
+#. module: fal_parent_account
+#: model:ir.model.fields,field_description:fal_parent_account.field_account_account_fal_consolidation_ids
+msgid "Child Consolidation Accounts"
+msgstr "Child Consolidation Accounts"
+
+#. module: fal_parent_account
+#: model:ir.actions.act_window,help:fal_parent_account.fal_view_account_consolidation
+msgid "Click to add an account consolidation."
+msgstr "Click to add an account consolidation."
+
+#. module: fal_parent_account
+#: model:ir.model.fields,field_description:fal_parent_account.field_account_account_fal_consolidation_id
+msgid "Consolidation Account"
+msgstr "Compte de consolidation"
+
+#. module: fal_parent_account
+#: constraint:account.account:0 constraint:account.analytic.account:0
+#: code:addons/fal_parent_account/models/account.py:124
+#: code:addons/fal_parent_account/models/account.py:247
+#, python-format
+msgid "Error! You cannot create recursive hierarchy"
+msgstr "Erreur! Vous ne pouvez pas créer une hiérarchie récursive"
+
+#. module: fal_parent_account
+#: model:ir.model.fields,field_description:fal_parent_account.field_account_account_complete_name
+#: model:ir.model.fields,field_description:fal_parent_account.field_account_analytic_account_complete_name
+msgid "Full Name"
+msgstr "Nom Complet"
+
+#. module: fal_parent_account
+#: model:ir.model.fields,help:fal_parent_account.field_account_analytic_account_account_type
+msgid ""
+"If you select the View Type, it means you won't         allow to create journal entries using that account.\n"
+"The         type 'Analytic account' stands for usual accounts         that you only want to use in accounting."
+msgstr ""
+"If you select the View Type, it means you won't         allow to create journal entries using that account.\n"
+"The         type 'Analytic account' stands for usual accounts         that you only want to use in accounting."
+
+#. module: fal_parent_account
+#: selection:account.account,account_type:0
+#: selection:account.account.template,account_type:0
+msgid "Normal Account"
+msgstr "Compte normal"
+
+#. module: fal_parent_account
+#: model:ir.model.fields,field_description:fal_parent_account.field_account_account_parent_id
+#: model:ir.model.fields,field_description:fal_parent_account.field_account_account_template_parent_id
+msgid "Parent Account"
+msgstr "Compte parent"
+
+#. module: fal_parent_account
+#: model:ir.model.fields,field_description:fal_parent_account.field_account_analytic_account_parent_id
+msgid "Parent Analytic Account"
+msgstr "Compte analytique parent"
+
+#. module: fal_parent_account
+#: model:ir.model.fields,field_description:fal_parent_account.field_account_account_fal_sequence_number
+msgid "Sequence Number"
+msgstr "Numéro de séquence"
+
+#. module: fal_parent_account
+#: model:ir.ui.menu,name:fal_parent_account.menu_action_account_tax_template_form_falparc
+msgid "Tax Templates"
+msgstr "Modèles de taxe"
+
+#. module: fal_parent_account
+#: model:ir.model,name:fal_parent_account.model_account_chart_template
+msgid "Templates for Account Chart"
+msgstr "Modèles pour le plan comptable"
+
+#. module: fal_parent_account
+#: model:ir.model,name:fal_parent_account.model_account_account_template
+msgid "Templates for Accounts"
+msgstr "Modèles pour les comptes"
+
+#. module: fal_parent_account
+#: model:ir.model.fields,field_description:fal_parent_account.field_account_account_account_type
+#: model:ir.model.fields,field_description:fal_parent_account.field_account_account_template_account_type
+#: model:ir.model.fields,field_description:fal_parent_account.field_account_analytic_account_account_type
+msgid "Type of Account"
+msgstr "Type de compte"

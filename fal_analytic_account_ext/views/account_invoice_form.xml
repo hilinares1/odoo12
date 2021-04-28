@@ -1,0 +1,23 @@
+<odoo>
+	<record id="account_invoice_form_ext" model="ir.ui.view">
+        <field name="name">account.invoice.analytic</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='account_analytic_id']" position="attributes">
+            	<attribute name="domain">['|',('company_id', '=', parent.company_id), ('company_id', '=', False)]</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="account_invoice_supplier_form_ext" model="ir.ui.view">
+        <field name="name">account.invoice.analytic.supplier</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_supplier_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='account_analytic_id']" position="attributes">
+            	<attribute name="domain">['|',('company_id', '=', parent.company_id), ('company_id', '=', False)]</attribute>
+            </xpath>
+        </field>
+    </record>
+</odoo>

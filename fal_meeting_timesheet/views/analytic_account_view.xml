@@ -1,0 +1,12 @@
+<odoo>
+	<record id="fal_hr_timesheet_line_form_ext" model="ir.ui.view">
+	    <field name="name">Meeting Timesheet</field>
+	    <field name="model">account.analytic.line</field>
+	    <field name="inherit_id" ref="hr_timesheet.hr_timesheet_line_form"/>
+	    <field name="arch" type="xml">
+	        <xpath expr="//field[@name='currency_id']" position="after">
+	            <field name="meeting_id" />
+	        </xpath>
+	    </field>
+	</record>
+</odoo>

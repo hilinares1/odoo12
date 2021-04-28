@@ -1,0 +1,26 @@
+<odoo>
+    <!-- draft number invoice -->
+    <record id="fal_sequence_in_draft_number" model="ir.ui.view">
+        <field name="name">fal_sequence_in_draft_number</field>
+        <field name="model">account.invoice</field>
+        <field name="type">form</field>
+        <field name="inherit_id" ref="account.invoice_form"/>
+        <field name="arch" type="xml">
+            <field name="partner_id" position="before">
+                <field name="fal_draft_number" placeholder="...draft number" readonly="1"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="fal_sequence_in_draft_number_supplier_invoice" model="ir.ui.view">
+        <field name="name">fal_sequence_in_draft_number_supplier_invoice</field>
+        <field name="model">account.invoice</field>
+        <field name="type">form</field>
+        <field name="inherit_id" ref="account.invoice_supplier_form"/>
+        <field name="arch" type="xml">
+            <field name="partner_id" position="before">
+                <field name="fal_draft_number" placeholder="...draft number" readonly="1"/>
+            </field>
+        </field>
+    </record>
+</odoo>

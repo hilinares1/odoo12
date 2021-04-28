@@ -1,0 +1,21 @@
+<odoo>
+    <data>
+        <record id="calendar_view_form_inherit_ext" model="ir.ui.view">
+            <field name="name">resource.calendar.view.form</field>
+            <field name="model">resource.calendar</field>
+            <field name="inherit_id" ref="resource.resource_calendar_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//sheet/group[1]" position="after">
+                    <group>
+                        <field name="fal_is_set_week_minimum_hour"/>
+                        <field name="fal_week_minimal_hour" attrs="{'invisible': [('fal_is_set_week_minimum_hour', '=', False)]}"/>
+                        <field name="fal_is_set_week_maximal_hour"/>
+                        <field name="fal_week_maximal_hour" attrs="{'invisible': [('fal_is_set_week_maximal_hour', '=', False)]}"/>
+                        <field name="fal_is_set_week_equal_hour"/>
+                        <field name="fal_week_equal_hour" attrs="{'invisible': [('fal_is_set_week_equal_hour', '=', False)]}"/>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

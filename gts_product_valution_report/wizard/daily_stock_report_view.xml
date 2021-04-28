@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="daily_stock_report_xlsx_form_view" model="ir.ui.view">
+            <field name="name">Stock Report</field>
+            <field name="model">daily.stock.report</field>
+            <field name="arch" type="xml">
+                <form string="Stock Report">
+                    <group string="Export Settings">
+                        <group>
+                            <field name="from_date" attrs="{'required': [('show_valuation', '=', True)]}"/>
+                            <field name="show_valuation"/>
+                        </group>
+                        <group>
+                            <field name="to_date" required="1"/>
+                            <field name="skip_zero_stock"/>
+                        </group>
+                    </group>
+                    <group string="Company" colspan="4" required="1">
+                        <group>
+                            <field name="company_id" options="{'no_create': True, 'no_open': True}"
+                                   groups="base.group_multi_company"/>
+                        </group>
+                    </group>
+                    <group string="Warehouses" colspan="4">
+                        <group>
+                            <field name="warehouse_ids" widget="many2many_tags"
+                                   domain="[('company_id', '=', company_id)]"
+                                   options="{'no_create': True, 'no_open': True}"/>
+                        </group>
+                    </group>
+                    <group string="Report By">
+                        <field name="report_by" invisible="1"/>
+                        <field name="product_value_ids" widget="many2many_tags" options="{'no_create_edit': True}"/>
+                    </group>
+                    <group string="Locations" colspan="4"
+                            attrs="{'invisible': [('report_by', '!=', 'location_wise')]}">
+                        <field name="location_ids" widget="many2many_tags"
+                               options="{'no_create': True, 'no_open': True}"
+                               domain="[('company_id', '=', company_id),('usage', '=', 'internal')]"/>
+                    </group>
+                    <group string="Products" colspan="4">
+                        <field name="product_ids" nolabel="1"
+                               options="{'no_create': True, 'no_open': True}"/>
+                    </group>
+                    <footer>
+                        <button name="act_getstockreport" string="Export" type="object" class="oe_highlight"/>
+                        or
+                        <button special="cancel" string="Cancel" type="object" class="oe_link"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_daily_stock_report_xlsx" model="ir.actions.act_window">
+            <field name="name">Stock Report</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">daily.stock.report</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem id="menu_daily_stock_report_xlsx" parent="stock.menu_warehouse_report"
+                  action="action_daily_stock_report_xlsx"  sequence="5"/>
+    </data>
+</odoo>

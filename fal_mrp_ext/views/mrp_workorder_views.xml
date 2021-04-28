@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="mrp_production_workcenter_tree_view_inherit_mrp_ext" model="ir.ui.view">
+            <field name="name">mrp_production_workcenter_tree_view_inherit_mrp_ext</field>
+            <field name="model">mrp.workorder</field>
+            <field name="inherit_id" ref="mrp.mrp_production_workorder_tree_view_inherit"/>
+            <field name="arch" type="xml">
+                <field name="date_planned_start" position="after">
+                    <field name="fal_component_product"/>
+                    <field name="fal_name"/>
+                </field>
+            </field>
+        </record>
+   	</data>
+</odoo>

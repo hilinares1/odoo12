@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+        <record id="group_sale_top_manager" model="res.groups">
+            <field name="name">Top Manager</field>
+            <field name="comment">the user will have an access to the sales configuration as well as statistic reports and approve for large discounts.</field>
+            <field name="category_id" ref="base.module_category_sales_management"/>
+            <field name="implied_ids" eval="[(4, ref('sales_team.group_sale_manager','sales_team.group_sale_salesman_all_leads'))]"/>
+            <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
+        </record>
+
+
+    <data noupdate="1">
+        <record id="base.default_user" model="res.users">
+            <field name="groups_id" eval="[(4,ref('sales_team.group_sale_manager'))]"/>
+        </record>
+    </data>
+</odoo>

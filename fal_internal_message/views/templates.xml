@@ -1,0 +1,9 @@
+<odoo>
+    <template id="internal_message_assets_backend" name="internal_message_assets" inherit_id="web.assets_backend">
+        <xpath expr="." position="inside">
+            <script type="text/javascript" src="/fal_internal_message/static/src/js/send_internal_message_controller.js"/>
+        </xpath>
+    </template>
+
+
+</odoo>

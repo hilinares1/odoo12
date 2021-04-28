@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_order_product_report_map" model="ir.ui.view">
+        <field name="name">view.order.product.report.map</field>
+        <field name="model">sale.report</field>
+        <field name="arch" type="xml">
+            <map class="o_res_partner_map" library="geometry" string="Sales Analysis" lat="latitude" lng="longitude" color="green">
+                <field name="id"/>
+                <field name="name"/>
+                <field name="partner_id"/>
+                <field name="state"/>
+                <field name="latitude"/>
+                <field name="longitude"/>
+                <field name="order_id"/>
+                <field name="date"/>
+                <field name="confirmation_date"/>
+                <field name="price_total"/>
+                <field name="price_subtotal"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click o_res_partner_kanban">
+                            <div class="oe_kanban_details">
+                                <strong class="o_kanban_record_title oe_partner_heading">
+                                    <field name="partner_id"/>
+                                </strong>
+                                <ul>
+                                    <li>
+                                        <span>Status: </span>
+                                        <field name="state"/>
+                                    </li>
+                                    <li>
+                                        <span>Order date: </span>
+                                        <field name="date"/>
+                                    </li>
+                                    <li>
+                                        <span>Confirmation date: </span>
+                                        <field name="confirmation_date"/>
+                                    </li>
+                                    <li>
+                                        <span>Total: </span>
+                                        <field name="price_total"/>
+                                    </li>
+                                    <li>
+                                        <span>Untaxed total: </span>
+                                        <field name="price_subtotal"/>
+                                    </li>
+                                </ul>
+                                <div class="oe_kanban_partner_links"/>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </map>
+        </field>
+    </record>
+    <record id="sale.action_order_report_all" model="ir.actions.act_window">
+        <field name="view_mode">graph,pivot,map</field>
+    </record>
+</odoo>

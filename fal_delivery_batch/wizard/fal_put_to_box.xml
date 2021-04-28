@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_fal_put_to_box_line_wizard_tree" model="ir.ui.view">
+        <field name="name">view_fal_put_to_box_line_wizard_tree</field>
+        <field name="model">fal.put.to.box.line.wizard</field>
+        <field name="arch" type="xml">
+            <tree string="Invoice Line" create="0" editable="bottom">
+                <field name="checkbox"/>
+                <field name="batch_line_id" invisible="1"/>
+                <field name="product_id"/>
+                <field name="name"/>
+                <field name="quantity"/>
+                <field name="balanced_quantity"/>
+                <field name="allocated_quantity"/>
+                <field name="uom_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="fal_put_to_box_view" model="ir.ui.view">
+        <field name="name">Put To Box</field>
+        <field name="model">fal.put.to.box</field>
+        <field name="arch" type="xml">
+            <form string="Put To Box">
+                <group>
+                    <group>
+                        <field name="delivery_batch_id" readonly="1"/>
+                        <field name="box_number"/>
+                        <field name="box_type"/>
+                        <field name="n_weight"/>
+                        <field name="g_weight"/>
+                    </group>
+                    <group>
+                    </group>
+                </group>
+                <notebook>
+                    <page string="Invoice Line">
+                        <field name="delivery_batch_line_wizard_ids"/>
+                    </page>
+                </notebook>
+                <footer>
+                    <button name="save_to_box" string="Put to Box" type="object" class="btn-primary"/>
+                    <button string="Cancel" class="btn-default" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_fal_put_to_box_wizard" model="ir.actions.act_window">
+        <field name="name">Put to Box</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">fal.put.to.box</field>
+        <field name="view_type">form</field>
+        <field name="view_id" ref="fal_put_to_box_view"/>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+</odoo>

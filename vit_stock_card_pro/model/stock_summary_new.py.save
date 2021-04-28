@@ -1,0 +1,895 @@
+rom odoo import models, fields, api, _, SUPERUSER_ID
+from datetime import datetime, timedelta
+from odoo.addons import decimal_precision as dp
+from odoo.exceptions import Warning, ValidationError, UserError
+import time
+import pytz
+from pytz import timezone
+import logging
+_logger = logging.getLogger(__name__)
+
+class StockSummaryNew(models.Model):
+    _name = "stock.summary.new"
+    _description = "Stock Summary New"
+
+    @api.multi
+    def unlink(self):
+        for stock in self:
+            if stock.state != 'draft' :
+                raise Warning('Data yang bisa dihapus hanya yg berstatus draft')
+        return super(StockSummaryNew, self).unlink()
+
+    @api.multi
+    def get_default_date_multi(self):
+        return pytz.UTC.localize(datetime.now()).astimezone(timezone('Asia/Jakarta'))
+
+    @api.multi
+    @api.depends('inventory_id.date','inventory_id.accounting_date')
+    def get_start_date(self):
+        for me_id in self :
+            if me_id.inventory_id.accounting_date :
+                me_id.date_start = me_id.inventory_id.accounting_date
+            else :
+                me_id.date_start = me_id.inventory_id.date
+
+    name = fields.Char("Number", copy=False)
+    date_adj = fields.Date("Adjustment Date")
+    inventory_id = fields.Many2one('stock.inventory', string='Inventory Adjustment')
+    company_id = fields.Many2one('res.company', string='Company', related='location_id.company_id')
+    date_start = fields.Datetime("Start Date", compute='get_start_date', store=True)
+    date_end = fields.Datetime("End Date", required=True, default=lambda *a : time.strftime("%Y-%m-%d"))
+    last_update = fields.Datetime("Last Update", readonly=True)
+    location_id = fields.Many2one('stock.location', 'Location', required=True, domain=[('usage','=','internal')])
+    summary_line = fields.One2many( 'stock.summary.line.new', 'summary_id', 'Details', ondelete="cascade")
+    state = fields.Selection([
+        ('draft','Draft'),
+        ('open','Open'),
+    ], 'Status', default='draft')
+    user_id = fields.Many2one('res.users', 'Created by', default=lambda self: self.env.user)
+
+    @api.multi
+    def action_export(self):
+        action = self.env.ref('vit_stock_card_pro.report_stock_xlsx_action')
+        return {
+            'name': action.name + ' In',
+            'help': action.help,
+            'type': action.type,
+            'view_type': action.view_type,
+            'view_mode': action.view_mode,
+            'target': 'new',
+            'res_model': action.res_model,
+            'domain': [],
+        }
+
+    @api.model
+    def create(self, vals):
+        if not vals.get('name', False):
+            vals['name'] = self.env['ir.sequence'].next_by_code('vit.stock_summary')
+        return super(StockSummaryNew, self).create(vals)
+
+    @api.multi
+    def action_open(self):
+        for me_id in self :
+            if me_id.state != 'draft' :
+                continue
+            me_id.state = 'open'
+            if not me_id.name :
+                me_id.name = self.env['ir.sequence'].next_by_code('vit.stock_summary')
+
+    @api.multi
+    def action_set_to_draft(self):
+        for me_id in self :
+            if me_id.state != 'open' :
+                continue
+            me_id.state = 'draft'
+
+    def execute_query(self, sql, to_return='qty'):
+        self._cr.execute(sql)
+        result = self._cr.fetchall()
+        if not result or result[0] == None or result[0][0] == None :
+            if to_return == 'qty' :
+                return 0
+            else :
+                return []
+        if to_return == 'qty' :
+            return result[0][0]
+        return result
+
+    @api.multi
+    def auto_calculate(self):
+        date_current = self.get_default_date_multi().strftime('%Y-%m-%d')
+        summary_ids = self.search([
+            ('state','=','open'),
+            ('inventory_id','!=',False),
+        ])
+        summary_ids = summary_ids.filtered(lambda summary: summary.date_end[:10] != date_current)
+        for summary_id in summary_ids :
+            summary_id.write({'date_end':datetime.now()})
+            summary_id.action_calculate()
+            summary_id._cr.commit()
+
+    def get_child_locations(self, location_id):
+        ids_location = [location_id.id]
+        for child_loc in location_id.location_ids :
+            ids_location.extend(self.get_child_locations(child_loc))
+        return ids_location
+
+    @api.multi
+    def action_calculate(self):
+        now = fields.Datetime.now()[11:]
+        if now > '01:00:00' < '09:30:00' and self.env.uid != SUPERUSER_ID:
+            raise Warning('Calculate manual hanya bisa dilakukan pada pukul 08:00 s/d 17:30 WIB')
+        self.delete_lines()
+        for me_id in self :
+            print "START CALCULATE STOCK SUMMARY ============================>> %s"%me_id.name
+
+            if me_id.state != 'open' or not me_id.inventory_id :
+                continue
+            date_start = me_id.date_start
+            date_end = me_id.date_end
+
+            #cek product yang ada di stock move, pack operation dan stock inventory line
+            ids_location = self.get_child_locations(me_id.location_id)
+            ids_location = str(tuple(ids_location)).replace(',)',')')
+
+            query = """
+                SELECT
+                    product_id
+                FROM
+                    stock_move
+                WHERE
+                    state = 'done'
+                    and picking_id is null
+                    and date >= '%s'
+                    and date <= '%s'
+                    and (location_id in %s or location_dest_id in %s)
+                GROUP BY
+                    product_id
+            """%(date_start, date_end, ids_location, ids_location)
+            ids_product_tuple = self.execute_query(query,'id')
+
+            query = """
+                SELECT
+                    spo.product_id
+                FROM
+                    stock_pack_operation spo
+                JOIN
+                    stock_picking sp on sp.id = spo.picking_id
+                LEFT JOIN
+                    stock_move sm on sm.id = (
+                        SELECT
+                            id
+                        FROM
+                            stock_move
+                        WHERE
+                            picking_id = spo.picking_id and product_id = spo.product_id
+                        LIMIT 1
+                    )
+                WHERE
+                    sp.state = 'done'
+                    and sm.date >= '%s'
+                    and sm.date <= '%s'
+                    and (spo.location_id in %s or spo.location_dest_id in %s)
+                GROUP BY
+                    spo.product_id
+            """%(date_start, date_end, ids_location, ids_location)
+            ids_product_tuple += self.execute_query(query,'id')
+
+            query = """
+                SELECT
+                    sil.product_id
+                FROM
+                    stock_inventory_line sil
+                JOIN
+                    stock_inventory si on si.id = sil.inventory_id
+                WHERE
+                    sil.inventory_id = %s and sil.location_id in %s
+                GROUP BY
+                    sil.product_id
+            """%(me_id.inventory_id.id, ids_location)
+            ids_product_tuple += self.execute_query(query,'id')
+
+            ids_product = []
+            for res in ids_product_tuple :
+                if res[0] not in ids_product :
+                    ids_product.append(res[0])
+
+            #looping per product dan cari qty di move dan pack operation
+            product_ids = self.env['product.product'].browse(ids_product)
+            product_ids = product_ids.filtered(lambda prod: prod.active)
+            
+            for product_id in product_ids :
+                qty_in = 0
+                qty_out = 0
+
+                #QTY START
+                query = """
+                    SELECT
+                        sum(product_qty) as qty
+                    FROM
+                        stock_inventory_line
+                    WHERE
+                        product_id = %s
+                        and location_id in %s
+                        and inventory_id = %s
+                """%(product_id.id, ids_location, me_id.inventory_id.id)
+                qty_start = self.execute_query(query)
+
+                #QTY IN
+                query = """
+                    SELECT
+                        sum(product_uom_qty) as qty
+                    FROM
+                        stock_move
+                    WHERE
+                        state = 'done'
+                        and picking_id is null
+                        and date >= '%s'
+                        and date <= '%s'
+                        and location_dest_id in %s
+                        and product_id = %s
+                        and inventory_id != %s
+                """%(date_start, date_end, ids_location, product_id.id, me_id.inventory_id.id)
+                qty_in += self.execute_query(query)
+
+                query = """
+                    SELECT
+                        sum(spo.product_qty) as qty
+                    FROM
+                        stock_pack_operation spo
+                    JOIN
+                        stock_picking sp on sp.id = spo.picking_id
+                    LEFT JOIN
+                        stock_move sm on sm.id = (
+                            SELECT
+                                id
+                            FROM
+                                stock_move
+                            WHERE
+                                picking_id = spo.picking_id and product_id = spo.product_id
+                            LIMIT 1
+                        )
+                    WHERE
+                        sp.state = 'done'
+                        and sm.date >= '%s'
+                        and sm.date <= '%s'
+                        and spo.location_dest_id in %s
+                        and spo.product_id = %s
+                """%(date_start, date_end, ids_location, product_id.id)
+                qty_in += self.execute_query(query)
+
+                #QTY OUT
+                query = """
+                    SELECT
+                        sum(product_uom_qty) as qty
+                    FROM
+                        stock_move
+                    WHERE
+                        state = 'done'
+                        and picking_id is null
+                        and date >= '%s'
+                        and date <= '%s'
+                        and location_id in %s
+                        and product_id = %s
+                        and inventory_id != %s
+                """%(date_start, date_end, ids_location, product_id.id, me_id.inventory_id.id)
+                qty_out += self.execute_query(query)
+
+                query = """
+                    SELECT
+                        sum(spo.product_qty) as qty
+                    FROM
+                        stock_pack_operation spo
+                    JOIN
+                        stock_picking sp on sp.id = spo.picking_id
+                    LEFT JOIN
+                        stock_move sm on sm.id = (
+                            SELECT
+                                id
+                            FROM
+                                stock_move
+                            WHERE
+                                picking_id = spo.picking_id and product_id = spo.product_id
+                            LIMIT 1
+                        )
+                    WHERE
+                        sp.state = 'done'
+                        and sm.date >= '%s'
+                        and sm.date <= '%s'
+                        and spo.location_id in %s
+                        and spo.product_id = %s
+                """%(date_start, date_end, ids_location, product_id.id)
+                qty_out += self.execute_query(query)
+
+                summary_line_id = self.env['stock.summary.line.new'].create({
+                    'summary_id': me_id.id,
+                    'product_id': product_id.id,
+                    'qty_available': product_id.qty_available,
+                    'qty_start': qty_start,
+                    'qty_in': qty_in,
+                    'qty_out': qty_out,
+                    'qty_balance': qty_start + qty_in - qty_out,
+                })
+                self.create_history(me_id, summary_line_id, date_start, date_end, ids_location, product_id, me_id.inventory_id)
+            me_id.last_update = datetime.now()
+            print "FINISH CALCULATE STOCK SUMMARY ============================>> %s"%me_id.name
+
+    @api.multi
+    def create_history(self, summary_id, summary_line_id, date_start, date_end, ids_location, product_id, inventory_id):
+        values = []
+
+        #HISTORY IN
+        query = """
+            SELECT
+                name,
+                date,
+                product_uom_qty as qty,
+                'in' as type,
+                'move' as source,
+                id as transaction_id
+            FROM
+                stock_move
+            WHERE
+                state = 'done'
+                and picking_id is null
+                and date >= '%s'
+                and date <= '%s'
+                and location_dest_id in %s
+                and product_id = %s
+                and inventory_id != %s
+        """%(date_start, date_end, ids_location, product_id.id, inventory_id.id)
+        self._cr.execute(query)
+        datas = self._cr.dictfetchall()
+        if datas :
+            values += datas
+
+        query = """
+            SELECT
+                sp.name,
+                sm.date,
+                spo.product_qty as qty,
+                'in' as type,
+                'operation' as source,
+                spo.id as transaction_id
+            FROM
+                stock_pack_operation spo
+            JOIN
+                stock_picking sp on sp.id = spo.picking_id
+            LEFT JOIN
+                stock_move sm on sm.id = (
+                    SELECT
+                        id
+                    FROM
+                        stock_move
+                    WHERE
+                        picking_id = spo.picking_id and product_id = spo.product_id
+                    LIMIT 1
+                )
+            WHERE
+                sp.state = 'done'
+                and sm.date >= '%s'
+                and sm.date <= '%s'
+                and spo.location_dest_id in %s
+                and spo.product_id = %s
+        """%(date_start, date_end, ids_location, product_id.id)
+        self._cr.execute(query)
+        datas = self._cr.dictfetchall()
+        if datas :
+            values += datas
+
+        #HISTORY OUT
+        query = """
+            SELECT
+                name,
+                date,
+                product_uom_qty as qty,
+                'out' as type,
+                'move' as source,
+                id as transaction_id
+            FROM
+                stock_move
+            WHERE
+                state = 'done'
+                and picking_id is null
+                and date >= '%s'
+                and date <= '%s'
+                and location_id in %s
+                and product_id = %s
+                and inventory_id != %s
+        """%(date_start, date_end, ids_location, product_id.id, inventory_id.id)
+        self._cr.execute(query)
+        datas = self._cr.dictfetchall()
+        if datas :
+            values += datas
+
+        query = """
+            SELECT
+                sp.name,
+                sm.date,
+                spo.product_qty as qty,
+                'out' as type,
+                'operation' as source,
+                spo.id as transaction_id
+            FROM
+                stock_pack_operation spo
+            JOIN
+                stock_picking sp on sp.id = spo.picking_id
+            LEFT JOIN
+                stock_move sm on sm.id = (
+                    SELECT
+                        id
+                    FROM
+                        stock_move
+                    WHERE
+                        picking_id = spo.picking_id and product_id = spo.product_id
+                    LIMIT 1
+                )
+            WHERE
+                sp.state = 'done'
+                and sm.date >= '%s'
+                and sm.date <= '%s'
+                and spo.location_id in %s
+                and spo.product_id = %s
+        """%(date_start, date_end, ids_location, product_id.id)
+        self._cr.execute(query)
+        datas = self._cr.dictfetchall()
+        if datas :
+            values += datas
+        for val in values :
+            # self.env['stock.summary.line.new.history'].create({
+            #     'summary_id': summary_id.id,
+            #     'summary_line_id': summary_line_id.id,
+            #     'name': val['name'] if val['name'] else '',
+            #     'date': val['date'],
+            #     'qty': val['qty'],
+            #     'type': val['type'],
+            #     'source': val['source'],
+            #     'transaction_id': val['transaction_id'],
+            # })
+            query = """
+                INSERT INTO
+                    stock_summary_line_new_history(summary_id,summary_line_id,name,date,qty,type,source,transaction_id,product_code,price,total)
+                VALUES
+                    (%s, %s, '%s', '%s', %s, '%s', '%s', %s, '%s', %s, %s)
+            """%(summary_id.id, summary_line_id.id, val['name'], val['date'], val['qty'], val['type'], val['source'], val['transaction_id'], summary_line_id.product_id.default_code, summary_line_id.product_id.standard_price if val['type'] == 'in' else summary_line_id.product_id.lst_price, summary_line_id.product_id.standard_price * val['qty'] if val['type'] == 'in' else summary_line_id.product_id.lst_price * val['qty'])
+            self._cr.execute(query)
+
+    @api.multi
+    def delete_lines(self):
+        if not self :
+            return False
+        self._cr.execute("""
+            delete from stock_summary_line_new where summary_id in %s
+        """%(str(tuple(self.ids)).replace(',)',')')))
+
+    @api.multi
+    def view_qty_in(self):
+        history_ids = self.env['stock.summary.line.new.history'].search([
+            ('summary_id','=',self.id),
+            ('type','=','in')
+        ])
+        action = self.env.ref('vit_stock_card_pro.stock_summary_line_new_history_action')
+        return {
+            'name': action.name + ' In',
+            'help': action.help,
+            'type': action.type,
+            'view_type': action.view_type,
+            'view_mode': action.view_mode,
+            'target': action.target,
+            'res_model': action.res_model,
+            'domain': [('id', 'in', history_ids.ids)],
+        }
+
+    @api.multi
+    def view_qty_out(self):
+        history_ids = self.env['stock.summary.line.new.history'].search([
+            ('summary_id','=',self.id),
+            ('type','=','out')
+        ])
+        action = self.env.ref('vit_stock_card_pro.stock_summary_line_new_history_action')
+        return {
+            'name': action.name + ' Out',
+            'help': action.help,
+            'type': action.type,
+            'view_type': action.view_type,
+            'view_mode': action.view_mode,
+            'target': action.target,
+            'res_model': action.res_model,
+            'domain': [('id', 'in', history_ids.ids)],
+        }
+
+class StockSummaryLineNew(models.Model):
+    _name = "stock.summary.line.new"
+    _description = "Stock Summary Line New"
+    _rec_name = "product_id"
+
+    summary_id = fields.Many2one('stock.summary.new', string='Stock Summary', ondelete='cascade')
+    product_id = fields.Many2one('product.product', string='Product', ondelete='restrict')
+    location_id = fields.Many2one('stock.location', string='Location', related='summary_id.location_id', store=True)
+    qty_available = fields.Float("On hand all locations")
+    qty_start = fields.Float("Start")
+    qty_in = fields.Float("Qty In")
+    qty_out = fields.Float("Qty Out")
+    qty_balance = fields.Float("Balance")
+    hpj = fields.Float("HPJ", related='product_id.lst_price', store=True)
+    hpp = fields.Float("HPP", related='product_id.standard_price', store=True)
+    date_start = fields.Datetime("Start Date", related='summary_id.date_start', store=True)
+    date_end = fields.Datetime("End Date", related='summary_id.date_end', store=True)
+    history_in_ids = fields.One2many('stock.summary.line.new.history', 'summary_line_id', domain=[('type','=','in')])
+    history_out_ids = fields.One2many('stock.summary.line.new.history', 'summary_line_id', domain=[('type','=','out')])
+
+class StockSummaryLineNewHistory(models.Model):
+    _name = "stock.summary.line.new.history"
+    _description = "History Stock Summary Line New"
+
+    @api.depends('type','qty','summary_line_id.product_id')
+    @api.multi
+    def _get_amount(self):
+        for me_id in self :
+            if me_id.type == 'in' :
+                price = me_id.summary_line_id.product_id.standard_price
+            else :
+                price = me_id.summary_line_id.product_id.lst_price
+            me_id.price = price
+            me_id.total = price * me_id.qty
+
+    summary_line_id = fields.Many2one('stock.summary.line.new', string='Product', ondelete='cascade')
+    summary_id = fields.Many2one('stock.summary.new', string='Stock Summary', related='summary_line_id.summary_id', store=True)
+    name = fields.Char(string='No Transaksi')
+    date = fields.Datetime(string='Tanggal')
+    product_code = fields.Char(string='Kode Barang', related='summary_line_id.product_id.default_code', store=True)
+    qty = fields.Float(string='Qty')
+    price = fields.Float(string='Harga', compute='_get_amount', store=True)
+    total = fields.Float(string='Total', compute='_get_amount', store=True)
+    type = fields.Selection([
+        ('in','in'),
+        ('out','out')
+    ], string='Transaction Type')
+    source = fields.Selection([
+        ('move','Stock Move'),
+        ('operation','Stock Pak Operations')
+            me_id.price = price
+            me_id.total = price * me_id.qty
+
+    summary_line_id = fields.Many2one('stock.summary.line.new', string='Product', ondelete='cascade')
+    summary_id = fields.Many2one('stock.summary.new', string='Stock Summary', related='summary_line_id.summary_id', store=True)
+    name = fields.Char(string='No Transaksi')
+    date = fields.Datetime(string='Tanggal')
+    product_code = fields.Char(string='Kode Barang', related='summary_line_id.product_id.default_code', store=True)
+    qty = fields.Float(string='Qty')
+    price = fields.Float(string='Harga', compute='_get_amount', store=True)
+    total = fields.Float(string='Total', compute='_get_amount', store=True)
+    type = fields.Selection([
+        ('in','in'),
+        ('out','out')
+    ], string='Transaction Type')
+    source = fields.Selection([
+        ('move','Stock Move'),
+        ('operation','Stock Pak Operations')
+    ], string='Transaction Type')
+    transaction_id = fields.Integer(string='Transaction ID')
+
+class StockLocation(models.Model):
+    _inherit = 'stock.location'
+
+
+
+    ], string='Transaction Type')
+    transaction_id = fields.Integer(string='Transaction ID')
+
+class StockLocation(models.Model):
+    _inherit = 'stock.location'
+
+from odoo import models, fields, api, _, SUPERUSER_ID
+from datetime import datetime, timedelta
+from odoo.addons import decimal_precision as dp
+from odoo.exceptions import Warning, ValidationError, UserError
+import time
+import pytz
+from pytz import timezone
+import logging
+_logger = logging.getLogger(__name__)
+
+class StockSummaryNew(models.Model):
+    _name = "stock.summary.new"
+    _description = "Stock Summary New"
+
+    @api.multi
+    def unlink(self):
+        for stock in self:
+            if stock.state != 'draft' :
+                raise Warning('Data yang bisa dihapus hanya yg berstatus draft')
+        return super(StockSummaryNew, self).unlink()
+
+    @api.multi
+    def get_default_date_multi(self):
+        return pytz.UTC.localize(datetime.now()).astimezone(timezone('Asia/Jakarta'))
+
+    @api.multi
+    @api.depends('inventory_id.date','inventory_id.accounting_date')
+    def get_start_date(self):
+        for me_id in self :
+            if me_id.inventory_id.accounting_date :
+                me_id.date_start = me_id.inventory_id.accounting_date
+            else :
+                me_id.date_start = me_id.inventory_id.date
+
+    name = fields.Char("Number", copy=False)
+    date_adj = fields.Date("Adjustment Date")
+    inventory_id = fields.Many2one('stock.inventory', string='Inventory Adjustment')
+    company_id = fields.Many2one('res.company', string='Company', related='location_id.company_id')
+    date_start = fields.Datetime("Start Date", compute='get_start_date', store=True)
+    date_end = fields.Datetime("End Date", required=True, default=lambda *a : time.strftime("%Y-%m-%d"))
+    last_update = fields.Datetime("Last Update", readonly=True)
+    location_id = fields.Many2one('stock.location', 'Location', required=True, domain=[('usage','=','internal')])
+    summary_line = fields.One2many( 'stock.summary.line.new', 'summary_id', 'Details', ondelete="cascade")
+    state = fields.Selection([
+        ('draft','Draft'),
+        ('open','Open'),
+    ], 'Status', default='draft')
+    user_id = fields.Many2one('res.users', 'Created by', default=lambda self: self.env.user)
+
+    @api.multi
+    def action_export(self):
+        action = self.env.ref('vit_stock_card_pro.report_stock_xlsx_action')
+        return {
+            'name': action.name + ' In',
+            'help': action.help,
+            'type': action.type,
+            'view_type': action.view_type,
+            'view_mode': action.view_mode,
+            'target': 'new',
+            'res_model': action.res_model,
+            'domain': [],
+        }
+
+    @api.model
+    def create(self, vals):
+        if not vals.get('name', False):
+            vals['name'] = self.env['ir.sequence'].next_by_code('vit.stock_summary')
+        return super(StockSummaryNew, self).create(vals)
+
+    @api.multi
+    def action_open(self):
+        for me_id in self :
+            if me_id.state != 'draft' :
+                continue
+            me_id.state = 'open'
+            if not me_id.name :
+                me_id.name = self.env['ir.sequence'].next_by_code('vit.stock_summary')
+
+    @api.multi
+    def action_set_to_draft(self):
+        for me_id in self :
+            if me_id.state != 'open' :
+                continue
+            me_id.state = 'draft'
+
+    def execute_query(self, sql, to_return='qty'):
+        self._cr.execute(sql)
+        result = self._cr.fetchall()
+        if not result or result[0] == None or result[0][0] == None :
+            if to_return == 'qty' :
+                return 0
+            else :
+                return []
+        if to_return == 'qty' :
+            return result[0][0]
+        return result
+
+    @api.multi
+    def auto_calculate(self):
+        date_current = self.get_default_date_multi().strftime('%Y-%m-%d')
+        summary_ids = self.search([
+            ('state','=','open'),
+            ('inventory_id','!=',False),
+        ])
+        summary_ids = summary_ids.filtered(lambda summary: summary.date_end[:10] != date_current)
+        for summary_id in summary_ids :
+            summary_id.write({'date_end':datetime.now()})
+            summary_id.action_calculate()
+            summary_id._cr.commit()
+
+    def get_child_locations(self, location_id):
+        ids_location = [location_id.id]
+        for child_loc in location_id.location_ids :
+            ids_location.extend(self.get_child_locations(child_loc))
+        return ids_location
+
+    @api.multi
+    def action_calculate(self):
+        now = fields.Datetime.now()[11:]
+        if now > '01:00:00' < '09:30:00' and self.env.uid != SUPERUSER_ID:
+            raise Warning('Calculate manual hanya bisa dilakukan pada pukul 08:00 s/d 17:30 WIB')
+        self.delete_lines()
+        for me_id in self :
+            print "START CALCULATE STOCK SUMMARY ============================>> %s"%me_id.name
+
+            if me_id.state != 'open' or not me_id.inventory_id :
+                continue
+            date_start = me_id.date_start
+            date_end = me_id.date_end
+
+            #cek product yang ada di stock move, pack operation dan stock inventory line
+            ids_location = self.get_child_locations(me_id.location_id)
+            ids_location = str(tuple(ids_location)).replace(',)',')')
+
+            query = """
+                SELECT
+                    product_id
+                FROM
+                    stock_move
+                WHERE
+                    state = 'done'
+                    and picking_id is null
+                    and date >= '%s'
+                    and date <= '%s'
+                    and (location_id in %s or location_dest_id in %s)
+                GROUP BY
+                    product_id
+            """%(date_start, date_end, ids_location, ids_location)
+            ids_product_tuple = self.execute_query(query,'id')
+
+            query = """
+                SELECT
+                    spo.product_id
+                FROM
+                    stock_pack_operation spo
+                JOIN
+                    stock_picking sp on sp.id = spo.picking_id
+                LEFT JOIN
+                    stock_move sm on sm.id = (
+                        SELECT
+                            id
+                        FROM
+                            stock_move
+                        WHERE
+                            picking_id = spo.picking_id and product_id = spo.product_id
+                        LIMIT 1
+                    )
+                WHERE
+                    sp.state = 'done'
+                    and sm.date >= '%s'
+                    and sm.date <= '%s'
+                    and (spo.location_id in %s or spo.location_dest_id in %s)
+                GROUP BY
+                    spo.product_id
+            """%(date_start, date_end, ids_location, ids_location)
+            ids_product_tuple += self.execute_query(query,'id')
+
+            query = """
+                SELECT
+                    sil.product_id
+                FROM
+                    stock_inventory_line sil
+                JOIN
+                    stock_inventory si on si.id = sil.inventory_id
+                WHERE
+                    sil.inventory_id = %s and sil.location_id in %s
+                GROUP BY
+                    sil.product_id
+            """%(me_id.inventory_id.id, ids_location)
+            ids_product_tuple += self.execute_query(query,'id')
+
+            ids_product = []
+            for res in ids_product_tuple :
+                if res[0] not in ids_product :
+                    ids_product.append(res[0])
+
+            #looping per product dan cari qty di move dan pack operation
+            product_ids = self.env['product.product'].browse(ids_product)
+            product_ids = product_ids.filtered(lambda prod: prod.active)
+            
+            for product_id in product_ids :
+                qty_in = 0
+                qty_out = 0
+
+                #QTY START
+                query = """
+                    SELECT
+                        sum(product_qty) as qty
+                    FROM
+                        stock_inventory_line
+                    WHERE
+                        product_id = %s
+                        and location_id in %s
+                        and inventory_id = %s
+                """%(product_id.id, ids_location, me_id.inventory_id.id)
+                qty_start = self.execute_query(query)
+
+                #QTY IN
+                query = """
+                    SELECT
+                        sum(product_uom_qty) as qty
+                    FROM
+                        stock_move
+                    WHERE
+                        state = 'done'
+                        and picking_id is null
+                        and date >= '%s'
+                        and date <= '%s'
+                        and location_dest_id in %s
+                        and product_id = %s
+                        and inventory_id != %s
+                """%(date_start, date_end, ids_location, product_id.id, me_id.inventory_id.id)
+                qty_in += self.execute_query(query)
+
+                query = """
+                    SELECT
+                        sum(spo.product_qty) as qty
+                    FROM
+                        stock_pack_operation spo
+                    JOIN
+                        stock_picking sp on sp.id = spo.picking_id
+                    LEFT JOIN
+                        stock_move sm on sm.id = (
+                            SELECT
+                                id
+                            FROM
+                                stock_move
+                            WHERE
+                                picking_id = spo.picking_id and product_id = spo.product_id
+                            LIMIT 1
+                        )
+                    WHERE
+                        sp.state = 'done'
+                        and sm.date >= '%s'
+                        and sm.date <= '%s'
+                        and spo.location_dest_id in %s
+                        and spo.product_id = %s
+                """%(date_start, date_end, ids_location, product_id.id)
+                qty_in += self.execute_query(query)
+
+                #QTY OUT
+                query = """
+                    SELECT
+                        sum(product_uom_qty) as qty
+                    FROM
+                        stock_move
+                    WHERE
+                        state = 'done'
+                        and picking_id is null
+                        and date >= '%s'
+                        and date <= '%s'
+                        and location_id in %s
+                        and product_id = %s
+                        and inventory_id != %s
+                """%(date_start, date_end, ids_location, product_id.id, me_id.inventory_id.id)
+                qty_out += self.execute_query(query)
+
+                query = """
+                    SELECT
+                        sum(spo.product_qty) as qty
+                    FROM
+                        stock_pack_operation spo
+                    JOIN
+                        stock_picking sp on sp.id = spo.picking_id
+                    LEFT JOIN
+                        stock_move sm on sm.id = (
+                            SELECT
+                                id
+                            FROM
+                                stock_move
+                            WHERE
+                                picking_id = spo.picking_id and product_id = spo.product_id
+                            LIMIT 1
+                        )
+                    WHERE
+                        sp.state = 'done'
+                        and sm.date >= '%s'
+                        and sm.date <= '%s'
+                        and spo.location_id in %s
+                        and spo.product_id = %s
+                """%(date_start, date_end, ids_location, product_id.id)
+                qty_out += self.execute_query(query)
+                # hpp dan hpj insert biasa, ga pake related
+                summary_line_id = self.env['stock.summary.line.new'].create({
+                    'summary_id': me_id.id,
+                    'product_id': product_id.id,
+                    'hpj' : product_id.lst_price,
+                    'hpp' : product_id.standard_price,
+                    'qty_available': product_id.qty_available,
+                    'qty_start': qty_start,
+                    'qty_in': qty_in,
+                    'qty_out': qty_out,
+

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="purchase_order_form_falprofol" model="ir.ui.view">
+            <field name="name">purchase.order.form.falprofol</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.purchase_order_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//notebook/page/field[@name='order_line']/tree/field[@name='account_analytic_id']" position="after">
+                    <field name="fal_project_budget_line_id" attrs="{'readonly': [('account_analytic_id','=',False)]}" domain="[('parent_template', '=', False), ('parent_active', '=', True), ('project_id', '=', account_analytic_id), ('fal_budget_tags_ids', '=', %(fal_project_budget.fal_project_budget_tags_purchases)d)]"/>
+                </xpath>
+                <xpath expr="//notebook/page/field[@name='order_line']/form/sheet/group/group/field[@name='account_analytic_id']" position="after">
+                    <field name="fal_project_budget_line_id" attrs="{'readonly': [('account_analytic_id','=',False)]}" domain="[('parent_template', '=', False), ('parent_active', '=', True), ('project_id', '=', account_analytic_id), ('fal_budget_tags_ids', '=', %(fal_project_budget.fal_project_budget_tags_purchases)d)]"/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

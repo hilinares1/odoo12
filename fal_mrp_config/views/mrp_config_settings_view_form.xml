@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+    <record id="fal_mrp_config_settings_view_form_inherit_mrp" model="ir.ui.view">
+        <field name="name">fal.mrp.config.settings.view.form.inherit.mrp</field>
+        <field name="model">res.config.settings</field>
+        <field name="priority" eval="10"/>
+        <field name="inherit_id" ref="mrp.res_config_settings_view_form" />
+        <field name="arch" type="xml">
+        <xpath expr="//div[@data-string='Manufacturing']/h2[1]" position="before">
+            <h2>New MRP</h2>
+            <div class="row mt16 o_settings_container">
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_fal_finished_product_sequence"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_finished_product_sequence"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            Module to define a sequence on manufacture when the product is finished product
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_fal_mrp_ext"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_mrp_ext"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            This module add MRP functionality
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_fal_mrp_of_number"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_mrp_of_number"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            This module features is add PO number in stock move
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_fal_mrp_planning_availability"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_mrp_planning_availability"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            Module to check availablity for manufacture based on floating production date planning
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_fal_mrp_product_selector"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_mrp_product_selector"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            Advanced Product Attribute Management on MRP
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_fal_mrp_project"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_mrp_project"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            Generate define project in MRP
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_fal_mrp_warning_message"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_mrp_warning_message"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            This module contains warning message management for manufacturing process management
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_fal_production_order_product_selector"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_production_order_product_selector"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            Module to give conditional choice on Production Order
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_fal_quality"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_quality"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            Module to modify quality control flow
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_fal_quality_alert_5m"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_quality_alert_5m"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            5 How on Quality Alert
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_fal_quality_alert_5y"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_quality_alert_5y"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            5 Why on Quality Alert
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_fal_quality_ext"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_quality_ext"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            Module to extend quality control
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_fal_quality_print_sticker"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_quality_print_sticker"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            Module to print sticker on quality
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_fal_quality_production_order"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_quality_production_order"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            Module to modify quality control flow in production order
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_fal_repair_product_selector"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_repair_product_selector"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            Module to give conditional choice on Repair Order
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_fal_routing_ext"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_routing_ext"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            Module that add finish MO button to Manufacturing Order
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h2>CLuedoo Best Practice</h2>
+            <div class="row mt16 o_settings_container">
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_fal_mo_qty"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_mo_qty"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            Show To Produce Quantity and Produced Quantity
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_fal_mrp_sale_link"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_mrp_sale_link"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            Create link between Sale Order and Production Order
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_fal_product_copy_bom"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_product_copy_bom"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            this module gives you an easy way to duplicate product also its BoM
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h2>Cost</h2>
+            <div class="row mt16 o_settings_container">
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_fal_cost_bom"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_cost_bom"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            Compute Cost of Bill of materials
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_fal_mrp_costing"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_mrp_costing"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            make the calculation of hourly cost and working cost per minute for every manufacturing process
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_fal_mrp_production_scrap"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_mrp_production_scrap"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            Scrap Percentage in Production Order
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </xpath>
+        <xpath expr="//div[@id='work_order']" position="after">
+            <div class="col-xs-12 col-md-6 o_setting_box">
+                <div class="o_setting_left_pane">
+                    <field name="module_fal_mrp_phantom_routing_operation"/>
+                </div>
+                <div class="o_setting_right_pane">
+                    <label for="module_fal_mrp_phantom_routing_operation"/>
+                    <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                    <div class="text-muted">
+                        Creating manufacturing orders without work orders
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-6 o_setting_box">
+                <div class="o_setting_left_pane">
+                    <field name="module_fal_mrp_production_order"/>
+                </div>
+                <div class="o_setting_right_pane">
+                    <label for="module_fal_mrp_production_order"/>
+                    <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                    <div class="text-muted">
+                        Create Production Order on Manufacturing
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-6 o_setting_box">
+                <div class="o_setting_left_pane">
+                    <field name="module_fal_mrp_work_route"/>
+                </div>
+                <div class="o_setting_right_pane">
+                    <label for="module_fal_mrp_work_route"/>
+                    <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                    <div class="text-muted">
+                        Notion of Routing Work Center and Workshop Machine.
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-6 o_setting_box">
+                <div class="o_setting_left_pane">
+                    <field name="module_fal_mrp_workorder_tracking"/>
+                </div>
+                <div class="o_setting_right_pane">
+                    <label for="module_fal_mrp_workorder_tracking"/>
+                    <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                    <div class="text-muted">
+                        Module to add manufacturing time tracking feature.
+                    </div>
+                </div>
+            </div>
+        </xpath>
+        </field>
+    </record>
+    </data>
+</odoo>

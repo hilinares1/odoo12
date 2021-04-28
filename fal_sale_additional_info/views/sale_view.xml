@@ -1,0 +1,110 @@
+<odoo>
+    <data>
+        <record id="view_order_form_fal_add_title" model="ir.ui.view">
+            <field name="name">sale.order.form.fal.add.title</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//sheet/div[@name='button_box']" position="inside">
+                    <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+                        <field name="active" widget="boolean_button" options='{"terminology": "archive"}'/>
+                    </button>
+                </xpath>
+                <xpath expr="//field[@name='name']/.." position="after">
+                    <group>
+                        <field name="fal_title"/>
+                    </group>
+                </xpath>
+                <field name="partner_id" position="after">
+                    <field name="fal_attachment_name" invisible='1'/>
+                    <field name="fal_attachment" filename='fal_attachment_name'/>
+                </field>
+                <field name="partner_id" position="after">
+                      <field name="fal_partner_contact_person_id" domain="[('parent_id','=',partner_id)]"/>
+                </field>
+                <notebook position="inside">
+                    <page string="Shipment" groups="base.group_user">
+                        <field name="picking_ids" readonly="1"/>
+                    </page>
+                </notebook>
+            </field>
+        </record>
+
+        <record id="view_order_tree_fal_add_title" model="ir.ui.view">
+            <field name="name">sale.order.tree.fal.add.title</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="after">
+                    <field name="fal_title"/>
+                    <field name="active" invisible="1"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_quotation_tree_fal_add_title" model="ir.ui.view">
+            <field name="name">sale.order.tree.fal.title</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_quotation_tree"/>
+            <field name="arch" type="xml">
+                <field name="name" position="after">
+                    <field name="active" invisible="1"/>
+                    <field name="fal_title" string="Quotation Title"/>
+                </field>
+            </field>
+        </record>
+
+        <!-- Sale Order/ Quotation filter view -->
+        <record id="view_sales_order_filter_inherit_fal_sale_archive" model="ir.ui.view">
+            <field name="name">view.sales.order.filter.inherit.fal.sale.archive</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_sales_order_filter"/>
+            <field name="arch" type="xml">
+                <data>
+                    <xpath expr="//search/field[@name='partner_id']" position="after">
+                      <field name="fal_title"/>
+                    </xpath>
+                    <xpath expr="//search/filter[@name='my_sale_orders_filter']" position="after">
+                      <separator/>
+                        <filter string="Archived" domain="[('active','=',False)]" name="archived_sale_orders_filter"/>
+                        <separator/>
+                    </xpath>
+                </data>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="fal_sv_sale_order_line_form">
+            <field name="name">sale.order.line.tree.fal.sv.view.form</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='order_line']/tree/field[@name='price_subtotal']" position="after">
+                    <field name="price_subtotal_vat"/>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- change report PDF name -->
+        <function name="write" model="ir.model.data">
+            <function name="search" model="ir.model.data">
+                <value eval="[('module', '=', 'sale'), ('name', '=', 'email_template_edi_sale')]"/>
+            </function>
+            <value eval="{'noupdate': False}"/>
+        </function>
+
+        <record id="sale.email_template_edi_sale" model="mail.template">
+            <field name="report_name">${(object.name or '').replace('/','_')}${object.state == 'draft' and '_draft' or ''}${object.fal_title and '_' or ''}${object.fal_title or ''}</field>
+            <field name="subject">${object.company_id.name} ${object.state in ('draft', 'sent') and 'Quotation' or 'Order'} (Ref ${object.name or 'n/a' }${object.fal_title and '_' or ''}${object.fal_title or ''})</field>
+        </record>
+
+        <report
+            id="sale.action_report_saleorder"
+            string="Quotation / Order"
+            model="sale.order"
+            report_type="qweb-pdf"
+            file="sale.report_saleorder"
+            name="sale.report_saleorder"
+            print_report_name="(object.fal_title and object.state in ('draft', 'sent') and 'Quotation - %s - %s' % (object.name, object.fal_title)) or (object.fal_title and 'Order - %s - %s' % (object.name, object.fal_title)) or (object.state in ('draft', 'sent') and 'Quotation - %s' % (object.name)) or 'Order - %s' % (object.name)"
+        />
+    </data>
+</odoo>

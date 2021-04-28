@@ -1,0 +1,159 @@
+
+.o_fal_dashboard_fal_project_dashboard {
+
+    [type='action'] {
+        cursor: pointer;
+    }
+
+    .o_fal_dashboard_stat_buttons {
+        text-align: right;
+        float: none;
+        width: auto;
+    }
+
+    .o_fal_dashboard_fal_project_dashboard_dashboard {
+
+        .table {
+            margin-top: 15px;
+        }
+        .table > thead > tr > th, .table > thead > tr > td,
+        .table > tbody > tr > th, .table > tbody > tr > td {
+            border: none;
+        }
+        .table > tbody > tr > td.o_fal_dashboard_dashboard_cell {
+            text-align: right;
+        }
+        .table > tbody > tr > td.o_fal_dashboard_dashboard_total {
+            border-top: 1px solid;
+            text-align: right;
+        }
+
+    }
+
+@mixin o-project-dashboard-i-fa-toggle {
+    i.fa {
+        visibility: hidden;
+    }
+    &:hover i.fa {
+        visibility: visible;
+    }
+}
+
+.o_project_dashboard_summary {
+        padding-left: 5px;
+    }
+.o_project_dashboard_summary > span {
+        white-space: pre-wrap;
+    }
+.o_project_dashboard_summary_edit {
+        padding-bottom: 40px;
+        padding-top: 15px;
+    }
+.o_project_dashboard_summary {
+        margin-bottom: 20px;
+        @include o-project-dashboard-i-fa-toggle;
+    }
+
+.o_project_dashboard_summary {
+    display: inline-block;
+    position: relative;
+
+    .o_project_dashboard_summary {
+        padding: 10px 0;
+
+        &, > span, .o_input, .o_project_dashboard_edit_summary_pencil {
+            transition: all .2s ease 0s;
+        }
+        > span {
+            padding: 10px 0;
+            display: block;
+            white-space: pre-wrap;
+            line-height: 1;
+        }
+    }
+
+    .o_input {
+        border: none;
+        padding: 10px;
+    }
+
+    .o_project_dashboard_edit_summary_pencil {
+        @include o-position-absolute(22px, $left: 5px);
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    &:hover {
+        .o_project_dashboard_edit_summary_pencil {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .o_project_dashboard_summary .o_input, .o_project_dashboard_summary span {
+            padding-left: 25px;
+            padding-right: 0;
+        }
+    }
+}
+
+.o_project_dashboard_summary_edit {
+    padding-bottom: 25px;
+    padding-top: 10px;
+
+    textarea {
+        border: 1px solid gray('600');
+        resize: vertical;
+        width: 100%;
+    }
+}
+
+.o_project_dashboard_edit_summary_pencil {
+    font-size: 16px;
+    margin-left: -15px;
+    position: absolute;
+}
+
+    .o_fal_dashboard_fal_project_dashboard_people_time {
+
+        .o_progress_billable_time {
+            background-color: #f0ad4e;
+            color: white;
+            cursor: pointer;
+        }
+        .o_progress_billable_fixed {
+            background-color: #5bc0de;
+            color: white;
+            cursor: pointer;
+        }
+        .o_progress_non_billable_project {
+            color: white;
+            cursor: pointer;
+        }
+        .o_progress_non_billable {
+            background-color: gray;
+            color: white;
+            cursor: pointer;
+        }
+
+        >.o_fal_dashboard_badge {
+            margin-bottom: 10px;
+            > .badge {
+                border: none;
+                    a {
+                    color: white;
+                }
+            }
+        }
+
+        .table {
+            margin-top:15px;
+        }
+        .table > thead > tr > th, .table > thead > tr > td,
+        .table > tbody > tr > th, .table > tbody > tr > td {
+            border: none;
+            padding: 0px;
+        }
+    }
+
+
+}

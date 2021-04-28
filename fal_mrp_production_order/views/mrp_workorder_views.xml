@@ -1,0 +1,100 @@
+<odoo>
+
+    <!-- Workorder View -->
+    <record id="fal_production_order_on_mrp_workorder" model="ir.ui.view">
+        <field name="name">fal_production_order_on_mrp_production</field>
+        <field name="model">mrp.workorder</field>
+        <field name="type">form</field>
+        <field name="inherit_id" ref="mrp.mrp_production_workorder_form_view_inherit"/>
+        <field name="arch" type="xml">
+            <field name="production_id" position="after">
+                <field name="fal_prod_order_id" readonly="1"/>
+            </field>
+            <xpath expr="//sheet/div[1]" position="after">
+                <h2><field name="display_name"/></h2>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="mrp_production_workcenter_tree_view_inherit_fal" model="ir.ui.view">
+        <field name="name">mrp_production_workcenter_tree_view_inherit_fal</field>
+        <field name="inherit_id" ref="mrp.mrp_production_workorder_tree_view_inherit"/>
+        <field name="model">mrp.workorder</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <field name="production_id" position="before">
+                <field name="fal_prod_order_id"/>
+            </field>
+            <field name="name" position="before">
+                <field name="display_name"/>
+            </field>
+            <field name="name" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </field>
+            <field name="state" position="after">
+                <field name="working_state" invisible="1"/>
+                <field name="is_user_working" invisible="1"/>
+                <field name="is_produced" invisible="1"/>
+                <button name="button_start" type="object" string="Start Working" attrs="{'invisible': ['|', ('working_state', '=', 'blocked'), ('state', '!=', 'ready')]}" class="btn-success"/>
+                <button name="button_start" type="object" string="Continue Production" class="btn-warning" attrs="{'invisible': ['|', '|', ('working_state', '=', 'blocked'), ('is_user_working', '=', True), ('state', 'in', ('done', 'pending', 'ready', 'cancel'))]}"/>
+                <button name="button_pending" type="object" string="Pause" class="btn-warning" attrs="{'invisible': ['|', '|', ('working_state', '=', 'blocked'), ('state', 'in', ('done', 'pending', 'ready', 'cancel')), ('is_user_working', '=', False)]}"/>
+                <button name="record_production" type="object" string="Done" class="btn-success" attrs="{'invisible': ['|', '|', '|', ('is_produced', '=', True), ('working_state', '=', 'blocked'), ('state', '!=', 'progress'), ('is_user_working', '=', False)]}"/>
+                <button name="button_finish" type="object" string="Finish Order" attrs="{'invisible': ['|', ('state', '!=', 'progress'), ('is_produced', '=', False)]}" class="btn-info"/>
+                <button name="%(mrp.act_mrp_block_workcenter_wo)d" type="action" context="{'default_workcenter_id': workcenter_id}" string="Block" class="btn-danger" attrs="{'invisible': ['|', '|', ('working_state', '=', 'blocked'), ('state', 'in', ('done', 'pending', 'ready', 'cancel')), ('is_user_working', '=', False)]}"/>
+                <button name="button_unblock" type="object" string="Unblock" class="btn-danger" attrs="{'invisible': [('working_state', '!=', 'blocked')]}"/>
+            </field>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="workcenter_line_production_order">
+        <field name="name">workcenter_line_production_order</field>
+        <field name="model">mrp.workorder</field>
+        <field name="inherit_id" ref="mrp.workcenter_line_kanban"/>
+        <field name="arch" type="xml">
+            <field name="workcenter_id" position="after">
+                <field name="fal_prod_order_id"/>
+            </field>
+            <xpath expr="//div[hasclass('oe_kanban_content')]/div[1]" position="after">
+                <div>
+                    <field name="fal_prod_order_id"/>
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_mrp_production_work_order_search_production_order_fal" model="ir.ui.view">
+        <field name="name">view_mrp_production_work_order_search_production_order_fal</field>
+        <field name="inherit_id" ref="mrp.view_mrp_production_work_order_search"/>
+        <field name="model">mrp.workorder</field>
+        <field name="arch" type="xml">
+            <field name="workcenter_id" position="before">
+                <field name="fal_prod_order_id" string="Production Order"/>
+            </field>
+            <xpath expr="//separator[2]" position="before">
+                <group expand="1" string="Group By">
+                    <filter name="production_order" string="Production Order" domain="[]" context="{'group_by':'fal_prod_order_id'}"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_mrp_production_workcenter_form_filter_fal" model="ir.ui.view">
+        <field name="name">view_mrp_production_workcenter_form_filter_fal</field>
+        <field name="inherit_id" ref="mrp.view_mrp_production_workorder_form_view_filter"/>
+        <field name="model">mrp.workorder</field>
+        <field name="arch" type="xml">
+            <field name="name" position="before">
+                <field name="fal_prod_order_id" string="Production Order"/>
+            </field>
+            <xpath expr="//group[1]/filter[1]" position="before">
+                <filter name="production_order" string="Production Order" domain="[]" context="{'group_by':'fal_prod_order_id'}"/>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Put the workorder management by list view as default behavior. -->
+    <record model="ir.actions.act_window" id="mrp.mrp_workorder_todo">
+        <field name="view_mode">tree,kanban,form,calendar,pivot,graph</field>
+    </record>
+
+</odoo>

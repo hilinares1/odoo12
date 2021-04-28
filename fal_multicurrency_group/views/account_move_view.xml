@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="fal_multicurrency_view_move_line_tree">
+            <field name="name">fal.multicurrency.account.move.line.tree</field>
+            <field name="model">account.move.line</field>
+            <field name="inherit_id" ref="account.view_move_line_tree"/>
+            <field name="arch" type="xml">
+                <data>
+                    <field name="credit" position="after">
+                        <field name="group_currency_id" invisible="1"/>
+                        <field name="fal_debit_group_curr" sum="Total Debit Group" widget="monetary" options="{'currency_field': 'group_currency_id'}"/>
+                        <field name="fal_credit_group_curr" sum="Total Credit Group" widget="monetary" options="{'currency_field': 'group_currency_id'}"/>
+                    </field>
+                </data>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="fal_multicurrency_view_move_line_form">
+            <field name="name">fal.multicurrency.account.move.line.form</field>
+            <field name="model">account.move.line</field>
+            <field name="inherit_id" ref="account.view_move_line_form"/>
+            <field name="arch" type="xml">
+                <data>
+                    <field name="currency_id" position="after">
+                        <field name="group_currency_id" invisible="1"/>
+                        <field name="company_currency_id" invisible="1"/>
+                    </field>
+                    <field name="debit" position="replace">
+                        <label for="debit" string="Debit" widget="monetary" />
+                        <div>
+                            <field name="debit" widget="monetary" attrs="{'readonly':[('parent_state','=','posted')]}" options="{'currency_field': 'company_currency_id'}" class="oe_inline"/>
+                            <span class="oe_inline"> (</span>
+                            <field name="fal_debit_group_curr" widget="monetary" options="{'currency_field': 'group_currency_id'}" class="oe_inline"/>
+                            <span class="oe_inline">)</span>
+                        </div>
+                    </field>
+                    <field name="credit" position="replace">
+                        <label for="credit" string="Credit" widget="monetary" />
+                        <div>
+                            <field name="credit" widget="monetary" attrs="{'readonly':[('parent_state','=','posted')]}" options="{'currency_field': 'company_currency_id'}" class="oe_inline"/>
+                            <span class="oe_inline"> (</span>
+                            <field name="fal_credit_group_curr" widget="monetary" options="{'currency_field': 'group_currency_id'}" class="oe_inline"/>
+                            <span class="oe_inline">)</span>
+                        </div>
+                    </field>
+                </data>
+            </field>
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_fapiao_account_user,fapiao.account.user,model_fapiao,base.group_user,1,1,1,1
+access_fapiao_tag_account_user,fapiao.tag.account.user,model_fapiao_tag_line,base.group_user,1,1,1,1
+access_fapiao_line_account_user,fapiao.line.account.user,model_fapiao_line,base.group_user,1,1,1,1

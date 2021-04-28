@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- On crm lead form view -->
+        <record id="view_crm_inherit_business_type_form" model="ir.ui.view">
+            <field name="name">crm.inherit.business_type.form</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.crm_case_form_view_leads"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='partner_id']" position="before">
+                    <field name="fal_seq_name" string="Lead Code"/>
+                    <field name="fal_business_type"/>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- On crm lead form view pipeline-->
+        <record id="view_crm_pipeline_inherit_business_type_form" model="ir.ui.view">
+            <field name="name">crm.pipeline.inherit.business_type.form</field>
+            <field name="model">crm.lead</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="crm.crm_case_form_view_oppor"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='partner_id']" position="before">
+                    <field name="fal_seq_name" string="Opportunity code"/>
+                    <field name="fal_business_type"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

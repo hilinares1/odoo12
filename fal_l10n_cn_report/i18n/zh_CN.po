@@ -1,0 +1,672 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* fal_l10n_cn_report
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-09-13 10:35+0000\n"
+"PO-Revision-Date: 2017-09-18 17:53+0800\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: zh_CN\n"
+"X-Generator: Poedit 2.0.3\n"
+
+#. module: fal_l10n_cn_report
+#: model:ir.ui.view,arch_db:fal_l10n_cn_report.fal_journal_entry_report
+msgid "<strong>Cashier:</strong>"
+msgstr "<strong>出纳:</strong>"
+
+#. module: fal_l10n_cn_report
+#: model:ir.ui.view,arch_db:fal_l10n_cn_report.fal_journal_entry_report
+msgid "<strong>Continue to next section</strong>"
+msgstr "<strong>后张</strong>"
+
+#. module: fal_l10n_cn_report
+#: model:ir.ui.view,arch_db:fal_l10n_cn_report.fal_journal_entry_report
+msgid "<strong>Date:</strong>"
+msgstr "<strong>日期:</strong>"
+
+#. module: fal_l10n_cn_report
+#: model:ir.ui.view,arch_db:fal_l10n_cn_report.fal_journal_entry_report
+msgid "<strong>No:</strong>"
+msgstr "<strong>序号:</strong>"
+
+#. module: fal_l10n_cn_report
+#: model:ir.ui.view,arch_db:fal_l10n_cn_report.fal_journal_entry_report
+msgid "<strong>Operation:</strong>"
+msgstr "<strong>经办:</strong>"
+
+#. module: fal_l10n_cn_report
+#: model:ir.ui.view,arch_db:fal_l10n_cn_report.fal_journal_entry_report
+msgid "<strong>Period:</strong>"
+msgstr "<strong>周期:</strong>"
+
+#. module: fal_l10n_cn_report
+#: model:ir.ui.view,arch_db:fal_l10n_cn_report.fal_journal_entry_report
+msgid "<strong>Post:</strong>"
+msgstr "<strong>过账:</strong>"
+
+#. module: fal_l10n_cn_report
+#: model:ir.ui.view,arch_db:fal_l10n_cn_report.fal_journal_entry_report
+msgid "<strong>Preparation:</strong>"
+msgstr "<strong>制单:</strong>"
+
+#. module: fal_l10n_cn_report
+#: model:ir.ui.view,arch_db:fal_l10n_cn_report.fal_journal_entry_report
+msgid "<strong>Reference:</strong>"
+msgstr "<strong>参考信息:</strong>"
+
+#. module: fal_l10n_cn_report
+#: model:ir.ui.view,arch_db:fal_l10n_cn_report.fal_journal_entry_report
+msgid "<strong>Total</strong>"
+msgstr "<strong>合计</strong>"
+
+#. module: fal_l10n_cn_report
+#: model:ir.ui.view,arch_db:fal_l10n_cn_report.fal_journal_entry_report
+msgid "<strong>Validation:</strong>"
+msgstr "<strong>审核:</strong>"
+
+#. module: fal_l10n_cn_report
+#: model:ir.ui.view,arch_db:fal_l10n_cn_report.fal_journal_entry_report
+msgid "<strong>Voucher No:</strong>"
+msgstr "<strong>凭证号:</strong>"
+
+#. module: fal_l10n_cn_report
+#: model:account.financial.html.report.line,name:fal_l10n_cn_report.fal_account_financial_report_total_assets0
+msgid "ASSETS"
+msgstr "资产"
+
+#. module: fal_l10n_cn_report
+#: model:ir.ui.view,arch_db:fal_l10n_cn_report.fal_journal_entry_report
+msgid "Account Name"
+msgstr "科目名称"
+
+#. module: fal_l10n_cn_report
+#: model:ir.model,name:fal_l10n_cn_report.model_account_financial_html_report_line
+msgid "Account Report Line"
+msgstr "会计报表行"
+
+#. module: fal_l10n_cn_report
+#: model:account.financial.html.report.line,name:fal_l10n_cn_report.fal_account_financial_report_account_payable0
+msgid "Accounts Payable"
+msgstr "应付账款"
+
+#. module: fal_l10n_cn_report
+#: model:account.financial.html.report.line,name:fal_l10n_cn_report.fal_account_financial_report_receivable_view0
+msgid "Accounts Receivable"
+msgstr "应收账款"
+
+#. module: fal_l10n_cn_report
+#: model:account.financial.html.report.line,name:fal_l10n_cn_report.fal_account_financial_report_receivable0
+msgid "Accounts Receivable Plus"
+msgstr "应收账款加"
+
+#. module: fal_l10n_cn_report
+#: model:account.financial.html.report.line,name:fal_l10n_cn_report.fal_account_financial_report_receivable_minus0
+msgid "Accounts Receivable minus"
+msgstr "应收账款减"
+
+#. module: fal_l10n_cn_report
+#: model:account.financial.html.report.line,name:fal_l10n_cn_report.fal_account_financial_report_accrued_liabilities0
+msgid "Accrued Liabilities"
+msgstr "预计负债"
+
+#. module: fal_l10n_cn_report
+#: model:account.financial.html.report.line,name:fal_l10n_cn_report.fal_account_financial_report_available_safe_finan_asset_view0
+msgid "Available for sale financial assets"
+msgstr "可供出售金融资产"
+
+#. module: fal_l10n_cn_report
+#: model:account.financial.html.report.line,name:fal_l10n_cn_report.fal_account_financial_report_available_safe_finan_asset_minus0
+msgid "Available for sale financial assets Minus"
+msgstr "可供出售金融资产减"
+
+#. module: fal_l10n_cn_report
+#: model:account.financial.html.report.line,name:fal_l10n_cn_report.fal_account_financial_report_available_safe_finan_asset0
+msgid "Available for sale financial assets Plus"
+msgstr "可供出售金融资产加"
+
+#. module: fal_l10n_cn_report
+#: model:account.financial.html.report,name:fal_l10n_cn_report.fal_account_financial_report_balancesheet0
+#: model:ir.actions.client,name:fal_l10n_cn_report.account_financial_html_report_action_6
+#: model:ir.ui.menu,name:fal_l10n_cn_report.account_financial_html_report_menu_6
+msgid "Balance Sheet"
+msgstr "资产负债表"
+
+#. module: fal_l10n_cn_report
+#: model:account.financial.html.report.line,name:fal_l10n_cn_report.fal_account_financial_report_bonds_payable0
+msgid "Bonds Payable"
+msgstr "应付债券"
+
+#. module: fal_l10n_cn_report
+#: model:ir.ui.view,arch_db:fal_l10n_cn_report.view_fal_journal_entry_report_wizard
+msgid "Cancel"
+msgstr "取消"
+
+#. module: fal_l10n_cn_report
+#: model:account.financial.html.report.line,name:fal_l10n_cn_report.fal_account_financial_report_capital_reserves0
+msgid "Capital Reserves"
+msgstr "资本公积"
+
+#. module: fal_l10n_cn_report
+#: model:account.financial.html.report.line,name:fal_l10n_cn_report.fal_account_financial_report_bank0
+msgid "Cash at bank and on hand"
+msgstr "货币资金"
+
+#. module: fal_l10n_cn_report
+#: model:account.financial.html.report.line,name:fal_l10n_cn_report.fal_account_financial_report_construction_work_process0
+msgid "Construction in work in process"
+msgstr "在建工程"
+
+#. module: fal_l10n_cn_report
+#: model:ir.model.fields,field_description:fal_l10n_cn_report.field_fal_journal_entry_report_wizard_create_uid
+msgid "Created by"
+msgstr "制表人"
+
+#. module: fal_l10n_cn_report
+#: model:ir.model.fields,field_description:fal_l10n_cn_report.field_fal_journal_entry_report_wizard_create_date
+msgid "Created on"
+msgstr "制表时间"
+
+#. module: fal_l10n_cn_report
+#: model:ir.ui.view,arch_db:fal_l10n_cn_report.fal_journal_entry_report
+msgid "Credit"
+msgstr "贷方"
+
+#. module: fal_l10n_cn_report
+#: model:account.financial.html.report.line,name:fal_l10n_cn_report.fal_account_financial_report_current_assets_view0
+msgid "Current Assets"
+msgstr "流动资产"
+
+#. module: fal_l10n_cn_report
+#: model:account.financial.html.report.line,name:fal_l10n_cn_report.fal_account_financial_report_current_liabilities_view0
+msgid "Current Liabilities"
+msgstr "流动负债"
+
+#. module: fal_l10n_cn_report
+#: model:account.financial.html.report.line,name:fal_l10n_cn_report.fal_account_financial_report_customer_deposit0
+msgid "Customer Deposit"
+msgstr "预收款项"
+
+#. module: fal_l10n_cn_report
+#: model:ir.ui.view,arch_db:fal_l10n_cn_report.fal_journal_entry_report
+msgid "Debit"
+msgstr "借方"
+
+#. module: fal_l10n_cn_report
+#: model:account.financial.html.report.line,name:fal_l10n_cn_report.fal_account_financial_report_deffered_assets0
+msgid "Deffered Assets"
+msgstr "递延资产"
+
+#. module: fal_l10n_cn_report
+#: model:account.financial.html.report.line,name:fal_l10n_cn_report.fal_account_financial_report_deffered_income_tax_assets0
+msgid "Deffered Income Tax Assets"
+msgstr "递延所得税资产"
+
+#. module: fal_l10n_cn_report
+#: model:account.financial.html.report.line,name:fal_l10n_cn_report.fal_account_financial_report_deffered_taxation_credit0
+msgid "Deffered taxation credit"
+msgstr "递延所得税负债"
+
+#. module: fal_l10n_cn_report
+#: model:ir.ui.view,arch_db:fal_l10n_cn_report.fal_journal_entry_report
+msgid "Description"
+msgstr "说明"
+
+#. module: fal_l10n_cn_report
+#: model:account.financial.html.report.line,name:fal_l10n_cn_report.fal_account_financial_report_development_expenditure0
+msgid "Development Expenditure"
+msgstr "开发支出"
+
+#. module: fal_l10n_cn_report
+#: model:ir.model.fields,field_description:fal_l10n_cn_report.field_fal_journal_entry_report_wizard_display_name
+msgid "Display Name"
+msgstr "显示名称"
+
+#. module: fal_l10n_cn_report
+#: model:account.financial.html.report.line,name:fal_l10n_cn_report.fal_account_financial_report_disposal_fix_assets0
+msgid "Disposal of Fixed Assets"
+msgstr "固定资产清理"
+
+#. module: fal_l10n_cn_report
+#: model:account.financial.html.report.line,name:fal_l10n_cn_report.fal_account_financial_report_dividend_receivable0
+msgid "Dividend Receivable"
+msgstr "应收股利"
+
+#. module: fal_l10n_cn_report
+#: model:account.financial.html.report.line,name:fal_l10n_cn_report.fal_account_financial_report_divident_payable0
+msgid "Divident Payable"
+msgstr "应付股利"
+
+#. module: fal_l10n_cn_report
+#: model:ir.model.fields,field_description:fal_l10n_cn_report.field_fal_journal_entry_report_wizard_end_date
+msgid "End Date"
+msgstr "结束日期"
+
+#. module: fal_l10n_cn_report
+#: model:account.financial.html.report.line,name:fal_l10n_cn_report.fal_account_financial_report_equity_view0
+msgid "Equities"
+msgstr "所有者权益（或股东权益）"
+
+#. module: fal_l10n_cn_report
+#: model:ir.ui.menu,name:fal_l10n_cn_report.fal_account_reports_legal_statements_menu
+msgid "Falinwa Legal Statements"
+msgstr "法林瓦法律声明"
+
+#. module: fal_l10n_cn_report
+#: model:account.financial.html.report.line,name:fal_l10n_cn_report.fal_account_financial_report_financial_expense0
+msgid "Financial Expenses"
+msgstr "财务费用"
+
+#. module: fal_l10n_cn_report
+#: model:account.financial.html.report.line,name:fal_l10n_cn_report.fal_account_financial_report_good_will0
+msgid "Good Will"
+msgstr "商誉"
+
+#. module: fal_l10n_cn_report
+#: model:account.financial.html.report.line,name:fal_l10n_cn_report.fal_account_financial_report_held_maturity_investment_view0
+msgid "Held to manturity investments"
+msgstr "持有至到期投资"
+
+#. module: fal_l10n_cn_report
+#: model:account.financial.html.report.line,name:fal_l10n_cn_report.fal_account_financial_report_held_maturity_investment_minus0
+msgid "Held to manturity investments Minus"
+msgstr "持有至到期投资减"
+
+#. module: fal_l10n_cn_report
+#: model:account.financial.html.report.line,name:fal_l10n_cn_report.fal_account_financial_report_held_maturity_investment0
+msgid "Held to manturity investments Plus"
+msgstr "持有至到期投资加"
+
+#. module: fal_l10n_cn_report
+#: model:ir.model.fields,field_description:fal_l10n_cn_report.field_fal_journal_entry_report_wizard_id
+msgid "ID"
+msgstr "ID"
+
+#. module: fal_l10n_cn_report
+#: model:account.financial.html.report.line,name:fal_l10n_cn_report.fal_account_financial_report_income0
+msgid "Income"
+msgstr "收入"
+
+#. module: fal_l10n_cn_report
+#: model:account.financial.html.report.line,name:fal_l10n_cn_report.fal_account_financial_report_intangible_assets_view0
+msgid "Intangible Assets"
+msgstr "无形资产"
+
+#. module: fal_l10n_cn_report
+#: model:account.financial.html.report.line,name:fal_l10n_cn_report.fal_account_financial_report_intangible_assets_minus0
+msgid "Intangible Assets Minus"
+msgstr "无形资产减"
+
+#. module: fal_l10n_cn_report
+#: model:account.financial.html.report.line,name:fal_l10n_cn_report.fal_account_financial_report_intangible_assets0
+msgid "Intangible Assets Plus"
+msgstr "无形资产加"
+
+#. module: fal_l10n_cn_report
+#: model:account.financial.html.report.line,name:fal_l10n_cn_report.fal_account_financial_report_interest_payable0
+msgid "Interest Payable"
+msgstr "应付利息"
+
+#. module: fal_l10n_cn_report
+#: model:account.financial.html.report.line,name:fal_l10n_cn_report.fal_account_financial_report_interest_receivable0
+msgid "Interest Receivable"
+msgstr "应收利息"
+
+#. module: fal_l10n_cn_report
+#: model:account.financial.html.report.line,name:fal_l10n_cn_report.fal_account_financial_report_inventory_view0
+msgid "Inventory"
+msgstr "存货"
+
+#. module: fal_l10n_cn_report
+#: model:account.financial.html.report.line,name:fal_l10n_cn_report.fal_account_financial_report_current_assets_minus0
+msgid "Inventory Minus"
+msgstr "存货减"
+
+#. module: fal_l10n_cn_report
+#: model:account.financial.html.report.line,name:fal_l10n_cn_report.fal_account_financial_report_current_assets0
+msgid "Inventory Plus"
+msgstr "存货加"
+
+#. module: fal_l10n_cn_report
+#: model:ir.ui.view,arch_db:fal_l10n_cn_report.fal_journal_entry_report
+#: model:ir.ui.view,arch_db:fal_l10n_cn_report.view_fal_journal_entry_report_wizard
+msgid "Journal Entry"
+msgstr "记账凭证"
+
+#. module: fal_l10n_cn_report
+#: model:account.financial.html.report.line,name:fal_l10n_cn_report.fal_account_financial_report_liabilities_and_equities_view0
+msgid "LIABILITIES & EQUITIES"
+msgstr "负债和所有者权益（或股东权益）总计"
+
+#. module: fal_l10n_cn_report
+#: model:ir.model.fields,field_description:fal_l10n_cn_report.field_fal_journal_entry_report_wizard___last_update
+msgid "Last Modified on"
+msgstr "最后修改时间"
+
+#. module: fal_l10n_cn_report
+#: model:ir.model.fields,field_description:fal_l10n_cn_report.field_fal_journal_entry_report_wizard_write_uid
+msgid "Last Updated by"
+msgstr "最后更新人"
+
+#. module: fal_l10n_cn_report
+#: model:ir.model.fields,field_description:fal_l10n_cn_report.field_fal_journal_entry_report_wizard_write_date
+msgid "Last Updated on"
+msgstr "最后更新时间"
+
+#. module: fal_l10n_cn_report
+#: model:account.financial.html.report.line,name:fal_l10n_cn_report.fal_account_financial_report_less_treasury_stock0
+msgid "Less: Treasury Stock"
+msgstr "减:库存股"
+
+#. module: fal_l10n_cn_report
+#: model:account.financial.html.report.line,name:fal_l10n_cn_report.fal_account_financial_report_liabilities_view0
+msgid "Liabilities"
+msgstr "负债"
+
+#. module: fal_l10n_cn_report
+#: model:account.financial.html.report.line,name:fal_l10n_cn_report.fal_account_financial_report_long_term_account_payable_view0
+msgid "Long-term Accounts Payable"
+msgstr "长期应付款"
+
+#. module: fal_l10n_cn_report
+#: model:account.financial.html.report.line,name:fal_l10n_cn_report.fal_account_financial_report_long_term_account_payable_minus0
+msgid "Long-term Accounts Payable Minus"
+msgstr "长期应付款减"
+
+#. module: fal_l10n_cn_report
+#: model:account.financial.html.report.line,name:fal_l10n_cn_report.fal_account_financial_report_long_term_account_payable0
+msgid "Long-term Accounts Payable Plus"
+msgstr "长期应付款加"
+
+#. module: fal_l10n_cn_report
+#: model:account.financial.html.report.line,name:fal_l10n_cn_report.fal_account_financial_report_long_term_loan0
+msgid "Long-term Loan"
+msgstr "长期借款"
+
+#. module: fal_l10n_cn_report
+#: model:account.financial.html.report.line,name:fal_l10n_cn_report.fal_account_financial_report_long_term_rec_view0
+msgid "Long-term Receivable"
+msgstr "长期应收款"
+
+#. module: fal_l10n_cn_report
+#: model:account.financial.html.report.line,name:fal_l10n_cn_report.fal_account_financial_report_long_term_rec_minus0
+msgid "Long-term Receivable Minus"
+msgstr "长期应收款减"
+
+#. module: fal_l10n_cn_report
+#: model:account.financial.html.report.line,name:fal_l10n_cn_report.fal_account_financial_report_long_term_rec0
+msgid "Long-term Receivable Plus"
+msgstr "长期应收款加"
+
+#. module: fal_l10n_cn_report
+#: model:account.financial.html.report.line,name:fal_l10n_cn_report.fal_account_financial_report_long_term_eq_inv0
+msgid "Long-term equity investments"
+msgstr "长期股权投资"
+
+#. module: fal_l10n_cn_report
+#: model:account.financial.html.report.line,name:fal_l10n_cn_report.fal_account_financial_report_net_assets0
+msgid "NET ASSETS"
+msgstr "净资产"
+
+#. module: fal_l10n_cn_report
+#: model:account.financial.html.report.line,name:fal_l10n_cn_report.fal_account_financial_report_net_profit0
+msgid "NET PROFIT"
+msgstr "净利润"
+
+#. module: fal_l10n_cn_report
+#: model:account.financial.html.report.line,name:fal_l10n_cn_report.fal_account_financial_report_devaluation_lost_asset0
+msgid "Net changes in fair value(loss of \"-\")"
+msgstr "公允价值变动收益（损失以“-”号填列）"
+
+#. module: fal_l10n_cn_report
+#: model:account.financial.html.report.line,name:fal_l10n_cn_report.fal_account_financial_report_net_investment_income0
+msgid "Net investment income(loss of \"-\")"
+msgstr "投资收益（损失以“－”号填列）"
+
+#. module: fal_l10n_cn_report
+#: code:addons/fal_l10n_cn_report/wizard/fal_journal_entry_report_wizard.py:25
+#, python-format
+msgid "No Journal Entries Found"
+msgstr "找不到会计分录"
+
+#. module: fal_l10n_cn_report
+#: model:account.financial.html.report.line,name:fal_l10n_cn_report.fal_account_financial_report_noncurrent_assets_one_year_view0
+msgid "Non-Current Assets in one year"
+msgstr "一年内到期的非流动资产"
+
+#. module: fal_l10n_cn_report
+#: model:account.financial.html.report.line,name:fal_l10n_cn_report.fal_account_financial_report_non_current_liabilities_one_year0
+msgid "Non-Current Liabilities in one year"
+msgstr "一年内到期的非流动负债"
+
+#. module: fal_l10n_cn_report
+#: model:account.financial.html.report.line,name:fal_l10n_cn_report.fal_account_financial_report_non_current_assets0
+#: model:account.financial.html.report.line,name:fal_l10n_cn_report.fal_account_financial_report_non_current_assets_view0
+msgid "Non-current Assets"
+msgstr "非流动资产"
+
+#. module: fal_l10n_cn_report
+#: model:account.financial.html.report.line,name:fal_l10n_cn_report.fal_account_financial_report_non_current_liabilities_view0
+msgid "Non-current Liabilities"
+msgstr "非流动负债"
+
+#. module: fal_l10n_cn_report
+#: model:account.financial.html.report.line,name:fal_l10n_cn_report.fal_account_financial_report_nonoperation_expenses0
+msgid "Non-operation Expenses"
+msgstr "营业外支出"
+
+#. module: fal_l10n_cn_report
+#: model:account.financial.html.report.line,name:fal_l10n_cn_report.fal_account_financial_report_nonoperation_income0
+msgid "Non-operation Income"
+msgstr "营业外收入"
+
+#. module: fal_l10n_cn_report
+#: model:account.financial.html.report.line,name:fal_l10n_cn_report.fal_account_financial_report_notes_payable0
+msgid "Notes Payable"
+msgstr "应付票据"
+
+#. module: fal_l10n_cn_report
+#: model:account.financial.html.report.line,name:fal_l10n_cn_report.fal_account_financial_report_notes_receivable0
+msgid "Notes Receivable"
+msgstr "应收票据"
+
+#. module: fal_l10n_cn_report
+#: model:account.financial.html.report.line,name:fal_l10n_cn_report.fal_account_financial_report_oil_gas_assets0
+msgid "Oil and gas Assets"
+msgstr "油气资产"
+
+#. module: fal_l10n_cn_report
+#: model:account.financial.html.report.line,name:fal_l10n_cn_report.fal_account_financial_report_operation_cost0
+msgid "Operation Costs"
+msgstr "营业成本"
+
+#. module: fal_l10n_cn_report
+#: model:account.financial.html.report.line,name:fal_l10n_cn_report.fal_account_financial_report_operation_profit0
+msgid "Operation profit(loss of \"-\")"
+msgstr "营业利润（亏损以“－”号填列）"
+
+#. module: fal_l10n_cn_report
+#: model:account.financial.html.report.line,name:fal_l10n_cn_report.fal_account_financial_report_operation_tax_addons0
+msgid "Operation tax and add-ons"
+msgstr "营业税金及附加"
+
+#. module: fal_l10n_cn_report
+#: model:account.financial.html.report.line,name:fal_l10n_cn_report.fal_account_financial_report_other_current_assets0
+msgid "Other Current Assets"
+msgstr "其他流动资产"
+
+#. module: fal_l10n_cn_report
+#: model:account.financial.html.report.line,name:fal_l10n_cn_report.fal_account_financial_report_other_current_liabilities0
+msgid "Other Current Liabilities"
+msgstr "其他流动负债"
+
+#. module: fal_l10n_cn_report
+#: model:account.financial.html.report.line,name:fal_l10n_cn_report.fal_account_financial_report_other_non_current_assets0
+msgid "Other Non-Current Assets"
+msgstr "其他非流动资产"
+
+#. module: fal_l10n_cn_report
+#: model:account.financial.html.report.line,name:fal_l10n_cn_report.fal_account_financial_report_other_non_current_liabilities0
+msgid "Other Non-Current Liabilities"
+msgstr "其他非流动负债"
+
+#. module: fal_l10n_cn_report
+#: model:account.financial.html.report.line,name:fal_l10n_cn_report.fal_account_financial_report_other_payable0
+msgid "Other Payable"
+msgstr "其他应付款"
+
+#. module: fal_l10n_cn_report
+#: model:account.financial.html.report.line,name:fal_l10n_cn_report.fal_account_financial_report_other_receivable0
+msgid "Other Receivable"
+msgstr "其他应收款"
+
+#. module: fal_l10n_cn_report
+#: model:account.financial.html.report.line,name:fal_l10n_cn_report.fal_account_financial_report_overheard_expense0
+msgid "Overheard Expenses"
+msgstr "间接费用"
+
+#. module: fal_l10n_cn_report
+#: model:ir.model.fields,field_description:fal_l10n_cn_report.field_account_financial_html_report_line_fal_is_page2
+msgid "Page 2"
+msgstr "第2页"
+
+#. module: fal_l10n_cn_report
+#: model:ir.ui.view,arch_db:fal_l10n_cn_report.view_fal_journal_entry_report_wizard
+msgid "Print"
+msgstr "打印"
+
+#. module: fal_l10n_cn_report
+#: model:ir.ui.menu,name:fal_l10n_cn_report.menu_fal_journal_entry_report_wizard
+msgid "Print Journal Entries"
+msgstr "打印会计凭证"
+
+#. module: fal_l10n_cn_report
+#: model:ir.actions.act_window,name:fal_l10n_cn_report.action_fal_journal_entry_report_wizard
+#: model:ir.actions.report.xml,name:fal_l10n_cn_report.action_journal_entry_report
+msgid "Print Journal Entry"
+msgstr "打印会计分录"
+
+#. module: fal_l10n_cn_report
+#: model:account.financial.html.report.line,name:fal_l10n_cn_report.fal_account_financial_report_prior_icome_adjustment0
+msgid "Prior year income adjustment"
+msgstr "以前年度损益调整"
+
+#. module: fal_l10n_cn_report
+#: model:account.financial.html.report.line,name:fal_l10n_cn_report.fal_account_financial_report_production_biological_assets0
+msgid "Production of biological Assets"
+msgstr "生产性生物资产"
+
+#. module: fal_l10n_cn_report
+#: model:account.financial.html.report,name:fal_l10n_cn_report.fal_account_financial_report_profitandloss0
+#: model:ir.actions.client,name:fal_l10n_cn_report.account_financial_html_report_action_5
+#: model:ir.ui.menu,name:fal_l10n_cn_report.account_financial_html_report_menu_5
+msgid "Profit & Loss"
+msgstr "利润表"
+
+#. module: fal_l10n_cn_report
+#: model:account.financial.html.report.line,name:fal_l10n_cn_report.fal_account_financial_report_profit_tax_expenses0
+msgid "Profit tax expenses"
+msgstr "所得税费用"
+
+#. module: fal_l10n_cn_report
+#: model:account.financial.html.report.line,name:fal_l10n_cn_report.fal_account_financial_report_project_material0
+msgid "Project Material"
+msgstr "工程物资"
+
+#. module: fal_l10n_cn_report
+#: model:account.financial.html.report.line,name:fal_l10n_cn_report.fal_account_financial_report_sales_expense0
+msgid "Sales Expenses"
+msgstr "销售费用"
+
+#. module: fal_l10n_cn_report
+#: model:account.financial.html.report.line,name:fal_l10n_cn_report.fal_account_financial_report_share_capital0
+msgid "Share Capital"
+msgstr "股本"
+
+#. module: fal_l10n_cn_report
+#: model:account.financial.html.report.line,name:fal_l10n_cn_report.fal_account_financial_report_short_term_loan0
+msgid "Short-term Loan"
+msgstr "短期借款"
+
+#. module: fal_l10n_cn_report
+#: model:account.financial.html.report.line,name:fal_l10n_cn_report.fal_account_financial_report_special_account_payable0
+msgid "Special Accounts Payable"
+msgstr "专项应付款"
+
+#. module: fal_l10n_cn_report
+#: model:account.financial.html.report.line,name:fal_l10n_cn_report.fal_account_financial_report_staff_payable0
+msgid "Staff Payable"
+msgstr "应付职工薪酬"
+
+#. module: fal_l10n_cn_report
+#: model:ir.model.fields,field_description:fal_l10n_cn_report.field_fal_journal_entry_report_wizard_start_date
+msgid "Start Date"
+msgstr "开始日期"
+
+#. module: fal_l10n_cn_report
+#: code:addons/fal_l10n_cn_report/wizard/fal_journal_entry_report_wizard.py:16
+#, python-format
+msgid "Start date cannot be greater then end date!"
+msgstr "开始日期不能大于结束日期！"
+
+#. module: fal_l10n_cn_report
+#: model:account.financial.html.report.line,name:fal_l10n_cn_report.fal_account_financial_report_prepayements0
+msgid "Supplier Prepayment"
+msgstr "预付款项"
+
+#. module: fal_l10n_cn_report
+#: model:account.financial.html.report.line,name:fal_l10n_cn_report.fal_account_financial_report_surplus_reserves0
+msgid "Surplus Reserves"
+msgstr "盈余公积"
+
+#. module: fal_l10n_cn_report
+#: model:account.financial.html.report.line,name:fal_l10n_cn_report.fal_account_financial_report_tangible_assets_view0
+msgid "Tangible Assets"
+msgstr "固定资产"
+
+#. module: fal_l10n_cn_report
+#: model:account.financial.html.report.line,name:fal_l10n_cn_report.fal_account_financial_report_tangible_assets_minus0
+msgid "Tangible Assets Minus"
+msgstr "固定资产减"
+
+#. module: fal_l10n_cn_report
+#: model:account.financial.html.report.line,name:fal_l10n_cn_report.fal_account_financial_report_tangible_assets0
+msgid "Tangible Assets Plus"
+msgstr "固定资产加"
+
+#. module: fal_l10n_cn_report
+#: model:account.financial.html.report.line,name:fal_l10n_cn_report.fal_account_financial_report_tax_payable0
+msgid "Tax Payable"
+msgstr "应交税费"
+
+#. module: fal_l10n_cn_report
+#: model:account.financial.html.report.line,name:fal_l10n_cn_report.fal_account_financial_report_total_profit0
+msgid "Total profit (loss of \"-\")"
+msgstr "净利润（净亏损以“－”号填列）"
+
+#. module: fal_l10n_cn_report
+#: model:account.financial.html.report.line,name:fal_l10n_cn_report.fal_account_financial_report_trading_asset0
+msgid "Trading financial assets"
+msgstr "交易性金融资产"
+
+#. module: fal_l10n_cn_report
+#: model:account.financial.html.report.line,name:fal_l10n_cn_report.fal_account_financial_report_trading_financial_liabilities0
+msgid "Trading financial liabilities"
+msgstr "交易性金融负债"
+
+#. module: fal_l10n_cn_report
+#: model:account.financial.html.report.line,name:fal_l10n_cn_report.fal_account_financial_report_undivided_profits0
+msgid "Undivided Profits"
+msgstr "未分配利润"
+
+#. module: fal_l10n_cn_report
+#: model:ir.model,name:fal_l10n_cn_report.model_fal_journal_entry_report_wizard
+msgid "fal.journal.entry.report.wizard"
+msgstr "fal.journal.entry.report.wizard"

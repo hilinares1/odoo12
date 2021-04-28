@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <report
+            id="report_calendar_meeting_mom"
+            string="Meeting MOM"
+            model="calendar.event"
+            report_type="qweb-pdf"
+            name="fal_calendar_meeting_ext.calendar_meeting_mom_report"
+            file="fal_calendar_meeting_ext.calendar_meeting_mom_report"/>
+
+        <report
+            id="report_calendar_meeting_mom_public"
+            string="Internal Meeting MOM"
+            model="calendar.event"
+            report_type="qweb-pdf"
+            name="fal_calendar_meeting_ext.calendar_meeting_internal_mom_report"
+            file="fal_calendar_meeting_ext.calendar_meeting_internal_mom_report"/>
+
+        <report
+            id="report_calendar_meeting_mom_internal"
+            string="Public Meeting MOM"
+            model="calendar.event"
+            report_type="qweb-pdf"
+            name="fal_calendar_meeting_ext.calendar_meeting_public_mom_report"
+            file="fal_calendar_meeting_ext.calendar_meeting_public_mom_report"/>
+
+        <record id="fal_meeting_type_leave_auto_generate" model="fal.meeting.type">
+            <field name="name">Odoo Auto Generate</field>
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,64 @@
+<openerp>
+	<data>
+
+		<record id="action_stock_card_list" model="ir.actions.act_window">
+			<field name="name">Stock Card List</field>
+			<field name="res_model">vit.stock_card</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		 <record id="action_stock_summary_list" model="ir.actions.act_window">
+			<field name="name">Stock Summary List</field>
+			<field name="res_model">vit.stock_summary</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+		<!--
+		<record id="action_stock_summary_line_list" model="ir.actions.act_window">
+			<field name="name">Stock Summary Detail</field>
+			<field name="res_model">vit.stock_summary_line</field>
+			<field name="view_mode">tree</field>
+		</record>
+
+		<record id="action_stock_summary_line_list_new" model="ir.actions.act_window">
+			<field name="name">Stock Summary Detail</field>
+			<field name="res_model">stock.summary.line.new</field>
+			<field name="view_mode">tree</field>
+		</record> -->
+
+		<menuitem id="vit_stock_card"
+		 action="action_stock_card_list"
+		 name="Stock Card"
+         groups="stock.group_stock_user"
+		 sequence="40"
+		 parent="stock.menu_warehouse_report"/>
+
+		<menuitem id="vit_stock_summary"
+		 action="action_stock_summary_list"
+		 name="Stock Summary"
+         groups="stock.group_stock_user"
+		 sequence="50"
+		 parent="stock.menu_warehouse_report"/>
+<!-- 
+		<menuitem id="vit_stock_summary_new"
+		 action="stock_summary_new_action"
+		 name="Stock Summary"
+         groups="stock.group_stock_user"
+		 sequence="55"
+		 parent="stock.menu_warehouse_report"/>
+ -->
+		<!-- <menuitem id="vit_stock_summary_line"
+		 action="action_stock_summary_line_list"
+		 name="Stock Summary Detail"
+         groups="stock.group_stock_user"
+		 sequence="60"
+		 parent="stock.menu_warehouse_report"/> -->
+
+<!-- 		<menuitem id="vit_stock_summary_line_new"
+		 action="action_stock_summary_line_list_new"
+		 name="Stock Summary Detail"
+         groups="stock.group_stock_user"
+		 sequence="65"
+		 parent="stock.menu_warehouse_report"/> -->
+
+	</data>
+</openerp>

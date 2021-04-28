@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <template id="fal_quality_alert_5m_report">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="doc">
+                    <t t-call="web.internal_layout">
+                        <div class="page">
+                            <div class="oe_structure"/>
+                            <div class="oe_title"><h1><span t-field="doc.quality_alert_id"/> - <span t-field="doc.name"/></h1></div>
+                            <p t-field="doc.short_description"/>
+                            <p t-field="doc.date"/>
+                            <div class="row">
+                                <div class="col-xs-2 col-xs-offset-1">
+                                    <table class="table table-condensed">
+                                        <thead>
+                                            <tr>
+                                                <th>Mother Nature</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="sale_tbody">
+                                           	<t t-foreach="doc.fal_qa_5m_mother_nature_ids" t-as="l">
+                                                 <tr>
+                                                     <td><span t-field="l.description"/></td>
+                                                 </tr>
+                                            </t>
+                                           </tbody>
+                                    </table>
+                                </div>
+                                <div class="col-xs-2">
+                                    <table class="table table-condensed">
+                                        <thead>
+                                            <tr>
+                                               <th>Material</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="sale_tbody">
+                                           	<t t-foreach="doc.fal_qa_5m_material_ids" t-as="l">
+                                                <tr>
+                                                    <td><span t-field="l.description"/></td>
+                                                </tr>
+                                            </t>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="col-xs-2">
+                                    <table class="table table-condensed">
+                                        <thead>
+                                            <tr>
+                                                <th>Methods</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="sale_tbody">
+                                            <t t-foreach="doc.fal_qa_5m_method_ids" t-as="l">
+                                                <tr>
+                                                    <td><span t-field="l.description"/></td>
+                                                </tr>
+                                            </t>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <img class="img" src="/fal_quality_alert_5m/static/src/img/arrow.jpg" style="margin: 0 auto; max-width: 70%" alt="Arrow" data-original-title="" title=""/>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-2 col-xs-offset-1">
+                                    <table class="table table-condensed">
+                                        <thead>
+                                            <tr>
+                                                <th>Man</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="sale_tbody">
+                                            <t t-foreach="doc.fal_qa_5m_man_ids" t-as="l">
+                                                <tr>
+                                                    <td><span t-field="l.description"/></td>
+                                                </tr>
+                                            </t>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="col-xs-2">
+                                    <table class="table table-condensed">
+                                        <thead>
+                                            <tr>
+                                                <th>Machine</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="sale_tbody">
+                                            <t t-foreach="doc.fal_qa_5m_machine_ids" t-as="l">
+                                                <tr>
+                                                    <td><span t-field="l.description"/></td>
+                                                </tr>
+                                            </t>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+
+        <record id="paperformat_fal_qa_5m" model="report.paperformat">
+            <field name="name">QA 5M</field>
+            <field name="default" eval="True"/>
+            <field name="format">custom</field>
+            <field name="page_height">297</field>
+            <field name="page_width">210</field>
+            <field name="orientation">Landscape</field>
+            <field name="margin_top">30</field>
+            <field name="margin_bottom">23</field>
+            <field name="margin_left">5</field>
+            <field name="margin_right">5</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">20</field>
+            <field name="dpi">90</field>
+        </record>
+
+        <report
+           id="fal_quality_alert_5m_report_print"
+           model="fal.qa.5m"
+           string="Quality Alert 5m"
+           report_type="qweb-pdf"
+           name="fal_quality_alert_5m.fal_quality_alert_5m_report"
+           file="fal_quality_alert_5m.fal_quality_alert_5m_report"
+           paperformat="fal_quality_alert_5m.paperformat_fal_qa_5m"
+           />
+
+    </data>
+</odoo>

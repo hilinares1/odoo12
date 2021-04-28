@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record model="ir.ui.view" id="fal_view_provision_category_form">
+        <field name="name">account.asset.category.form</field>
+        <field name="model">account.asset.category</field>
+        <field name="inherit_id" ref="account_asset.view_account_asset_category_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form/sheet/group/div/label[2]" position="attributes">
+                 <attribute name="attrs">{'invisible': [('type','!=','sale')]}</attribute>
+            </xpath>
+            <xpath expr="//form/sheet/group/div/h1" position="before">
+                <label for="name" string="Provision Type" class="oe_edit_only" attrs="{'invisible': [('type','!=','provision')]}"/>
+            </xpath>
+            <xpath expr="//form/sheet/group/group[2]/div[1]/label[2]" position="after">
+                <label for="account_asset_id" string="Provision Account" attrs="{'invisible': [('type','!=','provision')]}" invisible="1" style="font-weight: bold" class="o_light_label"/>
+            </xpath>
+            <field name="account_asset_id" position="attributes">
+                 <attribute name="attrs">{'invisible': [('type','=','provision')]}</attribute>
+            </field>
+            <xpath expr="//form/sheet/group/group[2]/div[2]/label[2]" position="after">
+                <label for="account_depreciation_id" string="Provision Entries: Credit" attrs="{'invisible': [('type','!=','provision')]}" style="font-weight: bold" class="o_light_label"/>
+            </xpath>
+            <xpath expr="//form/sheet/group/group[2]/div[3]/label[2]" position="after">
+                 <label for="account_depreciation_expense_id" string="Provision Entries: Debit" attrs="{'invisible': [('type','!=','provision')]}" style="font-weight: bold" class="o_light_label"/>
+            </xpath>
+            <xpath expr="//form/sheet/group/group[4]" position="attributes">
+                <attribute name="attrs">{'invisible': [('type','=','provision')]}</attribute>
+            </xpath>
+            <xpath expr="//form/sheet/group/group[5]" position="attributes">
+                <attribute name="attrs">{'invisible': [('type','=','provision')]}</attribute>
+            </xpath>
+        </field>
+    </record>
+    
+    <!-- provision -->
+    <record model="ir.ui.view" id="view_account_asset_asset_provision_tree">
+        <field name="name">account.asset.asset.provision.tree</field>
+        <field name="model">account.asset.asset</field>
+        <field name="arch" type="xml">
+            <tree string="Assets" decoration-info="(state == 'draft')" decoration-muted="(state == 'close')">
+                <field name="name" string="provision Name"/>
+                <field name="category_id"/>
+                <field name="date"/>
+                <field name="partner_id" string="Vendor"/>
+                <field name="value"/>
+                <field name="value_residual" widget="monetary"/>
+                <field name="currency_id" groups="base.group_multi_currency"/>
+                <field name="company_id" groups="base.group_multi_company"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_account_asset_provision_form">
+        <field name="name">account.asset.provision.form</field>
+        <field name="model">account.asset.asset</field>
+        <field name="arch" type="xml">
+            <form string="Provision Recognition">
+                <header>
+                    <button name="validate" states="draft" string="Confirm" type="object" class="oe_highlight"/>
+                    <button type="object" name="compute_depreciation_board" string="Compute Provision" states="draft"/>
+                    <button name="close_provision" states="open" string="Close Provision" type="object" class="oe_highlight"/>
+                    <button name="set_to_draft" string="Set to Draft" type="object" attrs="{'invisible': ['|', ('entry_count', '!=', 0), ('state', '!=', 'open')]}"/>
+                    <button name="%(account_asset.action_asset_modify)d" states="open" string="Modify provision" type="action"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,open"/>
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button class="oe_stat_button" name="open_entries"  type="object" icon="fa-pencil">
+                            <field string="Items" name="entry_count" widget="statinfo" />
+                        </button>
+                    </div>
+                    <div class="oe_title">
+                        <label for="name" string="Provision name" class="oe_edit_only"/>
+                        <h1>
+                            <field name="name" class="oe_inline"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="category_id" domain="[('type', '=', 'provision')]" context="{'default_type': 'provision'}" help="Category of provision"/>
+                            <field name="code"/>
+                            <field name="date" help="Date of provision"/>
+                            <field name="type" invisible="1"/>
+                        </group>
+                        <group>
+                            <field name="currency_id" groups="base.group_multi_currency"/>
+                            <field name="company_id" options="{'no_create': True}" groups="base.group_multi_company"/>
+                            <field name="value" widget="monetary" string="Plan Value" options="{'currency_field': 'currency_id'}" help="Plan value of provision"/>
+                            <field name="value_residual" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                            <label for="partner_id" string="Vendor"/>
+                            <field name="partner_id" string="Partner" nolabel="1"/>
+                        </group>
+                    </group>
+                    <notebook colspan="4">
+                        <page string="Provision Board">
+                            <field name="depreciation_line_ids" mode="tree" options="{'reload_whole_on_button': true}" string="Provision Lines">
+                                <tree string="provision Lines" decoration-info="(move_check == False)" create="false">
+                                    <field name="depreciation_date" string="Provision Date"/>
+                                    <field name="amount" widget="monetary" string="Provision"/>
+                                     <field name="remaining_value" readonly="1" widget="monetary" string="Residual"/>
+                                    <field name="depreciated_value" string="Cummulative Provision" readonly="1"/>
+                                    <field name="move_check" widget="deprec_lines_toggler" attrs="{'invisible': [('parent_state', '!=', 'open')]}"/>
+                                    <field name="move_posted_check" invisible="1"/>
+                                    <field name="parent_state" invisible="1"/>
+                                </tree>
+                                <form string="Provision Lines">
+                                    <group>
+                                        <group>
+                                            <field name="parent_state" invisible="1"/>
+                                            <field name="name" string="Provision Name"/>
+                                            <field name="sequence"/>
+                                            <field name="move_id" string="Provision Entry"/>
+                                            <field name="move_check"/>
+                                            <field name="parent_state" invisible="1"/>
+                                        </group>
+                                        <group>
+                                            <field name="amount" widget="monetary" string="Current provision"/>
+                                            <field name="depreciation_date" string="Provision Date"/>
+                                            <field name="depreciated_value" string="Cumulative provision"/>
+                                            <field name="remaining_value" string="Next Period provision"/>
+                                        </group>
+                                    </group>
+                                </form>
+                            </field>
+                        </page>
+                        <page string="Provision Information">
+                            <group>
+                                <label for="method_time"/>
+                                <div>
+                                    <field name="method_time"/>
+                                </div>
+                                <field name="prorata" attrs="{'invisible': [('method_time','=','end')]}"/>
+                            </group>
+                            <group>
+                                <field name="method_number" string="Number of provisions" attrs="{'invisible':[('method_time','=','end')], 'required':[('method_time','=','number')]}"/>
+                                <field name="method_period"/>
+                                <field name="method_end" attrs="{'required': [('method_time','=','end')], 'invisible':[('method_time','=','number')]}"/>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <!-- Provision Action -->
+
+    <record model="ir.actions.act_window" id="action_account_provision_form">
+        <field name="name">Provision</field>
+        <field name="res_model">account.asset.asset</field>
+        <field name="view_type">form</field>
+        <field name="domain">[('category_id.type', '=', 'provision')]</field>
+        <field name="view_ids" eval="[(5, 0, 0),
+            (0, 0, {'view_mode': 'tree', 'view_id': ref('view_account_asset_asset_provision_tree')}),
+            (0, 0, {'view_mode': 'kanban'}),
+            (0, 0, {'view_mode': 'form', 'view_id': ref('view_account_asset_provision_form')})]"/>
+    </record>
+
+    <menuitem parent="account.menu_finance_entries_management" id="menu_action_account_provision_recognition" action="action_account_provision_form" sequence="102" groups="account.group_account_manager"/>
+
+
+    <!-- Configuration -->
+
+    <record model="ir.actions.act_window" id="action_account_asset_asset_list_normal_provision">
+        <field name="name">Provision Types</field>
+        <field name="res_model">account.asset.category</field>
+        <field name="domain">[('type', '=', 'provision')]</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,kanban,form</field>
+        <field name="context">{'default_type': 'provision'}</field>
+    </record>
+    <menuitem parent="account.account_management_menu" id="menu_action_account_asset_asset_list_normal_provision" action="action_account_asset_asset_list_normal_provision" sequence="7"/>
+
+</odoo>

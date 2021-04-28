@@ -1,0 +1,25 @@
+<odoo>
+  <data>
+        <record id="view_res_users_tree_fal_partner_qualification" model="ir.ui.view">
+            <field name="name">res.users.tree.fal_partner_qualification</field>
+            <field name="model">res.users</field>
+            <field name="inherit_id" ref="base.view_users_tree"/>
+            <field name="arch" type="xml">
+                <field name="login_date" position="after">
+                    <field name="state" invisible="1"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_res_users_form_fal_partner_qualification" model="ir.ui.view">
+            <field name="name">res.users.form.fal_partner_qualification</field>
+            <field name="model">res.users</field>
+            <field name="inherit_id" ref="base.view_users_form"/>
+            <field name="arch" type="xml">
+                <field name="lang" position="after">
+                    <field name="state" invisible="1"/>
+                </field>
+            </field>
+        </record>
+  </data>
+</odoo>

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- Account Invoice inherit -->
+        <record id="view_invoice_tree_fal" model="ir.ui.view">
+            <field name="name">view_invoice_tree_fal</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_tree"/>
+            <field name="arch" type="xml">
+                <field name="origin" position="after">
+                    <field name="fal_analytic_tag_ids" groups="analytic.group_analytic_tags" widget="many2many_tags"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_invoice_form_fal" model="ir.ui.view">
+            <field name="name">view_invoice_form_fal</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_form"/>
+            <field name="arch" type="xml">
+                <field name="date_due" position="after">
+                    <label for="fal_analytic_tag_ids" groups="analytic.group_analytic_tags"/>
+                    <div class="o_row" groups="analytic.group_analytic_tags">
+                        <field name="fal_analytic_tag_ids" widget="many2many_tags"/>
+                        <button type="object" name="apply_to_line" string="Apply to line" class="oe_link"/>
+                    </div>
+                </field>
+            </field>
+        </record>
+
+        <!-- Vendor Bill inherit -->
+        <record id="view_bill_tree_fal" model="ir.ui.view">
+            <field name="name">view_bill_tree_fal</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_supplier_tree"/>
+            <field name="arch" type="xml">
+                <field name="origin" position="after">
+                    <field name="fal_analytic_tag_ids" groups="analytic.group_analytic_tags" widget="many2many_tags"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_bill_form_fal" model="ir.ui.view">
+            <field name="name">view_bill_form_fal</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_supplier_form"/>
+            <field name="arch" type="xml">
+                <field name="reference" position="after">
+                    <label for="fal_analytic_tag_ids" groups="analytic.group_analytic_tags"/>
+                    <div class="o_row" groups="analytic.group_analytic_tags">
+                        <field name="fal_analytic_tag_ids" widget="many2many_tags"/>
+                        <button type="object" name="apply_to_line" string="Apply to line" class="oe_link"/>
+                    </div>
+                </field>
+            </field>
+        </record>
+
+        <!-- Bank Statement inherit -->
+        <record id="view_bank_statement_tree_fal" model="ir.ui.view">
+            <field name="name">view_bank_statement_tree_fal</field>
+            <field name="model">account.bank.statement</field>
+            <field name="inherit_id" ref="account.view_bank_statement_tree"/>
+            <field name="arch" type="xml">
+                <field name="journal_id" position="after">
+                    <field name="fal_analytic_account_id" groups="analytic.group_analytic_accounting"/>
+                    <field name="fal_analytic_tag_ids" groups="analytic.group_analytic_tags" widget="many2many_tags"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_bank_statement_form_fal" model="ir.ui.view">
+            <field name="name">view_bank_statement_form_fal</field>
+            <field name="model">account.bank.statement</field>
+            <field name="inherit_id" ref="account.view_bank_statement_form"/>
+            <field name="arch" type="xml">
+                <field name="company_id" position="after">
+                    <label for="fal_analytic_tag_ids" groups="analytic.group_analytic_tags"/>
+                    <div class="o_row" groups="analytic.group_analytic_tags">
+                        <field name="fal_analytic_tag_ids" widget="many2many_tags"/>
+                        <button type="object" name="apply_to_line_tag" string="Apply to line" class="oe_link"/>
+                    </div>
+                </field>
+                <xpath expr="//notebook/page[@name='statement_line_ids']/field[@name='line_ids']/tree/field[@name='partner_id']" position="after">
+                    <field name="analytic_tag_ids" groups="analytic.group_analytic_tags" domain="[('company_id', '=', parent.company_id)]" widget="many2many_tags"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="vview_bank_statement_line_form_fal" model="ir.ui.view">
+            <field name="name">view_bank_statement_line_tree_fal</field>
+            <field name="model">account.bank.statement.line</field>
+            <field name="inherit_id" ref="account.view_bank_statement_line_form"/>
+            <field name="arch" type="xml">
+                <field name="partner_id" position="after">
+                    <field name="analytic_account_id" groups="analytic.group_analytic_accounting"/>
+                    <field name="analytic_tag_ids" groups="analytic.group_analytic_tags" widget="many2many_tags"/>
+                </field>
+            </field>
+        </record>
+
+        <!-- Account move inherit -->
+        <record id="view_move_form_fal" model="ir.ui.view">
+            <field name="name">view_bank_statement_form_fal</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="account.view_move_form"/>
+            <field name="arch" type="xml">
+                <field name="company_id" position="after">
+                    <label for="fal_analytic_tag_ids" groups="analytic.group_analytic_tags"/>
+                    <div class="o_row" groups="analytic.group_analytic_tags">
+                        <field name="fal_analytic_tag_ids" widget="many2many_tags"/>
+                        <button type="object" name="apply_to_line" string="Apply to line" class="oe_link"/>
+                    </div>
+                </field>
+            </field>
+        </record>
+
+    </data>
+</odoo>

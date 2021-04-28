@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="view_crm_form_fal_group_curr" model="ir.ui.view">
+            <field name="name">sale.crm.tree.fal.group.curr</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.crm_case_form_view_oppor"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='partner_id']" position="after">
+                    <field name="group_currency_id" invisible="1"/>
+                    <field name="curr_company_id" invisible="1"/>
+                    <field name="company_id" invisible="1"/>
+                </xpath>
+                <xpath expr="//field[@name='planned_revenue']" position="after">
+                    <span class="oe_grey"> (</span>
+                    <field name="amount_total_group_curr" class="oe_read_only" widget="monetary" options="{'currency_field': 'group_currency_id'}"/>
+                    <span class="oe_grey">/</span>
+                    <field name="amount_company_currency" class="oe_read_only" widget="monetary" options="{'currency_field': 'curr_company_id'}"/>
+                    <span class="oe_grey">)</span>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_pivot_fal_group_curr" model="ir.ui.view">
+            <field name="name">sale.crm.pivot.fal.group.curr</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.crm_lead_view_pivot"/>
+            <field name="arch" type="xml">
+                <field name="planned_revenue" position="after">
+                    <field name="amount_total_group_curr" type="measure"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="crm_case_kanban_view_leads_change_planned_revenue" model="ir.ui.view">
+            <field name="name">sale.crm.kanban.current.compnay,currency</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.crm_case_kanban_view_leads"/>
+            <field name="arch" type="xml">
+                <field name="planned_revenue" position="after">
+                    <field name="group_currency_id"/>
+                    <field name="amount_total_group_curr"/>
+                </field>
+                <xpath expr="//progressbar" position="attributes">
+                    <attribute name="sum_field">amount_total_group_curr</attribute>
+                </xpath>
+                <xpath expr="//kanban/templates/t/div/div[2]/div[3]/t/field[@name='planned_revenue']" position="after">
+                     (<field name="amount_total_group_curr" widget="monetary" options="{'currency_field': 'group_currency_id'}"/>)
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

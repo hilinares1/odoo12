@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="crm_case_form_view_leads_inherit" model="ir.ui.view">
+            <field name="name">crm_case_form_view_leads_inherit</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.crm_case_form_view_leads" />
+            <field name="arch" type="xml">
+                <xpath expr="//button[@name='action_set_lost']" position="replace">
+                    <button name="action_set_lost_and_link_partner" string="Mark as Lost" type="object" attrs="{'invisible': ['&amp;', ('probability', '=', 0), ('active', '=', False)]}"/>
+                </xpath>
+                <xpath expr="//page[@name='extra']/group" position="inside">
+                    <group string="Other Info">
+                        <field name="fal_final_approval"/>
+                        <field name="fal_industry"/>
+                        <field name="fal_year"/>
+                        <field name="fal_employee_number"/>
+                        <field name="fal_general_structure"/>
+                        <field name="fal_group_company"/>
+                        <field name="fal_contact"/>
+                    </group>
+                </xpath>
+                <xpath expr="//page[@name='extra']/group" position="after">
+                    <field name="fal_crm_line_ids">
+                        <tree editable="bottom" string="Question">
+                            <field name="fal_question"/>
+                            <field name="fal_answer" attrs="{'readonly':[('fal_question','=',False)]}"/>
+                            <field name="fal_custom_answer" attrs="{'readonly':[('fal_question','=',False)]}"/>
+                        </tree>
+                    </field>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="crm_case_form_view_oppor_inherit" model="ir.ui.view">
+            <field name="name">crm_case_form_view_oppor_inherit</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.crm_case_form_view_oppor" />
+            <field name="arch" type="xml">
+                <xpath expr="//button[@name='%(crm.crm_lead_lost_action)d']" position="replace">
+                    <button name="%(fal_crm_ext.crm_lead_lost_and_link_partner_action)d" string="Mark Lost"
+                                type="action" class="oe_highlight"
+                                context="{'default_lead_id': active_id}"
+                                attrs="{'invisible': [('active', '=', False),('probability', '&lt;', 100)]}"/>
+                </xpath>
+                <xpath expr="//group[@name='Misc']" position="after">
+                    <group string="Other Info">
+                        <field name="fal_final_approval"/>
+                        <field name="fal_industry"/>
+                        <field name="fal_year"/>
+                        <field name="fal_employee_number"/>
+                        <field name="fal_general_structure"/>
+                        <field name="fal_group_company"/>
+                        <field name="fal_contact"/>
+                    </group>
+                </xpath>
+                <field name="description" position="after">
+                    <field name="fal_crm_line_ids">
+                        <tree editable="bottom" string="Question">
+                            <field name="fal_question"/>
+                            <field name="fal_answer" attrs="{'readonly':[('fal_question','=',False)]}"/>
+                            <field name="fal_custom_answer" attrs="{'readonly':[('fal_question','=',False)]}"/>
+                        </tree>
+                    </field>
+                </field>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="fal_view_crm_question">
+            <field name="name">question.form</field>
+            <field name="model">crm.lead.question</field>
+            <field name="arch" type="xml">
+                <form string="Question Form">
+                    <sheet>
+                        <group>
+                            <field name="fal_question"/>
+                        </group>
+                        <field name="fal_crm_answer_ids">
+                            <tree editable="bottom" string="Question">
+                                <field name="fal_answer"/>
+                            </tree>
+                        </field>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="fal_view_crm_answer">
+            <field name="name">answer.form</field>
+            <field name="model">crm.lead.answer</field>
+            <field name="arch" type="xml">
+                <form string="Answer Form">
+                    <sheet>
+                        <group>
+                            <field name="fal_answer"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- answer / question menu   -->
+        <record id="crm_question_tree" model="ir.ui.view">
+            <field name="name">crm.question.tree</field>
+            <field name="model">crm.lead.question</field>
+            <field name="arch" type="xml">
+                <tree string="Question">
+                    <field name="fal_question"/>
+                    <field name="fal_crm_answer_ids"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="crm_question_form" model="ir.actions.act_window">
+            <field name="name">Crm Question</field>
+            <field name="res_model">crm.lead.question</field>
+            <field name="view_type">form</field>
+            <field name="view_id" ref="crm_question_tree"/>
+        </record>
+
+        <menuitem
+            id="menu_crm_question"
+            name="Question / Answer"
+            action="crm_question_form"
+            parent="crm.menu_crm_config_lead"
+            sequence="2"/>
+
+    </data>
+</odoo>

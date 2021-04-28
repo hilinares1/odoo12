@@ -1,0 +1,169 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* to_l10n_vn_qweb_layout
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-04-06 03:37+0000\n"
+"PO-Revision-Date: 2019-04-06 03:37+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: to_l10n_vn_qweb_layout
+#: model_terms:ir.ui.view,arch_db:to_l10n_vn_qweb_layout.accounting_external_layout_c200
+msgid "<br/>\n"
+"					(Released Under the Circular No. 200/2014/TT-BTC\n"
+"					<br/>\n"
+"					Dated 22/12/2014 by the Ministry of Finance)"
+msgstr ""
+
+#. module: to_l10n_vn_qweb_layout
+#: model_terms:ir.ui.view,arch_db:to_l10n_vn_qweb_layout.accounting_external_header_left_layout
+msgid "<br/>\n"
+"					<strong>Address:</strong>"
+msgstr ""
+
+#. module: to_l10n_vn_qweb_layout
+#: model_terms:ir.ui.view,arch_db:to_l10n_vn_qweb_layout.signature_block
+msgid "<strong>\n"
+"							Chief Accountant\n"
+"						</strong>\n"
+"						<br/>\n"
+"						(Signature, Full Name)"
+msgstr ""
+
+#. module: to_l10n_vn_qweb_layout
+#: model_terms:ir.ui.view,arch_db:to_l10n_vn_qweb_layout.signature_block
+msgid "<strong>\n"
+"							Director/CEO\n"
+"						</strong>\n"
+"						<br/>\n"
+"						(Signature, Full Name, Job Title)"
+msgstr ""
+
+#. module: to_l10n_vn_qweb_layout
+#: model_terms:ir.ui.view,arch_db:to_l10n_vn_qweb_layout.signature_block
+msgid "<strong>\n"
+"							Prepared By\n"
+"						</strong>\n"
+"						<br/>\n"
+"						(Signature, Full Name)"
+msgstr ""
+
+#. module: to_l10n_vn_qweb_layout
+#: model_terms:ir.ui.view,arch_db:to_l10n_vn_qweb_layout.accounting_external_header_left_layout
+msgid "<strong>Company:</strong>"
+msgstr ""
+
+#. module: to_l10n_vn_qweb_layout
+#: model:ir.model.fields,field_description:to_l10n_vn_qweb_layout.field_report_l10n_vn_common__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: to_l10n_vn_qweb_layout
+#: model_terms:ir.ui.view,arch_db:to_l10n_vn_qweb_layout.accounting_external_footer_layout
+msgid "Email:"
+msgstr ""
+
+#. module: to_l10n_vn_qweb_layout
+#: code:addons/to_l10n_vn_qweb_layout/models/report_l10n_vn_common.py:31
+#, python-format
+msgid "Form content is missing, this report cannot be printed."
+msgstr ""
+
+#. module: to_l10n_vn_qweb_layout
+#: model:ir.model.fields,field_description:to_l10n_vn_qweb_layout.field_report_l10n_vn_common__id
+msgid "ID"
+msgstr ""
+
+#. module: to_l10n_vn_qweb_layout
+#: model:ir.model.fields,field_description:to_l10n_vn_qweb_layout.field_report_l10n_vn_common____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: to_l10n_vn_qweb_layout
+#: model:ir.model.fields,field_description:to_l10n_vn_qweb_layout.field_ir_actions_report__legal_name
+msgid "Legal Name"
+msgstr ""
+
+#. module: to_l10n_vn_qweb_layout
+#: model_terms:ir.ui.view,arch_db:to_l10n_vn_qweb_layout.accounting_external_header_left_layout
+msgid "Logo"
+msgstr ""
+
+#. module: to_l10n_vn_qweb_layout
+#: model_terms:ir.ui.view,arch_db:to_l10n_vn_qweb_layout.signature_block
+msgid "Month ..... Day ..... Year ....."
+msgstr ""
+
+#. module: to_l10n_vn_qweb_layout
+#: model_terms:ir.ui.view,arch_db:to_l10n_vn_qweb_layout.accounting_external_footer_layout
+msgid "Page:\n"
+"				<span class=\"page\"/>\n"
+"				/\n"
+"				<span class=\"topage\"/>"
+msgstr ""
+
+#. module: to_l10n_vn_qweb_layout
+#: model_terms:ir.ui.view,arch_db:to_l10n_vn_qweb_layout.accounting_external_footer_layout
+msgid "Phone:"
+msgstr ""
+
+#. module: to_l10n_vn_qweb_layout
+#: model:ir.actions.report,name:to_l10n_vn_qweb_layout.action_report_accounting_externalpreview
+msgid "Preview Standard Vietnam Accounting External Report"
+msgstr ""
+
+#. module: to_l10n_vn_qweb_layout
+#: model:ir.actions.report,name:to_l10n_vn_qweb_layout.action_report_accounting_external_c200_preview
+msgid "Preview Vietnam C200 Accounting External Report"
+msgstr ""
+
+#. module: to_l10n_vn_qweb_layout
+#: model:ir.model,name:to_l10n_vn_qweb_layout.model_ir_actions_report
+msgid "Report Action"
+msgstr ""
+
+#. module: to_l10n_vn_qweb_layout
+#: model_terms:ir.ui.view,arch_db:to_l10n_vn_qweb_layout.accounting_external_footer_layout
+msgid "TIN:"
+msgstr ""
+
+#. module: to_l10n_vn_qweb_layout
+#: model:ir.model.fields,help:to_l10n_vn_qweb_layout.field_ir_actions_report__legal_name
+msgid "The legal name of the report. For instance, 'Template S12-DN' is the legal name of the stock card according the Ministry of Finanace of Vietnam"
+msgstr ""
+
+#. module: to_l10n_vn_qweb_layout
+#: code:addons/to_l10n_vn_qweb_layout/models/report_l10n_vn_common.py:14
+#, python-format
+msgid "The method '_get_lines' has NOT been implemented."
+msgstr ""
+
+#. module: to_l10n_vn_qweb_layout
+#: model_terms:ir.ui.view,arch_db:to_l10n_vn_qweb_layout.preview_accounting_externalreport_c200
+msgid "This is a sample of a Vietnamese Accounting External Report\n"
+"						according to templates released under the Circular 200 by the\n"
+"						Ministry of Finance."
+msgstr ""
+
+#. module: to_l10n_vn_qweb_layout
+#: model_terms:ir.ui.view,arch_db:to_l10n_vn_qweb_layout.preview_accounting_externalreport_standard
+msgid "This is a sample of a Vietnamese Accounting External Report."
+msgstr ""
+
+#. module: to_l10n_vn_qweb_layout
+#: model:ir.model,name:to_l10n_vn_qweb_layout.model_report_l10n_vn_common
+msgid "Vietnam Common Report"
+msgstr ""
+
+#. module: to_l10n_vn_qweb_layout
+#: model_terms:ir.ui.view,arch_db:to_l10n_vn_qweb_layout.accounting_external_footer_layout
+msgid "Web:"
+msgstr ""

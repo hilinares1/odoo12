@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- vim:fdn=3:
+-->
+<odoo>
+    <data>
+        <template id="assets_backend_easy_reporting" name="easy_reporting assets" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+                <script type="text/javascript" src="/fal_easy_reporting/static/src/js/click.js"></script>
+            </xpath>
+        </template>
+    </data>
+</odoo>

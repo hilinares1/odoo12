@@ -1,0 +1,25 @@
+<odoo>
+    <record id="mrp_routing_workcenter_fal_phantom_routing_operation_tree" model="ir.ui.view">
+        <field name="name">mrp_routing_workcenter_fal_phantom_routing_operation_tree</field>
+        <field name="model">mrp.routing.workcenter</field>
+        <field name="type">tree</field>
+        <field name="inherit_id" ref="mrp.mrp_routing_workcenter_tree_view"/>
+        <field name="arch" type="xml">
+            <field name="workcenter_id" position="after">
+                <field name="fal_is_phantom"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="mrp_routing_workcenter_fal_phantom_routing_operation_form" model="ir.ui.view">
+        <field name="name">mrp_routing_workcenter_fal_phantom_routing_operation_form</field>
+        <field name="model">mrp.routing.workcenter</field>
+        <field name="type">form</field>
+        <field name="inherit_id" ref="mrp.mrp_routing_workcenter_form_view"/>
+        <field name="arch" type="xml">
+            <field name="workorder_count" position="before">
+                <field name="fal_is_phantom"/>
+            </field>
+        </field>
+    </record>
+</odoo>

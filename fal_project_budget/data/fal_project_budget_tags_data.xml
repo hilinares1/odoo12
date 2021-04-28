@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="fal.project.budget.tags" id="fal_project_budget_tags_sales">
+            <field name="name">Sales</field>
+        </record>
+
+        <record model="fal.project.budget.tags" id="fal_project_budget_tags_purchases">
+            <field name="name">Purchases</field>
+        </record>
+
+        <record model="fal.project.budget.tags" id="fal_project_budget_tags_mission_expenses">
+            <field name="name">Mission Expenses</field>
+        </record>
+
+        <record model="fal.project.budget.tags" id="fal_project_budget_tags_employee_timesheets">
+            <field name="name">Employee Timesheets</field>
+        </record>
+
+        <record model="fal.project.budget.tags" id="fal_project_budget_tags_workcenter_timesheets">
+            <field name="name">Workcenter Timesheets</field>
+        </record>
+
+    </data>
+</odoo>

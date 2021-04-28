@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_fwa_con_invoice_form" model="ir.ui.view">
+            <field name="name">fwa.con.account.invoice.form</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_form"/>
+            <field name="arch" type="xml">
+                <data>
+                    <field name="comment" position="before">
+                        <group>
+                            <group>
+                                <field name="contract_condition_id" on_change="onchange_contract_condition_id(contract_condition_id)"/>
+                            </group>
+                            <group>
+                            </group>
+                        </group>
+                    </field>
+                </data>
+            </field>
+        </record>
+
+        <record id="view_fwa_con_invoice_supplier_form" model="ir.ui.view">
+            <field name="name">fwa.con.account.invoice.supplier.form</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_supplier_form"/>
+            <field name="arch" type="xml">
+                <data>
+                    <field name="comment" position="before">
+                        <group>
+                            <group>
+                                <field name="contract_condition_id" on_change="onchange_contract_condition_id(contract_condition_id)"/>
+                            </group>
+                            <group>
+                            </group>
+                        </group>
+                    </field>
+                </data>
+            </field>
+        </record>
+
+        <menuitem action="fal_contract_conditions.view_fwa_contract_condition_tree_action" id="fal_menu_contract_condition_account"
+            parent="account.menu_finance_configuration"
+            sequence="1"/>
+    </data>
+</odoo>

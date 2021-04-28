@@ -1,0 +1,115 @@
+<odoo>
+	<record id="fal_tax_note_form_views" model="ir.ui.view">
+		<field name="name">fal_tax_note_form_view</field>
+        <field name="model">fal.tax.note</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+        	<form string="Tax Note">
+                <header>
+                	<button name="action_confirm" states="draft" type="object" string="Confirm" class="oe_highlight"/>
+                	<button name="action_validate" states="confirm" type="object" string="Validate" class="oe_highlight"/>
+                    <button name="action_register" type="object" string="Register Payment" class="oe_highlight" attrs="{'invisible': [('state', '!=', 'validate')]}"/>
+                    <button name="action_draft" states="confirm,cancel" type="object" string="Set To Draft"/>
+                    <button name="action_cancel" states="draft,confirm" type="object" string="Cancel"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,confirm,validate,paid"/>
+                    <button name="action_reconcile" states="paid" type="object" string="Reconcile" class="oe_highlight"/>
+                </header>
+                <sheet>
+                    <div>
+                        <label for="name" string="Name"/>
+                        <h1>
+                            <field name="name"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="partner_id"/>
+                            <field name="date_start"/>
+                            <field name="date_end"/>
+                            <field name="fal_attachment_name"  invisible="1" />
+                            <field name="fal_attachment" placeholder="Choose a file to import..." filename="fal_attachment_name"/>
+                        </group>
+                        <group>
+                            <field name="user_id"/>
+                            <field name="company_id"/>
+                            <field name="currency_id"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Account Tax">
+                            <div>
+                            <field name="tax_note_line">
+                                <tree editable="bottom">
+                                    <field name="product_id"/>
+                                    <field name="name"/>
+                                    <field name="invoice_id" invisible="1"/>
+                                    <field name="move_line_id" invisible="1"/>
+                                    <field name="number" string="Reference"/>
+                                    <field name="account_id"/>
+                                    <field name="analytic_account_id" groups="analytic.group_analytic_accounting"/>
+                                    <field name="tax_line_id" invisible="1"/>
+                                    <field name="untaxed_amount" invisible="1"/>
+                                    <field name="amount" string="Amount"/>
+                                    <field name="amount_total" invisible="1"/>
+                                </tree>
+                            </field>
+                            </div>
+                            <group>
+                                <group class="oe_subtotal_footer oe_right">
+                                    <field name="total_tax_amount"/>
+                                </group>
+                            </group>
+                    	</page>
+                    	<page string="Other Info">
+                    		<group>
+                    			<group>
+                                    <field name="journal_id" domain="[('fal_is_tax_journal','=',True)]"/>
+                                    <field name="move_id"/>
+                    				<field name="payment_id"/>
+                    			</group>
+                    			<group>
+                    			</group>
+                    		</group>
+                    	</page>
+                    </notebook>
+            	</sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+	</record>
+
+	<record id="fal_tax_note_tree_views" model="ir.ui.view">
+		<field name="name">fal_tax_note_tree_view</field>
+        <field name="model">fal.tax.note</field>
+        <field name="arch" type="xml">
+        	<tree string="Tax Note">
+                <field name="name"/>
+                <field name="partner_id"/>
+                <field name="date_start"/>
+                <field name="date_end"/>
+                <field name="state"/>
+            </tree>
+        </field>
+	</record>
+
+
+	<record id="view_tax_note_action" model="ir.actions.act_window">
+        <field name="name">Tax Note</field>
+        <field name="res_model">fal.tax.note</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field eval="False" name="view_id"/>
+        <field name="help" type="html">
+          <p class="oe_view_nocontent_create">
+            Click to record a new Tax Note
+          </p>
+        </field>
+    </record>
+
+    <menuitem id="menu_action_tax_note" parent="account.menu_finance_entries" name="Tax Note" sequence="10"/>
+    <menuitem action="view_tax_note_action" id="menu_action_tax_note2" parent="menu_action_tax_note" sequence="1"/>
+</odoo>

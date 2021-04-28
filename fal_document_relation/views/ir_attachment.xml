@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="documents_view_form_inherit" model="ir.ui.view">
+        <field name="name">Attachment Form Inherit</field>
+        <field name="model">ir.attachment</field>
+        <field name="inherit_id" ref="documents.documents_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='res_model']" position="before">
+                <field name="fal_record_ref"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

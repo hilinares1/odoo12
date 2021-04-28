@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="fal_project_budget_fill_t0_wizard_form">
+            <field name="name">fal.project.budget.fill.t0.wizard.form</field>
+            <field name="model">fal.project.budget.fill.t0.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Control Fill T0">
+                    <group>
+                        <label for="" string="Are you sure to Fill T0 Value?" colspan="2"/>
+                    </group>
+                    <footer>
+                        <button name="action_project_budget_fill_t0" string="Fill T0" type="object" class="btn-primary"/>
+                        <button string="Cancel" class="btn-default" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <act_window
+            id="fal_project_budget_fill_t0_wizard_action"
+            name="Fill T0"
+            res_model="fal.project.budget.fill.t0.wizard"
+            src_model="fal.project.budget"
+            view_mode="form"
+            view_id="fal_project_budget_fill_t0_wizard_form"
+            view_type="form"
+            target="new"
+            />
+
+    </data>
+</odoo>

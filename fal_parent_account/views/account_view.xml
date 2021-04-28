@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- Analytic Account View -->
+        <record id="view_account_analytic_account_form_falparac" model="ir.ui.view">
+            <field name="name">analytic.analytic.account.form.falparac</field>
+            <field name="model">account.analytic.account</field>
+            <field name="inherit_id" ref="analytic.view_account_analytic_account_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='code']" position="after">
+                    <field name="account_type" />
+                    <field name="parent_id" />
+                    <field name="complete_name" />
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_account_analytic_account_list_falparc" model="ir.ui.view">
+            <field name="name">account.analytic.account.list.falparc</field>
+            <field name="model">account.analytic.account</field>
+            <field name="inherit_id" ref="analytic.view_account_analytic_account_list" />
+            <field name="arch" type="xml">
+                <field name="code" position="after">
+                    <field name="name" />
+                    <field name="complete_name" />
+                    <field name="parent_id" />
+                    <field name="account_type" />
+                </field>
+            </field>
+        </record>
+
+        <!-- Account View -->
+        <record id="view_account_form_falparac" model="ir.ui.view">
+            <field name="name">account.account.form.falparac</field>
+            <field name="model">account.account</field>
+            <field name="inherit_id" ref="account.view_account_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='code']" position="after">
+                    <field name="account_type" />
+                    <!-- start added by sandi 15-07-2019 -->
+                    <field name="fal_checkbox_consolidation"/>
+                    <!-- end -->
+                    <field name="parent_id" />
+                    <field name="fal_consolidation_id"/>
+                    <field name="complete_name" />
+                </xpath>
+                <xpath expr="//form/sheet/group/group[1]" position="inside">
+                    <field name="fal_consolidation_ids" attrs="{'invisible':[('account_type', '!=', 'conso')]}">
+                        <tree>
+                            <field name="code" />
+                            <field name="name" />
+                            <field name="company_id" />
+                        </tree>
+                    </field>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_account_list_falparac" model="ir.ui.view">
+            <field name="name">account.account.list.falparac</field>
+            <field name="model">account.account</field>
+            <field name="inherit_id" ref="account.view_account_list" />
+            <field name="arch" type="xml">
+                <field name="name" position="after">
+                    <field name="complete_name" />
+                    <field name="account_type" />
+                </field>
+            </field>
+        </record>
+
+        <!-- Account Consoslidation View -->
+        <record id="fal_view_account_consolidation" model="ir.actions.act_window">
+            <field name="name">Account Consolidation</field>
+            <field name="res_model">account.account</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,kanban,form</field>
+            <!-- command out by sandi 15-07-2019 <field name="domain">[('account_type','=','conso')]</field> -->
+            <field name="domain">[('fal_checkbox_consolidation','=',True)]</field>
+            <!-- command out by sandi 15-07-2019 <field name="context">{'default_account_type': 'conso'}</field> -->
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to add an account consolidation.
+              </p><p>
+                An account is part of a ledger allowing your company
+                to register all kinds of debit and credit transactions.
+                Companies present their annual accounts in two main parts: the
+                balance sheet and the income statement (profit and loss
+                account). The annual accounts of a company are required by law
+                to disclose a certain amount of information.
+              </p>
+            </field>
+        </record>
+
+        <menuitem action="fal_view_account_consolidation" id="menu_action_account_hierarchy" parent="account.account_account_menu" sequence="0"/>
+
+        <!-- Template View -->
+        <record id="view_account_template_form_falparc" model="ir.ui.view">
+            <field name="name">account.account.template.form.falparc</field>
+            <field name="inherit_id" ref="account.view_account_template_form" />
+            <field name="model">account.account.template</field>
+            <field name="arch" type="xml">
+                <field name="chart_template_id" position="after">
+                    <field name="parent_id" />
+                    <field name="account_type" />
+                </field>
+            </field>
+        </record>
+
+        <record id="view_account_template_tree_falparc" model="ir.ui.view">
+            <field name="name">account.account.template.tree.falparc</field>
+            <field name="model">account.account.template</field>
+            <field name="inherit_id" ref="account.view_account_template_tree" />
+            <field name="arch" type="xml">
+                <field name="user_type_id" position="after">
+                    <field name="chart_template_id" />
+                    <field name="parent_id" />
+                    <field name="account_type" />
+                </field>
+            </field>
+        </record>
+
+        <!-- hierarchy -->
+        <record id="view_account_hierarchy" model="ir.ui.view">
+            <field name="name">account.account.hierarchy</field>
+            <field name="model">account.account</field>
+            <field name="field_parent">child_ids</field>
+            <field name="arch" type="xml">
+                <hierarchy string="Accounts">
+                    <field name="code"/>
+                    <field name="name"/>
+                    <field name="complete_name"/>
+                    <field name="account_type" />
+                    <field name="parent_id"/>
+                    <field name="fal_consolidation_id"/>
+                    <field name="user_type_id"/>
+                    <field name="currency_id" options="{'no_create': True}" groups="base.group_multi_currency"/>
+                    <field name="company_id" options="{'no_create': True}" groups="base.group_multi_company"/>
+                </hierarchy>
+            </field>
+        </record>
+
+        <record id="account.action_account_form" model="ir.actions.act_window">
+            <field name="view_mode">tree,hierarchy,kanban,form</field>
+        </record>
+
+        <record id="view_analytic_account_hierarchy" model="ir.ui.view">
+            <field name="name">account.analytic.account.hierarchy</field>
+            <field name="model">account.analytic.account</field>
+            <field name="field_parent">child_ids</field>
+            <field name="arch" type="xml">
+                <hierarchy string="Analytic Accounts">
+                    <field name="display_name"/>
+                    <field name="complete_name"/>
+                    <field name="account_type" />
+                    <field name="parent_id"/>
+                    <field name="code"/>
+                    <field name="partner_id"/>
+                    <field name="active" invisible="1"/>
+                    <field name="company_id" groups="base.group_multi_company"/>
+                    <field name="debit"/>
+                    <field name="credit"/>
+                    <field name="balance"/>
+                </hierarchy>
+            </field>
+        </record>
+
+        <record id="fal_view_move_form_product_quantity" model="ir.ui.view">
+            <field name="name">account.move.form</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="account.view_move_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='line_ids']/tree/field[@name='name']" position="after">
+                    <field name="quantity"/>
+                    <field name="product_id"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="analytic.action_account_analytic_account_form" model="ir.actions.act_window">
+            <field name="view_mode">tree,hierarchy,kanban,form</field>
+        </record>
+
+        <menuitem action="account.action_account_template_form" id="menu_action_account_template_form_falparc" parent="account.account_account_menu" sequence="999" />
+        <menuitem action="account.action_account_tax_template_form" id="menu_action_account_tax_template_form_falparc" parent="account.account_account_menu" sequence="999" />
+
+    </data>
+</odoo>

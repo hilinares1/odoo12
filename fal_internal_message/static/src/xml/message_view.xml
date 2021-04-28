@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<templates id="internal_message_template" xml:space="preserve">
+    <t t-extend="mail.chatter.Buttons" >
+        <t t-jquery="button.o_chatter_button_new_message" t-operation="after">
+            <button type="button" class="btn btn-link o_chatter_button_new_internal_message" title="Send an internal message" disabled="disabled">
+            Send an internal message
+        </button>
+        </t>
+    </t>
+</templates>

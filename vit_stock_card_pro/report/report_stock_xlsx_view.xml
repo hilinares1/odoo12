@@ -1,0 +1,38 @@
+<odoo>
+	<data>
+		
+	    <record id="report_stock_xlsx_confirm_view" model="ir.ui.view">
+            <field name="name">report.stock.xlsx.form</field>
+            <field name="model">report.stock.xlsx</field>
+            <field name="arch" type="xml">
+                <form string="Print Stock Summary">
+                    <group col="4">
+                        <field name="type" required="1"/>
+                        <field name="history" nolabel="1" attrs="{'required': [('type','=','history')], 'invisible': [('type','!=','history')]}"/>
+                    </group>
+                    <footer>
+                        <button string="Print" name="action_print" type="object" default_focus="1" class="btn-primary"/>
+                        <button string="Cancel" class="btn-default" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="report_stock_xlsx_action" model="ir.actions.act_window">
+            <field name="name">Stock Summary</field>
+            <field name="res_model">report.stock.xlsx</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="context">{}</field>
+            <field name="domain">[]</field>
+        </record>
+        
+        <record id="report_stock_xlsx_action_tree" model="ir.actions.act_window.view">
+            <field name="sequence" eval="1"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="report_stock_xlsx_confirm_view"/>
+            <field name="act_window_id" ref="report_stock_xlsx_action"/>
+        </record>
+		
+	</data>
+</odoo>

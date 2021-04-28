@@ -1,0 +1,20 @@
+<odoo>
+	 <record id="fal_hr_leave_linked_holidays" model="ir.ui.view">
+        <field name="name">hr.leave.linked.holidays</field>
+        <field name="model">hr.leave</field>
+        <field name="inherit_id" ref="hr_holidays.hr_leave_view_form" />
+        <field name="arch" type="xml">
+        	<button name="action_approve" position="after">
+                <button string="Submit Linked Holidays" name="action_confirm_linked_holidays" states="draft" type="object" class="oe_highlight" attrs="{'invisible': ['|', ('fal_linked_holiday_ids', '=', [])]}"/>
+        		<button string="Approve Linked Holidays" name="action_approve_linked_holidays" type="object" class="oe_highlight" attrs="{'invisible': ['|', '|',('can_approve', '=', False), ('state', '!=', 'confirm'), ('fal_linked_holiday_ids', '=', [])]}"/>
+        	</button>
+            <xpath expr="//sheet" position="inside">
+                <notebook>
+                	<page string="Linked Holidays" attrs="{'invisible': [('fal_linked_holiday_ids', '=', [])]}">
+                		<field name="fal_linked_holiday_ids"/>
+                	</page>
+                </notebook>
+            </xpath>
+        </field>
+    </record>
+</odoo>

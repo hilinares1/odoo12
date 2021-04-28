@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="view_stock_picking_form_inherit" model="ir.ui.view">
+            <field name="name">stock.picking.form.inherit</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//button[@name='button_validate'][1]" position="attributes">
+                    <attribute name="groups">stock.group_stock_user,ourkids_access_rights.group_inventory_valuation</attribute>
+                </xpath>
+
+                <xpath expr="//button[@name='button_validate'][2]" position="attributes">
+                    <attribute name="groups">stock.group_stock_user,ourkids_access_rights.group_inventory_valuation</attribute>
+                </xpath>
+
+                <field name="location_id" position="attributes">
+                    <attribute name="groups">stock.group_stock_multi_locations,!ourkids_access_rights.group_inventory_valuation,!ourkids_access_rights.group_all_warehouse_manager</attribute>
+                </field>
+
+                <field name="location_dest_id" position="attributes">
+                    <attribute name="groups">stock.group_stock_multi_locations,!ourkids_access_rights.group_inventory_valuation,!ourkids_access_rights.group_all_warehouse_manager</attribute>
+                </field>
+
+                <field name="location_id" position="after">
+                    <field name="location_rel_id" groups="ourkids_access_rights.group_inventory_valuation,ourkids_access_rights.group_all_warehouse_manager" />
+                    <field name="location_rel_dest_id" groups="ourkids_access_rights.group_inventory_valuation,ourkids_access_rights.group_all_warehouse_manager" />
+                </field>
+
+            </field>
+        </record>
+
+        <record id="view_stock_picking_type_kanban_inherit" model="ir.ui.view">
+            <field name="name">stock.picking.type.kanban.inherit</field>
+            <field name="model">stock.picking.type</field>
+            <field name="inherit_id" ref="stock.stock_picking_type_kanban"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//div[hasclass('o_kanban_card_manage_settings')]" position="attributes">
+                    <attribute name="groups">stock.group_stock_manager</attribute>
+                </xpath>
+
+            </field>
+        </record>
+
+    </data>
+</odoo>

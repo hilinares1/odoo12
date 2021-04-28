@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+         <record id="fal_inherit_view_fal_delivery_batch_form" model="ir.ui.view">
+            <field name="name">fal.inherit.view.fal.delivery.batch.form</field>
+            <field name="model">fal.delivery.batch</field>
+            <field name="inherit_id" ref="fal_delivery_batch.view_fal_delivery_batch_form"/>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <field name="port_of_discharge" position="after">
+                    <field name="port_of_loading_cn" readonly="1"/>
+                    <field name="port_of_discharge_cn" readonly="1"/>
+                </field>
+                <field name="amount_total" position="after">
+                    <field name="fapiao_amount_total" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                </field>
+                <xpath expr="//form/sheet/notebook/page[1]" position="inside">
+                    <field name="total_value_words_cn" placeholder="Total Value in Words 中文"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_fal_delivery_batch_line_tree_cn" model="ir.ui.view">
+            <field name="name">view_fal_delivery_batch_line_tree</field>
+            <field name="model">fal.delivery.batch.line</field>
+            <field name="inherit_id" ref="fal_delivery_batch.view_fal_delivery_batch_line_tree"/>
+            <field name="arch" type="xml">
+                <field name="subtotal_vat" position="after">
+                    <field name="fapiao_price_unit" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                    <field name="fapiao_subtotal_vat" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="fal_inherit_view_fal_port_type_tree" model="ir.ui.view">
+            <field name="name">fal.inherit.view.fal.port.type.tree</field>
+            <field name="model">fal.port.type</field>
+            <field name="inherit_id" ref="fal_delivery_batch.view_fal_port_type_tree"/>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <field name="port_name" position="after">
+                    <field name="port_name_cn"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="fal_inherit_view_fal_port_type_form" model="ir.ui.view">
+            <field name="name">fal.inherit.view.fal.port.type.form</field>
+            <field name="model">fal.port.type</field>
+            <field name="inherit_id" ref="fal_delivery_batch.view_fal_port_type_form"/>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <field name="port_name" position="after">
+                    <field name="port_name_cn"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</odoo>

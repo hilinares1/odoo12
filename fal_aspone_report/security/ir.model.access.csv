@@ -1,0 +1,4 @@
+id,name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink
+access_fal_aspone_report_all,fal.aspone.report.all,model_account_aspone,account.group_account_user,1,1,1,1
+access_fal_aspone_parameter_report_all,fal.aspone.parameter.report.all,model_account_aspone_parameter,account.group_account_user,1,1,1,1
+access_fal_aspone_line_report_all,fal.aspone.line.report.all,model_account_aspone_line,account.group_account_user,1,1,1,1

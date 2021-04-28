@@ -1,0 +1,318 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* fal_opening_journal
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-08-14 06:51+0000\n"
+"PO-Revision-Date: 2019-08-14 06:51+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: fal_opening_journal
+#: model_terms:ir.ui.view,arch_db:fal_opening_journal.fal_account_fec_view
+msgid "# 10"
+msgstr ""
+
+#. module: fal_opening_journal
+#: model_terms:ir.ui.view,arch_db:fal_opening_journal.fal_account_fec_view
+msgid "# 11"
+msgstr ""
+
+#. module: fal_opening_journal
+#: model_terms:ir.ui.view,arch_db:fal_opening_journal.fal_account_fec_view
+msgid "# 12"
+msgstr ""
+
+#. module: fal_opening_journal
+#: model_terms:ir.ui.view,arch_db:fal_opening_journal.fal_account_fec_view
+msgid "# 13"
+msgstr ""
+
+#. module: fal_opening_journal
+#: model_terms:ir.ui.view,arch_db:fal_opening_journal.fal_account_fec_view
+msgid "# 14"
+msgstr ""
+
+#. module: fal_opening_journal
+#: model_terms:ir.ui.view,arch_db:fal_opening_journal.fal_account_fec_view
+msgid "# 15"
+msgstr ""
+
+#. module: fal_opening_journal
+#: model_terms:ir.ui.view,arch_db:fal_opening_journal.fal_account_fec_view
+msgid "# 16"
+msgstr ""
+
+#. module: fal_opening_journal
+#: model_terms:ir.ui.view,arch_db:fal_opening_journal.fal_account_fec_view
+msgid "# 17"
+msgstr ""
+
+#. module: fal_opening_journal
+#: code:addons/fal_opening_journal/wizard/fal_account_fec.py:117
+#: model_terms:ir.ui.view,arch_db:fal_opening_journal.fal_account_fec_view
+#, python-format
+msgid "AccountLabel"
+msgstr "CompteLib"
+
+#. module: fal_opening_journal
+#: code:addons/fal_opening_journal/wizard/fal_account_fec.py:116
+#: model_terms:ir.ui.view,arch_db:fal_opening_journal.fal_account_fec_view
+#, python-format
+msgid "AccountNumber"
+msgstr "CompteNum"
+
+#. module: fal_opening_journal
+#: code:addons/fal_opening_journal/wizard/fal_account_fec.py:118
+#: code:addons/fal_opening_journal/wizard/fal_account_fec.py:119
+#: model_terms:ir.ui.view,arch_db:fal_opening_journal.fal_account_fec_view
+#, python-format
+msgid "AuxiliaryAccountLabel"
+msgstr "CompAuxLib"
+
+#. module: fal_opening_journal
+#: model_terms:ir.ui.view,arch_db:fal_opening_journal.fal_account_fec_view
+msgid "AuxiliaryAccountNumber"
+msgstr "CompAuxNum"
+
+#. module: fal_opening_journal
+#: model_terms:ir.ui.view,arch_db:fal_opening_journal.fal_account_fec_view
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: fal_opening_journal
+#: model_terms:ir.ui.view,arch_db:fal_opening_journal.fal_account_fec_view
+msgid "Column"
+msgstr ""
+
+#. module: fal_opening_journal
+#: model_terms:ir.ui.view,arch_db:fal_opening_journal.fal_account_fec_view
+msgid "Comment"
+msgstr "Commentaires"
+
+#. module: fal_opening_journal
+#: model:ir.model.fields,field_description:fal_opening_journal.field_fal_account_fec__create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: fal_opening_journal
+#: model:ir.model.fields,field_description:fal_opening_journal.field_fal_account_fec__create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: fal_opening_journal
+#: code:addons/fal_opening_journal/wizard/fal_account_fec.py:124
+#: model_terms:ir.ui.view,arch_db:fal_opening_journal.fal_account_fec_view
+#, python-format
+msgid "Credit"
+msgstr "Crédit"
+
+#. module: fal_opening_journal
+#: code:addons/fal_opening_journal/wizard/fal_account_fec.py:128
+#: model_terms:ir.ui.view,arch_db:fal_opening_journal.fal_account_fec_view
+#, python-format
+msgid "CurrencyAmount"
+msgstr "Montantdevise"
+
+#. module: fal_opening_journal
+#: model:res.country.group,name:fal_opening_journal.dom-tom
+msgid "DOM-TOM"
+msgstr ""
+
+#. module: fal_opening_journal
+#: code:addons/fal_opening_journal/wizard/fal_account_fec.py:123
+#: model_terms:ir.ui.view,arch_db:fal_opening_journal.fal_account_fec_view
+#, python-format
+msgid "Debit"
+msgstr "Débit"
+
+#. module: fal_opening_journal
+#: model:ir.model.fields,field_description:fal_opening_journal.field_fal_account_fec__display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: fal_opening_journal
+#: model:ir.model.fields,field_description:fal_opening_journal.field_fal_account_fec__date_to
+msgid "End Date"
+msgstr "Date de fin"
+
+#. module: fal_opening_journal
+#: code:addons/fal_opening_journal/wizard/fal_account_fec.py:121
+#: model_terms:ir.ui.view,arch_db:fal_opening_journal.fal_account_fec_view
+#, python-format
+msgid "EntryDate"
+msgstr "PieceDate"
+
+#. module: fal_opening_journal
+#: code:addons/fal_opening_journal/wizard/fal_account_fec.py:120
+#: model_terms:ir.ui.view,arch_db:fal_opening_journal.fal_account_fec_view
+#, python-format
+msgid "EntryRef"
+msgstr "PieceRef"
+
+#. module: fal_opening_journal
+#: model:ir.model.fields,field_description:fal_opening_journal.field_fal_account_fec__export_type
+msgid "Export Type"
+msgstr ""
+
+#. module: fal_opening_journal
+#: model:ir.actions.act_window,name:fal_opening_journal.fal_account_fec_action
+#: model:ir.ui.menu,name:fal_opening_journal.account_fec_menu
+msgid "FEC"
+msgstr ""
+
+#. module: fal_opening_journal
+#: model:ir.model.fields,field_description:fal_opening_journal.field_fal_account_fec__fec_data
+msgid "FEC File"
+msgstr ""
+
+#. module: fal_opening_journal
+#: model_terms:ir.ui.view,arch_db:fal_opening_journal.fal_account_fec_view
+msgid "FEC File Generation"
+msgstr ""
+
+#. module: fal_opening_journal
+#: model:ir.model,name:fal_opening_journal.model_fal_account_fec
+msgid "Ficher Echange Informatise"
+msgstr ""
+
+#. module: fal_opening_journal
+#: model:ir.model.fields,field_description:fal_opening_journal.field_fal_account_fec__filename
+msgid "Filename"
+msgstr "Nom du fichier"
+
+#. module: fal_opening_journal
+#: model_terms:ir.ui.view,arch_db:fal_opening_journal.fal_account_fec_view
+msgid "Generate"
+msgstr ""
+
+#. module: fal_opening_journal
+#: model:ir.model.fields,field_description:fal_opening_journal.field_fal_account_fec__id
+msgid "ID"
+msgstr ""
+
+#. module: fal_opening_journal
+#: code:addons/fal_opening_journal/wizard/fal_account_fec.py:129
+#: model_terms:ir.ui.view,arch_db:fal_opening_journal.fal_account_fec_view
+#, python-format
+msgid "Idevise"
+msgstr ""
+
+#. module: fal_opening_journal
+#: code:addons/fal_opening_journal/wizard/fal_account_fec.py:115
+#: model_terms:ir.ui.view,arch_db:fal_opening_journal.fal_account_fec_view
+#, python-format
+msgid "ItemDate"
+msgstr "EcritureDate"
+
+#. module: fal_opening_journal
+#: code:addons/fal_opening_journal/wizard/fal_account_fec.py:122
+#: model_terms:ir.ui.view,arch_db:fal_opening_journal.fal_account_fec_view
+#, python-format
+msgid "ItemLabel"
+msgstr "EcritureLib"
+
+#. module: fal_opening_journal
+#: code:addons/fal_opening_journal/wizard/fal_account_fec.py:114
+#: model_terms:ir.ui.view,arch_db:fal_opening_journal.fal_account_fec_view
+#, python-format
+msgid "ItemNumber"
+msgstr "EcritureNum"
+
+#. module: fal_opening_journal
+#: code:addons/fal_opening_journal/wizard/fal_account_fec.py:112
+#: model_terms:ir.ui.view,arch_db:fal_opening_journal.fal_account_fec_view
+#, python-format
+msgid "JournalCode"
+msgstr ""
+
+#. module: fal_opening_journal
+#: code:addons/fal_opening_journal/wizard/fal_account_fec.py:113
+#: model_terms:ir.ui.view,arch_db:fal_opening_journal.fal_account_fec_view
+#, python-format
+msgid "JournalLabel"
+msgstr "JournalLib"
+
+#. module: fal_opening_journal
+#: model:ir.model.fields,field_description:fal_opening_journal.field_fal_account_fec____last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: fal_opening_journal
+#: model:ir.model.fields,field_description:fal_opening_journal.field_fal_account_fec__write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: fal_opening_journal
+#: model:ir.model.fields,field_description:fal_opening_journal.field_fal_account_fec__write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: fal_opening_journal
+#: selection:fal.account.fec,export_type:0
+msgid "Non-official report (posted and unposted entries)"
+msgstr ""
+
+#. module: fal_opening_journal
+#: selection:fal.account.fec,export_type:0
+msgid "Official report (posted entries only)"
+msgstr ""
+
+#. module: fal_opening_journal
+#: model_terms:ir.ui.view,arch_db:fal_opening_journal.fal_account_fec_view
+msgid "Options"
+msgstr ""
+
+#. module: fal_opening_journal
+#: code:addons/fal_opening_journal/wizard/fal_account_fec.py:126
+#: model_terms:ir.ui.view,arch_db:fal_opening_journal.fal_account_fec_view
+#, python-format
+msgid "ReconciliationDate"
+msgstr "DateLet"
+
+#. module: fal_opening_journal
+#: code:addons/fal_opening_journal/wizard/fal_account_fec.py:125
+#: model_terms:ir.ui.view,arch_db:fal_opening_journal.fal_account_fec_view
+#, python-format
+msgid "ReconciliationItem"
+msgstr "EcritureLet"
+
+#. module: fal_opening_journal
+#: model:ir.model.fields,field_description:fal_opening_journal.field_fal_account_fec__date_from
+msgid "Start Date"
+msgstr "Date de début"
+
+#. module: fal_opening_journal
+#: model_terms:ir.ui.view,arch_db:fal_opening_journal.fal_account_fec_view
+msgid "Technical Info"
+msgstr ""
+
+#. module: fal_opening_journal
+#: model_terms:ir.ui.view,arch_db:fal_opening_journal.fal_account_fec_view
+msgid "Technical Name"
+msgstr "Nom technique"
+
+#. module: fal_opening_journal
+#: model_terms:ir.ui.view,arch_db:fal_opening_journal.fal_account_fec_view
+msgid "The encoding of this text file is UTF-8. The structure of file is CSV separated by pipe '|'."
+msgstr ""
+
+#. module: fal_opening_journal
+#: code:addons/fal_opening_journal/wizard/fal_account_fec.py:127
+#: model_terms:ir.ui.view,arch_db:fal_opening_journal.fal_account_fec_view
+#, python-format
+msgid "ValidDate"
+msgstr ""
+
+#. module: fal_opening_journal
+#: model_terms:ir.ui.view,arch_db:fal_opening_journal.fal_account_fec_view
+msgid "We use partner.id"
+msgstr ""
+

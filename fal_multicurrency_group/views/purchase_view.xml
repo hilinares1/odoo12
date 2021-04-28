@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="view_purchase_order_form_fal_group_curr" model="ir.ui.view">
+            <field name="name">purchase.order.tree.fal.group.curr</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.purchase_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='fiscal_position_id']" position="after">
+                    <field name="group_currency_id" invisible="1"/>
+                    <field name="company_currency_id" invisible="1"/>
+                </xpath>
+                <xpath expr="//page[1]/group[1]" position="after">
+                    <group class="oe_subtotal_footer oe_right">
+                        <field name="untaxed_amount_group_curr" widget="monetary" options="{'currency_field': 'group_currency_id'}"/>
+                        <field name="taxed_amount_group_curr" widget="monetary" options="{'currency_field': 'group_currency_id'}"/>
+                        <div class="oe_subtotal_footer_separator oe_inline o_td_label">
+                            <label for="amount_total_group_curr"/>
+                        </div>
+                        <field name="amount_total_group_curr" nolabel="1" class="oe_subtotal_footer_separator" widget="monetary" options="{'currency_field': 'group_currency_id'}"/>
+                    </group>
+                    <group class="oe_subtotal_footer oe_right">
+                        <field name="untaxed_amount_comp_curr" widget="monetary" options="{'currency_field': 'company_currency_id'}"/>
+                        <field name="taxed_amount_comp_curr" widget="monetary" options="{'currency_field': 'company_currency_id'}"/>
+                        <div class="oe_subtotal_footer_separator oe_inline o_td_label">
+                            <label for="amount_total_comp_curr"/>
+                        </div>
+                        <field name="amount_total_comp_curr" nolabel="1" class="oe_subtotal_footer_separator" widget="monetary" options="{'currency_field': 'company_currency_id'}"/>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+        <record id="view_purchase_order_tree_fal_group_curr" model="ir.ui.view">
+            <field name="name">purchase.order.tree.fal.usd</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.purchase_order_tree"/>
+            <field name="arch" type="xml">
+                <data>
+                    <field name="amount_total"  position="after">
+                        <field name="currency_id" string="Order Currency" invisible="1"/>
+                        <field name="company_currency_id" string="Order Currency" invisible="1"/>
+                        <field name="group_currency_id" string="Order Currency" invisible="1"/>
+                        <field name="amount_total_comp_curr" sum="Total in Company Curr" widget="monetary" options="{'currency_field': 'company_currency_id'}"/>
+                        <field name="amount_total_group_curr" sum="Total in Group Curr" widget="monetary" options="{'currency_field': 'group_currency_id'}"/>
+                        <field name="total_uninvoice" sum="Total uninvoice"/>
+                        <field name="total_uninvoice_comp_curr" sum="Company Total uninvoice"/>
+                        <field name="total_uninvoice_group_curr" sum="IFRS Total Uninvoice"/>
+                    </field>
+                </data>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="purchase_order_graph_fal_usd">
+            <field name="name">purchase.order.graph.fal.usd</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.purchase_order_graph"/>
+            <field name="arch" type="xml">
+                <data>
+                    <field name="amount_total" type="measure" position="replace">
+                        <field name="amount_total_comp_curr" type="measure" />
+                        <field name="amount_total_group_curr" type="measure" />
+                    </field>
+                </data>
+            </field>
+        </record>
+
+    </data>
+</odoo>

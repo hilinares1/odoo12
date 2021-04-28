@@ -1,0 +1,8 @@
+<odoo>
+    <template id="internal_email_assets_backend" name="internal_email_assets" inherit_id="web.assets_backend">
+        <xpath expr="." position="inside">
+            <link href="/fal_internal_email/static/src/css/fal_internal_email_style.css" rel="stylesheet" type="text/css"/>
+            <script type="text/javascript" src="/fal_internal_email/static/src/js/fal_internal_email_controller.js"/>
+        </xpath>
+    </template>
+</odoo>

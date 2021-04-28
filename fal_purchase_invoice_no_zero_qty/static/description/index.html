@@ -1,0 +1,114 @@
+<section class="oe_container oe_dark">
+    <div class="oe_row oe_spaced">
+        <h2 class="oe_slogan" style="color:#0d6723;">Invoice for Received Only</h2>
+        <h3 class="oe_slogan">Create vendor bill from purchase order only for received products</h3>
+        <h4 class="oe_slogan"><a href="https://www.falinwa.com">Falinwa Limited</a> </h4>
+    </div>
+</section>
+
+<section class="oe_container oe_dark">
+    <h4 class="oe_slogan">Story behind the features</h4>
+    <div class="oe_row oe_spaced">
+        <div class="oe_span4 text-justify">
+            <p>
+               <b>Odoo behavior</b> : when you create a vendor bill from a purchase order, Odoo create all the lines, even the one with delivered quantity at 0.
+           </p>
+        </div>
+        <div class="oe_span4 text-justify">
+            <p>
+                <b>Falinwa behavior</b> : if invoice control is based on delivered quantity, only the lines without 0 quantity at created with vendor bills.
+            </p>
+            <p>
+                <b>Module + </b> : avoid to have to manually delete the lines on vendor bills. Useful for company with a lot of purchase order lines and with partial deliveries.
+            </p>
+        </div>
+        <div class="oe_span4 text-justify">
+            <p>
+                <b>Falinwa recommendation </b> :
+                <ul>
+                    <li>for company with partial delivery and big purchase orders.</li>
+                </ul>
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <h4 class="oe_slogan">The Features</h4>
+        <h3 class="oe_slogan">Below are comparison for purchase to vendor bills behaviour</h3>
+        <div class="oe_span6">
+            <img class="oe_picture oe_screenshot" src="fal_purchase_invoice_no_zero_qty/static/description/current_odoo.png" style="width: 400px; height:200px">
+            <center><span style="font-size: 16px;"><b>Odoo Standard</b></span></center>
+            <div style="padding-left: 50px">
+                <li>
+                    <span style="font-size: 16px;">Create Purchase Order with more than 2 lines
+                    </span>
+                </li>
+                <li>
+                    <span style="font-size: 16px;">Do partial receive
+                    </span>
+                </li>
+                <li>
+                    <span style="font-size: 16px;">Create Vendor Bills
+                    </span>
+                </li>
+                <li>
+                    <span style="font-size: 16px;">Vendor bills created for all lines of Purchase Order include the <b>unreceived products</b>
+                    </span>
+                </li>
+            </div>
+        </div>
+        <div class="oe_span6">
+            <img class="oe_picture oe_screenshot" src="fal_purchase_invoice_no_zero_qty/static/description/with_falinwa_modules.png" style="width: 400px;height:200px">
+            <center><span style="font-size: 16px;"><b>Falinwa Standard</b></span></center>
+            <div style="padding-left: 50px">
+                <li>
+                    <span style="font-size: 16px;">Create Purchase Order with more than 2 lines
+                    </span>
+                </li>
+                <li>
+                    <span style="font-size: 16px;">Do partial receive
+                    </span>
+                </li>
+                <li>
+                    <span style="font-size: 16px;">Create Vendor Bills
+                    </span>
+                </li>
+                <li>
+                    <span style="font-size: 16px;">endor bills created only for <b>received products</b>
+                    </span>
+                </li>
+            </div>
+        </div>
+    </div>
+    <h3 class="oe_slogan">this feature is only for purchase a consumable or stockable products which requires goods receive process</h3>
+</section>
+
+
+<section class="oe_container">
+     <h2 class="oe_slogan" style="margin-top:20px;" >Need Any Help?</h2>
+    <div class="oe_slogan" style="margin-top:10px !important;">
+        <div>
+            <a
+            class="btn btn-primary btn-lg mt8" style="background: #339933; color: #FFFFFF !important;border-radius: 0;"
+            href="https://www.falinwa.com/#tujuh" target="_blank"><i
+            class="fa fa-phone"></i> Contact Us </a>
+
+            <a
+            class="btn btn-primary btn-lg mt8" style="background: #339933; color: #FFFFFF !important;border-radius: 0;"
+            href="https://www.falinwa.com/shop/" target="_blank"><i
+            class="fa fa-suitcase"></i> Other Falinwa Addons </a>
+
+            <a
+            class="btn btn-primary btn-lg mt8" style="background: #339933; color: #FFFFFF !important;border-radius: 0;"
+            href="https://www.falinwa.com/#tiga" target="_blank"><i
+            class="fa fa-wrench"></i> Other Services </a>
+
+        </div>
+        <br>
+        <a href="https://www.falinwa.com/" target="_blank">
+            <img src="fal_purchase_invoice_no_zero_qty/static/description/icon.png" style="width: 190px; margin-bottom: 20px;" class="center-block">
+        </a>
+    </div>
+</section>

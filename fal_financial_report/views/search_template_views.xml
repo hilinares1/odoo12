@@ -1,0 +1,26 @@
+<odoo>
+    <template id="search_template_salesperson">
+        <a t-if="options.get('user')" type="button" class="dropdown-toggle account_user_filter" data-toggle="dropdown">
+            <span class="fa fa-folder-open"/> Filter
+        </a>
+        <div class="dropdown-menu o_filters_menu" role="menu">
+            <div t-if="options.get('user_ids') != None" class="o_account_report_search" role="menuitem">
+                <b>Salesperson</b><br />
+                <select class="js_account_user_auto_complete o_account_report_select" data-filter="res_users" multiple="multiple">
+                    <t t-foreach="res_users" t-as="a">
+                        <option t-att-value="a[0]"><t t-esc="a[1]" /></option>
+                    </t>
+                </select>
+            </div>
+            <div class="dropdown-divider" role="separator"></div>
+        </div>
+    </template>
+
+    <template id="search_template" inherit_id="account_reports.search_template">
+        <xpath expr="." position="inside">
+            <div class="btn-group o_dropdown" t-if="options.get('user')">
+            <t t-call="fal_financial_report.search_template_salesperson"/>
+        </div>
+        </xpath>
+    </template>
+</odoo>

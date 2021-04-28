@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<templates>
+
+<t t-name="reconciliation.line.create.falinwa" t-extend="reconciliation.line.create">
+    <t t-jquery=".create_tax_id" t-operation="after">
+        <tr class="create_product_id">
+            <td class="o_td_label">Product</td>
+            <td class="o_td_field"></td>
+        </tr>
+    </t>
+</t>
+
+</templates>

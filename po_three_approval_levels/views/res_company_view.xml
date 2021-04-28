@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="res_company_form_view_inherit_po_approval" model="ir.ui.view">
+            <field name="name">res.company.form.inherit</field>
+            <field name="model">res.company</field>
+            <field name="inherit_id" ref="base.view_company_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[1]" position='after'>
+                    <page string='PO Approval Config'>
+                        <group>
+                            <group>
+                                <field name="po_approval"/>
+                                <field name="manager_validation_amount" attrs="{'required' : [('po_approval', '=', True)]}"/>
+                                <field name="accountant_validation_amount" attrs="{'required' : [('po_approval', '=', True)]}"/>
+                            </group>
+                            <group>
+                            </group>
+                            <group/>
+                        </group>                        
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

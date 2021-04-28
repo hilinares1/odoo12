@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="action_fixed_asset_report_wizard_form" model="ir.ui.view">
+        <field name="name">fixed.asset.report.wizard.form</field>
+        <field name="model">fixed.asset.report.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Fixed Asset Report">
+                <group col="4" name="fixed_asset_report_wizard_form">
+                    <group colspan="4" col="2">
+                        <field name="radio_selection" widget="radio"
+                               options="{'horizontal': true}"/>
+                    </group>
+                    <group colspan="2" col="2"
+                           attrs="{'invisible':[('radio_selection', '=', '1')],
+                           'required': [('radio_selection','=','0')]}">
+                        <field name="from_date"></field>
+                        <field name="to_date"></field>
+                    </group>
+                    <group colspan="2" col="2"
+                           attrs="{'invisible':[('radio_selection', '=', '0')],
+                           'required': [('radio_selection','=','1')]}">
+                        <field name="month"></field>
+                    </group>
+                </group>
+                <div class="alert alert-info text-center"
+                     role="alert">
+                    If no category is selected, this report will be applied to
+                    all asset categories.
+                </div>
+                <group>
+                    <field name="category_ids" widget="many2many_tags"
+                           options="{'no_create': True}"
+                           default_focus="1"/>
+                </group>
+                <footer>
+                    <button name="action_fixed_asset_report_search_button"
+                            type="object" string="Apply"
+                            class="btn btn-sm btn-primary"/>
+                    <button string="Cancel" class="oe_link" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_fixed_asset_report_wizard" model="ir.actions.act_window">
+        <field name="name">Fixed Asset Report</field>
+        <field name="res_model">fixed.asset.report.wizard</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem name="Fixed Asset Report"
+              action="action_fixed_asset_report_wizard"
+              id="menu_action_fixed_asset_report"
+              parent="account.account_reports_management_menu" sequence="20"/>
+
+</odoo>

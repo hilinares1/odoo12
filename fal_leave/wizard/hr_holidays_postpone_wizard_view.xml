@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_hr_holidays_postpone_wizard" model="ir.ui.view">
+            <field name="name">hr.holidays.postpone.wizard</field>
+            <field name="model">hr.holidays.postpone.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Postpone Holidays">
+                    <group>
+                        <group>
+                            <field name="holidays_status_id" invisible="1"/>
+                            <field name="lost_days_reason"/>
+                            <field name="description"/>
+                        </group>
+                    </group>
+                    <field name="postpone_line">
+                        <tree editable="buttom">
+                            <field name="employee_id"/>
+                            <field name="department_id"/>
+                            <field name="duration"/>
+                        </tree>
+                    </field>
+                    <footer>
+                        <button name="postpone_holidays" string="Postpone Holidays" type="object" class="oe_highlight"/>
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <act_window
+            id="he_holidays_postpone_action"
+            name="Postpone remaining holidays"
+            res_model="hr.holidays.postpone.wizard"
+            src_model="hr.leave.type"
+            view_mode="form"
+            view_id="view_hr_holidays_postpone_wizard"
+            target="new"
+            key2="client_action_multi"
+            />
+
+    </data>
+</odoo>

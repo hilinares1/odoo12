@@ -1,0 +1,25 @@
+
+<odoo>
+    <data>
+
+
+        <!-- paperformat -->
+        <record id="paperformat_Portrait" model="report.paperformat" >
+            <field name="name">paperformat_Portrait</field>
+            <field name="format">A8</field>
+            <field name="orientation">Landscape</field>
+            <field name="default" eval="False" />
+            <field name="dpi" eval="90" />
+            <field name="page_height">0</field>
+            <field name="page_width">0</field>
+            <field name="margin_top" eval="2" />
+            <field name="margin_right" eval="1" />
+            <field name="margin_bottom" eval="2" />
+            <field name="margin_left" eval="1" />
+            <field name="header_spacing" eval="5" />
+            <field name="dpi" eval="90" />
+        </record>
+        
+
+    </data>
+</odoo>

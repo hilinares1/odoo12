@@ -1,0 +1,189 @@
+<odoo>
+
+    <record id="fal_production_order_form_view" model="ir.ui.view">
+        <field name="name">fal_production_order_form_view</field>
+        <field name="model">fal.production.order</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="MRP Production Order">
+                <header>
+                    <button name="make_mo" type="object" string="Create Manufacturing Orders" class="btn-primary" attrs="{'invisible': ['|',('bom_id', '=', False),('has_main_mo', '=', True)]}"/>
+                    <button name="button_confirm" string="Confirm" class="btn-primary" type="object" attrs="{'invisible': ['|', ('state', 'not in', ['draft']), ('has_main_mo', '=', False)]}"/>
+                    <button name="look_for_available_qty" string="Reserve" type="object" class="oe_highlight" attrs="{'invisible': ['|', ('has_main_mo', '!=', True), ('state', 'in', ['draft','done','cancel'])]}"/>
+                    <button name="button_plan" string="Create Workorders" class="btn-primary" type="object" attrs="{'invisible': ['|', ('state', 'not in', ['confirm']), ('routing_id', '=', False)]}"/>
+                    <button name="button_unplan" type="object" string="Unplan" attrs="{'invisible': ['|', ('state', '!=', 'planned'), ('wo_planned', '=', True)]}"/>
+                    <button name="button_cancel" string="Cancel"  type="object" attrs="{'invisible': ['|', ('state', 'in', ['done','cancel']), ('has_main_mo', '=', False)]}"/>
+                    <field name="state" widget="statusbar" nolabel="1" readonly="1" statusbar_visible="draft,confirm,progress,done,cancel"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1><field name="name" placeholder="Production Reference" nolabel="1" readonly="1"/></h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="product_id"/>
+                            <label for="qty_to_produce"/>
+                            <div class="o_row">
+                                <field name="qty_to_produce"/>
+                                <field name="product_uom_id"/>
+                            </div>
+                            <label for="bom_id"/>
+                            <div class="o_row">
+                                <field name="bom_id"/>
+                                <button name="make_mo" icon="fa-arrow-right" type="object" string="Create MO" class="btn-link" attrs="{'invisible': ['|',('bom_id', '=', False),('has_main_mo', '=', True)]}"/>
+                            </div>
+                            <field name="routing_id" groups="mrp.group_mrp_routings"/>
+                            <field name="wo_planned" invisible="1"/>
+                            <field name="has_main_mo" invisible="1"/>
+                        </group>
+                        <group>
+                            <field name="delivery_planned_date" required="1"/>
+                            <field name="production_date_planned" required="1"/>
+                            <label for="production_date_fixed"/>
+                            <div class="o_row">
+                                <field name="production_date_fixed"/>
+                                <button name="action_get_production_date_fixed_wizard" icon="fa-arrow-right" type="object" string="Assign Date" class="btn-link"/>
+                            </div>
+                            <field name="user_id"/>
+                            <field name="origin"/>
+                            <field name="company_id" groups="base.group_multi_company" options="{'no_create': True}"/>
+                            <field name="picking_type_id" invisible="1"/>
+                            <field name="location_src_id" invisible="1"/>
+                            <field name="location_dest_id" invisible="1"/>
+                            <field name="procurement_group_id" invisible="1"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page name="mrp" string="Manufacturing Orders">
+                            <field name="mrp_ids" widget="many2many">
+                                <tree decoration-bf="message_needaction==True" default_order="date_planned_start desc" decoration-info="state=='confirmed'" decoration-danger="date_planned_start&lt;current_date and state not in ('done','cancel')" decoration-muted="state in ('done','cancel')" string="Manufacturing Orders">
+                                    <field name="message_needaction" invisible="1"/>
+                                    <field name="name"/>
+                                    <field name="date_planned_start"/>
+                                    <field name="product_id"/>
+                                    <field name="origin"/>
+                                    <field name="fal_prod_order_id"/>
+                                    <field name="product_qty" sum="Total Qty" string="Quantity"/>
+                                    <field name="product_uom_id" string="Unit of Measure" options="{'no_open':True,'no_create':True}" groups="uom.group_uom"/>
+                                    <field name="availability"/>
+                                    <field name="routing_id" groups="mrp.group_mrp_routings"/>
+                                    <field name="state"/>
+                                    <button name="action_open_form_view" string="Form View" type="object" icon="fa-pencil-square-o"/>
+                                </tree>
+                            </field>
+                            <separator string="Sub Manufacturing Orders"/>
+                            <field name="sub_mrp_ids">
+                                <tree decoration-bf="message_needaction==True" default_order="date_planned_start desc" decoration-info="state=='confirmed'" decoration-danger="date_planned_start&lt;current_date and state not in ('done','cancel')" decoration-muted="state in ('done','cancel')" string="Manufacturing Orders">
+                                    <field name="message_needaction" invisible="1"/>
+                                    <field name="name"/>
+                                    <field name="date_planned_start"/>
+                                    <field name="product_id"/>
+                                    <field name="origin"/>
+                                    <field name="fal_prod_order_id"/>
+                                    <field name="product_qty" sum="Total Qty" string="Quantity"/>
+                                    <field name="product_uom_id" string="Unit of Measure" options="{'no_open':True,'no_create':True}" groups="uom.group_uom"/>
+                                    <field name="availability"/>
+                                    <field name="routing_id" groups="mrp.group_mrp_routings"/>
+                                    <field name="state"/>
+                                    <button name="action_open_form_view" string="Form View" type="object" icon="fa-pencil-square-o"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page name="workorder" string="Work Orders" attrs="{'invisible': [('routing_id', '=', False)]}">
+                            <field name="workorder_ids" readonly="0"/>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="fl_production_order_tree_view" model="ir.ui.view">
+        <field name="name">fl_production_order_tree_view</field>
+        <field name="model">fal.production.order</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="MRP Production Order">
+                <field name="name"/>
+                <field name="product_id"/>
+                <field name="qty_to_produce"/>
+                <field name="delivery_planned_date"/>
+                <field name="production_date_planned"/>
+                <field name="production_date_fixed"/>
+                <field name="origin"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="fl_production_order_calendar_view">
+        <field name="name">fl_production_order_calendar_view</field>
+        <field name="model">fal.production.order</field>
+        <field name="arch" type="xml">
+            <calendar color="state" string="Calendar" date_start="production_date_planned" mode="month">
+                <field name="name"/>
+                <field name="product_id"/>
+                <field name="company_id"/>
+            </calendar>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="fl_production_order_pivot_view">
+        <field name="name">fl_production_order_pivot_view</field>
+        <field name="model">fal.production.order</field>
+        <field name="type">pivot</field>
+        <field name="arch" type="xml">
+            <pivot string="Manufacturing Orders">
+                <field name="production_date_planned" interval="week" type="col" />
+                <field name="production_date_planned" interval="day" type="col" />
+                <field name="qty_to_produce" type="measure" />
+            </pivot>
+        </field>
+    </record>
+
+
+    <record model="ir.ui.view" id="fal_production_order_search_view">
+        <field name="name">fal_production_order_search_view</field>
+        <field name="model">fal.production.order</field>
+        <field name="priority">1</field>
+        <field name="arch" type="xml">
+            <search string="Search Production Order">
+                <field name="name" string="Production" filter_domain="['|',('name','ilike',self),('origin','ilike',self)]"/>
+                <field name="combined_mo_names" string="Manufacturing Orders" filter_domain="[('combined_mo_names','ilike',self)]"/>
+                <filter string="Confirmed" name="confirmed" domain="[('state','=','confirm')]" help="Manufacturing Orders which are confirmed and ready to plan."/>
+                <filter string="Planned" name="planned" domain="[('state','=','planned')]" help="Manufacturing Orders which are ready to start production."/>
+                <filter string="In Production" name="progress" domain="[('state','=','progress')]" help="Manufacturing Orders which are currently in production."/>
+                <separator/>
+                <filter name="late" string="Late" domain="['&amp;', ('production_date_planned','&lt;', current_date), ('state', 'in', ('draft', 'confirm', 'planned'))]" help="Production started late"/>
+                <field name="product_id"/>
+                <group expand="0" string="Group By...">
+                    <filter name="product" string="Product" domain="[]" context="{'group_by':'product_id'}"/>
+                    <filter name="status" string="Status" domain="[]" context="{'group_by':'state'}"/>
+                    <filter name="scheduled_month" string="Scheduled Month" domain="[]" context="{'group_by':'production_date_planned'}" help="Scheduled Date by Month"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="fal_production_order_action">
+        <field name="name">Production Order</field>
+        <field name="res_model">fal.production.order</field>
+        <field name="view_mode">tree,pivot,calendar,form</field>
+        <field name="help" type="html">
+        <p>
+            Click to create a production order.
+        </p>
+        <p>
+            Production order is used to make manufactuting order at once.
+        </p>
+        </field>
+    </record>
+
+    <menuitem id="fal_production_order_menu" name="Production Order" action="fal_production_order_action" sequence="0" parent="mrp.menu_mrp_manufacturing"/>
+
+</odoo>

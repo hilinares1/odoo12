@@ -1,0 +1,132 @@
+<?xml version="1.0"?>
+<odoo>
+	<data>
+	
+		<record id="view_partner_contacts_tree" model="ir.ui.view">
+            <field name="name">res.partner.tree.aos_partner</field>
+            <field name="model">res.partner</field>
+			<field name="inherit_id" ref="base.view_partner_tree" />
+			<field name="arch" type="xml">
+				<field name="display_name" position="before">
+					<field name="ref"/>
+				</field>
+			</field>
+		</record>
+		
+		<record id="view_partner_contacts_form" model="ir.ui.view">
+        	<field name="name">aos.res.partner.custom</field>
+			<field name="model">res.partner</field>
+			<field name="inherit_id" ref="base.view_partner_form" />
+			<field name="arch" type="xml">
+				<xpath expr="//group/group[1]/field[@name='type']" position="after">
+					<field name="attn"/>
+	        	</xpath>
+			</field>
+		</record>
+		
+		<record id="base.action_partner_customer_form" model="ir.actions.act_window">
+            <field name="domain">[('customer','=',True),'|',('is_company','=',True),('parent_id','=',False)]</field>
+            <field name="context">{'default_is_company': 1, 'default_customer': 1, 'default_supplier': 0, 'default_employee': 0 }</field>
+        </record>
+        
+        <menuitem name="Customers"
+	    	id="menu_customer_contacts"
+	        parent="contacts.menu_contacts"
+	        sequence="5"
+	        action="base.action_partner_customer_form"/>
+	        
+		<record id="base.action_partner_supplier_form" model="ir.actions.act_window">
+            <field name="domain">[('supplier','=',True),'|',('is_company','=',True),('parent_id','=',False)]</field>
+            <field name="context">{'default_is_company': 1, 'default_customer': 0, 'default_supplier': 1, 'default_employee': 0 }</field>
+        </record>
+        
+        <menuitem name="Vendors"
+	    	id="menu_vendor_contacts"
+	        parent="contacts.menu_contacts"
+	        sequence="10"
+	        action="base.action_partner_supplier_form"/>
+        
+        <record id="base.action_partner_employee_form" model="ir.actions.act_window">
+            <!-- <field name="context">{'default_customer': 0, 'default_supplier': 0, 'default_employee': 1}</field> -->
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to add a employee in your address book.
+              </p><p>
+                Odoo helps you easily track all activities related to
+                a supplier: discussions, history of purchases,
+                documents, etc.
+              </p>
+            </field>
+        </record>
+        
+        <record id="action_partner_employee_contacts_form_view1" model="ir.actions.act_window.view">
+            <field eval="0" name="sequence"/>
+            <field name="view_mode">kanban</field>
+            <field name="view_id" ref="base.res_partner_kanban_view"/>
+            <field name="act_window_id" ref="base.action_partner_employee_form"/>
+        </record>
+        <record id="action_partner_employee_contacts_form_view2" model="ir.actions.act_window.view">
+            <field eval="2" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="base.view_partner_form"/>
+            <field name="act_window_id" ref="base.action_partner_employee_form"/>
+        </record>
+        <record id="action_partner_employee_contacts_tree_view" model="ir.actions.act_window.view">
+            <field name="sequence" eval="1"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="base.view_partner_tree"/>
+            <field name="act_window_id" ref="base.action_partner_employee_form"/>
+        </record>
+        
+        <menuitem name="Employees"
+	    	id="menu_employee_contacts"
+	        parent="contacts.menu_contacts"
+	        sequence="15"
+	        action="base.action_partner_employee_form"/>
+		
+		<menuitem id="contacts.res_partner_menu_contacts"
+	        name="Contacts"
+	        action="contacts.action_contacts"
+	        parent="contacts.menu_contacts"
+	        sequence="20"/>
+	        
+	    <menuitem id="contacts.res_partner_menu_config"
+	        name="Configuration"
+	        parent="contacts.menu_contacts"
+	        groups="base.group_system"
+	        sequence="80"/>
+	        
+        <!-- <record id="action_partner_other_contacts_form_view1" model="ir.actions.act_window.view">
+            <field eval="0" name="sequence"/>
+            <field name="view_mode">kanban</field>
+            <field name="view_id" ref="base.res_partner_kanban_view"/>
+            <field name="act_window_id" ref="base.action_partner_other_form"/>
+        </record>
+        <record id="action_partner_other_contacts_form_view2" model="ir.actions.act_window.view">
+            <field eval="2" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="base.view_partner_form"/>
+            <field name="act_window_id" ref="base.action_partner_other_form"/>
+        </record>
+        <record id="action_partner_other_contacts_tree_view" model="ir.actions.act_window.view">
+            <field name="sequence" eval="1"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="base.view_partner_tree"/>
+            <field name="act_window_id" ref="base.action_partner_other_form"/>
+        </record>
+        
+	    <menuitem name="Other Partners"
+	    	id="menu_other_partners"
+	        parent="contacts.menu_contacts"
+	        sequence="20"
+	        action="base.action_partner_other_form"/> -->
+	        
+	    <menuitem name="Reports"
+	    	id="menu_contacts_reports"
+	        parent="contacts.menu_contacts"
+	        sequence="80"
+	        groups="base.group_system"/>
+        
+		
+	</data>
+</odoo>

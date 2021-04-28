@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="fal_stock_picking_view_form_inherit_quality" model="ir.ui.view">
+        <field name="name">fal.stock.picking.view.form.inherit.quality</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="quality_control.stock_picking_view_form_inherit_quality"/>
+        <field name="arch" type="xml">
+            <button name="check_quality" position="replace">
+                <button string="Quality Checks" name="check_quality" type="object" class="oe_highlight" attrs="{'invisible': ['|', ('quality_check_todo', '=', False), ('state', 'not in',('partially_available','assigned'))]}"
+                        groups="quality.group_quality_user"/>
+                <field name="quality_check_todo" invisible="1"/>
+            </button>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,108 @@
+<odoo>
+     <template id="barcode_labels">
+        <style>
+             .tables {
+              margin-bottom: 10px;
+            }
+            .tables {
+              width:100%
+            }
+            .tables > thead > tr > th,
+            .tables > tbody > tr > th,
+            .tables > tfoot > tr > th,
+            .tables > thead > tr > td,
+            .tables > tbody > tr > td,
+            .tables > tfoot > tr > td {
+                border: 2px solid black;
+                padding:1px;
+                font-size:12px;
+            }
+            .border-bottom > thead > tr > th {
+            vertical-align: bottom;
+            border-bottom: 2px solid black;
+            }
+        </style>
+        <table class="tables">
+            <tr>
+                <td style="height:25mm;" align="center" width="50%">
+                    <br></br>
+                    <span style="font-weight: bold;" t-field="product.default_code"/>
+                    <br></br>
+                    <span t-field="product.name"/>
+                </td>
+                <td style="height:25mm;" align="center" width="50%">
+                    <br></br>
+                    <span style="font-size:20px; font-weight: bold;" t-field="product.categ_id.name"/>
+                </td>
+            </tr>
+        </table>
+        <div class="row">
+            <div class="col-12" align="center" width="70%">
+                <img t-if="product.barcode" t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('EAN13', product.barcode, 150, 65)" style="width:100"/>
+                <br><span t-field="product.barcode"/></br>
+            </div>
+        </div>
+    </template>
+
+     <template id="fal_report_productbarcode">
+        <t t-call="web.basic_layout">
+            <div class="page">
+                <t t-foreach="docs" t-as="product">
+                    <t t-call="product_label_report.barcode_labels">
+                        <t t-set="product" t-value="product"/>
+                    </t>
+                </t>
+            </div>
+        </t>
+    </template>
+
+    <template id="fal_report_producttemplatebarcode">
+    <t t-call="web.basic_layout">
+        <div class="page">
+            <t t-foreach="docs" t-as="template">
+                <t t-foreach="template.product_variant_ids" t-as="product">
+                    <t t-call="product_label_report.barcode_labels">
+                        <t t-set="product" t-value="product"/>
+                    </t>
+                </t>
+            </t>
+        </div>
+    </t>
+</template>
+
+
+    <report
+        id="product.report_product_template_barcode"
+        string="Barcode Labels"
+        model="product.template"
+        report_type="qweb-pdf"
+        name="product_label_report.fal_report_producttemplatebarcode"
+        file="product_label_report.fal_report_producttemplatebarcode"
+    />
+
+    <report
+        id="product.report_product_product_barcode"
+        string="Barcode Labels"
+        model="product.product"
+        report_type="qweb-pdf"
+        name="product_label_report.fal_report_productbarcode"
+        file="product_label_report.fal_report_productbarcode"
+    />
+
+    <record id="paperformat_barcode_labels" model="report.paperformat">
+        <field name="name">Barcode Labels</field>
+        <field name="default" eval="True"/>
+        <field name="format">custom</field>
+        <field name="page_height">89</field>
+        <field name="page_width">63</field>
+        <field name="orientation">Landscape</field>
+        <field name="margin_top">1</field>
+        <field name="margin_bottom">1</field>
+        <field name="margin_left">0</field>
+        <field name="margin_right">0</field>
+        <field name="header_line" eval="False"/>
+        <field name="header_spacing">0</field>
+        <field name="dpi">90</field>
+        <field name="report_ids" eval="[(4, ref('product.report_product_template_barcode')), (4, ref('product.report_product_product_barcode'))]"/>
+    </record>
+</odoo>

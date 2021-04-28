@@ -1,0 +1,1488 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* fal_partner_qualification
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-07-10 08:11+0000\n"
+"PO-Revision-Date: 2018-07-12 11:21+0700\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: en\n"
+"X-Generator: Poedit 2.0.8\n"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1800"
+msgstr "1800"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1801"
+msgstr "1801"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1802"
+msgstr "1802"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1803"
+msgstr "1803"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1804"
+msgstr "1804"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1805"
+msgstr "1805"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1806"
+msgstr "1806"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1807"
+msgstr "1807"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1808"
+msgstr "1808"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1809"
+msgstr "1809"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1810"
+msgstr "1810"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1811"
+msgstr "1811"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1812"
+msgstr "1812"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1813"
+msgstr "1813"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1814"
+msgstr "1814"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1815"
+msgstr "1815"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1816"
+msgstr "1816"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1817"
+msgstr "1817"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1818"
+msgstr "1818"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1819"
+msgstr "1819"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1820"
+msgstr "1820"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1821"
+msgstr "1821"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1822"
+msgstr "1822"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1823"
+msgstr "1823"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1824"
+msgstr "1824"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1825"
+msgstr "1825"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1826"
+msgstr "1826"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1827"
+msgstr "1827"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1828"
+msgstr "1828"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1829"
+msgstr "1829"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1830"
+msgstr "1830"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1831"
+msgstr "1831"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1832"
+msgstr "1832"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1833"
+msgstr "1833"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1834"
+msgstr "1834"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1835"
+msgstr "1835"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1836"
+msgstr "1836"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1837"
+msgstr "1837"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1838"
+msgstr "1838"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1839"
+msgstr "1839"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1840"
+msgstr "1840"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1841"
+msgstr "1841"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1842"
+msgstr "1842"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1843"
+msgstr "1843"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1844"
+msgstr "1844"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1845"
+msgstr "1845"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1846"
+msgstr "1846"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1847"
+msgstr "1847"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1848"
+msgstr "1848"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1849"
+msgstr "1849"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1850"
+msgstr "1850"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1851"
+msgstr "1851"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1852"
+msgstr "1852"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1853"
+msgstr "1853"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1854"
+msgstr "1854"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1855"
+msgstr "1855"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1856"
+msgstr "1856"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1857"
+msgstr "1857"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1858"
+msgstr "1858"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1859"
+msgstr "1859"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1860"
+msgstr "1860"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1861"
+msgstr "1861"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1862"
+msgstr "1862"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1863"
+msgstr "1863"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1864"
+msgstr "1864"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1865"
+msgstr "1865"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1866"
+msgstr "1866"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1867"
+msgstr "1867"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1868"
+msgstr "1868"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1869"
+msgstr "1869"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1870"
+msgstr "1870"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1871"
+msgstr "1871"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1872"
+msgstr "1872"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1873"
+msgstr "1873"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1874"
+msgstr "1874"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1875"
+msgstr "1875"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1876"
+msgstr "1876"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1877"
+msgstr "1877"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1878"
+msgstr "1878"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1879"
+msgstr "1879"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1880"
+msgstr "1880"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1881"
+msgstr "1881"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1882"
+msgstr "1882"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1883"
+msgstr "1883"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1884"
+msgstr "1884"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1885"
+msgstr "1885"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1886"
+msgstr "1886"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1887"
+msgstr "1887"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1888"
+msgstr "1888"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1889"
+msgstr "1889"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1890"
+msgstr "1890"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1891"
+msgstr "1891"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1892"
+msgstr "1892"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1893"
+msgstr "1893"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1894"
+msgstr "1894"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1895"
+msgstr "1895"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1896"
+msgstr "1896"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1897"
+msgstr "1897"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1898"
+msgstr "1898"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1899"
+msgstr "1899"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1900"
+msgstr "1900"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1901"
+msgstr "1901"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1902"
+msgstr "1902"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1903"
+msgstr "1903"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1904"
+msgstr "1904"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1905"
+msgstr "1905"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1906"
+msgstr "1906"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1907"
+msgstr "1907"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1908"
+msgstr "1908"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1909"
+msgstr "1909"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1910"
+msgstr "1910"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1911"
+msgstr "1911"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1912"
+msgstr "1912"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1913"
+msgstr "1913"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1914"
+msgstr "1914"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1915"
+msgstr "1915"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1916"
+msgstr "1916"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1917"
+msgstr "1917"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1918"
+msgstr "1918"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1919"
+msgstr "1919"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1920"
+msgstr "1920"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1921"
+msgstr "1921"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1922"
+msgstr "1922"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1923"
+msgstr "1923"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1924"
+msgstr "1924"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1925"
+msgstr "1925"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1926"
+msgstr "1926"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1927"
+msgstr "1927"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1928"
+msgstr "1928"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1929"
+msgstr "1929"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1930"
+msgstr "1930"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1931"
+msgstr "1931"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1932"
+msgstr "1932"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1933"
+msgstr "1933"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1934"
+msgstr "1934"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1935"
+msgstr "1935"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1936"
+msgstr "1936"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1937"
+msgstr "1937"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1938"
+msgstr "1938"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1939"
+msgstr "1939"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1940"
+msgstr "1940"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1941"
+msgstr "1941"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1942"
+msgstr "1942"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1943"
+msgstr "1943"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1944"
+msgstr "1944"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1945"
+msgstr "1945"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1946"
+msgstr "1946"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1947"
+msgstr "1947"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1948"
+msgstr "1948"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1949"
+msgstr "1949"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1950"
+msgstr "1950"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1951"
+msgstr "1951"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1952"
+msgstr "1952"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1953"
+msgstr "1953"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1954"
+msgstr "1954"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1955"
+msgstr "1955"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1956"
+msgstr "1956"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1957"
+msgstr "1957"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1958"
+msgstr "1958"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1959"
+msgstr "1959"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1960"
+msgstr "1960"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1961"
+msgstr "1961"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1962"
+msgstr "1962"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1963"
+msgstr "1963"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1964"
+msgstr "1964"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1965"
+msgstr "1965"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1966"
+msgstr "1966"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1967"
+msgstr "1967"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1968"
+msgstr "1968"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1969"
+msgstr "1969"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1970"
+msgstr "1970"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1971"
+msgstr "1971"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1972"
+msgstr "1972"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1973"
+msgstr "1973"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1974"
+msgstr "1974"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1975"
+msgstr "1975"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1976"
+msgstr "1976"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1977"
+msgstr "1977"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1978"
+msgstr "1978"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1979"
+msgstr "1979"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1980"
+msgstr "1980"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1981"
+msgstr "1981"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1982"
+msgstr "1982"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1983"
+msgstr "1983"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1984"
+msgstr "1984"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1985"
+msgstr "1985"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1986"
+msgstr "1986"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1987"
+msgstr "1987"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1988"
+msgstr "1988"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1989"
+msgstr "1989"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1990"
+msgstr "1990"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1991"
+msgstr "1991"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1992"
+msgstr "1992"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1993"
+msgstr "1993"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1994"
+msgstr "1994"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1995"
+msgstr "1995"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1996"
+msgstr "1996"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1997"
+msgstr "1997"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1998"
+msgstr "1998"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "1999"
+msgstr "1999"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "2000"
+msgstr "2000"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "2001"
+msgstr "2001"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "2002"
+msgstr "2002"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "2003"
+msgstr "2003"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "2004"
+msgstr "2004"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "2005"
+msgstr "2005"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "2006"
+msgstr "2006"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "2007"
+msgstr "2007"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "2008"
+msgstr "2008"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "2009"
+msgstr "2009"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "2010"
+msgstr "2010"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "2011"
+msgstr "2011"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "2012"
+msgstr "2012"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "2013"
+msgstr "2013"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "2014"
+msgstr "2014"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "2015"
+msgstr "2015"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "2016"
+msgstr "2016"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "2017"
+msgstr "2017"
+
+#. module: fal_partner_qualification
+#: selection:fal.partner.qualified.wizard,fal_year_founded:0
+#: selection:res.partner,fal_year_founded:0
+msgid "2018"
+msgstr "2018"
+
+#. module: fal_partner_qualification
+#: model:ir.ui.view,arch_db:fal_partner_qualification.view_partner_qualified_wizard
+msgid "Approve"
+msgstr "Approuver"
+
+#. module: fal_partner_qualification
+#: model:ir.ui.view,arch_db:fal_partner_qualification.view_partner_qualified_wizard
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: fal_partner_qualification
+#: model:ir.model.fields,field_description:fal_partner_qualification.field_fal_partner_qualified_wizard_fal_company_title
+#: model:ir.model.fields,field_description:fal_partner_qualification.field_res_partner_fal_company_title
+#: model:ir.model.fields,field_description:fal_partner_qualification.field_res_users_fal_company_title
+msgid "Company Title"
+msgstr "Titre de société"
+
+#. module: fal_partner_qualification
+#: model:ir.model,name:fal_partner_qualification.model_res_partner
+msgid "Contact"
+msgstr "Contact"
+
+#. module: fal_partner_qualification
+#: model:res.groups,name:fal_partner_qualification.group_contact_qualificator_user
+msgid "Contact Qualificator"
+msgstr "Contact Qualificator"
+
+#. module: fal_partner_qualification
+#: model:ir.model.fields,field_description:fal_partner_qualification.field_fal_partner_qualified_wizard_create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: fal_partner_qualification
+#: model:ir.model.fields,field_description:fal_partner_qualification.field_fal_partner_qualified_wizard_create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: fal_partner_qualification
+#: model:ir.model.fields,field_description:fal_partner_qualification.field_fal_partner_qualified_wizard_display_name
+msgid "Display Name"
+msgstr "Nom à afficher"
+
+#. module: fal_partner_qualification
+#: model:ir.model.fields,field_description:fal_partner_qualification.field_fal_partner_qualified_wizard_id
+msgid "ID"
+msgstr "ID"
+
+#. module: fal_partner_qualification
+#: model:ir.model.fields,field_description:fal_partner_qualification.field_fal_partner_qualified_wizard_is_company
+msgid "Is Company"
+msgstr "Est Société"
+
+#. module: fal_partner_qualification
+#: model:ir.model.fields,field_description:fal_partner_qualification.field_fal_partner_qualified_wizard___last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: fal_partner_qualification
+#: model:ir.model.fields,field_description:fal_partner_qualification.field_fal_partner_qualified_wizard_write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: fal_partner_qualification
+#: model:ir.model.fields,field_description:fal_partner_qualification.field_fal_partner_qualified_wizard_write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: fal_partner_qualification
+#: model:ir.model.fields,field_description:fal_partner_qualification.field_fal_partner_qualified_wizard_fal_number_employee
+#: model:ir.model.fields,field_description:fal_partner_qualification.field_res_partner_fal_number_employee
+#: model:ir.model.fields,field_description:fal_partner_qualification.field_res_users_fal_number_employee
+msgid "Number Of Employee"
+msgstr "Nombre d'employé"
+
+#. module: fal_partner_qualification
+#: model:ir.ui.view,arch_db:fal_partner_qualification.view_partner_form_fal_partner_qualification
+msgid "Partner Profile"
+msgstr "Profil de partenaire"
+
+#. module: fal_partner_qualification
+#: model:ir.model,name:fal_partner_qualification.model_fal_partner_qualified_wizard
+msgid "Partner Qualified"
+msgstr "Partenaire qualifié"
+
+#. module: fal_partner_qualification
+#: model:ir.model.fields,field_description:fal_partner_qualification.field_fal_partner_qualified_wizard_fal_partner_tags
+#: model:ir.model.fields,field_description:fal_partner_qualification.field_res_partner_fal_partner_tags
+#: model:ir.model.fields,field_description:fal_partner_qualification.field_res_users_fal_partner_tags
+msgid "Partner Tags"
+msgstr "Tags de partenaire"
+
+#. module: fal_partner_qualification
+#: model:ir.ui.view,arch_db:fal_partner_qualification.view_partner_form_fal_partner_qualification
+#: model:ir.ui.view,arch_db:fal_partner_qualification.view_partner_qualified_wizard
+msgid "Partner Tags..."
+msgstr "Tags de partenaire..."
+
+#. module: fal_partner_qualification
+#: model:ir.ui.view,arch_db:fal_partner_qualification.view_partner_qualified_wizard
+msgid "Please fill the information below to set qualified the partner"
+msgstr "Veuillez remplir les informations ci-dessous pour définir le partenaire qualifié"
+
+#. module: fal_partner_qualification
+#: model:ir.model.fields,field_description:fal_partner_qualification.field_res_partner_state
+#: model:ir.model.fields,field_description:fal_partner_qualification.field_res_users_state
+#: model:ir.ui.view,arch_db:fal_partner_qualification.view_res_partner_filter_fal_partner_qualification
+msgid "Qualification State"
+msgstr "État de qualification"
+
+#. module: fal_partner_qualification
+#: selection:res.partner,state:0
+msgid "Qualified"
+msgstr "Qualifié"
+
+#. module: fal_partner_qualification
+#: model:ir.ui.view,arch_db:fal_partner_qualification.res_partner_kanban_view_gleize_ext
+#: model:ir.ui.view,arch_db:fal_partner_qualification.view_partner_form_fal_partner_qualification
+#: model:ir.ui.view,arch_db:fal_partner_qualification.view_partner_qualified_wizard
+msgid "Set Qualified"
+msgstr "Définir Qualifié"
+
+#. module: fal_partner_qualification
+#: model:ir.ui.view,arch_db:fal_partner_qualification.res_partner_kanban_view_gleize_ext
+#: model:ir.ui.view,arch_db:fal_partner_qualification.view_partner_form_fal_partner_qualification
+msgid "Set Unqualified"
+msgstr "Définir Non Qualifié"
+
+#. module: fal_partner_qualification
+#: code:addons/fal_partner_qualification/models/partner.py:74
+#, python-format
+msgid "The compnay of this contact need to be Qualified,                         --> please do the qualification for the company"
+msgstr "La société de ce contact doit être qualifiée,                         --> veuillez qualifier"
+
+#. module: fal_partner_qualification
+#: selection:res.partner,state:0
+msgid "To Qualify"
+msgstr "À Qualifier"
+
+#. module: fal_partner_qualification
+#: selection:res.partner,state:0
+msgid "Unqualified"
+msgstr "Non qualifié"
+
+#. module: fal_partner_qualification
+#: model:ir.model.fields,field_description:fal_partner_qualification.field_fal_partner_qualified_wizard_fal_year_founded
+#: model:ir.model.fields,field_description:fal_partner_qualification.field_res_partner_fal_year_founded
+#: model:ir.model.fields,field_description:fal_partner_qualification.field_res_users_fal_year_founded
+msgid "Year Founded"
+msgstr "Année de fondation"
+
+#. module: fal_partner_qualification
+#: code:addons/fal_partner_qualification/models/partner.py:69
+#, python-format
+msgid "You cannot make this qualification for this contact,                         because the company of this contact                         is not Qualified -->                         please do the qualification for the company"
+msgstr "Vous ne pouvez pas qualifier ce contact,                         car la société de ce contact                         n'est pas qualifiée -->                         veuillez qualifier"

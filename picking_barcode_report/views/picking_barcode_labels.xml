@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<odoo>
+    <data>
+
+        <report
+            id="pickingbarcodelabels"
+            string="Picking product Labels"
+            model="stock.picking"
+            report_type="qweb-pdf"
+            name="picking_barcode_report.report_picking_barcode_labels"
+            file="picking_barcode_report.report_picking_barcode_labels"
+            menu="False"
+         />
+
+    </data>
+</odoo>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="assets_frontend" name="point_of_sale assets" inherit_id="point_of_sale.assets">
+            <xpath expr="." position="inside">
+                <link rel="stylesheet" type="text/less" href="/skit_pos_responsive/static/src/css/pos_responsive.css"/>
+                <script type="text/javascript" src="/skit_pos_responsive/static/src/js/skit_responsive.js"></script>
+            </xpath>
+        </template>
+        
+        <template id="skit_index" inherit_id='point_of_sale.index' name="SKIT POS Index">&lt;!DOCTYPE html&gt;
+            <xpath expr="//meta[@name='viewport']" position="replace">
+            	<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+            </xpath>
+        </template>
+        
+    </data>
+</odoo>

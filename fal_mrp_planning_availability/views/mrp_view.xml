@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="mrp_production_form_view_fal_mrpoav" model="ir.ui.view">
+            <field name="name">mrp.production.form.fal.mrpoav</field>
+            <field name="model">mrp.production</field>
+            <field name="inherit_id" ref="mrp.mrp_production_form_view"/>
+            <field name="arch" type="xml">
+                <field name="date_planned_start" position="after">
+                    <field name="fal_floating_production_date"/>
+                    <field name="fal_fixed_production_date" />
+                    <field name="fal_component_ready" />
+                </field>
+                <xpath expr="//field[@name='move_raw_ids']/tree/field[@name='product_uom']" position="after">
+                    <field name="reserved_availability" />
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_production_calendar_fal_mrpoav" model="ir.ui.view">
+            <field name="name">mrp.production.calendar.fal.mrpoav</field>
+            <field name="model">mrp.production</field>
+            <field name="inherit_id" ref="mrp.view_production_calendar"/>
+            <field name="arch" type="xml">
+                <calendar position="attributes">
+                    <attribute name="date_start">fal_floating_production_date</attribute>
+                </calendar>
+            </field>
+        </record>
+
+        <record id="view_production_calendar_falmrpfixedproduction" model="ir.ui.view">
+            <field name="name">mrp.production.falmrpfixed_production</field>
+            <field name="model">mrp.production</field>
+            <field eval="12" name="priority"/>
+            <field name="arch" type="xml">
+                <calendar color="routing_id" date_start="fal_fixed_production_date" string="Manufacturing Orders">
+                    <field name="name"/>
+                    <field name="product_id"/>
+                    <field name="product_qty"/>
+                </calendar>
+            </field>
+        </record>
+
+
+        <record id="mrp_production_action_planning_fal_fixedproduction" model="ir.actions.act_window">
+            <field name="name">Manufacturing Orders</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">mrp.production</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">calendar,tree,form,graph</field>
+            <field name="domain">[('state','in',('confirmed','in_production'))]</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to start a new manufacturing order.
+              </p><p>
+                A manufacturing order, based on a bill of materials, will
+                consume raw materials and produce finished products.
+              </p><p>
+                Manufacturing orders are usually proposed automatically based
+                on customer requirements or automated rules like the minimum
+                stock rule.
+              </p>
+            </field>
+        </record>
+
+        <record id="fal_fixedproduction_action_view" model="ir.actions.act_window.view">
+            <field eval="1" name="sequence"/>
+            <field name="view_mode">calendar</field>
+            <field name="view_id" ref="view_production_calendar_falmrpfixedproduction"/>
+            <field name="act_window_id" ref="mrp_production_action_planning_fal_fixedproduction"/>
+        </record>
+
+        <menuitem action="mrp_production_action_planning_fal_fixedproduction"
+                id="menu_mrp_production_order_fixed_action" name="Fixed Production Planning"
+                parent="mrp.mrp_planning_menu_root" sequence="2"/>
+
+        <record id="view_production_planning_graph_falmrpext" model="ir.ui.view">
+            <field name="name">mrp.production.graph.falmrpext</field>
+            <field name="model">mrp.production</field>
+            <field name="type">pivot</field>
+            <field name="arch" type="xml">
+                <pivot string="Manufacturing Orders">
+                    <field name="fal_floating_production_date" interval="week" type="col" />
+                    <field name="fal_floating_production_date" interval="day" type="col" />
+                    <field name="product_qty" type="measure"/>
+                </pivot>
+            </field>
+        </record>
+
+        <record id="mrp_production_action_planning_report_falmrpext" model="ir.actions.act_window">
+            <field name="name">Production Planning</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">mrp.production</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">pivot,calendar</field>
+            <field name="view_id" eval="False"/>
+            <field name="search_view_id" ref="mrp.view_mrp_production_filter"/>
+            <field name="context">{}</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to create a manufacturing order.
+              </p><p>
+                A manufacturing order, based on a bill of materials, will
+                consume raw materials and produce finished products.
+              </p><p>
+                Manufacturing orders are usually proposed automatically based
+                on customer requirements or automated rules like the minimum
+                stock rule.
+              </p>
+            </field>
+        </record>
+
+        <record id="fal_mrp_production_action_planning_report_falmrpext_action_view" model="ir.actions.act_window.view">
+            <field eval="1" name="sequence"/>
+            <field name="view_mode">pivot</field>
+            <field name="view_id" ref="view_production_planning_graph_falmrpext"/>
+            <field name="act_window_id" ref="mrp_production_action_planning_report_falmrpext"/>
+        </record>
+
+        <menuitem action="mrp_production_action_planning_report_falmrpext"
+                id="menu_mrp_production_order_action" name="Production Planning"
+                parent="mrp.mrp_planning_menu_root" sequence="2"/>
+
+        <record id="workcenter_line_calendar_mrpoav" model="ir.ui.view">
+            <field name="name">mrp.production.workcenter.line.calendar.mrpoav</field>
+            <field name="model">mrp.workorder</field>
+            <field name="inherit_id" ref="mrp.workcenter_line_calendar"/>
+            <field name="arch" type="xml">
+                <calendar position="attributes">
+                    <attribute name="all_day">allday</attribute>
+                </calendar>
+                <field name="production_id" position="after">
+                    <field name="date_start"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</odoo>

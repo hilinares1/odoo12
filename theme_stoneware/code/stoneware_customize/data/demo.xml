@@ -1,0 +1,2853 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <data noupdate="1">
+    <!-- Demo Product Quantities: Start -->
+      <record id="product_qty_per_page_1" model="product.qty_per_page">
+        <field name="name">12</field>
+      </record>
+
+      <record id="product_qty_per_page_2" model="product.qty_per_page">
+        <field name="name">15</field>
+      </record>
+
+      <record id="product_qty_per_page_3" model="product.qty_per_page">
+        <field name="name">18</field>
+      </record>
+    <!-- Demo Product Quantities: End -->
+
+    <!-- Demo eCommerce Categories: Start -->
+      <record id="stone_product_category_1" model="product.public.category">
+        <field name="name">Car Parts</field>
+        <field name="sequence">0</field>
+      </record>
+
+      <record id="stone_product_category_2" model="product.public.category">
+        <field name="name">Chairs</field>
+        <field name="sequence">0</field>
+      </record>
+
+      <record id="stone_product_category_3" model="product.public.category">
+        <field name="name">Women</field>
+        <field name="sequence">0</field>
+      </record>
+
+      <record id="stone_product_category_4" model="product.public.category">
+        <field name="name">Kids</field>
+        <field name="sequence">0</field>
+      </record>
+
+      <record id="stone_product_category_5" model="product.public.category">
+        <field name="name">Tools &amp; Garbage</field>
+        <field name="sequence">0</field>
+        <field name="parent_id" ref="stone_product_category_1"/>
+      </record>
+
+      <record id="stone_product_category_6" model="product.public.category">
+        <field name="name">Steering</field>
+        <field name="sequence">0</field>
+        <field name="parent_id" ref="stone_product_category_1"/>
+      </record>
+
+      <record id="stone_product_category_7" model="product.public.category">
+        <field name="name">Wheels</field>
+        <field name="sequence">0</field>
+        <field name="parent_id" ref="stone_product_category_1"/>
+      </record>
+
+      <record id="stone_product_category_8" model="product.public.category">
+        <field name="name">Exhaust</field>
+        <field name="sequence">0</field>
+        <field name="parent_id" ref="stone_product_category_1"/>
+      </record>
+
+      <record id="stone_product_category_9" model="product.public.category">
+        <field name="name">Wooden</field>
+        <field name="sequence">0</field>
+        <field name="parent_id" ref="stone_product_category_2"/>
+      </record>
+
+      <record id="stone_product_category_10" model="product.public.category">
+        <field name="name">Craft Materials</field>
+        <field name="sequence">0</field>
+        <field name="parent_id" ref="stone_product_category_2"/>
+      </record>
+
+      <record id="stone_product_category_11" model="product.public.category">
+        <field name="name">Artwork</field>
+        <field name="sequence">0</field>
+        <field name="parent_id" ref="stone_product_category_2"/>
+      </record>
+
+      <record id="stone_product_category_12" model="product.public.category">
+        <field name="name">Watches</field>
+        <field name="sequence">0</field>
+        <field name="parent_id" ref="stone_product_category_2"/>
+      </record>
+
+      <record id="stone_product_category_13" model="product.public.category">
+        <field name="name">Armchairs</field>
+        <field name="sequence">0</field>
+        <field name="parent_id" ref="stone_product_category_2"/>
+      </record>
+
+      <record id="stone_product_category_14" model="product.public.category">
+        <field name="name">Home &amp; Living</field>
+        <field name="sequence">0</field>
+        <field name="parent_id" ref="stone_product_category_3"/>
+      </record>
+
+      <record id="stone_product_category_15" model="product.public.category">
+        <field name="name">Kids</field>
+        <field name="sequence">0</field>
+        <field name="parent_id" ref="stone_product_category_3"/>
+      </record>
+
+      <record id="stone_product_category_16" model="product.public.category">
+        <field name="name">Women</field>
+        <field name="sequence">0</field>
+        <field name="parent_id" ref="stone_product_category_3"/>
+      </record>
+
+      <record id="stone_product_category_17" model="product.public.category">
+        <field name="name">Men</field>
+        <field name="sequence">0</field>
+        <field name="parent_id" ref="stone_product_category_3"/>
+      </record>
+
+      <record id="stone_product_category_18" model="product.public.category">
+        <field name="name">Wearables</field>
+        <field name="sequence">0</field>
+        <field name="parent_id" ref="stone_product_category_4"/>
+      </record>
+
+      <record id="stone_product_category_19" model="product.public.category">
+        <field name="name">Girls Clothing</field>
+        <field name="sequence">0</field>
+        <field name="parent_id" ref="stone_product_category_4"/>
+      </record>
+
+      <record id="stone_product_category_20" model="product.public.category">
+        <field name="name">Luxury Watches</field>
+        <field name="sequence">0</field>
+        <field name="parent_id" ref="stone_product_category_4"/>
+      </record>
+
+      <record id="stone_product_category_21" model="product.public.category">
+        <field name="name">Bedding Sets</field>
+        <field name="sequence">0</field>
+        <field name="parent_id" ref="stone_product_category_5"/>
+      </record>
+
+      <record id="stone_product_category_22" model="product.public.category">
+        <field name="name">Bedsheets</field>
+        <field name="sequence">0</field>
+        <field name="parent_id" ref="stone_product_category_5"/>
+      </record>
+
+      <record id="stone_product_category_23" model="product.public.category">
+        <field name="name">Blankets, Quilts and Dohars</field>
+        <field name="sequence">0</field>
+        <field name="parent_id" ref="stone_product_category_5"/>
+      </record>
+
+      <record id="stone_product_category_24" model="product.public.category">
+        <field name="name">Carpets</field>
+        <field name="sequence">0</field>
+        <field name="parent_id" ref="stone_product_category_6"/>
+      </record>
+
+      <record id="stone_product_category_25" model="product.public.category">
+        <field name="name">Door Mats</field>
+        <field name="sequence">0</field>
+        <field name="parent_id" ref="stone_product_category_6"/>
+      </record>
+
+      <record id="stone_product_category_26" model="product.public.category">
+        <field name="name">Floor Mats and Dhurries</field>
+        <field name="sequence">0</field>
+        <field name="parent_id" ref="stone_product_category_6"/>
+      </record>
+
+      <record id="stone_product_category_27" model="product.public.category">
+        <field name="name">Pillow &amp; Pillow Coves</field>
+        <field name="sequence">0</field>
+        <field name="parent_id" ref="stone_product_category_5"/>
+      </record>
+
+      <record id="stone_product_category_28" model="product.public.category">
+        <field name="name">Casual Shirts</field>
+        <field name="sequence">0</field>
+        <field name="parent_id" ref="stone_product_category_10"/>
+      </record>
+
+      <record id="stone_product_category_29" model="product.public.category">
+        <field name="name">Jackets</field>
+        <field name="sequence">0</field>
+        <field name="parent_id" ref="stone_product_category_10"/>
+      </record>
+
+      <record id="stone_product_category_30" model="product.public.category">
+        <field name="name">Suits</field>
+        <field name="sequence">0</field>
+        <field name="parent_id" ref="stone_product_category_10"/>
+      </record>
+
+      <record id="stone_product_category_31" model="product.public.category">
+        <field name="name">T-Shirts</field>
+        <field name="sequence">0</field>
+        <field name="parent_id" ref="stone_product_category_10"/>
+      </record>
+
+      <record id="stone_product_category_32" model="product.public.category">
+        <field name="name">Dresses &amp; Jumpsuits</field>
+        <field name="sequence">0</field>
+        <field name="parent_id" ref="stone_product_category_16"/>
+      </record>
+
+      <record id="stone_product_category_33" model="product.public.category">
+        <field name="name">Jeans &amp; Jeggings</field>
+        <field name="sequence">0</field>
+        <field name="parent_id" ref="stone_product_category_16"/>
+      </record>
+
+      <record id="stone_product_category_34" model="product.public.category">
+        <field name="name">Sweaters</field>
+        <field name="sequence">0</field>
+        <field name="parent_id" ref="stone_product_category_16"/>
+      </record>
+
+      <record id="stone_product_category_35" model="product.public.category">
+        <field name="name">Sweatshirts</field>
+        <field name="sequence">0</field>
+        <field name="parent_id" ref="stone_product_category_16"/>
+      </record>
+
+      <record id="stone_product_category_36" model="product.public.category">
+        <field name="name">Jeans &amp; Trousers</field>
+        <field name="sequence">0</field>
+        <field name="parent_id" ref="stone_product_category_17"/>
+      </record>
+
+      <record id="stone_product_category_37" model="product.public.category">
+        <field name="name">Shirts</field>
+        <field name="sequence">0</field>
+        <field name="parent_id" ref="stone_product_category_17"/>
+      </record>
+
+      <record id="stone_product_category_38" model="product.public.category">
+        <field name="name">T-Shirts</field>
+        <field name="sequence">0</field>
+        <field name="parent_id" ref="stone_product_category_17"/>
+      </record>
+
+      <record id="stone_product_category_39" model="product.public.category">
+        <field name="name">Track Pants</field>
+        <field name="sequence">0</field>
+        <field name="parent_id" ref="stone_product_category_17"/>
+      </record>
+
+      <record id="stone_product_category_40" model="product.public.category">
+        <field name="name">Clothing Sets</field>
+        <field name="sequence">0</field>
+        <field name="parent_id" ref="stone_product_category_19"/>
+      </record>
+
+      <record id="stone_product_category_41" model="product.public.category">
+        <field name="name">Dresses</field>
+        <field name="sequence">0</field>
+        <field name="parent_id" ref="stone_product_category_19"/>
+      </record>
+
+      <record id="stone_product_category_42" model="product.public.category">
+        <field name="name">Skirts &amp; Shorts</field>
+        <field name="sequence">0</field>
+        <field name="parent_id" ref="stone_product_category_19"/>
+      </record>
+
+      <record id="stone_product_category_43" model="product.public.category">
+        <field name="name">Tops</field>
+        <field name="sequence">0</field>
+        <field name="parent_id" ref="stone_product_category_19"/>
+      </record>
+
+      <record id="stone_product_category_44" model="product.public.category">
+        <field name="name">Flooring</field>
+        <field name="sequence">0</field>
+        <field name="parent_id" ref="stone_product_category_6"/>
+      </record>
+    <!-- Demo eCommerce Categories: End -->
+
+    <!-- Demo Products: Start -->
+      <record id="stone_product_template_1" model="product.template">
+        <field name="name">Dresses &amp; Jumpsuits</field>
+        <field name="type">product</field>
+        <field name="list_price">47</field>
+        <field name="standard_price">10</field>
+        <field name="default_code">P-001</field>
+        <field name="inventory_availability">never</field>
+        <field name="public_categ_ids" eval="[(6,0,[ref('stone_product_category_3'), ref('stone_product_category_13'), ref('stone_product_category_14'), ref('stone_product_category_15'), ref('stone_product_category_16'), ref('stone_product_category_32'), ref('stone_product_category_33'), ref('stone_product_category_34'), ref('stone_product_category_35')])]"/>
+        <field name="image" type="base64" file="stoneware_customize/static/src/img/demo-images/prod_001.jpg"/>
+        <field name="website_published" eval="True"/>
+      </record>
+
+      <record id="stone_product_template_2" model="product.template">
+        <field name="name">Hand Bag</field>
+        <field name="type">product</field>
+        <field name="list_price">80</field>
+        <field name="standard_price">10</field>
+        <field name="default_code">P-002</field>
+        <field name="inventory_availability">never</field>
+        <field name="public_categ_ids" eval="[(6,0,[ref('stone_product_category_3'), ref('stone_product_category_13'), ref('stone_product_category_14'), ref('stone_product_category_15'), ref('stone_product_category_16'), ref('stone_product_category_34'), ref('stone_product_category_35')])]"/>
+        <field name="image" type="base64" file="stoneware_customize/static/src/img/demo-images/prod_002.jpg"/>
+        <field name="website_published" eval="True"/> 
+      </record>
+
+      <record id="stone_product_template_3" model="product.template">
+        <field name="name">Flats &amp; Casual Bag</field>
+        <field name="type">consu</field>
+        <field name="list_price">107</field>
+        <field name="standard_price">10</field>
+        <field name="default_code">P-003</field>
+        <field name="inventory_availability">never</field>
+        <field name="public_categ_ids" eval="[(6,0,[ref('stone_product_category_3'), ref('stone_product_category_13'), ref('stone_product_category_14'), ref('stone_product_category_15'), ref('stone_product_category_16'), ref('stone_product_category_32'), ref('stone_product_category_33'), ref('stone_product_category_34'), ref('stone_product_category_35')])]"/>
+        <field name="image" type="base64" file="stoneware_customize/static/src/img/demo-images/prod_003.jpg"/>
+        <field name="website_published" eval="True"/>
+      </record>
+
+      <record id="stone_product_template_4" model="product.template">
+        <field name="name">Formal Shirts</field>
+        <field name="type">product</field>
+        <field name="list_price">89</field>
+        <field name="standard_price">10</field>
+        <field name="default_code">P-004</field>
+        <field name="inventory_availability">never</field>
+        <field name="public_categ_ids" eval="[(6,0,[ref('stone_product_category_3'), ref('stone_product_category_13'), ref('stone_product_category_14'), ref('stone_product_category_15'), ref('stone_product_category_16'), ref('stone_product_category_32'), ref('stone_product_category_33'), ref('stone_product_category_34'), ref('stone_product_category_35')])]"/>
+        <field name="image" type="base64" file="stoneware_customize/static/src/img/demo-images/prod_004.jpg"/>
+        <field name="website_published" eval="True"/>
+      </record>
+
+      <record id="stone_product_template_5" model="product.template">
+        <field name="name">Home chair</field>
+        <field name="type">product</field>
+        <field name="list_price">71</field>
+        <field name="standard_price">10</field>
+        <field name="default_code">P-005</field>
+        <field name="inventory_availability">never</field>
+        <field name="public_categ_ids" eval="[(6,0,[ref('stone_product_category_2'), ref('stone_product_category_9'), ref('stone_product_category_10'), ref('stone_product_category_11'), ref('stone_product_category_12'), ref('stone_product_category_28'), ref('stone_product_category_29'), ref('stone_product_category_30'), ref('stone_product_category_31')])]"/>
+        <field name="image" type="base64" file="stoneware_customize/static/src/img/demo-images/prod_005.jpg"/>
+        <field name="website_published" eval="True"/>
+      </record>
+
+      <record id="stone_product_template_6" model="product.template">
+        <field name="name">King Size Sofa</field>
+        <field name="type">product</field>
+        <field name="list_price">34</field>
+        <field name="standard_price">10</field>
+        <field name="default_code">P-006</field>
+        <field name="inventory_availability">never</field>
+        <field name="public_categ_ids" eval="[(6,0,[ref('stone_product_category_2'), ref('stone_product_category_9'), ref('stone_product_category_10'), ref('stone_product_category_11'), ref('stone_product_category_12'), ref('stone_product_category_28'), ref('stone_product_category_29'), ref('stone_product_category_30'), ref('stone_product_category_31')])]"/>
+        <field name="image" type="base64" file="stoneware_customize/static/src/img/demo-images/prod_006.jpg"/>
+        <field name="website_published" eval="True"/>
+      </record>
+
+      <record id="stone_product_template_7" model="product.template">
+        <field name="name">Large Size Sofa</field>
+        <field name="type">product</field>
+        <field name="list_price">56</field>
+        <field name="standard_price">10</field>
+        <field name="default_code">P-007</field>
+        <field name="inventory_availability">never</field>
+        <field name="public_categ_ids" eval="[(6,0,[ref('stone_product_category_2'), ref('stone_product_category_9'), ref('stone_product_category_10'), ref('stone_product_category_11'), ref('stone_product_category_12'), ref('stone_product_category_28'), ref('stone_product_category_29'), ref('stone_product_category_30'), ref('stone_product_category_31')])]"/>
+        <field name="image" type="base64" file="stoneware_customize/static/src/img/demo-images/prod_007.jpg"/>
+        <field name="website_published" eval="True"/>
+      </record>
+
+      <record id="stone_product_template_8" model="product.template">
+        <field name="name">Watch</field>
+        <field name="type">consu</field>
+        <field name="list_price">21</field>
+        <field name="standard_price">10</field>
+        <field name="default_code">P-008</field>
+        <field name="inventory_availability">never</field>
+        <field name="public_categ_ids" eval="[(6,0,[ref('stone_product_category_2'), ref('stone_product_category_9'), ref('stone_product_category_10'), ref('stone_product_category_11'), ref('stone_product_category_12'), ref('stone_product_category_28'), ref('stone_product_category_29'), ref('stone_product_category_30'), ref('stone_product_category_31')])]"/>
+        <field name="image" type="base64" file="stoneware_customize/static/src/img/demo-images/prod_008.jpg"/>
+        <field name="website_published" eval="True"/>
+      </record>
+    <!-- Demo Products: End -->
+
+    <!-- Demo Mega-menus: Start -->
+      <record id="megamenu_product_listing_1" model="megamenu.content">
+        <field name="name">Products List</field>
+        <field name="active" eval="True"/>
+        <field name="is_header" eval="True"/>
+        <field name="main_content_type">product_list</field>
+        <field name="no_of_columns">4</field>
+        <field name="product_ids" eval="[(6, 0, [ref('stone_product_template_1'), ref('stone_product_template_2'), ref('stone_product_template_3'), ref('stone_product_template_4'), ref('stone_product_template_5'), ref('stone_product_template_6'), ref('stone_product_template_7'), ref('stone_product_template_8')])]"/>
+
+      </record>
+
+      <record id="megamenu_category_listing_2" model="megamenu.content">
+        <field name="name">Categories List</field>
+        <field name="active" eval="True"/>
+        <field name="main_content_type">category_list</field>
+        <field name="no_of_columns">4</field>
+        <field name="category_ids" eval="[(6, 0, [ref('stone_product_category_1'), ref('stone_product_category_5'), ref('stone_product_category_6'), ref('stone_product_category_7'), ref('stone_product_category_8'), ref('stone_product_category_2'), ref('stone_product_category_9'), ref('stone_product_category_10'), ref('stone_product_category_11'), ref('stone_product_category_12'), ref('stone_product_category_3'), ref('stone_product_category_13'), ref('stone_product_category_14'), ref('stone_product_category_15'), ref('stone_product_category_16'), ref('stone_product_category_4'), ref('stone_product_category_17'), ref('stone_product_category_18'), ref('stone_product_category_19'), ref('stone_product_category_20')])]"/>
+      </record>
+    <!-- Demo Mega-menus: End -->
+
+    <!-- Demo Tab Configurations: Start -->
+      <record id="tab_config_1" model="multitab.configure">
+        <field name="name">Popular</field>
+        <field name="active" eval="True"/>
+      </record>
+
+      <record id="tab_config_2" model="multitab.configure">
+        <field name="name">Specials</field>
+        <field name="active" eval="True"/>
+      </record>
+
+      <record id="tab_config_3" model="multitab.configure">
+        <field name="name">Best Sellers</field>
+        <field name="active" eval="True"/>
+      </record>
+
+      <record id="tab_config_4" model="multitab.configure">
+        <field name="name">Most Viewed</field>
+        <field name="active" eval="True"/>
+      </record>
+
+      <record id="tab_config_5" model="multitab.configure">
+        <field name="name">Featured Products</field>
+        <field name="active" eval="True"/>
+      </record>
+    <!-- Demo Tab Configurations: End -->
+
+    <!-- Demo Tab Products: Start -->
+      <record id="tab_products_1" model="tab.products">
+        <field name="product_id" ref="stone_product_template_1"/>
+        <field name="sequence">0</field>
+        <field name="tab_id" ref="tab_config_1"/>
+      </record>
+
+      <record id="tab_products_2" model="tab.products">
+        <field name="product_id" ref="stone_product_template_2"/>
+        <field name="sequence">0</field>
+        <field name="tab_id" ref="tab_config_1"/>
+      </record>
+
+      <record id="tab_products_3" model="tab.products">
+        <field name="product_id" ref="stone_product_template_3"/>
+        <field name="sequence">0</field>
+        <field name="tab_id" ref="tab_config_1"/>
+      </record>
+
+      <record id="tab_products_4" model="tab.products">
+        <field name="product_id" ref="stone_product_template_4"/>
+        <field name="sequence">0</field>
+        <field name="tab_id" ref="tab_config_1"/>
+      </record>
+
+      <record id="tab_products_5" model="tab.products">
+        <field name="product_id" ref="stone_product_template_5"/>
+        <field name="sequence">0</field>
+        <field name="tab_id" ref="tab_config_2"/>
+      </record>
+
+      <record id="tab_products_6" model="tab.products">
+        <field name="product_id" ref="stone_product_template_6"/>
+        <field name="sequence">0</field>
+        <field name="tab_id" ref="tab_config_2"/>
+      </record>
+
+      <record id="tab_products_7" model="tab.products">
+        <field name="product_id" ref="stone_product_template_7"/>
+        <field name="sequence">0</field>
+        <field name="tab_id" ref="tab_config_2"/>
+      </record>
+
+      <record id="tab_products_8" model="tab.products">
+        <field name="product_id" ref="stone_product_template_8"/>
+        <field name="sequence">0</field>
+        <field name="tab_id" ref="tab_config_2"/>
+      </record>
+
+      <record id="tab_products_9" model="tab.products">
+        <field name="product_id" ref="stone_product_template_2"/>
+        <field name="sequence">0</field>
+        <field name="tab_id" ref="tab_config_2"/>
+      </record>
+
+      <record id="tab_products_10" model="tab.products">
+        <field name="product_id" ref="stone_product_template_1"/>
+        <field name="sequence">0</field>
+        <field name="tab_id" ref="tab_config_3"/>
+      </record>
+
+      <record id="tab_products_11" model="tab.products">
+        <field name="product_id" ref="stone_product_template_6"/>
+        <field name="sequence">0</field>
+        <field name="tab_id" ref="tab_config_3"/>
+      </record>
+
+      <record id="tab_products_12" model="tab.products">
+        <field name="product_id" ref="stone_product_template_5"/>
+        <field name="sequence">0</field>
+        <field name="tab_id" ref="tab_config_3"/>
+      </record>
+
+      <record id="tab_products_13" model="tab.products">
+        <field name="product_id" ref="stone_product_template_8"/>
+        <field name="sequence">0</field>
+        <field name="tab_id" ref="tab_config_3"/>
+      </record>
+
+      <record id="tab_products_14" model="tab.products">
+        <field name="product_id" ref="stone_product_template_7"/>
+        <field name="sequence">0</field>
+        <field name="tab_id" ref="tab_config_3"/>
+      </record>
+
+      <record id="tab_products_15" model="tab.products">
+        <field name="product_id" ref="stone_product_template_4"/>
+        <field name="sequence">0</field>
+        <field name="tab_id" ref="tab_config_3"/>
+      </record>
+
+      <record id="tab_products_16" model="tab.products">
+        <field name="product_id" ref="stone_product_template_3"/>
+        <field name="sequence">0</field>
+        <field name="tab_id" ref="tab_config_3"/>
+      </record>
+
+      <record id="tab_products_17" model="tab.products">
+        <field name="product_id" ref="stone_product_template_2"/>
+        <field name="sequence">0</field>
+        <field name="tab_id" ref="tab_config_4"/>
+      </record>
+
+      <record id="tab_products_18" model="tab.products">
+        <field name="product_id" ref="stone_product_template_5"/>
+        <field name="sequence">0</field>
+        <field name="tab_id" ref="tab_config_4"/>
+      </record>
+
+      <record id="tab_products_19" model="tab.products">
+        <field name="product_id" ref="stone_product_template_7"/>
+        <field name="sequence">0</field>
+        <field name="tab_id" ref="tab_config_4"/>
+      </record>
+
+      <record id="tab_products_20" model="tab.products">
+        <field name="product_id" ref="stone_product_template_4"/>
+        <field name="sequence">0</field>
+        <field name="tab_id" ref="tab_config_4"/>
+      </record>
+
+      <record id="tab_products_21" model="tab.products">
+        <field name="product_id" ref="stone_product_template_1"/>
+        <field name="sequence">0</field>
+        <field name="tab_id" ref="tab_config_5"/>
+      </record>
+
+      <record id="tab_products_22" model="tab.products">
+        <field name="product_id" ref="stone_product_template_2"/>
+        <field name="sequence">0</field>
+        <field name="tab_id" ref="tab_config_5"/>
+      </record>
+
+      <record id="tab_products_23" model="tab.products">
+        <field name="product_id" ref="stone_product_template_3"/>
+        <field name="sequence">0</field>
+        <field name="tab_id" ref="tab_config_5"/>
+      </record>
+
+      <record id="tab_products_24" model="tab.products">
+        <field name="product_id" ref="stone_product_template_4"/>
+        <field name="sequence">0</field>
+        <field name="tab_id" ref="tab_config_5"/>
+      </record>
+
+      <record id="tab_products_25" model="tab.products">
+        <field name="product_id" ref="stone_product_template_5"/>
+        <field name="sequence">0</field>
+        <field name="tab_id" ref="tab_config_5"/>
+      </record>
+
+      <record id="tab_products_26" model="tab.products">
+        <field name="product_id" ref="stone_product_template_6"/>
+        <field name="sequence">0</field>
+        <field name="tab_id" ref="tab_config_5"/>
+      </record>
+
+      <record id="tab_products_27" model="tab.products">
+        <field name="product_id" ref="stone_product_template_7"/>
+        <field name="sequence">0</field>
+        <field name="tab_id" ref="tab_config_5"/>
+      </record>
+
+      <record id="tab_products_28" model="tab.products">
+        <field name="product_id" ref="stone_product_template_8"/>
+        <field name="sequence">0</field>
+        <field name="tab_id" ref="tab_config_5"/>
+      </record>
+    <!-- Demo Tab Products: End -->
+
+    <!-- Demo Slider Collection Configuration: Start -->
+      <record id="collection_configure_1" model="collection.configure">
+        <field name="name">New Arrivals</field>
+        <field name="active" eval="True"/>
+        <field name="tab_collection_ids" eval="[(6, 0, [ref('tab_config_1'), ref('tab_config_2'), ref('tab_config_3'), ref('tab_config_4')])]"/>
+      </record>
+
+      <record id="collection_configure_2" model="collection.configure">
+        <field name="name">New Collections</field>
+        <field name="active" eval="True"/>
+        <field name="tab_collection_ids" eval="[(6, 0, [ref('tab_config_2'), ref('tab_config_3'), ref('tab_config_4')])]"/>
+      </record>
+    <!-- Demo Slider Collection Configuration: End -->
+    
+    <!-- Demo Blog Blog: Start -->
+      <record id="stone_blog_blog_1" model="blog.blog">
+        <field name="name">Trending Blogs</field>
+        <field name="subtitle">Get in touch with us</field>
+      </record>
+    <!-- Demo Blog Blog: End -->
+
+    <!-- Demo Blog Tags: Start -->
+      <record id="stone_blog_tag_1" model="blog.tag">
+        <field name="name">Fictional</field>
+      </record>
+
+      <record id="stone_blog_tag_2" model="blog.tag">
+        <field name="name">Wildlife</field>
+      </record>
+
+      <record id="stone_blog_tag_3" model="blog.tag">
+        <field name="name">Technical</field>
+      </record>
+    <!-- Demo Blog Tags: End -->
+
+    <!-- Demo Blog Posts: Start -->
+      <record id="stone_blog_post_1" model="blog.post">
+        <field name="blog_id" ref="stone_blog_blog_1"/>
+        <field name="cover_properties">{"opacity": 0.2, "resize_class": "cover container-fluid cover_full", "background-image": "url(http://odoo-snippets.atharvasystem.com/source/img/portfolio-item1.jpg)", "background-color": "oe_black"}</field>
+        <field name="name">Mas Creations Doctor Workshop highstool by Masquespacio</field>
+        <field name="subtitle">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed</field>
+        <field name="tag_ids" eval="[(6, 0, [ref('stone_blog_tag_1'), ref('stone_blog_tag_2'), ref('stone_blog_tag_3')])]"/>
+        <field name="website_published" eval="True"/>
+      </record>
+
+      <record id="stone_blog_post_2" model="blog.post">
+        <field name="blog_id" ref="stone_blog_blog_1"/>
+        <field name="cover_properties">{"opacity": 0.2, "resize_class": "cover container-fluid cover_full", "background-image": "url(http://odoo-snippets.atharvasystem.com/source/img/testimonial-bg1.jpg)", "background-color": "oe_black"}</field>
+        <field name="name">Alan furniture for Sonos concept store, Berlin – Germany</field>
+        <field name="subtitle">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries</field>
+        <field name="tag_ids" eval="[(6, 0, [ref('stone_blog_tag_1'), ref('stone_blog_tag_2')])]"/>
+        <field name="website_published" eval="True"/>
+      </record>
+
+      <record id="stone_blog_post_3" model="blog.post">
+        <field name="blog_id" ref="stone_blog_blog_1"/>
+        <field name="cover_properties">{"opacity": 0.2, "resize_class": "cover container cover_narrow", "background-image": "url(http://odoo-snippets.atharvasystem.com/source/img/portfolio-item2.jpg)", "background-color": "oe_black"}</field>
+        <field name="name">Steve Stool and Bench by Liqui Group</field>
+        <field name="subtitle">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur</field>
+        <field name="tag_ids" eval="[(6, 0, [ref('stone_blog_tag_2'), ref('stone_blog_tag_3')])]"/>
+        <field name="website_published" eval="True"/>
+      </record>
+    <!-- Demo Blog Posts: End -->
+
+    <!-- Demo Blog Configure: Start -->
+      <record id="stone_blog_configure_1" model="blog.configure">
+        <field name="name">Latest Blog</field>
+        <field name="active" eval="True"/>
+        <field name="blog_ids" eval="[(6, 0, [ref('stone_blog_post_1'), ref('stone_blog_post_2'), ref('stone_blog_post_3')])]"/>
+      </record>
+    <!-- Demo Blog Configure: End -->
+
+    <!-- Demo Page Views: Start -->
+<!-- 
+Home Options 1
+ -->
+
+<record id="Home_Option_1_view" model="ir.ui.view">
+  <field name="name">Home Option 1 Page</field>
+  <field name="type">qweb</field>
+  <field name="key">website.homepage1</field>
+  <field name="mode">primary</field>
+  <field name="active">True</field>
+  
+  <field name="arch" type="xml">
+    <t name="Homepage" t-name="website.homepage1">
+      <t t-call="website.layout">
+        <t t-set="pageName" t-value="'homepage'"/>
+        <div id="wrap" class="oe_structure oe_empty">
+          <section class="as-home-slider">
+            <div id="myCarousel1542956186307" class="s_carousel s_carousel_default carousel slide">
+              <ol class="carousel-indicators">
+                <li data-target="#myCarousel1542956186307" data-slide-to="0" class="active"/>
+                <li data-target="#myCarousel1542956186307" data-slide-to="1"/>
+              </ol>
+              <div class="carousel-inner">
+                <div class="carousel-item active" style="background-image: url(/stoneware_customize/static/src/img/extreme-skier.jpg)" data-name="Slide">
+                  <div class="container">
+                    <div class="row align-items-center justify-content-center">
+                      <div class="col-lg-7">
+                        <h2 class="o_default_snippet_text">Leadership Training</h2>
+                        <p class="o_default_snippet_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</p>
+                        <div class="btn-box">
+                          <a href="#" class="asb-btn-trs o_default_snippet_text">Learn More</a>
+                          <a href="#" class="asb-btn o_default_snippet_text">Buy Now</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item" style="background-image: url(/stoneware_customize/static/src/img/surfing.jpg)" data-name="Slide">
+                  <div class="container">
+                    <div class="row align-items-center justify-content-center">
+                      <div class="col-lg-7">
+                        <h2 class="o_default_snippet_text">Leadership Training</h2>
+                        <p class="o_default_snippet_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</p>
+                        <div class="btn-box">
+                          <a href="#" class="asb-btn-trs o_default_snippet_text">Learn More</a>
+                          <a href="#" class="asb-btn o_default_snippet_text">Buy Now</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-control-prev" data-target="#myCarousel1542956186307" data-slide="prev" role="img" aria-label="Previous" title="Previous">
+                <span class="carousel-control-prev-icon"/>
+                <span class="sr-only o_default_snippet_text">Previous</span>
+              </div>
+              <div class="carousel-control-next" data-target="#myCarousel1542956186307" data-slide="next" role="img" aria-label="Next" title="Next">
+                <span class="carousel-control-next-icon"/>
+                <span class="sr-only o_default_snippet_text">Next</span>
+              </div>
+            </div>
+          </section>
+          <section class="as-abouts-b">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-4">
+                  <img src="/stoneware_customize/static/src/img/About-Us-c.png" title="" alt=""/>
+                </div>
+                <div class="col-lg-8">
+                  <div class="as-title">
+                    <h2 class="o_default_snippet_text">About Us</h2>
+                  </div>
+                  <div class="asbb-info">
+                    <p class="o_default_snippet_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt. consectetur adipisicing elit, sed do eiusmod tempor incididunt. consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+                    <p class="o_default_snippet_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt. consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+                    <div class="asbb-author">
+                      <div class="asbb-img">
+                        <img src="/stoneware_customize/static/src/img/asbb.png" title="" alt=""/>
+                      </div>
+                      <div class="asbb-name">
+                        <h6 class="o_default_snippet_text">James More</h6>
+                        <p class="o_default_snippet_text">CEO of Stoneware</p>
+                      </div>
+                    </div>
+                    <div class="asbb-more">
+                      <a class="asb-btn o_default_snippet_text" href="#">Learn More</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="as-company-offer">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-8">
+                  <div class="as-title">
+                    <h6 class="o_default_snippet_text">Why Choose us</h6>
+                    <h2 class="o_default_snippet_text">We Business Company!!</h2>
+                    <p class="o_default_snippet_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+                  </div>
+                  <div class="row">
+                    <div class="col-lg-6">
+                      <div class="single-offer">
+                        <i class="fa fa-user"/>
+                        <h4 class="o_default_snippet_text">Expert Advisor</h4>
+                        <p class="o_default_snippet_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed.</p>
+                      </div>
+                    </div>
+                    <div class="col-lg-6">
+                      <div class="single-offer">
+                        <i class="fa fa-certificate"/>
+                        <h4 class="o_default_snippet_text">Trsuted Vendor</h4>
+                        <p class="o_default_snippet_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed.</p>
+                      </div>
+                    </div>
+                    <div class="col-lg-6">
+                      <div class="single-offer">
+                        <i class="fa fa-rocket"/>
+                        <h4 class="o_default_snippet_text">Fast Process</h4>
+                        <p class="o_default_snippet_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed.</p>
+                      </div>
+                    </div>
+                    <div class="col-lg-6">
+                      <div class="single-offer">
+                        <i class="fa fa-trophy"/>
+                        <h4 class="o_default_snippet_text">Award Winner</h4>
+                        <p class="o_default_snippet_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <img src="/stoneware_customize/static/src/img/Why-Choose-us.png" title="" alt=""/>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="as-latest-works">
+            <div class="container">
+              <section class="as-t-title">
+                <h2 class="o_default_snippet_text">Latest works</h2>
+                <p class="o_default_snippet_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse, maxime tempora quaerat ratione iste. Nulla excepturi voluptatem error repellat tenetur facilis, veniam illum.</p>
+              </section>
+              <div class="row">
+                <div class="col-lg-4">
+                  <div class="asrw-box">
+                    <div class="asrw-img">
+                      <a href="#">
+                        <img src="/stoneware_customize/static/src/img/asrw-1.jpg" title="" alt=""/>
+                      </a>
+                    </div>
+                    <div class="asrw-info">
+                      <label>
+                        <a href="#" class="o_default_snippet_text">design</a>
+                      </label>
+                      <h3 class="blog-title">
+                        <a href="#" class="o_default_snippet_text">Your Website</a>
+                      </h3>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="asrw-box">
+                    <div class="asrw-img">
+                      <a href="#">
+                        <img src="/stoneware_customize/static/src/img/asrw-2.jpg" title="" alt=""/>
+                      </a>
+                    </div>
+                    <div class="asrw-info">
+                      <label>
+                        <a href="#" class="o_default_snippet_text">design</a>
+                      </label>
+                      <h3 class="blog-title">
+                        <a href="#" class="o_default_snippet_text">Your Website</a>
+                      </h3>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="asrw-box">
+                    <div class="asrw-img">
+                      <a href="#">
+                        <img src="/stoneware_customize/static/src/img/asrw-3.jpg" title="" alt=""/>
+                      </a>
+                    </div>
+                    <div class="asrw-info">
+                      <label>
+                        <a href="#" class="o_default_snippet_text">design</a>
+                      </label>
+                      <h3 class="blog-title">
+                        <a href="#" class="o_default_snippet_text">Your Website</a>
+                      </h3>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="asrw-box">
+                    <div class="asrw-img">
+                      <a href="#">
+                        <img src="/stoneware_customize/static/src/img/asrw-4.jpg" title="" alt=""/>
+                      </a>
+                    </div>
+                    <div class="asrw-info">
+                      <label>
+                        <a href="#" class="o_default_snippet_text">design</a>
+                      </label>
+                      <h3 class="blog-title">
+                        <a href="#" class="o_default_snippet_text">Your Website</a>
+                      </h3>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="asrw-box">
+                    <div class="asrw-img">
+                      <a href="#">
+                        <img src="/stoneware_customize/static/src/img/asrw-5.jpg" title="" alt=""/>
+                      </a>
+                    </div>
+                    <div class="asrw-info">
+                      <label>
+                        <a href="#" class="o_default_snippet_text">design</a>
+                      </label>
+                      <h3 class="blog-title">
+                        <a href="#" class="o_default_snippet_text">Your Website</a>
+                      </h3>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="asrw-box">
+                    <div class="asrw-img">
+                      <a href="#">
+                        <img src="/stoneware_customize/static/src/img/asrw-6.jpg" title="" alt=""/>
+                      </a>
+                    </div>
+                    <div class="asrw-info">
+                      <label>
+                        <a href="#" class="o_default_snippet_text">design</a>
+                      </label>
+                      <h3 class="blog-title">
+                        <a href="#" class="o_default_snippet_text">Your Website</a>
+                      </h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="as-parallax-box" style="background-image: url(/stoneware_customize/static/src/img/parallax-bg.png)">
+            <div class="container">
+              <h2 class="o_default_snippet_text">Parallax Block</h2>
+              <div class="pb-desc">
+                <p class="o_default_snippet_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+              </div>
+              <div class="buts">
+                <a class="creative-btn1 o_default_snippet_text" href="#">Learn More</a>
+                <a class="creative-btn1 o_default_snippet_text" href="#">Buy Now !</a>
+              </div>
+              <section class="pb-img">
+                <img src="/stoneware_customize/static/src/img/parallax.png" title="" alt=""/>
+              </section>
+            </div>
+          </section>
+          <section class="teams-boxs teams-boxs-ag">
+            <div class="container">
+              <section class="as-a-title">
+                <h2 class="o_default_snippet_text">Our Team</h2>
+                <p class="o_default_snippet_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse, maxime tempora quaerat ratione iste. Nulla excepturi voluptatem error repellat tenetur facilis, veniam illum.</p>
+              </section>
+              <div class="row">
+                <div class="col-lg-3 box-3">
+                  <div class="team-col">
+                    <div class="tc-img">
+                      <img src="/stoneware_customize/static/src/img/team-1.png" title="" alt=""/>
+                    </div>
+                    <h4 class="o_default_snippet_text">John Smith</h4>
+                    <label class="o_default_snippet_text">CEO</label>
+                    <ul>
+                      <li>
+                        <a href="#">
+                          <i class="fa fa-facebook"/>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <i class="fa fa-twitter"/>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <i class="fa fa-google-plus"/>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-lg-3 box-3">
+                  <div class="team-col">
+                    <div class="tc-img">
+                      <img src="/stoneware_customize/static/src/img/team-2.png" title="" alt=""/>
+                    </div>
+                    <h4 class="o_default_snippet_text">Aimee</h4>
+                    <label class="o_default_snippet_text">HR Manager</label>
+                    <ul>
+                      <li>
+                        <a href="#">
+                          <i class="fa fa-facebook"/>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <i class="fa fa-twitter"/>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <i class="fa fa-google-plus"/>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-lg-3 box-3">
+                  <div class="team-col">
+                    <div class="tc-img">
+                      <img src="/stoneware_customize/static/src/img/team-3.png" title="" alt=""/>
+                    </div>
+                    <h4 class="o_default_snippet_text">Alice</h4>
+                    <label class="o_default_snippet_text">Web Developer</label>
+                    <ul>
+                      <li>
+                        <a href="#">
+                          <i class="fa fa-facebook"/>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <i class="fa fa-twitter"/>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <i class="fa fa-google-plus"/>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-lg-3 box-3">
+                  <div class="team-col">
+                    <div class="tc-img">
+                      <img src="/stoneware_customize/static/src/img/team-4.png" title="" alt=""/>
+                    </div>
+                    <h4 class="o_default_snippet_text">Lee</h4>
+                    <label class="o_default_snippet_text">Web Designer</label>
+                    <ul>
+                      <li>
+                        <a href="#">
+                          <i class="fa fa-facebook"/>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <i class="fa fa-twitter"/>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <i class="fa fa-google-plus"/>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="as-action-box1" style="background-image: url(/stoneware_customize/static/src/img/as_action_box.png)">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-8 text-left">
+                  <h3 class="o_default_snippet_text">Hey! Build Your Own Website Now!</h3>
+                </div>
+                <div class="col-lg-4 text-right action-box-button">
+                  <a href="#" class="asa-btn-trs o_default_snippet_text">Get start now</a>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="as-price-tables">
+            <div class="container">
+              <section class="as-t-title">
+                <h2 class="o_default_snippet_text">Price Table</h2>
+                <p class="o_default_snippet_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt ratione in dolore numquam laboriosam aliquid quibusdam </p>
+              </section>
+              <div class="row">
+                <div class="col-lg-3 pt-basic">
+                  <div class="pt-inner">
+                    <div class="pt-title o_default_snippet_text">BASIC</div>
+                    <div class="pt-price">
+                      <span class="o_default_snippet_text">$</span>
+                      <label class="o_default_snippet_text">35</label>
+                      <small class="o_default_snippet_text">.99</small>
+                    </div>
+                    <h6 class="o_default_snippet_text">Billed Per Month</h6>
+                    <ul>
+                      <li class="o_default_snippet_text">Full Statistics</li>
+                      <li class="o_default_snippet_text">Mobile-Optimized</li>
+                      <li class="o_default_snippet_text">No Transacation Fees</li>
+                      <li class="o_default_snippet_text">Max 200 items</li>
+                      <li class="o_default_snippet_text">27/7 Supports</li>
+                    </ul>
+                    <div class="pt-action">
+                      <a class="creative-btn1 o_default_snippet_text" href="#">Get Started</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-3">
+                  <div class="pt-inner">
+                    <div class="pt-title o_default_snippet_text">Pupular</div>
+                    <div class="pt-price">
+                      <span class="o_default_snippet_text">$</span>
+                      <label class="o_default_snippet_text">65</label>
+                      <small class="o_default_snippet_text">.99</small>
+                    </div>
+                    <h6 class="o_default_snippet_text">Billed Per Month</h6>
+                    <ul>
+                      <li class="o_default_snippet_text">Full Statistics</li>
+                      <li class="o_default_snippet_text">Mobile-Optimized</li>
+                      <li class="o_default_snippet_text">No Transacation Fees</li>
+                      <li class="o_default_snippet_text">Max 200 items</li>
+                      <li class="o_default_snippet_text">27/7 Supports</li>
+                    </ul>
+                    <div class="pt-action">
+                      <a class="creative-btn1 o_default_snippet_text" href="#">Get Started</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-3">
+                  <div class="pt-inner">
+                    <div class="pt-title o_default_snippet_text">Premium</div>
+                    <div class="pt-price">
+                      <span class="o_default_snippet_text">$</span>
+                      <label class="o_default_snippet_text">85</label>
+                      <small class="o_default_snippet_text">.99</small>
+                    </div>
+                    <h6 class="o_default_snippet_text">Billed Per Month</h6>
+                    <ul>
+                      <li class="o_default_snippet_text">Full Statistics</li>
+                      <li class="o_default_snippet_text">Mobile-Optimized</li>
+                      <li class="o_default_snippet_text">No Transacation Fees</li>
+                      <li class="o_default_snippet_text">Max 200 items</li>
+                      <li class="o_default_snippet_text">27/7 Supports</li>
+                    </ul>
+                    <div class="pt-action">
+                      <a class="creative-btn1 o_default_snippet_text" href="#">Get Started</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-3">
+                  <div class="pt-inner">
+                    <div class="pt-title o_default_snippet_text">Ultimate</div>
+                    <div class="pt-price">
+                      <span class="o_default_snippet_text">$</span>
+                      <label class="o_default_snippet_text">99</label>
+                      <small class="o_default_snippet_text">.99</small>
+                    </div>
+                    <h6 class="o_default_snippet_text">Billed Per Month</h6>
+                    <ul>
+                      <li class="o_default_snippet_text">Full Statistics</li>
+                      <li class="o_default_snippet_text">Mobile-Optimized</li>
+                      <li class="o_default_snippet_text">No Transacation Fees</li>
+                      <li class="o_default_snippet_text">Max 200 items</li>
+                      <li class="o_default_snippet_text">27/7 Supports</li>
+                    </ul>
+                    <div class="pt-action">
+                      <a class="creative-btn1 o_default_snippet_text" href="#">Get Started</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="as-client-slider" style="background-image: url(/stoneware_customize/static/src/img/clients-say.png)">
+            <div id="myCarousel1542956372877" class="carousel s_carousel s_carousel_default s_carousel_clinic_slider slide" data-ride="carousel">
+              <ol class="carousel-indicators">
+                <li data-target="#myCarousel1542956372877" data-slide-to="0" class="active"/>
+                <li data-target="#myCarousel1542956372877" data-slide-to="1"/>
+              </ol>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <blockquote>
+                    <div class="acs-img">
+                      <div class="acs-img-in">
+                        <img src="/stoneware_customize/static/src/img/acs-2.png" title="" alt=""/>
+                      </div>
+                      <i class="fa fa-quote-right"/>
+                    </div>
+                    <div class="asc-text">
+                      <p class="o_default_snippet_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit, a quam quae dolore blanditiis eveniet cum amet quasi sunt nostrum, suscipit commodi sequi sapiente deserunt dolorem iusto? Ipsa, quas ut!. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                      <div class="asc-author">
+                        <label class="o_default_snippet_text">John Smith</label>
+                        <span class="o_default_snippet_text">CEO</span>
+                      </div>
+                    </div>
+                  </blockquote>
+                </div>
+                <div class="carousel-item">
+                  <blockquote>
+                    <div class="acs-img">
+                      <div class="acs-img-in">
+                        <img src="/stoneware_customize/static/src/img/acs-1.png" title="" alt=""/>
+                      </div>
+                      <i class="fa fa-quote-right"/>
+                    </div>
+                    <div class="asc-text">
+                      <p class="o_default_snippet_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit, a quam quae dolore blanditiis eveniet cum amet quasi sunt nostrum, suscipit commodi sequi sapiente deserunt dolorem iusto? Ipsa, quas ut!. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                      <div class="asc-author">
+                        <label class="o_default_snippet_text">John Smith</label>
+                        <span class="o_default_snippet_text">CEO</span>
+                      </div>
+                    </div>
+                  </blockquote>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="as-static-blog">
+            <div class="container">
+              <section class="as-m-title">
+                <h2 class="o_default_snippet_text">Static Blogs</h2>
+                <p class="o_default_snippet_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate nulla unde.</p>
+              </section>
+              <div class="row">
+                <div class="col-lg-4">
+                  <div class="sb-blog">
+                    <div class="sb-blog-img">
+                      <a href="#">
+                        <img src="/stoneware_customize/static/src/img/sb-blog1.jpg" title="" alt=""/>
+                      </a>
+                    </div>
+                    <div class="sb-blog-info">
+                      <label class="o_default_snippet_text">Category</label>
+                      <div class="meta o_default_snippet_text">by admin / May 26,2017</div>
+                      <h3 class="o_default_snippet_text">Blog Title</h3>
+                      <p class="o_default_snippet_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt ratione in dolore numquam laboriosam aliquid quibusdam </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="sb-blog">
+                    <div class="sb-blog-img">
+                      <a href="#">
+                        <img src="/stoneware_customize/static/src/img/sb-blog2.jpg" title="" alt=""/>
+                      </a>
+                    </div>
+                    <div class="sb-blog-info">
+                      <label class="o_default_snippet_text">Category</label>
+                      <div class="meta o_default_snippet_text">by admin / May 26,2017</div>
+                      <h3 class="o_default_snippet_text">Blog Title</h3>
+                      <p class="o_default_snippet_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt ratione in dolore numquam laboriosam aliquid quibusdam </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="sb-blog">
+                    <div class="sb-blog-img">
+                      <a href="#">
+                        <img src="/stoneware_customize/static/src/img/sb-blog3.jpg" title="" alt=""/>
+                      </a>
+                    </div>
+                    <div class="sb-blog-info">
+                      <label class="o_default_snippet_text">Category</label>
+                      <div class="meta o_default_snippet_text">by admin / May 26,2017</div>
+                      <h3 class="o_default_snippet_text">Blog Title</h3>
+                      <p class="o_default_snippet_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt ratione in dolore numquam laboriosam aliquid quibusdam </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="as-call-info">
+            <div class="row no-gutters">
+              <div class="col-lg-6">
+                <div class="ci-desc text-right">
+                  <h6 class="o_default_snippet_text">Call us for more info. </h6>
+                  <h3 class="o_default_snippet_text">(8895-444-6858)</h3>
+                  <span>
+                    <i class="fa fa-mobile"/>
+                  </span>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="ci-desc text-left">
+                  <h6 class="o_default_snippet_text">Mail now for more info.</h6>
+                  <h3 class="o_default_snippet_text">mail@yourdomin.com</h3>
+                  <span>
+                    <i class="fa fa-envelope-o"/>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </t>
+    </t>
+  </field>
+</record>
+
+<!-- 
+Home Options 2
+ -->
+<record id="Home_Option_2_view" model="ir.ui.view">
+  <field name="name">Home Option 2 Page</field>
+  <field name="type">qweb</field>
+  <field name="key">website.Home_Option_2</field>
+  <field name="mode">primary</field>
+  <field name="active">True</field>
+  
+  <field name="arch" type="xml">
+    <t t-name="website.Home_Option_2">
+      <t t-call="website.layout">
+        <div id="wrap" class="oe_structure oe_empty">
+          <div id="myCarousel1542956818672" class="s_carousel s_carousel_default carousel slide as-home-slider-cr">
+            <ol class="carousel-indicators">
+              <li data-target="#myCarousel1542956818672" data-slide-to="0" class="active"/>
+              <li data-target="#myCarousel1542956818672" data-slide-to="1"/>
+            </ol>
+            <div class="carousel-inner">
+              <div class="carousel-item active" style="background-image: url(&quot;/stoneware_customize/static/src/img/banner-1.jpg&quot;);" data-name="Slide">
+                <div class="container">
+                  <div class="row align-items-center">
+                    <div class="col-lg-6 col-md-8 col-10">
+                      <div class="banner-text theme-bg">
+                        <h2 class="o_default_snippet_text">Video Production</h2>
+                        <div class="clearfix"/>
+                        <p class="o_default_snippet_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
+                        <div class="clearfix"/>
+                        <div class="btn-box">
+                          <a class="creative-btn o_default_snippet_text" href="#">Learn More</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item" style="background-image: url(&quot;/stoneware_customize/static/src/img/banner-3.jpg&quot;);" data-name="Slide">
+                <div class="container">
+                  <div class="row align-items-center">
+                    <div class="col-lg-6 col-md-8 col-10">
+                      <div class="banner-text theme-bg">
+                        <h2 class="o_default_snippet_text">Video Production</h2>
+                        <div class="clearfix"/>
+                        <p class="o_default_snippet_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
+                        <div class="clearfix"/>
+                        <div class="btn-box">
+                          <a class="creative-btn o_default_snippet_text" href="#">Learn More</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-control-prev" data-target="#myCarousel1542956818672" data-slide="prev" role="img" aria-label="Previous" title="Previous">
+              <span class="carousel-control-prev-icon"/>
+              <span class="sr-only o_default_snippet_text">Previous</span>
+            </div>
+            <div class="carousel-control-next" data-target="#myCarousel1542956818672" data-slide="next" role="img" aria-label="Next" title="Next">
+              <span class="carousel-control-next-icon"/>
+              <span class="sr-only o_default_snippet_text">Next</span>
+            </div>
+          </div>
+          <section class="as-company-feature">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-3">
+                  <div class="cf-content">
+                    <div class="img">
+                      <img src="/stoneware_customize/static/src/img/cf-1.png" title="" alt=""/>
+                    </div>
+                    <div class="cfc-info">
+                      <h5>
+                        <a href="#" class="tran3s o_default_snippet_text">Business Advising</a>
+                      </h5>
+                      <p class="o_default_snippet_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-3">
+                  <div class="cf-content">
+                    <div class="img">
+                      <img src="/stoneware_customize/static/src/img/cf-2.png" title="" alt=""/>
+                    </div>
+                    <div class="cfc-info">
+                      <h5>
+                        <a href="#" class="tran3s o_default_snippet_text">Market Analysis</a>
+                      </h5>
+                      <p class="o_default_snippet_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-3">
+                  <div class="cf-content">
+                    <div class="img">
+                      <img src="/stoneware_customize/static/src/img/cf-3.png" title="" alt=""/>
+                    </div>
+                    <div class="cfc-info">
+                      <h5>
+                        <a href="#" class="tran3s o_default_snippet_text">Investment Plan</a>
+                      </h5>
+                      <p class="o_default_snippet_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-3">
+                  <div class="ceo-word">
+                    <h3 class="o_default_snippet_text">Fantastic service, i’m exited!</h3>
+                    <p class="o_default_snippet_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
+                    <h6 class="o_default_snippet_text">RASHED KABIR</h6>
+                    <p>CreativeGigs CEO</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="col-4-boxs bg-gray-dark bg-200 oe_custom_bg" style="">
+            <div class="row">
+              <div class="col-lg-3">
+                <div class="c4b-inner">
+                  <span class="iicon">
+                    <i class="color-theme fa fa-line-chart"/>
+                  </span>
+                  <h3 class="o_default_snippet_text">We are creative</h3>
+                  <p class="o_default_snippet_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+                </div>
+              </div>
+              <div class="col-lg-3">
+                <div class="c4b-inner">
+                  <span class="iicon">
+                    <i class="color-theme fa fa-money"/>
+                  </span>
+                  <h3 class="o_default_snippet_text">Parallax effect</h3>
+                  <p class="o_default_snippet_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+                </div>
+              </div>
+              <div class="col-lg-3">
+                <div class="c4b-inner">
+                  <span class="iicon">
+                    <i class="color-theme fa fa-bullseye"/>
+                  </span>
+                  <h3 class="o_default_snippet_text">We use Bootstrap</h3>
+                  <p class="o_default_snippet_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+                </div>
+              </div>
+              <div class="col-lg-3">
+                <div class="c4b-inner">
+                  <span class="iicon">
+                    <i class="color-theme fa fa-bullseye"/>
+                  </span>
+                  <h3 class="o_default_snippet_text">Retina Ready</h3>
+                  <p class="o_default_snippet_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="speciality-boxs">
+            <div class="container">
+              <section class="as-t-title">
+                <h2 class="o_default_snippet_text">Our Speciality</h2>
+                <p class="o_default_snippet_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate nulla unde harum perspiciatis aliquam, veniam iusto accusamus. Dolor tempora </p>
+              </section>
+              <div class="row">
+                <div class="col-lg-4 box-3">
+                  <div class="boxs-col">
+                    <span class="iicon">
+                      <i class="fa fa-sticky-note"/>
+                    </span>
+                    <h2 class="o_default_snippet_text">Project Planning</h2>
+                    <p class="o_default_snippet_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+                  </div>
+                </div>
+                <div class="col-lg-4 box-3">
+                  <div class="boxs-col">
+                    <span class="iicon">
+                      <i class="fa fa-tag"/>
+                    </span>
+                    <h2 class="o_default_snippet_text">Branding</h2>
+                    <p class="o_default_snippet_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+                  </div>
+                </div>
+                <div class="col-lg-4 box-3">
+                  <div class="boxs-col">
+                    <span class="iicon">
+                      <i class="fa fa-map-signs"/>
+                    </span>
+                    <h2 class="o_default_snippet_text">Decide Process</h2>
+                    <p class="o_default_snippet_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+                  </div>
+                </div>
+                <div class="col-lg-4 box-3">
+                  <div class="boxs-col">
+                    <span class="iicon">
+                      <i class="fa fa-wrench"/>
+                    </span>
+                    <h2 class="o_default_snippet_text">Build Form</h2>
+                    <p class="o_default_snippet_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+                  </div>
+                </div>
+                <div class="col-lg-4 box-3">
+                  <div class="boxs-col">
+                    <span class="iicon">
+                      <i class="fa fa-paint-brush"/>
+                    </span>
+                    <h2 class="o_default_snippet_text">Design Workflow</h2>
+                    <p class="o_default_snippet_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+                  </div>
+                </div>
+                <div class="col-lg-4 box-3">
+                  <div class="boxs-col">
+                    <span class="iicon">
+                      <i class="fa fa-rocket"/>
+                    </span>
+                    <h2 class="o_default_snippet_text">Go Live</h2>
+                    <p class="o_default_snippet_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="as-parallax-box" style="background-image: url(/stoneware_customize/static/src/img/parallax-bg.png)">
+            <div class="container">
+              <h2 class="o_default_snippet_text">Parallax Block</h2>
+              <div class="pb-desc">
+                <p class="o_default_snippet_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+              </div>
+              <div class="buts">
+                <a class="creative-btn1 o_default_snippet_text" href="#">Learn More</a>
+                <a class="creative-btn1 o_default_snippet_text" href="#">Buy Now !</a>
+              </div>
+            </div>
+          </section>
+          <section class="as-latest-works">
+            <div class="container">
+              <section class="as-t-title">
+                <h2 class="o_default_snippet_text">Latest works</h2>
+                <p class="o_default_snippet_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse, maxime tempora quaerat ratione iste. Nulla excepturi voluptatem error repellat tenetur facilis, veniam illum.</p>
+              </section>
+              <div class="row">
+                <div class="col-lg-4">
+                  <div class="asrw-box">
+                    <div class="asrw-img">
+                      <a href="#">
+                        <img src="/stoneware_customize/static/src/img/asrw-1.jpg" title="" alt=""/>
+                      </a>
+                    </div>
+                    <div class="asrw-info">
+                      <label>
+                        <a href="#" class="o_default_snippet_text">design</a>
+                      </label>
+                      <h3 class="blog-title">
+                        <a href="#" class="o_default_snippet_text">Your Website</a>
+                      </h3>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="asrw-box">
+                    <div class="asrw-img">
+                      <a href="#">
+                        <img src="/stoneware_customize/static/src/img/asrw-2.jpg" title="" alt=""/>
+                      </a>
+                    </div>
+                    <div class="asrw-info">
+                      <label>
+                        <a href="#" class="o_default_snippet_text">design</a>
+                      </label>
+                      <h3 class="blog-title">
+                        <a href="#" class="o_default_snippet_text">Your Website</a>
+                      </h3>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="asrw-box">
+                    <div class="asrw-img">
+                      <a href="#">
+                        <img src="/stoneware_customize/static/src/img/asrw-3.jpg" title="" alt=""/>
+                      </a>
+                    </div>
+                    <div class="asrw-info">
+                      <label>
+                        <a href="#" class="o_default_snippet_text">design</a>
+                      </label>
+                      <h3 class="blog-title">
+                        <a href="#" class="o_default_snippet_text">Your Website</a>
+                      </h3>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="asrw-box">
+                    <div class="asrw-img">
+                      <a href="#">
+                        <img src="/stoneware_customize/static/src/img/asrw-4.jpg" title="" alt=""/>
+                      </a>
+                    </div>
+                    <div class="asrw-info">
+                      <label>
+                        <a href="#" class="o_default_snippet_text">design</a>
+                      </label>
+                      <h3 class="blog-title">
+                        <a href="#" class="o_default_snippet_text">Your Website</a>
+                      </h3>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="asrw-box">
+                    <div class="asrw-img">
+                      <a href="#">
+                        <img src="/stoneware_customize/static/src/img/asrw-5.jpg" title="" alt=""/>
+                      </a>
+                    </div>
+                    <div class="asrw-info">
+                      <label>
+                        <a href="#" class="o_default_snippet_text">design</a>
+                      </label>
+                      <h3 class="blog-title">
+                        <a href="#" class="o_default_snippet_text">Your Website</a>
+                      </h3>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="asrw-box">
+                    <div class="asrw-img">
+                      <a href="#">
+                        <img src="/stoneware_customize/static/src/img/asrw-6.jpg" title="" alt=""/>
+                      </a>
+                    </div>
+                    <div class="asrw-info">
+                      <label>
+                        <a href="#" class="o_default_snippet_text">design</a>
+                      </label>
+                      <h3 class="blog-title">
+                        <a href="#" class="o_default_snippet_text">Your Website</a>
+                      </h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="as-stats-section asss-with-bg" style="background-image: url(/stoneware_customize/static/src/img/home-banner.jpg)">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-3">
+                  <div class="stats-box">
+                    <label class="stats-icon">
+                      <i class="fa fa-picture-o"/>
+                    </label>
+                    <span class="counter-s o_default_snippet_text"><span class="counter counter-portfolio o_default_snippet_text">500</span>+</span>
+                    <p class="stats-label o_default_snippet_text">Portfolio Layouts </p>
+                  </div>
+                </div>
+                <div class="col-lg-3">
+                  <div class="stats-box">
+                    <label class="stats-icon">
+                      <i class="fa fa-pencil"/>
+                    </label>
+                    <span class="counter-s o_default_snippet_text"><span class="counter counter-blog-template o_default_snippet_text">1000</span>+</span>
+                    <p class="stats-label o_default_snippet_text">Blog Templates</p>
+                  </div>
+                </div>
+                <div class="col-lg-3">
+                  <div class="stats-box">
+                    <label class="stats-icon">
+                      <i class="fa fa-puzzle-piece"/>
+                    </label>
+                    <span class="counter-s o_default_snippet_text"><span class="counter counter-shortcut o_default_snippet_text">500</span>+</span>
+                    <p class="stats-label o_default_snippet_text">Shortcodes</p>
+                  </div>
+                </div>
+                <div class="col-lg-3">
+                  <div class="stats-box">
+                    <label class="stats-icon">
+                      <i class="fa fa-file-text-o"/>
+                    </label>
+                    <span class="counter-s o_default_snippet_text"><span class="counter counter-like o_default_snippet_text">2000</span>+</span>
+                    <p class="stats-label o_default_snippet_text">Likes</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="as-price-tables">
+            <div class="container">
+              <section class="as-t-title">
+                <h2 class="o_default_snippet_text">Price Table</h2>
+                <p class="o_default_snippet_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt ratione in dolore numquam laboriosam aliquid quibusdam </p>
+              </section>
+              <div class="row">
+                <div class="col-lg-3 pt-basic">
+                  <div class="pt-inner">
+                    <div class="pt-title o_default_snippet_text">BASIC</div>
+                    <div class="pt-price">
+                      <span class="o_default_snippet_text">$</span>
+                      <label class="o_default_snippet_text">35</label>
+                      <small class="o_default_snippet_text">.99</small>
+                    </div>
+                    <h6 class="o_default_snippet_text">Billed Per Month</h6>
+                    <ul>
+                      <li class="o_default_snippet_text">Full Statistics</li>
+                      <li class="o_default_snippet_text">Mobile-Optimized</li>
+                      <li class="o_default_snippet_text">No Transacation Fees</li>
+                      <li class="o_default_snippet_text">Max 200 items</li>
+                      <li class="o_default_snippet_text">27/7 Supports</li>
+                    </ul>
+                    <div class="pt-action">
+                      <a class="creative-btn1 o_default_snippet_text" href="#">Get Started</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-3">
+                  <div class="pt-inner">
+                    <div class="pt-title o_default_snippet_text">Pupular</div>
+                    <div class="pt-price">
+                      <span class="o_default_snippet_text">$</span>
+                      <label class="o_default_snippet_text">65</label>
+                      <small class="o_default_snippet_text">.99</small>
+                    </div>
+                    <h6 class="o_default_snippet_text">Billed Per Month</h6>
+                    <ul>
+                      <li class="o_default_snippet_text">Full Statistics</li>
+                      <li class="o_default_snippet_text">Mobile-Optimized</li>
+                      <li class="o_default_snippet_text">No Transacation Fees</li>
+                      <li class="o_default_snippet_text">Max 200 items</li>
+                      <li class="o_default_snippet_text">27/7 Supports</li>
+                    </ul>
+                    <div class="pt-action">
+                      <a class="creative-btn1 o_default_snippet_text" href="#">Get Started</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-3">
+                  <div class="pt-inner">
+                    <div class="pt-title o_default_snippet_text">Premium</div>
+                    <div class="pt-price">
+                      <span class="o_default_snippet_text">$</span>
+                      <label class="o_default_snippet_text">85</label>
+                      <small class="o_default_snippet_text">.99</small>
+                    </div>
+                    <h6 class="o_default_snippet_text">Billed Per Month</h6>
+                    <ul>
+                      <li class="o_default_snippet_text">Full Statistics</li>
+                      <li class="o_default_snippet_text">Mobile-Optimized</li>
+                      <li class="o_default_snippet_text">No Transacation Fees</li>
+                      <li class="o_default_snippet_text">Max 200 items</li>
+                      <li class="o_default_snippet_text">27/7 Supports</li>
+                    </ul>
+                    <div class="pt-action">
+                      <a class="creative-btn1 o_default_snippet_text" href="#">Get Started</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-3">
+                  <div class="pt-inner">
+                    <div class="pt-title o_default_snippet_text">Ultimate</div>
+                    <div class="pt-price">
+                      <span class="o_default_snippet_text">$</span>
+                      <label class="o_default_snippet_text">99</label>
+                      <small class="o_default_snippet_text">.99</small>
+                    </div>
+                    <h6 class="o_default_snippet_text">Billed Per Month</h6>
+                    <ul>
+                      <li class="o_default_snippet_text">Full Statistics</li>
+                      <li class="o_default_snippet_text">Mobile-Optimized</li>
+                      <li class="o_default_snippet_text">No Transacation Fees</li>
+                      <li class="o_default_snippet_text">Max 200 items</li>
+                      <li class="o_default_snippet_text">27/7 Supports</li>
+                    </ul>
+                    <div class="pt-action">
+                      <a class="creative-btn1 o_default_snippet_text" href="#">Get Started</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="as-testimonial-parallax" style="background-image: url(/stoneware_customize/static/src/img/clients-say.png)">
+            <div class="container">
+              <section class="as-t-title">
+                <h2 class="o_default_snippet_text">Testimonial</h2>
+              </section>
+              <div id="myCarousel1542956967576" class="carousel s_carousel s_carousel_default s_carousel_testimonial_parallax slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                  <li data-target="#myCarousel1542956967576" data-slide-to="0" class="active"/>
+                  <li data-target="#myCarousel1542956967576" data-slide-to="1"/>
+                </ol>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <blockquote>
+                      <div class="desc-top">
+                        <i class="fa fa-quote-right"/>
+                        <p class="o_default_snippet_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit, a quam quae dolore blanditiis eveniet cum amet quasi sunt nostrum, suscipit commodi sequi sapiente deserunt dolorem iusto? Ipsa, quas ut!. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                      </div>
+                      <div class="author-info">
+                        <div class="author-info-right">
+                          <span class="o_default_snippet_text"> James More</span>
+                          <p class="o_default_snippet_text">Fouder &amp;amp; CEO ThemeMove Ltd.,</p>
+                        </div>
+                      </div>
+                    </blockquote>
+                  </div>
+                  <div class="carousel-item">
+                    <blockquote>
+                      <div class="desc-top">
+                        <i class="fa fa-quote-right"/>
+                        <p class="o_default_snippet_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit, a quam quae dolore blanditiis eveniet cum amet quasi sunt nostrum, suscipit commodi sequi sapiente deserunt dolorem iusto? Ipsa, quas ut!. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                      </div>
+                      <div class="author-info">
+                        <div class="author-info-right">
+                          <span class="o_default_snippet_text"> James More</span>
+                          <p class="o_default_snippet_text">Fouder &amp;amp; CEO ThemeMove Ltd.,</p>
+                        </div>
+                      </div>
+                    </blockquote>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="as-contact-us">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-6">
+                  <section class="as-title">
+                    <h2 class="o_default_snippet_text">Send Message</h2>
+                  </section>
+                  <form action="/website_form/" method="post" data-model_name="crm.lead" data-success_page="/contactus-thank-you" class="s_website_form form-horizontal container-fluid mt32" enctype="multipart/form-data" data-editable-form="false">
+                    <input type="hidden" name="csrf_token" value="f6aeb222952f59b11148fc05a7df9328b90910ffo1542960410"/>
+                    <div class="ascu-form">
+                      <div class="row">
+                        <div class="col-lg-6">
+                          <input type="text" class="form-control o_website_form_input" name="contact_name" required="" placeholder="Name*" value=""/>
+                        </div>
+                        <div class="col-lg-6">
+                          <input type="text" class="form-control o_website_form_input" name="email_from" required="" placeholder="Email*" value=""/>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-lg-6">
+                          <input type="text" class="form-control o_website_form_input" name="name" required="" placeholder="Subject*" value=""/>
+                        </div>
+                        <div class="col-lg-6">
+                          <input type="text" class="form-control o_website_form_input" name="phone" placeholder="Phone" value=""/>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-lg-12">
+                          <textarea class="form-control o_website_form_input" name="description" required="" placeholder="Message*"/>
+                        </div>
+                        <div class="col-lg-12">
+                          <div class="form-group">
+                            <span class="btn btn-primary btn-lg o_website_form_send o_default_snippet_text">Send Message</span>
+                            <span id="o_website_form_result"/>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+                <div class="col-lg-4 offset-lg-1">
+                  <div class="ascu-info">
+                    <section class="as-title">
+                      <h2 class="o_default_snippet_text">Information</h2>
+                    </section>
+                    <ul>
+                      <li class="o_default_snippet_text"><i class="fa fa-map-marker"/> 514 Creekside Court <br/>Erlanger, KY 41018</li>
+                      <li class="o_default_snippet_text"><i class="fa fa-phone"/> +44 000 000 0000</li>
+                      <li>
+                        <i class="fa fa-envelope"/>
+                        <a href="mailto:info@example.com" class="o_default_snippet_text"> info@yourcompany.example.com</a>
+                      </li>
+                      <li class="o_default_snippet_text"><i class="fa fa-fax"/> +44 000 000 0000</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </t>
+    </t>
+
+  </field>
+</record>
+
+
+<!-- 
+Home Options 3
+ -->
+<record id="Home_Option_3_view" model="ir.ui.view">
+  <field name="name">Home Option 3 Page</field>
+  <field name="type">qweb</field>
+  <field name="key">website.Home_Option_3</field>
+  <field name="mode">primary</field>
+  <field name="active">True</field>
+  
+  <field name="arch" type="xml">
+    <t t-name="website.Home_Option_3">
+      <t t-call="website.layout">
+        <div id="wrap" class="oe_structure oe_empty">
+          <div id="myCarousel1542964461802" class="s_carousel s_carousel_default carousel slide as-animated-slider">
+            <ol class="carousel-indicators">
+              <li data-target="#myCarousel1542964461802" data-slide-to="0" class="active"/>
+              <li data-target="#myCarousel1542964461802" data-slide-to="1"/>
+            </ol>
+            <div class="carousel-inner">
+              <div class="carousel-item active" data-name="Slide" style="background-image: url(&quot;/stoneware_customize/static/src/img/bg1.jpg&quot;);">
+                <div class="container">
+                  <div class="row align-items-center">
+                    <div class="col-lg-6">
+                      <div class="carousel-content">
+                        <h2 class="animated-item-2 animation">flat 50 off on&amp;nbsp; your First Order</h2>
+                        <h1 class="animation animated-item-1">Lorem ipsum dolor sit amet, consectetur adipisicing elit, </h1>
+                        <a class="btn-slide animation animated-item-3" href="#">Shop Now</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item" data-name="Slide" style="background-image: url(&quot;/stoneware_customize/static/src/img/bg2.jpg&quot;);">
+                <div class="container">
+                  <div class="row align-items-center">
+                    <div class="col-lg-6">
+                      <div class="carousel-content">
+                        <h2 class="animated-item-2 animation">FLAT 50 OFF on YOUR FIRST ORDER</h2>
+                        <h1 class="animation animated-item-1 o_default_snippet_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, </h1>
+                        <a class="btn-slide animation animated-item-3" href="#" data-original-title="" title="" aria-describedby="tooltip179063">Shop Now</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-control-prev" data-target="#myCarousel1542964461802" data-slide="prev" role="img" aria-label="Previous" title="Previous">
+              <span class="carousel-control-prev-icon"/>
+              <span class="sr-only o_default_snippet_text">Previous</span>
+            </div>
+            <div class="carousel-control-next" data-target="#myCarousel1542964461802" data-slide="next" role="img" aria-label="Next" title="Next">
+              <span class="carousel-control-next-icon"/>
+              <span class="sr-only o_default_snippet_text">Next</span>
+            </div>
+          </div>
+          <section class="as-calcsn-promo pt32 pb32">
+            <div class="container">
+              <div class="row">
+                <div class="home-banner-left col-lg-4">
+                  <div class="image-wrap">
+                    <a href="#">
+                      <img src="/stoneware_customize/static/src/img/banner4.jpg" alt="Banner Image"/>
+                    </a>
+                  </div>
+                </div>
+                <div class="home-banner-right col-lg-8">
+                  <div class="image-wrap">
+                    <a href="#">
+                      <img src="/stoneware_customize/static/src/img/banner7.jpg" alt="Banner Image"/>
+                    </a>
+                  </div>
+                  <div class="image-wrap image-wrap-50">
+                    <a href="#">
+                      <img src="/stoneware_customize/static/src/img/banner5.jpg" alt="Banner Image"/>
+                    </a>
+                  </div>
+                  <div class="image-wrap image-wrap-50 last">
+                    <a href="#">
+                      <img src="/stoneware_customize/static/src/img/banner6.jpg" alt="Banner Image"/>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Dynamic Snippet -->
+          <section class="s_product_slider" data-snippet_type="multi" data-collection_id="2" data-collection_name="New Collections" data-snippet_layout="horiz_tab">
+            <div class="container">
+              <div class="seaction-head">
+                <h2>New Collections</h2>
+              </div>
+            </div>
+          </section>
+          <!--  -->
+
+          <section class="as-bannertwo">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="image-wrap">
+                    <a href="#">
+                      <img src="/stoneware_customize/static/src/img/banner9.jpg" alt="Banner Image"/>
+                    </a>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="image-wrap">
+                    <a href="#">
+                      <img src="/stoneware_customize/static/src/img/banner10.jpg" alt="Banner Image"/>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Dynamic Snippet -->
+          <section class="s_product_slider o_default_snippet_text" data-snippet_type="single" data-collection_id="1" data-collection_name="Popular" data-snippet_layout="slider">
+            <div class="container">
+              <div class="seaction-head">
+                <h2>Popular</h2>
+              </div>
+            </div>
+          </section>
+          <!-- / -->
+
+          <section class="as-policy-box" style="background-image: url(/stoneware_customize/static/src/img/parallax-bg.png)">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-3">
+                  <div class="pb-inner">
+                    <i class="fa fa-plane"/>
+                    <div class="text">
+                      <h6 class="o_default_snippet_text">Free shiping</h6>
+                      <span class="o_default_snippet_text">On order over $100</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-3">
+                  <div class="pb-inner">
+                    <i class="fa fa-headphones"/>
+                    <div class="text">
+                      <h6 class="o_default_snippet_text">Support online</h6>
+                      <span class="o_default_snippet_text">Call us: 000 000 000</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-3">
+                  <div class="pb-inner">
+                    <i class="fa fa-tag"/>
+                    <div class="text">
+                      <h6 class="o_default_snippet_text">Discount</h6>
+                      <span class="o_default_snippet_text">5% on order over $190</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-3">
+                  <div class="pb-inner">
+                    <i class="fa fa-refresh"/>
+                    <div class="text">
+                      <h6 class="o_default_snippet_text">Money back</h6>
+                      <span class="o_default_snippet_text">Guarantee</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Dynamic Snippet -->
+          <section class="s_product_slider o_default_snippet_text" data-snippet_type="multi" data-collection_id="1" data-collection_name="New Arrivals" data-snippet_layout="vertic_tab">
+            <div class="container">
+              <div class="seaction-head">
+                <h2>New Arrivals</h2>
+              </div>
+            </div>
+          </section>
+          <!--  -->
+
+          <section class="as-static-brands" style="background-image: url(/stoneware_customize/static/src/img/as-static-brands.png)">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-2">
+                  <div class="asbrd-img">
+                    <img src="/stoneware_customize/static/src/img/asbrd1.jpg" title="" alt=""/>
+                  </div>
+                </div>
+                <div class="col-lg-2">
+                  <div class="asbrd-img">
+                    <img src="/stoneware_customize/static/src/img/asbrd2.jpg" title="" alt=""/>
+                  </div>
+                </div>
+                <div class="col-lg-2">
+                  <div class="asbrd-img">
+                    <img src="/stoneware_customize/static/src/img/asbrd3.jpg" title="" alt=""/>
+                  </div>
+                </div>
+                <div class="col-lg-2">
+                  <div class="asbrd-img">
+                    <img src="/stoneware_customize/static/src/img/asbrd4.jpg" title="" alt=""/>
+                  </div>
+                </div>
+                <div class="col-lg-2">
+                  <div class="asbrd-img">
+                    <img src="/stoneware_customize/static/src/img/asbrd5.jpg" title="" alt=""/>
+                  </div>
+                </div>
+                <div class="col-lg-2">
+                  <div class="asbrd-img">
+                    <img src="/stoneware_customize/static/src/img/asbrd6.jpg" title="" alt=""/>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Dynamic Snippet -->
+          <section class="as-latest-blog web_blog_slider" data-blog-id="0" data-blog_list-id="1">
+            <div class="seaction-head">
+              <h1>Blog Slider</h1>
+            </div>
+          </section>
+          <!-- / -->
+        </div>
+      </t>
+    </t>
+
+  </field>
+</record>
+
+
+<!-- 
+Home Options 4
+ -->
+<record id="Home_Option_4_view" model="ir.ui.view">
+  <field name="name">Home Option 4 Page</field>
+  <field name="type">qweb</field>
+  <field name="key">website.Home_Option_4</field>
+  <field name="mode">primary</field>
+  <field name="active">True</field>
+  
+  <field name="arch" type="xml">
+    <t t-name="website.Home_Option_4">
+      <t t-call="website.layout">
+        <div id="wrap" class="oe_structure oe_empty">
+          <div id="myCarousel1542957492047" class="s_carousel s_carousel_default carousel slide as-home-slider01">
+            <ol class="carousel-indicators">
+              <li data-target="#myCarousel1542957492047" data-slide-to="0" class="active"/>
+              <li data-target="#myCarousel1542957492047" data-slide-to="1"/>
+            </ol>
+            <div class="carousel-inner">
+              <div class="carousel-item active" data-name="Slide" style="">
+                <img src="/stoneware_customize/static/src/img/home2-3.jpg" alt=""/>
+              </div>
+              <div class="carousel-item" data-name="Slide" style="">
+                <img src="/stoneware_customize/static/src/img/home2-2.jpg" alt=""/>
+              </div>
+            </div>
+            <div class="carousel-control-prev" data-target="#myCarousel1542957492047" data-slide="prev" role="img" aria-label="Previous" title="Previous">
+              <span class="carousel-control-prev-icon"/>
+              <span class="sr-only o_default_snippet_text">Previous</span>
+            </div>
+            <div class="carousel-control-next" data-target="#myCarousel1542957492047" data-slide="next" role="img" aria-label="Next" title="Next">
+              <span class="carousel-control-next-icon"/>
+              <span class="sr-only o_default_snippet_text">Next</span>
+            </div>
+          </div>
+
+          <section class="as-fashion-promo pt16">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-lg-12 pb16">
+                  <div class="banner-full">
+                    <div class="banner-left">
+                      <div class="banner-image">
+                        <a title="Banner Image" href="#">
+                          <img src="/stoneware_customize/static/src/img/id3-banner1.jpg" alt="Banner Image"/>
+                        </a>
+                      </div>
+                    </div>
+                    <div class="banner-right">
+                      <div class="banner-top">
+                        <div class="banner-image">
+                          <a title="Banner Image" href="#">
+                            <img src="/stoneware_customize/static/src/img/id3-banner2.jpg" alt="Banner Image"/>
+                          </a>
+                        </div>
+                      </div>
+                      <div class="banner-bottom">
+                        <div class="item-left">
+                          <div class="banner-image">
+                            <a title="Banner Image" href="#">
+                              <img src="/stoneware_customize/static/src/img/id3-banner3.jpg" alt="Banner Image"/>
+                            </a>
+                          </div>
+                        </div>
+                        <div class="item-right">
+                          <div class="banner-image">
+                            <a title="Banner Image" href="#">
+                              <img src="/stoneware_customize/static/src/img/id3-banner4.jpg" alt="Banner Image"/>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Dynamic Snippet -->
+          <section class="s_product_slider" data-snippet_type="multi" data-collection_id="2" data-collection_name="New Collections" data-snippet_layout="horiz_tab">
+            <div class="container">
+              <div class="seaction-head">
+                <h2>New Collections</h2>
+              </div>
+            </div>
+          </section>
+          <!-- / -->
+
+          <section class="as-bannertwo pb24 pt24">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="image-wrap">
+                    <a href="#">
+                      <img src="/stoneware_customize/static/src/img/banner9.jpg" alt="Banner Image"/>
+                    </a>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="image-wrap">
+                    <a href="#">
+                      <img src="/stoneware_customize/static/src/img/banner10.jpg" alt="Banner Image"/>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Dynamic Snippet -->
+          <section class="s_product_slider o_default_snippet_text" data-snippet_type="single" data-collection_id="5" data-collection_name="Featured Products" data-snippet_layout="slider">
+            <div class="container">
+              <div class="seaction-head">
+                <h2>Featured Products</h2>
+              </div>
+            </div>
+          </section>
+          <!--  -->
+
+          <section class="as-parallax-box" style="background-image: url(/stoneware_customize/static/src/img/parallax-bg.png)">
+            <div class="container">
+              <h2 class="o_default_snippet_text">Parallax Block</h2>
+              <div class="pb-desc">
+                <p class="o_default_snippet_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+              </div>
+              <div class="buts">
+                <a class="creative-btn1" href="#">Learn More</a>
+                <a class="creative-btn1 o_default_snippet_text" href="#">Buy Now !</a>
+              </div>
+            </div>
+          </section>
+
+          <!-- Dynamic Snippet -->
+          <section class="as-latest-blog web_blog_slider hidden" data-blog-id="0" data-blog_list-id="1">
+            <div class="seaction-head">
+              <h1>Latest Blog</h1>
+            </div>
+          </section>
+          <!--  -->
+        </div>
+      </t>
+    </t>
+
+  </field>
+</record>
+
+
+<!-- 
+Home Options 5
+ -->
+<record id="Home_Option_5_view" model="ir.ui.view">
+  <field name="name">Home Option 5 Page</field>
+  <field name="type">qweb</field>
+  <field name="key">website.Home_Option_5</field>
+  <field name="mode">primary</field>
+  <field name="active">True</field>
+  
+  <field name="arch" type="xml">
+    <t t-name="website.Home_Option_5">
+      <t t-call="website.layout">
+        <div id="wrap" class="oe_structure oe_empty">
+          <section class="as-home-banner" style="background-image: url(/stoneware_customize/static/src/img/home-banner.jpg)">
+            <div class="hb-intro">
+              <div class="hbi-inner">
+                <h1 class="o_default_snippet_text">THIS IS STONEWARE</h1>
+                <p class="o_default_snippet_text"> Unique, Multi-purpose, Responsive Odoo Theme</p>
+              </div>
+            </div>
+          </section>
+          <section class="as-work-flow">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-6">
+                  <img src="/stoneware_customize/static/src/img/wf-img.png" title="" alt=""/>
+                </div>
+                <div class="col-lg-6">
+                  <div class="wf-box">
+                    <div class="wf-icon">
+                      <i class="fa fa-paint-brush"/>
+                    </div>
+                    <div class="wf-desc">
+                      <h2 class="o_default_snippet_text">Unique and Clean</h2>
+                      <p class="o_default_snippet_text">It's always nice to browse some nice and clean websites. It is a good way to get inspiration for future projects</p>
+                    </div>
+                  </div>
+                  <div class="wf-box">
+                    <div class="wf-icon">
+                      <i class="fa fa-arrows-alt"/>
+                    </div>
+                    <div class="wf-desc">
+                      <h2 class="o_default_snippet_text">Flexible Layout</h2>
+                      <p class="o_default_snippet_text">Responsive and Flexible layout. This allows the web page to stretch and contract relative to the user's screen size.</p>
+                    </div>
+                  </div>
+                  <div class="wf-box">
+                    <div class="wf-icon">
+                      <i class="fa fa-code"/>
+                    </div>
+                    <div class="wf-desc">
+                      <h2 class="o_default_snippet_text">HTML5 and css3</h2>
+                      <p class="o_default_snippet_text">HTML5 and CSS3 are now becoming one of the most trusted used trendiest of designing websites to the web designers.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="as-4-col-box">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-3">
+                  <div class="c4b-box">
+                    <div class="c4b-icon">
+                      <i class="fa fa-bar-chart"/>
+                    </div>
+                    <h2 class="o_default_snippet_text">Finance Consulting</h2>
+                    <div class="c4b-desc">
+                      <p class="o_default_snippet_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium porro neque debitis quo ab quidem, sit facere eum maxime</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-3">
+                  <div class="c4b-box">
+                    <div class="c4b-icon">
+                      <i class="fa fa-user"/>
+                    </div>
+                    <h2 class="o_default_snippet_text">Business Consulting</h2>
+                    <div class="c4b-desc">
+                      <p class="o_default_snippet_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium porro neque debitis quo ab quidem, sit facere eum maxime</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-3">
+                  <div class="c4b-box">
+                    <div class="c4b-icon">
+                      <i class="fa fa-balance-scale"/>
+                    </div>
+                    <h2 class="o_default_snippet_text">Lawyers Consulting</h2>
+                    <div class="c4b-desc">
+                      <p class="o_default_snippet_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium porro neque debitis quo ab quidem, sit facere eum maxime</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-3">
+                  <div class="c4b-box">
+                    <div class="c4b-icon">
+                      <i class="fa fa-pie-chart"/>
+                    </div>
+                    <h2 class="o_default_snippet_text">Online Consulting</h2>
+                    <div class="c4b-desc">
+                      <p class="o_default_snippet_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium porro neque debitis quo ab quidem, sit facere eum maxime</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="as-our-portfolia">
+            <div class="container">
+              <section class="as-m-title">
+                <h2 class="o_default_snippet_text">Latest Project</h2>
+                <p class="o_default_snippet_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate nulla unde.</p>
+              </section>
+              <div class="row">
+                <div class="col-lg-4">
+                  <section class="op-section" style="background-image: url(/stoneware_customize/static/src/img/as-our-portfolia.jpg)">
+                    <div class="ops-box">
+                      <h2 class="o_default_snippet_text">Project Title</h2>
+                      <div class="ops-desc">
+                        <p class="o_default_snippet_text">It's always nice to browse some nice and clean websites. It is a good way to get inspiration for future projects</p>
+                      </div>
+                    </div>
+                  </section>
+                </div>
+                <div class="col-lg-4">
+                  <section class="op-section" style="background-image: url(/stoneware_customize/static/src/img/as-our-portfolia1.jpg)">
+                    <div class="ops-box">
+                      <h2 class="o_default_snippet_text">Project Title</h2>
+                      <div class="ops-desc">
+                        <p class="o_default_snippet_text">It's always nice to browse some nice and clean websites. It is a good way to get inspiration for future projects</p>
+                      </div>
+                    </div>
+                  </section>
+                </div>
+                <div class="col-lg-4">
+                  <section class="op-section" style="background-image: url(/stoneware_customize/static/src/img/as-our-portfolia2.jpg)">
+                    <div class="ops-box">
+                      <h2 class="o_default_snippet_text">Project Title</h2>
+                      <div class="ops-desc">
+                        <p class="o_default_snippet_text">It's always nice to browse some nice and clean websites. It is a good way to get inspiration for future projects</p>
+                      </div>
+                    </div>
+                  </section>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="as-call-info">
+            <div class="row no-gutters">
+              <div class="col-lg-6">
+                <div class="ci-desc text-right">
+                  <h6 class="o_default_snippet_text">Call us for more info. </h6>
+                  <h3 class="o_default_snippet_text">(8895-444-6858)</h3>
+                  <span>
+                    <i class="fa fa-mobile"/>
+                  </span>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="ci-desc text-left">
+                  <h6 class="o_default_snippet_text">Mail now for more info.</h6>
+                  <h3 class="o_default_snippet_text">mail@yourdomin.com</h3>
+                  <span>
+                    <i class="fa fa-envelope-o"/>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="as-static-blog">
+            <div class="container">
+              <section class="as-m-title">
+                <h2 class="o_default_snippet_text">Static Blogs</h2>
+                <p class="o_default_snippet_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate nulla unde.</p>
+              </section>
+              <div class="row">
+                <div class="col-lg-4">
+                  <div class="sb-blog">
+                    <div class="sb-blog-img">
+                      <a href="#">
+                        <img src="/stoneware_customize/static/src/img/sb-blog1.jpg" title="" alt=""/>
+                      </a>
+                    </div>
+                    <div class="sb-blog-info">
+                      <label class="o_default_snippet_text">Category</label>
+                      <div class="meta o_default_snippet_text">by admin / May 26,2017</div>
+                      <h3 class="o_default_snippet_text">Blog Title</h3>
+                      <p class="o_default_snippet_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt ratione in dolore numquam laboriosam aliquid quibusdam </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="sb-blog">
+                    <div class="sb-blog-img">
+                      <a href="#">
+                        <img src="/stoneware_customize/static/src/img/sb-blog2.jpg" title="" alt=""/>
+                      </a>
+                    </div>
+                    <div class="sb-blog-info">
+                      <label class="o_default_snippet_text">Category</label>
+                      <div class="meta o_default_snippet_text">by admin / May 26,2017</div>
+                      <h3 class="o_default_snippet_text">Blog Title</h3>
+                      <p class="o_default_snippet_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt ratione in dolore numquam laboriosam aliquid quibusdam </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="sb-blog">
+                    <div class="sb-blog-img">
+                      <a href="#">
+                        <img src="/stoneware_customize/static/src/img/sb-blog3.jpg" title="" alt=""/>
+                      </a>
+                    </div>
+                    <div class="sb-blog-info">
+                      <label class="o_default_snippet_text">Category</label>
+                      <div class="meta o_default_snippet_text">by admin / May 26,2017</div>
+                      <h3 class="o_default_snippet_text">Blog Title</h3>
+                      <p class="o_default_snippet_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt ratione in dolore numquam laboriosam aliquid quibusdam </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="as-contact-us-m">
+            <div class="container">
+              <section class="as-m-title">
+                <h2 class="o_default_snippet_text">Connect with us</h2>
+                <p class="o_default_snippet_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate nulla unde.</p>
+              </section>
+              <div class="row">
+                <div class="col-lg-12">
+                  <form action="/website_form/" method="post" data-model_name="crm.lead" data-success_page="/contactus-thank-you" class="s_website_form form-horizontal container-fluid mt32" enctype="multipart/form-data" data-editable-form="false">
+                    <div class="ascu-form">
+                      <div class="row">
+                        <div class="col-lg-6">
+                          <input type="text" class="form-control o_website_form_input" name="contact_name" required="" placeholder="Name*" value=""/>
+                        </div>
+                        <div class="col-lg-6">
+                          <input type="text" class="form-control o_website_form_input" name="email_from" required="" placeholder="Email*" value=""/>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-lg-6">
+                          <input type="text" class="form-control o_website_form_input" name="name" required="" placeholder="Subject*" value=""/>
+                        </div>
+                        <div class="col-lg-6">
+                          <input type="text" class="form-control o_website_form_input" name="phone" placeholder="Phone" value=""/>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-lg-12">
+                          <textarea class="form-control o_website_form_input" name="description" required="" placeholder="Message*"/>
+                        </div>
+                        <div class="col-lg-12">
+                          <span class="btn btn-primary btn-lg o_website_form_send o_default_snippet_text">Send Message</span>
+                          <span id="o_website_form_result"/>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </t>
+    </t>
+
+  </field>
+</record>
+
+<!-- end home page data -->
+      <record id="home_option_1_demo_page" model="website.page">
+        <field name="name">Home Option 1</field>
+        <field name="url">/home-option-1</field>
+        <field name="view_id" ref="stoneware_customize.Home_Option_1_view"/>
+        <field name="website_indexed">True</field>
+        <field name="website_published">True</field>
+        <field name="website_id" ref="website.default_website"/>
+      </record>
+
+      <record id="home_option_2_demo_page" model="website.page">
+        <field name="name">Home Option 2</field>
+        <field name="url">/home-option-2</field>
+        <field name="view_id" ref="stoneware_customize.Home_Option_2_view"/>
+        <field name="website_indexed">True</field>
+        <field name="website_published">True</field>
+        <field name="website_id" ref="website.default_website"/>
+      </record>
+
+      <record id="home_option_3_demo_page" model="website.page">
+        <field name="name">Home Option 3</field>
+        <field name="url">/home-option-3</field>
+        <field name="view_id" ref="stoneware_customize.Home_Option_3_view"/>
+        <field name="website_indexed">True</field>
+        <field name="website_published">True</field>
+        <field name="website_id" ref="website.default_website"/>
+      </record>
+
+      <record id="home_option_4_demo_page" model="website.page">
+        <field name="name">Home Option 4</field>
+        <field name="url">/home-option-4</field>
+        <field name="view_id" ref="stoneware_customize.Home_Option_4_view"/>
+        <field name="website_indexed">True</field>
+        <field name="website_published">True</field>
+        <field name="website_id" ref="website.default_website"/>
+      </record>
+
+      <record id="home_option_5_demo_page" model="website.page">
+        <field name="name">Home Option 5</field>
+        <field name="url">/home-option-5</field>
+        <field name="view_id" ref="stoneware_customize.Home_Option_5_view"/>
+        <field name="website_indexed">True</field>
+        <field name="website_published">True</field>
+        <field name="website_id" ref="website.default_website"/>
+      </record>
+
+    <!-- Demo Website Pages: End -->
+
+
+      <record id="menu_mega_content_1" model="megamenu.content">
+        <field name="name">content 1</field>
+        <field name="active">True</field>
+        <field name="is_mega_menu">True</field>
+        <field name="main_content_type">content</field>
+        <field name="no_of_columns">4</field>
+        <field name="menu_content"><![CDATA[
+								<div class="mmc-inner">
+								<ul class="mm-alone-item">
+								  <li class="item">
+									<a href="http://theme-alan.atharvasystem.com">Home Option 1</a>
+								  </li>
+								  <li class="item">
+									<a href="/home-option-2">Home Option 2</a>
+								  </li>
+								  <li class="item">
+									<a href="/home-option-3">Home Option 3</a>
+								  </li>
+								  <li class="item">
+									<a href="/home-option-4">Home Option 4</a>
+								  </li>
+								  <li class="item">
+									<a href="/home-option-5">Home Option 5</a>
+								  </li>
+								</ul>
+								</div>
+        ]]></field>
+        <field name="website_id" ref="website.default_website"/>
+      </record>	      
+
+    <!-- Demo Website Menus: Start -->
+      <record id="menu_product" model="website.menu">
+        <field name="name">Products</field>
+        <field name="url">#</field>
+        <field name="sequence" type="int">21</field>
+        <field name="is_mega_menu" eval="True"/>
+        <field name="content_id" ref="megamenu_product_listing_1"/>
+
+      </record>
+
+      <record id="menu_category" model="website.menu">
+        <field name="name">Categories</field>
+        <field name="url">#</field>
+        <field name="sequence" type="int">22</field>
+        <field name="is_mega_menu" eval="True"/>
+        <field name="content_id" ref="megamenu_category_listing_2"/>
+
+      </record>            
+      <record id="menu_demo_pages" model="website.menu">
+        <field name="name">Demo Pages</field>
+        <field name="url">#</field>
+        <field name="sequence" type="int">23</field>
+        <field name="is_mega_menu">True</field>
+        <field name="content_id" ref="stoneware_customize.menu_mega_content_1"/>
+      </record>
+      	      
+	  <record id="mega_menu_content_2" model="megamenu.content">
+	  	<field name="name"> Category Toggle </field>
+	  	<field name="active">True</field>
+	  	<field name="main_content_type">horiz_categ_toggle</field>
+	  	<field name="no_of_columns">4</field>
+	  </record>
+	  
+	  <!-- level 1 menu content -->
+      <record id="categories_menu_lines_1" model="megamenu.categories_menu_lines">
+        <field name="name" ref='stoneware_customize.stone_product_category_1'/>
+        <field name="level">1</field>
+        <field name="image"  type="base64" file="stoneware_customize/static/src/img/car.png"/>
+        <field name="image_name">car.png</field>
+        <field name="megamenu_id" ref="stoneware_customize.mega_menu_content_2"/>
+      </record> 
+      <record id="categories_menu_lines_2" model="megamenu.categories_menu_lines">
+        <field name="name" ref='stoneware_customize.stone_product_category_2'/>
+        <field name="level">1</field>
+        <field name="image"  type="base64" file="stoneware_customize/static/src/img/armchair.png"/>
+        <field name="image_name">armchair.png</field>
+        <field name="megamenu_id" ref="stoneware_customize.mega_menu_content_2"/>
+      </record>
+      <record id="categories_menu_lines_3" model="megamenu.categories_menu_lines">
+        <field name="name" ref='stoneware_customize.stone_product_category_3'/>
+        <field name="level">1</field>
+        <field name="image"  type="base64" file="stoneware_customize/static/src/img/null.png"/>
+        <field name="image_name">fashion.png</field>
+        <field name="megamenu_id" ref="stoneware_customize.mega_menu_content_2"/>
+      </record>
+      <record id="categories_menu_lines_4" model="megamenu.categories_menu_lines">
+        <field name="name" ref='stoneware_customize.stone_product_category_4'/>
+        <field name="level">1</field>
+        <field name="image"  type="base64" file="stoneware_customize/static/src/img/watch.png"/>
+        <field name="image_name">watch.png</field>
+        <field name="megamenu_id" ref="stoneware_customize.mega_menu_content_2"/>
+      </record>
+      
+      <!-- leve 1 completed -->
+      
+      <!-- level 2 started -->
+      <record id="categories_menu_lines_5" model="megamenu.categories_menu_lines">
+        <field name="name" ref='stoneware_customize.stone_product_category_5'/>
+        <field name="level">2</field>
+        <field name="megamenu_id" ref="stoneware_customize.mega_menu_content_2"/>
+      </record> 
+      <record id="categories_menu_lines_6" model="megamenu.categories_menu_lines">
+        <field name="name" ref='stoneware_customize.stone_product_category_6'/>
+        <field name="level">2</field>
+        <field name="megamenu_id" ref="stoneware_customize.mega_menu_content_2"/>
+      </record>
+      <record id="categories_menu_lines_7" model="megamenu.categories_menu_lines">
+        <field name="name" ref='stoneware_customize.stone_product_category_7'/>
+        <field name="level">2</field>
+        <field name="megamenu_id" ref="stoneware_customize.mega_menu_content_2"/>
+      </record>
+      <record id="categories_menu_lines_8" model="megamenu.categories_menu_lines">
+        <field name="name" ref='stoneware_customize.stone_product_category_8'/>
+        <field name="level">2</field>
+        <field name="megamenu_id" ref="stoneware_customize.mega_menu_content_2"/>
+      </record>
+      <record id="categories_menu_lines_9" model="megamenu.categories_menu_lines">
+        <field name="name" ref='stoneware_customize.stone_product_category_9'/>
+        <field name="level">2</field>
+        <field name="megamenu_id" ref="stoneware_customize.mega_menu_content_2"/>
+      </record> 
+      <record id="categories_menu_lines_10" model="megamenu.categories_menu_lines">
+        <field name="name" ref='stoneware_customize.stone_product_category_10'/>
+        <field name="level">2</field>
+        <field name="megamenu_id" ref="stoneware_customize.mega_menu_content_2"/>
+      </record>
+      <record id="categories_menu_lines_11" model="megamenu.categories_menu_lines">
+        <field name="name" ref='stoneware_customize.stone_product_category_11'/>
+        <field name="level">2</field>
+        <field name="megamenu_id" ref="stoneware_customize.mega_menu_content_2"/>
+      </record>
+      <record id="categories_menu_lines_12" model="megamenu.categories_menu_lines">
+        <field name="name" ref='stoneware_customize.stone_product_category_12'/>
+        <field name="level">2</field>
+        <field name="megamenu_id" ref="stoneware_customize.mega_menu_content_2"/>
+      </record>
+      <record id="categories_menu_lines_13" model="megamenu.categories_menu_lines">
+        <field name="name" ref='stoneware_customize.stone_product_category_13'/>
+        <field name="level">2</field>
+        <field name="megamenu_id" ref="stoneware_customize.mega_menu_content_2"/>
+      </record> 
+      <record id="categories_menu_lines_14" model="megamenu.categories_menu_lines">
+        <field name="name" ref='stoneware_customize.stone_product_category_14'/>
+        <field name="level">2</field>
+        <field name="megamenu_id" ref="stoneware_customize.mega_menu_content_2"/>
+      </record>
+      <record id="categories_menu_lines_15" model="megamenu.categories_menu_lines">
+        <field name="name" ref='stoneware_customize.stone_product_category_15'/>
+        <field name="level">2</field>
+        <field name="megamenu_id" ref="stoneware_customize.mega_menu_content_2"/>
+      </record>
+      <record id="categories_menu_lines_16" model="megamenu.categories_menu_lines">
+        <field name="name" ref='stoneware_customize.stone_product_category_16'/>
+        <field name="level">2</field>
+        <field name="megamenu_id" ref="stoneware_customize.mega_menu_content_2"/>
+      </record>
+      <record id="categories_menu_lines_17" model="megamenu.categories_menu_lines">
+        <field name="name" ref='stoneware_customize.stone_product_category_17'/>
+        <field name="level">2</field>
+        <field name="megamenu_id" ref="stoneware_customize.mega_menu_content_2"/>
+      </record> 
+      <record id="categories_menu_lines_18" model="megamenu.categories_menu_lines">
+        <field name="name" ref='stoneware_customize.stone_product_category_18'/>
+        <field name="level">2</field>
+        <field name="megamenu_id" ref="stoneware_customize.mega_menu_content_2"/>
+      </record>
+
+      <record id="categories_menu_lines_19" model="megamenu.categories_menu_lines">
+        <field name="name" ref='stoneware_customize.stone_product_category_19'/>
+        <field name="level">2</field>
+        <field name="megamenu_id" ref="stoneware_customize.mega_menu_content_2"/>
+      </record> 
+      <record id="categories_menu_lines_20" model="megamenu.categories_menu_lines">
+        <field name="name" ref='stoneware_customize.stone_product_category_20'/>
+        <field name="level">2</field>
+        <field name="megamenu_id" ref="stoneware_customize.mega_menu_content_2"/>
+      </record>
+            
+      <!-- level 2 completed -->   
+      
+      <!-- level 3 started -->   
+
+      <record id="categories_menu_lines_21" model="megamenu.categories_menu_lines">
+        <field name="name" ref='stoneware_customize.stone_product_category_21'/>
+        <field name="level">3</field>
+        <field name="megamenu_id" ref="stoneware_customize.mega_menu_content_2"/>
+      </record>
+      <record id="categories_menu_lines_22" model="megamenu.categories_menu_lines">
+        <field name="name" ref='stoneware_customize.stone_product_category_22'/>
+        <field name="level">3</field>
+        <field name="megamenu_id" ref="stoneware_customize.mega_menu_content_2"/>
+      </record>
+      <record id="categories_menu_lines_23" model="megamenu.categories_menu_lines">
+        <field name="name" ref='stoneware_customize.stone_product_category_23'/>
+        <field name="level">3</field>
+        <field name="megamenu_id" ref="stoneware_customize.mega_menu_content_2"/>
+      </record> 
+      <record id="categories_menu_lines_24" model="megamenu.categories_menu_lines">
+        <field name="name" ref='stoneware_customize.stone_product_category_24'/>
+        <field name="level">3</field>
+        <field name="megamenu_id" ref="stoneware_customize.mega_menu_content_2"/>
+      </record>
+      <record id="categories_menu_lines_25" model="megamenu.categories_menu_lines">
+        <field name="name" ref='stoneware_customize.stone_product_category_25'/>
+        <field name="level">3</field>
+        <field name="megamenu_id" ref="stoneware_customize.mega_menu_content_2"/>
+      </record>
+      <record id="categories_menu_lines_26" model="megamenu.categories_menu_lines">
+        <field name="name" ref='stoneware_customize.stone_product_category_26'/>
+        <field name="level">3</field>
+        <field name="megamenu_id" ref="stoneware_customize.mega_menu_content_2"/>
+      </record>
+      <record id="categories_menu_lines_27" model="megamenu.categories_menu_lines">
+        <field name="name" ref='stoneware_customize.stone_product_category_27'/>
+        <field name="level">3</field>
+        <field name="megamenu_id" ref="stoneware_customize.mega_menu_content_2"/>
+      </record> 
+      <record id="categories_menu_lines_28" model="megamenu.categories_menu_lines">
+        <field name="name" ref='stoneware_customize.stone_product_category_28'/>
+        <field name="level">3</field>
+        <field name="megamenu_id" ref="stoneware_customize.mega_menu_content_2"/>
+      </record>
+      <record id="categories_menu_lines_28" model="megamenu.categories_menu_lines">
+        <field name="name" ref='stoneware_customize.stone_product_category_28'/>
+        <field name="level">3</field>
+        <field name="megamenu_id" ref="stoneware_customize.mega_menu_content_2"/>
+      </record>
+      <record id="categories_menu_lines_29" model="megamenu.categories_menu_lines">
+        <field name="name" ref='stoneware_customize.stone_product_category_29'/>
+        <field name="level">3</field>
+        <field name="megamenu_id" ref="stoneware_customize.mega_menu_content_2"/>
+      </record>
+      <record id="categories_menu_lines_30" model="megamenu.categories_menu_lines">
+        <field name="name" ref='stoneware_customize.stone_product_category_30'/>
+        <field name="level">2</field>
+        <field name="megamenu_id" ref="stoneware_customize.mega_menu_content_2"/>
+      </record> 
+
+      <record id="menu_mix_content" model="megamenu.content">
+        <field name="name">Mixed</field>
+        <field name="active">True</field>
+        <field name="main_content_type">mixed_list</field>
+        <field name="no_of_columns">4</field>
+        <field name="background_image" type="base64" file="stoneware_customize/static/src/img/bg_mega_menu.png"/>
+        <field name="background_image_pos">right</field>
+        <field name="content_id" ref="mega_menu_content_2"/>
+      </record>
+
+      <record id="menu_mix_content_1" model="megamenu.links">
+        <field name="link_type">product.public.category</field>
+        <field name="link_category" ref='stoneware_customize.stone_product_category_30'/>
+        <field name="pos_column">1</field>
+        <field name="pos_row">1</field>
+        <field name="megamenu_id" ref="stoneware_customize.menu_mix_content"/>
+      </record>	 
+	       
+      <record id="menu_category_with_list" model="website.menu">
+        <field name="name">Shop Category</field>
+        <field name="url">#</field>
+        <field name="sequence" type="int">22</field>
+        <field name="is_mega_menu" eval="True"/>
+        <field name="content_id" ref="mega_menu_content_2"/>
+
+      </record>            
+
+      <record id="menu_category_with_list" model="website.menu">
+        <field name="name">Offers</field>
+        <field name="url">#</field>
+        <field name="sequence" type="int">22</field>
+        <field name="is_mega_menu" eval="True"/>
+        <field name="content_id" ref="menu_mix_content"/>
+
+      </record>
+
+    <!-- Demo Website Menus: End -->
+  </data>
+</odoo>

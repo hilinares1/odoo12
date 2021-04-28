@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<templates id="internal_email_template" xml:space="preserve">
+    <t t-extend="mail.chatter.Attachment.Button">
+        <t t-jquery="button.o_chatter_button_attachment" t-operation="after">
+            <span class="fal_checkbox_ee">
+            	<input type="checkbox" class="o_fal_allow_external_email"/>
+            </span>
+            <span class="fal_checkbox_text_ee">External email?</span>
+        </t>
+    </t>
+</templates>

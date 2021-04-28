@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="view_purchase_order_filter_fal_pjs" model="ir.ui.view">
+            <field name="name">purchase.order.list.select.psj</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.view_purchase_order_filter"/>
+            <field name="arch" type="xml">
+                <data>
+                    <field name="create_uid" position="after">
+                        <field name="account_analytic_id"/>
+                        <field name="project_ids"/>
+                    </field>
+                </data>
+            </field>
+        </record>
+    </data>
+</odoo>

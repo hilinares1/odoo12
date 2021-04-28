@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="purchase_order_form_whatsapp_msg" model="ir.ui.view">
+        <field name="name">purchase.order.whatsapp.form</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_form"/>
+        <field name="priority">20</field>
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='action_rfq_send'][1]" position="after">
+                <button 
+                	name="%(aos_whatsapp.action_whatsapp_compose_message_post)d"
+                    type="action"
+                	icon="fa-whatsapp"
+                    string="  Send By WhatsApp"
+                    aria-label="Send By WhatsApp"
+                    title="Send By WhatsApp"
+                    states="draft" context="{'send_rfq':True}"/>
+            </xpath>
+            <xpath expr="//button[@name='action_rfq_send'][2]" position="after">
+                <button 
+                	name="%(aos_whatsapp.action_whatsapp_compose_message_post)d"
+                    type="action"
+                	icon="fa-whatsapp"
+                    string="  Send By WhatsApp"
+                    aria-label="Send By WhatsApp"
+                    title="Send By WhatsApp"
+                    states="sent"  context="{'send_rfq':True}"/>
+            </xpath>
+            <xpath expr="//button[@name='action_rfq_send'][last()]" position="after">
+                <button 
+                    name="%(aos_whatsapp.action_whatsapp_compose_message_post)d"
+                    type="action"
+                    icon="fa-whatsapp"
+                    string="  Send By WhatsApp"
+                    aria-label="Send By WhatsApp"
+                    title="Send By WhatsApp"
+                    states="purchase"  context="{'send_rfq':False}"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
+

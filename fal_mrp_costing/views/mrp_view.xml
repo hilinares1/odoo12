@@ -1,0 +1,55 @@
+<odoo>
+        <!-- WorkCenter -->
+        <record id="view_mrp_workcenter_form_ext" model="ir.ui.view">
+            <field name="name">mrp.workcenter.form</field>
+            <field name="model">mrp.workcenter</field>
+            <field name="inherit_id" ref="mrp.mrp_workcenter_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form/sheet/notebook" position="inside">
+                    <page string="Hourly Costs">
+                        <field name="fal_hourly_cost_ids"/>
+                    </page>
+                </xpath>
+                <field name="company_id" position="after">
+                    <field name="fal_hourly_cost_id" domain="[('id','in', fal_hourly_cost_ids and fal_hourly_cost_ids[0][2] or False)]"/>
+                </field>
+            </field>
+        </record>
+
+         <record id="mrp_routing_workcenter_form_view_ext" model="ir.ui.view">
+            <field name="name">mrp.routing.workcenter.form</field>
+            <field name="model">mrp.routing.workcenter</field>
+            <field name="inherit_id" ref="mrp.mrp_routing_workcenter_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form/sheet/notebook" position="inside">
+                    <page string="Hourly Costs">
+                        <field name="fal_hourly_cost_ids"/>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- BOM -->
+        <record id="view_mrp_bom_form_ext" model="ir.ui.view">
+            <field name="name">mrp.bom.form</field>
+            <field name="model">mrp.bom</field>
+            <field name="inherit_id" ref="mrp.mrp_bom_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form/sheet/notebook" position="inside">
+                    <page string="Cost Preview">
+                    <button name="action_refresh" type="object" string="Refresh Cost" class="btn-primary"/>
+                    <field name="fal_mrp_cost_preview_ids" readonly="1">
+                        <tree>
+                            <field name="name"/>
+                            <field name="currency_id" invisible="1"/>
+                            <field name="cost_of_bom" widget='monetary' options="{'currency_field': 'currency_id'}"/>
+                            <field name="hourly_cost" widget='monetary' options="{'currency_field': 'currency_id'}"/>
+                            <field name="cost_of_scrap" widget='monetary' options="{'currency_field': 'currency_id'}"/>
+                            <field name="total" widget='monetary' options="{'currency_field': 'currency_id'}"/>
+                        </tree>
+                    </field>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+</odoo>

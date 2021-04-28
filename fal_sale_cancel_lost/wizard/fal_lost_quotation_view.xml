@@ -1,0 +1,22 @@
+<odoo>
+    <record id="fal_lost_wizard_view" model="ir.ui.view">
+        <field name="name">fal_lost_wizard_view</field>
+        <field name="model">fal.lost.quotation.wizard</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Lost Reason">
+                <p><b>Possible reasons:</b></p>
+                <group>
+                    <group>
+                        <field name="fal_lost_reason"/>
+                        <field name="notes"/>
+                    </group>
+                </group>
+                <footer>
+                    <button name="action_confirm_lost" type="object" string="Confirm" class="btn-primary"/>
+                    <button string="Cancel" class="oe_link" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>

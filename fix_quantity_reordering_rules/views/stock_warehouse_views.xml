@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_warehouse_orderpoint_form_fal_extend" model="ir.ui.view">
+            <field name="name">view.warehouse.orderpoint.form.fal.extend</field>
+            <field name="model">stock.warehouse.orderpoint</field>
+            <field name="inherit_id" ref="stock.view_warehouse_orderpoint_form"/>
+            <field name="arch" type="xml">
+                <field name="product_id" position="after">
+                    <field name="logic"/>
+                </field>
+                <field name="product_max_qty" position="after">
+                    <field name="product_order_label_qty" attrs="{'invisible': [('logic','!=','fix')]}"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</odoo>

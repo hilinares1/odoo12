@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="view_order_form_fal_ordeinmile" model="ir.ui.view">
+            <field name="name">sale.order.form.fal.ordeinmile</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='order_line']/tree" position="attributes">
+                    <attribute name="editable"/>
+                </xpath>
+                <field name="analytic_account_id" position="replace">
+                </field>
+                <field name="company_id" position="after">
+                    <label for="analytic_account_id"/>
+                    <div>
+                        <field name="analytic_account_id"/>
+                        <button string="⇒ Apply to order line" class="oe_link" name="apply_analytic_to_line" type="object" attrs="{'invisible': [('state', '!=', 'draft')]}"/>
+                    </div>
+                </field>
+                <xpath expr="//page[@name='other_information']" position="before">
+                    <page string="Invoice Milestone">
+                        <div class='container'>
+                            <div class='row'>
+                                <div>
+                                    <p>
+                                        <strong>
+                                            Milestone invoicing can be used for expensive or large-scale order, with each milestone representing a clear sequence of invoice that will incrementally build up to the completion.
+                                        </strong>
+                                    </p>
+                                </div>
+                                <div>
+                                    <em class="oe_read_only" attrs="{'invisible': [('state', '!=', 'draft')]}">
+                                        Click <strong>Compute</strong> to apply changes.
+                                    </em>
+                                </div>
+                            </div>
+                        </div>
+                        <group>
+                            <group>
+                                <label for="fal_invoice_term_id"/>
+                                <div>
+                                    <field name="fal_invoice_term_id"/>
+                                    <button string="⇒ Compute" class="oe_link" name="compute_fal_invoice_term_id" type="object" attrs="{'invisible': [('state', '!=', 'draft')]}"/>
+                                </div>
+                            </group>
+                        </group>
+
+                        <field name="fal_invoice_term_type" invisible="1"/>
+                        <field name="fal_invoice_rules" invisible="1"/>
+                        <field name="fal_invoice_rules_type" invisible="1"/>
+                        <h3>
+                            <span>Invoice Rule Line</span>
+                        </h3>
+                        <!-- apply to line will trigered on button compute -->
+                        <button name="apply_milestone_to_line" string="Apply to Order Line" type="object" class="btn-primary oe_read_only" invisible="1"/>
+                        <field name="fal_invoice_milestone_line_date_ids" nolabel="1" readonly="1" widget="one2many">
+                            <tree string="Invoice Milestone by Date" editable="bottom">
+                                <field name="parent_id" invisible="1"/>
+                                <field name="fal_invoice_rules" invisible="1"/>
+                                <field name="fal_invoice_rules_type" invisible="1"/>
+                                <field name="sequence" widget="handle" />
+                                <field name="product_id"
+                                    domain="[('type', '=', 'service'), ('invoice_policy', '=', 'order')]"
+                                    options="{'no_create': True}" attrs="{'column_invisible': ['|', ('parent.fal_invoice_rules', '!=', 'milestone')]}"/>
+                                <field name="name" invisible="1"/>
+                                <field name="description"  attrs="{'column_invisible': ['|', ('parent.fal_invoice_rules', '!=', 'milestone')]}"/>
+                                <field name="percentage" attrs="{'column_invisible': ['|', ('parent.fal_invoice_rules', '!=', 'milestone'), ('parent.fal_invoice_rules_type', '!=', 'percentage')]}"/>
+                                <field name="amount" attrs="{'column_invisible': ['|', ('parent.fal_invoice_rules', '!=', 'milestone'), ('parent.fal_invoice_rules_type', '!=', 'amount')]}"/>
+                                <field name="date"/>
+                                <field name="invoice_forecast_date"/>
+                                <field name="invoice_term_type" invisible="1"/>
+                                <field name="is_final" invisible="1"/>
+                            </tree>
+                        </field>
+                    </page>
+                </xpath>
+                <xpath expr="//field[@name='order_line']/tree/field[@name='name']" position="after">
+                    <field name="fal_analytic_account_id"/>
+                    <field name="fal_invoice_term_id" invisible="1"/>
+                </xpath>
+                <xpath expr="//field[@name='order_line']/form/field[@name='name']" position="after">
+                    <group string="Invoice Milestone" attrs="{'invisible': [('display_type','in',('line_section','line_note'))]}">
+                        <field name="fal_analytic_account_id" />
+                        <field name="fal_invoice_term_id" readonly="1"/>
+                        <field name="fal_invoice_rules" invisible="1"/>
+                        <field name="fal_invoice_rules_type" invisible="1"/>
+                    </group>
+                    <field name="fal_invoice_term_type" invisible="1"/>
+                     <!-- attrs="{'invisible': [('display_type','in',('line_section','line_note'))]}" -->
+                    <field name="fal_invoice_milestone_line_date_ids" invisible="1" widget="one2many">
+                        <tree string="Invoice Milestone by Date" editable="bottom">
+                            <field name="parent_id" invisible="1"/>
+                            <field name="fal_invoice_rules" invisible="1"/>
+                            <field name="fal_invoice_rules_type" invisible="1"/>
+                            <field name="sequence" widget="handle" />
+                            <field name="product_id"
+                                domain="[('type', '=', 'service'), ('invoice_policy', '=', 'order')]"
+                                options="{'no_create': True}" attrs="{'column_invisible': ['|', ('parent.fal_invoice_rules', '!=', 'milestone')]}"/>
+                            <field name="name" invisible="1"/>
+                            <field name="description" attrs="{'column_invisible': ['|', ('parent.fal_invoice_rules', '!=', 'milestone')]}"/>
+                            <field name="percentage" attrs="{'column_invisible': ['|', ('parent.fal_invoice_rules', '!=', 'milestone'), ('parent.fal_invoice_rules_type', '!=', 'percentage')]}"/>
+                            <field name="amount" attrs="{'column_invisible': ['|', ('parent.fal_invoice_rules', '!=', 'milestone'), ('parent.fal_invoice_rules_type', '!=', 'amount')]}"/>
+                            <field name="total_amount" attrs="{'column_invisible': ['|', ('parent.fal_invoice_rules', '!=', 'milestone'), ('parent.fal_invoice_rules_type', '!=', 'percentage')]}"/>
+                            <field name="invoice_term_type" invisible="1"/>
+                            <field name="date"/>
+                            <field name="invoice_id"/>
+                            <field name="is_final" invisible="1"/>
+                        </tree>
+                    </field>
+                </xpath>
+                <xpath expr="//field[@name='order_line']/form/group/group/field[@name='product_id']"
+                    position="attributes">
+                    <attribute name="context">
+                        {'partner_id':parent.partner_id, 'quantity':product_uom_qty, 'pricelist':parent.pricelist_id, 'uom':product_uom, 'company_id': parent.company_id}
+                    </attribute>
+                </xpath>
+                <xpath expr="//field[@name='order_line']" position='attributes'>
+                    <attribute name='context'>
+                        {
+                         'default_fal_analytic_account_id': analytic_account_id,
+                         }
+                    </attribute>
+                </xpath>
+                <xpath expr="//group[@name='sale_pay']" position="inside">
+                    <field name="fal_milestone_by_cron"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="sale_order_view_form_sale_management_inherit" model="ir.ui.view">
+            <field name="name">sale.order.view.form.sale.management.inherit</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale_management.sale_order_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//button[@type='action'][1]" position="before">
+                    <button name="create_invoice_milestone_btn" string="Run Invoice Milestone"
+                        type="object" attrs="{'invisible': ['|',('fal_invoice_term_id', '=', False), ('state', '!=', 'sale')]}"/>
+                </xpath>
+            </field>
+        </record>
+
+
+    </data>
+</odoo>

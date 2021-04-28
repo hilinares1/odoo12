@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_order_form_fal_iso" model="ir.ui.view">
+            <field name="name">sale.order.form.fal.iso</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <data>
+                    <notebook position="inside">
+                        <page string="Invoices" groups="base.group_user">
+                            <group>
+                                <field name="fal_invoice_paid"/>
+                            </group>
+                            <field name="invoice_ids" />
+                        </page>
+                    </notebook>
+                </data>
+            </field>
+        </record>
+
+        <record id="fal_sale_order_search_inherit" model="ir.ui.view">
+            <field name="name">fal.sale.order.search.inherit</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.sale_order_view_search_inherit_sale"/>
+            <field name="arch" type="xml">
+                <xpath expr="//filter[3]" position="after">
+                    <filter name="paid_sale_order" string="Paid Sales Order" domain="[('fal_invoice_paid','=',True),('invoice_status','=','invoiced')]"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="fal_sale_order_trees_inherit" model="ir.ui.view">
+            <field name="name">fal.sale.order.trees.inherit</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_tree"/>
+            <field name="arch" type="xml">
+                <field name="invoice_status" position="after">
+                    <field name="fal_invoice_paid" string="Paid Invoice"/>
+                </field>
+            </field>
+        </record>
+
+
+    </data>
+</odoo>

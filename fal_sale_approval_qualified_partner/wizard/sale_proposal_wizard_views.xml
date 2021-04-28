@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_fal_sale_proposal_wizard_qualified_partner" model="ir.ui.view">
+            <field name="name">fal.sale.proposal.wizard.form.qualified.partner</field>
+            <field name="model">fal.sale.proposal.wizard</field>
+            <field name="inherit_id" ref="fal_sale_approval.view_fal_sale_proposal_wizard"></field>
+            <field name="arch" type="xml">
+                <xpath expr="//p/ul" position="inside" >
+                    <li attrs="{'invisible': [('is_qualified', '=', 'qualified')]}" groups="fal_partner_qualification.group_contact_qualificator_user">
+                        Qualify this partner and confirm the Sales order.
+                    </li>
+                </xpath>
+                <xpath expr="//p" position="after">
+                    <group attrs="{'invisible': [('is_qualified', '=', 'qualified')]}" groups="fal_partner_qualification.group_contact_qualificator_user" string="Qualify User">
+                        <field name="is_qualified" invisible="1"/>
+                        <field name="is_company" invisible="1"/>
+                        <field name="fal_company_title" widget="selection" attrs="{'invisible': [('is_company', '=', False)]}"/>
+                        <field name="fal_partner_tags" widget="many2many_tags" placeholder="Partner Tags..."/>
+                        <field name="fal_number_employee" attrs="{'invisible': [('is_company', '=', False)]}"/>
+                        <field name="fal_year_founded" attrs="{'invisible': [('is_company', '=', False)]}"/>
+                    </group>
+                </xpath>
+                <xpath expr="//footer/button[@name='action_propose']" position="after">
+                    <button name="partner_qualified_and_confirm" string="Qualify Partner And Retry Confirm" type="object" class="oe_highlight" attrs="{'invisible': [('is_qualified', '=', 'qualified')]}" groups="fal_partner_qualification.group_contact_qualificator_user"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

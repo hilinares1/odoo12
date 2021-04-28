@@ -1,0 +1,25 @@
+<odoo>
+    <data>
+        <record id="view_employee_form_private_address" model="ir.ui.view">
+            <field name="name">hr.employee.form.private.address</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[@name='personal_information']" position="attributes">
+                    <attribute name="groups">base.group_private_addresses</attribute>
+                </xpath>
+                <field name="address_home_id" position="attributes">
+                    <attribute name="domain">[('type','=', 'private')]</attribute>
+                </field>
+            </field>
+        </record>
+
+        <menuitem
+            id="fal_menu_private_contacts"
+            name="Private contacts"
+            parent="hr.menu_hr_root"
+            action="fal_partner_private_address.action_partner_private_contact_form"
+            sequence="3"
+            groups="base.group_private_addresses"/>
+    </data>
+</odoo>

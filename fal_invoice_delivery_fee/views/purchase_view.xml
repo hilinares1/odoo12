@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="fal_idf_purchase_order_line_form">
+            <field name="name">purchase.order.line.tree.fal.idf.view.form</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.purchase_order_form"/>
+            <field name="arch" type="xml">
+                <data>
+                    <xpath expr="//field[@name='order_line']/tree//field[@name='price_subtotal']" position="after">
+                        <field name="is_delivery_fees" groups="fal_invoice_delivery_fee.group_deliveryfee_purchase_user"/>
+                        <field name="fal_manual_delivery_fee" groups="fal_invoice_delivery_fee.group_manual_delivery_fee" attrs="{'readonly': [('is_delivery_fees','=',True)]}" />
+                        <field name="fapiao_unit_price_vat" groups="fal_invoice_delivery_fee.group_deliveryfee_purchase_user"/>
+                        <field name="fapiao_subtotal" groups="fal_invoice_delivery_fee.group_deliveryfee_purchase_user"/>
+                        <field name="fapiao_subtotal_vat" groups="fal_invoice_delivery_fee.group_deliveryfee_purchase_user"/>
+                    </xpath>
+                    <xpath expr="//field[@name='order_line']/form/sheet/group/group/field[@name='price_unit']" position="after">
+                        <field name="is_delivery_fees" groups="fal_invoice_delivery_fee.group_deliveryfee_sale_user" />
+                        <field name="fal_manual_delivery_fee" groups="fal_invoice_delivery_fee.group_manual_delivery_fee" attrs="{'readonly': [('is_delivery_fees','=',True)]}"/>
+                    </xpath>
+                </data>
+            </field>
+        </record>
+
+        <record id="purchase_order_line_form_fal_idf" model="ir.ui.view">
+            <field name="name">purchase.order.line.form.fal.idf</field>
+            <field name="model">purchase.order.line</field>
+            <field name="inherit_id" ref="purchase.purchase_order_line_form2"/>
+            <field name="arch" type="xml">
+                <data>
+                    <field name="price_unit" position="after">
+                        <field name="is_delivery_fees" groups="fal_invoice_delivery_fee.group_deliveryfee_purchase_user"/>
+                        <field name="fal_manual_delivery_fee" groups="fal_invoice_delivery_fee.group_manual_delivery_fee" attrs="{'readonly': [('is_delivery_fees','=',True)]}"/>
+                    </field>
+                </data>
+            </field>
+        </record>
+
+    </data>
+</odoo>

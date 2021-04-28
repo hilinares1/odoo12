@@ -1,0 +1,28 @@
+<odoo>
+    <!-- On business type form view -->
+    <record id="comment_template_tax_inherit_form" model="ir.ui.view">
+        <field name="name">tax.comment.inherit.form</field>
+        <field name="model">fal.comment.template</field>
+        <field name="inherit_id" ref="fal_comment_template.fal_comment_template_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook[@id='clu_note_comment']" position="inside">
+                <page id="clu_tax_page" string="Invoice">
+                    <group>
+                        <field name="tax_ids" widget="many2many_tags"/>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="comment_template_tax_inherit_tree" model="ir.ui.view">
+        <field name="name">tax.comment.inherit.tree</field>
+        <field name="model">fal.comment.template</field>
+        <field name="inherit_id" ref="fal_comment_template.fal_comment_template_tree_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="after">
+                <field name="tax_ids"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,12 @@
+<odoo>
+    <record id="mrp_form_inherit" model="ir.ui.view">
+        <field name="name">mrp.form</field>
+        <field name="model">mrp.production</field>
+        <field name="inherit_id" ref="quality_mrp.mrp_production_view_form_inherit_quality"/>
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='check_quality']" position="attributes">
+                <attribute name="attrs">{'invisible': ['|', ('quality_check_todo', '=', False), ('state', '!=', 'progress')]}</attribute>
+            </xpath>
+        </field>
+    </record>
+</odoo>

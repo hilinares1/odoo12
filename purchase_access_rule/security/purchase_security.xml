@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>   
+    <record id="group_purchase_manger_user" model="res.groups">
+        <field name="name">Purchase Managere Price &amp; Total</field>
+    </record>
+
+    <!-- Form View-->
+	<record id="purchase_order_form_inherit" model="ir.ui.view">
+		<field name="name">purchase.order.form</field>
+		<field name="model">purchase.order</field>
+		<field name="inherit_id" ref="purchase.purchase_order_form" />
+		<field name="arch" type="xml">
+			<xpath expr="//notebook/page/field[@name='order_line']/tree/field[@name='price_unit']" position="attributes">
+                <attribute name="groups">purchase_access_rule.group_purchase_manger_user</attribute>
+            </xpath>
+            <xpath expr="//notebook/page/field[@name='order_line']/tree/field[@name='price_subtotal']" position="attributes">
+                <attribute name="groups">purchase_access_rule.group_purchase_manger_user</attribute>
+            </xpath>
+            <xpath expr="//notebook/page/field[@name='order_line']/tree/field[@name='taxes_id']" position="attributes">
+                <attribute name="groups">purchase_access_rule.group_purchase_manger_user</attribute>
+            </xpath>
+            <xpath expr="//field[@name='amount_untaxed']" position="attributes">
+                <attribute name="groups">purchase_access_rule.group_purchase_manger_user</attribute>
+            </xpath>
+            <xpath expr="//field[@name='amount_tax']" position="attributes">
+                <attribute name="groups">purchase_access_rule.group_purchase_manger_user</attribute>
+            </xpath>
+            <xpath expr="//label[@for='amount_total']" position="attributes">
+                <attribute name="groups">purchase_access_rule.group_purchase_manger_user</attribute>
+            </xpath>
+  			<xpath expr="//field[@name='amount_total']" position="attributes">
+                <attribute name="groups">purchase_access_rule.group_purchase_manger_user</attribute>
+            </xpath>
+		</field>
+	</record>
+
+	<!-- Tree View -->
+	<record id="purchase_order_tree_inherit" model="ir.ui.view">
+		<field name="name">purchase.order.view</field>
+		<field name="model">purchase.order</field>
+		<field name="inherit_id" ref="purchase.purchase_order_tree" />
+		<field name="arch" type="xml">
+            <xpath expr="//field[@name='amount_untaxed']" position="attributes">
+                <attribute name="groups">purchase_access_rule.group_purchase_manger_user</attribute>
+            </xpath>
+  			<xpath expr="//field[@name='amount_total']" position="attributes">
+                <attribute name="groups">purchase_access_rule.group_purchase_manger_user</attribute>
+            </xpath>
+		</field>
+	</record>
+
+	<!-- Kanban View -->
+	<record id="purchase_order_kanban_inherit" model="ir.ui.view">
+		<field name="name">purchase.order.kanban</field>
+		<field name="model">purchase.order</field>
+		<field name="inherit_id" ref="purchase.view_purchase_order_kanban" />
+		<field name="arch" type="xml">
+	        <xpath expr="//strong/field[@name='amount_total']" position="attributes">
+	            <attribute name="groups">purchase_access_rule.group_purchase_manger_user</attribute>
+	        </xpath>
+		</field>
+	</record>
+
+	<!-- Pivot View -->
+	<record id="purchase_order_pivot_inherit" model="ir.ui.view">
+		<field name="name">purchase.order.pivot</field>
+		<field name="model">purchase.order</field>
+		<field name="inherit_id" ref="purchase.purchase_order_pivot" />
+		<field name="arch" type="xml">
+	        <xpath expr="//field[@name='amount_total']" position="attributes">
+	            <attribute name="groups">purchase_access_rule.group_purchase_manger_user</attribute>
+	        </xpath>
+		</field>
+	</record>
+
+
+	<!-- Graph View -->
+	<record id="purchase_order_graph_inherit" model="ir.ui.view">
+		<field name="name">purchase.order.graph</field>
+		<field name="model">purchase.order</field>
+		<field name="inherit_id" ref="purchase.purchase_order_graph" />
+		<field name="arch" type="xml">
+			<field name="amount_total" position="attributes">
+	            <attribute name="groups">purchase_access_rule.group_purchase_manger_user</attribute>
+	        </field>
+		</field>
+	</record>
+
+
+	<!-- Calendar View -->
+	<record id="purchase_order_graph_inherit" model="ir.ui.view">
+		<field name="name">purchase.order.calendar</field>
+		<field name="model">purchase.order</field>
+		<field name="inherit_id" ref="purchase.purchase_order_calendar" />
+		<field name="arch" type="xml">
+			<field name="amount_total" position="attributes">
+	            <attribute name="groups">purchase_access_rule.group_purchase_manger_user</attribute>
+	        </field>
+		</field>
+	</record>
+
+
+</odoo>    

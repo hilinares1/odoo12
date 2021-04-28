@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_set_float_date_production_wizard" model="ir.ui.view">
+            <field name="name">mrp.production.set.float.date.wizard</field>
+            <field name="model">mrp.production.set.float.date.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Set Float Date Production Wizard" version="7.0">
+                    <group>
+                        <group>
+                            <field name="float_date"/>
+                        </group>
+                    </group>
+                    <footer>
+                        <button name="set_float_date" string="Confirm" type="object" class="oe_highlight"/>
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <act_window name="Set Float Date"
+            res_model="mrp.production.set.float.date.wizard"
+            src_model="mrp.production"
+            view_mode="form"
+            target="new"
+            multi="True"
+            key2="client_action_multi"
+            id="action_view_mo_set_float_date"/>
+    </data>
+</odoo>

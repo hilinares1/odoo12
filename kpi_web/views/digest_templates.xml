@@ -1,0 +1,33 @@
+<odoo>
+
+    <template id="portal_digest_info" name="Info">
+        <t t-call="portal.portal_layout">
+            <div class="container mt8">
+                <h1 class="o_page_header">KPI Info</h1>
+                <t t-foreach="data.keys()" t-as="period">
+                    <h2>
+                        <t t-esc="period"/>
+                    </h2>
+                    <div class="row">
+                        <div class="col-lg-6 offset-lg-3">
+                            <t t-foreach="kpi_actions.keys()" t-as="kpi_action">
+                                <h3>
+                                    <t t-esc="kpi_action"/>
+                                </h3>
+                                <p t-if="'delta' in kpi_action">
+                                    Value: <t t-esc="data[period][kpi_action][kpi_action]"/>
+                                </p>
+                                <p t-else="">
+                                    Value: <t t-esc="data[period][kpi_action][kpi_action]"/>
+                                    <br/>
+                                    Margin: <t t-esc="data[period][kpi_action]['margin']"/>
+                                </p>
+                            </t>
+                        </div>
+                    </div>
+                </t>
+            </div>
+        </t>
+    </template>
+
+</odoo>

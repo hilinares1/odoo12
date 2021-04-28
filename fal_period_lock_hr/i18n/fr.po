@@ -1,0 +1,75 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* fal_periods_lock_ext
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-12-01 12:29+0000\n"
+"PO-Revision-Date: 2016-12-01 13:32+0100\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: en\n"
+"X-Generator: Poedit 1.8.11\n"
+
+#. module: fal_periods_lock_ext
+#: model:ir.model,name:fal_periods_lock_ext.model_account_analytic_line
+msgid "Analytic Line"
+msgstr "Ligne analytique"
+
+#. module: fal_periods_lock_ext
+#: model:ir.model,name:fal_periods_lock_ext.model_res_company
+msgid "Companies"
+msgstr "Sociétés"
+
+#. module: fal_periods_lock_ext
+#: model:ir.model.fields,field_description:fal_periods_lock_ext.field_res_company_fal_schedule_working_id
+msgid "Default Working Schedule"
+msgstr "Planning de travail par défaut"
+
+#. module: fal_periods_lock_ext
+#: model:ir.model.fields,field_description:fal_periods_lock_ext.field_fal_account_periods_lock_line_employee_locking_date
+msgid "Employee locking Date"
+msgstr "Date de blocage Employé"
+
+#. module: fal_periods_lock_ext
+#: model:ir.model,name:fal_periods_lock_ext.model_hr_expense
+msgid "Expense"
+msgstr "Frais"
+
+#. module: fal_periods_lock_ext
+#: model:ir.model.fields,field_description:fal_periods_lock_ext.field_fal_account_periods_lock_lock_gap_days_employee
+msgid "Lock Gap Days Employee"
+msgstr "Lock Gap Days Employé"
+
+#. module: fal_periods_lock_ext
+#: model:ir.model.fields,field_description:fal_periods_lock_ext.field_fal_account_periods_lock_lock_gap_days_manager
+msgid "Lock Gap Days Manager"
+msgstr "Lock Gap Days Manager"
+
+#. module: fal_periods_lock_ext
+#: model:ir.model.fields,field_description:fal_periods_lock_ext.field_fal_account_periods_lock_line_manager_locking_date
+msgid "Manager locking Date"
+msgstr "Date de blocage Manager"
+
+#. module: fal_periods_lock_ext
+#: model:ir.model,name:fal_periods_lock_ext.model_fal_account_periods_lock_line
+msgid "Period"
+msgstr "Période"
+
+#. module: fal_periods_lock_ext
+#: model:ir.model,name:fal_periods_lock_ext.model_fal_account_periods_lock
+msgid "Resurfacing Fiscal Year (v8)"
+msgstr "Retour de l'année fiscale (v8)"
+
+#. module: fal_periods_lock_ext
+#: code:addons/fal_periods_lock_ext/models/fal_periods_lock.py:80
+#: code:addons/fal_periods_lock_ext/models/fal_periods_lock.py:115
+#, python-format
+msgid "You cannot add/modify entries prior to and inclusive of the lock date %s. Check the company settings or ask someone with the 'Adviser' role"
+msgstr "Vous ne pouvez pas ajouter/modifier de données avant ou le jour de la date de blocage %s. Vérifiez les paramètres de la société ou demandez à quelqu'un qui a le rôle de Chef Comptable."

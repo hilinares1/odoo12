@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_category_property_form_falprbud" model="ir.ui.view">
+            <field name="name">product.category.property.form.inherit.falprbud</field>
+            <field name="model">product.category</field>
+            <field name="inherit_id" ref="product.product_category_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//sheet" position="inside">
+                    <group string="Vendors" name="vendors">
+                        <field name="fal_seller_ids" context="{'product_template_invisible_variant': True}" nolabel="1"/>
+                    </group>
+                </xpath>
+                <xpath expr="//group[@name='first']" position="after">
+                    <group name="uom">
+                        <field name="fal_uom_id"  options="{'no_create': True}"/>
+                        <field name="fal_uom_po_id"  options="{'no_create': True}"/>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

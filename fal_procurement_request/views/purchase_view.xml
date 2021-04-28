@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_purchase_order_pr_form" model="ir.ui.view">
+            <field name="name">purchase.order.pr.form</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.purchase_order_form"/>
+            <field name="arch" type="xml">
+                <data>
+                    <button name="action_rfq_send" states="draft" position="before">
+                        <button name="action_mark_rfq" type="object" states="procurement_request" string="Approve Procurement Request" class="oe_highlight" groups="purchase.group_purchase_manager"/>
+                    </button>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,sent,approved,done" statusbar_colors='{"except_picking":"red","except_invoice":"red","confirmed":"blue"}' readonly="1" position="replace">
+                        <field name="state" widget="statusbar" statusbar_visible="procurement_request,draft,sent,bid,confirmed,approved,done" statusbar_colors='{"except_picking":"red","except_invoice":"red","confirmed":"blue"}' readonly="1"/>
+                    </field>
+                    <xpath expr="//field[@name='order_line']/tree//field[@name='name']" position="after">
+                        <field name="fal_warehouse_manager_comment" />
+                    </xpath>
+                    <xpath expr="//field[@name='order_line']/form/sheet/group/group[2]" position="after">
+                        <group>
+                            <field name="fal_request_no" readonly="1"/>
+                            <field name="fal_request_qty" readonly="1"/>
+                            <field name="fal_req_user_id" readonly="1"/>
+                        </group>
+                    </xpath>
+                </data>
+            </field>
+        </record>
+
+         <record id="fal_procurement_request_tree" model="ir.ui.view">
+             <field name="name">fal.procurement.request.tree</field>
+             <field name="model">purchase.order</field>
+             <field name="arch" type="xml">
+                 <tree fonts="bold:message_unread==True" colors="grey:state=='cancel';blue:state in ('wait','confirmed');red:state in ('except_invoice','except_picking')" string="Procurement Request" editable="top">
+                     <field name="id" invisible="1"/>
+                     <field name="message_unread" invisible="1"/>
+                     <field name="name" string="Reference" readonly="1"/>
+                     <field name="date_order" widget="date" />
+                     <field name="fal_req_user_id"/>
+                     <field name="partner_id" context="{'search_default_supplier':1,'default_supplier':1,'default_customer':0}" domain="[('supplier','=',True)]"/>
+                     <field name="partner_ref" invisible='1'/>
+                     <field name="currency_id" invisible='1'/>
+                     <field name="company_id" groups="base.group_multi_company" widget="selection" invisible='1'/>
+                     <field name="dest_address_id" string="Customer Address" invisible="1" />
+                     <field name="fal_req_product_id" required="1"/>
+                     <field name="fal_req_product_description" attrs="{'readonly': [('state','!=','procurement_request')]}"/>
+                     <field name="fal_warehouse_manager_comment" />
+                     <field name="fal_req_product_qty" attrs="{'readonly': [('state','!=','procurement_request')]}"/>
+                     <field name="fal_req_uom_id" required="1" attrs="{'readonly': [('state','!=','procurement_request')]}" groups="uom.group_uom"/>
+                     <field name="date_planned" widget="date"/>
+                     <field name="origin"/>
+                     <field name="state"/>
+                     <button name="action_mark_rfq" type="object" states="procurement_request" string="Approve Procurement Request" icon="fa-check" groups="fal_procurement_request.group_procurement_request_manager"/>
+                     <button name="button_cancel" type="object" states="procurement_request" string="Cancel Procurement Request" icon="fa-ban" groups="purchase.group_purchase_manager"/>
+                 </tree>
+             </field>
+        </record>
+
+        <record id="view_purchase_order_pr_filter" model="ir.ui.view">
+            <field name="name">purchase.order.pr.filter</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.view_purchase_order_filter"/>
+            <field name="arch" type="xml">
+                <filter name="activities_my" position="after">
+                    <filter string="My Request" name="my_request" domain="[('fal_req_user_id', '=', uid)]"/>
+                </filter>
+            </field>
+        </record>
+
+        <record id="procurement_request" model="ir.actions.act_window">
+            <field name="name">Procurement Request</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">purchase.order</field>
+            <field name="context">{"search_default_my_request":1, 'default_state': 'procurement_request'}</field>
+            <field name="domain">[('state','=','procurement_request')]</field>
+            <field name="view_mode">tree,graph,calendar</field>
+            <field name="view_id" ref="fal_procurement_request_tree" />
+            <field name="search_view_id" ref="purchase.view_purchase_order_filter"/>
+            <field name="target">current</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to create procurement request.
+              </p>
+            </field>
+        </record>
+        <menuitem action="procurement_request" id="menu_procurement_request"
+            parent="purchase.menu_procurement_management"
+            sequence="0" groups="fal_procurement_request.group_procurement_request_user"/>
+
+        <!-- Adjust old normal menu -->
+        <record id="purchase.menu_purchase_root" model="ir.ui.menu">
+            <field name="groups_id" eval="[(6, 0, [ref('fal_procurement_request.group_procurement_request_user'), ref('purchase.group_purchase_manager'), ref('purchase.group_purchase_user')])]"/>
+        </record>
+        <record id="purchase.menu_procurement_management" model="ir.ui.menu">
+            <field name="groups_id" eval="[(6, 0, [ref('fal_procurement_request.group_procurement_request_user'), ref('purchase.group_purchase_manager'), ref('purchase.group_purchase_user')])]"/>
+        </record>
+
+        <record id="purchase.menu_purchase_rfq" model="ir.ui.menu">
+            <field name="groups_id" eval="[(6, 0, [ref('purchase.group_purchase_user')])]"/>
+            <field name="sequence">1</field>
+        </record>
+
+        <record id="purchase.menu_purchase_form_action" model="ir.ui.menu">
+            <field name="groups_id" eval="[(6, 0, [ref('purchase.group_purchase_user')])]"/>
+        </record>
+
+        <record id="purchase.purchase_rfq" model="ir.actions.act_window">
+              <field name="view_id" ref="purchase.purchase_order_tree"/>
+         </record>
+
+         <record id="purchase.purchase_form_action" model="ir.actions.act_window">
+            <field name="domain">[('state','not in',('procurement_request','draft','sent','confirmed'))]</field>
+            <field name="view_id" ref="purchase.purchase_order_tree"/>
+        </record>
+
+        <!-- Add cancel menu -->
+        <record id="cancel_fal_purchase_form_action" model="ir.actions.act_window">
+            <field name="name">Cancel Quotations</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">purchase.order</field>
+            <field name="view_mode">tree,form,graph,calendar</field>
+            <field name="view_id" ref="purchase.purchase_order_tree"/>
+            <field name="domain">[('state','=','cancel')]</field>
+            <field name="search_view_id" ref="purchase.view_purchase_order_filter"/>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to create a quotation that will be converted into a purchase order.
+              </p><p>
+                Use this menu to search within your purchase orders by
+                references, supplier, products, etc. For each purchase order,
+                you can track the related discussion with the supplier, control
+                the products received and control the supplier invoices.
+              </p>
+            </field>
+        </record>
+
+        <menuitem action="cancel_fal_purchase_form_action" id="fal_menu_cancel_quotation"
+            parent="purchase.menu_procurement_management" groups="fal_procurement_request.group_procurement_request_user"
+            sequence="7" />
+
+        <record id="view_purchase_order_extends_form" model="ir.ui.view">
+            <field name="name">purchase.order.extends.form</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.purchase_order_form"/>
+            <field name="arch" type="xml">
+                <field name="is_shipped" position="after">
+                    <field name="fal_incoterm_id"/>
+                </field>
+                <xpath expr="//sheet/notebook" position="inside">
+                    <page string="Sale Order Information" groups="account.group_account_invoice">
+                        <group>
+                            <group>
+                                <field name="sale_order_line_order_id"/>
+                                <field name="sale_order_line_order_currency"/>
+                            </group>
+                            <group>
+                                <field name="sale_order_line_order_paymentterm"/>
+                                <field name="sale_order_line_order_invoiceterm"/>
+                            </group>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

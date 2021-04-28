@@ -1,0 +1,22 @@
+Version Info:-
+
+12.0.1.6 :- conflict menu ids invoice and accounting.
+
+
+Date :- 20/05/2019
+version :- 12.0.2.2
+1)improve import bom feature which we recently done.
+
+2)add picking with or without lot number feature on picking import.
+
+3)import product customer with [product variant]
+
+4) improve index
+
+
+bi_import_product_customer
+Version:-12.0.2.3
+issue solve:-
+1 ) Check for Can Be Sold and Can Be Purchase values.
+2) Add On Hand Quantity Values while import product.
+3) Pass wrong invoice policy value while import variant.

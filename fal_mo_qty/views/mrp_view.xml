@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="mrp_production_tree_view_fal_moqty" model="ir.ui.view">
+            <field name="name">mrp.production.tree.fal.moqty</field>
+            <field name="model">mrp.production</field>
+            <field name="inherit_id" ref="mrp.mrp_production_tree_view"/>
+            <field name="arch" type="xml">
+                <field name="product_qty" position="after">
+                    <field name="qty_produced" />
+                    <field name="fal_product_tobe_produce" invisible="1"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="mrp_production_form_view_fal_moqty" model="ir.ui.view">
+            <field name="name">mrp.production.form.fal.moqty</field>
+            <field name="model">mrp.production</field>
+            <field name="inherit_id" ref="mrp.mrp_production_form_view"/>
+            <field name="arch" type="xml">
+                <field name="availability" position="after">
+                    <field name="qty_produced" />
+                    <field name="fal_product_tobe_produce" />
+                </field>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="fal_report_invoice_document_inherit_tax_comment" inherit_id="account.report_invoice_document">
+        <xpath expr="//p[@name='note']" position="after">
+            <p t-if="o.fal_tax_comment" name="tax_comment">
+                <span t-field="o.fal_tax_comment"/>
+            </p>
+        </xpath>
+    </template>
+</odoo>

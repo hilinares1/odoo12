@@ -1,0 +1,176 @@
+
+<odoo>
+
+    <!-- Routing Workcenter -->
+    <record id="fal_mrp_work_route_on_routing_form_view" model="ir.ui.view">
+        <field name="name">fal_mrp_work_route_on_routing_form_view</field>
+        <field name="model">mrp.routing.workcenter</field>
+        <field name="type">form</field>
+        <field name="inherit_id" ref="mrp.mrp_routing_workcenter_form_view"/>
+        <field name="arch" type="xml">
+            <field name="workcenter_id" position="after">
+                <field name="fal_available_workshop_ids" invisible="1"/>
+                <field name="fal_wokrshop_id"/>
+            </field>
+            <field name="workcenter_id" position="attributes">
+                <attribute name="domain">[('fal_type', '=', 'routing')]</attribute>
+            </field>
+        </field>
+    </record>
+
+    <!-- Workcenter -->
+    <record id="fal_mrp_work_route_on_workcenter_form_view" model="ir.ui.view">
+        <field name="name">fal_mrp_work_route_on_workcenter_form_view</field>
+        <field name="model">mrp.workcenter</field>
+        <field name="type">form</field>
+        <field name="inherit_id" ref="mrp.mrp_workcenter_view"/>
+        <field name="arch" type="xml">
+            <field name="name" position="after">
+                <field name="fal_type"/>
+                <field name="fal_workshop_ids" domain="[('fal_type', '=', 'working')]" attrs="{'invisible': [('fal_type', '!=', 'routing')]}" widget="many2many_tags"/>
+            </field>
+        </field>
+    </record>
+
+    <!-- Workorder -->
+    <record id="mrp_routing_worksho_machine_workorder_fal" model="ir.ui.view">
+        <field name="name">mrp_routing_worksho_machine_workorder_fal</field>
+        <field name="model">mrp.workorder</field>
+        <field name="type">form</field>
+        <field name="inherit_id" ref="mrp.mrp_production_workorder_form_view_inherit"/>
+        <field name="arch" type="xml">
+            <field name="workcenter_id" position="replace"/>
+            <field name="is_produced" position="after">
+                <field name="fal_available_workshop_ids" invisible="1"/>
+                <field name="workcenter_id" readonly="1"/>
+                <field name="fal_wokrshop_id" required="1" context="{'default_fal_type': 'working'}"/>
+            </field>
+            <xpath expr="//header" position="inside">
+                <button name="fal_set_ready" type="object" string="Get Ready" attrs="{'invisible': ['|', ('working_state', '=', 'blocked'), ('state', '!=', 'pending')]}" class="btn-primary"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="mrp_production_workcenter_tree_view_workshop_machine_fal" model="ir.ui.view">
+        <field name="name">mrp_production_workcenter_tree_view_workshop_machine_fal</field>
+        <field name="model">mrp.workorder</field>
+        <field name="type">tree</field>
+        <field name="inherit_id" ref="mrp.mrp_production_workorder_tree_view_inherit"/>
+        <field name="arch" type="xml">
+            <field name="workcenter_id" position="after">
+                <field name="fal_wokrshop_id"/>
+            </field>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="workcenter_line_kanban_workshop_fal">
+        <field name="name">workcenter_line_kanban_workshop_fal</field>
+        <field name="model">mrp.workorder</field>
+        <field name="inherit_id" ref="mrp.workcenter_line_kanban"/>
+        <field name="arch" type="xml">
+            <xpath expr="/kanban" position="attributes">
+                <attribute name="default_group_by">state</attribute>
+            </xpath>
+            <field name="workcenter_id" position="after">
+                <field name="fal_wokrshop_id"/>
+            </field>
+            <xpath expr="//t[@t-esc='record.product_id.value']/../../.." position="after">
+                <div class="row">
+                    <div class="col-xs-7 o_kanban_primary_left">
+                        <i><span><t t-esc="record.workcenter_id.value"/></span></i>
+                    </div>
+                    <div class="col-xs-5 o_kanban_primary_right">
+                        <i><span><t t-esc="record.fal_wokrshop_id.value"/></span></i>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="mrp_routing_workshop_workorder_search_view_fal" model="ir.ui.view">
+        <field name="name">mrp_routing_workshop_workorder_search_view_fal</field>
+        <field name="model">mrp.workorder</field>
+        <field name="inherit_id" ref="mrp.view_mrp_production_work_order_search"/>
+        <field name="arch" type="xml">
+            <xpath expr="//separator[2]" position="after">
+                <group expand="1" string="Group By">
+                    <filter string="Routing Workcenter" name='routing' context="{'group_by':'workcenter_id'}"/>
+                    <filter string="Working Machine" name="working" context="{'group_by':'fal_wokrshop_id'}"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_mrp_production_workcenter_form_view_filter_fal" model="ir.ui.view">
+        <field name="name">view_mrp_production_workcenter_form_view_filter_fal</field>
+        <field name="model">mrp.workorder</field>
+        <field name="inherit_id" ref="mrp.view_mrp_production_workorder_form_view_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group/filter[1]" position="attributes">
+                <attribute name="string">Routing WorkCenter</attribute>
+            </xpath>
+            <xpath expr="//group/filter[1]" position="after">
+                <filter string="Working Machine" name="working" context="{'group_by':'fal_wokrshop_id'}"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_mrp_workorder_workcenter2_fal">
+        <field name="name">Work Orders Planning</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">mrp.workorder</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">gantt,tree,form,calendar,pivot,graph</field>
+        <field name="search_view_id" ref="mrp.view_mrp_production_workorder_form_view_filter"/>
+        <field name="view_id" ref="mrp.mrp_workorder_view_gantt"/>
+        <field name="context">{'search_default_ready': True, 'search_default_progress': True, 'search_default_pending': True, 'search_default_work_center': True}</field>
+        <field name="help" type="html">
+          <p class="oe_view_nocontent_create">
+            Click to start a new work order.
+          </p><p>
+            Work Orders is the list of operations to be performed for each
+            manufacturing order. Once you start the first work order of a
+            manufacturing order, the manufacturing order is automatically
+            marked as started. Once you finish the latest operation of a
+            manufacturing order, the MO is automatically done and the related
+            products are produced.
+          </p>
+        </field>
+    </record>
+
+    <menuitem id="fal_menu_mrp_workorder_workcenter"
+        name="Planning by WorkCenter (Ready, Progress, Pending)"
+        sequence="12"
+        action="action_mrp_workorder_workcenter2_fal"
+        parent="mrp.menu_mrp_reporting"/>
+
+    <record model="ir.actions.act_window" id="action_mrp_workorder_workshop_machine_fal">
+        <field name="name">Work Orders Planning</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">mrp.workorder</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">gantt,tree,form,calendar,pivot,graph</field>
+        <field name="search_view_id" ref="mrp.view_mrp_production_workorder_form_view_filter"/>
+        <field name="view_id" ref="mrp.mrp_workorder_view_gantt"/>
+        <field name="context">{'search_default_ready': True, 'search_default_progress': True, 'search_default_pending': True, 'search_default_working': True}</field>
+        <field name="help" type="html">
+          <p class="oe_view_nocontent_create">
+            Click to start a new work order.
+          </p><p>
+            Work Orders is the list of operations to be performed for each
+            manufacturing order. Once you start the first work order of a
+            manufacturing order, the manufacturing order is automatically
+            marked as started. Once you finish the latest operation of a
+            manufacturing order, the MO is automatically done and the related
+            products are produced.
+          </p>
+        </field>
+    </record>
+
+    <menuitem id="menu_mrp_workorder_workshop_fal"
+        name="Planning by Workshop Machine"
+        sequence="13"
+        action="action_mrp_workorder_workshop_machine_fal"
+        parent="mrp.menu_mrp_reporting"/>
+
+</odoo>

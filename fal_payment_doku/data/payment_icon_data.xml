@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="payment_icon_wallet_doku" model="payment.icon">
+        <field name="name">Doku Wallet</field>
+        <field name="image" type="base64" file="fal_payment_doku/static/src/img/doku_wallet_icon.png"/>
+    </record>
+
+    <record id="payment_icon_cs_alfamart" model="payment.icon">
+        <field name="name">Alfamart</field>
+        <field name="image" type="base64" file="fal_payment_doku/static/src/img/alfamart_convenientstore_icon.png"/>
+    </record>
+
+    <record id="payment_icon_cs_alfamidi" model="payment.icon">
+        <field name="name">Alfamidi</field>
+        <field name="image" type="base64" file="fal_payment_doku/static/src/img/alfamidi_convenientstore_icon.png"/>
+    </record>
+
+    <record id="payment_icon_cs_alfaexpress" model="payment.icon">
+        <field name="name">Alfaexpress</field>
+        <field name="image" type="base64" file="fal_payment_doku/static/src/img/alfaexpress_convenientstore_icon.png"/>
+    </record>
+
+    <record id="payment_icon_atm_alto" model="payment.icon">
+        <field name="name">Alto</field>
+        <field name="image" type="base64" file="fal_payment_doku/static/src/img/alto_atm_icon.png"/>
+    </record>
+
+    <record id="payment_icon_atm_bersama" model="payment.icon">
+        <field name="name">ATM Bersama</field>
+        <field name="image" type="base64" file="fal_payment_doku/static/src/img/atmbersama_atm_icon.png"/>
+    </record>
+
+    <record id="payment_icon_atm_bca" model="payment.icon">
+        <field name="name">BCA</field>
+        <field name="image" type="base64" file="fal_payment_doku/static/src/img/bca_atm_icon.png"/>
+    </record>
+
+    <record id="payment_icon_ib_bcaklikpay" model="payment.icon">
+        <field name="name">BCA Klikpay</field>
+        <field name="image" type="base64" file="fal_payment_doku/static/src/img/bcaklikpay_onlinebanking_icon.png"/>
+    </record>
+
+    <record id="payment_icon_ib_mandiriclickpay" model="payment.icon">
+        <field name="name">Mandiri Clickpay</field>
+        <field name="image" type="base64" file="fal_payment_doku/static/src/img/mandiriclickpay_onlinebanking_icon.png"/>
+    </record>
+
+    <record id="payment_icon_atm_mandiri" model="payment.icon">
+        <field name="name">Mandiri</field>
+        <field name="image" type="base64" file="fal_payment_doku/static/src/img/mandiri_atm_icon.png"/>
+    </record>
+
+    <record id="payment_icon_atm_permata" model="payment.icon">
+        <field name="name">Permata</field>
+        <field name="image" type="base64" file="fal_payment_doku/static/src/img/permata_atm_icon.png"/>
+    </record>
+
+    <record id="payment_icon_ib_permatanet" model="payment.icon">
+        <field name="name">Permata Net</field>
+        <field name="image" type="base64" file="fal_payment_doku/static/src/img/permatanet_onlinebanking_icon.png"/>
+    </record>
+
+    <record id="payment_icon_atm_prima" model="payment.icon">
+        <field name="name">Prima</field>
+        <field name="image" type="base64" file="fal_payment_doku/static/src/img/prima_atm_icon.png"/>
+    </record>
+
+    <record id="payment_icon_atm_sinarmas" model="payment.icon">
+        <field name="name">Sinarmas</field>
+        <field name="image" type="base64" file="fal_payment_doku/static/src/img/sinarmas_atm_icon.png"/>
+    </record>
+</odoo>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="view_procurement_request_wizard" model="ir.ui.view">
+            <field name="name">procurement.request.wizard</field>
+            <field name="model">procurement.request.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Procurement Request">
+                    <group>
+                        <group>
+                            <field name="fal_product_id"/>
+                            <field name="fal_product_qty" default_focus="1"/>
+                            <field name="fal_date_planned"/>
+                        </group>
+                    </group>
+                    <footer>
+                        <button name="make_procurement_request" string="Request" type="object" class="oe_highlight"/>
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_procurement_request_wizard" model="ir.actions.act_window">
+            <field name="name">Procurement Request Wizard</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">procurement.request.wizard</field>
+            <field name="context">{'default_fal_product_qty':1}</field>
+            <field name="view_type">form</field>
+            <field name="view_id" ref="view_procurement_request_wizard"/>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="fal_exportation_invoice_report" inherit_id="fal_delivery_batch.fal_exportation_invoice_report">
+            <xpath expr="//t[@t-call='web.external_layout']" position="replace">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <style>
+                            .tbl{
+                                border: 1px solid black;
+                                border-collapse: collapse;
+                                font-size: 14px;
+                            }
+                                .tbl tr th{
+                                    border: 1px solid black;
+                                    border-collapse: collapse;
+                                    padding: 3px;
+                                }
+                                .tbl tr td{
+                                    border: 1px solid black;
+                                    border-collapse: collapse;
+                                    padding: 3px;
+                                }
+                        </style>
+                        <div class="row mt32 mb32">
+                            <div class="col-xs-6">
+                            </div>
+                            <div class="col-5 col-offset-1">
+                                <div>Invoice address:</div>
+                                <div><span t-field="o.partner_id"/></div>
+                                <div><span t-field="o.partner_id.street"/></div>
+                            </div>
+                        </div>
+                        <h3 class="text-center">
+                            <div style="margin-bottom: 20px;">发   票</div>
+                            <div>INVOICE</div>
+                        </h3>
+                        <div>日期 Date: <span t-field="o.create_date" t-field-options='{"format": "d MMMM yyyy"}'/></div>
+                        <table class="tbl">
+                            <tr>
+                                <td rowspan="3">
+                                    买方 Buyer:<br/>
+                                    <span t-field="o.partner_id"/>
+                                </td>
+                                <td class="text-center" colspan="2">发票号 Invoice No：<span t-field="o.invoice_number"/></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    承运工具 Carrier<br/>
+                                    <span t-field="o.carrier"/>
+                                </td>
+                                <td class="text-center">
+                                    装货港口 Port of Loading<br/>
+                                    <span t-field="o.port_of_loading.port_name"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                     起托日期D Departure Date<br/>
+                                    <span t-field="o.create_date" t-field-options='{"format": "MMMM dd, yyyy"}'/>
+                                </td>
+                                <td class="text-center">
+                                    卸货港口 Port of Discharge<br/>
+                                    <span t-field="o.port_of_discharge.port_name"/>
+                                </td>
+                            </tr>
+                        </table>
+                        <br/>
+                        <table class="tbl">
+                            <tr>
+                                <th width="50%">
+                                    货物名称及规格<br/>
+                                    Description of Goods
+                                </th>
+                                <th class="text-center" width="15%">
+                                    数量<br/>
+                                    Q’ty
+                                </th>
+                                <th class="text-center" width="15%">
+                                    单价<br/>
+                                    Unit Price
+                                </th>
+                                <th class="text-center" width="15%">
+                                    金额<br/>
+                                    Amount
+                                </th>
+                                <th class="text-center" width="15%">
+                                    单价<br/>
+                                    Fapiao Unit Price
+                                </th>
+                                <th class="text-center" width="15%">
+                                    金额<br/>
+                                    Fapiao Amount
+                                </th>
+                            </tr>
+                            <t t-set="ttlqty" t-value="0"/>
+                            <t t-foreach="o.batch_line_ids" t-as="l">
+                                <tr  t-if="l.to_print == False">
+                                    <td>
+                                        <t t-if="l.product_id.categ_id.fal_description_packing_list">
+                                            <span t-field="l.product_id.categ_id.fal_description_packing_list"/><br/>
+                                        </t>
+                                        <span t-field="l.name"/>
+                                    </td>
+                                    <td class="text-center"><span t-esc="'{0:,.2f}'.format(l.quantity)"/></td>
+                                    <td class="text-center"><span t-field="l.price_unit" t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/></td>
+                                    <td class="text-center"><span t-field="l.subtotal_vat" t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/></td>
+                                    <td class="text-center"><span t-field="l.fapiao_price_unit" t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/></td>
+                                    <td class="text-center"><span t-field="l.fapiao_subtotal_vat" t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/></td>
+                                    <t t-set="ttlqty" t-value="ttlqty+l.quantity"/>
+                                </tr>
+                            </t>
+                            <tr>
+                                <td class="text-center"><strong>TOTAL</strong></td>
+                                <td class="text-center"><span t-esc="'{0:,.2f}'.format(ttlqty)"/></td>
+                                <td class="text-center"></td>
+                                <td class="text-center"><span t-field="o.amount_total" t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/></td>
+                                <td class="text-center"></td>
+                                <td class="text-center"><span t-field="o.fapiao_amount_total" t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/></td>
+                            </tr>
+                        </table>
+                        <div>PAYMENT TERMS: <span t-field="o.payment_term_id"/></div>
+                        <br/>
+                    </div>
+                </t>
+            </xpath>
+        </template>
+    </data>
+</odoo>

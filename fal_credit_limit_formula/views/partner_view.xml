@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_partner_form_inherit" model="ir.ui.view">
+            <field name="name">res.partner.form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='fal_sale_warning_type']" position="before">
+                    <field name="fal_is_applied_credit_limit"/>
+                    <field name="partner_currency_id" attrs="{'required': [('fal_is_applied_credit_limit', '!=', False)]}"/>
+                </xpath>
+                 <xpath expr="//field[@name='fal_sale_warning_type']" position="after">
+                    <field name="fal_limit_restrict_margin" attrs="{'invisible': [('fal_sale_warning_type', 'not in', ('percentage'))]}"/>
+                    <field name="fal_limit_warning_margin" attrs="{'invisible': [('fal_sale_warning_type', 'not in', ('percentage'))]}"/>
+                </xpath>
+                <xpath expr="//field[@name='credit_limit']"  position="attributes">
+                    <attribute name="attrs">{'invisible': ['|', ('fal_sale_warning_type', 'not in', ('value', 'percentage', 'valuedate'))]}</attribute>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

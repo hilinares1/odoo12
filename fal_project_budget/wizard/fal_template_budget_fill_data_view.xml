@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="fal_template_budget_fill_data_wizard_form">
+            <field name="name">fal.template.budget.fill.data.wizard.form</field>
+            <field name="model">fal.template.budget.fill.data.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Control Fill">
+                    <group>
+                        <p colspan="2"><b>Control Created!</b></p>
+                        <p colspan="2">You can fill the project and date here, or you can do it later on the control form</p>
+                        <field name="fal_project_budget_id" invisible="1"/>
+                        <field name="fal_project_budget_ids">
+                            <tree string="Sub Budget" editable="top" create="false" delete="false">
+                                <field name="parent_id"/>
+                                <field name="name"/>
+                                <field name="project_id" />
+                                <field name="date_from"/>
+                                <field name="date_to"/>
+                                <field name="responsible_id" invisible="1"/>
+                                <field name="state" invisible="1"/>
+                                <field name="type"/>
+                            </tree>
+                        </field>
+                    </group>
+                    <footer>
+                        <button name="action_go_to_budget" string="View Control" type="object" class="btn-primary"/>
+                        <button string="Cancel" class="btn-default" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+    </data>
+</odoo>

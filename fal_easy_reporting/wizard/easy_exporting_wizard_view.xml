@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_easy_exporting_wizard" model="ir.ui.view">
+            <field name="name">easy.exporting.wizard</field>
+            <field name="model">easy.exporting.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Export Data" create="false" edit="false">
+                    <group>
+                        <group>
+                            <field name="file_format" class="fal_file_format" />
+                            <field name="model_id"/>
+                            <field name="resource" invisible="1" class="fal_resource" />
+                            <field name="template_id" domain="[('resource', '=', resource)]"  attrs="{'invisible':[('model_id', '=', False)]}" />
+                            <field name="temp" invisible="1" class="fal_temp" />
+                            <field name="filter_ids" domain="[('model_id', '=', resource)]" widget="many2many_tags" attrs="{'invisible':[('model_id', '=', False)]}" />
+                            <field name="from_date" attrs="{'required': [('to_date','!=',False)], 'invisible':[('model_id', '=', False)]}"/>
+                            <field name="to_date" attrs="{'required': [('from_date','!=',False)], 'invisible':[('model_id', '=', False)]}"/>
+                            <field name="temp_domain" invisible="1" class="fal_temp_domain" />
+                        </group>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_easy_exporting_wizard" model="ir.actions.act_window">
+            <field name="name">Export Data</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">easy.exporting.wizard</field>
+            <field name="view_type">form</field>
+            <field name="view_id" ref="view_easy_exporting_wizard"/>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem id="menu_export_data" name="Export Data" parent="base.menu_board_root" sequence="10"/>
+        <menuitem id="sub_menu_export_data" name="Export Data" parent="menu_export_data" sequence="0" action="action_easy_exporting_wizard" />
+    </data>
+</odoo>

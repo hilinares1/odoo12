@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="fal_hr_contract_document_view_form" model="ir.ui.view">
+            <field name="name">fal.hr.contract.document.view.form.</field>
+            <field name="model">hr.contract</field>
+            <field name="inherit_id" ref="hr_contract.hr_contract_view_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//header" position="inside">
+                    <button name="contract_sign_request" string="Send Request" attrs="{'invisible': [('fal_sign_template', '=', False)]}" type="object" class="oe_highlight"/>
+                </xpath>
+                <xpath expr="//div[@name='button_box']" position="inside">
+                    <button name="open_sign_request_view" type="object" class="oe_stat_button" icon="fa-book">
+                        <field name="sign_request_count" widget="statinfo"/>
+                    </button>
+                </xpath>
+                <xpath expr="//field[@name='date_start']" position="before">
+                    <field name="fal_sign_template"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

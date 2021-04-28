@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+          <report
+            id="account.account_invoices"
+            model="account.invoice"
+            string="Invoices with Delivery Fees"
+            report_type="qweb-pdf"
+            name="account.report_invoice"
+            file="account.report_invoice"
+            attachment_use="True"
+            attachment="(object.state in ('open','paid')) and ('INV'+(object.number or '').replace('/','')+'.pdf')"/>
+
+          <report
+            string="Purchase Order with Delivery Fees"
+            id="purchase.action_report_purchase_order"
+            model="purchase.order"
+            report_type="qweb-pdf"
+            name="purchase.report_purchaseorder"
+            file="purchase.report_purchaseorder"/>
+
+          <report
+            string="Quotation / Order with Delivery Fees"
+            id="sale.action_report_saleorder"
+            model="sale.order"
+            report_type="qweb-pdf"
+            file="sale.report_saleorder"
+            name="sale.report_saleorder"/>
+
+          <report
+            id="fal_report_account_invoice_idf"
+            model="account.invoice"
+            string="Invoices"
+            report_type="qweb-pdf"
+            name="fal_invoice_delivery_fee.fal_report_invoice_idf"/>
+
+          <report
+            id="fal_report_purchase_order_idf"
+            model="purchase.order"
+            string="Purchase Order"
+            report_type="qweb-pdf"
+            name="fal_invoice_delivery_fee.fal_report_purchaseorder_idf"/>
+
+          <report
+            id="fal_report_sale_order_idf"
+            model="sale.order"
+            string="Sale Order"
+            report_type="qweb-pdf"
+            name="fal_invoice_delivery_fee.fal_report_saleorder_idf"
+            print_report_name="(object.state in ('draft', 'sent') and 'Quotation - %s' % (object.name)) or 'Order - %s' % (object.name)"
+            />
+
+    </data>
+</odoo>

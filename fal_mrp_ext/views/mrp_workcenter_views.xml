@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="mrp_workcenter_kanban_inherit_mrp_ext" model="ir.ui.view">
+            <field name="name">mrp.workcenter.kanban.inherit.mrp.ext</field>
+            <field name="model">mrp.workcenter</field>
+            <field name="inherit_id" ref="mrp.mrp_workcenter_kanban" />
+            <field name="arch" type="xml">
+                <!-- change work orders into ready -->
+                <xpath expr="//t[@t-if='record.workorder_count.raw_value &gt; 0']/button/span" position="replace">
+                    <span>WO Ready</span>
+                </xpath>
+                <xpath expr="//t[@t-if='record.workorder_count.raw_value &gt; 0']/button" position="attributes">
+                    <attribute name="context">{'search_default_ready': 1}</attribute>
+                </xpath>
+                <!-- add workorder in progress -->
+                <xpath expr="//div[@name='o_wo']" position="after">
+                    <div class="btn-group" name="x_wo" style="padding-top:10px;">
+                        <t t-if="record.workorder_count.raw_value &gt; 0">
+                            <button class="btn btn-primary" name="%(mrp.action_work_orders)d" type="action" context="{'search_default_progress': 1}">
+                                <span>WO In Progress</span>
+                            </button>
+                        </t>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

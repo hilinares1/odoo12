@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+    <template id="quality_check_document">
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+                <t t-foreach="docs" t-as="doc">
+                    <div class="page">
+                        <div class="oe_structure"/>
+                        <h2 class="text-center">
+                            <span style="border-bottom:1px solid black">Quality Checks Report</span>
+                        </h2>
+                        <p class="text-center"><strong>Checked Date: </strong><span t-field="doc.control_date" t-field-options='{"widget":"date"}'/></p>
+            			<br/>
+                        <div class="row">
+                            <div class="col-6">
+                                <h2>
+                                    <span t-field="doc.name"/>
+                                </h2>
+                            </div>
+                            <div class="col-6 text-right">
+                                <strong>State:</strong> <span t-field="doc.quality_state"/>
+                            </div>
+                        </div>
+                        <br/>
+                        <div class="row mt32 mb32" id="informations">
+                            <div class="col-2">
+                                <strong>Operation:</strong>
+                                <p t-field="doc.picking_id"/>
+                            </div>
+                            <div class="col-2">
+                                <strong>Control Point:</strong>
+                                <p t-field="doc.point_id"/>
+                            </div>
+                            <div class="col-3">
+                                <strong>Team:</strong>
+                                <p t-field="doc.team_id"/>
+                            </div>
+                            <div class="col-2">
+                                <strong>Lot:</strong>
+                                <p t-field="doc.lot_id"/>
+                            </div>
+                        </div>
+                        <div class="row" id="main_table">
+                            <div class="col-6">
+                                <strong>Product:</strong>
+                                <p t-field="doc.product_id"/>
+                            </div>
+                            <div class="col-3">
+                                <strong>Order Reference:</strong>
+                                <p t-field="doc.fal_description"/>
+                            </div>
+                            <div class="col-3 text-center">
+                                <strong>Total Qty to:</strong>
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th class="text-center">Check</th>
+                                            <th class="text-center">Pass</th>
+                                            <th class="text-center">Failed</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center">
+                                                <span t-field="doc.fal_total_qty_to_check"/>
+                                            </td>
+                                            <td class="text-center">
+                                                <span t-field="doc.fal_total_qty_pass"/>
+                                            </td>
+                                            <td class="text-center">
+                                                <span t-field="doc.fal_total_qty_failed"/>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <table class="table table-condensed mt48">
+                            <thead style="text-transform:uppercase;background-color: #EEF0F0;">
+                                <tr>
+                                    <th class="text-center" width="15%">Parent Test Type ID</th>
+                                    <th class="text-center" width="40%" style="padding-bottom: 13px;">Test Type</th>
+                                    <th class="text-center" width="%7">Total Ok</th>
+                                    <th class="text-center" width="10%">Total Not Ok</th>
+                                    <th class="text-center" width="10%">Total Not Applicable</th>
+                                    <th class="text-center" width="18%" style="padding-bottom: 13px;">Notes</th>
+                                </tr>
+                           </thead>
+                           <tbody class="sale_tbody" style="text-size:10px">
+                                <t t-foreach="doc.fal_quality_check_ids" t-as="l">
+                                    <tr>
+                                        <td>
+                                           <span t-field="l.fal_parent_test_type_id"/>
+                                        </td>
+                                        <td>
+                                           <span t-field="l.fal_test_type_id"/>
+                                        </td>
+                                        <td class="text-center">
+                                           <span t-field="l.total_check_ok"/>
+                                        </td>
+                                        <td class="text-center">
+                                            <span t-field="l.total_check_no_ok"/>
+                                        </td>
+                                        <td class="text-center">
+                                            <span t-field="l.total_check_no_applicable"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="l.notes"/>
+                                        </td>
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+    <report
+        id="quality_check_report"
+        string="Quality Check"
+        model="quality.check"
+        report_type="qweb-pdf"
+        name="fal_quality.quality_check_document"
+        file="fal_quality.quality_check_document"/>
+
+    </data>
+</odoo>

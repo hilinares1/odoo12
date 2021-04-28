@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_fal_bank_provision,access_fal_bank_provision,model_fal_bank_provision,base.group_user,1,1,1,0
+access_account_payment,account.payment user,account.model_account_payment,base.group_user,1,1,1,1

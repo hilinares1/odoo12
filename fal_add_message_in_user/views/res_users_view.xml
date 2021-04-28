@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_res_users_form_fal_add_message_in_user" model="ir.ui.view">
+            <field name="name">res.users.form.fal.add.message.in.user</field>
+            <field name="model">res.users</field>
+            <field name="inherit_id" ref="base.view_users_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//sheet" position="after">
+                    <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

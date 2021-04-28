@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="geoloc_assets" inherit_id="web.assets_backend">
+        <xpath expr="." position="inside">
+            <script type="text/javascript" src="/sale_customer_checkin/static/src/js/geoloc.js"></script>
+        </xpath>
+    </template>
+
+</odoo>

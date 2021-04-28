@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<!-- Public api: layout to t-call from reports -->
+
+	<template id="accounting_external_layout_c200">
+		<!-- Multicompany -->
+		<t t-if="not o and doc">
+			<t t-set="o" t-value="doc" />
+		</t>
+
+		<t t-if="o and 'company_id' in o">
+			<t t-set="company" t-value="o.company_id.sudo()" />
+		</t>
+		<t t-if="not o or not 'company_id' in o">
+			<t t-set="company" t-value="res_company" />
+		</t>
+
+		<div class="header">
+			<div class="row small">
+				<t
+					t-call="to_l10n_vn_qweb_layout.accounting_external_header_left_layout">
+					<t t-raw="0" />
+				</t>
+				<div class="col-5 text-center">
+					<strong>
+						<span t-esc="legal_name" />
+					</strong>
+					<br />
+					(Released Under the Circular No. 200/2014/TT-BTC
+					<br />
+					Dated 22/12/2014 by the Ministry of Finance)
+				</div>
+			</div>
+		</div>
+		<div class="article o_report_layout_standard">
+			<t t-raw="0" />
+		</div>
+
+		<div class="footer">
+			<t
+				t-call="to_l10n_vn_qweb_layout.accounting_external_footer_layout">
+				<t t-raw="0" />
+			</t>
+		</div>
+	</template>
+
+	<!-- Customize the company form view by adding paperformat field as well 
+		as demo reports -->
+	<!-- Demo reports definition -->
+
+	<template id="preview_accounting_externalreport_c200">
+		<t t-call="web.html_container">
+			<t
+				t-call="to_l10n_vn_qweb_layout.accounting_external_layout_standard">
+				<div class="page">
+					<p>This is a sample of a Vietnamese Accounting External Report
+						according to templates released under the Circular 200 by the
+						Ministry of Finance.</p>
+				</div>
+			</t>
+		</t>
+	</template>
+
+	<report id="action_report_accounting_external_c200_preview"
+		model="res.company"
+		name="to_l10n_vn_qweb_layout.preview_accounting_externalreport_c200"
+		file="to_l10n_vn_qweb_layout.preview_accounting_externalreport_c200"
+		string="Preview Vietnam C200 Accounting External Report"
+		report_type="qweb-pdf" />
+</odoo>

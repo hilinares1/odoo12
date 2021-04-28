@@ -1,0 +1,41 @@
+<odoo>
+    <record model="ir.ui.view" id="fal_production_order_search_view_ext">
+        <field name="name">fal_production_order_search_view</field>
+        <field name="model">fal.production.order</field>
+        <field name="inherit_id" ref="fal_mrp_production_order.fal_production_order_search_view"/>
+        <field name="arch" type="xml">
+            <filter name="progress" position="after">
+                <filter name="not_in_done_cancel" string="Not in done and cancel" domain="[('state','not in',['done', 'cancel'])]" />
+            </filter>
+        </field>
+    </record>
+
+    <record id="fl_production_order_tree_view_inherit_mrp_ext" model="ir.ui.view">
+        <field name="name">fal_production_order_tree_view_inherit_mrp_ext</field>
+        <field name="model">fal.production.order</field>
+        <field name="inherit_id" ref="fal_mrp_production_order.fl_production_order_tree_view"/>
+        <field name="arch" type="xml">
+            <data>
+                <field name="production_date_fixed" position="attributes">
+                    <attribute name="invisible">True</attribute>
+                </field>
+                <field name="production_date_fixed" position="before">
+                    <field name="fal_requested_date" widget="date" />
+                </field>
+            </data>
+        </field>
+    </record>
+
+    <record id="fal_production_order_form_view_inherit_mrp_ext" model="ir.ui.view">
+        <field name="name">fal_production_order_form_view_inherit_mrp_ext</field>
+        <field name="model">fal.production.order</field>
+        <field name="inherit_id" ref="fal_mrp_production_order.fal_production_order_form_view"/>
+        <field name="arch" type="xml">
+            <data>
+                <field name="delivery_planned_date" position="before">
+                    <field name="fal_requested_date" widget="date" readonly="1"/>
+                </field>
+            </data>
+        </field>
+    </record>
+</odoo>

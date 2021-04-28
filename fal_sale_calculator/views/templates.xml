@@ -1,0 +1,8 @@
+<odoo>
+    <template id="fal_sale_calculator_asset_backend" name="fal_sale_calculator_backend" inherit_id="web.assets_backend">
+        <xpath expr="." position="inside">
+            <script type="text/javascript" src="/fal_sale_calculator/static/src/js/product_attribute_controller.js"/>
+            <script type="text/javascript" src="/fal_sale_calculator/static/src/js/section_and_note_fields_backend.js"/>
+        </xpath>
+    </template>
+</odoo>

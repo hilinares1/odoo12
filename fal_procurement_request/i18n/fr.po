@@ -1,0 +1,232 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* fal_procurement_request
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-08-21 02:22+0000\n"
+"PO-Revision-Date: 2018-08-21 11:42+0700\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: en\n"
+"X-Generator: Poedit 2.1.1\n"
+
+#. module: fal_procurement_request
+#: model:ir.ui.view,arch_db:fal_procurement_request.fal_procurement_request_tree
+#: model:ir.ui.view,arch_db:fal_procurement_request.view_purchase_order_pr_form
+msgid "Approve Procurement Request"
+msgstr "Approuver demade d'approvisionnement"
+
+#. module: fal_procurement_request
+#: model:ir.ui.view,arch_db:fal_procurement_request.view_procurement_request_wizard
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: fal_procurement_request
+#: model:ir.ui.view,arch_db:fal_procurement_request.fal_procurement_request_tree
+msgid "Cancel Procurement Request"
+msgstr "Annuler demande d'approvisionnement"
+
+#. module: fal_procurement_request
+#: model:ir.actions.act_window,name:fal_procurement_request.cancel_fal_purchase_form_action
+#: model:ir.ui.menu,name:fal_procurement_request.fal_menu_cancel_quotation
+msgid "Cancel Quotations"
+msgstr "Annuler devis"
+
+#. module: fal_procurement_request
+#: model:ir.actions.act_window,help:fal_procurement_request.cancel_fal_purchase_form_action
+msgid "Click to create a quotation that will be converted into a purchase order."
+msgstr "Cliquez pour créer un devis qui sera converti en un bon de commande d'achat."
+
+#. module: fal_procurement_request
+#: model:ir.actions.act_window,help:fal_procurement_request.procurement_request
+msgid "Click to create procurement request."
+msgstr "Cliquez pour créer une demande d'apprivisionnement."
+
+#. module: fal_procurement_request
+#: model:ir.model.fields,field_description:fal_procurement_request.field_procurement_request_wizard_create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: fal_procurement_request
+#: model:ir.model.fields,field_description:fal_procurement_request.field_procurement_request_wizard_create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: fal_procurement_request
+#: model:ir.ui.view,arch_db:fal_procurement_request.fal_procurement_request_tree
+msgid "Customer Address"
+msgstr "Adresse de client"
+
+#. module: fal_procurement_request
+#: model:ir.model.fields,field_description:fal_procurement_request.field_purchase_order_fal_req_product_description
+msgid "Description"
+msgstr "Description"
+
+#. module: fal_procurement_request
+#: model:ir.model.fields,field_description:fal_procurement_request.field_procurement_request_wizard_display_name
+msgid "Display Name"
+msgstr "Nom à afficher"
+
+#. module: fal_procurement_request
+#: code:addons/fal_procurement_request/models/purchase.py:198
+#, python-format
+msgid "Error! You cannot confirm a purchase order                     without any purchase order line."
+msgstr "Erreur! vous ne pouvez pas confirmer une commande fournisseur                     sans aucune ligne de commande fournisseur."
+
+#. module: fal_procurement_request
+#: model:ir.model.fields,field_description:fal_procurement_request.field_procurement_request_wizard_fal_date_planned
+msgid "Expected Date"
+msgstr "Date prévue"
+
+#. module: fal_procurement_request
+#: model:ir.model.fields,field_description:fal_procurement_request.field_procurement_request_wizard_id
+msgid "ID"
+msgstr "ID"
+
+#. module: fal_procurement_request
+#: code:addons/fal_procurement_request/models/purchase.py:203
+#, python-format
+msgid "Invalid Action! In order to confirm a quotation,                     you must define supplier first."
+msgstr "Action invalide! Afin de confirmer un devis,                     vous devez définir un fournisseur d'abord."
+
+#. module: fal_procurement_request
+#: model:ir.model.fields,field_description:fal_procurement_request.field_procurement_request_wizard___last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: fal_procurement_request
+#: model:ir.model.fields,field_description:fal_procurement_request.field_procurement_request_wizard_write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: fal_procurement_request
+#: model:ir.model.fields,field_description:fal_procurement_request.field_procurement_request_wizard_write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: fal_procurement_request
+#: model:ir.ui.view,arch_db:fal_procurement_request.view_purchase_order_pr_filter
+msgid "My Request"
+msgstr "Mes demandes"
+
+#. module: fal_procurement_request
+#: model:ir.model.fields,field_description:fal_procurement_request.field_procurement_request_wizard_fal_date_order
+msgid "Order Date"
+msgstr "Date de la commande"
+
+#. module: fal_procurement_request
+#: model:ir.actions.act_window,name:fal_procurement_request.procurement_request
+#: model:ir.ui.menu,name:fal_procurement_request.menu_procurement_request
+#: model:ir.ui.view,arch_db:fal_procurement_request.fal_procurement_request_tree
+#: model:ir.ui.view,arch_db:fal_procurement_request.falpr_product_form_view_procurement_button
+#: model:ir.ui.view,arch_db:fal_procurement_request.falpr_product_form_view_procurement_button1
+#: model:ir.ui.view,arch_db:fal_procurement_request.view_procurement_request_wizard
+msgid "Procurement Request"
+msgstr "Demande d'approvisionnement"
+
+#. module: fal_procurement_request
+#: model:res.groups,name:fal_procurement_request.group_procurement_request_manager
+msgid "Procurement Request Manager"
+msgstr "Manager de demande d'apprivisonnement"
+
+#. module: fal_procurement_request
+#: model:res.groups,name:fal_procurement_request.group_procurement_request_user
+msgid "Procurement Request User"
+msgstr "Utilisateur de demande d'apprivisonnement"
+
+#. module: fal_procurement_request
+#: model:ir.actions.act_window,name:fal_procurement_request.action_procurement_request_wizard
+#: model:ir.model,name:fal_procurement_request.model_procurement_request_wizard
+msgid "Procurement Request Wizard"
+msgstr "Procurement Request Wizard"
+
+#. module: fal_procurement_request
+#: model:ir.model.fields,field_description:fal_procurement_request.field_procurement_request_wizard_fal_product_id
+#: model:ir.model.fields,field_description:fal_procurement_request.field_purchase_order_fal_req_product_id
+msgid "Product"
+msgstr "Article"
+
+#. module: fal_procurement_request
+#: model:ir.model,name:fal_procurement_request.model_purchase_order
+msgid "Purchase Order"
+msgstr "Commande fournisseur"
+
+#. module: fal_procurement_request
+#: model:ir.model,name:fal_procurement_request.model_purchase_order_line
+msgid "Purchase Order Line"
+msgstr "Ligne de commande d'achat"
+
+#. module: fal_procurement_request
+#: model:ir.model.fields,field_description:fal_procurement_request.field_procurement_request_wizard_fal_product_qty
+#: model:ir.model.fields,field_description:fal_procurement_request.field_purchase_order_fal_req_product_qty
+msgid "Quantity"
+msgstr "Quantité"
+
+#. module: fal_procurement_request
+#: model:ir.ui.view,arch_db:fal_procurement_request.fal_procurement_request_tree
+msgid "Reference"
+msgstr "Référence"
+
+#. module: fal_procurement_request
+#: model:ir.ui.view,arch_db:fal_procurement_request.view_procurement_request_wizard
+msgid "Request"
+msgstr "Demande"
+
+#. module: fal_procurement_request
+#: model:ir.model.fields,field_description:fal_procurement_request.field_purchase_order_fal_req_user_id
+#: model:ir.model.fields,field_description:fal_procurement_request.field_purchase_order_line_fal_req_user_id
+msgid "Request By"
+msgstr "Demande par"
+
+#. module: fal_procurement_request
+#: model:ir.model.fields,field_description:fal_procurement_request.field_purchase_order_fal_request_no
+#: model:ir.model.fields,field_description:fal_procurement_request.field_purchase_order_line_fal_request_no
+msgid "Request No"
+msgstr "Demande No"
+
+#. module: fal_procurement_request
+#: model:ir.model.fields,field_description:fal_procurement_request.field_purchase_order_line_fal_request_qty
+msgid "Request Qty"
+msgstr "Qté demandée"
+
+#. module: fal_procurement_request
+#: model:ir.model,name:fal_procurement_request.model_stock_move
+msgid "Stock Move"
+msgstr "Mouvement de stock"
+
+#. module: fal_procurement_request
+#: model:ir.model.fields,field_description:fal_procurement_request.field_procurement_request_wizard_partner_id
+msgid "Supplier"
+msgstr "Fournisseur"
+
+#. module: fal_procurement_request
+#: model:ir.model.fields,field_description:fal_procurement_request.field_purchase_order_fal_req_uom_id
+msgid "UOM"
+msgstr "UdM"
+
+#. module: fal_procurement_request
+#: model:ir.actions.act_window,help:fal_procurement_request.cancel_fal_purchase_form_action
+msgid ""
+"Use this menu to search within your purchase orders by\n"
+"                references, supplier, products, etc. For each purchase order,\n"
+"                you can track the related discussion with the supplier, control\n"
+"                the products received and control the supplier invoices."
+msgstr ""
+"Utiliser ce menu pour chercher dans vos commandes fournisseurs par\n"
+"                références, fournisseur, articles, etc. Pour chaque commande fournisseur,\n"
+"                vous pouvez suivre une discussion liée au fournisseur, le contrôle\n"
+"                des articles reçus et le contrôle des factures fournisseurs."
+
+#. module: fal_procurement_request
+#: model:ir.model.fields,field_description:fal_procurement_request.field_purchase_order_fal_warehouse_manager_comment
+#: model:ir.model.fields,field_description:fal_procurement_request.field_purchase_order_line_fal_warehouse_manager_comment
+#: model:ir.model.fields,field_description:fal_procurement_request.field_stock_move_fal_warehouse_manager_comment
+msgid "Warehouse Manager Comment"
+msgstr "Warehouse Manager Comment"

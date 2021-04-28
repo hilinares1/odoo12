@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_move_picking_falpr_tree" model="ir.ui.view">
+            <field name="name">view.move.picking.falpr.tree</field>
+            <field name="model">stock.move</field>
+            <field name="inherit_id" ref="stock.view_move_picking_tree"/>
+            <field name="arch" type="xml">
+                <data>
+                    <field name="product_uom_qty" position="before">
+                        <field name="fal_warehouse_manager_comment"/>
+                    </field>
+                </data>
+            </field>
+        </record>
+
+        <record id="view_move_picking_falpr_form" model="ir.ui.view">
+            <field name="name">view.move.picking.falpr.form</field>
+            <field name="model">stock.move</field>
+            <field name="inherit_id" ref="stock.view_move_picking_form"/>
+            <field name="arch" type="xml">
+                <data>
+                    <field name="name" position="after">
+                        <field name="fal_warehouse_manager_comment"/>
+                    </field>
+                </data>
+            </field>
+        </record>
+    </data>
+</odoo>

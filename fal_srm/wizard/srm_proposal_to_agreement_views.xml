@@ -1,0 +1,116 @@
+<?xml version="1.0"?>
+<odoo>
+
+        <record id="view_srm_proposal2agreement_partner" model="ir.ui.view">
+            <field name="name">srm.proposal2agreement.partner.form</field>
+            <field name="model">srm.proposal2agreement.partner</field>
+            <field name="arch" type="xml">
+                <form string="Convert to Agreeement">
+                    <group name="name">
+                        <field name="name" widget="radio"/>
+                    </group>
+                    <group string="Assign this Agreeement to">
+                        <field name="user_id" domain="[('share', '=', False)]"/>
+                        <field name="team_id" widget="selection"/>
+                    </group>
+                    <group string="Agreements" attrs="{'invisible': [('name', '!=', 'merge')]}">
+                        <field name="agreement_ids" nolabel="1">
+                            <tree>
+                                <field name="create_date"/>
+                                <field name="name"/>
+                                <field name="type"/>
+                                <field name="contact_name"/>
+                                <field name="country_id" invisible="context.get('invisible_country', True)"/>
+                                <field name="email_from"/>
+                                <field name="phone"/>
+                                <field name="stage_id"/>
+                                <field name="user_id"/>
+                                <field name="team_id"/>
+                            </tree>
+                        </field>
+                    </group>
+                    <group name="action" attrs="{'invisible': [('name', '!=', 'convert')]}" string="Vendor" col="1">
+                        <field name="action" nolabel="1" widget="radio"/>
+                        <group col="2">
+                            <field name="partner_id" widget="res_partner_many2one" domain="[('supplier', '=', True)]" context="{'search_default_customer': 1, 'show_vat': True}" attrs="{'required': [('action', '=', 'exist')], 'invisible':[('action','!=','exist')]}"/>
+                        </group>
+                    </group>
+                    <footer>
+                        <button name="action_apply" string="Create Agreement" type="object" class="btn-primary"/>
+                        <button string="Cancel" class="btn-secondary" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_srm_proposal2agreement_partner_mass" model="ir.ui.view">
+            <field name="name">srm.proposal2agreement.partner.mass.form</field>
+            <field name="model">srm.proposal2agreement.partner.mass</field>
+            <field name="arch" type="xml">
+                <form string="Convert to Agreement">
+                    <separator string="Conversion Options"/>
+                    <group>
+                        <field name="name" class="oe_inline" widget="radio"/>
+                        <field name="deduplicate" class="oe_inline"/>
+                    </group>
+                    <group string="Assign these agreements to">
+                        <field name="team_id"/>
+                        <field name="user_ids" widget="many2many_tags" domain="[('share', '=', False)]"/>
+                         <field name="force_assignation"/>
+                    </group>
+                    <label for="agreement_ids" string="Proposal with existing duplicates (for information)" help="Proposal that you selected that have duplicates. If the list is empty, it means that no duplicates were found" attrs="{'invisible': [('deduplicate', '=', False)]}"/>
+                    <group attrs="{'invisible': [('deduplicate', '=', False)]}">
+                        <field name="agreement_ids" colspan="4" nolabel="1" readonly="1">
+                            <tree create="false" delete="false">
+                                <field name="create_date"/>
+                                <field name="name"/>
+                                <field name="type"/>
+                                <field name="contact_name"/>
+                                <field name="country_id" invisible="context.get('invisible_country', True)"/>
+                                <field name="email_from"/>
+                                <field name="phone"/>
+                                <field name="stage_id"/>
+                                <field name="user_id"/>
+                                <field name="team_id"/>
+                            </tree>
+                        </field>
+                    </group>
+                    <group attrs="{'invisible': [('name', '!=', 'convert')]}" string="Vendor" col="1">
+                        <field name="action" class="oe_inline" widget="radio"/>
+                        <group col="2">
+                            <field name="partner_id"
+                                widget="res_partner_many2one"
+                                attrs="{'required': [('action', '=', 'exist')], 'invisible':[('action','!=','exist')]}"
+                                context="{'show_vat': True}"
+                                class="oe_inline"/>
+                        </group>
+                    </group>
+                    <footer>
+                        <button name="mass_convert" string="Convert to Agreements" type="object" class="btn-primary"/>
+                        <button string="Cancel" class="btn-secondary" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_srm_proposal2agreement_partner" model="ir.actions.act_window">
+            <field name="name">Convert to agreement</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">srm.proposal2agreement.partner</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_srm_proposal2agreement_partner"/>
+            <field name="target">new</field>
+        </record>
+
+        <act_window
+            id="action_srm_send_mass_convert"
+            multi="True"
+            key2="client_action_multi" name="Convert to agreements"
+            res_model="srm.proposal2agreement.partner.mass" src_model="srm.proposal"
+            view_mode="form" target="new" view_type="form"
+            context="{'mass_convert' : True}"
+            view_id="view_srm_proposal2agreement_partner_mass"
+            groups="purchase.group_purchase_user"
+        />
+
+</odoo>

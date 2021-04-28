@@ -1,0 +1,116 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* fal_mrp_work_route
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0+e-20170110\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-05-16 09:16+0000\n"
+"PO-Revision-Date: 2017-05-23 17:50+0700\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: fr\n"
+"X-Generator: Poedit 2.0.1\n"
+
+#. module: fal_mrp_work_route
+#: model:ir.actions.act_window,help:fal_mrp_work_route.action_mrp_workorder_workcenter2_fal
+#: model:ir.actions.act_window,help:fal_mrp_work_route.action_mrp_workorder_workshop_machine_fal
+msgid "Click to start a new work order."
+msgstr "Cliquez pour démarrer un nouvel ordre de travail."
+
+#. module: fal_mrp_work_route
+#: model:ir.ui.view,arch_db:fal_mrp_work_route.mrp_routing_worksho_machine_workorder_fal
+msgid "Get Ready"
+msgstr "Se Préparer"
+
+#. module: fal_mrp_work_route
+#: model:ir.ui.view,arch_db:fal_mrp_work_route.mrp_routing_workshop_workorder_search_view_fal
+msgid "Group By"
+msgstr "Regrouper par"
+
+#. module: fal_mrp_work_route
+#: model:ir.ui.view,arch_db:fal_mrp_work_route.mrp_workorder_view_gantt_fal_workshop_machine
+msgid "Operations"
+msgstr "Opérations"
+
+#. module: fal_mrp_work_route
+#: model:ir.ui.menu,name:fal_mrp_work_route.menu_mrp_workorder_workshop_fal
+msgid "Planning by Workshop Machine"
+msgstr "Planification par Machine d'Atélier"
+
+#. module: fal_mrp_work_route
+#: model:ir.ui.view,arch_db:fal_mrp_work_route.view_mrp_production_workcenter_form_view_filter_fal
+#: selection:mrp.workcenter,fal_type:0
+msgid "Routing Work Center"
+msgstr "Centre de travail de Routage"
+
+#. module: fal_mrp_work_route
+#: model:ir.ui.view,arch_db:fal_mrp_work_route.mrp_routing_workshop_workorder_search_view_fal
+msgid "Routing Workcenter"
+msgstr "Machine de Routage"
+
+#. module: fal_mrp_work_route
+#: model:ir.model.fields,field_description:fal_mrp_work_route.field_mrp_workcenter_fal_type
+msgid "Type"
+msgstr "Type"
+
+#. module: fal_mrp_work_route
+#: model:ir.model,name:fal_mrp_work_route.model_mrp_workcenter
+msgid "Work Center"
+msgstr "Centre de Travail"
+
+#. module: fal_mrp_work_route
+#: model:ir.model,name:fal_mrp_work_route.model_mrp_routing_workcenter
+msgid "Work Center Usage"
+msgstr "Utilisation du Centre de Travail"
+
+#. module: fal_mrp_work_route
+#: model:ir.model,name:fal_mrp_work_route.model_mrp_workorder
+msgid "Work Order"
+msgstr "Ordre de Travail"
+
+#. module: fal_mrp_work_route
+#: model:ir.actions.act_window,name:fal_mrp_work_route.action_mrp_workorder_workcenter2_fal
+msgid "Work Orders"
+msgstr "Ordres de Travaux"
+
+#. module: fal_mrp_work_route
+#: model:ir.actions.act_window,name:fal_mrp_work_route.action_mrp_workorder_workshop_machine_fal
+msgid "Work Orders by Workshop Machine"
+msgstr "Ordres de Travaux par Machine d'Atelier"
+
+#. module: fal_mrp_work_route
+#: model:ir.actions.act_window,help:fal_mrp_work_route.action_mrp_workorder_workcenter2_fal
+#: model:ir.actions.act_window,help:fal_mrp_work_route.action_mrp_workorder_workshop_machine_fal
+msgid ""
+"Work Orders is the list of operations to be performed for each\n"
+"            manufacturing order. Once you start the first work order of a\n"
+"            manufacturing order, the manufacturing order is automatically\n"
+"            marked as started. Once you finish the latest operation of a\n"
+"            manufacturing order, the MO is automatically done and the related\n"
+"            products are produced."
+msgstr ""
+"Les ordres de travail sont la liste des opérations à effectuer pour chaque\n"
+"ordre de fabrication. Une fois que vous commencez le premier ordre de travail \n"
+"d'un ordre de fabrication, celui-ci est automatiquement considéré comme commencé. \n"
+"Une fois la dernière opération d'un ordre de production terminée, \n"
+"l'OF est automatiquement considéré comme terminé et les produits liés sont fabriqués."
+
+#. module: fal_mrp_work_route
+#: model:ir.model.fields,field_description:fal_mrp_work_route.field_mrp_workorder_fal_wokrshop_id
+#: model:ir.ui.view,arch_db:fal_mrp_work_route.mrp_routing_workshop_workorder_search_view_fal
+#: model:ir.ui.view,arch_db:fal_mrp_work_route.view_mrp_production_workcenter_form_view_filter_fal
+msgid "Working Machine"
+msgstr "Machine de Travail"
+
+#. module: fal_mrp_work_route
+#: model:ir.model.fields,field_description:fal_mrp_work_route.field_mrp_workcenter_fal_workshop_ids
+#: model:ir.model.fields,field_description:fal_mrp_work_route.field_mrp_workorder_fal_available_workshop_ids
+#: selection:mrp.workcenter,fal_type:0
+msgid "Workshop Machine"
+msgstr "Machine d'Atélier"

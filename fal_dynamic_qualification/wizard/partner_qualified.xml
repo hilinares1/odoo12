@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_partner_qualified_wizard_dynamic" model="ir.ui.view">
+            <field name="name">fal.partner.qualified.wizard</field>
+            <field name="model">fal.partner.qualified.wizard</field>
+            <field name="inherit_id" ref="fal_partner_qualification.view_partner_qualified_wizard"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='is_company']" position="before">
+                    <field name="fal_mandatory_fields" invisible="1"/>
+                    <field name="is_company_title" invisible="1"/>
+                    <field name="is_partner_tags" invisible="1"/>
+                    <field name="is_number_employee" invisible="1"/>
+                    <field name="is_year_founded" invisible="1"/>
+                </xpath>
+                <field name="fal_company_title" position="attributes">
+                    <attribute name="attrs">{'invisible': [('is_company', '=', False)], 'required': [('is_company_title', '!=', False)]}</attribute>
+                </field>
+                <field name="fal_partner_tags" position="attributes">
+                    <attribute name="attrs">{'required': [('is_partner_tags', '!=', False)]}</attribute>
+                </field>
+                <field name="fal_number_employee" position="attributes">
+                    <attribute name="attrs">{'invisible': [('is_company', '=', False)], 'required': [('is_number_employee', '!=', False)]}</attribute>
+                </field>
+                <field name="fal_year_founded" position="attributes">
+                    <attribute name="attrs">{'invisible': [('is_company', '=', False)], 'required': [('is_year_founded', '!=', False)]}</attribute>
+                </field>
+                <xpath expr="//form/group" position="inside">
+                    <group>
+                        <field name="is_phone" invisible="1"/>
+                        <field name="is_email" invisible="1"/>
+                        <field name="email" widget="email" context="{'gravatar_image': True}" attrs="{'required': [('is_email', '!=', False)]}"/>
+                        <field name="phone" widget="phone" attrs="{'required': [('is_phone', '!=', False)]}"/>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- <record id="view_fal_sale_proposal_wizard_qualified_partner_dynamic" model="ir.ui.view">
+            <field name="name">fal.sale.proposal.wizard.form.qualified.partner</field>
+            <field name="model">fal.sale.proposal.wizard</field>
+            <field name="inherit_id" ref="fal_sale_approval_qualified_partner.view_fal_sale_proposal_wizard_qualified_partner"></field>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='is_company']" position="before">
+                    <field name="fal_mandatory_fields" invisible="1"/>
+                    <field name="is_company_title" invisible="1"/>
+                    <field name="is_partner_tags" invisible="1"/>
+                    <field name="is_number_employee" invisible="1"/>
+                    <field name="is_year_founded" invisible="1"/>
+                </xpath>
+                <field name="fal_company_title" position="attributes">
+                    <attribute name="attrs">{'invisible': [('is_company', '=', False)], 'required': [('is_company_title', '!=', False)]}</attribute>
+                </field>
+                <field name="fal_partner_tags" position="attributes">
+                    <attribute name="attrs">{'required': [('is_partner_tags', '!=', False)]}</attribute>
+                </field>
+                <field name="fal_number_employee" position="attributes">
+                    <attribute name="attrs">{'invisible': [('is_company', '=', False)], 'required': [('is_number_employee', '!=', False)]}</attribute>
+                </field>
+                <field name="fal_year_founded" position="attributes">
+                    <attribute name="attrs">{'invisible': [('is_company', '=', False)], 'required': [('is_year_founded', '!=', False)]}</attribute>
+                </field>
+                <xpath expr="///field[@name='fal_year_founded']" position="after">
+                    <field name="is_phone" invisible="1"/>
+                    <field name="is_email" invisible="1"/>
+                    <field name="email" widget="email" context="{'gravatar_image': True}" attrs="{'required': [('is_email', '!=', False)]}"/>
+                    <field name="phone" widget="phone" attrs="{'required': [('is_phone', '!=', False)]}"/>
+                </xpath>
+            </field>
+        </record> -->
+    </data>
+</odoo>

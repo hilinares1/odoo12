@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="picking_sticker_internal_layout_sticker">
+            <t t-if="o and 'company_id' in o">
+                <t t-set="company" t-value="o.company_id.sudo()"/>
+            </t>
+            <t t-if="not o or not 'company_id' in o">
+                <t t-set="company" t-value="res_company"/>
+            </t>
+            <div class="article">
+              <t t-raw="0" />
+            </div>
+        </template>
+
+        <template id="international_picking_sticker">
+            <t t-call="web.html_container">
+                <t t-call="fal_print_sticker.picking_sticker_internal_layout_sticker">
+                    <t t-foreach="_get_line_temp(doc_ids)" t-as="o">
+                        <div class="page">
+                            <div class="row" style="page-break-before:always;">
+                                <div class="col-6" style="margin-left=20px;width:50%;line-height:1.3;">
+                                    <t t-if="o['fal_company_id'].fal_logo_sticker">
+                                        <img t-att-src="image_data_uri(o['fal_company_id'].fal_logo_sticker)" style="max-height: 50px;" width="70px" height="70px"/>
+                                    </t>
+                                    <p style="margin-top: 14px; font-weight: bold; font-size: 10px;margin: 0 0 0px;"><span t-esc="o['fal_header_sticker']"/></p>
+                                    <p style="font-weight: bold; font-size: 12px;margin: 0 0 0px;">ID: <span t-esc="o['fal_of_number']"/></p>
+                                    <p style="font-weight: bold;font-size: 12px;margin: 0 0 0px;">REF: <span t-esc="o['fal_sale_ref']"/></p>
+                                    <p style="font-size: 10px;margin: 0 0 0px;"><span t-esc="o['fal_description_sticker_1']"/></p>
+                                </div>
+                                 <img t-att-src="image_data_uri(o['fal_qr_code'])" style="width:45%;"/>
+                            </div>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+
+        <template id="picking_sticker">
+            <t t-call="web.html_container">
+                <t t-call="fal_print_sticker.picking_sticker_internal_layout_sticker">
+                    <t t-foreach="_get_line_temp(doc_ids)" t-as="o">
+                        <div class="page">
+                            <div style="width: 100%;">
+                                <table class="text-center" style="margin:auto; width: 100%; page-break-before:always;">
+                                    <tr>
+                                        <td>
+                                            <p style="padding:0; margin:0; font-weight: bold; font-size: 19px;"><span t-esc="o['fal_header_sticker']"/></p>
+                                            <p style="padding:0; margin:0; font-size: 12px;"><span t-esc="o['fal_description_sticker_1']"/></p>
+                                            <p style="padding:0; margin:0; margin-bottom:5px; font-size: 12px;"><span t-esc="o['fal_description_sticker_2']"/></p>
+                                            <p style="padding:0; margin:0; font-weight: bold; font-size: 16px;">Serial No: <span t-esc="o['fal_of_number']"/></p>
+                                            <p style="padding:0; margin:0; font-size: 12px;"><span t-esc="o['fal_sale_ref']"/></p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+
+        <template id="new_international_sticker_picking">
+            <t t-call="web.html_container">
+                <t t-call="fal_print_sticker.picking_sticker_internal_layout_sticker">
+                    <t t-foreach="_get_line_temp(doc_ids)" t-as="o">
+                        <div class="page">
+                            <div class="row" style="padding:0;margin:0;page-break-before:always;">
+                              <div class="col-3">
+                                  <t t-if="o['fal_company_id'].fal_logo_sticker">
+                                      <img t-att-src="image_data_uri(o['fal_company_id'].fal_logo_sticker)" style="max-height: 69px; margin-top: 2px;"  width="70px" height="70px"/>
+                                  </t>
+                              </div>
+                              <div class="col-9" style="vertical-align: middle;">
+                                  <p style="font-weight: bold; font-size: 17px; margin-top: 0px;"><span t-esc="o['fal_header_sticker']"/></p>
+                                  <p style="font-weight: bold; font-size: 16px;">Serial No: <span t-esc="o['fal_of_number']"/></p>
+                                  <p style="font-size: 12px;"><span t-esc="o['fal_sale_ref']"/></p>
+                              </div>
+                            </div>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+
+        <template id="old_picking_sticker">
+            <t t-call="web.html_container">
+                <t t-call="fal_print_sticker.picking_sticker_internal_layout_sticker">
+                    <div class="page">
+                    	<t t-foreach="_get_line_temp(doc_ids)" t-as="o">
+                            <div class="col-4 float-left" style="border-width: 1px; border-style: solid; padding: 0px; border-color: white white;">
+                                <table class="text-center" style="border-width: 1px; border-style: dotted; margin: 4px; border-color: white white;">
+                                        <td style="width: 327px; height: 137px;">
+                                        	<p style="margin-bottom: 0px; margin-top: 12px; font-weight: bold; font-size: 20px; padding: 0px;"><span t-esc="o['fal_header_sticker']"/></p>
+                                            <p style="margin: 0px; font-size: 15px; padding: 0px;"><span t-esc="o['fal_description_sticker_1']"/></p>
+                                            <p style="margin-bottom: 0px; font-size: 15px; padding: 0px;"><span t-esc="o['fal_description_sticker_2']"/></p>
+                                            <p style="margin-bottom: 0px; font-weight: bold; font-size: 20px; padding: 0px;">Serial No: <span t-esc="o['fal_of_number']"/></p>
+                                            <p style="margin: 0px; font-size: 15px; padding: 0px;"><span t-esc="o['fal_sale_ref']"/></p>
+                                        </td>
+                                </table>
+                            </div>
+                        </t>
+                    </div>
+                </t>
+            </t>
+        </template>
+
+        <report
+            string="Sticker"
+            id="fal_old_picking_sticker"
+            model="stock.picking"
+            report_type="qweb-pdf"
+            name="fal_print_sticker.old_picking_sticker"
+            file="fal_print_sticker.old_picking_sticker"/>
+
+        <report
+            string="New Sticker"
+            id="fal_picking_sticker"
+            model="stock.picking"
+            report_type="qweb-pdf"
+            name="fal_print_sticker.picking_sticker"
+            file="fal_print_sticker.picking_sticker"/>
+
+        <report
+            string="Sticker based on Sales ref"
+            id="fal_new_international_sticker_picking"
+            model="stock.picking"
+            report_type="qweb-pdf"
+            name="fal_print_sticker.new_international_sticker_picking"
+            file="fal_print_sticker.new_international_sticker_picking"/>
+
+        <report
+            string="International Sticker with QR Code"
+            id="fal_international_picking_sticker"
+            model="stock.picking"
+            report_type="qweb-pdf"
+            name="fal_print_sticker.international_picking_sticker"
+            file="fal_print_sticker.international_picking_sticker"/>
+
+        <record id="fal_print_sticker_paperformat" model="report.paperformat">
+            <field name="name">fal_print_sticker_paperformat_A4</field>
+            <field name="default" eval="True"/>
+            <field name="format">custom</field>
+            <field name="page_height">65</field>
+            <field name="page_width">30</field>
+            <field name="orientation">Landscape</field>
+            <field name="margin_top">2</field>
+            <field name="margin_bottom">0</field>
+            <field name="margin_left">0</field>
+            <field name="margin_right">0</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">0</field>
+            <field name="dpi">106</field>
+            <field name="report_ids" eval="[(4, ref('fal_picking_sticker')), (4, ref('fal_new_international_sticker_picking')), (4, ref('fal_international_picking_sticker'))]"/>
+        </record>
+
+        <record id="fal_old_print_sticker_paperformat" model="report.paperformat">
+            <field name="name">fal_old_print_sticker_paperformat_A4</field>
+            <field name="default" eval="True"/>
+            <field name="format">custom</field>
+            <field name="page_height">295</field>
+            <field name="page_width">210</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">20</field>
+            <field name="margin_bottom">24</field>
+            <field name="margin_left">3</field>
+            <field name="margin_right">4</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">0</field>
+            <field name="dpi">96</field>
+            <field name="report_ids" eval="[(4, ref('fal_old_picking_sticker'))]"/>
+        </record>
+    </data>
+</odoo>

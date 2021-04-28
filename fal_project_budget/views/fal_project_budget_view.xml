@@ -1,0 +1,558 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- Control -->
+        <record id="fal_project_budget_view_kanban" model="ir.ui.view">
+            <field name="name">fal.project.budget.view.kanban</field>
+            <field name="model">fal.project.budget</field>
+            <field name="arch" type="xml">
+                <kanban default_group_by="state">
+                    <field name="state"/>
+                    <field name="name"/>
+                    <field name="number"/>
+                    <field name="version"/>
+                    <field name="responsible_id"/>
+                    <field name="project_id"/>
+                    <field name="total_budget"/>
+                    <field name="currency_id"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div class="oe_kanban_global_click">
+                                <strong class="o_kanban_record_title">
+                                    <field name="name"/>
+                                    <small t-if="record.number">[<field name="number"/>]</small>
+                                    <small t-if="record.version">[<field name="version"/>]</small>
+                                </strong>
+                                <small class="o_kanban_record_subtitle text-muted">
+                                    <field name="project_id"/>
+                                </small>
+                                <div class="oe_kanban_details">
+                                    <div class="o_kanban_record_bottom">
+                                        <div class="oe_kanban_bottom_left">
+                                            <field name="total_budget" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}"/>
+                                        </div>
+                                        <div class="oe_kanban_bottom_right">
+                                            <img t-att-src="kanban_image('res.users', 'image_small', record.responsible_id.raw_value)" t-att-title="record.responsible_id.value" t-att-alt="record.responsible_id.value" width="24" height="24" class="oe_kanban_avatar"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="fal_project_budget_view_form">
+            <field name="name">fal.project.budget.view.form</field>
+            <field name="model">fal.project.budget</field>
+            <field name="arch" type="xml">
+                <form string="Control">
+                    <!-- Header -->
+                    <header>
+                        <button string="Confirm" name="budget_confirm" states="draft" type="object" class="oe_highlight"/>
+                        <button string="Approve" name="budget_validate" states="confirm" type="object" class="oe_highlight"/>
+                        <button string="Done" name="budget_done" states="validate" type="object" class="oe_highlight"/>
+                        <button name="budget_draft" states="cancel" string="Reset to Draft" type="object" />
+                        <button string="Cancel Budget" name="budget_cancel" states="confirm,validate" type="object"/>
+                        <button string="Use Template" name="generate_budget_based_on_template" type="object"  attrs="{'invisible': ['|', ('is_template', '=', False), ('state', 'not in', ['confirm', 'validate', 'done'])]}" />
+                        <field name="state" widget="statusbar" statusbar_visible="draft,confirm,done"/>
+                    </header>
+                    <!-- Sheet -->
+                    <sheet string="Control">
+                        <div class="oe_button_box" name="button_box">
+                            <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+                                <field name="active" widget="boolean_button" options="{&quot;terminology&quot;: &quot;archive&quot;}"/>
+                            </button>
+                        </div>
+                        <div id="o_fal_project_budget_container">
+                            <div name="main" id="o_fal_project_budget_main">
+                                <div class="oe_title">
+                                    <field name="number" readonly="1"/><br/>
+                                    <label for="name" class="oe_edit_only"/>
+                                    <h1>
+                                        <field name="name" attrs="{'readonly':[('state','!=','draft')]}" placeholder="Control Name"/>
+                                    </h1>
+                                    <label for="version"/>
+                                    <field name="version" readonly="1"/>
+                                </div>
+                                <group>
+                                    <group>
+                                        <field name="is_template" attrs="{'invisible': [('is_template', '=', False)]}" readonly="1"/>
+                                        <field name="fal_project_budget_template_id" readonly="1"/>
+                                        <field name="type" options="{'no_create': True}"/>
+                                        <field name="parent_id" attrs="{'invisible': [('type', '=', 'root')]}" />
+                                        <field name="get_default_account_type" invisible="1"/>
+                                        <field name="project_id" context="{'default_account_type': get_default_account_type}" attrs="{'required': [('is_template', '=', False)], 'invisible': [('is_template', '=', True)]}"/>
+                                        <field name="project_partner_id" attrs="{'invisible': [('is_template', '=', True)]}"/>
+                                    </group>
+                                    <group>
+                                        <field name="fal_budget_tags_ids" widget="many2many_tags" />
+                                        <label for="product_id" string="Sold Product"/>
+                                        <div>
+                                            <field name="product_id" class="oe_inline" />
+                                            <span class="oe_inline" attrs="{'invisible':[('product_id','=',False)]}">
+                                                -
+                                            </span>
+                                            <field name="margin_percentage" class="oe_inline" attrs="{'invisible':[('product_id','=',False)]}"/>
+                                            <span class="oe_inline" attrs="{'invisible':[('product_id','=',False)]}">
+                                                % <i>(Margin)</i>
+                                            </span>
+                                        </div>
+                                        <label for="date_from" string="Period" attrs="{'invisible': [('is_template', '=', True)]}"/>
+                                        <div attrs="{'invisible': [('is_template', '=', True)]}">
+                                            <field name="date_from" class="oe_inline" attrs="{'required': [('is_template', '=', False)], 'invisible': [('is_template', '=', True)]}"/> -
+                                            <field name="date_to" class="oe_inline" attrs="{'required': [('is_template', '=', False)], 'invisible': [('is_template', '=', True)]}" nolabel="1"/>
+                                        </div>
+                                        <field name="responsible_id" attrs="{'readonly':[('state','!=','draft')]}" context="{'default_groups_ref': ['base.group_user', 'base.group_partner_manager', 'account.group_account_user']}"/>
+                                        <field name="company_id" groups="base.group_multi_company" options="{'no_create': True}"/>
+                                        <field name="currency_id" groups="base.group_multi_currency"/>
+                                        <field name="group_currency_id" invisible="1"/>
+                                        <field name="is_t0" readonly="1" invisible="1"/>
+                                    </group>
+                                </group>
+                                <notebook>
+                                    <page string="Control Item" attrs="{'invisible': [('type', 'in', ['view', 'root'])]}">
+                                        <field name="fal_project_budget_line_ids" context="{'default_date_from': date_from,'default_date_to': date_to, 'budget_tags': fal_budget_tags_ids, 'parent_tag_ids': fal_budget_tags_ids}" colspan="4" nolabel="1" attrs="{'readonly':[('state','!=','draft')], 'invisible': [('type', '=', 'view')]}"/>
+                                    </page>
+
+                                    <!-- Layout  -->
+                                    <page string="Sale" attrs="{'invisible': ['|',('type', 'not in', ['view', 'root']),('has_tag_sale', '=', False)]}" autofocus="autofocus">
+                                        <button name="create_budget_line" type="object" string="Create" context="{'default_fal_budget_tags_ids': 'fal_project_budget.fal_project_budget_tags_sales'}" class="btn-primary"/>
+                                        <field name="project_budget_sale_line_ids"/>
+                                        <group>
+                                            <group attrs="{'invisible': [('is_template', '=', True)]}">
+                                                <field name="total_sale_line" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}"/>
+                                                <field name="target_sale_price" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}"/>
+                                            </group>
+                                            <group attrs="{'invisible': [('is_template', '=', True)]}">
+                                                <field name="total_sale_line_group_curr" widget="monetary" options="{'currency_field': 'group_currency_id', 'field_digits': True}"/>
+                                                <field name="target_sale_price_group_curr" widget="monetary" options="{'currency_field': 'group_currency_id', 'field_digits': True}"/>
+                                            </group>
+                                        </group>
+                                    </page>
+
+                                    <page string="Purchase" attrs="{'invisible': ['|',('type', 'not in', ['view', 'root']),('has_tag_purchase', '=', False)]}" >
+                                        <button name="create_budget_line" type="object" string="Create" context="{'default_fal_budget_tags_ids': 'fal_project_budget.fal_project_budget_tags_purchases'}" class="btn-primary"/>
+                                        <field name="project_budget_purchase_line_ids"/>
+                                        <group>
+                                            <group attrs="{'invisible': [('is_template', '=', True)]}">
+                                                <field name="total_cost_price_purchase_line" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}"/>
+                                                <field name="target_sale_price_purchase_line" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}"/>
+                                            </group>
+                                            <group attrs="{'invisible': [('is_template', '=', True)]}">
+                                                <field name="total_cost_price_purchase_group_curr" widget="monetary" options="{'currency_field': 'group_currency_id', 'field_digits': True}"/>
+                                                <field name="target_sale_price_purchase_group_curr" widget="monetary" options="{'currency_field': 'group_currency_id', 'field_digits': True}"/>
+                                            </group>
+                                        </group>
+                                    </page>
+
+                                    <page string="Employee Timesheets" attrs="{'invisible': ['|',('type', 'not in', ['view', 'root']),('has_tag_employee', '=', False)]}">
+                                        <button name="create_budget_line" type="object" string="Create" context="{'default_fal_budget_tags_ids': 'fal_project_budget.fal_project_budget_tags_employee_timesheets'}" class="btn-primary"/>
+                                        <field name="project_budget_employee_timesheeet_line_ids"/>
+                                        <group>
+                                            <group attrs="{'invisible': [('is_template', '=', True)]}">
+                                                <field name="total_cost_price_employee_timesheet_line" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}"/>
+                                                <field name="target_sale_price_employee_timesheet_line" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}"/>
+                                            </group>
+                                            <group attrs="{'invisible': [('is_template', '=', True)]}">
+                                                <field name="total_cost_price_timesheet_group_curr" widget="monetary" options="{'currency_field': 'group_currency_id', 'field_digits': True}"/>
+                                                <field name="target_sale_price_timesheet_group_curr" widget="monetary" options="{'currency_field': 'group_currency_id', 'field_digits': True}"/>
+                                            </group>
+                                        </group>
+                                    </page>
+
+                                    <page string="Mission Expenses" attrs="{'invisible': ['|',('type', 'not in', ['view', 'root']),('has_tag_mission', '=', False)]}">
+                                        <button name="create_budget_line" type="object" string="Create" context="{'default_fal_budget_tags_ids': 'fal_project_budget.fal_project_budget_tags_mission_expenses'}" class="btn-primary"/>
+                                        <field name="project_budget_mission_expense_line_ids"/>
+                                        <group>
+                                            <group attrs="{'invisible': [('is_template', '=', True)]}">
+                                                <field name="total_cost_price_mission_expense_line" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}"/>
+                                                <field name="target_sale_price_mission_expense_line" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}"/>
+                                            </group>
+                                            <group attrs="{'invisible': [('is_template', '=', True)]}">
+                                                <field name="total_cost_price_expense_group_curr" widget="monetary" options="{'currency_field': 'group_currency_id', 'field_digits': True}"/>
+                                                <field name="target_sale_price_expense_group_curr" widget="monetary" options="{'currency_field': 'group_currency_id', 'field_digits': True}"/>
+                                            </group>
+                                        </group>
+                                    </page>
+
+                                    <page string="Workcenter Timesheets" attrs="{'invisible': ['|',('type', 'not in', ['view', 'root']),('has_tag_workcenter', '=', False)]}">
+                                        <button name="create_budget_line" type="object" string="Create" context="{'default_fal_budget_tags_ids': 'fal_project_budget.fal_project_budget_tags_workcenter_timesheets'}" class="btn-primary"/>
+                                        <field name="project_budget_workcenter_timesheet_line_ids"/>
+                                        <group>
+                                            <group attrs="{'invisible': [('is_template', '=', True)]}">
+                                                <field name="total_cost_price_workcenter_timesheet_line" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}"/>
+                                                <field name="target_sale_price_workcenter_timesheet_line" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}"/>
+                                            </group>
+                                            <group attrs="{'invisible': [('is_template', '=', True)]}">
+                                                <field name="total_cost_price_workcenter_group_curr" widget="monetary" options="{'currency_field': 'group_currency_id', 'field_digits': True}"/>
+                                                <field name="target_sale_price_workcenter_group_curr" widget="monetary" options="{'currency_field': 'group_currency_id', 'field_digits': True}"/>
+                                            </group>
+                                        </group>
+                                    </page>
+
+                                    <page string="Sub Budget" attrs="{'invisible': [('type', '=', 'regular')]}">
+                                        <field name="child_ids" nolabel="1" readonly="1" widget="many2many">
+                                            <tree string="Sub Budget" >
+                                                <field name="name" colspan="1"/>
+                                                <field name="project_id" />
+                                                <field name="date_from"/>
+                                                <field name="date_to"/>
+                                                <field name="company_id" options="{'no_create': True}" groups="base.group_multi_company"/>
+                                                <field name="responsible_id"/>
+                                                <field name="state"/>
+                                                <field name="fal_project_budget_line_ids" />
+                                                <button string="Edit" name="edit_budget" type="object"/>
+                                            </tree>
+                                        </field>
+                                    </page>
+                                    <page string="Control History">
+                                        <field name="project_budget_history_ids" context="{'default_date_from': date_from,'default_date_to': date_to, 'budget_tags': fal_budget_tags_ids, 'parent_tag_ids': fal_budget_tags_ids}" widget="many2many"/>
+                                    </page>
+                                </notebook>
+                                <group>
+                                    <group>
+                                        <label for="total_budget" string="Total Budget" help="Total Planned Budget vs T0"/>
+                                        <div class="o_row o_row_readonly">
+                                            <field name="total_budget" class="oe_inline"  widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}"/>
+                                            <span class="oe_inline">
+                                                <b>vs</b>
+                                            </span>
+                                            <field name="t0_total_budget" class="oe_inline" readonly="1" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}"/>
+                                            <span class="oe_inline text-left">
+                                                <b>T0</b>
+                                            </span>
+                                        </div>
+                                        <field name="total_cost_price" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}" attrs="{'invisible': [('is_template', '=', True)]}"/>
+                                    </group>
+                                    <group>
+                                        <label for="total_budget_group_curr" string="IFRS Total Budget" help="Total Planned Budget vs T0"/>
+                                        <div class="o_row o_row_readonly">
+                                            <field name="total_budget_group_curr" class="oe_inline"  widget="monetary" options="{'currency_field': 'group_currency_id', 'field_digits': True}"/>
+                                            <span class="oe_inline">
+                                                <b>vs</b>
+                                            </span>
+                                            <field name="t0_total_budget_group_curr" class="oe_inline" readonly="1" widget="monetary" options="{'currency_field': 'group_currency_id', 'field_digits': True}"/>
+                                            <span class="oe_inline text-left">
+                                                <b>T0</b>
+                                            </span>
+                                        </div>
+                                        <field name="total_cost_price_group_curr" widget="monetary" options="{'currency_field': 'group_currency_id', 'field_digits': True}" attrs="{'invisible': [('is_template', '=', True)]}"/>
+                                    </group>
+                                </group>
+                                    <!-- HIdden field for XML purpose -->
+                                    <field name="has_tag_sale" invisible="1"/>
+                                    <field name="has_tag_purchase" invisible="1"/>
+                                    <field name="has_tag_mission" invisible="1"/>
+                                    <field name="has_tag_employee" invisible="1"/>
+                                    <field name="has_tag_workcenter" invisible="1"/>
+                            </div>
+                        </div>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="fal_project_budget_tree">
+            <field name="name">fal.project.budget.view.tree</field>
+            <field name="model">fal.project.budget</field>
+            <field name="arch" type="xml">
+               <tree decoration-info="state == 'draft'" decoration-muted="state in ('done','cancel')" string="Control">
+                    <field name="number"/>
+                    <field name="name" colspan="1"/>
+                    <field name="type" colspan="1"/>
+                    <field name="project_id" />
+                    <field name="display_name" colspan="1"/>
+                    <field name="date_from"/>
+                    <field name="date_to"/>
+                    <field name="company_id" options="{'no_create': True}" groups="base.group_multi_company"/>
+                    <field name="responsible_id"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_fal_project_budget_search" model="ir.ui.view">
+           <field name="name">fal.project.budget.search</field>
+           <field name="model">fal.project.budget</field>
+           <field name="arch" type="xml">
+               <search string="Control">
+                    <field name="project_id" />
+                    <field name="number"/>
+                    <field name="name" filter_domain="['|',('name','ilike',self),('display_name','ilike',self)]" string="Budget"/>
+                    <field name="date_from"/>
+                    <field name="date_to"/>
+                    <field name="state"/>
+                    <separator/>
+                    <filter name="root_budget" string="Root" domain="[('type','=','root')]" help="Root Budgets"/>
+                    <separator/>
+                    <filter name="draft_budget" string="Draft" domain="[('state','=','draft')]" help="Draft Budgets"/>
+                    <filter name="approve_budget" string="To Approve" domain="[('state','=','confirm')]" help="To Approve Budgets" />
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="view_fal_project_budget_action">
+            <field name="name">Control</field>
+            <field name="res_model">fal.project.budget</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="context">{'default_is_template': 0, 'search_default_root_budget': 1}</field>
+            <field name="domain">[('is_template', '=', False)]</field>
+            <field name="help" type="html">
+                <p>
+                    You can define control here, control can be used to manage BI of analytic account
+                </p>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="view_fal_project_budget_template_action">
+            <field name="name">Control Template</field>
+            <field name="res_model">fal.project.budget</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{'default_is_template':1, 'search_default_root_budget': 1}</field>
+            <field name="domain">[('is_template', '=', True)]</field>
+            <field name="help" type="html">
+                <p>
+                    You can define Control Template here
+                </p>
+            </field>
+        </record>
+
+        <!-- Control Line -->
+        <record model="ir.ui.view" id="view_fal_project_budget_line_form">
+            <field name="name">fal.project.budget.line.form</field>
+            <field name="model">fal.project.budget.line</field>
+            <field name="arch" type="xml">
+                <form string="Control Lines">
+                    <!-- Header -->
+                    <header>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,confirm"/>
+                    </header>
+                    <!-- Body -->
+                    <sheet>
+                        <div class="oe_title">
+                            <h5><field name="number" readonly="1"/></h5><br/>
+                            <label for="name" class="oe_edit_only"/>
+                            <h1>
+                                <field name="name" placeholder="Eg. Coffee Budget"/>
+                            </h1>
+                            <div class="o_row">
+                                <label for="reference"/>
+                                <field name="reference"/>
+                                <span>
+                                    -
+                                </span>
+                                <label for="account_id"/>
+                                <field name="account_id"/>
+                                <!-- change to account_id -->
+                                <label for="general_budget_id" invisible="1"/>
+                                <field name="general_budget_id" invisible="1"/>
+                            </div>
+                        </div>
+                        <group>
+                            <group name="general_info">
+                                <field name="parent_active" invisible="1"/>
+                                <field name="parent_template" invisible="1"/>
+                                <field name="fal_budget_tags_ids" widget="many2many_tags"/>
+                                <label for="date_from" string="Period" attrs="{'invisible': [('parent_template', '=', True)]}"/>
+                                <div class="o_row o_row_readonly" attrs="{'invisible': [('parent_template', '=', True)]}">
+                                    <field name="date_from" attrs="{'required': [('parent_template', '=', False)], 'invisible': [('parent_template', '=', True)]}" class="oe_inline"/>
+                                        <span class="oe_inline">
+                                            To
+                                        </span>
+                                    <field name="date_to" attrs="{'required': [('parent_template', '=', False)], 'invisible': [('parent_template', '=', True)]}" class="oe_inline"/>
+                                </div>
+                                <field name="partner_ids" widget="many2many_tags"/>
+                                <field name="product_category_ids" widget="many2many_tags"/>
+                                <field name="product_ids" widget="many2many_tags"/>
+                                <label for="product_qty" string="Quantity"/>
+                                <div class="o_row">
+                                    <field name="product_qty" class="oe_inline"/>
+                                    <span class="oe_inline">
+                                        X
+                                    </span>
+                                    <field name="product_unit_price" class="oe_inline"/>
+                                </div>
+                            </group>
+                            <group name="other_info">
+                                <field name="fal_project_budget_id" readonly="not context.get('fill_control', False)" domain="[('id', 'child_of', [active_id]), ('type', '=', 'regular')]"/>
+                                <field name="project_id"/>
+                                <field name="paid_date" invisible="1"/>
+                                <field name="company_id" options="{'no_create': True}" groups="base.group_multi_company"/>
+                                <field name="currency_id" groups="base.group_multi_currency"/>
+                            </group>
+                            <group name="budget_product" string="Budget">
+                                <label for="planned_amount" string="Amount" help="Planned vs T0"/>
+                                <div class="o_row o_row_readonly">
+                                    <field name="planned_amount" class="oe_inline"  widget="monetary"/>
+                                    <span class="oe_inline">
+                                        <b>vs</b>
+                                    </span>
+                                    <field name="t0_planned_amount" class="oe_inline" readonly="1" widget="monetary"/>
+                                    <span class="oe_inline text-left">
+                                        <b>T0</b>
+                                    </span>
+                                </div>
+                                <label for="theoritical_amount" string="Theoritical Result" help="Theoritical vs Practical Amount"/>
+                                <div class="o_row o_row_readonly">
+                                    <field name="theoritical_amount" class="oe_inline"  widget="monetary"/>
+                                    <span class="oe_inline">
+                                        <b>vs</b>
+                                    </span>
+                                    <field name="practical_amount" class="oe_inline"  widget="monetary"/>
+                                    <span class="oe_inline">
+                                        (
+                                    </span>
+                                    <field name="percentage" class="oe_inline text-right"/>
+                                    <span class="oe_inline">
+                                        %)
+                                    </span>
+                                    <span class="oe_inline">
+                                        <b>Practical</b>
+                                    </span>
+                                </div>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        
+        <record model="ir.ui.view" id="view_fal_project_budget_line_tree">
+            <field name="name">fal.project.budget.line.tree</field>
+            <field name="model">fal.project.budget.line</field>
+            <field name="arch" type="xml">
+                <tree string="Control Lines">
+                    <field name="state" invisible="1"/>
+                    <field name="fal_project_budget_id" invisible="1"/>
+                    <field name="general_budget_id" invisible="1"/>
+                    <field name="account_id"/>
+                    <field name="name" />
+                    <field name="reference" invisible="1"/>
+                    <field name="employee_id" invisible="1"/>
+                    <field name="partner_ids" invisible="1"/>
+                    <field name="product_ids" invisible="1"/>
+                    <field name="product_qty" invisible="1"/>
+                    <field name="product_unit_price" invisible="1"/>
+                    <field name="fal_budget_tags_ids" widget="many2many_tags"/>
+                    <field name="project_id" groups="analytic.group_analytic_accounting" invisible="1"/>
+                    <field name="date_from" invisible="1"/>
+                    <field name="date_to" invisible="1"/>
+                    <field name="paid_date" invisible="1" groups="base.group_no_one"/>
+                    <field name="t0_planned_amount" readonly="1" widget="monetary" invisible="1"/>
+                    <field name="planned_amount" widget="monetary" sum="Total"/>
+                    <field name="practical_amount" widget="monetary" sum="Total"/>
+                    <field name="fal_practical_amount_currency" widget="monetary" invisible="1"/>
+                    <field name="theoritical_amount" widget="monetary" invisible="1"/>
+                    <field name="percentage"/>
+                    <button string="Edit" name="edit_budget_line" type="object"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_fal_project_budget_line_search" model="ir.ui.view">
+            <field name="name">fal.project.budget.line.search</field>
+            <field name="model">fal.project.budget.line</field>
+            <field name="arch" type="xml">
+                <search string="Control Lines">
+                    <field name="project_id"/>
+                    <field name="partner_ids" />
+                    <field name="product_ids" />
+                    <field name="name"/>
+                    <field name="reference"/>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="act_fal_project_budget_lines_view">
+            <field name="name">Control</field>
+            <field name="res_model">fal.project.budget.line</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- Budget Tags -->
+        <record id="fal_project_budget_tags_view_form" model="ir.ui.view">
+            <field name="name">fal.project.budget.tags.view.form</field>
+            <field name="model">fal.project.budget.tags</field>
+            <field name="arch" type="xml">
+                <form string="Control Tags">
+                    <group>
+                        <group>
+                            <field name="name" />
+                            <field name="parent_id" />
+                        </group>
+                        <group>
+                            <field name="type" />
+                        </group>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="fal_project_budget_tags_view_tree" model="ir.ui.view">
+            <field name="name">fal.project.budget.tags.view.tree</field>
+            <field name="model">fal.project.budget.tags</field>
+            <field name="arch" type="xml">
+                <tree string="Control Tags">
+                    <field name="sequence" widget="handle" />
+                    <field name="name" />
+                    <field name="type" />
+                    <field name="parent_id" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="fal_project_budget_tags_view_search" model="ir.ui.view">
+            <field name="name">fal.project.budget.tags.view.search</field>
+            <field name="model">fal.project.budget.tags</field>
+            <field name="arch" type="xml">
+                <search string="Control Tags">
+                    <field name="name" />
+                    <field name="type" />
+                    <field name="parent_id" />
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="fal_project_budget_tags_action">
+            <field name="name">Control Tags</field>
+            <field name="res_model">fal.project.budget.tags</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p>
+                Define Control Tags in here!
+                </p>
+            </field>
+        </record>
+
+        <!-- Menu Structure -->
+
+        <menuitem
+            id="controlling_menu_root"
+            name="Controlling"
+            web_icon="fal_project_budget,static/description/control.png"
+            groups="analytic.group_analytic_accounting"
+            sequence="6"/>
+
+        <menuitem id="menu_fal_project_budget_parent" parent="fal_project_budget.controlling_menu_root" name="Dashboard" sequence="20"/>  
+
+        <menuitem action="view_fal_project_budget_action" id="menu_fal_project_budget" parent="fal_project_budget.menu_fal_project_budget_parent" sequence="20"/>   
+
+        <menuitem id="menu_fal_project_budget_configuration" name="Configuration" parent="fal_project_budget.controlling_menu_root" sequence="40"/>  
+
+        <menuitem action="fal_project_budget_tags_action" id="menu_fal_project_budget_tags" parent="fal_project_budget.menu_fal_project_budget_configuration" sequence="20"/>
+
+        <menuitem action="view_fal_project_budget_template_action" id="menu_fal_project_budget_template" parent="fal_project_budget.menu_fal_project_budget_configuration" sequence="40"/>
+
+    </data>
+</odoo>

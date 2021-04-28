@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="sale_view_inherit_fal_calculator_ext" model="ir.ui.view">
+            <field name="name">product_category_form_view_inherit_fal_calculator_ext</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <field name="product_no_variant_attribute_value_ids" position="after">
+                    <field name="fal_is_product_selector" invisible="1"/>
+                </field>
+            </field>
+        </record>
+	</data>
+</odoo>

@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <report
+            id="report_fixed_asset_schedule"
+            model="fixed.asset.report.wizard"
+            string="Fixed Asset Schedule Report"
+            report_type="qweb-html"
+            name="fixed_asset_report.fixed_asset_schedule_report_template"
+            file="fixed_asset_report.fixed_asset_schedule_report_template"
+            attachment_use="False"
+            paperformat="fixed_asset_report.paperformat_fixed_assets"
+    />
+
+    <template id="fixed_asset_schedule_report_template">
+        <t t-call="web.html_container">
+            <t t-call="web.internal_layout">
+                <div class="page" style="font-size: 10px;">
+
+                    <!-- <div class="oe_structure"/> -->
+
+                    <!-- Report Title -->
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <h2 class="text-center"
+                                style="margin-bottom: 30px;">Fixed Asset
+                                Schedule
+                            </h2>
+                        </div>
+                    </div>
+
+                    <!-- Information Section -->
+                    <div class="row"
+                         style="margin-bottom: 30px !important;">
+                        <div t-if="list_data" class="col-xs-12">
+                            <h5 style="font-weight: normal;">Fixed Asset
+                                Schedule for the period from
+                                <b>
+                                    <span t-esc="list_data[0]['search_start_date']"/>
+                                </b>
+                                to
+                                <b>
+                                    <span t-esc="list_data[0]['search_end_date']"/>
+                                </b>
+                            </h5>
+                        </div>
+                        <div t-else="" class="col-xs-12">
+                            <h5 style="font-weight: normal;">
+                                No data available
+                            </h5>
+                        </div>
+                    </div>
+
+                    <!-- Report Content -->
+                    <table t-if="list_data" class="table table-condensed">
+                        <thead>
+                            <tr style="border-top: 1px solid #000;">
+                                <th rowspan="2"
+                                    style="vertical-align: middle; border-right: 1px solid #000;">
+                                    Asset Category
+                                </th>
+                                <th class="text-center" colspan="6"
+                                    style="border-right: 1px solid #000;">
+                                    Cost
+                                </th>
+                                <th class="text-center" colspan="4"
+                                    style="border-right: 1px solid #000;">
+                                    Accumulated Depreciation
+                                </th>
+                                <th class="text-right" rowspan="2"
+                                    style="vertical-align: middle;">Net
+                                    Book
+                                </th>
+                            </tr>
+                            <tr>
+                                <th class="text-right"
+                                    style="vertical-align: middle;">
+                                    Opening Addition
+                                </th>
+
+                                <th class="text-right"
+                                    style="vertical-align: middle;">
+                                    Opening Disposal
+                                </th>
+
+                                <th class="text-right"
+                                    style="vertical-align: middle;">
+                                    Opening
+                                    Balance
+                                </th>
+                                <th class="text-right"
+                                    style="vertical-align: middle;">
+                                    Addition
+                                    during the Period
+                                </th>
+                                <th class="text-right"
+                                    style="vertical-align: middle;">
+                                    Disposal
+                                    during the Period
+                                </th>
+                                <th class="text-right"
+                                    style="vertical-align: middle; border-right: 1px solid #000;">
+                                    Closing Balance
+                                </th>
+                                <th class="text-right"
+                                    style="vertical-align: middle;">
+                                    Opening
+                                    Balance
+                                </th>
+                                <th class="text-right"
+                                    style="vertical-align: middle;">
+                                    Depreciation Charged during the
+                                    Period
+                                </th>
+                                <th class="text-right"
+                                    style="vertical-align: middle;">
+                                    Disposal
+                                    during the Period
+                                </th>
+                                <th class="text-right"
+                                    style="vertical-align: middle; border-right: 1px solid #000;">
+                                    Closing Balance
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr t-foreach="list_data" t-as="line">
+                                <td style="border-right: 1px solid #000;">
+                                    <span t-esc="line['category_id'].display_name"/>
+                                </td>
+                                <td class="text-right">
+                                    <span t-esc="line['opening_addition_cost']"
+                                          t-options="{'widget': 'monetary', 'display_currency': company.currency_id}"/>
+                                </td>
+                                <td class="text-right">
+                                    <span t-esc="line['opening_disposal_cost']"
+                                          t-options="{'widget': 'monetary', 'display_currency': company.currency_id}"/>
+                                </td>
+                                <td class="text-right">
+                                    <span t-esc="line['opening_balance_cost']"
+                                          t-options="{'widget': 'monetary', 'display_currency': company.currency_id}"/>
+                                </td>
+                                <td class="text-right">
+                                    <span t-esc="line['addition_cost']"
+                                          t-options="{'widget': 'monetary', 'display_currency': company.currency_id}"/>
+                                </td>
+                                <td class="text-right">
+                                    <span t-esc="line['disposal_cost']"
+                                          t-options="{'widget': 'monetary', 'display_currency': company.currency_id}"/>
+                                </td>
+                                <td class="text-right"
+                                    style="border-right: 1px solid #000;">
+                                    <span t-esc="line['closing_balance_cost']"
+                                          t-options="{'widget': 'monetary', 'display_currency': company.currency_id}"/>
+                                </td>
+
+                                <td class="text-right">
+                                    <span t-esc="line['opening_balance_accumulated_depreciation']"
+                                          t-options="{'widget': 'monetary', 'display_currency': company.currency_id}"/>
+                                </td>
+                                <td class="text-right">
+                                    <span t-esc="line['depreciation_accumulated_depreciation']"
+                                          t-options="{'widget': 'monetary', 'display_currency': company.currency_id}"/>
+                                </td>
+                                <td class="text-right">
+                                    <span t-esc="line['disposal_accumulated_depreciation']"
+                                          t-options="{'widget': 'monetary', 'display_currency': company.currency_id}"/>
+                                </td>
+                                <td class="text-right"
+                                    style="border-right: 1px solid #000;">
+                                    <span t-esc="line['closing_balance_accumulated_depreciation']"
+                                          t-options="{'widget': 'monetary', 'display_currency': company.currency_id}"/>
+                                </td>
+
+                                <td class="text-right">
+                                    <span t-esc="line['net_book']"
+                                          t-options="{'widget': 'monetary', 'display_currency': company.currency_id}"/>
+                                </td>
+                            </tr>
+                            <tr class="border-black">
+                                <td style="border-right: 1px solid #000;">
+                                    <b>Total</b>
+                                </td>
+
+                                <td class="text-right">
+                                    <b>
+                                        <span t-esc="sum(l['opening_addition_cost'] for l in list_data)"
+                                              t-options="{'widget': 'monetary', 'display_currency': company.currency_id}"/>
+                                    </b>
+                                </td>
+                                <td class="text-right">
+                                    <b>
+                                        <span t-esc="sum(l['opening_disposal_cost'] for l in list_data)"
+                                              t-options="{'widget': 'monetary', 'display_currency': company.currency_id}"/>
+                                    </b>
+                                </td>
+                                <td class="text-right">
+                                    <b>
+                                        <span t-esc="sum(l['opening_balance_cost'] for l in list_data)"
+                                              t-options="{'widget': 'monetary', 'display_currency': company.currency_id}"/>
+                                    </b>
+                                </td>
+                                <td class="text-right">
+                                    <b>
+                                        <span t-esc="sum(l['addition_cost'] for l in list_data)"
+                                              t-options="{'widget': 'monetary', 'display_currency': company.currency_id}"/>
+                                    </b>
+                                </td>
+                                <td class="text-right">
+                                    <b>
+                                        <span t-esc="sum(l['disposal_cost'] for l in list_data)"
+                                              t-options="{'widget': 'monetary', 'display_currency': company.currency_id}"/>
+                                    </b>
+                                </td>
+                                <td class="text-right"
+                                    style="border-right: 1px solid #000;">
+                                    <b>
+                                        <span t-esc="sum(l['closing_balance_cost'] for l in list_data)"
+                                              t-options="{'widget': 'monetary', 'display_currency': company.currency_id}"/>
+                                    </b>
+                                </td>
+
+                                <td class="text-right">
+                                    <b>
+                                        <span t-esc="sum(l['opening_balance_accumulated_depreciation'] for l in list_data)"
+                                              t-options="{'widget': 'monetary', 'display_currency': company.currency_id}"/>
+                                    </b>
+                                </td>
+                                <td class="text-right">
+                                    <b>
+                                        <span t-esc="sum(l['depreciation_accumulated_depreciation'] for l in list_data)"
+                                              t-options="{'widget': 'monetary', 'display_currency': company.currency_id}"/>
+                                    </b>
+                                </td>
+                                <td class="text-right">
+                                    <b>
+                                        <span t-esc="sum(l['disposal_accumulated_depreciation'] for l in list_data)"
+                                              t-options="{'widget': 'monetary', 'display_currency': company.currency_id}"/>
+                                    </b>
+                                </td>
+                                <td class="text-right"
+                                    style="border-right: 1px solid #000;">
+                                    <b>
+                                        <span t-esc="sum(l['closing_balance_accumulated_depreciation'] for l in list_data)"
+                                              t-options="{'widget': 'monetary', 'display_currency': company.currency_id}"/>
+                                    </b>
+                                </td>
+
+                                <td class="text-right">
+                                    <b>
+                                        <span t-esc="sum(l['net_book'] for l in list_data)"
+                                              t-options="{'widget': 'monetary', 'display_currency': company.currency_id}"/>
+                                    </b>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="oe_structure"/>
+
+                </div>
+            </t>
+        </t>
+    </template>
+</odoo>
+

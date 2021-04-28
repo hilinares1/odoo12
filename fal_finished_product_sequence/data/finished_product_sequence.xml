@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="seq_fp_fwa" model="ir.sequence">
+            <field name="name">Finished Product Falinwa</field>
+            <field name="code">finished.product.fwa</field>
+            <field name="prefix">C/%(year)s/</field>
+            <field name="padding">4</field>
+            <field name="company_id" eval="False"/>
+        </record>
+        <record id="seq_parts_fwa" model="ir.sequence">
+            <field name="name">Parts Product Falinwa</field>
+            <field name="code">parts.product.fwa</field>
+            <field name="prefix">MP/%(year)s/</field>
+            <field name="padding">4</field>
+            <field name="company_id" eval="False"/>
+        </record>
+    </data>
+</odoo>

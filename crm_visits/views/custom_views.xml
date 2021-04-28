@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <!-- Fed state tree view   -->
+    <record id="fed_state_region" model="ir.ui.view">
+            <field name="name">res.country.state.region</field>
+            <field name="model">res.country.state</field>
+            <field name="inherit_id" ref="base.view_country_state_tree"/>
+            <field name="arch" type="xml">
+                <field name="name" position="after">
+                    <field name="region"/>
+                </field>
+            </field>
+    </record>
+
+    <!-- Contact form view    -->
+    <record id="res_partner_contact_region" model="ir.ui.view">
+            <field name="name">res.partner.region</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <field name="country_id" position="before">
+                    <field name="region" placeholder="Region" readonly="0"/>
+                </field>
+                <field name="street" position="attributes">
+                    <attribute name="required">1</attribute>
+                </field>
+                <field name="street2" position="attributes">
+                    <attribute name="required">1</attribute>
+                </field>
+                <field name="city" position="attributes">
+                    <attribute name="required">1</attribute>
+                </field>
+                <field name="state_id" position="attributes">
+                    <attribute name="required">1</attribute>
+                </field>
+                <field name="zip" position="attributes">
+                    <attribute name="required">1</attribute>
+                </field>
+                <field name="country_id" position="attributes">
+                    <attribute name="required">1</attribute>
+                </field>
+                <field name="vat" position="attributes">
+                    <attribute name="required">1</attribute>
+                    <attribute name="placeholder">e.g 000000000000</attribute>
+                    <attribute name="string">TIN</attribute>
+                </field>
+            </field>
+    </record>
+
+    <!--Sales form view-->
+    <record id="sale_form_view_modify" model="ir.ui.view">
+            <field name="name">salse.order.form</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//tree/field[@name='price_unit']" position="attributes">
+                    <attribute name="readonly">1</attribute>
+                </xpath>
+            </field>
+    </record>
+</odoo>

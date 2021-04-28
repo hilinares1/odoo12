@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_account_list_falacseq" model="ir.ui.view">
+            <field name="name">account.account.list.falacseq</field>
+            <field name="model">account.account</field>
+            <field name="inherit_id" ref="account.view_account_list" />
+            <field name="arch" type="xml">
+                <field name="code" position="before">
+                    <field name="sequence" widget="handle" />
+                </field>
+                <field name="name" position="after">
+                    <field name="display_name" />
+                </field>
+            </field>
+        </record>
+
+        <record id="view_account_form_falacseq" model="ir.ui.view">
+            <field name="name">account.account.form.falacseq</field>
+            <field name="model">account.account</field>
+            <field name="inherit_id" ref="account.view_account_form" />
+            <field name="arch" type="xml">
+                <field name="deprecated" position="after">
+                    <field name="sequence" />
+                </field>
+                <xpath expr="//field[@name='code']" position="after">
+                    <field name="display_name" />
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_account_analytic_account_list_falacseq" model="ir.ui.view">
+            <field name="name">account.analytic.account.list.falacseq</field>
+            <field name="model">account.analytic.account</field>
+            <field name="inherit_id" ref="analytic.view_account_analytic_account_list" />
+            <field name="arch" type="xml">
+                <field name="name" position="before">
+                    <field name="sequence" widget="handle" />
+                </field>
+            </field>
+        </record>
+
+        <record id="view_account_analytic_account_form_falacseq" model="ir.ui.view">
+            <field name="name">analytic.analytic.account.form.falacseq</field>
+            <field name="model">account.analytic.account</field>
+            <field name="inherit_id" ref="analytic.view_account_analytic_account_form" />
+            <field name="arch" type="xml">
+                <field name="currency_id" position="after">
+                    <field name="sequence" />
+                </field>
+            </field>
+        </record>
+    </data>
+</odoo>

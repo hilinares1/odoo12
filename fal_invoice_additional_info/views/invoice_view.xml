@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_account_invoice_tree_fal_add_title" model="ir.ui.view">
+            <field name="name">account.invoice.tree.fal.add.title</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//tree/field[@name='name']" position="after">
+                    <field name="active" invisible="1"/>
+                </xpath>
+                <xpath expr="//field[@name='partner_id']" position="after">
+                    <field name="fal_title"/>
+                    <field name="fal_partner_contact_person_id"/>
+                </xpath>
+                <field name="date_due" position="after">
+                    <field name="fal_effective_payment_dates" />
+                    <field name="fal_risk_level" />
+                </field>
+                <field name="origin" position="after">
+                    <field name="fal_quotation_number"/>
+                    <field name="fal_client_order_ref"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_account_invoice_form_fal_add_title" model="ir.ui.view">
+            <field name="name">account.invoice.form.fal.add.title</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//sheet/div" position="before">
+                    <div class="oe_button_box" name="button_box">
+                        <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+                            <field name="active" widget="boolean_button" options='{"terminology": "archive"}'/>
+                        </button>
+                    </div>
+                </xpath>
+                <field name="date_invoice" position="before">
+                    <label for="fal_risk_level"/>
+                    <div name="risk_level">
+                        <field name="fal_risk_level" class="oe_inline" /> - <field name="fal_risk_level_name" class="oe_inline" />
+                    </div>
+                </field>
+                <field name="partner_id" position="before">
+                    <field name="fal_title"/>
+                    <field name="fal_company_code" invisible="1"/>
+                </field>
+                <field name="partner_id" position="after">
+                    <field name="fal_partner_contact_person_id" domain="[('parent_id','=',partner_id)]"/>
+                    <field name="fal_attachment_name" invisible='1'/>
+                    <field name="fal_attachment" filename='fal_attachment_name' string="Invoice Attachment"/>
+                </field>
+                <xpath expr="//group[hasclass('oe_subtotal_footer','oe_right')]" position="after">
+                    <group class="oe_subtotal_footer oe_left">
+                        <field name="fal_total_ordered_amount"/>
+                        <field name="fal_total_amount_already_invoced"/>
+                        <field name="fal_percentage_invoiced_ordered"/>
+                    </group>
+                </xpath>
+                <xpath expr="//sheet/notebook/page[@name='other_info']/group/group[2]/field[@name='origin']" position="before">
+                    <field name="final_quotation_number"/>
+                </xpath>
+                <xpath expr="//notebook/page[@name='other_info']/group/group/field[@name='reference']" position="after">
+                    <field name="fal_use_late_payment_statement"/>
+                    <field name="fal_use_annex"/>
+                </xpath>
+                <xpath expr="//notebook/page[@name='other_info']/group/group/field[@name='reference']" position="before">
+                    <field name="fal_sale_id"/>
+                </xpath>
+                <xpath expr="//sheet/notebook/page[@name='other_info']/group/group[2]/field[@name='origin']" position="before">
+                    <field name="final_quotation_number"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_account_invoice_supplier_tree_fal_add_title" model="ir.ui.view">
+            <field name="name">account.invoice.supplier.tree.fal.add.title</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_supplier_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//tree/field[@name='name']" position="after">
+                    <field name="active" invisible="1"/>
+                </xpath>
+                <xpath expr="//field[@name='partner_id']" position="after">
+                    <field name="fal_title"/>
+                    <field name="fal_partner_contact_person_id"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_account_invoice_supplier_form_fal_add_title" model="ir.ui.view">
+            <field name="name">account.invoice.supplier.form.fal.add.title</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_supplier_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//sheet/div" position="before">
+                    <div class="oe_button_box" name="button_box">
+                        <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+                            <field name="active" widget="boolean_button" options='{"terminology": "archive"}'/>
+                        </button>
+                    </div>
+                </xpath>
+                <field name="partner_id" position="before">
+                    <field name="fal_title"/>
+                </field>
+                <field name="reference" position="after">
+                    <field name="fal_attachment_name" invisible='1'/>
+                    <field name="fal_attachment" filename='fal_attachment_name' string="Invoice Attachment"/>
+                </field>
+                <field name="partner_id" position="after">
+                    <field name="fal_partner_contact_person_id" domain="[('parent_id','=',partner_id)]"/>
+                </field>
+                 <xpath expr="//group[hasclass('oe_subtotal_footer','oe_right')]" position="after">
+                    <group class="oe_subtotal_footer oe_left">
+                        <field name="fal_total_ordered_amount"/>
+                        <field name="fal_total_amount_already_invoced"/>
+                        <field name="fal_percentage_invoiced_ordered"/>
+                    </group>
+                </xpath>
+                <field name="date_invoice" position="before">
+                    <label for="fal_risk_level"/>
+                    <div name="risk_level">
+                        <field name="fal_risk_level" class="oe_inline" /> - <field name="fal_risk_level_name" class="oe_inline" />
+                    </div>
+                </field>
+                <xpath expr="//sheet/group/group[2]/field[@name='origin']" position="before">
+                    <field name="final_quotation_number"/>
+                </xpath>
+            </field>
+        </record>
+
+        <!--Inherit invoice search view-->
+        <record id="view_account_inherit_search" model="ir.ui.view">
+          <field name="name">view_account_inherit_search</field>
+          <field name="model">account.invoice</field>
+          <field name="inherit_id" ref="account.view_account_invoice_filter"/>
+          <field name="arch" type="xml">
+            <data>
+                <xpath expr="//search" position="inside">
+                  <field name="fal_title"/>
+                </xpath>
+                 <xpath expr="//search/filter[@name='late']" position="after">
+                    <separator/>
+                    <filter string="Archived" domain="[('active','=',False)]" name="archived_account_invoice_filter"/>
+                    <separator/>
+                </xpath>
+            </data>
+          </field>
+        </record>
+
+        <record id="invoice_form_fal_sv" model="ir.ui.view">
+            <field name="name">account.invoice.form.fal.sv</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_form"/>
+            <field name="arch" type="xml">
+                <data>
+                    <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='price_subtotal']" position="after">
+                        <field name="price_subtotal_vat"/>
+                    </xpath>
+                </data>
+            </field>
+        </record>
+
+        <record id="invoice_supplier_form_fal_sv" model="ir.ui.view">
+            <field name="name">account.invoice.supplier.form.fal.sv</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_supplier_form"/>
+            <field name="arch" type="xml">
+                <data>
+                    <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='price_subtotal']" position="after">
+                        <field name="price_subtotal_vat"/>
+                    </xpath>
+                </data>
+            </field>
+		</record>
+		
+        <record id="invoice_tree_inherit_hps_sale_ext" model="ir.ui.view">
+            <field name="name">view_invoice_tree_fal</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_tree"/>
+            <field name="arch" type="xml">
+                <field name="origin" position="after">
+                    <field name="fal_quotation_number"/>
+                    <field name="fal_client_order_ref"/>
+                </field>
+            </field>
+        </record>
+
+        <!-- change PDF Report Name -->
+        <function name="write" model="ir.model.data">
+            <function name="search" model="ir.model.data">
+                <value eval="[('module', '=', 'account'), ('name', '=', 'email_template_edi_invoice')]"/>
+            </function>
+            <value eval="{'noupdate': False}"/>
+        </function>
+
+        <record id="account.email_template_edi_invoice" model="mail.template">
+            <field name="report_name">Invoice_${(object.number or '').replace('/','_')}${object.state == 'draft' and '_draft' or ''}${object.fal_title and '_' or ''}${object.fal_title or ''}</field>
+            <field name="subject">${object.company_id.name} Invoice (Ref ${object.number or 'n/a'}${object.fal_title and '_' or ''}${object.fal_title or ''})</field>
+        </record>
+
+        <!-- Res Company -->
+        <!-- view untuk company additional invo -->
+        <record id="fal_view_company_late_payment_statement" model="ir.ui.view">
+            <field name="name">fal_view_company_late_payment_statement_view.view</field>
+            <field name="model">res.company</field>
+            <field name="inherit_id" ref="base.view_company_form"/>
+            <field name="arch" type="xml">
+                <field name="currency_id" position="after">
+                     <field name="fal_company_late_payment_statement"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</odoo>

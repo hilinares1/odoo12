@@ -1,0 +1,183 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* crm_duplicates
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-11-30 09:51+0000\n"
+"PO-Revision-Date: 2017-11-30 13:03+0300\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: ru\n"
+"X-Generator: Poedit 1.8.7.1\n"
+
+#. module: crm_duplicates
+#: code:addons/crm_duplicates/models/crm_lead.py:86
+#: code:addons/crm_duplicates/models/res_partner.py:73
+#, python-format
+msgid " by fields: "
+msgstr " по полям: "
+
+#. module: crm_duplicates
+#: model:ir.ui.view,arch_db:crm_duplicates.res_config_settings_view_form
+msgid "CRM Duplicates"
+msgstr "Дубликаты CRM"
+
+#. module: crm_duplicates
+#: model:ir.model,name:crm_duplicates.model_res_company
+msgid "Companies"
+msgstr "Компании"
+
+#. module: crm_duplicates
+#: model:ir.model.fields,field_description:crm_duplicates.field_res_config_settings_company_duplicate_id
+msgid "Company Duplicates"
+msgstr "Компания"
+
+#. module: crm_duplicates
+#: model:ir.model,name:crm_duplicates.model_res_partner
+msgid "Contact"
+msgstr "Контакт"
+
+#. module: crm_duplicates
+#: model:ir.ui.view,arch_db:crm_duplicates.crm_case_form_view_leads
+#: model:ir.ui.view,arch_db:crm_duplicates.crm_case_form_view_oppor
+#: model:ir.ui.view,arch_db:crm_duplicates.view_partner_form
+msgid "Duplicates"
+msgstr "Дубликаты"
+
+#. module: crm_duplicates
+#: code:addons/crm_duplicates/models/crm_lead.py:84
+#: code:addons/crm_duplicates/models/res_partner.py:71
+#, python-format
+msgid "Duplicates were found: \n"
+msgstr "Найдены следующие дубликаты:  \n"
+
+#. module: crm_duplicates
+#: model:ir.model,name:crm_duplicates.model_crm_lead
+msgid "Lead/Opportunity"
+msgstr "Лид /Возможность"
+
+#. module: crm_duplicates
+#: model:ir.model.fields,field_description:crm_duplicates.field_res_company_duplicate_fields_lead
+#: model:ir.model.fields,field_description:crm_duplicates.field_res_config_settings_duplicate_fields_lead
+msgid "Leads Rigid Duplicates Fields"
+msgstr "\"Жесткие\" Поля Поиска Лидов"
+
+#. module: crm_duplicates
+#: model:ir.model.fields,field_description:crm_duplicates.field_res_company_duplicate_fields_lead_soft
+#: model:ir.model.fields,field_description:crm_duplicates.field_res_config_settings_duplicate_fields_lead_soft
+msgid "Leads Soft Duplicates Fields"
+msgstr "\"Мягкие\" Поля Поиска Лидов"
+
+#. module: crm_duplicates
+#: model:ir.model.fields,field_description:crm_duplicates.field_res_company_duplicate_fields_partner
+#: model:ir.model.fields,field_description:crm_duplicates.field_res_config_settings_duplicate_fields_partner
+msgid "Partner Rigid Duplicates Fields"
+msgstr "\"Жесткие\" Поля Поиск Партнеров"
+
+#. module: crm_duplicates
+#: model:ir.model.fields,field_description:crm_duplicates.field_res_company_duplicate_fields_partner_soft
+#: model:ir.model.fields,field_description:crm_duplicates.field_res_config_settings_duplicate_fields_partner_soft
+msgid "Partner Soft Duplicates Fields"
+msgstr "\"Мягкие\" Поля Поиск Партнеров"
+
+#. module: crm_duplicates
+#: model:ir.model.fields,field_description:crm_duplicates.field_crm_lead_duplicates_count
+#: model:ir.model.fields,field_description:crm_duplicates.field_res_partner_duplicates_count
+#: model:ir.model.fields,field_description:crm_duplicates.field_res_users_duplicates_count
+#: model:ir.ui.view,arch_db:crm_duplicates.view_crm_case_leads_filter
+#: model:ir.ui.view,arch_db:crm_duplicates.view_crm_case_opportunities_filter
+#: model:ir.ui.view,arch_db:crm_duplicates.view_res_partner_filter
+msgid "Potential Duplicates"
+msgstr "Потенциальные Дубликаты"
+
+#. module: crm_duplicates
+#: model:ir.model.fields,field_description:crm_duplicates.field_crm_lead_potential_dupplicates
+#: model:ir.model.fields,field_description:crm_duplicates.field_res_partner_potential_dupplicates
+#: model:ir.model.fields,field_description:crm_duplicates.field_res_users_potential_dupplicates
+#: model:ir.ui.view,arch_db:crm_duplicates.crm_lead_partner_kanban_view
+msgid "Potential duplicates"
+msgstr "Потенциальные Дубликаты"
+
+#. module: crm_duplicates
+#: model:ir.model.fields,help:crm_duplicates.field_res_company_duplicate_fields_lead
+msgid "Select criteria, how to search leads duplicates.             Odoo would not allow to save a duplicate in comparison to the previous field"
+msgstr "Выберите критерии для поиска партнеров. Odoo не позволит сохранить дубликат по сравнению с предыдущим полем!"
+
+#. module: crm_duplicates
+#: model:ir.model.fields,help:crm_duplicates.field_res_config_settings_duplicate_fields_lead
+msgid "Select criteria, how to search leads duplicates.             Odoo would not allow to save a duplicate in comparison to the soft fields."
+msgstr "Выберите критерии для поиска партнеров. Odoo не позволит сохранить дубликат по сравнению с предыдущим полем!"
+
+#. module: crm_duplicates
+#: model:ir.model.fields,help:crm_duplicates.field_res_company_duplicate_fields_lead_soft
+msgid "Select criteria, how to search leads duplicates.             Odoo would show duplicates on a button, but it would allow to save a duplicate"
+msgstr "Выберите критерии, по которым будете искать дубликаты партнеров. Odoo отразит такие дубликаты на специальной кнопке, но не запретит их сохранение"
+
+#. module: crm_duplicates
+#: model:ir.model.fields,help:crm_duplicates.field_res_config_settings_duplicate_fields_lead_soft
+msgid "Select criteria, how to search leads duplicates.             Odoo would show duplicates on the special button, but it would allow to save a duplicate"
+msgstr "Выберите критерии, по которым будете искать дубликаты партнеров. Odoo отразит такие дубликаты на специальной кнопке, но не запретит их сохранение"
+
+#. module: crm_duplicates
+#: model:ir.ui.view,arch_db:crm_duplicates.res_config_settings_view_form
+msgid ""
+"Select criteria, how to search opportunities duplicates.\n"
+"                                Odoo would not allow to save a duplicate in comparison the soft fields."
+msgstr ""
+"Выберите критерии для поиска партнеров. \n"
+"Odoo не позволит сохранить дубликат по сравнению с предыдущим полем."
+
+#. module: crm_duplicates
+#: model:ir.ui.view,arch_db:crm_duplicates.res_config_settings_view_form
+msgid ""
+"Select criteria, how to search opportunities duplicates.\n"
+"                                Odoo would show such duplicates on a special button, but would allow to save such object!"
+msgstr ""
+"Выберите критерии, по которым будете искать дубликаты партнеров. \n"
+"Odoo отразит такие дубликаты на специальной кнопке, но не запретит их сохранение"
+
+#. module: crm_duplicates
+#: model:ir.ui.view,arch_db:crm_duplicates.res_config_settings_view_form
+msgid ""
+"Select criteria, how to search partner duplicates.\n"
+"                                Odoo would not allow to save a duplicate in comparison the soft fields."
+msgstr ""
+"Выберите критерии для поиска партнеров.\n"
+" Odoo не позволит сохранить дубликат по сравнению с предыдущим полем!"
+
+#. module: crm_duplicates
+#: model:ir.ui.view,arch_db:crm_duplicates.res_config_settings_view_form
+msgid ""
+"Select criteria, how to search partner duplicates.\n"
+"                                Odoo would show such duplicates on a special button, but would allow to save such object!"
+msgstr ""
+"Выберите критерии, по которым будете искать дубликаты партнеров.\n"
+"Odoo отразит такие дубликаты на специальной кнопке, но не запретит их сохранение"
+
+#. module: crm_duplicates
+#: model:ir.model.fields,help:crm_duplicates.field_res_config_settings_duplicate_fields_partner
+msgid "Select criteria, how to search partner duplicates.             Odoo would not allow to save a duplicate in comparison to the soft fields."
+msgstr " Odoo не позволит сохранить дубликат по сравнению с предыдущим полем!"
+
+#. module: crm_duplicates
+#: model:ir.model.fields,help:crm_duplicates.field_res_company_duplicate_fields_partner_soft
+#: model:ir.model.fields,help:crm_duplicates.field_res_config_settings_duplicate_fields_partner_soft
+msgid "Select criteria, how to search partner duplicates.             Odoo would show such duplicates on a special button, but would allow to save such object!"
+msgstr "Odoo отразит такие дубликаты на специальной кнопке, но не запретит их сохранение!"
+
+#. module: crm_duplicates
+#: model:ir.model.fields,help:crm_duplicates.field_res_company_duplicate_fields_partner
+msgid "Select criteria, how to search partner duplicates. Odoo would not allow to save a duplicate!"
+msgstr "Выберите критерии для поиска партнеров. Odoo не позволит сохранить дубликат!"
+
+#. module: crm_duplicates
+#: model:ir.ui.view,arch_db:crm_duplicates.view_crm_lead_kanban
+msgid "potential duplicates"
+msgstr "Потенциальные Дубликаты"

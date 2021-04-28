@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="fal_exportation_packinglist_for_customs_report">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="web.external_layout">
+                        <div class="page">
+                            <style>
+                                .tbl{
+                                    border: 1px solid black;
+                                    border-collapse: collapse;
+                                }
+                                    .tbl tr th{
+                                        border: 1px solid black;
+                                        border-collapse: collapse;
+                                        padding: 3px;
+                                    }
+                                    .tbl tr td{
+                                        border: 1px solid black;
+                                        border-collapse: collapse;
+                                        padding: 3px;
+                                    }
+                            </style>
+                            <h2 class="text-center">
+                                <div>PACKING LIST</div>
+                            </h2>
+
+                            <p>Date：<span t-field="o.create_date" t-field-options='{"format": "yyyy-MM-dd"}'/></p>
+                            <p>Invoice No: <span t-field="o.invoice_number"/></p>
+                            <p>To： <span t-field="o.partner_id.name"/> <span t-field="o.partner_id.street"/>, <span t-field="o.partner_id.city"/>, <span t-field="o.partner_id.country_id.name"/>
+                            </p>
+                            <p>Shipped by： <span t-field="o.port_of_loading"/> To <span t-field="o.port_of_discharge"/>  From <span t-field="o.port_of_loading.port_name"/> to <span t-field="o.port_of_discharge.port_name"/></p>
+
+                            <table class="tbl">
+                                <tr>
+                                    <th width="20%">
+                                        Box No.
+                                    </th>
+                                    <th width="40%">
+                                        Description
+                                    </th>
+                                    <th width="10%" class="text-center">
+                                        Q’ty
+                                    </th>
+                                    <th width="10%" class="text-center">
+                                        N Weight
+                                    </th>
+                                    <th width="10%" class="text-center">
+                                        G Weight
+                                    </th>
+                                </tr>
+
+                                <t t-set="ttlqty" t-value="0"/>
+                                <t t-set="tnw" t-value="0"/>
+                                <t t-set="tng" t-value="0"/>
+                                <t t-set="tbox" t-value="temp"/>
+                                <t t-set="i" t-value="0"/>
+                                <t t-foreach="o.box_line_ids" t-as="l">
+                                    <t t-set="i" t-value="l.box_total"/>
+                                    <tr>
+                                        <t t-if="tbox != l.box_number">
+                                            <td class="text-center" t-att-rowspan="i"><span t-field="l.box_number"/>. <span t-field="l.box_type"/></td>
+                                        </t>
+                                        <td class="text-center">
+                                            <t t-if="l.product_id.categ_id.fal_description_packing_list">
+                                                <span t-field="l.product_id.categ_id.fal_description_packing_list"/><br/>
+                                            </t>
+                                            <span t-field="l.name"/>
+                                        </td>
+                                        <td class="text-center"><span t-esc="'{0:,.2f}'.format(l.quantity)"/></td>
+                                        <t t-if="tbox != l.box_number">
+                                            <td class="text-center" t-att-rowspan="i"><span t-esc="'{0:,.2f}'.format(l.n_weight)"/></td>
+                                            <t t-set="tnw" t-value="tnw+l.n_weight"/>
+                                        </t>
+                                        <t t-if="tbox != l.box_number">
+                                            <td class="text-center" t-att-rowspan="i"><span t-esc="'{0:,.2f}'.format(l.g_weight)"/></td>
+                                            <t t-set="tng" t-value="tng+l.g_weight"/>
+                                        </t>
+                                    </tr>
+                                    <t t-set="ttlqty" t-value="ttlqty+l.quantity"/>
+                                    <t t-set="tbox" t-value="l.box_number"/>
+                                </t>
+
+                                <tr>
+                                    <td class="text-center" colspan="2">TOTAL</td>
+                                    <td class="text-center"><span t-esc="'{0:,.2f}'.format(ttlqty)"/></td>
+                                    <td class="text-center"><span t-esc="'{0:,.2f}'.format(tnw)"/></td>
+                                    <td class="text-center"><span t-esc="'{0:,.2f}'.format(tng)"/></td>
+                                </tr>
+                            </table>
+                            <br/>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+
+        <report
+            id="report_fal_exportation_packinglist_for_customs"
+            string="Exportation Packing List for Customs"
+            model="fal.delivery.batch"
+            report_type="qweb-pdf"
+            name="fal_delivery_batch.fal_exportation_packinglist_for_customs_report"
+            file="fal_delivery_batch.fal_exportation_packinglist_for_customs_report"
+            print_report_name="'Exportation Packing List for Customs - %s' % (object.number).replace('/', '')"/>
+
+    </data>
+</odoo>

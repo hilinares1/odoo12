@@ -1,0 +1,783 @@
+
+
+@media only screen and (max-width: 767px) {
+/******Start Code - To display orderline part and product list part orderly in pos for mobile view*******/
+.pos .leftpane{
+	width: 100%;
+    height: 50%;
+}
+.pos .rightpane{
+	width: 100%;
+    height: 50%;
+    top: 50%;
+    left: 0;
+}
+/******End Code - To display orderline part and product list part orderly in pos for mobile view*******/
+/*********Start code for orderline fontsize**************/
+.pos .order{
+	font-size: 12px;
+}
+.pos .order .summary .total{
+	font-size: 16px;
+}
+/**********End code for orderline fontsize*************/
+
+/********Start Code - To display customer button and pay button for mobile view*********/
+.pos .actionpad{
+	display: inline-flex;
+    width: -webkit-fill-available;
+    width: -moz-available;
+    margin: 0px;
+    width: 100%;
+}
+.pos .actionpad .button.set-customer{
+	padding-left: 15px;
+    padding-right: 15px;
+    width: 40%;
+    height: 40px;
+}
+.pos .actionpad .button.set-customer.decentered{
+	padding-left: 5px;
+    padding-right: 5px;
+    font-size: 12px;
+}
+.pos .actionpad .button.set-customer.decentered .fa-user{
+	margin-right: 8px;
+}
+.pos .actionpad .button .fa-user{
+	left:0px;
+	margin-right: 0px;
+	position: initial;
+}
+
+.pos .actionpad .button.pay{
+	height:40px;
+	width: 20%;
+}
+.pos .actionpad .button.pay .pay-circle{
+	line-height: 23px;
+	font-size: 17px;
+	width: 28px;
+	margin-bottom: 0px;
+}
+.pos .actionpad .button.pay .pay-circle .fa{
+	top: -2px;
+    left: 2px;
+}
+.span_pay,.span_cus{
+	display:none;
+}
+/********End Code - To display customer button and pay button for mobile view*********/
+
+/***********Start code for - product list part breadcrumbs***************/
+.pos .rightpane-header .breadcrumbs{
+	width: 61%;
+}
+.pos .rightpane-header .searchbox{
+	width: 39%;
+}
+.pos .rightpane-header .searchbox input{
+	width: 42px;
+	font-size: 12px;
+}
+.pos .category-simple-button{
+	line-height: 25px;
+	font-size: 12px;
+}
+/************End code for - product list part breadcrumbs**************/
+
+/******Start code - To display numpad button part in mobile view******/
+.pos .leftpane .numpad{
+	display:none;
+	float:left;
+	margin: 10px;
+	width: 200px;
+	margin: 29px 10px 29px 10px;
+    /* margin: 0 auto; 
+    float: none; */
+}
+.pos .leftpane .numpad button{
+	height: 50px;
+    width: 50px;
+}
+.pos .leftpane .numpad .input-button{
+	font-size: 14px;
+}
+.pos .leftpane .numpad .mode-button{
+	font-size: 12px;
+}
+.outer_numpad{
+	width: -moz-available;
+	width: -webkit-fill-available;
+	bottom: 0px;
+    position: fixed;
+    z-index: 1;
+    background-color: rgb(215,215,215);
+}
+.pos .show_numpad{
+	width: 40%;
+    height: 40px;
+    display:block !important;
+}
+.pos .show_numpad i{
+	line-height: 22px;
+}
+/******End code - To display numpad button part in mobile view******/
+
+/********Start Code - To display products in center in pos********/
+.pos .product-list{
+	display: contents;
+    margin: 0 auto;
+}
+/********End Code - To display products in center in pos********/
+
+/***********Start code - To display 3 products item in single row for mobile view*******************/
+.pos .product{
+	width: 87px;
+    height: 87px;
+    /* float: left; */
+}
+.pos .product .product-img{
+	width: 87px;
+    height: 65px;
+}
+.pos .product .product-img img{
+	max-height: 65px;
+    max-width: 75px;
+}
+/***********End code - To display 3 products item in single row for mobile view********************/
+}
+
+/********Start code for clientlist-screen in pos**********/
+
+@media only screen and (max-width: 767px) {
+/*********Start code for top section in clientlist-screen*********/
+.clientlist-screen .top-content .button.back .hide_client_cancel{
+	display:none;
+}
+.clientlist-screen .top-content .button.back{
+	position: initial;
+	width: -webkit-fill-available;
+}
+.pos .clientlist-screen .searchbox{
+	right: 0px;
+    margin-left: 0px;
+    margin-top: -2px;
+    left: 0%;
+    position: initial;
+    float: left;
+}
+.pos .clientlist-screen .searchbox input{
+	width: 37px;
+	height: 10px;
+	font-size: 11px;
+}
+.pos .clientlist-screen .search-clear{
+	left: auto;
+    display: table;
+    margin-left: 4%;
+}
+.pos .clientlist-screen .button.new-customer{
+	left: 0%;
+	margin-left: 0px;
+	position: initial;
+	width: -webkit-fill-available;
+	padding-left: 5px;
+    padding-right: 5px;
+}
+.clientlist-screen .top-content .button.next{
+	position: initial;
+	font-size: 10px;
+	margin-right: 0px;
+	width: -webkit-fill-available;
+	padding-left: 3px;
+    padding-right: 3px;
+}
+.clientlist-screen .top-content .button{
+	margin: 4px !important;
+    float: left;
+    line-height: 23px;
+    font-size: 15px;
+}
+.clientlist-screen .top-content{
+	display: inline-flex;
+	width: -webkit-fill-available;
+	width: -moz-available;
+	height: auto;
+	padding: 2%;
+}
+.clnt_back{
+	width: 8%;
+    display: table;
+    float: left;
+}
+.clnt_search{
+	width: 30%;
+    display: table;
+    float: left;
+}
+.clnt_new_cust{
+	width: 20%;
+    display: table;
+    float: left;
+}
+.clnt_select_cus{
+	width: 42%;
+    display: table;
+    float: left;
+}
+/*********End code for top section in clientlist-screen*********/
+
+/*********Start code for middle and bottom section in clientlist-screen*********/
+.pos .clientlist-screen .client-picture{
+	width: 50px;
+	height: 50px;
+}
+.pos .clientlist-screen .client-name{
+	font-size: 18px;
+}
+.pos .clientlist-screen .edit-buttons .button{
+	font-size: 26px;
+}
+.pos .clientlist-screen .client-detail{
+	display: flex;
+	text-align: justify;
+}
+.pos .clientlist-screen .client-detail > .label{
+	text-align: left;
+	width: 25%;
+}
+.pos .clientlist-screen .client-detail > .client-address{
+	width: 75%;
+    display: table;
+}
+.pos .clientlist-screen .client-detail > .client-email{
+	word-wrap:break-word;
+	word-break: break-word;
+}
+.pos .clientlist-screen .client-details.edit .edit-buttons{
+	width: fit-content;
+	width: -moz-fit-content;
+	display: inline;
+	position: relative;
+	right: auto;
+    top: auto;
+}
+.pos .clientlist-screen .client-details-box{
+	font-size: 12px;
+}
+.pos .clientlist-screen .client-details-left,.pos .clientlist-screen .client-details-right{
+	width:100%;
+	float:none;
+}
+.pos .clientlist-screen .client-list{
+	font-size: 12px;
+	line-height: 20px;
+}
+.pos .clientlist-screen .client-list th{
+	position: sticky;
+	top: 0;
+	background-color: #cecbcb;
+	padding: 2%;
+}
+
+/*********End code for middle and bottom section in clientlist-screen*********/
+/**********Start code for clientlist-screen edit part*************/
+.pos .clientlist-screen .client-details input.client-name{
+	width: 115px;
+	font-size: 13px;
+}
+.pos .clientlist-screen .client-details select,.pos .clientlist-screen .client-details input{
+	width: 75%;
+	font-size: 12px;
+}
+.pos .clientlist-screen .client-details.edit{
+    overflow-y: scroll;
+    height: 150px;
+}
+.pos .clientlist-screen .subwindow .subwindow-container-fix{
+	height: inherit !important;
+}
+/***********End code for clientlist-screen edit part************/
+}
+
+@media only screen and (max-width: 500px) {
+.pos .clientlist-screen .client-details{
+	padding-top: 5px;
+}
+}
+
+/*********End code for clientlist-screen in pos*********/
+
+
+
+/**********Start code for payment-screen in pos****************/
+@media only screen and (max-width: 767px) {
+/*******Start code for payment-screen top buttons part in pos********/
+.payment-screen .top-content{
+	width: 100%;
+	height: 10%;
+}
+.payment-screen .top-content h1{
+	font-size: 21px;
+}
+.payment-screen .top-content .button{
+	line-height: 21px;
+	font-size: 12px;
+	padding: 3px 6px;
+	width: 20%;
+}
+/*******End code for payment-screen top buttons part in pos********/
+/********Start code for payment-screen main part in pos*******/
+.payment-screen .left-content.pc40{
+	width: 100%;
+	right: 0%;
+	top: 10%;
+	/* height: 20%; */
+}
+.payment-screen .right-content.pc60{
+	width: 100%;
+	left: 0%;
+	/* height: 60%; */
+	top: 32%;
+}
+.payment-screen .right-content.pc60 .paymentlines-container{
+	padding-bottom: 0px;
+}
+.payment-screen .paymentmethods{
+	margin: 4px;
+}
+.payment-screen .paymentmethods .button{
+	line-height: 25px;
+    font-size: 12px;
+    display: inline-table;
+    width: 47%;
+    margin: 1%;
+    float: left;
+    border: solid 1px rgb(202,202,202,202);
+}
+.payment-screen .paymentlines thead tr,.payment-screen .paymentlines tbody tr{
+	display: grid;
+}
+.pos .paymentlines .label > *{
+	font-size: 13px !important;
+	padding: 10px 8px 10px;
+}
+.payment-screen .paymentlines thead{
+	width: 35%;
+	display: inline-block;
+	float: left;
+}
+.payment-screen .paymentlines tbody{
+	width: 65%;
+	display: inline-block;
+	float: left;
+}
+.payment-screen .paymentlines tbody tr.paymentline td{
+	padding: 6px 12px;
+	font-size: 15px;
+	height: 21px;
+}
+.payment-screen .paymentlines tbody tr.paymentline .col-due{
+	border-bottom: 6px solid white;
+}
+.payment-screen .paymentlines tbody tr.paymentline .col-change{
+	border-top: 6px solid white;
+    border-bottom: 3px solid white;
+}
+.pos .paymentline .delete-button{
+    position: absolute;
+    right: 8px;
+}
+.pos .payment-screen .payment-numpad{
+	width: 100%;
+}
+.pos .payment-screen .payment-buttons{
+	width: 100%;
+	padding-left: 16px;
+	display: flex;
+}
+.payment-screen .payment-buttons .button{
+	width:50%;
+	margin: 1%;
+	line-height: 35px;
+	font-size: 12px;
+	border: solid 1px #cacaca;
+}
+.payment-screen .payment-buttons .button .fa{
+	top: 81%;
+    width: 28px;
+    height: 28px;
+    line-height: 28px;
+}
+.payment-screen .paymentlines-empty .total{
+	font-size: 34px;
+}
+.pos .payment-screen .payment-numpad .numpad{
+	width: 240px;
+}
+.pos .payment-screen .payment-numpad .numpad button{
+	width: 60px;
+    height: 36px;
+}
+.pos .payment-screen .payment-numpad .numpad .input-button{
+	font-size: 14px;
+}
+/********End code for payment-screen main part in pos*******/
+}
+/**********End code for payment-screen in pos****************/
+
+/**********Start code for pos-topheader in pos********/
+@media only screen and (max-width: 767px) {
+.pos .pos-branding{
+	display: table;
+    height: 50px;
+    width: 15%;
+    text-align: center;
+}
+.pos .pos-branding .pos-logo{
+	display:none;
+}
+.pos .pos-branding .username{
+	float:none;
+	font-size: 12px;
+	margin-right: 0px;
+	line-height: normal;
+	display: table-cell;
+    vertical-align: middle;
+}
+.pos .pos-rightheader{
+	left: 15%;
+}
+.pos .pos-rightheader .orders{
+	/* padding-left: 8px;
+    padding-right: 5px; */
+    position: absolute;
+	top: 100%;
+	z-index: 1000;
+	width: 100%;
+    overflow-x: scroll;
+    left: -10%;
+    right: 10%;
+    display:none;
+}
+.pos .pos-rightheader .order-button{
+	min-width: 35px;
+    padding: 0px 0px;
+}
+.pos .pos-rightheader .select-order{
+	height: 35px;
+    line-height: 35px;
+    min-width:35px;
+    border-radius: 5px;
+}
+.pos .pos-rightheader .select-order .order-sequence{
+	font-size: 0.8em;
+	font-weight: 200;
+}
+.pos .show_ordersbtn{
+	display:block !important;
+}
+}
+/**********End code for pos-topheader in pos**********/
+
+
+/**********Start code for control-buttons in pos*************/
+@media only screen and (max-width: 767px) {
+.mbl_guest{
+	display:block !important;
+	padding-left: 7px;
+}
+.pos .leftpane .control-buttons .control-button{
+	font-size: 11px;
+	line-height: 27px;
+	display: -webkit-box;
+	min-width: 43px;
+	padding-left: 5px;
+    padding-right: 5px;
+    margin-bottom: 0px;
+    margin-top: 5px;
+    margin-left: 0px;
+}
+.pos .leftpane .control-buttons{
+	bottom: 0px;
+	position: fixed;
+    z-index: 2;
+    right: 0;
+    display:none;
+    width: fit-content;
+    margin: 29px 10px 29px 10px;
+    padding: 0px 0px 0px 0px;
+}
+.pos .control-button .control-button-number{
+	width: 19px;
+	height: 19px;
+	line-height: 19px;
+	margin-left: 0px;
+}
+}
+
+/**********End code for control-buttons in pos*************/
+
+
+/***********Start code for pos popup mobile version**********/
+@media only screen and (max-width: 767px) {
+.pos .modal-dialog{
+	padding: 0px;
+}
+.pos .modal-dialog .popup-textinput{
+	width: 75%;
+	font-size: 14px;
+	height: 237px;
+}
+.pos .modal-dialog .popup-number{
+	width: 80%;
+	font-size: 14px;
+	height: 322px;
+}
+.pos .modal-dialog .popup-number .popup-numpad .input-button,
+.pos .modal-dialog .popup-number .popup-numpad .mode-button{
+	height: 25px;
+    width: 25px;
+    font-size: 14px;
+    border-radius: 12px;
+}
+.pos .modal-dialog .popup .title{
+	padding: 10px;
+}
+.pos .modal-dialog .popup-textinput .title{
+	margin-bottom: 10px;
+}
+.pos .modal-dialog .popup-textinput textarea{
+	width: -webkit-fill-available;
+	width: -moz-available;
+}
+.pos .modal-dialog .popup .footer{
+    position: initial;
+}
+.pos .modal-dialog .popup .footer .button{
+	width: 70px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 12px;
+}
+}
+/***********End code for pos popup mobile version**********/
+
+/*******Start code for receipt-screen in pos********/
+@media only screen and (max-width: 767px) {
+/*******Start code for receipt-screen top buttons part in pos********/
+.receipt-screen .top-content{
+	width: 100%;
+	height: 10%;
+}
+.receipt-screen .top-content h1{
+	font-size: 21px;
+	text-align: left;
+	margin-left: 16px;
+}
+.receipt-screen .top-content .button{
+	line-height: 21px;
+	font-size: 12px;
+	padding: 3px 6px;
+	/* width: 20%; */
+}
+/*******End code for receipt-screen top buttons part in pos*********/
+
+/********Start code for receipt-screen body part in pos**********/
+.receipt-screen .centered-content{
+	width: 100%;
+	right: 0%;
+	left: 0%;
+}
+.receipt-screen .pos-sale-ticket{
+	width: auto;
+	font-size: 11.5px;
+}
+.pos .receipt-screen .centered-content .button{
+	width: fit-content;
+    margin: 0 auto;
+    line-height: 21px;
+    font-size: 12px;
+}
+/********End code for receipt-screen body part in pos**********/
+}
+/*******End code for receipt-screen in pos*********/
+
+
+/********Start code for splitbill-screen in pos*******/
+@media only screen and (max-width: 767px) {
+/********Start code for splitbill-screen top buttons part in pos*******/
+.splitbill-screen .top-content{
+	width: 100%;
+	height: 10%;
+}
+.splitbill-screen .top-content h1{
+	font-size: 21px;
+}
+.splitbill-screen .top-content .button{
+	line-height: 21px;
+	font-size: 12px;
+	padding: 3px 6px;
+	width: 20%;
+}
+/********End code for splitbill-screen top buttons part in pos*******/
+/********Start code for splitbill-screen body part in pos**********/
+.pos .splitbill-screen .left-content{
+	right: 0%;
+	height: 50%;
+}
+.pos .splitbill-screen .left-content .order{
+	margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 12px;
+}
+.pos .splitbill-screen .right-content{
+	left: 0%;
+	height: 40%;
+	top: 60%;
+}
+.splitbill-screen .right-content .order-info{
+	font-size: 29px;
+}
+.splitbill-screen .right-content .paymentmethods .button{
+	line-height: 21px;
+    font-size: 12px;
+    padding: 3px 6px;
+    width: fit-content;
+    margin: 0 auto;
+}
+/********End code for splitbill-screen body part in pos**********/
+}
+/********End code for splitbill-screen in pos*******/
+
+/*******Start code for "Main Floor and Patio in pos"********/
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+	.floor-map .table{
+	position: inherit;
+	width: 10% !important;
+    height: 78px !important;
+    margin: 3% !important;
+    float: left;
+    left: 0px !important;
+    right: 0px !important;
+    line-height: 78px !important;
+    top: 0px !important;
+    font-size: 14px;
+    display: block;
+}
+.floor-map .edit-button,.floor-map .edit-bar{
+	display:none;
+}
+}
+@media only screen and (max-width: 767px) {
+.floor-map{
+	overflow: scroll;
+}
+.floor-map .table{
+	position: inherit;
+	width: 23% !important;
+    height: 66px !important;
+    margin: 5% !important;
+    float: left;
+    left: 0px !important;
+    right: 0px !important;
+    line-height: 66px !important;
+    top: 0px !important;
+    font-size: 14px;
+    display: block;
+}
+.floor-map .edit-button,.floor-map .edit-bar{
+	display:none;
+}
+.floor-map .table .table-seats{
+	height: 15px;
+    width: 15px;
+    line-height: 15px;
+    font-size: 11px;
+}
+.floor-map .table .order-count{
+	height: 15px;
+    width: 15px;
+    line-height: 15px;
+    font-size: 11px;
+    border-radius: 7px;
+}
+.floor-map .table .label{
+	font-size: 11px;
+}
+.floor-selector {
+    line-height: 32px;
+    font-size: 12px;
+}
+}
+/*******End code for "Main Floor and Patio in pos"********/
+
+/**************Start code for Normal view css*****************/
+.pos .show_numpad{
+    display:none;
+}
+.mbl_guest{
+	display:none;
+}
+.pos .show_ordersbtn{
+	display:none;
+}
+.pos .show_res_guest{
+	display:none;
+}
+.pos .show_res_note{
+	display:none;
+}
+.pos .show_res_transfer{
+	display:none;
+}
+.pos .show_res_bill{
+	display:none;
+}
+.pos .show_res_splitbill{
+	display:none;
+}
+.pos .show_res_submitorder{
+	display:none;
+}
+
+/**************End code for Normal view css*****************/
+
+/*********Start code for pos popup********/
+@media only screen and (max-width: 767px) {
+.pos .modal-dialog .popup{
+	width: 250px;
+    height: fit-content;
+    font-size: 13px;
+}
+.pos .popup .body{
+	font-size: 12px;
+}
+.pos .popup .footer{
+	height: fit-content;
+	display: inline-table;
+}
+}
+/*********End code for pos popup********/
+
+/********Start code for pos restarent buttons for mobile*********/
+@media only screen and (max-width: 767px) {
+.pos .show_res_guest,.pos .show_res_note,.pos .show_res_transfer,.pos .show_res_bill,.pos .show_res_splitbill,.pos .show_res_submitorder{
+	height: 37px;
+	display:block !important;
+	float: left;
+	padding: 4px 4px !important;
+	width:33.3%;
+}	
+.guests_span{
+	width: 19px;
+	background-color: black;
+    display: inline-block;
+    color: white;
+    border-radius: 15px;
+    font-size: 11px;
+    padding: 2px;
+}
+}
+/********End code for pos restarent buttons for mobile*********/

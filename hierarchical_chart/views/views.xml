@@ -1,0 +1,10 @@
+<odoo>
+    <data>
+        <template id="assets_backend" name="Hierarchical Chart assets" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+                <script type="text/javascript" src="/hierarchical_chart/static/src/js/hierarchical_chart.js"/>
+                <script type="text/javascript" src="/hierarchical_chart/static/src/js/lib/run_prettify.js"/>
+            </xpath>
+        </template>
+    </data>
+</odoo>

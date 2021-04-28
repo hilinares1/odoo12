@@ -1,0 +1,371 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* fal_timesheet_invoice_ext
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-08-31 03:55+0000\n"
+"PO-Revision-Date: 2018-08-31 11:06+0700\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: en\n"
+"X-Generator: Poedit 2.1.1\n"
+
+#. module: fal_timesheet_invoice_ext
+#: model:ir.model,name:fal_timesheet_invoice_ext.model_account_analytic_account
+msgid "Analytic Account"
+msgstr "Compte analytique"
+
+#. module: fal_timesheet_invoice_ext
+#: model:ir.model,name:fal_timesheet_invoice_ext.model_account_analytic_line
+msgid "Analytic Line"
+msgstr "Ligne analytique"
+
+#. module: fal_timesheet_invoice_ext
+#: model:ir.ui.view,arch_db:fal_timesheet_invoice_ext.view_hr_timesheet_invoice_create_faltiminvext
+msgid "Are you sure you want to create the invoices of selected line?"
+msgstr "Êtes-vous sûr de vouloir créer les factures de la ligne sélectionnée?"
+
+#. module: fal_timesheet_invoice_ext
+#: model:ir.ui.view,arch_db:fal_timesheet_invoice_ext.view_hr_timesheet_invoice_create_faltiminvext
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: fal_timesheet_invoice_ext
+#: model:ir.actions.act_window,help:fal_timesheet_invoice_ext.action_hr_timesheet_invoice_factor_form_faltiminext
+msgid "Click to add a new type of invoicing."
+msgstr "Cliquez pour ajouter un nouveau type de facturation."
+
+#. module: fal_timesheet_invoice_ext
+#: model:ir.model.fields,field_description:fal_timesheet_invoice_ext.field_account_analytic_line_unit_amount_coef
+#: model:ir.model.fields,field_description:fal_timesheet_invoice_ext.field_hr_timesheet_invoice_factor_coef
+msgid "Coef"
+msgstr "Coef"
+
+#. module: fal_timesheet_invoice_ext
+#: model:ir.actions.act_window,name:fal_timesheet_invoice_ext.hr_timesheet_invoice_create_faltiminvextaction
+#: model:ir.ui.view,arch_db:fal_timesheet_invoice_ext.view_hr_timesheet_invoice_create_faltiminvext
+msgid "Create Invoice"
+msgstr "Créer une facture"
+
+#. module: fal_timesheet_invoice_ext
+#: model:ir.ui.view,arch_db:fal_timesheet_invoice_ext.view_hr_timesheet_invoice_create_faltiminvext
+msgid "Create Invoices"
+msgstr "Créer les factures"
+
+#. module: fal_timesheet_invoice_ext
+#: model:ir.model,name:fal_timesheet_invoice_ext.model_hr_timesheet_invoice_create
+msgid "Create invoice from timesheet"
+msgstr "Créer une facture à partir de la feuille de temps"
+
+#. module: fal_timesheet_invoice_ext
+#: model:ir.model.fields,field_description:fal_timesheet_invoice_ext.field_hr_timesheet_invoice_create_create_uid
+#: model:ir.model.fields,field_description:fal_timesheet_invoice_ext.field_hr_timesheet_invoice_factor_create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: fal_timesheet_invoice_ext
+#: model:ir.model.fields,field_description:fal_timesheet_invoice_ext.field_hr_timesheet_invoice_create_create_date
+#: model:ir.model.fields,field_description:fal_timesheet_invoice_ext.field_hr_timesheet_invoice_factor_create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: fal_timesheet_invoice_ext
+#: model:ir.model.fields,field_description:fal_timesheet_invoice_ext.field_hr_timesheet_invoice_create_display_name
+#: model:ir.model.fields,field_description:fal_timesheet_invoice_ext.field_hr_timesheet_invoice_factor_display_name
+msgid "Display Name"
+msgstr "Nom à afficher"
+
+#. module: fal_timesheet_invoice_ext
+#: model:ir.ui.view,arch_db:fal_timesheet_invoice_ext.hr_timesheet_line_form_fal_inherit
+#: model:ir.ui.view,arch_db:fal_timesheet_invoice_ext.view_account_analytic_line_tree_inherit_faltiminext
+msgid "Duration with Coef"
+msgstr "Durée avec Coef"
+
+#. module: fal_timesheet_invoice_ext
+#: model:ir.model.fields,help:fal_timesheet_invoice_ext.field_hr_timesheet_invoice_factor_coef
+msgid "For timesheet calc"
+msgstr "For timesheet calc"
+
+#. module: fal_timesheet_invoice_ext
+#: model:ir.model.fields,field_description:fal_timesheet_invoice_ext.field_hr_timesheet_invoice_create_id
+#: model:ir.model.fields,field_description:fal_timesheet_invoice_ext.field_hr_timesheet_invoice_factor_id
+msgid "ID"
+msgstr "ID"
+
+#. module: fal_timesheet_invoice_ext
+#: model:ir.model.fields,field_description:fal_timesheet_invoice_ext.field_hr_timesheet_invoice_factor_name
+msgid "Internal Name"
+msgstr "Nom interne"
+
+#. module: fal_timesheet_invoice_ext
+#: model:ir.model.fields,field_description:fal_timesheet_invoice_ext.field_account_analytic_line_invoice_id
+msgid "Invoice"
+msgstr "Facture"
+
+#. module: fal_timesheet_invoice_ext
+#: model:ir.model,name:fal_timesheet_invoice_ext.model_hr_timesheet_invoice_factor
+msgid "Invoice Rate"
+msgstr "Taux de facturation"
+
+#. module: fal_timesheet_invoice_ext
+#: model:ir.model.fields,field_description:fal_timesheet_invoice_ext.field_account_analytic_line_to_invoice
+msgid "Invoiceable"
+msgstr "Facturable"
+
+#. module: fal_timesheet_invoice_ext
+#: model:ir.ui.view,arch_db:fal_timesheet_invoice_ext.hr_timesheet_line_form_faltiminext
+msgid "Invoicing"
+msgstr "Facturation"
+
+#. module: fal_timesheet_invoice_ext
+#: model:ir.model.fields,help:fal_timesheet_invoice_ext.field_account_analytic_line_to_invoice
+msgid "It allows to set the discount while making invoice,         keep empty if the activities should not be invoiced."
+msgstr "Il permet de définir la remise lors de la facturation,          de garder vide si les activités ne doivent pas être facturées."
+
+#. module: fal_timesheet_invoice_ext
+#: model:ir.model.fields,help:fal_timesheet_invoice_ext.field_hr_timesheet_invoice_factor_customer_name
+msgid "Label for the customer"
+msgstr "Label pour le client"
+
+#. module: fal_timesheet_invoice_ext
+#: model:ir.model.fields,field_description:fal_timesheet_invoice_ext.field_hr_timesheet_invoice_create___last_update
+#: model:ir.model.fields,field_description:fal_timesheet_invoice_ext.field_hr_timesheet_invoice_factor___last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: fal_timesheet_invoice_ext
+#: model:ir.model.fields,field_description:fal_timesheet_invoice_ext.field_hr_timesheet_invoice_create_write_uid
+#: model:ir.model.fields,field_description:fal_timesheet_invoice_ext.field_hr_timesheet_invoice_factor_write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: fal_timesheet_invoice_ext
+#: model:ir.model.fields,field_description:fal_timesheet_invoice_ext.field_hr_timesheet_invoice_create_write_date
+#: model:ir.model.fields,field_description:fal_timesheet_invoice_ext.field_hr_timesheet_invoice_factor_write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: fal_timesheet_invoice_ext
+#: model:ir.model.fields,field_description:fal_timesheet_invoice_ext.field_hr_timesheet_invoice_factor_customer_name
+msgid "Name"
+msgstr "Nom"
+
+#. module: fal_timesheet_invoice_ext
+#: model:ir.actions.act_window,help:fal_timesheet_invoice_ext.action_hr_timesheet_invoice_factor_form_faltiminext
+msgid ""
+"Odoo allows you to create default invoicing types. You might\n"
+"                have to regularly assign discounts because of a specific\n"
+"                contract or agreement with a customer. From this menu, you can\n"
+"                create additional types of invoicing to speed up your\n"
+"                invoicing."
+msgstr ""
+"Odoo vous permet de créer des types de facturation par défaut. Tu pourrais\n"
+"                 doivent régulièrement attribuer des rabais en raison d'un spécifique\n"
+"                 contrat ou accord avec un client. Dans ce menu, vous pouvez\n"
+"                 créer des types de facturation supplémentaires pour accélérer votre\n"
+"                 facturation."
+
+#. module: fal_timesheet_invoice_ext
+#: code:addons/fal_timesheet_invoice_ext/wizard/hr_timesheet_invoice_create.py:39
+#, python-format
+msgid "Please define income account for this product: \"%s\"                     (id:%d) - or for its category: \"%s\"."
+msgstr "Veuillez définir le compte de revenu pour ce produit: \"% s\"                      (id:% d) - ou pour sa catégorie: \"% s\"."
+
+#. module: fal_timesheet_invoice_ext
+#: model:ir.model,name:fal_timesheet_invoice_ext.model_sale_order
+msgid "Quotation"
+msgstr "Devis"
+
+#. module: fal_timesheet_invoice_ext
+#: code:addons/fal_timesheet_invoice_ext/wizard/hr_timesheet_invoice_create.py:24
+#, python-format
+msgid "There's is line that already invoiced"
+msgstr "Il y a une ligne déjà facturée"
+
+#. module: fal_timesheet_invoice_ext
+#: model:ir.model.fields,field_description:fal_timesheet_invoice_ext.field_account_analytic_account_to_invoice
+#: model:ir.model.fields,field_description:fal_timesheet_invoice_ext.field_project_project_to_invoice
+msgid "Timesheet Invoicing Ratio"
+msgstr "Ratio de facturation de la feuille de temps"
+
+#. module: fal_timesheet_invoice_ext
+#: model:ir.ui.view,arch_db:fal_timesheet_invoice_ext.hr_timesheet_line_form_fal_inherit
+#: model:ir.ui.view,arch_db:fal_timesheet_invoice_ext.view_account_analytic_line_tree_inherit_faltiminext
+msgid "Total time"
+msgstr "Temps total"
+
+#. module: fal_timesheet_invoice_ext
+#: code:addons/fal_timesheet_invoice_ext/wizard/hr_timesheet_invoice_create.py:20
+#, python-format
+msgid "Trying to invoice non invoiceable line for %s."
+msgstr "Essayer de facturer une ligne non facturable pour% s."
+
+#. module: fal_timesheet_invoice_ext
+#: model:ir.ui.view,arch_db:fal_timesheet_invoice_ext.view_hr_timesheet_invoice_factor_form_faltiminext
+#: model:ir.ui.view,arch_db:fal_timesheet_invoice_ext.view_hr_timesheet_invoice_factor_search_faltiminext
+msgid "Type of invoicing"
+msgstr "Type de facturation"
+
+#. module: fal_timesheet_invoice_ext
+#: model:ir.actions.act_window,name:fal_timesheet_invoice_ext.action_hr_timesheet_invoice_factor_form_faltiminext
+#: model:ir.ui.menu,name:fal_timesheet_invoice_ext.hr_timesheet_invoice_factor_view_faltiminext
+msgid "Types of Invoicing"
+msgstr "Types de facturation"
+
+#. module: fal_timesheet_invoice_ext
+#: model:ir.ui.view,arch_db:fal_timesheet_invoice_ext.view_hr_timesheet_invoice_factor_tree_faltiminext
+msgid "Types of invoicing"
+msgstr "Types de facturation"
+
+#. module: fal_timesheet_invoice_ext
+#: code:addons/fal_timesheet_invoice_ext/models/hr.py:98
+#, python-format
+msgid "You cannot modify an invoiced analytic line!"
+msgstr "Vous ne pouvez pas modifier une ligne analytique facturée!"
+
+#. module: fal_timesheet_invoice_ext
+#: model:ir.model.fields,help:fal_timesheet_invoice_ext.field_account_analytic_account_to_invoice
+#: model:ir.model.fields,help:fal_timesheet_invoice_ext.field_project_project_to_invoice
+msgid "You usually invoice 100% of the timesheets.         But if you mix fixed price and timesheet invoicing,         you may use another ratio. For instance,         if you do a 20% advance invoice (fixed price, based on a sales order),        you should invoice the rest on timesheet with a 80% ratio."
+msgstr "Vous facturez généralement 100% des feuilles de temps.          Mais si vous combinez la facturation à prix fixe et la facturation par feuilles de temps,         vous pouvez utiliser un autre ratio. Par exemple,          si vous effectuez une facture anticipée de 20% (prix fixe, basé sur une commande client),        vous devez facturer le reste sur une feuille de temps avec un ratio de 80%."
+
+#. module: fal_timesheet_invoice_ext
+#: model:ir.model.fields,help:fal_timesheet_invoice_ext.field_account_analytic_line_unit_amount_coef
+msgid "quantity x (1 – Coef)"
+msgstr "quantity x (1 – Coef)"
+
+
+
+
+
+
+
+#. module: fal_timesheet_invoice_ext
+#: model:ir.ui.view,arch_db:fal_timesheet_invoice_ext.fal_invoice_report
+msgid "<strong>Financial Manager:</strong>"
+msgstr "<strong>Financial Manager:</strong>"
+
+#. module: fal_timesheet_invoice_ext
+#: model:ir.ui.view,arch_db:fal_timesheet_invoice_ext.fal_invoice_report
+msgid "<strong>Project Manager:</strong>"
+msgstr "<strong>Project Manager:</strong>"
+
+#. module: fal_timesheet_invoice_ext
+#: model:ir.model,name:fal_timesheet_invoice_ext.model_account_analytic_account
+msgid "Analytic Account"
+msgstr "Compte analytique"
+
+#. module: fal_timesheet_invoice_ext
+#: model:ir.model,name:fal_timesheet_invoice_ext.model_account_bank_statement
+msgid "Bank Statement"
+msgstr "Relevé bancaire"
+
+#. module: fal_timesheet_invoice_ext
+#: model:ir.model,name:fal_timesheet_invoice_ext.model_account_bank_statement_line
+msgid "Bank Statement Line"
+msgstr "Ligne de relevé de banque"
+
+#. module: fal_timesheet_invoice_ext
+#: model:ir.model.fields,field_description:fal_timesheet_invoice_ext.field_account_invoice_fal_company_code
+msgid "Company Code"
+msgstr "Company Code"
+
+#. module: fal_timesheet_invoice_ext
+#: model:ir.model.fields,field_description:fal_timesheet_invoice_ext.field_account_move_line_fal_credit_hk
+msgid "Credit (HKD)"
+msgstr "Credit (HKD)"
+
+#. module: fal_timesheet_invoice_ext
+#: model:ir.model.fields,help:fal_timesheet_invoice_ext.field_account_move_line_fal_credit_hk
+msgid "Credit in HKD."
+msgstr "Credit in HKD."
+
+#. module: fal_timesheet_invoice_ext
+#: model:ir.model.fields,field_description:fal_timesheet_invoice_ext.field_account_move_line_fal_debit_hk
+msgid "Debit (HKD)"
+msgstr "Debit (HKD)"
+
+#. module: fal_timesheet_invoice_ext
+#: model:ir.model.fields,help:fal_timesheet_invoice_ext.field_account_move_line_fal_debit_hk
+msgid "Debit in HKD."
+msgstr "Debit in HKD."
+
+#. module: fal_timesheet_invoice_ext
+#: model:ir.model.fields,field_description:fal_timesheet_invoice_ext.field_account_bank_statement_fal_description
+msgid "Description"
+msgstr "Description"
+
+#. module: fal_timesheet_invoice_ext
+#: model:ir.model.fields,field_description:fal_timesheet_invoice_ext.field_account_invoice_display_name
+msgid "Display Name"
+msgstr "Afficher le nom"
+
+#. module: fal_timesheet_invoice_ext
+#: model:ir.model.fields,field_description:fal_timesheet_invoice_ext.field_account_invoice_fal_effective_payment_dates
+msgid "Effective Payment Dates"
+msgstr "Effective Payment Dates"
+
+#. module: fal_timesheet_invoice_ext
+#: model:ir.ui.view,arch_db:fal_timesheet_invoice_ext.fal_invoice_report
+msgid "Falinwa France will be entitled to invoice late payment fees from the first day of late payment without prior notice.\n"
+"                    The applicable rate shall be the European Central Bank (ECB) interest rate applied in its current refinancing operation, plus an increment of 10 percentage points. Besides, Falinwa France will also be entitled to obtain from the Client a 40 EUR lump-sum as compensation for recovery costs."
+msgstr "Tout règlement postérieur à la date d’échéance indiquée entraine obligatoirement une pénalité calculée sur la base du taux d’intérêt appliqué par la Banque centrale européenne à son opération de refinancement la plus récente majoré de 10 points de pourcentage. Le règlement d’une facture après expiration du délai de paiement ouvrira droit au versement d’une indemnité forfaitaire de 40 € de compensation des frais de recouvrement."
+
+#. module: fal_timesheet_invoice_ext
+#: model:ir.model,name:fal_timesheet_invoice_ext.model_account_invoice
+msgid "Invoice"
+msgstr "Facture"
+
+#. module: fal_timesheet_invoice_ext
+#: model:ir.model,name:fal_timesheet_invoice_ext.model_account_move_line
+msgid "Journal Items"
+msgstr "Écritures comptables"
+
+#. module: fal_timesheet_invoice_ext
+#: model:ir.model.fields,field_description:fal_timesheet_invoice_ext.field_account_invoice___last_update
+msgid "Last Modified on"
+msgstr "Last Modified on"
+
+#. module: fal_timesheet_invoice_ext
+#: model:ir.ui.view,arch_db:fal_timesheet_invoice_ext.edit_project_fal_fieldext
+#: model:ir.ui.view,arch_db:fal_timesheet_invoice_ext.view_account_analytic_account_form_fal_fieldext
+msgid "Put description in here.."
+msgstr "Put description in here.."
+
+#. module: fal_timesheet_invoice_ext
+#: model:ir.model.fields,field_description:fal_timesheet_invoice_ext.field_account_bank_statement_fal_remark
+msgid "Remark"
+msgstr "Remark"
+
+#. module: fal_timesheet_invoice_ext
+#: model:ir.model.fields,field_description:fal_timesheet_invoice_ext.field_account_invoice_fal_risk_level
+msgid "Risk Level"
+msgstr "Risk Level"
+
+#. module: fal_timesheet_invoice_ext
+#: model:ir.model.fields,field_description:fal_timesheet_invoice_ext.field_account_invoice_fal_risk_level_name
+#: model:ir.model.fields,help:fal_timesheet_invoice_ext.field_account_invoice_fal_risk_level_name
+msgid "Risk Level Name"
+msgstr "Risk Level Name"
+
+#. module: fal_timesheet_invoice_ext
+#: model:ir.model.fields,help:fal_timesheet_invoice_ext.field_account_invoice_fal_risk_level
+msgid "Risk Level define in number 1 - 9"
+msgstr "Risk Level define in number 1 - 9"
+
+#. module: fal_timesheet_invoice_ext
+#: model:ir.model.fields,help:fal_timesheet_invoice_ext.field_account_invoice_fal_effective_payment_dates
+msgid "The efective payment dates."
+msgstr "The efective payment dates."
+
+#. module: fal_timesheet_invoice_ext
+#: model:ir.model.fields,field_description:fal_timesheet_invoice_ext.field_account_invoice_fal_use_late_payment_statement
+msgid "Use late payment statement"
+msgstr "Use late payment statement"

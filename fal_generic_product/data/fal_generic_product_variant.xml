@@ -1,0 +1,606 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+
+        <record id="fal_generic_product.product_product_gen_comp_098" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_098"/>
+            <field name="default_code">C.TM.ABT_BUS.GEN1</field>
+            <field name="name">Abroad - Bus</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_099" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_099"/>
+            <field name="default_code">C.TM.ABT_CRG.GEN1</field>
+            <field name="name">Abroad - Car renting</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_095" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_095"/>
+            <field name="default_code">C.TM.ABR_DRK.GEN1</field>
+            <field name="name">Abroad - Drink</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_100" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_100"/>
+            <field name="default_code">C.TM.ABT_FLI.GEN1</field>
+            <field name="name">Abroad - Flight</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_096" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_096"/>
+            <field name="default_code">C.TM.ABR_FOD.GEN1</field>
+            <field name="name">Abroad - Food</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_101" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_101"/>
+            <field name="default_code">C.TM.ABT_FUL.GEN1</field>
+            <field name="name">Abroad - Fuel</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_097" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_097"/>
+            <field name="default_code">C.TM.ABR_HOT.GEN1</field>
+            <field name="name">Abroad - Hotel</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_102" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_102"/>
+            <field name="default_code">C.TM.ABT_KMI.GEN1</field>
+            <field name="name">Abroad - Km indemnity</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_103" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_103"/>
+            <field name="default_code">C.TM.ABT_PKG.GEN1</field>
+            <field name="name">Abroad - Parking</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_106" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_106"/>
+            <field name="default_code">C.TM.ABT_TXI.GEN1</field>
+            <field name="name">Abroad - Taxi</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_104" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_104"/>
+            <field name="default_code">C.TM.ABT_TOL.GEN1</field>
+            <field name="name">Abroad - Tollgate</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_105" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_105"/>
+            <field name="default_code">C.TM.ABT_TRN.GEN1</field>
+            <field name="name">Abroad - Train</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_034" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_034"/>
+            <field name="default_code">C.NOP_ACR.GEN1</field>
+            <field name="name">Accruals</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_002" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_002"/>
+            <field name="default_code">C.CTX_ACR.GEN1</field>
+            <field name="name">Accrues taxes</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_014" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_014"/>
+            <field name="default_code">C.FIE.FPD_BCI.GEN1</field>
+            <field name="name">Bank charges interests</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_018" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_018"/>
+            <field name="default_code">C.FIE_BKF.GEN1</field>
+            <field name="name">Bank fees</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_061" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_061"/>
+            <field name="default_code">C.SB.FDR_CAN.GEN1</field>
+            <field name="name">Canteen costs</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_074" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_074"/>
+            <field name="default_code">C.SV.FLT_FIN.0001</field>
+            <field name="name">Company - Accountants</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_075" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_075"/>
+            <field name="default_code">C.SV.FLT_FIN.0002</field>
+            <field name="name">Company - Auditors</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_051" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_051"/>
+            <field name="default_code">C.RMF_MGF.GEN1</field>
+            <field name="name">Company - Building management fees</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_028" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_028"/>
+            <field name="default_code">C.MNT_CPT.GEN1</field>
+            <field name="name">Company - COMPUTER MAINTENANCE INTERVENTION</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_082" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_082"/>
+            <field name="default_code">C.SV_INS.0001</field>
+            <field name="name">Company - Car insurance</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_027" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_027"/>
+            <field name="default_code">C.MNT_CAR.GEN1</field>
+            <field name="name">Company - Car maintenance</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_087" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_087"/>
+            <field name="default_code">C.SV_CLN.GEN1</field>
+            <field name="name">Company - Cleaning</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_090" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_090"/>
+            <field name="default_code">C.SV.SMS_COT.GEN1</field>
+            <field name="name">Company - Commercial team</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_045" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_045"/>
+            <field name="default_code">C.PMI_COP.GEN1</field>
+            <field name="name">Company - Copies</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_029" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_029"/>
+            <field name="default_code">C.MNT_DAM.GEN1</field>
+            <field name="name">Company - Damages</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_094" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_094"/>
+            <field name="default_code">C.TAX_DIR.GEN1</field>
+            <field name="name">Company - Direct tax</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_041" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_041"/>
+            <field name="default_code">C.NST_ELC.GEN1</field>
+            <field name="name">Company - Electricity</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_052" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_052"/>
+            <field name="default_code">C.RMF_RTG.0002</field>
+            <field name="name">Company - Equipment</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_031" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_031"/>
+            <field name="default_code">C.MNT_EQP.GEN1</field>
+            <field name="name">Company - Equipment maintenance</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_046" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_046"/>
+            <field name="default_code">C.PMI_ESC.GEN1</field>
+            <field name="name">Company - Express shipping cost</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_076" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_076"/>
+            <field name="default_code">C.SV.FLT_FIN.0003</field>
+        <field name="name">Company - Finance consultants</field></record>
+        <record id="fal_generic_product.product_product_gen_comp_073" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_073"/>
+            <field name="default_code">C.SV.FLT_FIN.GEN1</field>
+            <field name="name">Company - Finance services</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_083" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_083"/>
+            <field name="default_code">C.SV_INS.0002</field>
+            <field name="name">Company - Fire insurance</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_047" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_047"/>
+            <field name="default_code">C.PMI_FIX.GEN1</field>
+            <field name="name">Company - Fixed phone</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_032" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_032"/>
+            <field name="default_code">C.MNT_FUR.GEN1</field>
+            <field name="name">Company - Furniture maintenenace</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_042" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_042"/>
+            <field name="default_code">C.NST_GAZ.GEN1</field>
+            <field name="name">Company - Gaz</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_080" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_080"/>
+            <field name="default_code">C.SV_HRS.GEN1</field>
+            <field name="name">Company - Human resources</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_085" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_085"/>
+            <field name="default_code">C.SV_ITS.GEN1</field>
+            <field name="name">Company - IT services</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_048" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_048"/>
+            <field name="default_code">C.PMI_INT.GEN1</field>
+            <field name="name">Company - Internet</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_077" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_077"/>
+            <field name="default_code">C.SV.FLT_LEG.GEN1</field>
+            <field name="name">Company - Legal services</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_091" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_091"/>
+            <field name="default_code">C.SV.SMS_MKG.GEN1</field>
+            <field name="name">Company - Marketing</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_049" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_049"/>
+            <field name="default_code">C.PMI_MOB.GEN1</field>
+            <field name="name">Company - Mobile phone</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_050" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_050"/>
+            <field name="default_code">C.PMI_NSC.GEN1</field>
+            <field name="name">Company - Normal shipping cost</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_001" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_001"/>
+            <field name="default_code">C.CST_STA.GEN1</field>
+            <field name="name">Company - Office stationary</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_043" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_043"/>
+            <field name="default_code">C.NST_OLH.GEN1</field>
+            <field name="name">Company - Oil heating</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_086" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_086"/>
+            <field name="default_code">C.SV_OTH.0001</field>
+            <field name="name">Company - Other consultant fees</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_084" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_084"/>
+            <field name="default_code">C.SV_INS.GEN1</field>
+            <field name="name">Company - Other insurance</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_033" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_033"/>
+            <field name="default_code">C.MNT_PMS.GEN1</field>
+            <field name="name">Company - Premises maintenance</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_089" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_089"/>
+            <field name="default_code">C.SV_RCP.GEN1</field>
+            <field name="name">Company - Reception services</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_081" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_081"/>
+            <field name="default_code">C.SV_HRS.0001</field>
+            <field name="name">Company - Recruitment services</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_053" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_053"/>
+            <field name="default_code">C.RMF_RTG.0001</field>
+            <field name="name">Company - Rent plant</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_088" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_088"/>
+            <field name="default_code">C.SV_SCU.GEN1</field>
+            <field name="name">Company - Security</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_079" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_079"/>
+            <field name="default_code">C.SV.FLT_TAX.GEN1</field>
+            <field name="name">Company - Tax consultants</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_044" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_044"/>
+            <field name="default_code">C.NST_WAT.GEN1</field>
+            <field name="name">Company - Water</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_054" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_054"/>
+            <field name="default_code">C.RMF_RTG.GEN1</field>
+            <field name="name">Company Premises Rent</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_064" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_064"/>
+            <field name="default_code">C.SB.FLT_CAR.GEN1</field>
+            <field name="name">Company car expenses</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_065" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_065"/>
+            <field name="default_code">C.SB.FLT_FUE.GEN1</field>
+            <field name="name">Company car fuel</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_066" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_066"/>
+            <field name="default_code">C.SB.FLT_LEA.GEN1</field>
+            <field name="name">Company car rent leasings</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_078" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_078"/>
+            <field name="default_code">C.SV.FLT_LEG.0001</field>
+            <field name="name">Company â€“ Lawyers</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_015" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_015"/>
+            <field name="default_code">C.FIE.FPD_CFE.GEN1</field>
+            <field name="name">Credit file expenses</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_119" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_119"/>
+            <field name="default_code">C.TM.PBR_CGF.GEN1</field>
+            <field name="name">Customer gifts</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_019" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_019"/>
+            <field name="default_code">C.FIE_DBC.GEN1</field>
+            <field name="name">Debt charges</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_120" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_120"/>
+            <field name="default_code">C.TM.PBR_DEC.GEN1</field>
+            <field name="name">Decoration</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_007" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_007"/>
+            <field name="default_code">C.DEP_ACC.GEN1</field>
+            <field name="name">Depreciation accomodation</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_008" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_008"/>
+            <field name="default_code">C.DEP_CAR.GEN1</field>
+            <field name="name">Depreciation car</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_009" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_009"/>
+            <field name="default_code">C.DEP_EQP.GEN1</field>
+            <field name="name">Depreciation equipment</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_010" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_010"/>
+            <field name="default_code">C.DEP_FUR.GEN1</field>
+            <field name="name">Depreciation furnishing</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_011" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_011"/>
+            <field name="default_code">C.DEP_HDC.GEN1</field>
+            <field name="name">Depreciation hardware computer</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_012" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_012"/>
+            <field name="default_code">C.DEP_PMS.GEN1</field>
+            <field name="name">Depreciation premises</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_013" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_013"/>
+            <field name="default_code">C.DEP_SFT.GEN1</field>
+            <field name="name">Depreciation software licences</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_020" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_020"/>
+            <field name="default_code">C.FIE_DCA.GEN1</field>
+            <field name="name">Disposal current assets</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_036" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_036"/>
+            <field name="default_code">C.NOP_DSP.GEN1</field>
+            <field name="name">Disposals</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_062" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_062"/>
+            <field name="default_code">C.SB.FDR_DRK.GEN1</field>
+            <field name="name">Drink</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_058" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_058"/>
+            <field name="default_code">C.SB.BEN_EMP.GEN1</field>
+            <field name="name">Employees benefits</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_057" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_057"/>
+            <field name="default_code">C.SB.BEN_CMP.GEN1</field>
+            <field name="name">Employees compensation</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_072" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_072"/>
+            <field name="default_code">C.SV_ENG</field>
+            <field name="name">Engineering services</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_021" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_021"/>
+            <field name="default_code">C.FIE_EXD.GEN1</field>
+            <field name="name">Exchange diferences</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_022" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_022"/>
+            <field name="default_code">C.FIE_FAC.GEN1</field>
+            <field name="name">Financial accruals</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_017" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_017"/>
+            <field name="default_code">C.FIE.FPD_OTH.GEN1</field>
+            <field name="name">Financial product - Other</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_063" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_063"/>
+            <field name="default_code">C.SB.FDR_FOD.GEN1</field>
+            <field name="name">Food</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_059" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_059"/>
+            <field name="default_code">C.SB.BEN_HIN.GEN1</field>
+            <field name="name">Health insurances</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_024" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_024"/>
+            <field name="default_code">C.FIE_ICA.GEN1</field>
+            <field name="name">Income current assets</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_023" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_023"/>
+            <field name="default_code">C.FIE_FFA.GEN1</field>
+            <field name="name">Income financial fixed assets</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_067" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_067"/>
+            <field name="default_code">C.SB.IND_FEE.GEN1</field>
+            <field name="name">Independent fees</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_026" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_026"/>
+            <field name="default_code">C.INT.GEN1</field>
+            <field name="name">Intercompany</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_068" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_068"/>
+            <field name="default_code">C.SB.IND_KMI.GEN1</field>
+            <field name="name">Kilometric indemnity for independent</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_006" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_006"/>
+            <field name="default_code">C.DA_LGF.GEN1</field>
+            <field name="name">Legal Formalities</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_110" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_110"/>
+            <field name="default_code">C.TM.LBT_BUS.GEN1</field>
+            <field name="name">Local mission - Bus</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_111" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_111"/>
+            <field name="default_code">C.TM.LBT_CRG.GEN1</field>
+            <field name="name">Local mission - Car renting</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_107" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_107"/>
+            <field name="default_code">C.TM.LBR_DRK.GEN1</field>
+            <field name="name">Local mission - Drink</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_112" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_112"/>
+            <field name="default_code">C.TM.LBT_FLI.GEN1</field>
+            <field name="name">Local mission - Flight</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_108" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_108"/>
+            <field name="default_code">C.TM.LBR_FOD.GEN1</field>
+            <field name="name">Local mission - Food</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_113" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_113"/>
+            <field name="default_code">C.TM.LBT_FUL.GEN1</field>
+            <field name="name">Local mission - Fuel</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_109" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_109"/>
+            <field name="default_code">C.TM.LBR_HOT.GEN1</field>
+            <field name="name">Local mission - Hotel</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_114" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_114"/>
+            <field name="default_code">C.TM.LBT_KMI.GEN1</field>
+            <field name="name">Local mission - Km indemnity</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_115" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_115"/>
+            <field name="default_code">C.TM.LBT_PKG.GEN1</field>
+            <field name="name">Local mission - Parking</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_118" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_118"/>
+            <field name="default_code">C.TM.LBT_TXI.GEN1</field>
+            <field name="name">Local mission - Taxi</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_116" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_116"/>
+            <field name="default_code">C.TM.LBT_TOL.GEN1</field>
+            <field name="name">Local mission - Tollgate</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_117" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_117"/>
+            <field name="default_code">C.TM.LBT_TRN.GEN1</field>
+            <field name="name">Local mission - Train</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_016" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_016"/>
+            <field name="default_code">C.FIE.FPD_LGT.GEN1</field>
+            <field name="name">Long term Finance products</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_030" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_030"/>
+            <field name="default_code">C.MNT_EQP.0001</field>
+            <field name="name">Maintenance Carbo SIP WELL</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_121" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_121"/>
+            <field name="default_code">C.TM.PBR_MSP.GEN1</field>
+            <field name="name">Membership / Sponsoring</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_037" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_037"/>
+            <field name="default_code">C.NOP_MIS.GEN1</field>
+            <field name="name">Miscellaneous</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_035" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_035"/>
+            <field name="default_code">C.NOP_DEP.GEN1</field>
+            <field name="name">NonOP depreciation</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_060" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_060"/>
+            <field name="default_code">C.SB.EIN_OTH.GEN1</field>
+            <field name="name">OTHER Employee INSURANCE</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_092" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_092"/>
+            <field name="default_code">C.TAX.IND_OTH.GEN1</field>
+            <field name="name">Other taxes</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_055" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_055"/>
+            <field name="default_code">C.SB.ADN_OTH.GEN1</field>
+            <field name="name">Others advantage in nature</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_069" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_069"/>
+            <field name="default_code">C.SB_PAY.GEN1</field>
+            <field name="name">Payroll</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_056" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_056"/>
+            <field name="default_code">C.SB.ADN_PTY.GEN1</field>
+            <field name="name">Staff party</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_038" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_038"/>
+            <field name="default_code">C.NOP_SUB.GEN1</field>
+            <field name="name">Subsidies</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_004" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_004"/>
+            <field name="default_code">C.CTX_RCY.GEN1</field>
+            <field name="name">Taxes on results current year</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_005" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_005"/>
+            <field name="default_code">C.CTX_RPY.GEN1</field>
+            <field name="name">Taxes on results previous years</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_070" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_070"/>
+            <field name="default_code">C.SB_TMP.GEN1</field>
+            <field name="name">Temporary staff</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_071" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_071"/>
+            <field name="default_code">C.SB_TNG.GEN1</field>
+            <field name="name">Training</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_093" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_093"/>
+            <field name="default_code">C.TAX.IND_VAT.GEN1</field>
+            <field name="name">VAT</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_025" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_025"/>
+            <field name="default_code">C.FIE_WCA.GEN1</field>
+            <field name="name">Writte off current assets</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_039" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_039"/>
+            <field name="default_code">C.NOP_WTD.GEN1</field>
+            <field name="name">Writte off trade debtors</field>
+        </record>
+        <record id="fal_generic_product.product_product_gen_comp_040" model="product.product">
+            <field name="product_tmpl_id" ref="fal_generic_product.product_template_gen_comp_040"/>
+            <field name="default_code">C.NOP_WTI.GEN1</field>
+            <field name="name">Writte off trade inventories</field>
+        </record>
+
+    </data>
+</odoo>

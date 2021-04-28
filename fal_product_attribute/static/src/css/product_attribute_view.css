@@ -1,0 +1,41 @@
+div.PA_form{
+	display: block;
+}
+table.PA_group{
+	display: block;
+}
+div.PA_tree{
+	display: block;
+}
+.modal-body-product-attribute{
+	padding: 25px;
+}
+
+img.product_detail_img{
+	border : 1px solid #ffffff00;
+	padding: 5px;
+	margin: 0 auto;
+}
+
+img.product_detail_img:hover{
+	border : 1px solid #00A09D;
+}
+
+.product_attribute_name{
+	font-weight: bold;
+	text-align: center;
+	padding: 5px;
+}
+
+.product_selection_float{
+	float: left;
+	padding: 10px;
+}
+
+.product_detail_image{
+	margin: 0 auto;
+}
+
+li.variant_attribute > .attributeImage{
+	padding-bottom: 20px;
+}

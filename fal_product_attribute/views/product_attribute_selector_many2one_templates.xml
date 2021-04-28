@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="product_selector_configure_many2one" name="Select">
+        <span><b>Attribute</b></span>
+        <div class="js_product product_attribute" >
+        <ul t-attf-class="list-unstyled js_add_cart_variants #{ul_class}">
+            <t t-foreach="attributes" t-as="attribute_id">
+                <!-- Attributes selection is hidden if there is only one value available and it's not a custom value -->
+                <div class="col-md-6 float-left">
+                <li t-att-data-attribute_id="attribute_id.id"
+                    t-att-data-attribute_name="attribute_id.name"
+                    t-attf-class="variant_attribute #{'d-none' if len(attribute_id.value_ids) == 1 else ''}">
+                    <div class="col-md-6 text-center float-left attributeImage" t-att-image_id="'%s' % attribute_id.id">
+                        <strong t-field="attribute_id.name" class="attribute_name"/>
+                        <br/>
+                        <img t-if="attribute_id.attribute_image" t-att-src="'/web/image/product.attribute/%s/attribute_image' % attribute_id.id" width="125" height="90" alt="Attribute Image"  />
+                        <img t-else="" class="" src='/web/static/src/img/placeholder.png' width="125" height="90" alt="Placeholder"  />
+                    </div>
+                    <div class="col-md-6 float-left">
+                    <t t-if="attribute_id.type == 'select'">
+                        <select
+                            t-att-data-attribute_id="attribute_id.id"
+                            t-attf-class="form-control js_variant_change"
+                            t-att-name="'attribute-%s' % (attribute_id.name)">
+                            <option></option>
+                            <t t-foreach="attribute_id.value_ids" t-as="value_id">
+                                <option t-att-value="value_id.id" t-att-atribute="value_id.attribute_id.id" t-att-data-is_custom="value_id.is_custom" t-att-attribute-create-variant="attribute_id.create_variant" t-att-value-name="value_id.name" t-att-attribute-name="attribute_id.name">
+                                    <span t-field="value_id.name"/>
+                                </option>
+                            </t>
+                        </select>
+                    </t>
+
+                    <t t-if="attribute_id.type == 'radio'">
+                        <ul t-att-data-attribute_id="attribute_id.id" class="list-unstyled">
+                            <t t-foreach="attribute_id.value_ids" t-as="value_id">
+                                <li class="form-group js_attribute_value" style="margin: 0;">
+                                    <label class="col-form-label">
+                                        <div>
+                                            <input type="radio"
+                                                t-attf-class="js_variant_change radio_input"
+                                                t-att-name="'attribute-%s' % (value_id.attribute_id)"
+                                                t-att-value="value_id.id"
+                                                t-att-atribute="value_id.attribute_id.id" t-att-data-is_custom="value_id.is_custom" t-att-attribute-create-variant="attribute_id.create_variant"  t-att-value-name="value_id.name" t-att-attribute-name="attribute_id.name"/>
+                                            <div class="radio_input_value">
+                                                <span t-field="value_id.name"/>
+                                            </div>
+                                        </div>
+                                    </label>
+                                </li>
+                            </t>
+                        </ul>
+                    </t>
+
+                    <t t-if="attribute_id.type == 'color'">
+                        <ul t-att-data-attribute_id="attribute_id.id" class="list-inline">
+                            <li t-foreach="attribute_id.value_ids" t-as="value_id" class="list-inline-item">
+                                <label t-attf-style="background-color:#{value_id.html_color or value_id.name if not value_id.is_custom else ''}"
+                                    t-attf-class="css_attribute_color">
+                                    <input type="radio"
+                                        t-attf-class="js_variant_change"
+                                        t-att-name="'attribute-%s' % (value_id.attribute_id)"
+                                        t-att-value="value_id.id" t-att-atribute="value_id.attribute_id.id"
+                                        t-att-title="value_id.name"
+                                        t-att-data-is_custom="value_id.is_custom" t-att-attribute-create-variant="attribute_id.create_variant"  t-att-value-name="value_id.name" t-att-attribute-name="attribute_id.name"/>
+                                </label>
+                            </li>
+                        </ul>
+                    </t>
+                    </div>
+
+                </li>
+                </div>
+            </t>
+        </ul>
+        </div>
+        <!-- For Filler -->
+        <div t-if="len(attributes.ids) % 2 == 1" class="col-md-6 float-left"><br/><br/><br/><br/><br/><br/><br/><br/></div>
+        <!-- If Odd -->
+        <span t-if="len(attributes.ids) % 2 == 1" style="margin-right: 100%"><b>Product(s)</b></span>
+        <!-- If Even -->
+        <span t-if="len(attributes.ids) % 2 == 0"><b>Product(s)</b></span>
+        <div class="selectable_product">
+            <t t-foreach="product_ids" t-as="product_variant">
+                <t t-set="product" t-value="product_variant.product_tmpl_id"/>
+                <div class="col-lg-6 product_selection_float">
+                    <div class="product_attribute_name">
+                        <t t-esc="product_variant.display_name"></t>
+                    </div>
+                    <img t-if="product_variant" t-att-src="'/web/image/product.product/%s/image_medium' % product_variant.id" t-att-product-variant-id="product_variant.id" t-att-product-variant-name="product_variant.display_name" class="d-block product_detail_img" alt="Product Image"   width="125" height="90"/>
+                    <img t-else="" t-att-src="'/web/image/product.template/%s/image' % product.id" class="d-block product_detail_img" alt="Product Image"   width="125" height="90"/>
+                </div>
+            </t>
+        </div>
+    </template>
+</odoo>

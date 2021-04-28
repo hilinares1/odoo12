@@ -1,0 +1,6 @@
+Under consideration
+========================================================================================================================
+* Analyze reliability of forecast data (locate info in graph header and in xls) --> add the verification to pivot/graph
+header and to xls
+* Extend ma, arima, sarimax methods with more params
+* Think of improving performace while explcit iniating the model instead of multi create report transient model

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="fal_product_lot_discard_views" model="ir.ui.view">
+            <field name="name">fal.product.lot.discard.views</field>
+            <field name="model">product.lot.discard</field>
+            <field name="arch" type="xml">
+                <form>
+                        <div>
+                            <span>There is an issue on validating the scrap process. Please solve the issue on the scrap record.
+                            </span>
+                        </div>
+                        <footer>
+                            <button string="Check" name="go_to_scrap" type="object" class="oe_highlight"/>
+                            <button string="Cancel" class="btn btn-default" special="cancel"/>
+                        </footer>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

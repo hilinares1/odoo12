@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Copyright (C) 2015 DevIntelle Consulting Service Pvt.Ltd (<http://www.devintellecs.com>).
+
+For Module Support : devintelle@gmail.com  or Skype : devintelle
+ -->
+<odoo>
+	<record id="account_invoice_whatsapp_view" model="ir.ui.view">
+		<field name="name">account.invoice.whatsapp.view</field>
+		<field name="model">account.invoice</field>
+		<field name="inherit_id" ref="account.invoice_form"/>
+		<field name="arch" type="xml">
+			<xpath expr="//header//button[@name='action_invoice_draft']" position="after">
+                <button name="send_whatsapp_message_data" type="object" string="Send WhatsApp Web"/>
+                <button name="send_invoice_whatsapp_message_from_mobile" type="object" string="Send WhatsApp Mobile"/>
+			</xpath>
+		</field>
+	</record>
+</odoo>

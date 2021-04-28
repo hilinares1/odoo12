@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="view_fal_journal_entry_report_wizard" model="ir.ui.view">
+            <field name="name">fal.journal.entry.report.wizard</field>
+            <field name="model">fal.journal.entry.report.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Journal Entry">
+                    <group>
+                        <group>
+                            <field name="start_date" />
+                            <field name="end_date" />
+                        </group>
+                    </group>
+                    <footer>
+                        <button name="action_print" string="Print" type="object" class="oe_highlight"/>
+                        <button string="Cancel" class="btn-default" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_fal_journal_entry_report_wizard" model="ir.actions.act_window">
+            <field name="name">Print Journal Entry</field>
+            <field name="res_model">fal.journal.entry.report.wizard</field>
+            <field name="view_type">form</field>
+            <field name="view_id" ref="view_fal_journal_entry_report_wizard"/>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem name="Print Journal Entries" action="action_fal_journal_entry_report_wizard"
+            id="menu_fal_journal_entry_report_wizard"
+            parent="account.menu_finance_entries" sequence="117" groups="account.group_account_manager"/>
+
+    </data>
+</odoo>

@@ -1,0 +1,20 @@
+<odoo>
+    <data noupdate="1">
+
+        <record id="module_procurement_request" model="ir.module.category">
+            <field name="name">Procurement Request</field>
+            <field name="description">Help you manage procurement request.</field>
+            <field name="sequence">20</field>
+        </record>
+
+        <record model="res.groups" id="group_procurement_request_user">
+            <field name="name">User</field>
+            <field name="category_id" ref="module_procurement_request"/>
+        </record>
+        <record model="res.groups" id="group_procurement_request_manager">
+            <field name="name">Manager</field>
+            <field name="category_id" ref="module_procurement_request"/>
+            <field name="implied_ids" eval="[(4, ref('group_procurement_request_user'))]"/>
+        </record>
+    </data>
+</odoo>

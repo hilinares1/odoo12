@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="fal_view_mail_message_subtype_form" model="ir.ui.view">
+            <field name="model">mail.message.subtype</field>
+            <field name="inherit_id" ref="mail.view_mail_message_subtype_form" />
+            <field name="arch" type="xml">
+                <field name="description" position="after">
+                    <field name="fal_template_id" domain="[('model', '=', res_model)]"/>
+                    <field name="fal_is_track_value"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_fal_test_type,access_fal_test_type,model_fal_test_type,base.group_user,1,1,1,1
+access_fal_quality_check,access_fal_quality_check,model_fal_quality_check,base.group_user,1,1,1,1

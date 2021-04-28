@@ -1,0 +1,870 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* fal_project_dashboard
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-04-03 10:11+0000\n"
+"PO-Revision-Date: 2018-04-03 17:40+0700\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: fr\n"
+"X-Generator: Poedit 2.0.6\n"
+
+#. module: fal_project_dashboard
+#: model:ir.ui.view,arch_db:fal_project_dashboard.project_dashboard_form_view_falprodashboard
+#: model:ir.ui.view,arch_db:fal_project_dashboard.project_dashboard_form_view_falprodashboard_history
+msgid "&gt;60d"
+msgstr "&gt;60j"
+
+#. module: fal_project_dashboard
+#: model:ir.ui.view,arch_db:fal_project_dashboard.project_dashboard_form_view_falprodashboard_history
+msgid "+23K +7pt"
+msgstr "+23K +7pt"
+
+#. module: fal_project_dashboard
+#: model:ir.ui.view,arch_db:fal_project_dashboard.project_dashboard_form_view_falprodashboard
+#: model:ir.ui.view,arch_db:fal_project_dashboard.project_dashboard_form_view_falprodashboard_history
+msgid "1-30d"
+msgstr "1-30j"
+
+#. module: fal_project_dashboard
+#: model:ir.ui.view,arch_db:fal_project_dashboard.project_dashboard_form_view_falprodashboard
+#: model:ir.ui.view,arch_db:fal_project_dashboard.project_dashboard_form_view_falprodashboard_history
+msgid "31-60d"
+msgstr "31-60j"
+
+#. module: fal_project_dashboard
+#: model:ir.ui.view,arch_db:fal_project_dashboard.project_dashboard_form_view_falprodashboard
+#: model:ir.ui.view,arch_db:fal_project_dashboard.project_dashboard_form_view_falprodashboard_history
+msgid "Actuals (€) - (h) - (% vs EAC)"
+msgstr "Actuals (€) - (h) - (% vs EAC)"
+
+#. module: fal_project_dashboard
+#: model:ir.ui.view,arch_db:fal_project_dashboard.project_dashboard_form_view_falprodashboard
+#: model:ir.ui.view,arch_db:fal_project_dashboard.project_dashboard_form_view_falprodashboard_history
+msgid "Actuals / % (vs EAC)"
+msgstr "Actuals / % (vs EAC)"
+
+#. module: fal_project_dashboard
+#: model:ir.model,name:fal_project_dashboard.model_account_analytic_account
+msgid "Analytic Account"
+msgstr "Compte analytique"
+
+#. module: fal_project_dashboard
+#: model:ir.ui.view,arch_db:fal_project_dashboard.project_dashboard_form_view_falprodashboard
+msgid "Close Period"
+msgstr "Clôturer la période"
+
+#. module: fal_project_dashboard
+#: model:ir.actions.act_window,help:fal_project_dashboard.open_view_project_all_config_falprodashboard
+msgid "Create a new project."
+msgstr "Créer un nouveau projet."
+
+#. module: fal_project_dashboard
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_fal_project_dashboard_history_create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: fal_project_dashboard
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_fal_project_dashboard_history_create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: fal_project_dashboard
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_account_analytic_account_fal_currency_id
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_fal_project_dashboard_history_currency_id
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_project_project_fal_currency_id
+msgid "Currency"
+msgstr "Devise"
+
+#. module: fal_project_dashboard
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_account_analytic_account_fal_customer_invoiced_count
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_fal_project_dashboard_history_fal_customer_invoiced_count
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_project_project_fal_customer_invoiced_count
+msgid "Customer Invoiced Count"
+msgstr "Customer Invoiced Count"
+
+#. module: fal_project_dashboard
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_account_analytic_account_fal_customer_invoiced_percentage
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_fal_project_dashboard_history_fal_customer_invoiced_percentage
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_project_project_fal_customer_invoiced_percentage
+msgid "Customer Invoiced Percentage"
+msgstr "Pourcentage facturation client"
+
+#. module: fal_project_dashboard
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_account_analytic_account_fal_customer_invoiced_total
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_fal_project_dashboard_history_fal_customer_invoiced_total
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_project_project_fal_customer_invoiced_total
+msgid "Customer Invoiced Total"
+msgstr "Total facturation client"
+
+#. module: fal_project_dashboard
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_account_analytic_account_fal_customer_invoiced_total_due30d
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_fal_project_dashboard_history_fal_customer_invoiced_total_due30d
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_project_project_fal_customer_invoiced_total_due30d
+msgid "Customer Invoiced Total Due 30d"
+msgstr "Retard client 30j"
+
+#. module: fal_project_dashboard
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_account_analytic_account_fal_customer_invoiced_total_due60d
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_fal_project_dashboard_history_fal_customer_invoiced_total_due60d
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_project_project_fal_customer_invoiced_total_due60d
+msgid "Customer Invoiced Total Due 60d"
+msgstr "Retard client 60j"
+
+#. module: fal_project_dashboard
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_account_analytic_account_fal_customer_invoiced_total_due61d
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_fal_project_dashboard_history_fal_customer_invoiced_total_due61d
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_project_project_fal_customer_invoiced_total_due61d
+msgid "Customer Invoiced Total Due More than 60d"
+msgstr "Retard client plus de 60j"
+
+#. module: fal_project_dashboard
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_account_analytic_account_fal_customer_invoiced_total_not_due
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_fal_project_dashboard_history_fal_customer_invoiced_total_not_due
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_project_project_fal_customer_invoiced_total_not_due
+msgid "Customer Invoiced Total Not Due"
+msgstr "Total facturé non dû"
+
+#. module: fal_project_dashboard
+#: model:ir.ui.view,arch_db:fal_project_dashboard.project_dashboard_form_view_falprodashboard
+#: model:ir.ui.view,arch_db:fal_project_dashboard.project_dashboard_form_view_falprodashboard_history
+msgid "Customer Invoices"
+msgstr "Factures clients"
+
+#. module: fal_project_dashboard
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_account_analytic_account_fal_customer_payment_count
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_fal_project_dashboard_history_fal_customer_payment_count
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_project_project_fal_customer_payment_count
+msgid "Customer Payment Count"
+msgstr "Customer Payment Count"
+
+#. module: fal_project_dashboard
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_account_analytic_account_fal_customer_payment_percentage
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_fal_project_dashboard_history_fal_customer_payment_percentage
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_project_project_fal_customer_payment_percentage
+msgid "Customer Payment Percentage"
+msgstr "Pourcentage paiement client"
+
+#. module: fal_project_dashboard
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_account_analytic_account_fal_customer_payment_total
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_fal_project_dashboard_history_fal_customer_payment_total
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_project_project_fal_customer_payment_total
+msgid "Customer Payment Total"
+msgstr "Total paiement client"
+
+#. module: fal_project_dashboard
+#: model:ir.ui.view,arch_db:fal_project_dashboard.project_dashboard_form_view_falprodashboard
+#: model:ir.ui.view,arch_db:fal_project_dashboard.project_dashboard_form_view_falprodashboard_history
+msgid "Customer Payments"
+msgstr "Paiements clients"
+
+#. module: fal_project_dashboard
+#: model:ir.ui.menu,name:fal_project_dashboard.menu_projects_dashboards_falprodashboard
+msgid "Dashboards"
+msgstr "Tableaux de bord"
+
+#. module: fal_project_dashboard
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_fal_project_dashboard_history_display_name
+msgid "Display Name"
+msgstr "Nom à afficher"
+
+#. module: fal_project_dashboard
+#: model:ir.ui.view,arch_db:fal_project_dashboard.project_dashboard_form_view_falprodashboard
+#: model:ir.ui.view,arch_db:fal_project_dashboard.project_dashboard_form_view_falprodashboard_history
+msgid "EAC"
+msgstr "EAC"
+
+#. module: fal_project_dashboard
+#: model:ir.ui.view,arch_db:fal_project_dashboard.project_dashboard_form_view_falprodashboard
+#: model:ir.ui.view,arch_db:fal_project_dashboard.project_dashboard_form_view_falprodashboard_history
+msgid "EAC / %"
+msgstr "EAC / %"
+
+#. module: fal_project_dashboard
+#: model:ir.ui.view,arch_db:fal_project_dashboard.project_dashboard_form_view_falprodashboard
+msgid "EAC: Completion Amount"
+msgstr "EAC: Completion Amount"
+
+#. module: fal_project_dashboard
+#: model:ir.ui.view,arch_db:fal_project_dashboard.project_dashboard_form_view_falprodashboard
+#: model:ir.ui.view,arch_db:fal_project_dashboard.project_dashboard_form_view_falprodashboard_history
+msgid "EAC: Estimated Completion"
+msgstr "EAC: Estimated Completion"
+
+#. module: fal_project_dashboard
+#: model:ir.ui.view,arch_db:fal_project_dashboard.project_dashboard_form_view_falprodashboard
+#: model:ir.ui.view,arch_db:fal_project_dashboard.project_dashboard_form_view_falprodashboard_history
+msgid "EAC: Estimated Completion; Gap: Current; Last: Last"
+msgstr "EAC: Estimated Completion; Gap: Current; Last: Last"
+
+#. module: fal_project_dashboard
+#: model:ir.ui.view,arch_db:fal_project_dashboard.project_dashboard_form_view_falprodashboard
+#: model:ir.ui.view,arch_db:fal_project_dashboard.project_dashboard_form_view_falprodashboard_history
+msgid "Expenses"
+msgstr "Notes de frais"
+
+#. module: fal_project_dashboard
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_fal_project_dashboard_history_date_end
+msgid "Expiration Date"
+msgstr "Date d'expiration"
+
+#. module: fal_project_dashboard
+#: model:ir.ui.view,arch_db:fal_project_dashboard.project_dashboard_form_view_falprodashboard
+#: model:ir.ui.view,arch_db:fal_project_dashboard.project_dashboard_form_view_falprodashboard_history
+msgid "Gap EAC vs T0"
+msgstr "Gap EAC vs T0"
+
+#. module: fal_project_dashboard
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_account_analytic_account_fal_gross_margin_gap
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_fal_project_dashboard_history_fal_gross_margin_gap
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_project_project_fal_gross_margin_gap
+msgid "Gross Margin Gap"
+msgstr "Delta Marge Brute"
+
+#. module: fal_project_dashboard
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_account_analytic_account_fal_gross_margin_to
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_fal_project_dashboard_history_fal_gross_margin_to
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_project_project_fal_gross_margin_to
+msgid "Gross Margin T0"
+msgstr "Marge Brute T0"
+
+#. module: fal_project_dashboard
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_account_analytic_account_fal_gross_margin_to_percentage
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_fal_project_dashboard_history_fal_gross_margin_to_percentage
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_project_project_fal_gross_margin_to_percentage
+msgid "Gross Margin T0 %"
+msgstr "Marge Brute T0"
+
+#. module: fal_project_dashboard
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_account_analytic_account_fal_gross_margin_gap_percentage
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_fal_project_dashboard_history_fal_gross_margin_gap_percentage
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_project_project_fal_gross_margin_gap_percentage
+msgid "Gross Margin gap %"
+msgstr "Delta Marge Brute %"
+
+#. module: fal_project_dashboard
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_account_analytic_account_fal_gross_margin_termination
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_account_analytic_account_fal_gross_margin_to_termination
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_fal_project_dashboard_history_fal_gross_margin_termination
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_project_project_fal_gross_margin_termination
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_project_project_fal_gross_margin_to_termination
+msgid "Gross Margin termination"
+msgstr "Marge Brute à Terminaison"
+
+#. module: fal_project_dashboard
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_account_analytic_account_fal_gross_margin_termination_percentage
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_fal_project_dashboard_history_fal_gross_margin_termination_percentage
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_project_project_fal_gross_margin_termination_percentage
+msgid "Gross Margin termination %"
+msgstr "Marge Brute à Terminaison %"
+
+#. module: fal_project_dashboard
+#: model:ir.ui.view,arch_db:fal_project_dashboard.project_dashboard_form_view_falprodashboard
+#: model:ir.ui.view,arch_db:fal_project_dashboard.project_dashboard_form_view_falprodashboard_history
+msgid "Gross margin"
+msgstr "Marge Brute"
+
+#. module: fal_project_dashboard
+#: model:ir.ui.view,arch_db:fal_project_dashboard.project_dashboard_form_view_falprodashboard
+msgid "Gross margin T0"
+msgstr "Marge Brute T0"
+
+#. module: fal_project_dashboard
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_fal_project_dashboard_history_id
+msgid "ID"
+msgstr "ID"
+
+#. module: fal_project_dashboard
+#: model:ir.ui.view,arch_db:fal_project_dashboard.project_dashboard_form_view_falprodashboard
+#: model:ir.ui.view,arch_db:fal_project_dashboard.project_dashboard_form_view_falprodashboard_history
+msgid "Invoice / % (vs EAC)"
+msgstr "Facture / % (vs EAC)"
+
+#. module: fal_project_dashboard
+#: model:ir.ui.view,arch_db:fal_project_dashboard.project_dashboard_form_view_falprodashboard
+#: model:ir.ui.view,arch_db:fal_project_dashboard.project_dashboard_form_view_falprodashboard_history
+msgid "Invoice / % (vs order amount)"
+msgstr "Facturé / % vs commandé"
+
+#. module: fal_project_dashboard
+#: model:ir.ui.view,arch_db:fal_project_dashboard.project_dashboard_form_view_falprodashboard
+#: model:ir.ui.view,arch_db:fal_project_dashboard.project_dashboard_form_view_falprodashboard_history
+msgid "Invoiced / %"
+msgstr "Sur facturé"
+
+#. module: fal_project_dashboard
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_account_analytic_account_fal_invoiced_gross_margin_to
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_fal_project_dashboard_history_fal_invoiced_gross_margin_to
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_project_project_fal_invoiced_gross_margin_to
+msgid "Invoiced Gross Margin T0"
+msgstr "Invoiced Gross Margin T0"
+
+#. module: fal_project_dashboard
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_account_analytic_account_fal_invoiced_gross_margin_to_percentage
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_fal_project_dashboard_history_fal_invoiced_gross_margin_to_percentage
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_project_project_fal_invoiced_gross_margin_to_percentage
+msgid "Invoiced Gross Margin T0 %"
+msgstr "Invoiced Gross Margin T0 %"
+
+#. module: fal_project_dashboard
+#: model:ir.ui.view,arch_db:fal_project_dashboard.project_dashboard_form_view_falprodashboard
+#: model:ir.ui.view,arch_db:fal_project_dashboard.project_dashboard_form_view_falprodashboard_history
+msgid "Invoiced Gross margin T0"
+msgstr "Invoiced Gross margin T0"
+
+#. module: fal_project_dashboard
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_account_analytic_account_fal_invoiced_variable_cost_margin
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_fal_project_dashboard_history_fal_invoiced_variable_cost_margin
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_project_project_fal_invoiced_variable_cost_margin
+msgid "Invoiced Variable Cost Margin"
+msgstr "Invoiced Variable Cost Margin"
+
+#. module: fal_project_dashboard
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_account_analytic_account_fal_invoiced_variable_cost_margin_percentage
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_fal_project_dashboard_history_fal_invoiced_variable_cost_margin_percentage
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_project_project_fal_invoiced_variable_cost_margin_percentage
+msgid "Invoiced Variable Cost Margin %"
+msgstr "Invoiced Variable Cost Margin %"
+
+#. module: fal_project_dashboard
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_account_journal_fal_is_mission_expense_journal
+msgid "Is Mission Expense Journal"
+msgstr "Est journal frais de mission"
+
+#. module: fal_project_dashboard
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_account_journal_fal_is_timesheet_journal
+msgid "Is Timesheet Journal"
+msgstr "Est journal feuilles de temps"
+
+#. module: fal_project_dashboard
+#: model:ir.model,name:fal_project_dashboard.model_account_journal
+msgid "Journal"
+msgstr "Journal"
+
+#. module: fal_project_dashboard
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_fal_project_dashboard_history___last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: fal_project_dashboard
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_fal_project_dashboard_history_write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: fal_project_dashboard
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_fal_project_dashboard_history_write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: fal_project_dashboard
+#: model:ir.ui.view,arch_db:fal_project_dashboard.project_dashboard_form_view_falprodashboard
+#: model:ir.ui.view,arch_db:fal_project_dashboard.project_dashboard_form_view_falprodashboard_history
+msgid "Margin"
+msgstr "Marge"
+
+#. module: fal_project_dashboard
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_account_analytic_account_fal_mission_expense_budget_total
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_fal_project_dashboard_history_fal_mission_expense_budget_total
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_project_project_fal_mission_expense_budget_total
+msgid "Mission Expense Budget Total"
+msgstr "Total budget frais de mission"
+
+#. module: fal_project_dashboard
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_account_analytic_account_fal_mission_expense_budget_total_termination
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_fal_project_dashboard_history_fal_mission_expense_budget_total_termination
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_project_project_fal_mission_expense_budget_total_termination
+msgid "Mission Expense Budget Total Termination"
+msgstr "Total budget frais de mission à terminaison"
+
+#. module: fal_project_dashboard
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_account_analytic_account_fal_mission_expense_count
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_fal_project_dashboard_history_fal_mission_expense_count
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_project_project_fal_mission_expense_count
+msgid "Mission Expense Count"
+msgstr "Mission Expense Count"
+
+#. module: fal_project_dashboard
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_account_analytic_account_fal_mission_expense_percentage
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_fal_project_dashboard_history_fal_mission_expense_percentage
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_project_project_fal_mission_expense_percentage
+msgid "Mission Expense Percentage"
+msgstr "Pourcentage frais de mission"
+
+#. module: fal_project_dashboard
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_account_analytic_account_fal_mission_expense_total
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_fal_project_dashboard_history_fal_mission_expense_total
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_project_project_fal_mission_expense_total
+msgid "Mission Expense Total"
+msgstr "Total frais de mission"
+
+#. module: fal_project_dashboard
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_account_analytic_account_fal_mission_expense_total_remaining_expense
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_fal_project_dashboard_history_fal_mission_expense_total_remaining_expense
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_project_project_fal_mission_expense_total_remaining_expense
+msgid "Mission Expense Total Remaining Expense"
+msgstr "Total reste à faire frais de mission "
+
+#. module: fal_project_dashboard
+#: model:ir.ui.view,arch_db:fal_project_dashboard.project_dashboard_form_view_falprodashboard
+#: model:ir.ui.view,arch_db:fal_project_dashboard.project_dashboard_form_view_falprodashboard_history
+msgid "Mission Expenses"
+msgstr "Frais de mission"
+
+#. module: fal_project_dashboard
+#: model:ir.ui.view,arch_db:fal_project_dashboard.project_dashboard_form_view_falprodashboard
+#: model:ir.ui.view,arch_db:fal_project_dashboard.project_dashboard_form_view_falprodashboard_history
+msgid "Mission Expenses Lines"
+msgstr "Lignes de frais de mission"
+
+#. module: fal_project_dashboard
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_fal_project_dashboard_history_name
+msgid "Name"
+msgstr "Nom"
+
+#. module: fal_project_dashboard
+#: model:ir.ui.view,arch_db:fal_project_dashboard.project_dashboard_form_view_falprodashboard
+#: model:ir.ui.view,arch_db:fal_project_dashboard.project_dashboard_form_view_falprodashboard_history
+msgid "Not due"
+msgstr "Non dû"
+
+#. module: fal_project_dashboard
+#: model:ir.ui.view,arch_db:fal_project_dashboard.project_dashboard_form_view_falprodashboard
+#: model:ir.ui.view,arch_db:fal_project_dashboard.project_dashboard_form_view_falprodashboard_history
+msgid "Order"
+msgstr "Commandé"
+
+#. module: fal_project_dashboard
+#: model:ir.ui.view,arch_db:fal_project_dashboard.project_dashboard_form_view_falprodashboard
+#: model:ir.ui.view,arch_db:fal_project_dashboard.project_dashboard_form_view_falprodashboard_history
+msgid "Order / % (vs EAC)"
+msgstr "Order / % (vs EAC)"
+
+#. module: fal_project_dashboard
+#: model:ir.actions.act_window,help:fal_project_dashboard.open_view_project_all_config_falprodashboard
+msgid "Organize your activities (plan tasks, track issues, invoice timesheets) for internal, personal or customer projects."
+msgstr "Organisez vos activités (planifier les tâches, suivre les incidents, facturer les feuilles de temps) pour les projets internes, personnels ou clients."
+
+#. module: fal_project_dashboard
+#: model:ir.ui.view,arch_db:fal_project_dashboard.project_dashboard_form_view_falprodashboard
+#: model:ir.ui.view,arch_db:fal_project_dashboard.project_dashboard_form_view_falprodashboard_history
+msgid "Payment"
+msgstr "Paiement"
+
+#. module: fal_project_dashboard
+#: model:ir.ui.view,arch_db:fal_project_dashboard.project_dashboard_form_view_falprodashboard
+#: model:ir.ui.view,arch_db:fal_project_dashboard.project_dashboard_form_view_falprodashboard_history
+msgid "Payment / % (vs order amount)"
+msgstr "Payé / % vs commandé"
+
+#. module: fal_project_dashboard
+#: model:ir.model,name:fal_project_dashboard.model_fal_account_periods_lock_line
+#: model:ir.ui.view,arch_db:fal_project_dashboard.project_dashboard_form_view_falprodashboard
+#: model:ir.ui.view,arch_db:fal_project_dashboard.project_dashboard_form_view_falprodashboard_history
+msgid "Period"
+msgstr "Période"
+
+#. module: fal_project_dashboard
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_account_analytic_account_fal_period_end_date
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_fal_project_dashboard_history_fal_period_end_date
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_project_project_fal_period_end_date
+msgid "Period End Date"
+msgstr "Date fin de période"
+
+#. module: fal_project_dashboard
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_account_analytic_account_fal_period_start_date
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_fal_project_dashboard_history_fal_period_start_date
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_project_project_fal_period_start_date
+msgid "Period Start Date"
+msgstr "Date début de période"
+
+#. module: fal_project_dashboard
+#: model:ir.model,name:fal_project_dashboard.model_project_project
+#: model:ir.ui.view,arch_db:fal_project_dashboard.project_dashboard_form_view_falprodashboard
+#: model:ir.ui.view,arch_db:fal_project_dashboard.project_dashboard_form_view_falprodashboard_history
+msgid "Project"
+msgstr "Projet"
+
+#. module: fal_project_dashboard
+#: model:ir.ui.menu,name:fal_project_dashboard.menu_projects_falprodashboard
+msgid "Project Dashboard"
+msgstr "Dashboard projet"
+
+#. module: fal_project_dashboard
+#: model:ir.ui.menu,name:fal_project_dashboard.menu_projects_falprodashboard_history
+#: model:ir.ui.view,arch_db:fal_project_dashboard.project_dashboard_tree_view_falprodashboard_history
+msgid "Project Dashboard History"
+msgstr "Historique du Dashboard projet"
+
+#. module: fal_project_dashboard
+#: model:ir.ui.view,arch_db:fal_project_dashboard.project_dashboard_form_view_falprodashboard
+#: model:ir.ui.view,arch_db:fal_project_dashboard.project_dashboard_form_view_falprodashboard_history
+msgid "Project Name"
+msgstr "Nom du projet"
+
+#. module: fal_project_dashboard
+#: model:ir.actions.act_window,name:fal_project_dashboard.open_view_project_all_config_falprodashboard
+msgid "Projects Dashboard"
+msgstr "Dashboard Projets"
+
+#. module: fal_project_dashboard
+#: model:ir.actions.act_window,name:fal_project_dashboard.open_view_project_all_config_falprodashboard_history
+msgid "Projects Dashboard History"
+msgstr "Historique Dashboard projets"
+
+#. module: fal_project_dashboard
+#: model:ir.ui.view,arch_db:fal_project_dashboard.project_dashboard_form_view_falprodashboard
+#: model:ir.ui.view,arch_db:fal_project_dashboard.project_dashboard_form_view_falprodashboard_history
+msgid "Purchase"
+msgstr "Achats"
+
+#. module: fal_project_dashboard
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_account_analytic_account_fal_purchase_budget_total
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_fal_project_dashboard_history_fal_purchase_budget_total
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_project_project_fal_purchase_budget_total
+msgid "Purchase Budget Total"
+msgstr "Total budget achats"
+
+#. module: fal_project_dashboard
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_account_analytic_account_fal_purchase_budget_total_termination
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_fal_project_dashboard_history_fal_purchase_budget_total_termination
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_project_project_fal_purchase_budget_total_termination
+msgid "Purchase Budget Total Termination"
+msgstr "Total budget achats à terminaison"
+
+#. module: fal_project_dashboard
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_account_analytic_account_fal_purchase_order_count
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_fal_project_dashboard_history_fal_purchase_order_count
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_project_project_fal_purchase_order_count
+msgid "Purchase Order Count"
+msgstr "Purchase Order Count"
+
+#. module: fal_project_dashboard
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_account_analytic_account_fal_purchase_order_percentage
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_fal_project_dashboard_history_fal_purchase_order_percentage
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_project_project_fal_purchase_order_percentage
+msgid "Purchase Order Percentage"
+msgstr "Pourcentage commande d'achats"
+
+#. module: fal_project_dashboard
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_account_analytic_account_fal_purchase_order_total
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_fal_project_dashboard_history_fal_purchase_order_total
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_project_project_fal_purchase_order_total
+msgid "Purchase Order Total"
+msgstr "Total commandes d'achats"
+
+#. module: fal_project_dashboard
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_account_analytic_account_fal_purchase_order_total_remaining_order
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_fal_project_dashboard_history_fal_purchase_order_total_remaining_order
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_project_project_fal_purchase_order_total_remaining_order
+msgid "Purchase Order Total Remaining Order"
+msgstr "Total reste à engager"
+
+#. module: fal_project_dashboard
+#: model:ir.ui.view,arch_db:fal_project_dashboard.project_dashboard_form_view_falprodashboard
+#: model:ir.ui.view,arch_db:fal_project_dashboard.project_dashboard_form_view_falprodashboard_history
+msgid "Purchase Orders"
+msgstr "Commande d'achats"
+
+#. module: fal_project_dashboard
+#: model:ir.ui.view,arch_db:fal_project_dashboard.project_dashboard_form_view_falprodashboard
+#: model:ir.ui.view,arch_db:fal_project_dashboard.project_dashboard_form_view_falprodashboard_history
+msgid "Purchases"
+msgstr "Achats"
+
+#. module: fal_project_dashboard
+#: model:ir.ui.view,arch_db:fal_project_dashboard.project_dashboard_form_view_falprodashboard
+#: model:ir.ui.view,arch_db:fal_project_dashboard.project_dashboard_form_view_falprodashboard_history
+msgid "Remaining Expenses"
+msgstr "Reste à Faire"
+
+#. module: fal_project_dashboard
+#: model:ir.ui.view,arch_db:fal_project_dashboard.project_dashboard_form_view_falprodashboard
+#: model:ir.ui.view,arch_db:fal_project_dashboard.project_dashboard_form_view_falprodashboard_history
+msgid "Remaining Hours"
+msgstr "Reste à Faire (h)"
+
+#. module: fal_project_dashboard
+#: model:ir.ui.view,arch_db:fal_project_dashboard.project_dashboard_form_view_falprodashboard
+#: model:ir.ui.view,arch_db:fal_project_dashboard.project_dashboard_form_view_falprodashboard_history
+msgid "Remaining to Order"
+msgstr "Reste à engager"
+
+#. module: fal_project_dashboard
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_account_analytic_account_fal_sale_budget_total
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_fal_project_dashboard_history_fal_sale_budget_total
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_project_project_fal_sale_budget_total
+msgid "Sale Budget Total"
+msgstr "Total budget ventes"
+
+#. module: fal_project_dashboard
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_account_analytic_account_fal_sale_order_count
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_fal_project_dashboard_history_fal_sale_order_count
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_project_project_fal_sale_order_count
+msgid "Sale Order Count"
+msgstr "Sale Order Count"
+
+#. module: fal_project_dashboard
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_account_analytic_account_fal_sale_order_total
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_fal_project_dashboard_history_fal_sale_order_total
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_project_project_fal_sale_order_total
+msgid "Sale Order Total"
+msgstr "Total engagé"
+
+#. module: fal_project_dashboard
+#: model:ir.actions.act_window,name:fal_project_dashboard.act_analytic_account_2_sale_order_falprodashboard
+#: model:ir.ui.view,arch_db:fal_project_dashboard.project_dashboard_form_view_falprodashboard
+#: model:ir.ui.view,arch_db:fal_project_dashboard.project_dashboard_form_view_falprodashboard_history
+msgid "Sale Orders"
+msgstr "Commandes de vente"
+
+#. module: fal_project_dashboard
+#: model:ir.ui.view,arch_db:fal_project_dashboard.project_dashboard_form_view_falprodashboard
+#: model:ir.ui.view,arch_db:fal_project_dashboard.project_dashboard_form_view_falprodashboard_history
+msgid "Sales"
+msgstr "Vente"
+
+#. module: fal_project_dashboard
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_fal_project_dashboard_history_date_start
+msgid "Start Date"
+msgstr "Date de début"
+
+#. module: fal_project_dashboard
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_account_analytic_account_fal_supplier_invoiced_count
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_fal_project_dashboard_history_fal_supplier_invoiced_count
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_project_project_fal_supplier_invoiced_count
+msgid "Supplier Invoiced Count"
+msgstr "Supplier Invoiced Count"
+
+#. module: fal_project_dashboard
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_account_analytic_account_fal_supplier_invoiced_percentage
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_fal_project_dashboard_history_fal_supplier_invoiced_percentage
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_project_project_fal_supplier_invoiced_percentage
+msgid "Supplier Invoiced Percentage"
+msgstr "Pourcentage facturation fournisseurs"
+
+#. module: fal_project_dashboard
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_account_analytic_account_fal_supplier_invoiced_total
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_fal_project_dashboard_history_fal_supplier_invoiced_total
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_project_project_fal_supplier_invoiced_total
+msgid "Supplier Invoiced Total"
+msgstr "Total facturation fournisseurs"
+
+#. module: fal_project_dashboard
+#: model:ir.ui.view,arch_db:fal_project_dashboard.project_dashboard_form_view_falprodashboard
+#: model:ir.ui.view,arch_db:fal_project_dashboard.project_dashboard_form_view_falprodashboard_history
+msgid "Supplier Invoices"
+msgstr "Factures fournisseurs"
+
+#. module: fal_project_dashboard
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_account_analytic_account_fal_supplier_payment_count
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_fal_project_dashboard_history_fal_supplier_payment_count
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_project_project_fal_supplier_payment_count
+msgid "Supplier Payment Count"
+msgstr "Supplier Payment Count"
+
+#. module: fal_project_dashboard
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_account_analytic_account_fal_supplier_payment_total
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_fal_project_dashboard_history_fal_supplier_payment_total
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_project_project_fal_supplier_payment_total
+msgid "Supplier Payment Total"
+msgstr "Total paiements fournisseurs"
+
+#. module: fal_project_dashboard
+#: model:ir.ui.view,arch_db:fal_project_dashboard.project_dashboard_form_view_falprodashboard
+#: model:ir.ui.view,arch_db:fal_project_dashboard.project_dashboard_form_view_falprodashboard_history
+msgid "Supplier Payments"
+msgstr "Paiements fournisseurs"
+
+#. module: fal_project_dashboard
+#: model:ir.ui.view,arch_db:fal_project_dashboard.project_dashboard_form_view_falprodashboard
+#: model:ir.ui.view,arch_db:fal_project_dashboard.project_dashboard_form_view_falprodashboard_history
+msgid "T0"
+msgstr "T0"
+
+#. module: fal_project_dashboard
+#: model:ir.ui.view,arch_db:fal_project_dashboard.project_dashboard_form_view_falprodashboard
+#: model:ir.ui.view,arch_db:fal_project_dashboard.project_dashboard_form_view_falprodashboard_history
+msgid "T0 (€) - (h)"
+msgstr "T0 (€) - (h)"
+
+#. module: fal_project_dashboard
+#: model:ir.ui.view,arch_db:fal_project_dashboard.project_dashboard_form_view_falprodashboard
+#: model:ir.ui.view,arch_db:fal_project_dashboard.project_dashboard_form_view_falprodashboard_history
+msgid "T0 / %"
+msgstr "T0"
+
+#. module: fal_project_dashboard
+#: model:ir.ui.view,arch_db:fal_project_dashboard.project_dashboard_form_view_falprodashboard
+#: model:ir.ui.view,arch_db:fal_project_dashboard.project_dashboard_form_view_falprodashboard_history
+msgid "T0: Initial"
+msgstr "T0: Initial"
+
+#. module: fal_project_dashboard
+#: model:ir.ui.view,arch_db:fal_project_dashboard.project_dashboard_form_view_falprodashboard
+#: model:ir.ui.view,arch_db:fal_project_dashboard.project_dashboard_form_view_falprodashboard_history
+msgid "T0: Initial Budget"
+msgstr "T0: Initial Budget"
+
+#. module: fal_project_dashboard
+#: model:ir.ui.view,arch_db:fal_project_dashboard.project_dashboard_form_view_falprodashboard
+#: model:ir.ui.view,arch_db:fal_project_dashboard.project_dashboard_form_view_falprodashboard_history
+msgid "T0: Initial Budget; EAC: Estimated Completion"
+msgstr "T0: Initial Budget; EAC: Estimated Completion"
+
+#. module: fal_project_dashboard
+#: model:ir.actions.act_window,help:fal_project_dashboard.act_analytic_account_2_sale_order_falprodashboard
+msgid "This analytic account has no sale order."
+msgstr "Ce code analytique n'a pas de commande de vente."
+
+#. module: fal_project_dashboard
+#: model:ir.ui.view,arch_db:fal_project_dashboard.project_dashboard_form_view_falprodashboard
+#: model:ir.ui.view,arch_db:fal_project_dashboard.project_dashboard_form_view_falprodashboard_history
+msgid "Time"
+msgstr "Heures"
+
+#. module: fal_project_dashboard
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_account_analytic_account_fal_timesheet_budget_total
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_fal_project_dashboard_history_fal_timesheet_budget_total
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_project_project_fal_timesheet_budget_total
+msgid "Timesheet Budget Total"
+msgstr "Timesheet Budget Total"
+
+#. module: fal_project_dashboard
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_account_analytic_account_fal_timesheet_budget_total_qty
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_fal_project_dashboard_history_fal_timesheet_budget_total_qty
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_project_project_fal_timesheet_budget_total_qty
+msgid "Timesheet Budget Total Qty"
+msgstr "Timesheet Budget Total Qty"
+
+#. module: fal_project_dashboard
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_account_analytic_account_fal_timesheet_budget_total_qty_termination
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_fal_project_dashboard_history_fal_timesheet_budget_total_qty_termination
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_project_project_fal_timesheet_budget_total_qty_termination
+msgid "Timesheet Budget Total Qty Termination"
+msgstr "Timesheet Budget Total Qty Termination"
+
+#. module: fal_project_dashboard
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_account_analytic_account_fal_timesheet_budget_total_termination
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_fal_project_dashboard_history_fal_timesheet_budget_total_termination
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_project_project_fal_timesheet_budget_total_termination
+msgid "Timesheet Budget Total Termination"
+msgstr "Timesheet Budget Total Termination"
+
+#. module: fal_project_dashboard
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_account_analytic_account_fal_timesheet_cost_count
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_fal_project_dashboard_history_fal_timesheet_cost_count
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_project_project_fal_timesheet_cost_count
+msgid "Timesheet Cost Count"
+msgstr "Timesheet Cost Count"
+
+#. module: fal_project_dashboard
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_account_analytic_account_fal_timesheet_cost_percentage
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_fal_project_dashboard_history_fal_timesheet_cost_percentage
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_project_project_fal_timesheet_cost_percentage
+msgid "Timesheet Cost Percentage"
+msgstr "Timesheet Cost Percentage"
+
+#. module: fal_project_dashboard
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_account_analytic_account_fal_timesheet_cost_total
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_fal_project_dashboard_history_fal_timesheet_cost_total
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_project_project_fal_timesheet_cost_total
+msgid "Timesheet Cost Total"
+msgstr "Timesheet Cost Total"
+
+#. module: fal_project_dashboard
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_account_analytic_account_fal_timesheet_cost_total_hour
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_fal_project_dashboard_history_fal_timesheet_cost_total_hour
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_project_project_fal_timesheet_cost_total_hour
+msgid "Timesheet Cost Total Hour"
+msgstr "Timesheet Cost Total Hour"
+
+#. module: fal_project_dashboard
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_account_analytic_account_fal_timesheet_cost_total_remaining_hour
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_fal_project_dashboard_history_fal_timesheet_cost_total_remaining_hour
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_project_project_fal_timesheet_cost_total_remaining_hour
+msgid "Timesheet Cost Total Remaining Hour"
+msgstr "Timesheet Cost Total Remaining Hour"
+
+#. module: fal_project_dashboard
+#: model:ir.ui.view,arch_db:fal_project_dashboard.project_dashboard_form_view_falprodashboard
+#: model:ir.ui.view,arch_db:fal_project_dashboard.project_dashboard_form_view_falprodashboard_history
+msgid "Timesheets"
+msgstr "Feuilles de temps"
+
+#. module: fal_project_dashboard
+#: model:ir.ui.view,arch_db:fal_project_dashboard.project_dashboard_form_view_falprodashboard
+#: model:ir.ui.view,arch_db:fal_project_dashboard.project_dashboard_form_view_falprodashboard_history
+msgid "Unpaid"
+msgstr "Reste à encaisser"
+
+#. module: fal_project_dashboard
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_account_analytic_account_fal_variable_cost_margin_gap
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_fal_project_dashboard_history_fal_variable_cost_margin_gap
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_project_project_fal_variable_cost_margin_gap
+msgid "Variable Cost Margin Gap"
+msgstr "Delta Marge sur coûts variables"
+
+#. module: fal_project_dashboard
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_account_analytic_account_fal_variable_cost_margin_gap_percentage
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_fal_project_dashboard_history_fal_variable_cost_margin_gap_percentage
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_project_project_fal_variable_cost_margin_gap_percentage
+msgid "Variable Cost Margin Gap %"
+msgstr "Delta Marge sur coûts variables %"
+
+#. module: fal_project_dashboard
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_account_analytic_account_fal_variable_cost_margin_to
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_fal_project_dashboard_history_fal_variable_cost_margin_to
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_project_project_fal_variable_cost_margin_to
+msgid "Variable Cost Margin T0"
+msgstr "Marge sur coûts variables T0"
+
+#. module: fal_project_dashboard
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_account_analytic_account_fal_variable_cost_margin_to_percentage
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_fal_project_dashboard_history_fal_variable_cost_margin_to_percentage
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_project_project_fal_variable_cost_margin_to_percentage
+msgid "Variable Cost Margin T0 %"
+msgstr "Marge sur coûts variables T0 %"
+
+#. module: fal_project_dashboard
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_account_analytic_account_fal_variable_cost_margin_termination
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_fal_project_dashboard_history_fal_variable_cost_margin_termination
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_project_project_fal_variable_cost_margin_termination
+msgid "Variable Cost Margin Termination"
+msgstr "Marge sur coûts variables à Terminaison"
+
+#. module: fal_project_dashboard
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_account_analytic_account_fal_variable_cost_margin_termination_percentage
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_fal_project_dashboard_history_fal_variable_cost_margin_termination_percentage
+#: model:ir.model.fields,field_description:fal_project_dashboard.field_project_project_fal_variable_cost_margin_termination_percentage
+msgid "Variable Cost Margin Termination %"
+msgstr "Marge sur coûts variables %"
+
+#. module: fal_project_dashboard
+#: model:ir.ui.view,arch_db:fal_project_dashboard.project_dashboard_form_view_falprodashboard
+#: model:ir.ui.view,arch_db:fal_project_dashboard.project_dashboard_form_view_falprodashboard_history
+msgid "Variable cost margin"
+msgstr "Marge sur coûts variables"
+
+#. module: fal_project_dashboard
+#: model:ir.ui.view,arch_db:fal_project_dashboard.project_dashboard_form_view_falprodashboard
+#: model:ir.ui.view,arch_db:fal_project_dashboard.project_dashboard_form_view_falprodashboard_history
+msgid "Variable cost margin T0"
+msgstr "Marge sur coûts variablesT0"
+
+#. module: fal_project_dashboard
+#: model:ir.actions.act_window,help:fal_project_dashboard.open_view_project_all_config_falprodashboard_history
+msgid "You can see history of Project Dashboard here!"
+msgstr "Vous pouvez consulter l'historique du Project Dashboard ici!"
+
+#. module: fal_project_dashboard
+#: model:ir.model,name:fal_project_dashboard.model_fal_project_dashboard_history
+msgid "fal.project.dashboard.history"
+msgstr "fal.project.dashboard.history"

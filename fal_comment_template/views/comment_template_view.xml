@@ -1,0 +1,49 @@
+<odoo>
+    <record id="fal_comment_template_form_view" model="ir.ui.view">
+        <field name="name">fal.comment.template.form</field>
+        <field name="model">fal.comment.template</field>
+        <field name="arch" type="xml">
+            <form string="Comment Template">
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+                            <field name="active" widget="boolean_button" options="{&quot;terminology&quot;: &quot;archive&quot;}"/>
+                        </button>
+                    </div>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" required="1"/>
+                        </h1>
+                    </div>
+                    <notebook id="clu_note_comment">
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="fal_comment_template_tree_view" model="ir.ui.view">
+        <field name="name">fal.comment.template.tree</field>
+        <field name="model">fal.comment.template</field>
+        <field name="arch" type="xml">
+            <tree string="Comment Template">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_fal_comment_template_action" model="ir.actions.act_window">
+        <field name="name">Comment Template</field>
+        <field name="res_model">fal.comment.template</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field eval="False" name="view_id"/>
+        <field name="help" type="html">
+          <p class="oe_view_nocontent_create">
+            Click to record a Comment Template
+          </p>
+        </field>
+    </record>
+
+    <menuitem action="view_fal_comment_template_action" id="menu_action_comment_template" parent="base.menu_administration" sequence="1"/>
+</odoo>

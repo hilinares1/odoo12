@@ -1,0 +1,29 @@
+<odoo>
+    <data noupdate="1">
+
+		<record id="fal_question_sequence_1" model="crm.lead.question">
+            <field name="fal_question">What are the general need of your project?</field>
+        </record>
+
+        <record id="fal_question_sequence_2" model="crm.lead.question">
+            <field name="fal_question">Which features do you expect to have in the system (per module)?</field>
+        </record>
+
+        <record id="fal_question_sequence_3" model="crm.lead.question">
+            <field name="fal_question">Is there any existing system you use today for these features?</field>
+        </record>
+
+        <record id="fal_question_sequence_4" model="crm.lead.question">
+            <field name="fal_question">Is your existing data accessible easily (we can sign a NDA) so we can get a better understanding?</field>
+        </record>
+
+        <record id="fal_question_sequence_5" model="crm.lead.question">
+            <field name="fal_question">Do you have a key-user (usually manager level) able to follow-up the project totally ?"</field>
+        </record>
+
+        <record id="fal_question_sequence_6" model="crm.lead.question">
+            <field name="fal_question">Do you have a specific timeline for this project ?</field>
+        </record>
+        
+    </data>
+</odoo>

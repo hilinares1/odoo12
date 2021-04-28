@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_fixed_production_wizard" model="ir.ui.view">
+            <field name="name">mrp.production.fixed.wizard</field>
+            <field name="model">mrp.production.fixed.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Fixed Production Wizard">
+                    <span>This process will set production fixed date all selected production orders!</span>
+                    <footer>
+                        <button name="production_fixed" string="Production Fixed" type="object" class="oe_highlight"/>
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+    </data>
+
+    <act_window name="Production Fixed"
+        res_model="mrp.production.fixed.wizard"
+        src_model="mrp.production"
+        view_mode="form"
+        target="new"
+        multi="True"
+        key2="client_action_multi"
+        id="action_view_mo_fixed"/>
+</odoo>

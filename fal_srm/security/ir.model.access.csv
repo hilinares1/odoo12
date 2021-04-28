@@ -1,0 +1,14 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_srm_proposal_manager,srm.proposal.manager,model_srm_proposal,purchase.group_purchase_manager,1,1,1,1
+access_srm_proposal,srm.proposal,model_srm_proposal,purchase.group_purchase_user,1,1,1,0
+access_srm_stage_manager,srm.stage.manager,model_srm_stage,purchase.group_purchase_manager,1,1,1,1
+access_srm_stage,srm.stage,model_srm_stage,purchase.group_purchase_user,1,1,1,0
+access_srm_team_manager,srm.team.manager,model_srm_team,purchase.group_purchase_manager,1,1,1,1
+access_srm_team,srm.team,model_srm_team,purchase.group_purchase_user,1,1,1,0
+access_srm_proposal_tag,srm_proposal_tag,model_srm_proposal_tag,base.group_user,1,0,0,0
+access_srm_proposal_tag_purchase_user,srm_proposal_tag_purchase_user,model_srm_proposal_tag,purchase.group_purchase_user,1,1,1,0
+access_srm_proposal_tag_purchase_manager,srm_proposal_tag_purchase_manager,model_srm_proposal_tag,purchase.group_purchase_manager,1,1,1,1
+access_srm_lost_reason_user,srm.lost.reason.user,model_srm_lost_reason,base.group_user,1,0,0,0
+access_srm_lost_reason_purchase_user,srm.lost.reason.purchase.user,model_srm_lost_reason,purchase.group_purchase_user,1,1,1,0
+access_srm_lost_reason_purchase_manager,srm.lost.reason.purchase.manager,model_srm_lost_reason,purchase.group_purchase_manager,1,1,1,1
+access_srm_activity_report_user,srm.activity.report.user,model_srm_activity_report,base.group_user,1,0,0,0

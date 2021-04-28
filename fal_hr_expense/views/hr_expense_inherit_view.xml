@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- Expense Tree -->
+		<record id="view_expenses_tree_fal_hr_expense" model="ir.ui.view">
+            <field name="name">fal.hr.expense.tree</field>
+            <field name="model">hr.expense</field>
+            <field name="inherit_id" ref="hr_expense.view_expenses_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="/tree" position="replace">
+                    <tree string="Expenses" decoration-bf="message_unread == True" decoration-danger="fal_is_no_proof == True" editable="top" class="o_expense_tree">
+                        <field name="fal_is_no_proof" invisible="1"/>
+                        <field name="currency_id" invisible="1"/>
+                        <field name="attachment_number" invisible="1"/>
+                        <field name="date" attrs="{'readonly': [('state', 'not in', ['draft', 'reported'])]}"/>
+                        <field name="fal_location" required="1"/>
+                        <field name="name" attrs="{'readonly': [('state', 'not in', ['draft', 'reported'])]}"/>
+                        <field name="product_id" attrs="{'readonly': [('state', 'not in', ['draft', 'reported'])]}"/>
+                        <field name="account_id" invisible="1"/>
+                        <field name="employee_id" invisible="1"/>
+                        <field name="fal_with_partner_ids" invisible="1"/>
+                        <field name="tax_ids" widget="many2many_tags" invisible="1"/>
+                        <field name="quantity" attrs="{'readonly': [('state', 'not in', ['draft', 'reported'])]}"/>
+                        <field name="fal_real_currency" invisible="1"/>
+                        <field name="fal_withtax_price" invisible="1"/>
+                        <field name="fal_refund_cost_price" invisible="1"/>
+                        <field name="fal_real_amount" widget="monetary" options="{'currency_field': 'fal_real_currency'}" attrs="{'readonly': ['|',('fal_refund_cost_price', '=', True), ('state', 'not in', ['draft', 'reported'])]}"/>
+                        <field name="fal_budget" invisible="1"/>
+                        <field name="fal_gap"/>
+                        <field name="fal_accepted_amount" widget="monetary" options="{'currency_field': 'currency_id'}" groups="hr_expense.group_hr_expense_user"/>
+                        <field name="unit_amount" required="1" widget="monetary" options="{'currency_field': 'currency_id'}" invisible="1"/>
+                        <field name="fal_with_partner_ids" widget="many2many_tags" invisible="1"/>
+                        <field name="fal_is_related_to_partner" invisible="1"/>
+                        <field name="analytic_account_id" groups="analytic.group_analytic_accounting" invisible="1"/>
+                        <field name="sheet_id"/>
+                        <field name="total_amount" invisible="1"/>
+                        <field name="state" invisible="0"/>
+                        <button name="action_open_form_view" string="Form View" type="object" icon="fa-pencil-square-o"/>
+                        <button name="action_copy_line" string="Copy Expense Line" type="object" icon="fa-plus-square"/>
+                        <button name="action_submit_expenses" states="draft" string="Submit to Manager" type="object" icon="fa-check"/>
+                        <field name="company_id" invisible="1"/>
+                        <field name="message_unread" invisible="1"/>
+                    </tree>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- Expense Form -->
+        <record id="hr_expense_form_view_fal_hr_expense" model="ir.ui.view">
+            <field name="name">hr.expense.form</field>
+            <field name="model">hr.expense</field>
+            <field name="inherit_id" ref="hr_expense.hr_expense_view_form"/>
+            <field name="arch" type="xml">
+                <!-- Make all Stage Visible -->
+                <field name="state" position="replace">
+                    <field name="state" widget="statusbar"/>
+                </field>
+
+                <!-- Label Coloring Proof / No Proof-->
+                <xpath expr="//label[@for='name']"  position="replace">
+                    <label for="name" style="color:Red;" attrs="{'invisible': [('fal_is_no_proof', '=', False)]}"/>
+                    <label for="name" style="color:Green;" attrs="{'invisible': [('fal_is_no_proof', '=', True)]}"/>
+                </xpath>
+
+                <!-- Remake View - Top Left-->
+                <xpath expr="//sheet/group/group[1]"  position="replace">
+                    <group>
+                        <field name="product_id" context="{'default_can_be_expensed': 1}"/>
+                        <field name="fal_refund_cost_price" invisible="1"/>
+                        <field name="fal_location" required="1"/>
+                        <field name="fal_is_related_to_partner" invisible="1"/>
+                        <field name="fal_with_partner_ids" widget="many2many_tags" attrs="{'invisible': [('fal_is_related_to_partner', '=', False)]}"/>
+                        <label for="quantity"/>
+                        <div>
+                            <field name="quantity" class="oe_inline"/>
+                            <field name="product_uom_id" widget="selection" class="oe_inline" groups="uom.group_uom"/>
+                        </div>
+                        <label for="fal_real_amount"/>
+                        <div class="o_row">
+                            <field name="fal_real_amount" widget="monetary" options="{'currency_field': 'fal_real_currency'}" attrs="{'readonly': ['|',('fal_refund_cost_price', '=', True), ('state', 'not in', ['draft', 'reported', 'refused'])]}"/>
+                            <field name="fal_real_currency" attrs="{'readonly': ['|',('fal_refund_cost_price', '=', True), ('state', 'not in', ['draft', 'reported', 'refused'])]}"/>
+                        </div>
+                    </group>
+                </xpath>
+
+                <!-- Remake View - Middle Left-->
+                <xpath expr="//sheet/group/group[2]"  position="after">
+                    <group>
+                        <p class="o_group_col_12">
+                            <i>Automatic Number Calculation are subject to decimal precision and/or rounding. <br/>
+                                Total Number calculated on the system may not be the same with in the receipt. <br/>
+                                But it will not affect the final number.</i>
+
+                        </p>
+                        <group colspan="2">
+                            <group>
+                                <field name="unit_amount" required="1" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                                <field name="fal_withouttax_price"/>
+                                <field name="fal_total_tax"/>
+                                <field name="fal_withtax_price"/>
+                                <field name="fal_accepted_amount" widget="monetary" options="{'currency_field': 'currency_id'}" groups="hr_expense.group_hr_expense_user"/>
+                            </group>
+                            <group>
+                                <field name="fal_budget"/>
+                                <field name="fal_gap"/>
+                                <field name="fal_expense_control"/>
+                            </group>
+                        </group>
+                    </group>
+                </xpath>
+
+                <!-- Remake View - Middle Right-->
+                <xpath expr="//group/group[3]" position="after">
+                    <group>
+                        <field name="fal_reason_why"/>
+                        <field name="fal_reason"/>
+                        <field name="sheet_id"/>
+                        <field name="fal_account_move_id" readonly="1"/>
+                        <field name="fal_is_no_proof"/>
+                    </group>
+                </xpath>
+
+                <!-- Remake View - Bottom Right-->
+                <xpath expr="//group/group[5]" position="after">
+                    <group>
+                        <div class="oe_inline">
+                            <h3>Tax Information</h3>
+                            <field name="tax_ids" domain="[('type_tax_use', '=', 'purchase')]" widget="many2many_tags" groups="account.group_account_user" class="oe_inline"/>
+                            <button name="compute_taxes" type="object" string="Compute Tax" class="oe_inline fa fa-arrow-right oe_link"/>
+                            <field name="fal_expense_tax_line_ids">
+                                <tree editable="bottom" string="Taxes">
+                                    <field name="name" invisible="0"/>
+                                    <!--Need invisible fields for on_change to create al necessary info -->
+                                    <field name="tax_id" invisible="0"/>
+                                    <field name="sequence" invisible="1"/>
+                                    <field name="manual" invisible="1"/>
+                                    <field name="account_id" groups="account.group_account_invoice" invisible="0"/>
+                                    <field name="account_analytic_id" domain="[('company_id', '=', parent.company_id)]" groups="analytic.group_analytic_accounting"/>
+                                    <field name="amount"/>
+                                </tree>
+                            </field>
+                        </div>
+                    </group>
+                </xpath>
+
+                <!-- We make sure user are not using standard odoo multi currency -->
+                <xpath expr="//field[@name='currency_id']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+
+                <!-- Button For No proof -->
+                <button name="action_submit_expenses" position="before">
+                    <button name="fal_no_proof" states="draft" string="No Proof" type="object" class="btn-primary" attrs="{'invisible': ['|', ('fal_is_no_proof', '=', True)]}"/>
+                </button>
+
+            </field>
+        </record>
+
+        <!-- Expense Search -->
+        <record id="view_hr_expense_filter_fal_hr_expense" model="ir.ui.view">
+            <field name="name">fal.hr.expense.search</field>
+            <field name="model">hr.expense</field>
+            <field name="inherit_id" ref="hr_expense.view_hr_expense_filter"/>
+            <field name="arch" type="xml">
+                <xpath expr="//filter[@name='no_report']" position="before">
+                    <filter domain="[('state', '=', 'draft')]" string="To Submit" name="draft"/>
+                    <filter domain="[('state', '=', 'reported')]" string="Submitted" name="reported"/>
+                    <separator/>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- actions all expense -->
+        <record id="hr_expense_actions_all_expense_ext" model="ir.actions.act_window">
+            <field name="name">All Expenses to Submit</field>
+            <field name="res_model">hr.expense</field>
+            <field name="view_mode">tree,kanban,form,graph,pivot</field>
+            <field name="context">{'search_default_draft': 1}</field>
+            <field name="help" type="html">
+              <p>
+                The steps to process expenses are:
+                <ol>
+                    <li>You record expenses,</li>
+                    <li>Periodically, you submit expenses report to your manager,</li>
+                    <li>Once approved, your expense report, goes to the accounting,</li>
+                    <li>The accountant validates entries and reimburse you.</li>
+                </ol>
+              </p>
+            </field>
+        </record>
+
+        <!-- action not reported -->
+        <record id="hr_expense_actions_not_reported" model="ir.actions.act_window">
+            <field name="name">Expense Report Not Set</field>
+            <field name="res_model">hr.expense</field>
+            <field name="view_mode">tree,kanban,form,graph,pivot</field>
+            <field name="domain">[]</field>
+            <field name="context">{'search_default_no_report': 1, 'search_default_reported': 1}</field>
+            <field name="help" type="html">
+              <p>
+                The steps to process expenses are:
+                <ol>
+                    <li>You record expenses,</li>
+                    <li>Periodically, you submit expenses report to your manager,</li>
+                    <li>Once approved, your expense report, goes to the accounting,</li>
+                    <li>The accountant validates entries and reimburse you.</li>
+                </ol>
+              </p>
+            </field>
+        </record>
+
+        <menuitem id="menu_hr_expense_officer" name="Officer" sequence="2" parent="hr_expense.menu_hr_expense_root" groups="hr_expense.group_hr_expense_user"/>
+
+        <menuitem id="menu_hr_expense_all" name="All Expenses to Submit" sequence="4" parent="menu_hr_expense_officer" action="hr_expense_actions_all_expense_ext"/>
+
+        <menuitem id="menu_hr_expense_not_reported" name="Expense Report Not Set" sequence="5" parent="menu_hr_expense_officer" action="hr_expense_actions_not_reported"/>
+
+        <record id="action_account_journal_form_fal" model="ir.actions.act_window">
+            <field name="name">Expense Journals</field>
+            <field name="res_model">account.journal</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('expense_journal','=', True)]</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to add a journal.
+              </p><p>
+                A journal is used to record transactions of all accounting data
+                related to the day-to-day business.
+              </p><p>
+                A typical company may use one journal per payment method (cash,
+                bank accounts, checks), one purchase journal, one sale journal
+                and one for miscellaneous information.
+              </p>
+            </field>
+        </record>
+
+        <menuitem action="action_account_journal_form_fal" id="menu_action_account_journal_form_fal" parent="hr_expense.menu_hr_expense_configuration" groups="hr_expense.group_hr_expense_manager"/>
+
+    </data>
+</odoo>

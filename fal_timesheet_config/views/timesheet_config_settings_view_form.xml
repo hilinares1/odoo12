@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+    <record id="fal_timesheet_config_settings_view_form_inherit_timesheet" model="ir.ui.view">
+        <field name="name">fal.timesheet.config.settings.view.form.inherit.timesheet</field>
+        <field name="model">res.config.settings</field>
+        <field name="priority" eval="10"/>
+        <field name="inherit_id" ref="hr_timesheet.res_config_settings_view_form" />
+        <field name="arch" type="xml">
+        <xpath expr="//div[@data-string='Timesheets']/h2[1]" position="before">
+            <h2>CLuedoo Best Practice</h2>
+            <div class="row mt16 o_settings_container">
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_fal_timesheet_ext"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_timesheet_ext"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            Add User Group for N+1 for Timesheet Officer 
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_fal_timesheet_minimum_hour"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_timesheet_minimum_hour"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            Timesheet Minimum Hour 
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_fal_timesheet_template"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_timesheet_template"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            Module to add feature to have timesheet template. 
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_hr_timesheet_sheet"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_hr_timesheet_sheet"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            Timesheet Sheets, Activities. 
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_fal_timesheet_sheet_menu"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_timesheet_sheet_menu"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            Add menu all timesheet sheet. 
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h2>Accounting</h2>
+            <div class="row mt16 o_settings_container">
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="module_fal_timesheet_journal"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_fal_timesheet_journal"/>
+                        <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                        <div class="text-muted">
+                            this module will create journal entries based on timesheet.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </xpath>
+        </field>
+    </record>
+
+    <!-- Inherit Sale -->
+    <record id="fal_timesheet_config_settings_view_form_inherit_sale_timesheet" model="ir.ui.view">
+        <field name="name">fal.timesheet.config.settings.view.form.inherit.sale.timesheet</field>
+        <field name="model">res.config.settings</field>
+        <field name="priority" eval="10"/>
+        <field name="inherit_id" ref="sale_timesheet.res_config_settings_view_form" />
+        <field name="arch" type="xml">
+        <xpath expr="//div[@name='timesheet_billing']" position="inside">
+            <div class="col-xs-12 col-md-6 o_setting_box">
+                <div class="o_setting_left_pane">
+                    <field name="module_fal_timesheet_invoice_ext"/>
+                </div>
+                <div class="o_setting_right_pane">
+                    <label for="module_fal_timesheet_invoice_ext"/>
+                    <span class="badge badge-primary oe_inline" style="background-color:#6CBF84">CLuedoo</span>
+                    <div class="text-muted">
+                        Module to add feature to have timesheet line invoiceable.
+                    </div>
+                </div>
+            </div>  
+        </xpath>
+        </field>
+    </record>
+    </data>
+</odoo>
+                

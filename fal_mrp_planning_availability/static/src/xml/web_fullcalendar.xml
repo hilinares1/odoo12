@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<templates id="fal_mrp_planning_availability_calendar_bullet" xml:space="preserve">
+    <t t-extend="calendar-box">
+      <t t-jquery=".o_fields" t-operation="after"> 
+        <t t-if="record.production_date_fixed !== undefined and record.is_ready !== undefined">
+          <t t-if="record.production_date_fixed !== false and record.is_ready !== false">
+              <img src="/fal_mrp_planning_availability/static/src/img/gtk-yes.png" />
+          </t>
+          <t t-elif="record.production_date_fixed !== false">
+              <img src="/fal_mrp_planning_availability/static/src/img/terp-locked.png" />
+          </t>
+          <t t-elif="record.production_date_fixed == false || record.is_ready == false">
+              <img src="/fal_mrp_planning_availability/static/src/img/gtk-no.png" />
+          </t>
+        </t>
+      </t>
+    </t>
+</templates>

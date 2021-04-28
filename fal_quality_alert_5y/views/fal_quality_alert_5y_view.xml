@@ -1,0 +1,183 @@
+<odoo>
+    <template id="assets_backend" name="assets_fal_quality_alert_5y" inherit_id="web.assets_backend">
+      <xpath expr="." position="inside">
+          <link rel="stylesheet" href="/fal_quality_alert_5y/static/src/css/fal_quality_alert_5y.css"/>
+      </xpath>
+    </template>
+    <record id="view_fal_qa_5y_form" model="ir.ui.view">
+        <field name="name">fal.qa.5y.form</field>
+        <field name="model">fal.qa.5y</field>
+        <field name="arch" type="xml">
+            <form string="Quality Alerts 5Y">
+                <sheet>
+                    <div class="oe_button_box">
+                        <button name="action_see_alert" type="object" attrs="{'invisible': [('quality_alert_id', '=', False)]}" class="oe_stat_button" icon="fa-bell">
+                            <div class="o_form_field o_stat_info">
+                                <span class="o_stat_value"><field name="quality_alert_id" readonly="1"/></span>
+                                <span class="o_stat_text">Quality Alerts</span>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="oe_title"><h1><field name="name"/></h1></div>
+                    <group>
+                        <group>
+                            <field name="short_description"/>
+                            <field name="date"/>
+                        </group>
+                    </group>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <strong><p class="text-center title_5y">1st Why</p></strong>
+                            <field name="table_1a" class="table_5y"/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <strong><p class="text-center title_5y">2nd Why</p></strong>
+                        </div>
+                        <div class="col-md-1">
+                        </div>
+                        <div class="col-md-2">
+                            <p class="text-center">A</p>
+                            <field name="table_2a" class="table_5y"/>
+                        </div>
+                        <div class="col-md-2">
+                            <p class="text-center">B</p>
+                            <field name="table_2b" class="table_5y"/>
+                        </div>
+                        <div class="col-md-2">
+                            <p class="text-center">C</p>
+                            <field name="table_2c" class="table_5y"/>
+                        </div>
+                        <div class="col-md-2">
+                            <p class="text-center">D</p>
+                            <field name="table_2d" class="table_5y"/>
+                        </div>
+                        <div class="col-md-2">
+                            <p class="text-center">E</p>
+                            <field name="table_2e" class="table_5y"/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <strong><p class="text-center title_5y">3rd Why</p></strong>
+                        </div>
+                        <div class="col-md-1">
+                        </div>
+                        <div class="col-md-2">
+                            <p class="text-center">A</p>
+                            <field name="table_3a" class="table_5y"/>
+                        </div>
+                        <div class="col-md-2">
+                            <p class="text-center">B</p>
+                            <field name="table_3b" class="table_5y"/>
+                        </div>
+                        <div class="col-md-2">
+                            <p class="text-center">C</p>
+                            <field name="table_3c" class="table_5y"/>
+                        </div>
+                        <div class="col-md-2">
+                            <p class="text-center">D</p>
+                            <field name="table_3d" class="table_5y"/>
+                        </div>
+                        <div class="col-md-2">
+                            <p class="text-center">E</p>
+                            <field name="table_3e" class="table_5y"/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <strong><p class="text-center title_5y">4th Why</p></strong>
+                        </div>
+                        <div class="col-md-1">
+                        </div>
+                        <div class="col-md-2">
+                            <p class="text-center">A</p>
+                            <field name="table_4a" class="table_5y"/>
+                        </div>
+                        <div class="col-md-2">
+                            <p class="text-center">B</p>
+                            <field name="table_4b" class="table_5y"/>
+                        </div>
+                        <div class="col-md-2">
+                            <p class="text-center">C</p>
+                            <field name="table_4c" class="table_5y"/>
+                        </div>
+                        <div class="col-md-2">
+                            <p class="text-center">D</p>
+                            <field name="table_4d" class="table_5y"/>
+                        </div>
+                        <div class="col-md-2">
+                            <p class="text-center">E</p>
+                            <field name="table_4e" class="table_5y"/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <strong><p class="text-center title_5y">5th Why</p></strong>
+                        </div>
+                        <div class="col-md-1">
+                        </div>
+                        <div class="col-md-2">
+                            <p class="text-center">A</p>
+                            <field name="table_5a" class="table_5y"/>
+                        </div>
+                        <div class="col-md-2">
+                            <p class="text-center">B</p>
+                            <field name="table_5b" class="table_5y"/>
+                        </div>
+                        <div class="col-md-2">
+                            <p class="text-center">C</p>
+                            <field name="table_5c" class="table_5y"/>
+                        </div>
+                        <div class="col-md-2">
+                            <p class="text-center">D</p>
+                            <field name="table_5d" class="table_5y"/>
+                        </div>
+                        <div class="col-md-2">
+                            <p class="text-center">E</p>
+                            <field name="table_5e" class="table_5y"/>
+                        </div>
+                    </div>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="view_fal_qa_5y_tree" model="ir.ui.view">
+        <field name="name">fal.qa.5y.tree</field>
+        <field name="model">fal.qa.5y</field>
+        <field name="arch" type="xml">
+            <tree string="Quality Alerts 5Y">
+                <field name="quality_alert_id"/>
+                <field name="name"/>
+                <field name="date"/>
+            </tree>
+        </field>
+    </record>
+    <record id="view_fal_qa_5y_search" model="ir.ui.view">
+        <field name="name">view.fal.qa.5y.search</field>
+        <field name="model">fal.qa.5y</field>
+        <field name="arch" type="xml">
+            <search string="Quality Alerts 5Y">
+                <field name="quality_alert_id"/>
+            </search>
+        </field>
+    </record>
+    <record id="action_fal_qa_5y" model="ir.actions.act_window">
+        <field name="name">Quality Alerts 5Y</field>
+        <field name="res_model">fal.qa.5y</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+          <p class="oe_view_nocontent_create">
+            List of Quality Alerts 5Y
+          </p>
+        </field>
+    </record>
+    <menuitem
+        name="Quality Alerts 5Y"
+        action="action_fal_qa_5y"
+        id="menu_action_fal_qa_5y"
+        parent="quality_control.menu_quality_control"
+        sequence="20"/>
+</odoo>

@@ -1,0 +1,140 @@
+id,code,name,user_type_id:id,reconcile,account_type,parent_id:id,chart_template_id:id
+1,1,Asset,fal_l10n_id.data_account_type_asset,False,view,,fal_l10n_id
+2,2,Utang,fal_l10n_id.data_account_type_utang,False,view,,fal_l10n_id
+3,3,Modal,fal_l10n_id.data_account_type_modal,False,view,,fal_l10n_id
+4,4,Penjualan,fal_l10n_id.data_account_type_penjualan,False,view,,fal_l10n_id
+5,5,HPP,fal_l10n_id.data_account_type_hpp,False,view,,fal_l10n_id
+6,6,Biaya,fal_l10n_id.data_account_type_biaya,False,view,,fal_l10n_id
+8,8,Pendapatan Lain,fal_l10n_id.data_account_type_pendapatan_lain,,view,,fal_l10n_id
+9,9,Biaya Lain,fal_l10n_id.data_account_type_biaya_lain,False,view,,fal_l10n_id
+
+1-1,1-1,Asset lancar,fal_l10n_id.data_account_type_asset,False,view,1,fal_l10n_id
+1-2,1-2,Aset tetap,fal_l10n_id.data_account_type_asset,False,view,1,fal_l10n_id
+
+1-11,1-11,Kas dan setara kas,fal_l10n_id.data_account_type_asset,False,view,1-1,fal_l10n_id
+1-12,1-12,Piutang,fal_l10n_id.data_account_type_asset,False,view,1-1,fal_l10n_id
+1-13,1-13,Persediaan,fal_l10n_id.data_account_type_asset,False,view,1-1,fal_l10n_id
+1-14,1-14,Biaya dibayar dimuka,fal_l10n_id.data_account_type_asset,False,view,1-1,fal_l10n_id
+1-15,1-15,Pajak dibayar dimuka,fal_l10n_id.data_account_type_asset,False,view,1-1,fal_l10n_id
+1-16,1-16,Perlengkapan,fal_l10n_id.data_account_type_asset,False,view,1-1,fal_l10n_id
+2-11,2-11,Utang Lancar,fal_l10n_id.data_account_type_utang,False,view,2,fal_l10n_id
+2-12,2-12,Utang Pajak,fal_l10n_id.data_account_type_utang,False,view,2-11,fal_l10n_id
+2-21,2-21,Utang Jangka Panjang,fal_l10n_id.data_account_type_utang,False,view,2,fal_l10n_id
+2-81,2-81,Biaya yang masih harus dibayar,fal_l10n_id.data_account_type_utang,False,view,2,fal_l10n_id
+3-15,3-15,Laba/rugi ditahan,fal_l10n_id.data_account_type_modal,False,view,3,fal_l10n_id
+4-10,4-10,Pendapatan,fal_l10n_id.data_account_type_penjualan,False,view,4,fal_l10n_id
+4-20,4-20,Potongan Penjualan,fal_l10n_id.data_account_type_penjualan,False,view,4,fal_l10n_id
+5-10,5-10,Harga Pokok Penjualan,fal_l10n_id.data_account_type_hpp,False,view,5,fal_l10n_id
+6-10,6-10,Biaya Karyawan,fal_l10n_id.data_account_type_biaya,False,view,6,fal_l10n_id
+6-21,6-21,Biaya Penjualan,fal_l10n_id.data_account_type_biaya,False,view,6,fal_l10n_id
+6-31,6-31,Biaya Operasional,fal_l10n_id.data_account_type_biaya,False,view,6,fal_l10n_id
+6-41,6-41,Biaya Pajak,fal_l10n_id.data_account_type_biaya,False,view,6,fal_l10n_id
+6-51,6-51,Biaya Depresiasi,fal_l10n_id.data_account_type_biaya,False,view,6,fal_l10n_id
+6-90,6-90,Biaya Lain-lain,fal_l10n_id.data_account_type_biaya,False,view,6,fal_l10n_id
+8-11,8-11,Pendapatan Lain-lain,fal_l10n_id.data_account_type_pendapatan_lain,False,view,8,fal_l10n_id
+9-11,9-11,Biaya Lain-lain,fal_l10n_id.data_account_type_biaya_lain,False,view,9,fal_l10n_id
+
+1-111-001,1-111-001,Kas Kecil,account.data_account_type_liquidity,TRUE,normal,1-11,fal_l10n_id
+1-112-001,1-112-001,Bank,account.data_account_type_liquidity,TRUE,normal,1-11,fal_l10n_id
+1-112-002,1-112-002,Bank 2,account.data_account_type_liquidity,TRUE,normal,1-11,fal_l10n_id
+
+1-121-001,1-121-001,Piutang Usaha,account.data_account_type_receivable,TRUE,normal,1-12,fal_l10n_id
+1-121-002,1-121-002,Piutang Karyawan,account.data_account_type_current_assets,TRUE,normal,1-12,fal_l10n_id
+1-121-003,1-121-003,Piutang lainnya,account.data_account_type_current_assets,TRUE,normal,1-12,fal_l10n_id
+1-121-004,1-121-004,Penyisihan piutang tidak tertagih,account.data_account_type_current_assets,TRUE,normal,1-12,fal_l10n_id
+1-130-001,1-130-001,Persediaan Barang,account.data_account_type_current_assets,FALSE,normal,1-13,fal_l10n_id
+1-130-002,1-130-002,Persediaan Barang Dalam Perjalanan,account.data_account_type_current_assets,FALSE,normal,1-13,fal_l10n_id
+1-130-003,1-130-003,Persediaan Lainnya,account.data_account_type_current_assets,FALSE,normal,1-13,fal_l10n_id
+1-141-001,1-141-001,Sewa Dibayar Dimuka,account.data_account_type_prepayments,FALSE,normal,1-14,fal_l10n_id
+1-141-002,1-141-002,Asuransi Dibayar Dimuka,account.data_account_type_prepayments,FALSE,normal,1-14,fal_l10n_id
+1-141-003,1-141-003,Uang Muka Karyawan,account.data_account_type_prepayments,FALSE,normal,1-14,fal_l10n_id
+1-141-004,1-141-004,Uang Muka Pembelian,account.data_account_type_prepayments,FALSE,normal,1-14,fal_l10n_id
+1-151-001,1-151-001,Pajak Dibayar Dimuka PPH 22,account.data_account_type_prepayments,FALSE,normal,1-15,fal_l10n_id
+1-151-002,1-151-002,Pajak Dibayar Dimuka PPH 23,account.data_account_type_prepayments,FALSE,normal,1-15,fal_l10n_id
+1-151-003,1-151-003,Pajak Dibayar Dimuka PPH 25,account.data_account_type_prepayments,FALSE,normal,1-15,fal_l10n_id
+1-151-004,1-151-004,Pajak Dibayar Dimuka PPH 28,account.data_account_type_prepayments,FALSE,normal,1-15,fal_l10n_id
+1-151-104,1-151-104,PPN Masukan,account.data_account_type_current_liabilities,FALSE,normal,1-15,fal_l10n_id
+1-221-001,1-221-001,Tanah,account.data_account_type_fixed_assets,FALSE,normal,1-2,fal_l10n_id
+1-221-002,1-221-002,Bangunan,account.data_account_type_fixed_assets,FALSE,normal,1-2,fal_l10n_id
+1-221-003,1-221-003,Kendaraan,account.data_account_type_fixed_assets,FALSE,normal,1-2,fal_l10n_id
+1-221-004,1-221-004,Peralatan Kantor,account.data_account_type_fixed_assets,FALSE,normal,1-2,fal_l10n_id
+1-221-005,1-221-005,Perlengkapan Kantor,account.data_account_type_fixed_assets,FALSE,normal,1-16,fal_l10n_id
+1-221-006,1-221-006,Furnitur Kantor,account.data_account_type_fixed_assets,FALSE,normal,1-2,fal_l10n_id
+1-222-001,1-222-001,Software Dan Lisensi,account.data_account_type_fixed_assets,FALSE,normal,1-2,fal_l10n_id
+1-228-101,1-228-101,Akum Peny Bangunan,account.data_account_type_fixed_assets,FALSE,normal,1-2,fal_l10n_id
+1-228-102,1-228-102,Akum Peny Kendaraan,account.data_account_type_fixed_assets,FALSE,normal,1-2,fal_l10n_id
+1-228-103,1-228-103,Akum Peny Peralatan Kantor,account.data_account_type_fixed_assets,FALSE,normal,1-2,,fal_l10n_id
+1-228-104,1-228-104,Akum Peny Perlengkapan Kantor,account.data_account_type_fixed_assets,FALSE,normal,1-2,fal_l10n_id
+1-228-105,1-228-105,Akum Peny Furnitur Kantor,account.data_account_type_fixed_assets,FALSE,normal,1-2,fal_l10n_id
+1-228-106,1-228-106,Akum Peny Software dan Lisensi,account.data_account_type_fixed_assets,FALSE,normal,1-2,fal_l10n_id
+2-110-001,2-110-001,Hutang Usaha,account.data_account_type_payable,TRUE,normal,2-11,fal_l10n_id
+2-110-002,2-110-002,Hutang Pemegang Saham,account.data_account_type_current_liabilities,FALSE,normal,2-11,fal_l10n_id
+2-110-003,2-110-003,Hutang Pihak Ketiga,account.data_account_type_current_liabilities,FALSE,normal,2-11,fal_l10n_id
+2-110-004,2-110-004,Hutang Gaji,account.data_account_type_current_liabilities,FALSE,normal,2-11,fal_l10n_id
+2-121-001,2-121-001,Hutang Pajak PPh 21,account.data_account_type_current_liabilities,FALSE,normal,2-12,fal_l10n_id
+2-121-002,2-121-002,Hutang Pajak PPh 23,account.data_account_type_current_liabilities,FALSE,normal,2-12,fal_l10n_id
+2-121-003,2-121-003,Hutang Pajak PPh 25,account.data_account_type_current_liabilities,FALSE,normal,2-12,fal_l10n_id
+2-121-004,2-121-004,Hutang Pajak Pasal 4 (2),account.data_account_type_current_liabilities,FALSE,normal,2-12,fal_l10n_id
+2-121-005,2-121-005,Hutang Pajak PPh 29,account.data_account_type_current_liabilities,FALSE,normal,2-12,fal_l10n_id
+2-122-101,2-122-101,PPN Keluaran,account.data_account_type_current_liabilities,FALSE,normal,2-12,fal_l10n_id
+
+2-211-001,2-211-001,Hutang Bank,account.data_account_type_current_liabilities,FALSE,normal,2-21,fal_l10n_id
+2-211-002,2-211-002,Hutang Leasing,account.data_account_type_current_liabilities,FALSE,normal,2-21,fal_l10n_id
+2-111-001,2-111-001,Uang Muka Penjualan,account.data_account_type_current_liabilities,FALSE,normal,2-11,fal_l10n_id
+2-811-002,2-811-002,Deposit Customer,account.data_account_type_current_liabilities,FALSE,normal,2-81,fal_l10n_id
+2-900-000,2-900-000,Stock Interim,account.data_account_type_current_liabilities,FALSE,normal,,fal_l10n_id
+3-110-001,3-110-001,Modal Dasar,account.data_account_type_equity,FALSE,normal,3,fal_l10n_id
+3-110-002,3-110-002,Modal Yang Disetor,account.data_account_type_equity,FALSE,normal,3,fal_l10n_id
+3-110-003,3-110-003,Modal Yang Belum Disetor,account.data_account_type_equity,FALSE,normal,3,fal_l10n_id
+3-110-004,3-110-004,Prive (Pengambilan Pribadi),account.data_account_type_equity,FALSE,normal,3,fal_l10n_id
+3-121-001,3-121-001,Cadangan Modal,account.data_account_type_equity,FALSE,normal,3,fal_l10n_id
+3-151-001,3-151-001,Laba Rugi Tahun Lalu,account.data_account_type_equity,FALSE,normal,3-15,fal_l10n_id
+3-151-002,3-151-002,Laba Rugi Tahun Berjalan,account.data_account_type_equity,FALSE,normal,3-15,fal_l10n_id
+3-900-000,3-900-000,Historical Balance,account.data_account_type_equity,TRUE,normal,,fal_l10n_id
+4-100-001,4-100-001,Penjualan,account.data_account_type_revenue,FALSE,normal,4-10,fal_l10n_id
+4-200-006,4-200-006,Retur Penjualan,account.data_account_type_revenue,FALSE,normal,4-20,fal_l10n_id
+4-200-007,4-200-007,Discount Penjualan,account.data_account_type_revenue,FALSE,normal,4-20,fal_l10n_id
+5-100-001,5-100-001,Harga Pokok Penjualan,account.data_account_type_direct_costs,FALSE,normal,5-10,fal_l10n_id
+6-110-001,6-110-001,Gaji Karyawan,account.data_account_type_expenses,FALSE,normal,6-10,fal_l10n_id
+6-110-002,6-110-002,Komisi dan Bonus Karyawan,account.data_account_type_expenses,FALSE,normal,6-10,fal_l10n_id
+6-110-003,6-110-003,Tunjangan Karyawan,account.data_account_type_expenses,FALSE,normal,6-10,fal_l10n_id
+6-211-001,6-211-001,Free Gift,account.data_account_type_expenses,FALSE,normal,6-21,fal_l10n_id
+6-211-002,6-211-002,Event ,account.data_account_type_expenses,FALSE,normal,6-21,fal_l10n_id
+6-211-003,6-211-003,Advertising,account.data_account_type_expenses,FALSE,normal,6-21,fal_l10n_id
+6-211-004,6-211-004,Pengiriman Barang Dagang,account.data_account_type_expenses,FALSE,normal,6-21,fal_l10n_id
+6-311-001,6-311-001,Internet,account.data_account_type_expenses,FALSE,normal,6-31,fal_l10n_id
+6-311-002,6-311-002,Telepon,account.data_account_type_expenses,FALSE,normal,6-31,fal_l10n_id
+6-311-003,6-311-003,Listrik,account.data_account_type_expenses,FALSE,normal,6-31,fal_l10n_id
+6-311-004,6-311-004,PDAM,account.data_account_type_expenses,FALSE,normal,6-31,fal_l10n_id
+6-311-005,6-311-005,Sumbangan,account.data_account_type_expenses,FALSE,normal,6-31,fal_l10n_id
+6-311-006,6-311-006,Iuran Bulanan,account.data_account_type_expenses,FALSE,normal,6-31,fal_l10n_id
+6-311-007,6-311-007,Keperluan Dapur,account.data_account_type_expenses,FALSE,normal,6-31,fal_l10n_id
+6-311-008,6-311-008,Perlengkapan Kantor,account.data_account_type_expenses,FALSE,normal,6-31,fal_l10n_id
+6-311-009,6-311-009,Alat Tulis Kantor,account.data_account_type_expenses,FALSE,normal,6-31,fal_l10n_id
+6-311-010,6-311-010,Perlengkapan Kebersihan,account.data_account_type_expenses,FALSE,normal,6-31,fal_l10n_id
+6-311-011,6-311-011,Pajak Kendaraan,account.data_account_type_expenses,FALSE,normal,6-31,fal_l10n_id
+6-411-001,6-411-001,Biaya Perizinan,account.data_account_type_expenses,FALSE,normal,6-31,fal_l10n_id
+6-411-002,6-411-002,Biaya Administrasi Bank,account.data_account_type_expenses,FALSE,normal,6-31,fal_l10n_id
+6-411-003,6-411-003,Biaya Konsultan,account.data_account_type_expenses,FALSE,normal,6-31,fal_l10n_id
+6-411-004,6-411-004,Biaya Sewa,account.data_account_type_expenses,FALSE,normal,6-31,fal_l10n_id
+6-411-005,6-411-005,Biaya Pemeliharaan & Perawatan Gedung,account.data_account_type_expenses,FALSE,normal,6-31,fal_l10n_id
+6-411-006,6-411-006,"Biaya Perawatan Instalasi Listrik, telepon, internet",account.data_account_type_expenses,FALSE,normal,6-31,fal_l10n_id
+6-411-007,6-411-007,Pajak,account.data_account_type_expenses,FALSE,normal,6-41,fal_l10n_id
+6-411-008,6-411-008,Akomodasi Tamu,account.data_account_type_expenses,FALSE,normal,6-31,fal_l10n_id
+6-411-009,6-411-009,Biaya Pemeliharaan & Perawatan Aset,account.data_account_type_expenses,FALSE,normal,6-31,fal_l10n_id
+6-411-010,6-411-010,Biaya Pengiriman Dokumen/Barang,account.data_account_type_expenses,FALSE,normal,6-31,fal_l10n_id
+6-411-011,6-411-011,BBM kendaraan,account.data_account_type_expenses,FALSE,normal,6-31,fal_l10n_id
+6-411-012,6-411-012,Service kendaraan,account.data_account_type_expenses,FALSE,normal,6-31,fal_l10n_id
+6-411-013,6-411-013,Parkir & Tol kendaraan,account.data_account_type_expenses,FALSE,normal,6-31,fal_l10n_id
+6-411-015,6-411-015,Asuransi Kendaraan,account.data_account_type_expenses,FALSE,normal,6-31,fal_l10n_id
+6-411-016,6-411-016,Depresiasi,account.data_account_type_expenses,FALSE,normal,6-51,fal_l10n_id
+6-900-000,6-900-000,Biaya Lain-lain,account.data_account_type_expenses,FALSE,normal,6-90,fal_l10n_id
+8-110-001,8-110-001,Pendapatan Bunga,account.data_account_type_other_income,FALSE,normal,8-11,fal_l10n_id
+8-110-002,8-110-002,Pendapatan Deposit,account.data_account_type_other_income,FALSE,normal,8-11,fal_l10n_id
+8-110-003,8-110-003,Keuntungan Selisih Kurs,account.data_account_type_other_income,FALSE,normal,8-11,fal_l10n_id
+8-110-004,8-110-004,Pendapatan Lain,account.data_account_type_other_income,FALSE,normal,8-11,fal_l10n_id
+8-110-009,8-110-009,Keuntungan Atas Penjualan Aktiva Tetap,account.data_account_type_other_income,FALSE,normal,8-11,fal_l10n_id
+9-110-001,9-110-001,Beban Bunga,account.data_account_type_expenses,FALSE,normal,9-11,fal_l10n_id
+9-110-002,9-110-002,Beban Administrasi Bank,account.data_account_type_expenses,FALSE,normal,9-11,fal_l10n_id
+9-110-003,9-110-003,Kerugian Selisih Kurs,account.data_account_type_expenses,FALSE,normal,9-11,fal_l10n_id
+9-110-009,9-110-009,Kerugian Atas Penjualan Aktiva Tetap,account.data_account_type_expenses,FALSE,normal,9-11,fal_l10n_id

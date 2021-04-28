@@ -1,0 +1,43 @@
+
+<odoo>
+    <data>
+        <!--<record id="view_partner_form_inherit_nti" model="ir.ui.view">-->
+            <!--<field name="name">res.partner.form</field>-->
+            <!--<field name="model">res.partner</field>-->
+            <!--<field name="inherit_id" ref="base.view_partner_form"/>-->
+            <!--<field name="arch" type="xml">-->
+                <!--<xpath expr="//field[@name='phone']" position="after">-->
+                    <!--<field name="phone2"/>-->
+                <!--</xpath>-->
+                <!--<xpath expr="//group/group/div[@class='o_address_format']" position="after">-->
+                    <!--<field name="nti_employee"/>-->
+                <!--</xpath>-->
+                <!--<xpath expr="//field[@name='user_id']" position="after">-->
+                    <!--<field name="nti_nti2"/>-->
+                <!--</xpath>-->
+                <!--&lt;!&ndash;<xpath expr="//field[@name='phone']" position="replace"></xpath>&ndash;&gt;-->
+                <!--<xpath expr="//notebook" position="inside">-->
+                    <!--<page string="Information">-->
+                        <!--<field name="description" placeholder="Description"/>-->
+                    <!--</page>-->
+                <!--</xpath>-->
+                <!--&lt;!&ndash;<notebook position="inside">&ndash;&gt;-->
+                    <!--&lt;!&ndash;<page string="Information">&ndash;&gt;-->
+                        <!--&lt;!&ndash;<field name="description" /> &lt;!&ndash; nolabel="1" &ndash;&gt;&ndash;&gt;-->
+                    <!--&lt;!&ndash;</page>&ndash;&gt;-->
+                <!--&lt;!&ndash;</notebook>&ndash;&gt;-->
+            <!--</field>-->
+        <!--</record>-->
+        <!--<menuitem-->
+
+         <!--web_icon="git_inventory_modifications,static/description/icon.png"-->
+        <!--/>-->
+
+        <menuitem id="menu_nti_students"
+                  name="GIT Inventory updates"
+                  web_icon="git_inventory_modifications,static/description/icon.png"
+
+        />
+
+    </data>
+</odoo>

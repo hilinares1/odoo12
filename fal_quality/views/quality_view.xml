@@ -1,0 +1,223 @@
+<odoo>
+
+    <!-- Quality Point -->
+    <record id="quality_point_view_ext" model="ir.ui.view">
+        <field name="name">quality.point.form</field>
+        <field name="model">quality.point</field>
+        <field name="inherit_id" ref="quality.quality_point_view_form"/>
+        <field name="arch" type="xml">
+            <field name="product_tmpl_id" position="attributes">
+                <attribute name="attrs">{'required': [('fal_quality_point_template', '=', False)], 'invisible': [('fal_quality_point_template', '=', True)]}</attribute>
+            </field>
+            <xpath expr="//page[1]" position="before">
+                <page string="Activity">
+                    <field name="fal_test_type_ids" domain="[('picking_type_id', '=', picking_type_id)]" context="{'default_picking_type_id': picking_type_id}"/>
+                </page>
+            </xpath>
+            <xpath expr="//field[@name='title']" position="after">
+                <field name="fal_quality_point_template"/>
+                <field name="fal_product_category" attrs="{'required': [('fal_quality_point_template', '=', True)], 'invisible': [('fal_quality_point_template', '=', False)]}"/>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Quality Check -->
+    <record id="quality_check_view_ext" model="ir.ui.view">
+        <field name="name">quality.check.wizard</field>
+        <field name="model">quality.check</field>
+        <field name="inherit_id" ref="quality_control.quality_check_view_form_small"/>
+        <field name="arch" type="xml">
+            <field name="note" position="before">
+                <field name="fal_quality_check_ids">
+                    <tree editable="bottom">
+                        <field name='fal_parent_test_type_id' readonly="1"/>
+                        <field name="name" readonly="1"/>
+                        <field name="checklist" invisible="1"/>
+                        <field name="total_check_ok"/>
+                        <field name="check_no_ok" string="Not OK" invisible="1"/>
+                        <field name="total_check_no_ok"/>
+                        <field name="check_no_applicable" invisible="1"/>
+                        <field name="total_check_no_applicable"/>
+                        <field name="notes"/>
+                        <field name="fal_total_qty_to_check" invisible="1"/>
+                    </tree>
+                </field>
+            </field>
+            <xpath expr="//h2" position="after">
+                <field name="fal_description"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="quality_check_view_tree_inherit" model="ir.ui.view">
+        <field name="name">quality.check.tree.inherit</field>
+        <field name="model">quality.check</field>
+        <field name="inherit_id" ref="quality_control.quality_check_view_tree"/>
+        <field name="arch" type="xml">
+            <field name="product_id" position="before">
+                <field name="name"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="fal_quality_check_view" model="ir.ui.view">
+        <field name="name">fal.quality.check.view</field>
+        <field name="model">quality.check</field>
+        <field name="inherit_id" ref="quality_control.quality_check_view_form"/>
+        <field name="arch" type="xml">
+            <field name="product_id" position="before">
+                <field name="name"/>
+            </field>
+            <xpath expr="//notebook/page[1]" position="before">
+                <page string="Checked Activity">
+                    <field name="fal_quality_check_ids">
+                        <tree editable="bottom">
+                            <field name='fal_parent_test_type_id'/>
+                            <field name="name"/>
+                            <field name="checklist" invisible="1"/>
+                            <field name="total_check_ok"/>
+                            <field name="check_no_ok" string="Not OK" invisible="1"/>
+                            <field name="total_check_no_ok"/>
+                            <field name="check_no_applicable" invisible="1"/>
+                            <field name="total_check_no_applicable"/>
+                            <field name="notes"/>
+                            <field name="fal_total_qty_to_check" invisible="1"/>
+                        </tree>
+                    </field>
+                </page>
+            </xpath>
+            <xpath expr="//field[@name='team_id']" position="after">
+                <field name="control_date" string="Checked Date"/>
+            </xpath>
+            <xpath expr="//field[@name='product_id']" position="after">
+                <field name="fal_description"/>
+                <field name="fal_total_qty_to_check" readonly="1"/>
+                <field name="fal_total_qty_pass"/>
+                <field name="fal_total_qty_failed"/>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Quality Alert -->
+    <record id="fal_quality_alert_view_ext" model="ir.ui.view">
+        <field name="name">fal.quality.alert</field>
+        <field name="model">quality.alert</field>
+        <field name="inherit_id" ref="quality_control.quality_alert_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook/page[1]" position="before">
+                <page string="Checked Status">
+                    <field name="fal_quality_check_ids">
+                        <tree>
+                             <field name="name"/>
+                            <field name="checklist" invisible="1"/>
+                            <field name="total_check_ok"/>
+                            <field name="check_no_ok" string="Not OK" invisible="1"/>
+                            <field name="total_check_no_ok"/>
+                            <field name="check_no_applicable" invisible="1"/>
+                            <field name="total_check_no_applicable"/>
+                            <field name="notes"/>
+                        </tree>
+                    </field>
+                </page>
+            </xpath>
+            <field name="lot_id" position="after">
+                <field name="fal_description"/>
+            </field>
+        </field>
+    </record>
+
+    <!-- Test Type Config-->
+    <record id="test_type_view_form" model="ir.ui.view">
+        <field name="name">fal.test.type.form</field>
+        <field name="model">fal.test.type</field>
+        <field name="arch" type="xml">
+            <form string="Test Type">
+                <sheet>
+                    <div>
+                        <label for="name" string="Name"/>
+                        <h1>
+                            <field name="name" required="1"/>
+                        </h1>
+                    </div>
+                <group>
+                    <field name="picking_type_id"/>
+                    <field name="parent_id" string="Parent"/>
+                    <field name="test_type"/>
+                </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="test_type_view_tree" model="ir.ui.view">
+        <field name="name">fal.test.type.tree</field>
+        <field name="model">fal.test.type</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="sequence"  widget="handle"/>
+                <field name="parent_id"/>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="test_type_view_search" model="ir.ui.view">
+        <field name="name">fal.test.type.search</field>
+        <field name="model">fal.test.type</field>
+        <field name="arch" type="xml">
+            <search string="Quality Test Type">
+                <field name="picking_type_id"/>
+                <field name="parent_id"/>
+                <field name="name"/>
+                <separator/>
+                <filter string="Incoming" name="incoming"  domain="[('picking_type_id.code','=','incoming')]"/>
+                <filter string="Outgoing" name="outgoing" domain="[('picking_type_id.code','=','outgoing')]"/>
+                <filter string="MRP" name="mrp" domain="[('picking_type_id.code','=','mrp_operation')]"/>
+                <filter string="Internal" name="internal" domain="[('picking_type_id.code','=','internal')]"/>
+                <separator orientation="vertical" />
+                <filter string="Picking Type" name="picking_type" context="{'group_by':'picking_type_id'}"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="test_type_action" model="ir.actions.act_window">
+        <field name="name">Test Type</field>
+        <field name="res_model">fal.test.type</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{'search_default_picking_type': 1}</field>
+        <field eval="False" name="view_id"/>
+        <field name="help" type="html">
+          <p class="oe_view_nocontent_create">
+            Click to create new test type
+          </p>
+        </field>
+    </record>
+
+    <!-- Quality Point Template -->
+    <record model="ir.actions.act_window" id="quality_control.quality_point_action">
+        <field name="domain">[('fal_quality_point_template', '=', False)]</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="quality_point_template_action">
+        <field name="name">Quality Control Points Template</field>
+        <field name="res_model">quality.point</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,kanban,form</field>
+        <field name="search_view_id" ref="quality_control.quality_point_view_search"/>
+        <field name="domain">[('fal_quality_point_template', '=', True)]</field>
+        <field name="context">{'default_fal_quality_point_template': True}</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Click here to add a new Quality Control Points Template
+            </p><p>
+              Quality Control Points are places in your logistics process
+                where you want to do quality control.
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="menu_test_type_config" parent="quality_control.menu_quality_configuration" sequence="2" name="Quality Test Type" action="test_type_action"/>
+    <menuitem action="quality_point_template_action" id="menu_quality_point_template_action" parent="quality_control.menu_quality_configuration" sequence="4"/>
+
+</odoo>

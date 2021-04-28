@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="fal_periodic_allocation_wizard_view" model="ir.ui.view">
+            <field name="name">fal.periodic.allocation.wizard.view</field>
+            <field name="model">fal.periodic.allocation.wizard</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <group>
+                            <field name="date_from" string="Run From"/>
+                            <field name="date_to" string="Run Until" help="If no value set, runs indefinitely"/>
+                            <field name="holiday_status_id"/>
+                            <field name="number_of_leaves"/>
+                        </group>
+                        <group>
+                            <div class="o_row">
+                                <span>Add</span>
+                                <field name="number_per_interval" class="ml8" required="1"/>
+                                <field name="unit_per_interval" required="1"/>
+                                <span class="ml8">of leaves every</span>
+                                <field name="interval_number" class="ml8" required="1"/>
+                                <field name="interval_unit" required="1"/>
+                            </div>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Allocation Template" name="allocation_tmpl_ids">
+                            <field name="allocation_tmpl_ids">
+                                <tree string="Allocation Templates" editable="bottom">
+                                    <field name="no"/>
+                                    <field name="date_from"/>
+                                    <field name="date_to"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                    <footer>
+                        <button name="periodic_leave_auto_create" string="Auto Create Periodic Leave" type="object" class="oe_highlight bombutton"/>
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <act_window
+            id="fal_periodic_allocation_action_wizard"
+            name="Leave Periodic Allocation Wizard"
+            res_model="fal.periodic.allocation.wizard"
+            src_model="resource.calendar"
+            view_mode="form"
+            view_id="fal_periodic_allocation_wizard_view"
+            target="new"
+            key2="client_action_multi"
+            />
+
+    </data>
+</odoo>

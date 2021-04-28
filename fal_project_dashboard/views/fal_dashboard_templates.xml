@@ -1,0 +1,668 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="assets_backend" name="fal_dashboard_assets" inherit_id="web.assets_backend">
+        <xpath expr="." position="inside">
+            <script type="text/javascript" src="/fal_project_dashboard/static/src/js/fal_dashboard.js"></script>
+            <link rel="stylesheet" type="text/less" href="/fal_project_dashboard/static/src/scss/fal_dashboard.scss"/>
+        </xpath>
+    </template>
+
+    <template id="search_template_date_filter">
+        <a type="button" class="dropdown-toggle" data-toggle="dropdown">
+            <span class="fa fa-calendar" title="Dates" role="img" aria-label="Dates"/>
+            <t t-if="options['date'].get('string') and options['date'].get('filter') != 'custom'"><t t-esc="options['date']['string']"/></t>
+            <t t-if="options['date'].get('filter') == 'custom'">
+                <t t-if="options['date'].get('date')">Date: <span class="js_format_date"><t t-esc="options['date']['date']"/></span></t>
+                <t t-if="options['date'].get('date_from')">From: <span class="js_format_date"><t t-esc="options['date']['date_from']"/></span> <br/><span class="o_reports_date_to">to: <span class="js_format_date"><t t-esc="options['date']['date_to']"/></span></span></t>
+            </t>
+        </a>
+        <div class="dropdown-menu o_filters_menu" role="menu">
+            <t t-if="options['date'].get('date')">
+                <a role="menuitem" class="dropdown-item js_account_report_date_filter" title="Today" data-filter="today">Today</a>
+                <a role="menuitem" class="dropdown-item js_account_report_date_filter" title="End of Last Month" data-filter="last_month">End of Last Month</a>
+                <a role="menuitem" class="dropdown-item js_account_report_date_filter" title="End of Last Quarter" data-filter="last_quarter">End of Last Quarter</a>
+                <a role="menuitem" class="dropdown-item js_account_report_date_filter" title="End of Last Financial Year" data-filter="last_year">End of Last Financial Year</a>
+            </t>
+            <t t-if="options['date'].get('date_from')">
+                <a role="menuitem" class="dropdown-item js_account_report_date_filter" title="This Month" data-filter="this_month">This Month</a>
+                <a role="menuitem" class="dropdown-item js_account_report_date_filter" title="This Quarter" data-filter="this_quarter">This Quarter</a>
+                <a role="menuitem" class="dropdown-item js_account_report_date_filter" title="This Financial Year" data-filter="this_year">This Financial Year</a>
+                <div role="separator" class="dropdown-divider"></div>
+                <a role="menuitem" class="dropdown-item js_account_report_date_filter" title="Last Month" data-filter="last_month">Last Month</a>
+                <a role="menuitem" class="dropdown-item js_account_report_date_filter" title="Last Quarter" data-filter="last_quarter">Last Quarter</a>
+                <a role="menuitem" class="dropdown-item js_account_report_date_filter" title="Last Financial Year" data-filter="last_year">Last Financial Year</a>
+            </t>
+            <div role="separator" class="dropdown-divider"></div>
+            <a role="menuitem" class="dropdown-item js_foldable_trigger o_closed_menu" data-filter='custom_filter_date'>Custom</a>
+            <div class="o_foldable_menu o_closed_menu o_account_report_search" data-filter='custom_filter_date'>
+                <t t-if="options['date'].get('date_from') != None">
+                    <label class="custom-date" for="date_from">Start Date :</label>
+                    <div class="form-group custom-date">
+                        <div class='o_datepicker js_account_reports_datetimepicker' t-att-data-default-value="options['date']['date_from']">
+                            <input type='text' class="o_datepicker_input" name="date_from" />
+                            <span class="o_datepicker_button"/>
+                        </div>
+                    </div>
+                </t>
+                <label class="custom-date" for="date_to" t-if="options['date'].get('date_to') != None">End Date :</label>
+                <label class="custom-date" for="date_to" t-if="options['date'].get('date') != None">Date :</label>
+                <div class="form-group custom-date">
+                    <div class='o_datepicker js_account_reports_datetimepicker' t-att-data-default-value="options['date'].get('date_to') or options['date'].get('date')">
+                        <input type='text' class="o_datepicker_input" name="date_to" />
+                        <span class="o_datepicker_button"/>
+                    </div>
+                </div>
+                <button type="button" class="btn btn-primary js_account_report_date_filter" data-filter="custom">Apply</button>
+            </div>
+        </div>
+    </template>
+
+    <template id="search_template_currency">
+        <a type="button" class="dropdown-toggle" data-toggle="dropdown">
+            <span class="fa fa-filter"/>Currency
+        </a>
+         <div class="dropdown-menu o_filters_menu" role="menu">
+            <a role="menuitem" class="dropdown-item js_account_report_bool_filter" title="company_currency" data-filter="company_currency">Company Currency</a>
+            <a role="menuitem" class="dropdown-item js_account_report_bool_filter" title="IFRS" data-filter="ifrs_currency">IFRS Currency</a>
+        </div>
+    </template>
+
+    <template id="search_template">
+        <div class="btn-group o_dropdown o_account_reports_filter_date">
+            <t t-call="fal_project_dashboard.search_template_date_filter"/>
+        </div>
+        <div class="btn-group o_dropdown o_account_reports_filter_bool">
+            <t t-call="fal_project_dashboard.search_template_currency"/>
+        </div>
+    </template>
+
+    <template id="fal_dashboard" name="Project Dashboard">
+        <div class="o_form_view o_form_readonly o_project_plan">
+            <div class="o_form_sheet_bg">
+                <div class="o_form_sheet o_fal_dashboard_content">
+                    <div class="o_fal_dashboard_fal_project_dashboard">
+                        <div class="o_fal_dashboard_fal_project_dashboard_dashboard">
+
+                            <group>
+                                <group>
+                                    <table class="table table-condensed">
+                                        <tr>
+                                            <td class="o_text">
+                                                <div class="o_highlight">Margin</div>
+                                            </td>
+                                            <t t-if="dashboard_data[0]['fal_gross_margin_to']">
+                                                <td class="o_text" style="color:grey;font-weight: bold;">
+                                                    <div class="o_highlight" title="T0: Initial">T0 / %</div>
+                                                </td>
+                                            </t>
+
+                                             <td class="o_text" style="color:grey;font-weight: bold;">
+                                                <div class="o_highlight" title="Order: Order">Order / %</div>
+                                            </td>
+
+                                            <td class="o_text">
+                                                <div class="o_highlight">Invoiced / %</div>
+                                            </td>
+                                            <t t-if="dashboard_data[0]['fal_gross_margin_to']">
+                                                <td class="o_text" style="color:olive">
+                                                    <div class="o_highlight" title="EAC: Estimated Completion">EAC / %</div>
+                                                </td>
+
+                                                <td class="o_main" title="Gap EAC vs T0" style="color:grey;font-weight: bold;">
+                                                    <div title="T0: Initial Budget; EAC: Estimated Completion">Gap EAC vs T0</div>
+                                                </td>
+                                            </t>
+
+                                            <td class="o_text" colspan="3" width="40%">
+                                            </td>
+
+                                            <button class="btn btn-sm oe_stat_button" style="background-color:#ABEBC6; height: 50px;float: right;" t-att-data-domain="child_parent_navigation[0]['domain']" t-att-data-res-model="child_parent_navigation[0]['res_model']">Parent And Childs</button>
+
+
+                                        </tr>
+                                        <tr>
+                                            <td class="o_text">
+                                                <div class="o_highlight">Gross margin</div>
+                                            </td>
+                                            <t t-if="dashboard_data[0]['fal_gross_margin_to']">
+                                                <td class="o_main" title="Gross margin T0" style="color:grey;font-weight: bold;">
+                                                    <button class="btn btn-sm oe_stat_button" t-att-data-domain="inv_buttons[0]['domain']" t-att-data-res-model="inv_buttons[0]['res_model']">
+                                                        <t t-esc="dashboard_data[0]['fal_gross_margin_to']" t-options='{"widget": "monetary", "display_currency": currency}'/>
+                                                    </button>
+                                                    <span> +</span>
+                                                        <t t-esc="dashboard_data[0]['fal_gross_margin_to_percentage']"/>
+                                                    <span>%</span>
+                                                </td>
+                                            </t>
+
+                                            <td class="o_main" title="Gross margin Order" style="color:grey;font-weight: bold;">
+                                                <button class="btn btn-sm oe_stat_button" t-att-data-domain="inv_buttons[0]['domain']" t-att-data-res-model="inv_buttons[0]['res_model']">
+                                                    <t t-esc="dashboard_data[0]['fal_gross_margin_order']" t-options='{"widget": "monetary", "display_currency": currency}'/>
+                                                </button>
+                                                <span> +</span>
+                                                    <t t-esc="dashboard_data[0]['fal_gross_margin_order_percentage']"/>
+                                                <span>%</span>
+                                            </td>
+
+                                            <td class="o_main" title="Invoiced Gross margin T0">
+                                                <button class="btn btn-sm oe_stat_button" t-att-data-domain="inv_buttons[0]['domain']" t-att-data-res-model="inv_buttons[0]['res_model']">
+                                                    <t t-esc="dashboard_data[0]['fal_invoiced_gross_margin_to']" t-options='{"widget": "monetary", "display_currency": currency}'/>
+                                                </button>
+                                                <span> +</span>
+                                                    <t t-esc="dashboard_data[0]['fal_invoiced_gross_margin_to_percentage']"/>
+                                                <span>%</span>
+                                            </td>
+                                            <t t-if="dashboard_data[0]['fal_gross_margin_to']">
+                                                <td class="o_main" title="EAC" style="color:olive">
+                                                    <button class="btn btn-sm oe_stat_button" t-att-data-domain="inv_buttons[0]['domain']" t-att-data-res-model="inv_buttons[0]['res_model']">
+                                                        <t t-esc="dashboard_data[0]['fal_gross_margin_termination']" t-options='{"widget": "monetary", "display_currency": currency}'/>
+                                                    </button>
+                                                    <span> +</span>
+                                                        <t t-esc="dashboard_data[0]['fal_gross_margin_termination_percentage']"/>
+                                                    <span>%</span>
+                                                </td>
+                                                <td class="o_text" style="color:grey;font-weight: bold;">
+                                                    <button class="btn btn-sm oe_stat_button" t-att-data-domain="inv_buttons[0]['domain']" t-att-data-res-model="inv_buttons[0]['res_model']">
+                                                        <t t-esc="dashboard_data[0]['fal_gross_margin_gap']" t-options='{"widget": "monetary", "display_currency": currency}'/>
+                                                    </button>
+                                                    <span> +</span>
+                                                        <t t-esc="dashboard_data[0]['fal_gross_margin_gap_percentage']"/>
+                                                    <span>%</span>
+                                                </td>
+                                            </t>
+
+                                        </tr>
+                                        <tr>
+                                            <td class="o_text" rowspan="2">
+                                                <div class="o_highlight">Variable cost margin</div>
+                                            </td>
+                                            <t t-if="dashboard_data[0]['fal_gross_margin_to']">
+                                                <td class="o_main" title="Variable cost margin T0" style="color:grey;font-weight: bold;">
+                                                    <button class="btn btn-sm oe_stat_button" t-att-data-domain="inv_buttons[0]['domain']" t-att-data-res-model="inv_buttons[0]['res_model']">
+                                                        <t t-esc="dashboard_data[0]['fal_variable_cost_margin_to']" t-options='{"widget": "monetary", "display_currency": currency}'/>
+                                                    </button>
+                                                    <span> +</span>
+                                                        <t t-esc="dashboard_data[0]['fal_variable_cost_margin_to_percentage']"/>
+                                                    <span>%</span>
+                                                </td>
+                                            </t>
+
+                                            <td class="o_main" title="Variable cost margin Order" style="color:grey;font-weight: bold;">
+                                                <button class="btn btn-sm oe_stat_button" t-att-data-domain="inv_buttons[0]['domain']" t-att-data-res-model="inv_buttons[0]['res_model']">
+                                                    <t t-esc="dashboard_data[0]['fal_variable_cost_margin_order']" t-options='{"widget": "monetary", "display_currency": currency}'/>
+                                                </button>
+                                                <span> +</span>
+                                                    <t t-esc="dashboard_data[0]['fal_variable_cost_margin_order_percentage']"/>
+                                                <span>%</span>
+                                            </td>
+
+                                            <td class="o_main">
+                                                <button class="btn btn-sm oe_stat_button" t-att-data-domain="inv_buttons[0]['domain']" t-att-data-res-model="inv_buttons[0]['res_model']">
+                                                    <t t-esc="dashboard_data[0]['fal_invoiced_variable_cost_margin']" t-options='{"widget": "monetary", "display_currency": currency}'/>
+                                                </button>
+                                                <span> +</span>
+                                                    <t t-esc="dashboard_data[0]['fal_invoiced_variable_cost_margin_percentage']"/>
+                                                <span>%</span>
+                                            </td>
+                                            <t t-if="dashboard_data[0]['fal_gross_margin_to']">
+                                                <td class="o_main" title="EAC" style="color:olive">
+                                                    <button class="btn btn-sm oe_stat_button" t-att-data-domain="inv_buttons[0]['domain']" t-att-data-res-model="inv_buttons[0]['res_model']">
+                                                        <t t-esc="dashboard_data[0]['fal_variable_cost_margin_termination']" t-options='{"widget": "monetary", "display_currency": currency}'/>
+                                                    </button>
+                                                    <span> +</span>
+                                                    <t t-esc="dashboard_data[0]['fal_variable_cost_margin_termination_percentage']"/>
+                                                    <span>%</span>
+                                                </td>
+
+                                                <td class="o_text" style="color:grey;font-weight: bold;">
+                                                    <button class="btn btn-sm oe_stat_button" t-att-data-domain="inv_buttons[0]['domain']" t-att-data-res-model="inv_buttons[0]['res_model']">
+                                                        <t t-esc="dashboard_data[0]['fal_variable_cost_margin_gap']" t-options='{"widget": "monetary", "display_currency": currency}'/>
+                                                    </button>
+                                                    <span> +</span>
+                                                    <t t-esc="dashboard_data[0]['fal_variable_cost_margin_gap_percentage']"/>
+                                                    <span>%</span>
+                                                </td>
+                                            </t>
+                                        </tr>
+                                    </table>
+                                </group>
+                            </group>
+
+                            <group>
+                                <table>
+                                    <tr>
+                                        <td style="width:50%">
+                                            <table class="table table-condensed">
+                                                <tr style="background:#ABEBC6">
+                                                    <td class="o_text" rowspan="3" width="10%">
+                                                        <div class="o_highlight">Sales</div>
+                                                    </td>
+                                                    <t t-if="dashboard_data[0]['fal_gross_margin_to']">
+                                                        <td class="o_text" style="color:grey;font-weight: bold;" width="15%">
+                                                            <div class="o_highlight" title="T0: Initial Budget">T0</div>
+                                                        </td>
+                                                    </t>
+                                                    <td class="o_text" width="15%">
+                                                        <div class="o_highlight">Order</div>
+                                                    </td>
+                                                    <td class="o_text" width="30%">
+                                                        <div class="o_highlight">Invoice / % (vs order amount)</div>
+                                                    </td>
+                                                    <td class="o_text" width="30%">
+                                                        <div class="o_highlight">Payment / % (vs order amount)</div>
+                                                    </td>
+
+                                                </tr>
+                                                <tr>
+                                                    <t t-if="dashboard_data[0]['fal_gross_margin_to']">
+                                                        <td class="o_main" title="T0">
+                                                            <button class="btn btn-sm oe_stat_button" t-att-data-domain="budget_buttons_sales[0]['domain']" t-att-data-res-model="budget_buttons_sales[0]['res_model']">
+                                                                <t t-esc="dashboard_data[0]['fal_sale_budget_total']" t-options='{"widget": "monetary", "display_currency": currency}'/>
+                                                            </button>
+                                                        </td>
+                                                    </t>
+                                                    <td class="o_main" title="Sale Orders">
+                                                        <button class="btn btn-sm oe_stat_button" t-att-data-domain="sale_buttons[0]['domain']" t-att-data-res-model="sale_buttons[0]['res_model']">
+                                                            <t t-esc="dashboard_data[0]['fal_sale_order_total']" t-options='{"widget": "monetary", "display_currency": currency}'/>
+                                                        </button>
+
+                                                    </td>
+                                                    <td class="o_main" title="Customer Invoices">
+                                                        <button class="btn btn-sm oe_stat_button" t-att-data-domain="inv_buttons[0]['domain']" t-att-data-res-model="inv_buttons[0]['res_model']">
+                                                            <t t-esc="dashboard_data[0]['fal_customer_invoiced_total']" t-options='{"widget": "monetary", "display_currency": currency}'/>
+                                                        </button>
+                                                        <span> +</span>
+                                                        <t t-esc="dashboard_data[0]['fal_customer_invoiced_percentage']"/>
+                                                        <span>%</span>
+                                                    </td>
+                                                    <td class="o_main" title="Customer Payments">
+                                                        <button class="btn btn-sm oe_stat_button" t-att-data-domain="inv_payment_buttons[0]['domain']" t-att-data-res-model="inv_payment_buttons[0]['res_model']">
+                                                            <t t-esc="dashboard_data[0]['fal_customer_payment_total']" t-options='{"widget": "monetary", "display_currency": currency}'/>
+                                                        </button>
+                                                        <span> +</span>
+                                                        <t t-esc="dashboard_data[0]['fal_customer_payment_percentage']"/>
+                                                        <span>%</span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <t t-if="dashboard_data[0]['fal_gross_margin_to']">
+                                                        <td>
+                                                            <div class="o_highlight"></div>
+                                                        </td>
+                                                    </t>
+                                                    <td class="o_main" title="Sale Orders">
+                                                        <button class="btn btn-sm oe_stat_button" t-att-data-domain="sale_buttons[0]['domain']" t-att-data-res-model="sale_buttons[0]['res_model']">
+                                                            <t t-esc="dashboard_data[0]['fal_sale_order_count']" t-options='{"widget": "statinfo"}'/>
+                                                            <span> Sale Orders</span>
+                                                        </button>
+                                                    </td>
+                                                    <td class="o_main" title="Customer Invoices">
+                                                        <button class="btn btn-sm oe_stat_button" t-att-data-domain="inv_buttons[0]['domain']" t-att-data-res-model="inv_buttons[0]['res_model']">
+                                                            <t t-esc="dashboard_data[0]['fal_customer_invoiced_count']" t-options='{"widget": "statinfo"}'/>
+                                                            <span> Customer Invoices</span>
+                                                        </button>
+                                                    </td>
+                                                    <td class="o_main" title="Customer Payments">
+                                                        <button class="btn btn-sm oe_stat_button" t-att-data-domain="inv_payment_buttons[0]['domain']" t-att-data-res-model="inv_payment_buttons[0]['res_model']">
+                                                            <t t-esc="dashboard_data[0]['fal_customer_payment_count']" t-options='{"widget": "statinfo"}'/>
+                                                            <span> Customer Payments</span>
+                                                        </button>
+                                                    </td>
+
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td style="width:3%"></td>
+                                        <td style="width:50%">
+                                            <table class="table table-condensed">
+                                                <tr style="background:#ABEBC6">
+                                                    <td class="o_text" colspan="4">
+                                                        <div class="o_highlight">Unpaid</div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="o_text" style="width:20%">
+                                                        <div class="o_highlight">Not due</div>
+                                                    </td>
+                                                    <td class="o_text" style="width:20%">
+                                                        <div class="o_highlight">1-30d</div>
+                                                    </td>
+                                                    <td class="o_text" style="width:20%">
+                                                        <div class="o_highlight">31-60d</div>
+                                                    </td>
+                                                    <td class="o_text" style="width:20%">
+                                                        <div class="o_highlight">&gt;60d</div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="o_text">
+                                                        <button class="btn btn-sm oe_stat_button" t-att-data-domain="unpaid_inv_buttons[0]['domain']" t-att-data-res-model="unpaid_inv_buttons[0]['res_model']">
+                                                            <t t-esc="total_due[0]['fal_customer_invoiced_total_not_due']" t-options='{"widget": "monetary", "display_currency": currency}'/>
+                                                        </button>
+                                                    </td>
+                                                    <td class="o_text">
+                                                        <button class="btn btn-sm oe_stat_button" t-att-data-domain="unpaid_inv_buttons[0]['domain']" t-att-data-res-model="unpaid_inv_buttons[0]['res_model']">
+                                                            <t t-esc="total_due[0]['fal_customer_invoiced_total_due30d']" t-options='{"widget": "monetary", "display_currency": currency}'/>
+                                                        </button>
+                                                    </td>
+                                                    <td class="o_text">
+                                                        <button class="btn btn-sm oe_stat_button" t-att-data-domain="unpaid_inv_buttons[0]['domain']" t-att-data-res-model="unpaid_inv_buttons[0]['res_model']">
+                                                            <t t-esc="total_due[0]['fal_customer_invoiced_total_due60d']" t-options='{"widget": "monetary", "display_currency": currency}'/>
+                                                        </button>
+                                                    </td>
+                                                    <td class="o_text">
+                                                        <button class="btn btn-sm oe_stat_button" t-att-data-domain="unpaid_inv_buttons[0]['domain']" t-att-data-res-model="unpaid_inv_buttons[0]['res_model']">
+                                                            <t t-esc="total_due[0]['fal_customer_invoiced_total_due61d']" t-options='{"widget": "monetary", "display_currency": currency}'/>
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td style="width:50%">
+                                            <table class="table table-condensed">
+                                                <tr style="background:#D6EAF8">
+                                                    <td class="o_text" rowspan="3" width="15%">
+                                                        <div class="o_highlight">Purchase</div>
+                                                    </td>
+                                                    <t t-if="dashboard_data[0]['fal_gross_margin_to']">
+                                                        <td class="o_text" style="color:grey;font-weight: bold;" width="15%">
+                                                            <div class="o_highlight" title="T0: Initial Budget">T0</div>
+                                                        </td>
+                                                    </t>
+                                                    <td class="o_text" width="35%">
+                                                        <div class="o_highlight">Order / % (vs EAC)</div>
+                                                    </td>
+                                                    <td class="o_text" width="35%">
+                                                        <div class="o_highlight">Invoice / % (vs EAC)</div>
+                                                    </td>
+
+                                                </tr>
+                                                <tr>
+                                                    <t t-if="dashboard_data[0]['fal_gross_margin_to']">
+                                                        <td class="o_main" title="T0">
+                                                            <button class="btn btn-sm oe_stat_button" t-att-data-domain="budget_buttons_purchases[0]['domain']" t-att-data-res-model="budget_buttons_purchases[0]['res_model']">
+                                                                <t t-esc="dashboard_data[0]['fal_purchase_budget_total']" t-options='{"widget": "monetary", "display_currency": currency}'/>
+                                                            </button>
+                                                        </td>
+                                                    </t>
+                                                    <td class="o_main" title="Purchase">
+                                                        <button class="btn btn-sm oe_stat_button" t-att-data-domain="purchase_buttons[0]['domain']" t-att-data-res-model="purchase_buttons[0]['res_model']">
+                                                            <t t-esc="dashboard_data[0]['fal_purchase_order_total']" t-options='{"widget": "monetary", "display_currency": currency}'/>
+                                                        </button>
+                                                    </td>
+                                                    <td class="o_main" title="Invoice">
+                                                        <button class="btn btn-sm oe_stat_button" t-att-data-domain="supplier_inv_buttons[0]['domain']" t-att-data-res-model="supplier_inv_buttons[0]['res_model']">
+                                                            <t t-esc="dashboard_data[0]['fal_supplier_invoiced_total']" t-options='{"widget": "monetary", "display_currency": currency}'/>
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <t t-if="dashboard_data[0]['fal_gross_margin_to']">
+                                                        <td>
+                                                            <div class="o_highlight"></div>
+                                                        </td>
+                                                    </t>
+                                                    <td class="o_main" title="Purchase Orders">
+                                                        <button class="btn btn-sm oe_stat_button" t-att-data-domain="purchase_buttons[0]['domain']" t-att-data-res-model="purchase_buttons[0]['res_model']">
+                                                            <t t-esc="dashboard_data[0]['fal_purchase_order_count']" t-options='{"widget": "statinfo"}'/>
+                                                            <span> Purchase Orders</span>
+                                                        </button>
+                                                    </td>
+                                                    <td class="o_main" title="Supplier Invoices">
+                                                        <button class="btn btn-sm oe_stat_button" t-att-data-domain="supplier_inv_buttons[0]['domain']" t-att-data-res-model="supplier_inv_buttons[0]['res_model']">
+                                                            <t t-esc="dashboard_data[0]['fal_supplier_invoiced_count']" t-options='{"widget": "statinfo"}'/>
+                                                            <span> Supplier Invoices</span>
+                                                        </button>
+                                                    </td>
+
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td style="width:3%"></td>
+                                        <td style="width:50%">
+                                            <table class="table table-condensed">
+                                                <tr style="background:#D6EAF8">
+                                                    <td class="o_text" style="width:30%">
+                                                        <div class="o_highlight">Payment</div>
+                                                    </td>
+                                                    <td class="o_text" style="width:40%">
+                                                        <div class="o_highlight">Remaining to Order</div>
+                                                    </td>
+                                                    <t t-if="dashboard_data[0]['fal_gross_margin_to']">
+                                                        <td class="o_text" style="color:Folive; width:30%" title="EAC: Completion Amount">
+                                                            <div class="o_highlight">EAC</div>
+                                                        </td>
+                                                    </t>
+                                                </tr>
+                                                <tr>
+                                                    <td class="o_text">
+                                                        <button class="btn btn-sm oe_stat_button" t-att-data-domain="supplier_inv_payment_buttons[0]['domain']" t-att-data-res-model="supplier_inv_payment_buttons[0]['res_model']">
+                                                            <t t-esc="dashboard_data[0]['fal_supplier_payment_total']" t-options='{"widget": "monetary", "display_currency": currency}'/>
+                                                        </button>
+                                                    </td>
+                                                    <td class="o_text">
+                                                        <button class="btn btn-sm oe_stat_button" t-att-data-domain="supplier_inv_payment_buttons[0]['domain']" t-att-data-res-model="supplier_inv_payment_buttons[0]['res_model']">
+                                                            <t t-esc="dashboard_data[0]['fal_purchase_order_total_remaining_order']" t-options='{"widget": "monetary", "display_currency": currency}'/>
+                                                        </button>
+                                                    </td>
+                                                    <t t-if="dashboard_data[0]['fal_gross_margin_to']">
+                                                        <td class="o_text">
+                                                            <button class="btn btn-sm oe_stat_button" t-att-data-domain="supplier_inv_payment_buttons[0]['domain']" t-att-data-res-model="supplier_inv_payment_buttons[0]['res_model']">
+                                                                <t t-esc="dashboard_data[0]['fal_purchase_budget_total_termination']" t-options='{"widget": "monetary", "display_currency": currency}'/>
+                                                            </button>
+                                                        </td>
+                                                    </t>
+                                                </tr>
+                                                <tr>
+                                                    <td class="o_text">
+                                                        <button class="btn btn-sm oe_stat_button" t-att-data-domain="supplier_inv_payment_buttons[0]['domain']" t-att-data-res-model="supplier_inv_payment_buttons[0]['res_model']">
+                                                            <t t-esc="dashboard_data[0]['fal_supplier_payment_count']" t-options='{"widget": "statinfo"}'/>
+                                                            <span> Supplier Payments</span>
+                                                        </button>
+                                                    </td>
+                                                    <td class="o_text">
+                                                    </td>
+                                                    <td class="o_text">
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td style="width:50%">
+                                            <table class="table table-condensed">
+                                                <tr style="background:#F9E79F">
+                                                    <td class="o_text" rowspan="4" width="10%">
+                                                        <div class="o_highlight">Time</div>
+                                                    </td>
+                                                    <t t-if="dashboard_data[0]['fal_gross_margin_to']">
+                                                        <td class="o_text" style="color:grey;font-weight: bold;">
+                                                            <div class="o_highlight" title="T0: Initial Budget">T0 (€) - (h)</div>
+                                                        </td>
+                                                    </t>
+                                                    <td class="o_text">
+                                                        <div class="o_highlight" title="EAC: Completion Amount">Actuals (€) - (h) - (% vs EAC)</div>
+                                                    </td>
+                                                    <td class="o_text">
+                                                        <div class="o_highlight">Remaining Hours</div>
+                                                    </td>
+                                                    <t t-if="dashboard_data[0]['fal_gross_margin_to']">
+                                                        <td class="o_text" style="color:olive">
+                                                            <div class="o_highlight" title="EAC: Completion Amount">EAC</div>
+                                                        </td>
+                                                    </t>
+
+                                                </tr>
+                                                <tr>
+                                                    <t t-if="dashboard_data[0]['fal_gross_margin_to']">
+                                                        <td class="o_main" title="T0">
+                                                            <button class="btn btn-sm oe_stat_button" t-att-data-domain="budget_buttons_timesheets[0]['domain']" t-att-data-res-model="budget_buttons_timesheets[0]['res_model']">
+                                                                <t t-esc="dashboard_data[0]['fal_timesheet_budget_total']" t-options='{"widget": "monetary", "display_currency": currency}'/>
+                                                            </button>
+                                                        </td>
+                                                    </t>
+                                                    <td class="o_main" title="Timesheet Cost">
+                                                        <button class="btn btn-sm oe_stat_button" t-att-data-domain="journal_items_buttons[0]['domain']" t-att-data-res-model="journal_items_buttons[0]['res_model']">
+                                                            <t t-esc="dashboard_data[0]['fal_timesheet_cost_total']" t-options='{"widget": "monetary", "display_currency": currency}'/>
+                                                        </button>
+                                                        <span> +</span>
+                                                        <t t-esc="dashboard_data[0]['fal_timesheet_cost_percentage']"/>
+                                                        <span>%</span>
+                                                    </td>
+                                                    <td class="o_main" title="Remaining Hours">
+                                                        <button class="btn btn-sm oe_stat_button" t-att-data-domain="timesheet_buttons[0]['domain']" t-att-data-res-model="timesheet_buttons[0]['res_model']">
+                                                            <t t-esc="dashboard_data[0]['fal_timesheet_cost_total_remaining_hour']" t-options='{"widget": "statinfo"}'/>
+                                                        </button>
+                                                    </td>
+                                                    <t t-if="dashboard_data[0]['fal_gross_margin_to']">
+                                                        <td class="o_main" title="EAC: Completion Amount">
+                                                            <button class="btn btn-sm oe_stat_button" t-att-data-domain="timesheet_buttons[0]['domain']" t-att-data-res-model="timesheet_buttons[0]['res_model']">
+                                                                <t t-esc="dashboard_data[0]['fal_timesheet_budget_total_qty_termination']" t-options='{"widget": "statinfo"}'/>
+                                                            </button>
+                                                        </td>
+                                                    </t>
+                                                </tr>
+                                                <tr>
+                                                    <td class="o_text" style="color:grey;font-weight: bold;">
+                                                        <t t-esc="dashboard_data[0]['fal_timesheet_budget_total_qty']"/>
+                                                        <span>h</span>
+                                                    </td>
+                                                    <td class="o_main" title="Time">
+                                                        <t t-esc="dashboard_data[0]['fal_timesheet_cost_total_hour']"/>
+                                                        <span>h</span>
+                                                    </td>
+                                                    <td class="o_text">
+                                                        <div class="o_highlight"></div>
+                                                    </td>
+                                                    <td class="o_text">
+                                                        <div class="o_highlight"></div>
+                                                    </td>
+
+                                                </tr>
+                                                <tr>
+                                                    <t t-if="dashboard_data[0]['fal_gross_margin_to']">
+                                                        <td class="o_text">
+                                                            <div class="o_highlight"></div>
+                                                        </td>
+                                                    </t>
+                                                    <td class="o_text">
+                                                        <button class="btn btn-sm oe_stat_button" t-att-data-domain="timesheet_buttons[0]['domain']" t-att-data-res-model="timesheet_buttons[0]['res_model']">
+                                                            <t t-esc="dashboard_data[0]['fal_timesheet_cost_count']" t-options='{"widget": "statinfo"}'/>
+                                                            <span> Timesheets</span>
+                                                        </button>
+                                                    </td>
+                                                    <td class="o_text">
+                                                        <div class="o_highlight"></div>
+                                                    </td>
+                                                    <td class="o_text">
+                                                        <div class="o_highlight"></div>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td style="width:3%"></td>
+                                        <td style="width:50%">
+                                            <table class="table table-condensed">
+                                                <tr style="background:#D2B4DE">
+                                                    <td class="o_text" rowspan="3" width="15%">
+                                                        <div class="o_highlight">Expenses</div>
+                                                    </td>
+                                                        <t t-if="dashboard_data[0]['fal_gross_margin_to']">
+                                                        <td class="o_text" style="color:grey;font-weight: bold;">
+                                                            <div class="o_highlight" title="T0: Initial Budget">T0</div>
+                                                        </td>
+                                                    </t>
+                                                    <td class="o_text">
+                                                        <div class="o_highlight" title="EAC: Completion Amount">Actuals / % (vs EAC)</div>
+                                                    </td>
+                                                    <td class="o_text">
+                                                        <div class="o_highlight">Remaining Expenses</div>
+                                                    </td>
+                                                    <t t-if="dashboard_data[0]['fal_gross_margin_to']">
+                                                        <td class="o_text" style="color:olive">
+                                                            <div class="o_highlight" title="EAC: Completion Amount">EAC</div>
+                                                        </td>
+                                                    </t>
+                                                </tr>
+                                                <tr>
+                                                    <t t-if="dashboard_data[0]['fal_gross_margin_to']">
+                                                        <td class="o_text">
+                                                            <button class="btn btn-sm oe_stat_button" t-att-data-domain="budget_buttons_expense[0]['domain']" t-att-data-res-model="budget_buttons_expense[0]['res_model']">
+                                                                <t t-esc="dashboard_data[0]['fal_mission_expense_budget_total']" t-options='{"widget": "monetary", "display_currency": currency}'/>
+                                                            </button>
+                                                        </td>
+                                                    </t>
+                                                    <td class="o_main" title="Mission Expenses">
+                                                        <button class="btn btn-sm oe_stat_button" t-att-data-domain="expense_buttons[0]['domain']" t-att-data-res-model="expense_buttons[0]['res_model']">
+                                                            <t t-esc="dashboard_data[0]['fal_mission_expense_total']" t-options='{"widget": "monetary", "display_currency": currency}'/>
+                                                        </button>
+                                                        <span> +</span>
+                                                        <t t-esc="dashboard_data[0]['fal_mission_expense_percentage']"/>
+                                                        <span>%</span>
+                                                    </td>
+                                                    <td class="o_text">
+                                                        <button class="btn btn-sm oe_stat_button" t-att-data-domain="expense_buttons[0]['domain']" t-att-data-res-model="expense_buttons[0]['res_model']">
+                                                            <t t-esc="dashboard_data[0]['fal_mission_expense_total_remaining_expense']" t-options='{"widget": "monetary", "display_currency": currency}'/>
+                                                        </button>
+                                                    </td>
+                                                    <t t-if="dashboard_data[0]['fal_gross_margin_to']">
+                                                        <td class="o_text">
+                                                            <button class="btn btn-sm oe_stat_button" t-att-data-domain="expense_buttons[0]['domain']" t-att-data-res-model="expense_buttons[0]['res_model']">
+                                                                <t t-esc="dashboard_data[0]['fal_mission_expense_budget_total_termination']" t-options='{"widget": "monetary", "display_currency": currency}'/>
+                                                            </button>
+                                                        </td>
+                                                    </t>
+                                                </tr>
+                                                <tr>
+                                                    <t t-if="dashboard_data[0]['fal_gross_margin_to']">
+                                                        <td class="o_text">
+                                                            <div class="o_highlight"></div>
+                                                        </td>
+                                                    </t>
+                                                    <td class="o_text">
+                                                        <button class="btn btn-sm oe_stat_button" t-att-data-domain="expense_buttons[0]['domain']" t-att-data-res-model="expense_buttons[0]['res_model']">
+                                                            <t t-esc="dashboard_data[0]['fal_mission_expense_count']" t-options='{"widget": "statinfo"}'/>
+                                                            <span> Mission Expenses Lines</span>
+                                                        </button>
+                                                    </td>
+                                                    <td class="o_text">
+                                                        <div class="o_highlight"></div>
+                                                    </td>
+                                                    <td class="o_text">
+                                                        <div class="o_highlight"></div>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </group>
+                            <!-- <input type="checkbox" id="oe_import_tracking"/> -->
+                            <group t-if="len(projects) == 1">
+                                <div>
+                                    <strong><span>Notes:</span></strong>
+                                </div>
+                                <div class="o_project_dashboard_summary">
+                                    <i class="fa fa-fw fa-pencil o_project_dashboard_edit_summary_pencil" role="img" aria-label="Edit Summary" title="Edit Summary"></i>
+                                    <div class="o_project_dashboard_summary" role="alert">
+                                        <span t-if="dashboard_data[0]['summary']"><t t-esc="dashboard_data[0]['summary']" t-options="{'widget': 'text'}"/></span>
+                                        <input t-if="not dashboard_data[0]['summary']" type='text' class="o_input" name='summary' placeholder='Add a note'/>
+                                    </div>
+                                </div>
+                                <div class="o_project_dashboard_summary_edit">
+                                    <textarea name="summary"><t t-if="dashboard_data[0]['summary']" t-esc="dashboard_data[0]['summary']" /></textarea>
+                                    <button class="btn btn-primary js_project_dashboard_save_summary">Save</button>
+                                </div>
+                            </group>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+</odoo>
